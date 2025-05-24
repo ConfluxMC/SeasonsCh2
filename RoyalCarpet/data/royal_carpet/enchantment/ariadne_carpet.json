@@ -1,0 +1,83 @@
+{
+  "description": "Ariadne's Carpet",
+  "supported_items": "#minecraft:enchantable/foot_armor",
+  "weight": 3,
+  "max_level": 3,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 10
+  },
+  "max_cost": {
+    "base": 30,
+    "per_level_above_first": 10
+  },
+  "anvil_cost": 0,
+  "slots": [
+    "feet"
+  ],
+  "effects": {
+    "minecraft:location_changed": [
+      {
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "flags": {
+              "is_on_ground": true,
+              "is_flying": false
+            },
+            "equipment": {
+              "offhand": {
+                "items": "#royal_carpet:ariadne_carpets"
+              }
+            }
+          }
+        },
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "royal_carpet:place_ariadne_carpet_offhand"
+        }
+      },
+      {
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "equipment": {
+                    "offhand": {
+                      "items": "#royal_carpet:ariadne_carpets"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_ground": true,
+                  "is_flying": false
+                },
+                "equipment": {
+                  "mainhand": {
+                    "items": "#royal_carpet:ariadne_carpets"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "royal_carpet:place_ariadne_carpet_mainhand"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+#execute as @s run execute if predicate royal_carpet:offhand_carpet run execute if block ~ ~ ~ #royal_carpet:ariadne_carpet_replaceable at @s run function royal_carpet:place_ariande_carpet_offhand with entity @s
+
+#execute as @s run execute unless predicate royal_carpet:offhand_carpet run execute if predicate royal_carpet:mainhand_carpet run execute if block ~ ~ ~ #royal_carpet:ariadne_carpet_replaceable at @s run item modify entity @s weapon.mainhand royal_carpet:ariadne_carpet_consume

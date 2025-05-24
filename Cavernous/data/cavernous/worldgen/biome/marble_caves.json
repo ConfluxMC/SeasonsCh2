@@ -48,7 +48,7 @@
     "monster": [
       {
         "type": "minecraft:ghast",
-        "weight": 15,
+        "weight": 100,
         "minCount": 1,
         "maxCount": 1
       },

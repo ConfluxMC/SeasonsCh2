@@ -1,0 +1,2 @@
+execute as @s at @s run execute if block ~ ~ ~ #royal_carpet:ariadne_carpet_replaceable at @s run function royal_carpet:place_block with entity @s Inventory[{Slot:-106b}]
+execute as @s run item modify entity @s weapon.offhand royal_carpet:ariadne_carpet_consume
