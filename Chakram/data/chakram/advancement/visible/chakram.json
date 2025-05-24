@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:iron_sword",
+      "components": {
+        "minecraft:item_model": "chakram:chakram"
+      }
+    },
+    "title": {
+      "translate": "chakram:adv_chakram_title",
+      "fallback": "What Goes Around"
+    },
+    "description": {
+      "translate": "chakram:adv_chakram_desc",
+      "fallback": "Craft a Chakram"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "chakram:visible/root",
+  "criteria": {
+    "": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "chakram:chakram"
+      }
+    }
+  }
+}

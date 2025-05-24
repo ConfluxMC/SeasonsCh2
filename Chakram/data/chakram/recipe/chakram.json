@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " e ",
+    "ebe",
+    " e "
+  ],
+  "key": {
+    "e": "minecraft:echo_shard",
+    "b": "minecraft:breeze_rod"
+  },
+  "result": {
+    "id": "minecraft:iron_sword",
+    "count": 1,
+    "components": {
+      "minecraft:item_name": "[\"\",{\"translate\":\"chakram:chakram\",\"fallback\":\"Chakram\",\"italic\":false}]",
+      "minecraft:item_model": "chakram:chakram",
+      "minecraft:custom_data": {"chakram_chakram":true,"smithed":{"ignore":{"functionality":true,"crafting":true}}},
+      "minecraft:consumable": {"consume_seconds":2147483648},
+      "minecraft:max_damage": 1500,
+      "minecraft:rarity": "epic"
+    }
+  }
+}

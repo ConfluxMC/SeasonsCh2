@@ -1,0 +1,4 @@
+playsound entity.item.pickup master @a ~ ~ ~ 0.2 1
+$execute if data entity @s SelectedItem run return run loot give @s loot {"pools":[{"rolls":1,"entries":[{"type":"minecraft:item","name":"minecraft:iron_sword","functions":[{"function":"minecraft:set_components","components":$(components)},{"function":"minecraft:set_count","count":1}]}]}]}
+$loot replace entity @s weapon.mainhand loot {"pools":[{"rolls":1,"entries":[{"type":"minecraft:item","name":"minecraft:iron_sword","functions":[{"function":"minecraft:set_components","components":$(components)},{"function":"minecraft:set_count","count":1}]}]}]}
+function chakram:durability/mainhand/check

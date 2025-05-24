@@ -1,0 +1,24 @@
+{
+    "chakram:chakram": "Chakram",
+    "chakram:adv_root_desc": "A new mid-range throwing weapon!",
+    "chakram:adv_chakram_title": "What Goes Around",
+    "chakram:adv_chakram_desc": "Craft a Chakram",
+    "chakram:adv_lightweight_title": "Light as a Feather",
+    "chakram:adv_lightweight_desc": "Obtain the Lightweight enchantment",
+    "chakram:adv_bouncing_title": "Living Trampoline",
+    "chakram:adv_bouncing_desc": "Obtain the Bouncing enchantment",
+    "chakram:adv_phasing_title": "Permeation",
+    "chakram:adv_phasing_desc": "Obtain the Phasing enchantment",
+    "chakram:adv_harvesting_title": "Long-range Reaping",
+    "chakram:adv_harvesting_desc": "Obtain the Harvesting enchantment",
+    "chakram:adv_ricochet_title": "Skill shot",
+    "chakram:adv_ricochet_desc": "Obtain the Ricochet enchantment",
+    
+    "chakram:bouncing": "Bouncing",
+    "chakram:harvesting": "Harvesting",
+    "chakram:lightweight": "Lightweight",
+    "chakram:phasing": "Phasing",
+    "chakram:ricochet": "Ricochet",
+
+    "chakram:loaded":"loaded!"
+}

@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "minecraft:pale_garden",
+        "minecraft:dark_forest",
+        {"id": "terralith:cave/infested_caves", "required": false},
+        {"id": "cavernous:marble_caves", "required": false},
+        {"id": "cavernous:icy_caves", "required": false}
+    ]
+}

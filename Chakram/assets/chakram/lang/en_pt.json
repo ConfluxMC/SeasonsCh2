@@ -1,0 +1,24 @@
+{
+    "chakram:chakram": "Circular throwin' cutlass",
+    "chakram:adv_root_desc": "Yer pristine close quarters tossin' blade!",
+    "chakram:adv_chakram_title": "Circumnavigator",
+    "chakram:adv_chakram_desc": "Craft yerself a circular throwin' cutlass",
+    "chakram:adv_lightweight_title": "Light as yer best matey",
+    "chakram:adv_lightweight_desc": "Plunder the feathery bewitchment",
+    "chakram:adv_bouncing_title": "Bouncin' off the bilge",
+    "chakram:adv_bouncing_desc": "Plunder the ricochet bewitchment",
+    "chakram:adv_phasing_title": "Full o' holes",
+    "chakram:adv_phasing_desc": "Plunder the ghostly bewitchment",
+    "chakram:adv_harvesting_title": "Slash the rigging",
+    "chakram:adv_harvesting_desc": "Plunder the farmin' bewitchment",
+    "chakram:adv_ricochet_title": "Smart shootin'",
+    "chakram:adv_ricochet_desc": "Plunder the buoyant bewitchment",
+    
+    "chakram:bouncing": "Ricochet",
+    "chakram:harvesting": "Farmin'",
+    "chakram:lightweight": "Feathery",
+    "chakram:phasing": "Ghostly",
+    "chakram:ricochet": "Buoyant",
+
+    "chakram:loaded":"boarded!"
+}

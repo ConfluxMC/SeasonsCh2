@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:target"
+    },
+    "title": {
+      "translate": "chakram:adv_target_title",
+      "fallback": "Comes Around"
+    },
+    "description": {
+      "translate": "chakram:adv_target_desc",
+      "fallback": "Hit a target with a Chakram after bouncing it 20 times"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "chakram:visible/chakram",
+  "criteria": {
+    "": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

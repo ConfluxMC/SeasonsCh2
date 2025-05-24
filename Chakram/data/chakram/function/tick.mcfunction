@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:item_display,tag=chakram_entity] at @s run function chakram:entity/tick

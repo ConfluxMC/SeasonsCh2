@@ -1,0 +1,17 @@
+{
+  "criteria": {
+      "requirement": {
+          "trigger": "minecraft:using_item",
+          "conditions": {
+              "item": {
+                  "predicates": {
+                      "minecraft:custom_data": "{chakram_chakram:1b}"
+                  }
+              }
+          }
+      }
+  },
+  "rewards": {
+      "function": "chakram:item/check"
+  }
+}
