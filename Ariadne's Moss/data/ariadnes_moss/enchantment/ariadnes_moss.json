@@ -27,7 +27,7 @@
               "predicate": {
                 "slots": {
                   "inventory.*": {
-                    "items": "#royal_carpet:ariadnes_moss_payment"
+                    "items": "#ariadnes_moss:moss_payment"
                   }
                 }
               }
@@ -38,7 +38,7 @@
               "predicate": {
                 "slots": {
                   "hotbar.*": {
-                    "items": "#royal_carpet:ariadnes_moss_payment"
+                    "items": "#ariadnes_moss:moss_payment"
                   }
                 }
               }
@@ -47,7 +47,7 @@
         },
         "effect": {
           "type": "minecraft:run_function",
-          "function": "royal_carpet:place_ariadnes_moss"
+          "function": "ariadnes_moss:place_ariadnes_moss"
         }
       }
     ]
