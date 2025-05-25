@@ -1,0 +1,113 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "feet": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "ariadnes_moss:ariadnes_moss",
+                      "levels": 1
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 1
+        }
+      ]
+    },
+    {
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "feet": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "ariadnes_moss:ariadnes_moss",
+                      "levels": 2
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.66
+        }
+      ]
+    },
+    {
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "feet": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "ariadnes_moss:ariadnes_moss",
+                      "levels": 3
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.33
+        }
+      ]
+    },
+    {
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "feet": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "ariadnes_moss:ariadnes_moss",
+                      "levels": 4
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.066
+        }
+      ]
+    }
+  ]
+}

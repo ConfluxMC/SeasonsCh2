@@ -16,7 +16,7 @@
         },
         {
           "type": "minecraft:loot_table",
-          "value": "adriadnes_moss:sniffer_adriadnes_moss",
+          "value": "ariadnes_moss:sniffer_ariadnes_moss",
           "weight": 26
         }
       ],
