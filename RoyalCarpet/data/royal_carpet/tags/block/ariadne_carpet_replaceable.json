@@ -1,6 +1,5 @@
 {
   "values": [
-    "minecraft:sculk_vein",
-    "#minecraft:air"
+    "minecraft:sculk"
   ]
 }

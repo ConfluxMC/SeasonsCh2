@@ -1,14 +1,14 @@
 {
-  "description": "Ariadne's Carpet",
+  "description": "Ariadne's Moss",
   "supported_items": "#minecraft:enchantable/foot_armor",
   "weight": 3,
-  "max_level": 3,
+  "max_level": 4,
   "min_cost": {
     "base": 10,
     "per_level_above_first": 10
   },
   "max_cost": {
-    "base": 30,
+    "base": 40,
     "per_level_above_first": 10
   },
   "anvil_cost": 0,
@@ -19,39 +19,15 @@
     "minecraft:location_changed": [
       {
         "requirements": {
-          "condition": "minecraft:entity_properties",
-          "entity": "this",
-          "predicate": {
-            "flags": {
-              "is_on_ground": true,
-              "is_flying": false
-            },
-            "equipment": {
-              "offhand": {
-                "items": "#royal_carpet:ariadne_carpets"
-              }
-            }
-          }
-        },
-        "effect": {
-          "type": "minecraft:run_function",
-          "function": "royal_carpet:place_ariadne_carpet_offhand"
-        }
-      },
-      {
-        "requirements": {
-          "condition": "minecraft:all_of",
+          "condition": "minecraft:any_of",
           "terms": [
             {
-              "condition": "minecraft:inverted",
-              "term": {
-                "condition": "minecraft:entity_properties",
-                "entity": "this",
-                "predicate": {
-                  "equipment": {
-                    "offhand": {
-                      "items": "#royal_carpet:ariadne_carpets"
-                    }
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "slots": {
+                  "inventory.*": {
+                    "items": "#royal_carpet:ariadne_carpets"
                   }
                 }
               }
@@ -60,12 +36,8 @@
               "condition": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "flags": {
-                  "is_on_ground": true,
-                  "is_flying": false
-                },
-                "equipment": {
-                  "mainhand": {
+                "slots": {
+                  "hotbar.*": {
                     "items": "#royal_carpet:ariadne_carpets"
                   }
                 }
@@ -75,7 +47,7 @@
         },
         "effect": {
           "type": "minecraft:run_function",
-          "function": "royal_carpet:place_ariadne_carpet_mainhand"
+          "function": "royal_carpet:place_ariadne_carpet"
         }
       }
     ]

@@ -1,7 +1,6 @@
 {
   "values": [
-    "#minecraft:wool_carpets",
-    "minecraft:moss_carpet",
-    "minecraft:snow"
+    "minecraft:moss_block",
+    "minecraft:bone_meal"
   ]
 }
