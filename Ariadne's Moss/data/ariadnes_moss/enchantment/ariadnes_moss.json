@@ -4,14 +4,14 @@
   "weight": 3,
   "max_level": 4,
   "min_cost": {
-    "base": 10,
+    "base": 5,
     "per_level_above_first": 10
   },
   "max_cost": {
-    "base": 40,
+    "base": 25,
     "per_level_above_first": 10
   },
-  "anvil_cost": 0,
+  "anvil_cost": 1,
   "slots": [
     "feet"
   ],
@@ -27,7 +27,7 @@
               "predicate": {
                 "slots": {
                   "inventory.*": {
-                    "items": "#royal_carpet:ariadne_carpets"
+                    "items": "#ariadnes_moss:moss_payment"
                   }
                 }
               }
@@ -38,7 +38,7 @@
               "predicate": {
                 "slots": {
                   "hotbar.*": {
-                    "items": "#royal_carpet:ariadne_carpets"
+                    "items": "#ariadnes_moss:moss_payment"
                   }
                 }
               }
@@ -47,7 +47,7 @@
         },
         "effect": {
           "type": "minecraft:run_function",
-          "function": "royal_carpet:place_ariadne_carpet"
+          "function": "ariadnes_moss:place_ariadnes_moss"
         }
       }
     ]
