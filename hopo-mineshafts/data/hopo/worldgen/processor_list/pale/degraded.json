@@ -794,7 +794,11 @@
 			  "probability": 0.042
 			},
 			"output_state": {
-			  "Name": "minecraft:creaking_heart"
+			  "Name": "minecraft:creaking_heart",
+			  "Properties": {
+				"active": "true",
+				"natural": "true"
+            }
 			}
 		  }
 		]
