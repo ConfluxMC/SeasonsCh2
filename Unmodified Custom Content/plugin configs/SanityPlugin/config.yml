@@ -1,0 +1,179 @@
+#  ____  _            _    _____                    
+# | __ )| | ___   ___| | _|  ___|__  _ __ __ _  ___ 
+# |  _ \| |/ _ \ / __| |/ / |_ / _ \| '__/ _` |/ _ \
+# | |_) | | (_) | (__|   <|  _| (_) | | | (_| |  __/
+# |____/|_|\___/ \___|_|\_\_|  \___/|_|  \__, |\___|
+#                                        |___/      
+#  ____  _             _ _           
+# / ___|| |_ _   _  __| (_) ___  ___ 
+# \___ \| __| | | |/ _` | |/ _ \/ __|
+#  ___) | |_| |_| | (_| | | (_) \__ \
+# |____/ \__|\__,_|\__,_|_|\___/|___/
+#                                   
+# https://discord.gg/fBnyKVZ8A5
+# Join the discord if you need support or have any questions or concerns.
+#
+#
+#
+#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+#|       SanityMC       Configuration        |
+#+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+sanity:
+  default: 200
+
+max_sanity:
+  default: 200
+
+conditions:
+  # Players lose sanity in darkness every X seconds
+  in_darkness:
+    enabled: true
+    interval: 10       # seconds between checks
+    sanity_loss: 1
+
+  # Looking at an Enderman
+  looking_at_enderman:
+    enabled: true
+    sanity_loss: 5     # per check
+
+  # Low health
+  low_health:
+    enabled: true
+    sanity_loss: 5     # per check when below 6 hearts
+
+  # Rain / thunder
+  rain_thunder:
+    enabled: true
+    interval: 10       # seconds between checks
+    sanity_loss: 2
+
+  # Spending too long in caves
+  long_in_caves:
+    enabled: true
+    interval: 60       # seconds between checks
+    sanity_loss: 3
+
+  # Hostile mobs nearby
+  hostile_mobs:
+    enabled: true
+    radius: 5          # blocks
+    interval: 8        # seconds between checks
+    sanity_loss: 1
+
+  # Baseline drain: everyone loses sanity over time
+  baseline:
+    enabled: true
+    interval: 40       # seconds between checks
+    sanity_loss: 1
+
+events:
+  nether_portal:
+    enabled: true
+    sanity_loss: 2
+    interval: 0.5      # seconds in a nether portal
+  ender_pearl:
+    enabled: true
+    sanity_loss: 3
+  break_bell:
+    enabled: true
+    sanity_loss: 50
+  break_spawner:
+    enabled: true
+    total_sanity_loss: 15
+    duration: 5        # seconds over which loss is applied
+  lightning:
+    enabled: true
+    radius: 10         # blocks
+    sanity_loss: 5
+  fishing:
+    enabled: true
+    sanity_gain: 1
+  advancement:
+    enabled: true
+  pet_death:
+    enabled: true
+    total_sanity_loss: 35
+    duration: 7        # seconds over which loss is applied
+
+food_regen:
+  enabled: true
+  total_regen: 5       # total sanity restored per food
+  interval: 1          # seconds between each point
+
+sleep_bed:
+  enabled: true
+  sanity_gain: 20      # total sanity restored when sleeping
+  interval: 0.5        # seconds between each point
+
+hunger:
+  enabled: true
+  food_level_threshold: 6   # below this level you lose sanity
+  sanity_loss: 1
+  interval_ticks: 10        # every 10 ticks (~0.5s)
+
+campfire:
+  enabled: true
+  radius: 5            # blocks
+  interval: 5          # seconds between checks
+  sanity_gain: 1
+
+nearby_player:
+  enabled: true
+  radius: 10           # blocks
+  interval: 4          # seconds between checks
+  sanity_gain: 1
+
+tamed_dog:
+  enabled: true
+  radius: 8            # blocks
+  interval: 3          # seconds between checks
+  sanity_gain: 1
+
+positive_conditions:
+  enabled: true
+  campfire: true
+  nearby_player: true
+  tamed_dog: true
+
+# Fake-footsteps configuration
+footsteps:
+  series_count: 4      # number of footsteps in one burst
+  interval_ms: 500     # ms between each footstep in a series
+  pause_ms: 3000       # ms to wait before the next burst
+
+effects:
+  # ≤75 sanity
+  sanity_75:
+    cave_sound_interval: 30     # seconds between cave‐sound checks
+    cave_sound_chance: 0.3
+    creeper_hiss_chance: 0.25
+    command_interval: 60        # seconds between running custom commands
+    custom_commands:            # you can add multiple commands, and use the placeholder %player% to represent the player, you can get very creative if you create custom commands using the plugin Skript, its easy to learn.
+      - "say %player% trembles in the darkness!"
+
+  # ≤49 sanity
+  sanity_49:
+    whisper_chance: 0.8
+    hallucination_chance: 0.75
+    command_interval: 45
+    custom_commands:
+      - "say %player% is seeing strange visions!"
+
+  # ≤24 sanity
+  sanity_24:
+    jumpscare_chance: 0.75
+    swing_chance: 1
+    command_interval: 30
+    custom_commands:
+      - "say %player% screams in terror!"
+
+  # <10 sanity
+  sanity_below_10:
+    forced_chat_messages:
+      - "THEY ARE IN MY HEAD"
+      - "I CAN'T TAKE THIS ANYMORE"
+    command_interval: 15
+    custom_commands:
+      - "say %player% is in utter despair!"
+
+# Version: 1.1

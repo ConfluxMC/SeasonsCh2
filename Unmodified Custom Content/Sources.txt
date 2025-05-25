@@ -1,0 +1,11 @@
+Datapacks:
+	Unmodified:
+		Reinforced Deepslate (Silk Touch): https://modrinth.com/datapack/purpurpacks-silk-touch-reinforced-deepslate?version=1.21.4&loader=datapack
+		Reinforced Deepslate (Pickaxe): https://modrinth.com/datapack/purpurpacks-pickaxe-effective-reinforced-deepslate?version=1.21.4&loader=datapack
+	Modified:
+		Chakram: https://modrinth.com/datapack/chakram
+		Cavernous: https://modrinth.com/datapack/cavernous
+		Deeper Dark: https://modrinth.com/datapack/deeper_dark
+		Hopo Mineshafts: https://modrinth.com/datapack/hopo-better-mineshaft
+Plugins:
+	Sanity: https://modrinth.com/plugin/sanitymc
