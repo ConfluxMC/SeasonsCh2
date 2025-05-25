@@ -1,2 +1,0 @@
-execute as @s run execute if block ~ ~ ~ #royal_carpet:ariadne_carpet_replaceable at @s run function royal_carpet:place_block with entity @s SelectedItem
-execute as @s run item modify entity @s weapon.mainhand royal_carpet:ariadne_carpet_consume
