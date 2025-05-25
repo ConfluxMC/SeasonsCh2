@@ -1,5 +1,6 @@
 {
   "values": [
-    "minecraft:sculk"
+    "#ariadnes_moss:block_replaceable",
+    "#ariadnes_moss:carpet_replaceable"
   ]
 }

@@ -1,15 +1,9 @@
-# Player pays moss fee. Higher the level, greater chance of skipping payment
-# Level I
-execute as @s[nbt={Inventory:[{Slot:100b, components:{"minecraft:enchantments":{levels:{"ariadnes_moss:ariadnes_moss":1}}}}]}] run execute if block ~ ~-1 ~ #ariadnes_moss:replaceable at @s run clear @s #ariadnes_moss:moss_payment 1
+# Check if near replaeable. If not, end function
+execute as @s at @s unless function ariadnes_moss:is_near_replaceable run return fail
 
-# Level II
-execute if predicate ariadnes_moss:chance/66_percent as @s[nbt={Inventory:[{Slot:100b, components:{"minecraft:enchantments":{levels:{"ariadnes_moss:ariadnes_moss":2}}}}]}] run execute if block ~ ~-1 ~ #ariadnes_moss:replaceable at @s run clear @s #ariadnes_moss:moss_payment 1
+# Place moss near player
+execute as @s at @s run fill ~0.3 ~0.5 ~0.3 ~-0.3 ~-1.5 ~-0.3 moss_block replace #ariadnes_moss:block_replaceable
+execute as @s at @s run fill ~0.3 ~1.5 ~0.3 ~-0.3 ~-0.5 ~-0.3 moss_carpet replace #ariadnes_moss:carpet_replaceable[down=true]
 
-# Level III
-execute if predicate ariadnes_moss:chance/33_percent as @s[nbt={Inventory:[{Slot:100b, components:{"minecraft:enchantments":{levels:{"ariadnes_moss:ariadnes_moss":3}}}}]}] run execute if block ~ ~-1 ~ #ariadnes_moss:replaceable at @s run clear @s #ariadnes_moss:moss_payment 1
-
-# Level IV
-execute if predicate ariadnes_moss:chance/6.66_percent as @s[nbt={Inventory:[{Slot:100b, components:{"minecraft:enchantments":{levels:{"ariadnes_moss:ariadnes_moss":4}}}}]}] run execute if block ~ ~-1 ~ #ariadnes_moss:replaceable at @s run clear @s #ariadnes_moss:moss_payment 1
-
-# Place moss below player
-execute as @s at @s run execute if block ~ ~-1 ~ #ariadnes_moss:replaceable at @s run setblock ~ ~-1 ~ moss_block
+# Player pays moss fee. Higher the level, greater chance of skipping payment (All logic in predicate)
+execute as @s[predicate=ariadnes_moss:pay_moss] run clear @s #ariadnes_moss:moss_payment 1
