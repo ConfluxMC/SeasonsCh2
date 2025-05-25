@@ -795,9 +795,9 @@
 			},
 			"output_state": {
 			  "Name": "minecraft:creaking_heart",
-			"Properties": {
-			  "active": "true",
-			  "natural": "true"
+			  "Properties": {
+				"active": "true",
+				"natural": "true"
             }
 			}
 		  }
