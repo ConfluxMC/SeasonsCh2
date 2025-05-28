@@ -38,26 +38,7 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 1,
-        "maxCount": 3
-      },
-      {
-        "type": "minecraft:fox",
-        "weight": 5,
-        "minCount": 1,
-        "maxCount": 2
-      },
-      {
-        "type": "minecraft:mooshroom",
-        "weight": 100,
-        "minCount": 2,
-        "maxCount": 4
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {

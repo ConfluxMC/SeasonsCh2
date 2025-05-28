@@ -37,14 +37,7 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:frog",
-        "weight": 100,
-        "minCount": 2,
-        "maxCount": 4
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {
