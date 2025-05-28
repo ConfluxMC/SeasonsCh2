@@ -44,31 +44,12 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:rabbit",
-        "weight": 10,
-        "minCount": 2,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:fox",
-        "weight": 5,
-        "minCount": 1,
-        "maxCount": 2
-      },
-      {
-        "type": "minecraft:mooshroom",
-        "weight": 100,
-        "minCount": 1,
-        "maxCount": 3
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {
         "type": "minecraft:spider",
-        "weight": 100,
+        "weight": 50,
         "minCount": 4,
         "maxCount": 4
       },
@@ -85,14 +66,8 @@
         "maxCount": 1
       },
       {
-        "type": "minecraft:skeleton",
-        "weight": 100,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
         "type": "minecraft:creeper",
-        "weight": 100,
+        "weight": 5,
         "minCount": 4,
         "maxCount": 4
       },
@@ -110,7 +85,7 @@
       },
       {
         "type": "minecraft:witch",
-        "weight": 5,
+        "weight": 20,
         "minCount": 1,
         "maxCount": 1
       }
