@@ -41,4 +41,7 @@ execute if score Game deeper_dark.var matches 65536 run gamerule maxCommandChain
 execute store result score Game deeper_dark.var run gamerule maxCommandForkCount
 execute if score Game deeper_dark.var matches 65536 run gamerule maxCommandForkCount 2147483647
 
-
+# lodestone checkpoints stuff
+# Need scoreboard to perform add operation to adjust y level to spawn on top of the lodestone
+scoreboard objectives add deeper_dark.checkpoints dummy
+scoreboard players set $2 deeper_dark.checkpoints 2
