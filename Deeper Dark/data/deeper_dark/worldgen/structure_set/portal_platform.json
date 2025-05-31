@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "deeper_dark:portal_platform",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 19011220,
+    "exclusion_zone": {
+      "other_set": "deeper_dark:large_structures",
+      "chunk_count": 7
+    },
+    "spacing": 6,
+    "separation": 2
+  }
+}
