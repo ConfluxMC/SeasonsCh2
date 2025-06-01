@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "deeper_dark:sniffer_pot",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1448596458,
+    "spacing": 1,
+    "separation": 0
+  }
+}
