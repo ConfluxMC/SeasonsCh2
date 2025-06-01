@@ -8,9 +8,9 @@ scoreboard players operation $half chakram_temp /= $2 chakram_temp
 scoreboard players operation @s chakram_enchantment_level *= $2 chakram_temp
 scoreboard players operation @s chakram_enchantment_level += $half chakram_temp
 
+scoreboard objectives remove chakram_temp
+
 #add to base
 scoreboard players operation @s chakram_damage += @s chakram_enchantment_level
 
-execute store result storage chakram:entity damage float 0.01 run scoreboard players get @s chakram_damage
-
-scoreboard objectives remove chakram_temp
+function chakram:entity/hit/damage/calculate_finish

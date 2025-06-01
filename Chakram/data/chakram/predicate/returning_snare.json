@@ -1,0 +1,8 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "minecraft:item_display",
+    "nbt": "{item:{components:{\"minecraft:enchantments\":{levels:{\"chakram:snare\":1}}}},Tags:[\"chakram_return\"]}"
+  }
+}
