@@ -1,10 +1,12 @@
 scoreboard objectives add chakram_snare_temp dummy
 
-scoreboard players set $2 chakram_snare_temp 3
+scoreboard players set $2 chakram_snare_temp 5
 
-# Reduce damage to a third (then double it to make it 2/3rds damage)
+# Reduce damage to a fifth
 scoreboard players operation @s chakram_damage /= $2 chakram_snare_temp
-scoreboard players operation @s chakram_damage += @s chakram_damage
+
+# Do this logic if you want to do fractions (e.g. 2/5ths instead of 1/5th)
+# scoreboard players operation @s chakram_damage += @s chakram_damage
 
 scoreboard objectives remove chakram_snare_temp
 
