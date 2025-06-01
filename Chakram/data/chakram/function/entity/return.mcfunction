@@ -3,6 +3,9 @@ scoreboard players operation $chakram_temp chakram_id = @s chakram_id
 tag @s add chakram_return
 execute as @p[distance=..100,gamemode=!spectator,predicate=chakram:idmatch] at @s run function chakram:sounds/return
 
+#check if shadowstepping. If yes, don't continue
+execute if data entity @s item.components."minecraft:enchantments".levels."chakram:shadowstep" run return run function chakram:enchants/shadowstep/run
+
 #effect
 particle minecraft:gust ~ ~ ~ 0 0 0 0.1 1 force
 playsound minecraft:entity.breeze.deflect master @a ~ ~ ~ 1 1.3
