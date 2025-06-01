@@ -18,4 +18,4 @@ execute store result score @s chakram_enchantment_level run data get entity @s i
 execute if score @s chakram_enchantment_level matches 100.. if entity @n[dx=0,type=#minecraft:arthropod,tag=!smithed.strict] run return run function chakram:entity/hit/damage/bane_of_arthropods
 
 #no enchants, just base damage
-execute store result storage chakram:entity damage float 0.01 run scoreboard players get @s chakram_damage
+function chakram:entity/hit/damage/calculate_finish
