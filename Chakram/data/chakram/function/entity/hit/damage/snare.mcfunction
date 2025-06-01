@@ -13,6 +13,6 @@ scoreboard objectives remove chakram_snare_temp
 # Damage passed to entity in calculate_finish
 
 # Apply snare
-effect give @n[dx=0,type=!#chakram:raybanned,tag=!smithed.strict] minecraft:levitation 3 0 false
-effect give @n[dx=0,type=!#chakram:raybanned,tag=!smithed.strict] minecraft:slowness 3 0 true
-effect give @n[dx=0,type=!#chakram:raybanned,tag=!smithed.strict] minecraft:slow_falling 5 0 true
+effect give @n[dx=0,type=!#chakram:raybanned,tag=!smithed.strict,nbt=!{active_effects:[{id:"minecraft:slow_falling"}]}] minecraft:levitation 3 0 false
+effect give @n[dx=0,type=!#chakram:raybanned,tag=!smithed.strict,nbt=!{active_effects:[{id:"minecraft:slow_falling"}]}] minecraft:slowness 3 0 true
+effect give @n[dx=0,type=!#chakram:raybanned,tag=!smithed.strict,nbt=!{active_effects:[{id:"minecraft:slow_falling"}]}] minecraft:slow_falling 5 0 true

@@ -9,7 +9,7 @@ scoreboard players operation @s chakram_id = @p[tag=chakram_user,distance=..5] c
 
 tag @s add chakram_temp
 execute as @p[tag=chakram_mainhand,distance=..5] run data modify entity @n[type=minecraft:item_display,tag=chakram_temp] item set from entity @s SelectedItem
-execute as @p[tag=chakram_offhand,distance=..5] run data modify entity @n[type=minecraft:item_display,tag=chakram_temp] item set from entity @s equipment.offhand
+execute as @p[tag=chakram_offhand,distance=..5] run data modify entity @n[type=minecraft:item_display,tag=chakram_temp] item set from entity @s Inventory[{Slot:-106b}]
 tag @s remove chakram_temp
 
 execute if entity @p[tag=chakram_mainhand,distance=..5] run tag @s add chakram_mainhand
