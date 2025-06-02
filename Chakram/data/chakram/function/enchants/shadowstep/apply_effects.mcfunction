@@ -5,7 +5,9 @@ playsound minecraft:entity.breeze.land master @a ~ ~ ~ 2 0.6
 attribute @s minecraft:safe_fall_distance modifier add chakram:shadowstepping 30 add_value
 
 attribute @s minecraft:sneaking_speed modifier add chakram:shadowstepping 0.5 add_value
-effect give @s minecraft:night_vision 13 0 true
 
 tag @s add chakram.shadowstep_fall_immune
-tag @s add chakram.shadowstep_night_vision
+tag @s add chakram.shadowstep_under_effects
+
+# 4 seconds
+scoreboard players set @s chakram_shadowstep_timer_sneak_speed 80
