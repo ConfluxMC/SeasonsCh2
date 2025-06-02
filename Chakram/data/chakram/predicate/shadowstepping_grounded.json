@@ -1,0 +1,10 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "nbt": "{Tags:[\"chakram.shadowstepped\"]}",
+    "flags": {
+      "is_on_ground": true
+    }
+  }
+}

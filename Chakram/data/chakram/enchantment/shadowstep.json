@@ -1,0 +1,27 @@
+{
+  "description": {
+    "translate": "chakram:shadowstep",
+    "fallback": "Shadowstep"
+  },
+  "exclusive_set": [
+    "chakram:bouncing",
+    "chakram:phasing",
+    "minecraft:mending"
+  ],
+  "supported_items": "minecraft:iron_sword",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {
+    "base": 25,
+    "per_level_above_first": 12
+  },
+  "max_cost": {
+    "base": 65,
+    "per_level_above_first": 12
+  },
+  "anvil_cost": 8,
+  "slots": [
+    "mainhand",
+    "offhand"
+  ]
+}
