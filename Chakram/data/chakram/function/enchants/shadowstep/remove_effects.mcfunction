@@ -1,3 +1,4 @@
-attribute @s minecraft:safe_fall_distance modifier remove chakram:shadowstepping
+attribute @s minecraft:sneaking_speed modifier remove chakram:shadowstepping
+tag @s remove chakram.shadowstep_under_effects
 
-tag @s remove chakram.shadowstepped
+scoreboard players reset @s chakram_shadowstep_timer_sneak_speed

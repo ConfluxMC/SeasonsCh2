@@ -1,4 +1,5 @@
-execute as @e[type=minecraft:item_display,tag=chakram_entity] at @s run function chakram:entity/tick
-
 #Removing attributes given by shadowstepping
-execute as @e[predicate=chakram:shadowstepping_grounded] run function chakram:enchants/shadowstep/remove_effects
+execute as @p[predicate=chakram:shadowstepping_grounded] run function chakram:enchants/shadowstep/remove_fall_immunity
+execute as @p[tag=chakram.shadowstep_under_effects] run function chakram:enchants/shadowstep/effect_timer
+
+execute as @e[type=minecraft:item_display,tag=chakram_entity] at @s run function chakram:entity/tick
