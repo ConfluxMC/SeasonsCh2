@@ -3,6 +3,9 @@
     "translate": "chakram:snare",
     "fallback": "Snare"
   },
+  "exclusive_set": [
+    "chakram:shadowstep"
+  ],
   "supported_items": "minecraft:iron_sword",
   "weight": 1,
   "max_level": 1,

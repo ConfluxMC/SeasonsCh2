@@ -4,9 +4,11 @@
     "fallback": "Shadowstep"
   },
   "exclusive_set": [
-    "chakram:bouncing",
-    "chakram:phasing",
-    "minecraft:mending"
+    "chakram:snare",
+    "chakram:ricochet",
+    "minecraft:sharpness",
+    "minecraft:bane_of_arthropods",
+    "minecraft:smite"
   ],
   "supported_items": "minecraft:iron_sword",
   "weight": 1,
