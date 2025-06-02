@@ -4,5 +4,8 @@ playsound minecraft:entity.breeze.land master @a ~ ~ ~ 2 0.6
 
 attribute @s minecraft:safe_fall_distance modifier add chakram:shadowstepping 30 add_value
 
-# Need to schedule otherwise attributes are instantly removed.
-schedule function chakram:enchants/shadowstep/tag_shadowstepped 1t
+attribute @s minecraft:sneaking_speed modifier add chakram:shadowstepping 0.5 add_value
+effect give @s minecraft:night_vision 13 0 true
+
+tag @s add chakram.shadowstep_fall_immune
+tag @s add chakram.shadowstep_night_vision

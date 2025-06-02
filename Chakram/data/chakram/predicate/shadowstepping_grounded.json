@@ -2,7 +2,7 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "nbt": "{Tags:[\"chakram.shadowstepped\"]}",
+    "nbt": "{Tags:[\"chakram.shadowstep_fall_immune\"]}",
     "flags": {
       "is_on_ground": true
     }
