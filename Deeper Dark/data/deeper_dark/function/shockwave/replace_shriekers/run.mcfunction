@@ -1,0 +1,1 @@
+execute as @e[tag=deeper_dark.shockwave,type=pig] run fill ~16 ~8 ~16 ~-16 ~-8 ~-16 minecraft:command_block{auto:1b,Command:"function deeper_dark:shockwave/replace_shriekers/replace"} replace minecraft:sculk_shrieker[can_summon=true]

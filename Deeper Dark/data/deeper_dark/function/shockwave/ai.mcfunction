@@ -54,8 +54,9 @@ effect clear @e[tag=deeper_dark.shockwave,type=pig] minecraft:glowing
 
 #sound
 execute as @e[tag=deeper_dark.shockwave,type=pig] at @s positioned ~-500 ~-6 ~-500 run playsound minecraft:block.sculk_sensor.clicking_stop hostile @a[dy=12,dx=1000,dz=1000] ~500 ~6 ~500 15 0
-execute as @e[tag=deeper_dark.shockwave,type=pig] at @s positioned ~-500 ~-6 ~-500 run playsound minecraft:entity.warden.ambient hostile @a[dy=12,dx=1000,dz=1000] ~500 ~6 ~500 4 2
-execute as @e[tag=deeper_dark.shockwave,type=pig] at @s positioned ~-500 ~-6 ~-500 run playsound minecraft:entity.warden.angry hostile @a[dy=12,dx=1000,dz=1000] ~500 ~6 ~500 1 2
+execute as @e[tag=deeper_dark.shockwave,type=pig] at @s positioned ~-500 ~-6 ~-500 run playsound minecraft:entity.warden.ambient hostile @a[dy=12,dx=1000,dz=1000] ~500 ~6 ~500 1 2
+execute as @e[tag=deeper_dark.shockwave,type=pig] at @s positioned ~-500 ~-6 ~-500 run playsound minecraft:entity.warden.angry hostile @a[dy=12,dx=1000,dz=1000] ~500 ~6 ~500 0.25 2
+execute as @e[tag=deeper_dark.shockwave,type=pig] at @s positioned ~-500 ~-6 ~-500 run playsound minecraft:block.sculk.charge hostile @a[dy=12,dx=1000,dz=1000] ~500 ~6 ~500 2 2
 execute as @e[tag=deeper_dark.shockwave,type=pig] at @s if entity @p[distance=0..16] if entity @s[nbt={HurtTime:9s}] run playsound minecraft:block.sculk_catalyst.break hostile @a ~ ~ ~ 1 0
 
 #light
@@ -124,6 +125,8 @@ tag @e[tag=deeper_dark.shockwave_target] remove deeper_dark.shockwave_target
 #lawnmower easter egg
 execute as @e[tag=deeper_dark.shockwave,type=pig] at @s run fill ^-2 ^-1 ^-2 ^2 ^-1 ^-2 minecraft:air replace minecraft:short_grass
 
+#replace shriekers
+execute as @e[tag=deeper_dark.shockwave,type=pig] at @s run function deeper_dark:shockwave/replace_shriekers/run
 
 
 
