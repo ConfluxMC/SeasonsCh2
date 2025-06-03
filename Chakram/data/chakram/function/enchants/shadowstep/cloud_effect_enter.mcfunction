@@ -1,0 +1,2 @@
+execute at @s run particle minecraft:dust_color_transition{from_color:[0.0,0.0,0.0],to_color:[0.0,0.4,0.5],scale:3} ~ ~1 ~ 0.5 0.5 0.5 0 30
+execute at @s run playsound minecraft:entity.breeze.land master @a ~ ~ ~ 2 0.6
