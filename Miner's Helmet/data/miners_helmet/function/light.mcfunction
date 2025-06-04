@@ -13,4 +13,4 @@ execute positioned as @s unless entity @a[nbt={Inventory:[{components:{"minecraf
 
 
 
-execute positioned as @s unless entity @a[nbt={Inventory:[{components:{"minecraft:custom_data":{miners_helmet.miners_helmet:1b}},Slot:103b}]},distance=..1] run kill @s
+execute positioned as @s unless entity @a[nbt={Inventory:[{components:{"minecraft:custom_data":{miners_helmet.miners_helmet:1b}},Slot:103b}]},distance=..1] run function miners_helmet:silent_kill
