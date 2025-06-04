@@ -62,5 +62,6 @@
     "minecraft:soul_wall_torch",
     "#minecraft:buttons",
     "minecraft:lever",
-    "#minecraft:wool_carpets"
+    "#minecraft:wool_carpets",
+    "minecraft:light"
 ]}
