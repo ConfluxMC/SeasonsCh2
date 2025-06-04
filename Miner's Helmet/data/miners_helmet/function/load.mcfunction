@@ -1,0 +1,1 @@
+function miners_helmet:loop

@@ -1,0 +1,11 @@
+{
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:location_check",
+      "predicate": {
+        "fluid": {
+          "fluids": "minecraft:flowing_water"
+        }
+      }
+    }
+  }
