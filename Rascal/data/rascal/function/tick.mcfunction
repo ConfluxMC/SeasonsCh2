@@ -1,16 +1,6 @@
+execute as @e[tag=rascal_body_minliv,tag=!no_invisibility_rascal_minliv] at @s run data merge entity @s {HandItems:[{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_1"]}}},{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_2"]}}}],ArmorItems:[{},{},{},{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_body"]}}}]}
 
-execute at @e[tag=rascal_eggs_spawn_minliv,type=minecraft:glow_item_frame] run function concept:sniffer_spawn/age0
-execute as @e[tag=rascal_eggs_spawn_minliv,type=minecraft:glow_item_frame] run kill @s
-
-
-execute as @e[tag=rascal_body_minliv,tag=!no_invisibility_rascal_minliv] at @s run data merge entity @s {ShowArms:1b,HandItems:[{id:"minecraft:glow_item_frame",Count:1b,tag:{CustomModelData:1000070}},{id:"minecraft:glow_item_frame",Count:1b,tag:{CustomModelData:1000071}}]}
-execute as @e[tag=rascal_body_minliv,tag=!no_invisibility_rascal_minliv] at @s run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:glow_item_frame",Count:1b,tag:{CustomModelData:1000069}}]}
-
-execute as @e[tag=rascal_body_minliv,tag=no_invisibility_rascal_minliv] at @s run data merge entity @s {ShowArms:1b,HandItems:[{id:"minecraft:air",Count:1b,tag:{CustomModelData:1000070}},{id:"minecraft:air",Count:1b,tag:{CustomModelData:1000071}}]}
-execute as @e[tag=rascal_body_minliv,tag=no_invisibility_rascal_minliv] at @s run data merge entity @s {ArmorItems:[{},{},{},{id:"minecraft:air",Count:1b,tag:{CustomModelData:1000069}}]}
-
-
-
+execute as @e[tag=rascal_body_minliv,tag=no_invisibility_rascal_minliv] at @s run data merge entity @s {ShowArms:1b,HandItems:[{id:"minecraft:air"},{id:"minecraft:air"}],ArmorItems:[{},{},{},{id:"minecraft:air"}]}
 
 
 
@@ -115,10 +105,3 @@ execute as @e[tag=go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv
 execute as @e[tag=go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 360 run tag @s remove go_2_rascal_minliv
 execute as @e[tag=go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 360 run tag @s remove go_1_rascal_minliv
 execute as @e[tag=go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 360 run tag @s remove go_3_rascal_minliv
-
-
-
-
-
-
-

@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "minecraft:block/cube_all",
 	"textures": {
-		"0": "custom/entity/rascal",
-		"particle": "custom/entity/rascal"
+		"0": "item/rascal",
+		"particle": "item/rascal"
 	},
 	"elements": [
 		{
@@ -37,19 +37,20 @@
 			"rotation": [90, 0, 0],
 			"translation": [-5.75, -1.25, -4.25],
 			"scale": [0.98, 0.98, 0.98]
-		},
-		"thirdperson_lefthand": {
-			"rotation": [90, 0, 0]
-		},
-		"head": {
-			"rotation": [0, 180, 0],
-			"translation": [0, -30.25, -0.25],
-			"scale": [1.63, 1.63, 1.63]
-		},
-		"fixed": {
-			"rotation": [-90, 0, 0],
-			"translation": [0, 0, -47],
-			"scale": [2.53, 2.53, 2.53]
 		}
-	}
+	},
+	"groups": [
+		{
+			"name": "hand_left",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0]
+		},
+		{
+			"name": "leg_right",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [1]
+		}
+	]
 }

@@ -1,6 +1,3 @@
-gamerule commandBlockOutput false
-tellraw @a {"text":"DataPack activated"}
-
 scoreboard objectives add invisibility_rascal_minliv dummy
 scoreboard objectives add invisibility_rascal_minliv1 dummy
 scoreboard objectives add ShowArms_2_rascal_minliv dummy
