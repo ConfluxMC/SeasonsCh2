@@ -17,8 +17,8 @@
                 "asset_id": "miners_helmet:miners_helmet"
             },
             "minecraft:max_damage": 200,
-            "minecraft:custom_name": "[{\"italic\":false,\"text\":\"Miners Helmet\"}]",
-            "minecraft:item_name": "[{\"italic\":false,\"text\":\"Miners Helmet\"}]",
+            "minecraft:custom_name": "[{\"italic\":false,\"text\":\"Miner's Helmet\"}]",
+            "minecraft:item_name": "[{\"italic\":false,\"text\":\"Miner's Helmet\"}]",
             "minecraft:item_model": "miners_helmet:miners_helmet",
             "minecraft:rarity": "common",
             "minecraft:damage": 0,
