@@ -6,6 +6,7 @@ Datapacks:
 		Cavernous: https://modrinth.com/datapack/cavernous
 		Deeper Dark: https://modrinth.com/datapack/deeper_dark?version=1.21.4&loader=datapack
 		Hopo Mineshafts: https://modrinth.com/datapack/hopo-better-mineshaft
+		Miner's Helmet: https://modrinth.com/datapack/mining-helmet
 Plugins:
 	Sanity: https://modrinth.com/plugin/sanitymc
 	MobTables: https://modrinth.com/plugin/mobtables (Modified: https://github.com/gnago/MobTables)
