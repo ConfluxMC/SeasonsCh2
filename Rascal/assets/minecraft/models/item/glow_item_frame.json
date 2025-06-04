@@ -1,0 +1,13 @@
+{
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "item/glow_item_frame"
+    },
+    "overrides": [
+                { "predicate": { "custom_model_data": 1000069 }, "model": "item/models/rascal_body_1"},
+                { "predicate": { "custom_model_data": 1000070 }, "model": "item/models/rascal_2"},
+                { "predicate": { "custom_model_data": 1000071 }, "model": "item/models/rascal_3"},
+                { "predicate": { "custom_model_data": 1000072 }, "model": "item/models/rascal_eggs_spawn"}
+
+    ]
+}
