@@ -1,36 +1,39 @@
-execute as @e[tag=rascal_body_minliv,tag=!no_invisibility_rascal_minliv] at @s run data merge entity @s {HandItems:[{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_1"]}}},{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_2"]}}}],ArmorItems:[{},{},{},{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_body"]}}}]}
+#If rascal is not tagged as invisible, give armor stand rascal cosmetics
+execute as @e[tag=rascal_body_minliv,tag=!rascal_is_hiding] at @s run data merge entity @s {HandItems:[{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_1"]}}},{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_2"]}}}],ArmorItems:[{},{},{},{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_body"]}}}]}
 
-execute as @e[tag=rascal_body_minliv,tag=no_invisibility_rascal_minliv] at @s run data merge entity @s {ShowArms:1b,HandItems:[{},{}],ArmorItems:[{},{},{},{}]}
+#If rascal is tagged as invisible, remove rascal cosmetics
+execute as @e[tag=rascal_body_minliv,tag=rascal_is_hiding] at @s run data merge entity @s {ShowArms:1b,HandItems:[{},{}],ArmorItems:[{},{},{},{}]}
 
 
+#
+scoreboard players add @e[tag=!rascal_is_hiding,tag=!rascal_can_hide,tag=rascal_body_minliv] invisibility_rascal_minliv 1
 
-scoreboard players add @e[tag=!no_invisibility_rascal_minliv,tag=!add_invisibility_rascal_minliv,tag=rascal_body_minliv] invisibility_rascal_minliv 1
-
-execute as @e[tag=rascal_body_minliv] at @s if score @s invisibility_rascal_minliv matches 600.. run tag @s add add_invisibility_rascal_minliv
+execute as @e[tag=rascal_body_minliv] at @s if score @s invisibility_rascal_minliv matches 600.. run tag @s add rascal_can_hide
 execute as @e[tag=rascal_body_minliv] at @s if score @s invisibility_rascal_minliv matches 600.. run scoreboard players reset @s invisibility_rascal_minliv
 
-execute at @e[tag=!no_invisibility_rascal_minliv,tag=add_invisibility_rascal_minliv,tag=rascal_body_minliv] if entity @e[distance=1..5,type=minecraft:player,gamemode=!spectator] run summon potion ~ ~ ~ {Item:{id:splash_potion,components:{potion_contents:{custom_effects:[{id:invisibility,duration:200,show_particles:0b,show_icon:0b}]}}}}
+execute at @e[tag=!rascal_is_hiding,tag=rascal_can_hide,tag=rascal_body_minliv] if entity @e[distance=1..5,type=minecraft:player,gamemode=!spectator] run function rascal:hide
 
-execute at @e[tag=add_invisibility_rascal_minliv,tag=!no_invisibility_rascal_minliv,tag=rascal_body_minliv] if entity @e[distance=1..5,type=minecraft:player,gamemode=!spectator] run tag @n[tag=!no_invisibility_rascal_minliv,tag=rascal_body_minliv] add no_invisibility_rascal_minliv
+tag @e[tag=rascal_is_hiding] remove rascal_can_hide
 
-tag @e[tag=no_invisibility_rascal_minliv] remove add_invisibility_rascal_minliv
+scoreboard players add @e[tag=rascal_is_hiding,tag=!rascal_can_hide,tag=rascal_body_minliv] invisibility_rascal_minliv1 1
 
-scoreboard players add @e[tag=no_invisibility_rascal_minliv,tag=!add_invisibility_rascal_minliv,tag=rascal_body_minliv] invisibility_rascal_minliv1 1
-
-execute as @e[tag=rascal_body_minliv] at @s if score @s invisibility_rascal_minliv1 matches 200.. run tag @s remove no_invisibility_rascal_minliv
+execute as @e[tag=rascal_body_minliv] at @s if score @s invisibility_rascal_minliv1 matches 400.. run tag @s remove rascal_is_hiding
 
 execute as @e[tag=rascal_body_minliv] at @s if score @s invisibility_rascal_minliv1 matches 1 run loot spawn ~ ~1 ~ loot rascal:rascal_gifts
 
-execute as @e[tag=rascal_body_minliv] at @s if score @s invisibility_rascal_minliv1 matches 200.. run scoreboard players reset @s invisibility_rascal_minliv1
+execute as @e[tag=rascal_body_minliv] at @s if score @s invisibility_rascal_minliv1 matches 400.. run scoreboard players reset @s invisibility_rascal_minliv1
 
 
 ### - Kill ocelot-less armor stands
-execute at @e[type=minecraft:armor_stand,tag=rascal_body_minliv] unless entity @e[distance=..1,type=minecraft:ocelot] run kill @n[type=minecraft:armor_stand,tag=rascal_body_minliv,tag=rascal_age0_minliv]
+execute as @e[type=minecraft:armor_stand,tag=rascal_body_minliv] run execute at @s unless entity @e[distance=..1,type=minecraft:ocelot,tag=rascal_minliv] run kill @s
 
 ### - Keep the armor stand at the ocelot
-execute at @e[tag=rascal_minliv] run teleport @n[distance=..1,type=minecraft:armor_stand,tag=rascal_body_minliv] @n[type=minecraft:ocelot]
+execute at @e[type=minecraft:ocelot,tag=rascal_minliv] run teleport @n[distance=..1,type=minecraft:armor_stand,tag=rascal_body_minliv] @n[type=minecraft:ocelot,tag=rascal_minliv]
 # Keep the ocelot distrusting so it runs away
-execute as @e[type=ocelot,tag=rascal_minliv] run data remove entity @s Trusting
+execute as @e[type=minecraft:ocelot,tag=rascal_minliv] run data remove entity @s Trusting
+# Negate base speed debuff when sprinting
+execute as @e[type=minecraft:ocelot,tag=rascal_minliv,predicate=rascal:is_sprinting] run attribute @s minecraft:movement_speed modifier add rascal_sprinting_speed_boost 0.1 add_value
+execute as @e[type=minecraft:ocelot,tag=rascal_minliv,predicate=!rascal:is_sprinting] run attribute @s minecraft:movement_speed modifier remove rascal_sprinting_speed_boost
 
 ############ - Анимация ног (Leg Animations)
 
