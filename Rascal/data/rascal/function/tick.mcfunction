@@ -9,9 +9,9 @@ scoreboard players add @e[tag=!no_invisibility_rascal_minliv,tag=!add_invisibili
 execute as @e[tag=rascal_body_minliv] at @s if score @s invisibility_rascal_minliv matches 600.. run tag @s add add_invisibility_rascal_minliv
 execute as @e[tag=rascal_body_minliv] at @s if score @s invisibility_rascal_minliv matches 600.. run scoreboard players reset @s invisibility_rascal_minliv
 
-execute at @e[tag=!no_invisibility_rascal_minliv,tag=add_invisibility_rascal_minliv,tag=rascal_body_minliv] if entity @e[distance=1..5,type=minecraft:player] run summon potion ~ ~ ~ {Item:{id:spalsh_potion,components:{potion_contents:{custom_effects:[{id:invisibility,duration:200}]}}}}
+execute at @e[tag=!no_invisibility_rascal_minliv,tag=add_invisibility_rascal_minliv,tag=rascal_body_minliv] if entity @e[distance=1..5,type=minecraft:player,gamemode=!spectator] run summon potion ~ ~ ~ {Item:{id:splash_potion,components:{potion_contents:{custom_effects:[{id:invisibility,duration:200,show_particles:0b,show_icon:0b}]}}}}
 
-execute at @e[tag=add_invisibility_rascal_minliv,tag=!no_invisibility_rascal_minliv,tag=rascal_body_minliv] if entity @e[distance=1..5,type=minecraft:player] run tag @n[tag=!no_invisibility_rascal_minliv,tag=rascal_body_minliv] add no_invisibility_rascal_minliv
+execute at @e[tag=add_invisibility_rascal_minliv,tag=!no_invisibility_rascal_minliv,tag=rascal_body_minliv] if entity @e[distance=1..5,type=minecraft:player,gamemode=!spectator] run tag @n[tag=!no_invisibility_rascal_minliv,tag=rascal_body_minliv] add no_invisibility_rascal_minliv
 
 tag @e[tag=no_invisibility_rascal_minliv] remove add_invisibility_rascal_minliv
 
@@ -29,6 +29,8 @@ execute at @e[type=minecraft:armor_stand,tag=rascal_body_minliv] unless entity @
 
 ### - Keep the armor stand at the ocelot
 execute at @e[tag=rascal_minliv] run teleport @n[distance=..1,type=minecraft:armor_stand,tag=rascal_body_minliv] @n[type=minecraft:ocelot]
+# Keep the ocelot distrusting so it runs away
+execute as @e[type=ocelot,tag=rascal_minliv] run data remove entity @s Trusting
 
 ############ - Анимация ног (Leg Animations)
 
