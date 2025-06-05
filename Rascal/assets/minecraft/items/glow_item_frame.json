@@ -1,0 +1,33 @@
+{
+	"model": {
+		"type": "select",
+		"property": "custom_model_data",
+		"fallback": {
+			"type": "model",
+			"model": "item/glow_item_frame"
+		},
+		"cases": [
+			{
+				"when": "rascal_1",
+				"model": {
+					"type": "model",
+					"model": "item/rascal_1"
+				}
+			},
+			{
+				"when": "rascal_2",
+				"model": {
+					"type": "model",
+					"model": "item/rascal_2"
+				}
+			},
+			{
+				"when": "rascal_body",
+				"model": {
+					"type": "model",
+					"model": "item/rascal_body"
+				}
+			}
+		]
+	}
+}
