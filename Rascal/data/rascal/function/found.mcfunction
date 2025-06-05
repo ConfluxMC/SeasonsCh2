@@ -14,4 +14,4 @@ scoreboard players add @s rascal_times_found 1
 execute as @s[scores={rascal_times_found=..2}] run playsound minecraft:entity.witch.celebrate neutral @a ~ ~ ~ 1 2
 
 # If found 3 times, give gift
-execute as @s[scores={rascal_times_found=3..}] run return run function rascal:give_gift
+execute as @s[scores={rascal_times_found=3..}] run function rascal:give_gift

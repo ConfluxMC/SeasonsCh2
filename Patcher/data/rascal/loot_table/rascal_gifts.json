@@ -82,6 +82,18 @@
               }
             }
           ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 40,
+              "options": "chakram:shadowstep"
+            }
+          ]
         }
       ]
     },

@@ -13,7 +13,7 @@ scoreboard players add @e[tag=rascal_stand,tag=!rascal_is_invis,tag=!rascal_can_
 execute as @e[tag=rascal_stand,scores={rascal_can_be_caught_cooldown=200..}] at @s run tag @s add rascal_can_be_caught
 execute as @e[tag=rascal_stand,scores={rascal_can_be_caught_cooldown=200..}] at @s run scoreboard players reset @s rascal_can_be_caught_cooldown
 
-execute as @e[tag=rascal_stand,tag=!rascal_is_invis,tag=rascal_can_be_caught] run execute at @s if entity @e[distance=1..5,type=minecraft:player,gamemode=!spectator] run function rascal:found
+execute as @e[tag=rascal_stand,tag=!rascal_is_invis,tag=rascal_can_be_caught] run execute at @s if entity @e[distance=1..4,type=minecraft:player,gamemode=!spectator] run function rascal:found
 
 scoreboard players add @e[tag=rascal_stand,tag=rascal_is_invis,tag=!rascal_can_be_caught] rascal_stay_invis_timer 1
 
