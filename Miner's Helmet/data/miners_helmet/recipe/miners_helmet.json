@@ -16,7 +16,7 @@
                 "slot": "head",
                 "asset_id": "miners_helmet:miners_helmet"
             },
-            "minecraft:max_damage": 200,
+            "minecraft:max_damage": 110,
             "minecraft:custom_name": "[{\"italic\":false,\"text\":\"Miner's Helmet\"}]",
             "minecraft:item_name": "[{\"italic\":false,\"text\":\"Miner's Helmet\"}]",
             "minecraft:item_model": "miners_helmet:miners_helmet",

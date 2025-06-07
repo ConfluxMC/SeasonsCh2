@@ -10,8 +10,13 @@ execute at @s run playsound minecraft:entity.breeze.land master @a ~ ~ ~ 2 0.6
 
 scoreboard players add @s rascal_times_found 1
 
-# If not final, play mischief sound
-execute as @s[scores={rascal_times_found=..2}] run playsound minecraft:entity.witch.celebrate neutral @a ~ ~ ~ 1 2
+# Times found is off by 1 due to initial encounter counting as a time found
+# If not final, play mischief sound, then teleport behind player and facing away
+execute as @s[scores={rascal_times_found=..3}] run tag @s add rascal_teleport_behind
+execute as @s[tag=rascal_teleport_behind] run tag @n[tag=rascal_ocelot] add rascal_teleport_behind
+execute as @s[tag=rascal_teleport_behind] run playsound minecraft:entity.witch.celebrate neutral @a ~ ~ ~ 1 2
+execute as @s[tag=rascal_teleport_behind] run execute as @n[type=player] at @s run execute if block ^ ^ ^-0.5 #rascal:rascal_safe_tp_destinations run tp @e[tag=rascal_teleport_behind] ^ ^ ^-0.3 ~180 ~
+tag @s[tag=rascal_teleport_behind] remove rascal_teleport_behind
 
 # If found 3 times, give gift
-execute as @s[scores={rascal_times_found=3..}] run function rascal:give_gift
+execute as @s[scores={rascal_times_found=4..}] run function rascal:give_gift
