@@ -8,7 +8,7 @@ execute as @e[tag=rascal_stand,tag=rascal_is_invis] at @s run data merge entity 
 #execute as @e[tag=!rascal_is_invis,scores={rascal_stay_invis_timer=..400}] run say failed invis
 
 # Cooldown between when the rascal stops being invisible and can be "caught" again
-#scoreboard players add @e[tag=rascal_stand,tag=!rascal_is_invis,tag=!rascal_can_be_caught] rascal_can_be_caught_cooldown 1
+scoreboard players add @e[tag=rascal_stand,tag=!rascal_is_invis,tag=!rascal_can_be_caught] rascal_can_be_caught_cooldown 1
 
 execute as @e[tag=rascal_stand,scores={rascal_can_be_caught_cooldown=300..}] at @s run tag @s add rascal_can_be_caught
 execute as @e[tag=rascal_stand,scores={rascal_can_be_caught_cooldown=300..}] at @s run scoreboard players reset @s rascal_can_be_caught_cooldown
@@ -50,7 +50,8 @@ execute as @e[tag=rascal_ocelot,nbt={leash:{}}] run function rascal:leashed
 tag @e[tag=rascal_leasher] remove rascal_leasher
 
 # Retaliate if hurt
-execute as @e[tag=rascal_ocelot,nbt={HurtTime:9s}] run function rascal:hurt
+execute as @e[tag=rascal_ocelot,nbt={HurtTime:9s}] at @s run function rascal:hurt
+execute as @e[tag=rascal_ocelot,nbt={HurtTime:6s}] at @s run function rascal:throw_defense_potion
 
 
 

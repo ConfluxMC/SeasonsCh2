@@ -1,4 +1,5 @@
-execute as @s on attacker run execute at @s run summon potion ~ ~ ~ {Tags:[rascal_defense_potion],Item:{id:splash_potion,count:1,components:{potion_contents:{custom_color:7471155,custom_effects:[{id:blindness,duration:120,show_particles:0b,show_icon:0b},{id:slowness,duration:120,show_particles:0b,show_icon:0b},{id:poison,duration:40,show_particles:0b,show_icon:0b}]}}}}
-data modify entity @n[type=minecraft:potion,tag=rascal_defense_potion] Owner set from entity @s UUID
+execute as @s on attacker run tag @s add rascal_attacker
+execute as @s run rotate @s facing entity @n[tag=rascal_attacker] feet
+execute as @s on attacker run tag @s remove rascal_attacker
 
-execute at @s run playsound minecraft:entity.witch.throw neutral @a ~ ~ ~
+execute at @s run playsound minecraft:entity.witch.hurt neutral @a ~ ~ ~ 1 1.6
