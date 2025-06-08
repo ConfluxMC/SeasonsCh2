@@ -1,5 +1,5 @@
 # Apply invisibility
-summon potion ~ ~ ~ {Item:{id:splash_potion,components:{potion_contents:{custom_effects:[{id:invisibility,duration:400,show_particles:0b,show_icon:0b},{id:speed,duration:400,show_particles:0b,show_icon:0b}]}}}}
+summon potion ~ ~ ~ {Item:{id:splash_potion,components:{potion_contents:{custom_color:13158600,custom_effects:[{id:invisibility,duration:400,show_particles:0b,show_icon:0b},{id:speed,duration:400,show_particles:0b,show_icon:0b}]}}}}
 
 # Tag to indicate to not apply invisibility again
 tag @s add rascal_is_invis
@@ -16,7 +16,7 @@ execute as @s[scores={rascal_times_found=..3}] run tag @s add rascal_teleport_be
 execute as @s[tag=rascal_teleport_behind] run tag @n[tag=rascal_ocelot] add rascal_teleport_behind
 execute as @s[tag=rascal_teleport_behind] run playsound minecraft:entity.witch.celebrate neutral @a ~ ~ ~ 1 2
 execute as @s[tag=rascal_teleport_behind] run execute as @n[type=player] at @s run execute if block ^ ^ ^-0.5 #rascal:rascal_safe_tp_destinations run tp @e[tag=rascal_teleport_behind] ^ ^ ^-0.3 ~180 ~
-tag @s[tag=rascal_teleport_behind] remove rascal_teleport_behind
+tag @e[tag=rascal_teleport_behind] remove rascal_teleport_behind
 
 # If found 3 times, give gift
 execute as @s[scores={rascal_times_found=4..}] run function rascal:give_gift

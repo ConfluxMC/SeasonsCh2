@@ -28,8 +28,8 @@ execute as @e[tag=rascal_stand] run execute at @s unless entity @e[tag=rascal_oc
 ### - Kill stand-less ocelots
 execute as @e[tag=rascal_ocelot] run execute at @s unless entity @e[tag=rascal_stand,distance=..2] run kill @s
 
-# Keep the ocelot distrusting so it runs away
-execute as @e[tag=rascal_ocelot] run data remove entity @s Trusting
+# Keep the ocelot distrusting so it runs away (For some reason this bugs out leashing like crazy?)
+#execute as @e[tag=rascal_ocelot,nbt={Trusting:{}}] run data remove entity @s Trusting
 
 # Negate base speed debuff when sprinting
 execute as @e[tag=rascal_ocelot,predicate=rascal:is_sprinting] run attribute @s minecraft:movement_speed modifier add rascal_sprinting_speed_boost 0.1 add_value
@@ -43,6 +43,14 @@ execute as @e[tag=rascal_ocelot] at @s if block ^ ^0.4 ^0.5 #minecraft:rails if 
 
 # Exit vehicles
 execute at @e[tag=rascal_stand,tag=!rascal_can_be_caught] as @n[tag=rascal_ocelot] on vehicle run damage @s 0.5 minecraft:mob_attack_no_aggro
+
+# Attack leashers
+execute as @e[tag=rascal_ocelot] on leasher run tag @s add rascal_leasher
+execute as @e[tag=rascal_ocelot,nbt={leash:{}}] run function rascal:leashed
+tag @e[tag=rascal_leasher] remove rascal_leasher
+
+# Retaliate if hurt
+execute as @e[tag=rascal_ocelot,nbt={HurtTime:9s}] run function rascal:hurt
 
 
 
