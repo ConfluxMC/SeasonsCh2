@@ -1,5 +1,5 @@
 # Give gift
-loot spawn ~ ~1 ~ loot rascal:rascal_gifts
+loot spawn ~ ~0.8 ~ loot rascal:rascal_gifts
 scoreboard players reset @s rascal_times_found
 
 # Play final sound

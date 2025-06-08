@@ -1,0 +1,10 @@
+execute at @s positioned ~0.5 ~ ~0.5 run function rascal:clear_obstacle
+execute at @s positioned ~0.5 ~ ~ run function rascal:clear_obstacle
+execute at @s positioned ~0.5 ~ ~-0.5 run function rascal:clear_obstacle
+execute at @s positioned ~-0.5 ~ ~0.5 run function rascal:clear_obstacle
+execute at @s positioned ~-0.5 ~ ~ run function rascal:clear_obstacle
+execute at @s positioned ~-0.5 ~ ~-0.5 run function rascal:clear_obstacle
+execute at @s positioned ~ ~ ~0.5 run function rascal:clear_obstacle
+execute at @s positioned ~ ~ ~ run function rascal:clear_obstacle
+execute at @s positioned ~ ~ ~-0.5 run function rascal:clear_obstacle
+execute at @s positioned ~ ~-1 ~ run function rascal:clear_obstacle
