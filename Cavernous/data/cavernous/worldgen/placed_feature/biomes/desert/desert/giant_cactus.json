@@ -48,7 +48,7 @@
 					0,
 					0
 				],
-				"tag": "cavernous:biomes/desert/desert_caves/ground"
+				"tag": "cavernous:biomes/desert/desert_ground"
 			},
 			"allowed_search_condition": {
 				"type": "minecraft:matching_blocks",
