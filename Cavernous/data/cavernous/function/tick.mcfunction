@@ -35,9 +35,3 @@ execute as @e[type=#cavernous:convertables,tag=!converted] run tag @s add unconv
 execute as @e[type=zombie,tag=unconverted] at @s run function cavernous:mob_conversion/zombie_main
 execute as @e[type=skeleton,tag=unconverted] at @s run function cavernous:mob_conversion/skeleton_main
 execute as @e[type=creeper,tag=unconverted] at @s run function cavernous:mob_conversion/creeper_main
-
-
-### Citadel Structure Stands
-
-execute as @e[type=armor_stand,tag=redstone_updater] at @s if loaded ~-25 ~-5 ~-25 if loaded ~25 ~20 ~25 run function cavernous:structure_stands/redstone_updater
-execute as @e[type=armor_stand,tag=biome_setter] at @s if loaded ~-25 ~-5 ~-25 if loaded ~25 ~20 ~25 run function cavernous:structure_stands/biome_setter

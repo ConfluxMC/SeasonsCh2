@@ -1,5 +1,7 @@
 {
     "values": [
+        "cavernous:myst/tick",
+        "cavernous:secrets/tick",
         "cavernous:tick",
         "geyser:tick_check"
     ]

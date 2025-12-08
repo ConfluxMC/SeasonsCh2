@@ -19,6 +19,12 @@
 			"type": "minecraft:weighted_state_provider",
 			"entries": [
 				{
+					"weight": 1,
+					"data": {
+						"Name": "minecraft:structure_void"
+					}
+				},
+				{
 					"weight": 3,
 					"data": {
 						"Name": "minecraft:basalt",
