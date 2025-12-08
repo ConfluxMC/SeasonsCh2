@@ -25,6 +25,7 @@ scoreboard objectives add chakram_loot_raycast_distance dummy
 scoreboard objectives add chakram_loot_reach dummy
 scoreboard objectives add chakram_loot_chance dummy
 scoreboard objectives add chakram_ricochet dummy
+scoreboard objectives add chakram_is_player dummy
 
 #timers
 scoreboard objectives add chakram_shadowstep_timer_sneak_speed dummy

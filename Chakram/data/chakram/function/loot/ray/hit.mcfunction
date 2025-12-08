@@ -13,4 +13,4 @@ execute store result score @s chakram_loot_chance run random value 1..100
 execute if score @s chakram_loot_chance matches ..13 run function chakram:loot/bouncing
 
 execute store result score @s chakram_loot_chance run random value 1..100
-execute if score @s chakram_loot_chance matches ..13 run function chakram:loot/richochet
+execute if score @s chakram_loot_chance matches ..13 run function chakram:loot/ricochet

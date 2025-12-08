@@ -1,5 +1,5 @@
 scoreboard players set @s chakram_enchantment_level 0
-execute store result score @s chakram_enchantment_level run data get entity @s item.components."minecraft:enchantments".levels."chakram:bouncing"
+execute store result score @s chakram_enchantment_level run data get entity @s item.components."minecraft:enchantments"."chakram:bouncing"
 execute if score @s chakram_enchantment_level matches 0 run return fail
 
 execute if score @s chakram_bouncing_count >= @s chakram_enchantment_level run return fail

@@ -3,6 +3,6 @@
   "entity": "this",
   "predicate": {
     "type": "minecraft:item_display",
-    "nbt": "{item:{components:{\"minecraft:enchantments\":{levels:{\"chakram:snare\":1}}}},Tags:[\"chakram_return\"]}"
+    "nbt": "{item:{components:{\"minecraft:enchantments\":{\"chakram:snare\":1}}},Tags:[\"chakram_return\"]}"
   }
 }
