@@ -1,2 +1,2 @@
-execute if block ~ ~ ~ #rascal:rascal_obstacles run loot spawn ~ ~0.4 ~ mine ~ ~ ~ minecraft:diamond_pickaxe[minecraft:enchantments={levels:{"minecraft:silk_touch":1}}]
+execute if block ~ ~ ~ #rascal:rascal_obstacles run loot spawn ~ ~0.4 ~ mine ~ ~ ~ minecraft:diamond_pickaxe[minecraft:enchantments={"minecraft:silk_touch":1}]
 execute if block ~ ~ ~ #rascal:rascal_obstacles run setblock ~ ~ ~ air
