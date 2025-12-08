@@ -3,6 +3,10 @@
         "#load:_private/init",
         {"id": "#load:pre_load", "required": false},
         {"id": "#load:load", "required": false},
-        {"id": "#load:post_load", "required": false}
+        {"id": "#load:post_load", "required": false},
+
+
+        "cavernous:init",
+        "geyser:load"
     ]
 }

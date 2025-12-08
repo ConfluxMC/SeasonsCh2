@@ -10,4 +10,3 @@ scoreboard objectives add thrower.check dummy
 
 scoreboard objectives add chain_arrow.timer dummy
 
-function cavernous:secrets/init

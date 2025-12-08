@@ -1,6 +1,8 @@
 {
-    "pack": {
-      "pack_format": 71,
-      "description": "World gen data pack by Interstella Studios"
-    }
+	"pack": {
+		"description": "World gen data pack by Interstella Studios",
+		"pack_format": 88,
+		"min_format": 88,
+		"max_format": 88
+	}
 }
