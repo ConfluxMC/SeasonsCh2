@@ -1,6 +1,6 @@
 {
     "name": "hopo:mobs/poison_skeleton",
-    "fallback": "hopo:mobs/poison_skeleton",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 100,

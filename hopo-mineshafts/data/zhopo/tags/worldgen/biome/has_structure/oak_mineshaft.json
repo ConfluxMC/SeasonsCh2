@@ -1,11 +1,10 @@
 {
     "replace": false,
     "values": [
-        "minecraft:plains",
-        {"id": "terralith:alpine_highlands", "required": false},
-        {"id": "terralith:blooming_plateau", "required": false},
-        {"id": "terralith:blooming_valley", "required": false},
-        {"id": "terralith:haze_mountain", "required": false},
+        "minecraft:forest",
+        {"id": "terralith:cave/andesite_caves", "required": false},
+        {"id": "terralith:cave/diorite_caves", "required": false},
+        {"id": "terralith:cave/granite_caves", "required": false},
         {"id": "regions_unexplored:alpha_grove", "required": false},
         {"id": "regions_unexplored:autumnal_maple_forest", "required": false},
         {"id": "regions_unexplored:barley_fields", "required": false},

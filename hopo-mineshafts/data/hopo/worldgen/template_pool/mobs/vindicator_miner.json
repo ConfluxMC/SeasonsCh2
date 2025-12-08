@@ -1,6 +1,6 @@
 {
     "name": "hopo:mobs/vindicator_miner",
-    "fallback": "hopo:mobs/vindicator_miner",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 100,

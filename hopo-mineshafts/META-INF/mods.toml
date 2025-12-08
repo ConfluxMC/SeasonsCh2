@@ -3,7 +3,7 @@ loaderVersion = "[1,)"
 license = "All Rights Reserved"
 [[mods]]
 modId = "hopo"
-version = "1.3.0"
+version = "1.3.4"
 displayName = "HopoBetterMineshaft"
 displayURL = "https://discord.gg/CZQthZJjPc"
 displayTest = "IGNORE_SERVER_VERSION"

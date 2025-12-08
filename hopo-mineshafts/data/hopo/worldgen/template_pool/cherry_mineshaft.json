@@ -1,6 +1,6 @@
 {
     "name": "hopo:cherry_mineshaft",
-    "fallback": "hopo:cherry_mineshaft",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 80,

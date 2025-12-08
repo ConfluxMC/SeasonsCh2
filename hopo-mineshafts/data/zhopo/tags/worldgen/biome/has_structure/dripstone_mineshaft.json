@@ -2,6 +2,7 @@
     "replace": false,
     "values": [
         "minecraft:dripstone_caves",
+        {"id": "terralith:cave/granite_caves", "required": false},
         {"id": "clifftree:caves", "required": false},
         {"id": "cavernous:lush_dripstone_caves", "required": false}
     ]

@@ -1,6 +1,6 @@
 {
     "name": "hopo:pale_mineshaft",
-    "fallback": "hopo:pale_mineshaft",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 80,

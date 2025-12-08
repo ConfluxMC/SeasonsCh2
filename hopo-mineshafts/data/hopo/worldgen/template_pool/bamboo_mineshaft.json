@@ -1,6 +1,6 @@
 {
     "name": "hopo:bamboo_mineshaft",
-    "fallback": "hopo:bamboo_mineshaft",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 80,

@@ -561,7 +561,7 @@
 					"input_predicate": {
 						"predicate_type": "minecraft:random_block_match",
 						"block": "minecraft:stone",
-						"probability": 0.024
+						"probability": 0.021
 					},
 					"output_state": {
 						"Name": "minecraft:suspicious_gravel",
@@ -594,7 +594,7 @@
 					"input_predicate": {
 						"predicate_type": "minecraft:random_block_match",
 						"block": "minecraft:birch_planks",
-						"probability": 0.005
+						"probability": 0.0001
 					},
 					"output_state": {
 						"Name": "minecraft:raw_iron_block"

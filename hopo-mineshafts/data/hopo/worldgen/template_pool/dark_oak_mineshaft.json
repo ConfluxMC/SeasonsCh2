@@ -1,6 +1,6 @@
 {
     "name": "hopo:dark_oak_mineshaft",
-    "fallback": "hopo:dark_oak_mineshaft",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 80,

@@ -154,3 +154,24 @@
 ♦ Best SICK thing, if mineshafts detect air above it, pillars will generate, kinda like how vanilla mineshafts do too! About time... this took weeks, it needed a total rewrite of the structures.
 ♦ Someone suggested on discord, and this is it, it's Downgrade time! Added alternative downloads to my old versions, 1.21 and 1.20, please enjoy! :D if you have any feedback, be free to dm me.
 ♦ And more! Some balance with how details generate, furnaces generating correctly, anvils being more rare and more, mineshafts should be more fun, more paths variations makes them less boring.
+--- 1.21.5 Compat and Maps --- 30/3/25
+♦ 1.21.5 compatibility 
+♦ New maps and rooms have been added
+♦ Each mineshaft will have a biome room, this one it's unique and changes depending on what mineshaft you are in. Example: Oak mineshaft could have a chance to generate a lush cave biome room, that will let you to that place, there are plenty of maps, and this also will make it easier to find all the mineshaft variants and get the Mineshafter advancement.
+♦ Added 2 new villagers' rooms, adding more gameplay, with their banners and loot.
+♦ Speaking about advancements the 'Who Built this?' Has been renamed to "So we back in the mine..." it's better the reference.
+♦ Fixed a bug when old banners looked with a different inconsistent color and bad format.
+♦ Tweaks of how rooms generate
+♦ Nerfed some raw ore blocks generated in the mineshaft randomly, it was nice but to OP 
+♦ Cherry, bamboo, and mud mineshafts have decreased the size, even tho they could look nice, after doing some tests, I don't feel it too 'vanilla friendly' the others are good tho.
+♦ Added better compatibility with terralith caves
+--- Chase the Skies Drop --- 23/06/25
+♦ Rarely logs will spam a warn message telling that some loot tables have not been loaded correctly, now this has been fixed
+♦ Thanks to mojang, in this new drop, rails finally generate correctly, thank god
+♦ 1.21.6 compatibility
+--- COOPER AGE TIME! --- 13/10/2025
+♦ Updated to 1.21.9 - 1.21.10
+♦ Certain mobs have been updated to have copper gear now, the chainmail armor didn't fit the vibe, copper looks great.
+♦ Copper room has been changed, adding a copper golem statue.
+--- Hotfix - Room with a command block --- 20/10/2025
+♦ The title say it all, i forgot to remove a command block in a room, accidents happens...

@@ -1,6 +1,6 @@
 {
     "name": "hopo:birch_mineshaft",
-    "fallback": "hopo:birch_mineshaft",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 80,

@@ -1,6 +1,6 @@
 {
     "name": "hopo:acacia_mineshaft",
-    "fallback": "hopo:acacia_mineshaft",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 80,

@@ -1,6 +1,6 @@
 {
     "name": "hopo:jungle_mineshaft",
-    "fallback": "hopo:jungle_mineshaft",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 80,
