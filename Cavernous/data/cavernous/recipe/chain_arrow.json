@@ -1,15 +1,33 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
-		"minecraft:chain",
-		"minecraft:chain",
-		"minecraft:chain",
-		"minecraft:chain",
-		"minecraft:chain",
-		"minecraft:chain",
-		"minecraft:chain",
-		"minecraft:chain",
-		"minecraft:arrow"
+		{
+			"item": "minecraft:chain"
+		},
+		{
+			"item": "minecraft:chain"
+		},
+		{
+			"item": "minecraft:chain"
+		},
+		{
+			"item": "minecraft:chain"
+		},
+		{
+			"item": "minecraft:chain"
+		},
+		{
+			"item": "minecraft:chain"
+		},
+		{
+			"item": "minecraft:chain"
+		},
+		{
+			"item": "minecraft:chain"
+		},
+		{
+			"item": "minecraft:arrow"
+		}
 	],
 	"result": {
 		"id": "minecraft:tipped_arrow",

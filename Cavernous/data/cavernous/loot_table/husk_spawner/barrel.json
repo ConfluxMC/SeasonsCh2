@@ -19,7 +19,6 @@
 							"destination": "cavernous:sandstone_temple",
 							"decoration": "red_x",
 							"zoom": 1,
-							"search_radius": 50,
 							"skip_existing_chunks": false
 						},
 						{
@@ -124,8 +123,8 @@
 						{
 							"function": "minecraft:set_count",
 							"count": {
-								"min": 2,
-								"max": 5
+								"min": 1,
+								"max": 3
 							}
 						}
 					]

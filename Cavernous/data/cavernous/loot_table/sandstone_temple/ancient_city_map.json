@@ -199,7 +199,7 @@
 					"functions": [
 						{
 							"function": "minecraft:exploration_map",
-							"destination": "cavernous:ancient_city",
+							"destination": "minecraft:ancient_city",
 							"decoration": "banner_cyan",
 							"zoom": 1,
 							"search_radius": 50,

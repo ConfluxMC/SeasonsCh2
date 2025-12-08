@@ -17,7 +17,7 @@
 			"absolute": -20
 		},
 		"max_inclusive": {
-			"below_top": 40
+			"above_bottom": 5
 		}
 	},
 	"max_distance_from_center": 55,
