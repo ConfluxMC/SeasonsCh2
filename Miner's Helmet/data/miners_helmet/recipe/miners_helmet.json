@@ -1,15 +1,10 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "cLc",
-        "c c"
-    ],
-    "key": {
-        "c": "minecraft:copper_ingot",
-        "L": "minecraft:lantern"
-    },
+    "type": "minecraft:smithing_transform",
+    "base": "minecraft:copper_helmet",
+    "addition": "#minecraft:lanterns",
+    "template": "minecraft:copper_ingot",
     "result": {
-        "id": "minecraft:leather_helmet",
+        "id": "minecraft:copper_helmet",
         "count": 1,
         "components": {
             "minecraft:equippable": {
@@ -17,26 +12,21 @@
                 "asset_id": "miners_helmet:miners_helmet"
             },
             "minecraft:max_damage": 110,
-            "minecraft:custom_name": "[{\"italic\":false,\"text\":\"Miner's Helmet\"}]",
-            "minecraft:item_name": "[{\"italic\":false,\"text\":\"Miner's Helmet\"}]",
+            "minecraft:custom_name": [
+                {
+                    "italic": false,
+                    "text": "Miner's Helmet"
+                }
+            ],
+            "minecraft:item_name": [
+                {
+                    "italic": false,
+                    "text": "Miner's Helmet"
+                }
+            ],
             "minecraft:item_model": "miners_helmet:miners_helmet",
             "minecraft:rarity": "common",
             "minecraft:damage": 0,
-            "minecraft:dyed_color": {
-                "rgb": 65793,
-                "show_in_tooltip": false
-            },
-            "minecraft:attribute_modifiers": {
-                "modifiers": [
-                    {
-                        "id": "armor",
-                        "type": "minecraft:armor",
-                        "amount": 1.5,
-                        "operation": "add_value",
-                        "slot": "head"
-                    }
-                ]
-            },
             "minecraft:custom_data": {
                 "miners_helmet.miners_helmet": 1
             }

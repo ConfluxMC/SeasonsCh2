@@ -1,21 +1,7 @@
 {
-    "pack": {
-        "pack_format": 61,
-        "description": "A dynamically lit mining helmet"
-    },
-    "datapackpy": {
-        "name": "Miners Helmet",
-        "id": "miners_helmet",
-        "version": "v1",
-        "assets": [
-            {
-                "id": "miners_helmet_assets",
-                "type": "standalone"
-            },
-            {
-                "id": "sygikalassets",
-                "type": "compiled"
-            }
-        ]
-    }
+	"pack": {
+		"description": "A dynamically lit mining helmet",
+		"min_format": 82,
+		"max_format": 94
+	}
 }
