@@ -5,15 +5,15 @@ execute as @a[scores={opening.playing=1,opening.timer=..0}] run scoreboard playe
 
 ### Structure Stands
 
-execute as @e[type=armor_stand,tag=redstone_updater] if loaded ~-25 ~-5 ~-25 if loaded ~25 ~20 ~25 at @s run function cavernous:secrets/structure_stands/redstone_updater
-execute as @e[type=armor_stand,tag=biome_setter] if loaded ~-25 ~-5 ~-25 if loaded ~25 ~20 ~25 at @s run function cavernous:secrets/structure_stands/biome_setter
+execute as @e[type=armor_stand,tag=redstone_updater] at @s if loaded ~-25 ~-5 ~-25 if loaded ~25 ~20 ~25 run function cavernous:secrets/structure_stands/redstone_updater
+execute as @e[type=armor_stand,tag=biome_setter] at @s if loaded ~-25 ~-5 ~-25 if loaded ~25 ~20 ~25 run function cavernous:secrets/structure_stands/biome_setter
 
-execute as @e[type=armor_stand,tag=gate_center] if loaded ~ ~ ~ at @s run function cavernous:secrets/structure_stands/gate_center
-execute as @e[type=armor_stand,tag=remnant] if loaded ~ ~ ~ at @s run function cavernous:secrets/structure_stands/remnant
-execute as @e[type=interaction,tag=remnant] if loaded ~ ~ ~ at @s run function cavernous:secrets/structure_stands/remnant_interaction
-execute as @e[type=armor_stand,tag=prison] if loaded ~ ~ ~ at @s run function cavernous:secrets/structure_stands/prison_entrance
-execute as @e[type=armor_stand,tag=study] if loaded ~ ~ ~ at @s run function cavernous:secrets/structure_stands/study
-execute as @e[type=armor_stand,tag=draining] if loaded ~ ~ ~ at @s run function cavernous:secrets/structure_stands/draining
+execute as @e[type=armor_stand,tag=gate_center] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/gate_center
+execute as @e[type=armor_stand,tag=remnant] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/remnant
+execute as @e[type=interaction,tag=remnant] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/remnant_interaction
+execute as @e[type=armor_stand,tag=prison] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/prison_entrance
+execute as @e[type=armor_stand,tag=study] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/study
+execute as @e[type=armor_stand,tag=draining] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/draining
 
 ### Curse
 
