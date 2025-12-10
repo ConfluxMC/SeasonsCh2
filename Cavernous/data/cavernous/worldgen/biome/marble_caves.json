@@ -77,6 +77,12 @@
         "weight": 10,
         "minCount": 4,
         "maxCount": 6
+      },
+      {
+        "type": "minecraft:nautilus",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 5
       }
     ],
     "water_ambient": [],

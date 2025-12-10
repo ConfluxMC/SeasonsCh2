@@ -1,4 +1,7 @@
 {
+  "attributes": {
+    "minecraft:gameplay/snow_golem_melts": true
+  },
   "temperature": 0.8,
   "downfall": 0.4,
   "has_precipitation": true,
@@ -88,6 +91,12 @@
         "weight": 10,
         "minCount": 4,
         "maxCount": 6
+      },
+      {
+        "type": "minecraft:nautilus",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 5
       }
     ],
     "water_ambient": [],
