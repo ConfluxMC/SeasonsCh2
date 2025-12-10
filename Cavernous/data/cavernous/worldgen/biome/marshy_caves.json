@@ -48,7 +48,7 @@
       },
       {
         "type": "minecraft:zombie",
-        "weight": 95,
+        "weight": 90,
         "minCount": 4,
         "maxCount": 4
       },
@@ -59,7 +59,13 @@
         "maxCount": 1
       },
       {
-        "type": "minecraft:skeleton",
+        "type": "minecraft:zombie_horse",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 10
+      },
+      {
+        "type": "minecraft:bogged",
         "weight": 100,
         "minCount": 4,
         "maxCount": 4
