@@ -1,0 +1,1 @@
+execute if entity @s[predicate=cn:iscloud] at @s run function cn:damage
