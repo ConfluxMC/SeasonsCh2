@@ -1,21 +1,21 @@
 {
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
-		"minecraft:iron_chain",
-		"minecraft:iron_chain",
-		"minecraft:iron_chain",
-		"minecraft:iron_chain",
-		"minecraft:iron_chain",
-		"minecraft:iron_chain",
-		"minecraft:iron_chain",
-		"minecraft:iron_chain",
+		"minecraft:waxed_copper_chain",
+		"minecraft:waxed_copper_chain",
+		"minecraft:waxed_copper_chain",
+		"minecraft:waxed_copper_chain",
+		"minecraft:waxed_copper_chain",
+		"minecraft:waxed_copper_chain",
+		"minecraft:waxed_copper_chain",
+		"minecraft:waxed_copper_chain",
 		"minecraft:arrow"
 	],
 	"result": {
 		"id": "minecraft:tipped_arrow",
 		"components": {
 			"custom_name": {
-				"text": "Chain Arrow",
+				"text": "Waxed Copper Chain Arrow",
 				"type": "text",
 				"italic": false
 			},
@@ -27,7 +27,7 @@
 					"text": "rope."
 				}
 			],
-			"potion_contents": {"custom_color": 4080476},
+			"potion_contents": {"custom_color": 4080478},
 			"tooltip_display": {"hidden_components":["potion_contents"]}
 		}
 	}

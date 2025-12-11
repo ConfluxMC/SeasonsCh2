@@ -7,8 +7,13 @@
 	"result": {
 		"id": "minecraft:tipped_arrow",
 		"components": {
-			"item_name": "[{\"text\":\"Torch Arrow\",\"italic\":false}]",
-			"potion_contents": {"custom_color": 16763190}
+			"minecraft:custom_name": {
+				"text": "Torch Arrow",
+				"type": "text",
+				"italic": false
+			},
+			"potion_contents": {"custom_color": 16763190},
+			"tooltip_display": {"hidden_components":["potion_contents"]}
 		}
 	}
 }

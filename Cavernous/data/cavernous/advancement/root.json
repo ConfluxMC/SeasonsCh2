@@ -9,7 +9,7 @@
       "description": {
         "text": "Cavernous advancements"
       },
-      "background": "minecraft:textures/block/deepslate.png",
+      "background": "minecraft:block/deepslate",
       "frame": "task",
       "show_toast": false,
       "announce_to_chat": false,
