@@ -13,6 +13,18 @@
 				{
 					"weight": 4,
 					"data": {
+						"Name": "minecraft:bush"
+					}
+				},
+				{
+					"weight": 3,
+					"data": {
+						"Name": "minecraft:firefly_bush"
+					}
+				},
+				{
+					"weight": 4,
+					"data": {
 						"Name": "minecraft:fern"
 					}
 				},

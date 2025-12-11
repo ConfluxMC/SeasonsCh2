@@ -103,14 +103,28 @@
         "maxCount": 6
       }
     ],
-    "water_ambient": [],
+    "water_ambient": [
+      {
+        "type": "minecraft:pufferfish",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 15
+      },
+      {
+        "type": "minecraft:tropical_fish",
+        "maxCount": 8,
+        "minCount": 8,
+        "weight": 25
+      }
+    ],
     "water_creature": [
       {
         "type": "minecraft:nautilus",
         "maxCount": 1,
         "minCount": 1,
         "weight": 5
-      }]
+      }
+    ]
   },
   "spawn_costs": {},
   "carvers": [

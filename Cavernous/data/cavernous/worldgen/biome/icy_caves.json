@@ -72,7 +72,20 @@
         "maxCount": 6
       }
     ],
-    "water_ambient": [],
+    "water_ambient": [
+      {
+        "type": "minecraft:salmon",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 10
+      },
+      {
+        "type": "minecraft:cod",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 15
+      }
+    ],
     "water_creature": []
   },
   "spawn_costs": {},
