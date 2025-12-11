@@ -179,7 +179,8 @@
       "cavernous:biomes/lush/tropical/ground_patch",
       "cavernous:biomes/lush/tropical/coarse_dirt_patch",
       "cavernous:biomes/lush/tropical/bamboo_patch",
-      "minecraft:glow_lichen"
+      "minecraft:glow_lichen",
+      "cavernous:biomes/lush/patch_melon"
     ],
     [
       "minecraft:freeze_top_layer",

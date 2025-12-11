@@ -179,7 +179,8 @@
       "cavernous:biomes/lush/glowshroom/mud_patch",
       "cavernous:biomes/lush/glowshroom/mud_pool",
       "cavernous:biomes/lush/glowshroom/ground_patch",
-      "minecraft:glow_lichen"
+      "minecraft:glow_lichen",
+      "cavernous:biomes/lush/patch_pumpkin"
     ],
     [
       "minecraft:freeze_top_layer",

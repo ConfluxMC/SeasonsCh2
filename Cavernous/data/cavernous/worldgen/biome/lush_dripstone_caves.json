@@ -172,7 +172,8 @@
 			"minecraft:lush_caves_clay",
 			"minecraft:lush_caves_vegetation",
 			"minecraft:rooted_azalea_tree",
-			"minecraft:spore_blossom"
+			"minecraft:spore_blossom",
+			"cavernous:biomes/lush/patch_melon"
 		],
 		[
 			"minecraft:freeze_top_layer",

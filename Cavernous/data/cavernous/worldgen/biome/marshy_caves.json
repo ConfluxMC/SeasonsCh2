@@ -188,7 +188,8 @@
       "cavernous:biomes/lush/marshy/ground_patch",
       "cavernous:biomes/lush/marshy/flower_patch",
       "cavernous:biomes/lush/marshy/grass_patch",
-      "minecraft:glow_lichen"
+      "minecraft:glow_lichen",
+      "cavernous:biomes/lush/patch_pumpkin"
     ],
     [
       "minecraft:freeze_top_layer",

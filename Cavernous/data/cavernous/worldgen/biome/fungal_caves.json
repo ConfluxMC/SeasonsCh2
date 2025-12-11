@@ -182,7 +182,8 @@
       "cavernous:biomes/lush/fungal/mushrooms/mini",
       "cavernous:biomes/lush/fungal/ground_patch",
       "cavernous:biomes/lush/fungal/flower_patch",
-      "minecraft:glow_lichen"
+      "minecraft:glow_lichen",
+      "cavernous:biomes/lush/patch_pumpkin"
     ],
     [
       "minecraft:freeze_top_layer",
