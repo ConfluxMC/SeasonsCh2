@@ -1,6 +1,6 @@
-execute as @e[type=spider,predicate=webslingers:wants_to_websling,tag=!webslinger_slung] at @s run function webslingers:websling
-execute as @e[type=spider,predicate=webslingers:target_webbed] at @s run effect give @s minecraft:speed 1 2 true
-execute as @e[type=spider,predicate=webslingers:target_webbed] at @s run effect give @s minecraft:weaving 2 0 false
+execute as @e[predicate=webslingers:eligible_webslinger,predicate=webslingers:wants_to_websling,tag=!webslinger_slung] at @s run function webslingers:websling
+execute as @e[predicate=webslingers:eligible_webslinger,predicate=webslingers:target_webbed] at @s run effect give @s minecraft:speed 1 2 true
+execute as @e[predicate=webslingers:eligible_webslinger,predicate=webslingers:target_webbed] at @s run effect give @s minecraft:weaving 2 0 false
 
 
 execute as @e[tag=webslinger_slung,scores={webslinger_cooldown=0}] run execute as @s at @s run playsound minecraft:entity.spider.ambient hostile @a ~ ~ ~ 1 2
