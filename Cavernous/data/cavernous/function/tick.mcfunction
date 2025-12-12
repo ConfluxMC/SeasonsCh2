@@ -27,6 +27,10 @@ scoreboard players set @a broke.spore_blossom 0
     #Chain arrow
     execute as @e[type=arrow,nbt={inGround:1b,pickup:1b,item:{components:{"minecraft:potion_contents":{custom_color:4080476}}}}] at @s run function cavernous:items/chain_arrow/tick
     execute as @e[type=arrow,nbt={inGround:1b,item:{components:{"minecraft:potion_contents":{custom_color:4080476}}}},scores={chain_arrow.timer=1..}] at @s run function cavernous:items/chain_arrow/tick
+    execute as @e[type=arrow,nbt={inGround:1b,pickup:1b,item:{components:{"minecraft:potion_contents":{custom_color:4080477}}}}] at @s run function cavernous:items/copper_chain_arrow/tick
+    execute as @e[type=arrow,nbt={inGround:1b,item:{components:{"minecraft:potion_contents":{custom_color:4080477}}}},scores={chain_arrow.timer=1..}] at @s run function cavernous:items/copper_chain_arrow/tick
+    execute as @e[type=arrow,nbt={inGround:1b,pickup:1b,item:{components:{"minecraft:potion_contents":{custom_color:4080478}}}}] at @s run function cavernous:items/waxed_copper_chain_arrow/tick
+    execute as @e[type=arrow,nbt={inGround:1b,item:{components:{"minecraft:potion_contents":{custom_color:4080478}}}},scores={chain_arrow.timer=1..}] at @s run function cavernous:items/waxed_copper_chain_arrow/tick
 
 ### NEW CONVERSION
 

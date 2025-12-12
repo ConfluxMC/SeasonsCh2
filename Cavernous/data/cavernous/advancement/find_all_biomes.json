@@ -15,7 +15,7 @@
 		"announce_to_chat": true,
 		"hidden": false
 	},
-	"parent": "cavernous:getting_to_the_point",
+	"parent": "cavernous:breaking_ground",
 	"criteria": {
 		"arid_caves": {
 			"trigger": "minecraft:location",
@@ -33,16 +33,6 @@
 				"player": {
 					"location": {
 						"biomes": "cavernous:caldera_caves"
-					}
-				}
-			}
-		},
-		"caves": {
-			"trigger": "minecraft:location",
-			"conditions": {
-				"player": {
-					"location": {
-						"biomes": "cavernous:caves"
 					}
 				}
 			}

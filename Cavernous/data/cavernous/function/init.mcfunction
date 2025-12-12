@@ -1,5 +1,5 @@
 
-gamerule commandBlockOutput false
+gamerule command_block_output false
 
 scoreboard objectives add joinmsg minecraft.custom:minecraft.play_time
 scoreboard objectives add has_seen_tellraw dummy

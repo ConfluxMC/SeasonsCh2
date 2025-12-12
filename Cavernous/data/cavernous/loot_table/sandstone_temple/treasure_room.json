@@ -173,7 +173,11 @@
 							"function": "minecraft:set_components",
 							"components": {
 								"potion_contents": {"custom_color": 5855577},
-								"custom_name": "{\"text\":\"Explosive Arrow\",\"italic\":false}"
+								"custom_name": {
+									"text": "Explosive Arrow",
+									"italic": false
+								},
+								"tooltip_display": {"hidden_components":["potion_contents"]}
 							}
 						},
 						{

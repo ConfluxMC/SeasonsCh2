@@ -1,4 +1,7 @@
 {
+  "attributes": {
+    "minecraft:gameplay/snow_golem_melts": true
+  },
   "temperature": 2,
   "downfall": 0,
   "has_precipitation": false,
@@ -64,7 +67,7 @@
         "maxCount": 4
       },
       {
-        "type": "minecraft:creeper",
+        "type": "minecraft:magma_cube",
         "weight": 100,
         "minCount": 4,
         "maxCount": 4
@@ -82,6 +85,12 @@
         "weight": 10,
         "minCount": 4,
         "maxCount": 6
+      },
+      {
+        "type": "minecraft:nautilus",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 5
       }
     ],
     "water_ambient": [],

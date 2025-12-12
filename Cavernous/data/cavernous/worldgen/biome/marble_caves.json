@@ -77,9 +77,22 @@
         "weight": 10,
         "minCount": 4,
         "maxCount": 6
+      },
+      {
+        "type": "minecraft:nautilus",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 5
       }
     ],
-    "water_ambient": [],
+    "water_ambient": [
+      {
+        "type": "minecraft:cod",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 15
+      }
+    ],
     "water_creature": []
   },
   "spawn_costs": {},

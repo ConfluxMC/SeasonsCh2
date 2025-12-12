@@ -96,9 +96,28 @@
         "weight": 10,
         "minCount": 4,
         "maxCount": 6
+      },
+      {
+        "type": "minecraft:nautilus",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 5
       }
     ],
-    "water_ambient": [],
+    "water_ambient": [
+      {
+        "type": "minecraft:pufferfish",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 15
+      },
+      {
+        "type": "minecraft:tropical_fish",
+        "maxCount": 8,
+        "minCount": 8,
+        "weight": 25
+      }
+    ],
     "water_creature": []
   },
   "spawn_costs": {},
@@ -163,7 +182,8 @@
       "cavernous:biomes/lush/fungal/mushrooms/mini",
       "cavernous:biomes/lush/fungal/ground_patch",
       "cavernous:biomes/lush/fungal/flower_patch",
-      "minecraft:glow_lichen"
+      "minecraft:glow_lichen",
+      "cavernous:biomes/lush/patch_pumpkin"
     ],
     [
       "minecraft:freeze_top_layer",
