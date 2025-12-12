@@ -1,5 +1,6 @@
 {
   "values": [
-    "cn:loaded"
+    "cn:loaded",
+    "webslingers:load"
    ]
 }
