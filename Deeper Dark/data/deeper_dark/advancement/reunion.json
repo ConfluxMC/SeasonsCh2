@@ -7,11 +7,13 @@
       }
     },
     "title": {
-      "text": "Reunion"
-    },
+    "translate": "advancement.deeper_dark.reunion.title",
+    "fallback": "Reunion"
+},
     "description": {
-      "text": "Collect The Anticatalyst"
-    },
+    "translate": "advancement.deeper_dark.reunion.desc",
+    "fallback": "Collect The Anticatalyst"
+},
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
@@ -26,7 +28,7 @@
         "items": [
           {
             "items": [
-              "minecraft:disc_fragment_5"
+              "minecraft:music_disc_5"
             ],
             "components": {
               "minecraft:custom_data": {"deeper_dark_anticatalyst":1}

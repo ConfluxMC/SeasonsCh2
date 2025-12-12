@@ -1,6 +1,7 @@
 {
   "description": {
-    "text": "Undermine",
+    "translate": "enchantment.deeper_dark.undermine",
+    "fallback": "Undermine",
     "color": "#007A8A"
   },
   "supported_items": "#minecraft:enchantable/mining",
@@ -8,11 +9,11 @@
   "max_level": 5,
   "min_cost": {
     "base": 25,
-    "per_level_above_first": 15
+    "per_level_above_first": 12
   },
   "max_cost": {
     "base": 75,
-    "per_level_above_first": 15
+    "per_level_above_first": 12
   },
   "anvil_cost": 4,
   "slots": [
