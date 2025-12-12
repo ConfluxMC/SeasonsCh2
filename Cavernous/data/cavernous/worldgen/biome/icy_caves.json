@@ -41,18 +41,18 @@
     "monster": [
       {
         "type": "minecraft:skeleton",
-        "weight": 100,
+        "weight": 25,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:stray",
+        "weight": 75,
         "minCount": 4,
         "maxCount": 4
       },
       {
         "type": "minecraft:creeper",
-        "weight": 100,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:slime",
         "weight": 100,
         "minCount": 4,
         "maxCount": 4
@@ -70,6 +70,12 @@
         "weight": 10,
         "minCount": 4,
         "maxCount": 6
+      },
+      {
+        "type": "minecraft:nautilus",
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 1
       }
     ],
     "water_ambient": [
