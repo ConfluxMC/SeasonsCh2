@@ -11,14 +11,19 @@ execute store result score y deeper_dark.var run data get entity @s Pos[1]
 execute store result score z deeper_dark.var run data get entity @s Pos[2]
 execute as @s at @s run item modify entity @s weapon.mainhand deeper_dark:key
 
-#tp
-execute as @s[predicate=!deeper_dark:holding_lodestone_compass_checkpoint,predicate=!deeper_dark:holding_recovery_compass_checkpoint] run function deeper_dark:tp_in_without_compass
-execute as @s[predicate=deeper_dark:holding_lodestone_compass_checkpoint] run function deeper_dark:checkpoints/run_lodestone
-execute as @s[predicate=deeper_dark:holding_recovery_compass_checkpoint] run function deeper_dark:checkpoints/run_recovery_compass
-
-
+function deeper_dark:valid_spawn/setup
 tag @s add deeper_dark.tp_cooldown
 advancement grant @s only deeper_dark:hint
+
+#tp
+execute in deeper_dark:deeper_dark run function deeper_dark:teleport with storage deeper_dark:data lastfoundstructure2
+execute at @s run spreadplayers ~ ~ 0 10 under 63 false @s[predicate=deeper_dark:in_deeper_dark]
+
+#saftey
+execute at @s run fill ~ ~ ~ ~ ~1 ~ minecraft:air destroy
+execute at @s run fill ~-10 ~-10 ~-10 ~10 ~10 ~10 minecraft:air replace minecraft:sculk_sensor
+execute at @s run fill ~-10 ~-10 ~-10 ~10 ~10 ~10 minecraft:air replace minecraft:calibrated_sculk_sensor
+execute at @s run fill ~-10 ~-10 ~-10 ~10 ~10 ~10 minecraft:air replace minecraft:sculk_shrieker
 
 #sound
 playsound minecraft:entity.warden.sonic_boom ambient @s ~ ~ ~ 1 0 1

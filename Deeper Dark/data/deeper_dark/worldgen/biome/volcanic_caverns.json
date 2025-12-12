@@ -36,14 +36,7 @@
   "spawners": {
     "ambient": [],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:strider",
-        "weight": 100,
-        "minCount": 1,
-        "maxCount": 3
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [],
     "underground_water_creature": [],
