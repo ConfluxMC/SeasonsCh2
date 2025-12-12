@@ -37,7 +37,7 @@ execute in deeper_dark:deeper_dark if entity @e[distance=0..] run function deepe
 
 #items
 scoreboard players add @e[tag=deeper_dark.sonicattack] deeper_dark.sonicattack 1
-execute as @a[scores={deeper_dark.sonicattack=1..99}] unless entity @s[x_rotation=70..90,predicate=deeper_dark:is_sneaking] run title @s actionbar {"text":"Canceled","color":"#007A8A"}
+execute as @a[scores={deeper_dark.sonicattack=1..99}] unless entity @s[x_rotation=70..90,predicate=deeper_dark:is_sneaking] run title @s actionbar {"translate":"enchantment.deeper_dark.sonic_boom.canceled","fallback":"Canceled","color":"#007A8A"}
 execute as @a[predicate=!deeper_dark:enchantment_sonic_boom] run scoreboard players set @s deeper_dark.sonicattack 0
 execute as @a[scores={deeper_dark.sonicattack=0..99}] unless score @s deeper_dark.sonicattack matches 100..999 unless entity @s[x_rotation=70..90] run scoreboard players set @s deeper_dark.sonicattack 0
 execute as @a[scores={deeper_dark.sonicattack=0..99},predicate=!deeper_dark:is_sneaking] unless score @s deeper_dark.sonicattack matches 100.. run scoreboard players set @s deeper_dark.sonicattack 0
@@ -66,8 +66,8 @@ tag @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] 
 
 execute at @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] run playsound minecraft:entity.warden.sonic_boom ambient @a ~ ~ ~ 2 1
 execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] run scoreboard players set @s deeper_dark.sonicattack -60
-execute as @a[scores={deeper_dark.sonicattack=..-2}] run title @s actionbar {"text":"Cooldown","color":"#007A8A"}
-execute as @a[scores={deeper_dark.sonicattack=-1}] run title @s actionbar {"text":"Ready","color":"#007A8A"}
+execute as @a[scores={deeper_dark.sonicattack=..-2}] run title @s actionbar {"translate":"enchantment.deeper_dark.sonic_boom.cooldown","fallback":"Cooldown","color":"#007A8A"}
+execute as @a[scores={deeper_dark.sonicattack=-1}] run title @s actionbar {"translate":"enchantment.deeper_dark.sonic_boom.ready","fallback":"Ready","color":"#007A8A"}
 scoreboard players add @a[scores={deeper_dark.sonicattack=..-1}] deeper_dark.sonicattack 1
 
 execute as @e[predicate=deeper_dark:enchantment_resonate,predicate=deeper_dark:living] if data entity @s {HurtTime:1s} at @s on attacker run function deeper_dark:armor/resonate_item
@@ -118,7 +118,7 @@ advancement revoke @a only deeper_dark:functions/using_shield
 #sculk conversion
 execute as @e[tag=deeper_dark.sculk_converter] at @s if score @s deeper_dark.sculk_converter.conversion_time matches 1.. run function deeper_dark:sculk_converter/sculk_conversion_animation
 execute as @e[tag=deeper_dark.sculk_converter] at @s if score @s deeper_dark.sculk_converter.conversion_time matches 1 run function deeper_dark:sculk_converter/sculk_conversion
-execute if score Game deeper_dark.gamerule.disable_sculk_conversion matches 0 as @e[type=item,nbt={Item:{id:"minecraft:disc_fragment_5",components:{"minecraft:custom_data":{deeper_dark_altar_fragment:1b}}}}] at @s if block ~ ~-.1 ~ minecraft:sculk_catalyst positioned ~ ~-.1 ~ align xyz positioned ~.5 ~.5 ~.5 run function deeper_dark:sculk_converter/setup
+execute if score Game deeper_dark.gamerule.disable_sculk_conversion matches 0 as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{deeper_dark_altar_fragment:1b}}}}] at @s if block ~ ~-.1 ~ minecraft:sculk_catalyst positioned ~ ~-.1 ~ align xyz positioned ~.5 ~.5 ~.5 run function deeper_dark:sculk_converter/setup
 execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ unless block ~ ~ ~ minecraft:sculk_catalyst if data entity @s data.Item run function deeper_dark:sculk_converter/hitbox_remove
 execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ positioned ~ ~3 ~1 if block ~ ~ ~ minecraft:hopper[enabled=true,facing=north] unless data entity @s data.Item run function deeper_dark:sculk_converter/hopper_place
 execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ positioned ~-1 ~3 ~ if block ~ ~ ~ minecraft:hopper[enabled=true,facing=east] unless data entity @s data.Item run function deeper_dark:sculk_converter/hopper_place
@@ -138,7 +138,8 @@ execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ rotated 315
 execute as @e[tag=deeper_dark.sculk_converter] at @s if score @s deeper_dark.sculk_converter.conversion_time matches 1.. if score @s deeper_dark.sculk_converter.flames < @s deeper_dark.sculk_converter.flame_cost run scoreboard players set @s deeper_dark.sculk_converter.conversion_time 0
 execute if score Game deeper_dark.gamerule.disable_sculk_conversion matches 0 as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ if data block ~ ~ ~ cursors[0].charge run function deeper_dark:sculk_converter/charge
 execute as @e[tag=deeper_dark.sculk_converter] at @s positioned ~ ~1.5 ~ run function deeper_dark:sculk_converter/display_xp
-execute as @e[tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction positioned ~ ~-2.6 ~ if data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item unless score @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] deeper_dark.sculk_converter.conversion_time matches 1.. run function deeper_dark:sculk_converter/hitbox_remove
+execute as @e[tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction positioned ~ ~-2.6 ~ if data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_remove
+execute as @e[tag=deeper_dark.sculk_converter_hitbox] at @s if block ~ ~ ~ moving_piston positioned ~ ~-2.6 ~ if data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_remove
 execute as @e[tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction positioned ~ ~-2.6 ~ unless data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_place
 execute as @e[tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction run data remove entity @s interaction
 execute as @e[tag=deeper_dark.sculk_converter_item] at @s positioned ~ ~-3 ~ run data modify entity @s item set from entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item
@@ -181,19 +182,19 @@ execute as @e[tag=deeper_dark.silent_despawn,type=!player] run kill @s
 
 
 #creative items
-tellraw @a[scores={deeper_dark.items=1}] [{"text":"\nItems From ","hoverEvent":{"action":"show_text","value":[{"text":"Click on an item to get it"}]}},{"text":"Deeper Dark","color":"#007A8A","hoverEvent":{"action":"show_text","value":[{"text":"Go To Website"}]},"clickEvent":{"action":"open_url","value":"https://www.planetminecraft.com/data-pack/deeper-dark-dimension/"}},{"text":":\n"}\
-,{"text":"Activated Sculk Shrieker\n","color":"yellow","clickEvent":{"action":"run_command","value":"/trigger deeper_dark.items set 2"}}\
-,{"text":"Splash Potion of Blindness\n","clickEvent":{"action":"run_command","value":"/trigger deeper_dark.items set 3"}}\
-,{"text":"Amethyst Mineshaft Locator Compass\n","clickEvent":{"action":"run_command","value":"/trigger deeper_dark.items set 4"}}\
-,{"text":"Warden Tracker\n","color":"yellow","clickEvent":{"action":"run_command","value":"/trigger deeper_dark.items set 5"}}\
-,{"text":"Conversion Altar Fragment\n","color":"aqua","clickEvent":{"action":"run_command","value":"/trigger deeper_dark.items set 6"}}\
-,{"text":"Ancient Fortress Locator Compass\n","clickEvent":{"action":"run_command","value":"/trigger deeper_dark.items set 7"}}\
-,{"text":"Sculk Tentacle\n","clickEvent":{"action":"run_command","value":"/trigger deeper_dark.items set 8"}}\
-,{"text":"Sculk Claw\n","clickEvent":{"action":"run_command","value":"/trigger deeper_dark.items set 9"}}\
-,{"text":"Sculk Syphon\n","clickEvent":{"action":"run_command","value":"/trigger deeper_dark.items set 10"}}\
-,{"text":"Laboratory Locator Compass\n","clickEvent":{"action":"run_command","value":"/trigger deeper_dark.items set 11"}}\
-,{"text":"Anticatalyst\n","color":"light_purple","clickEvent":{"action":"run_command","value":"/trigger deeper_dark.items set 12"}}\
-,{"text":"Sonic Blaster\n","clickEvent":{"action":"run_command","value":"/trigger deeper_dark.items set 13"}}\
+tellraw @a[scores={deeper_dark.items=1}] [{"hover_event":{"action":"show_text","value":[{"translate":"deeper_dark.gui.creative_items.hint","fallback":"Click on an item to get it"}]},"text":"\n"},{"translate":"deeper_dark.gui.creative_items","fallback":"Items From %s:","with":[{"translate":"deeper_dark.name","color":"#007A8A","click_event":{"action":"open_url","url":"https://www.planetminecraft.com/data-pack/deeper-dark-dimension/"},"hover_event":{"action":"show_text","value":[{"translate":"deeper_dark.gui.creative_items.website_hint","fallback":"Go To Website"}]},"fallback":"Deeper Dark"}]},{"text":"\n"}\
+,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 2"},"translate":"item.deeper_dark.activated_sculk_shrieker","color":"yellow","fallback":"Activated Sculk Shrieker"},{"text":"\n"}\
+,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 3"},"translate":"item.deeper_dark.splash_potion_of_blindness","fallback":"Splash Potion of Blindness"},{"text":"\n"}\
+,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 4"},"translate":"item.deeper_dark.locator_amethyst_mineshaft","fallback":"Amethyst Mineshaft Locator Compass"},{"text":"\n"}\
+,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 5"},"translate":"item.deeper_dark.warden_tracker","color":"yellow","fallback":"Warden Tracker"},{"text":"\n"}\
+,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 6"},"translate":"item.deeper_dark.altar_fragment","color":"aqua","fallback":"Conversion Altar Fragment"},{"text":"\n"}\
+,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 7"},"translate":"item.deeper_dark.locator_ancient_fortress","fallback":"Ancient Fortress Locator Compass"},{"text":"\n"}\
+,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 8"},"translate":"item.deeper_dark.sculk_tentacle","fallback":"Sculk Tentacle"},{"text":"\n"}\
+,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 9"},"translate":"item.deeper_dark.sculk_claw","fallback":"Sculk Claw"},{"text":"\n"}\
+,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 10"},"translate":"item.deeper_dark.sculk_syphon","fallback":"Sculk Syphon"},{"text":"\n"}\
+,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 11"},"translate":"item.deeper_dark.locator_laboratory","fallback":"Laboratory Locator Compass"},{"text":"\n"}\
+,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 12"},"translate":"item.deeper_dark.anticatalyst","color":"light_purple","fallback":"Anticatalyst"},{"text":"\n"}\
+,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 13"},"translate":"item.deeper_dark.sonic_blaster","fallback":"Sonic Blaster"},{"text":"\n"}\
 ]
 
 loot give @a[scores={deeper_dark.items=2}] loot deeper_dark:items/activated_sculk_shrieker
