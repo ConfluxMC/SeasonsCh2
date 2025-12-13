@@ -1,6 +1,6 @@
 {
     "name": "hopo:stone_mineshaft",
-    "fallback": "hopo:stone_mineshaft",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 80,

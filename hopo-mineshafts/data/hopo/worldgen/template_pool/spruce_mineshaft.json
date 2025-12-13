@@ -1,6 +1,6 @@
 {
     "name": "hopo:spruce_mineshaft",
-    "fallback": "hopo:spruce_mineshaft",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 80,

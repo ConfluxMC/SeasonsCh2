@@ -5,9 +5,21 @@
 			"type": "minecraft:weighted_state_provider",
 			"entries": [
 				{
-					"weight": 1,
+					"weight": 3,
 					"data": {
 						"Name": "minecraft:dead_bush"
+					}
+				},
+				{
+					"weight": 2,
+					"data": {
+						"Name": "minecraft:short_dry_grass"
+					}
+				},
+				{
+					"weight": 1,
+					"data": {
+						"Name": "minecraft:tall_dry_grass"
 					}
 				}
 			]

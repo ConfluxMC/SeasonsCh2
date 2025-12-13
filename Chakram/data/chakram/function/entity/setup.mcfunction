@@ -9,7 +9,7 @@ scoreboard players operation @s chakram_id = @p[tag=chakram_user,distance=..5] c
 
 tag @s add chakram_temp
 execute as @p[tag=chakram_mainhand,distance=..5] run data modify entity @n[type=minecraft:item_display,tag=chakram_temp] item set from entity @s SelectedItem
-execute as @p[tag=chakram_offhand,distance=..5] run data modify entity @n[type=minecraft:item_display,tag=chakram_temp] item set from entity @s Inventory[{Slot:-106b}]
+execute as @p[tag=chakram_offhand,distance=..5] run data modify entity @n[type=minecraft:item_display,tag=chakram_temp] item set from entity @s equipment.offhand
 tag @s remove chakram_temp
 
 execute if entity @p[tag=chakram_mainhand,distance=..5] run tag @s add chakram_mainhand
@@ -25,6 +25,6 @@ scoreboard players set @s chakram_phasing_count 0
 execute store result score @s chakram_entity_id run random value 1..9999999
 
 #check harvesting
-execute if data entity @s item.components."minecraft:enchantments".levels."chakram:harvesting" run tag @s add chakram_harvesting
+execute if data entity @s item.components."minecraft:enchantments"."chakram:harvesting" run tag @s add chakram_harvesting
 
 function chakram:entity/max_distance

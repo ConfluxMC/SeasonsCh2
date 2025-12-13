@@ -509,7 +509,7 @@
 					"input_predicate": {
 						"predicate_type": "minecraft:random_block_match",
 						"block": "minecraft:deepslate",
-						"probability": 0.022
+						"probability": 0.02
 					},
 					"output_state": {
 						"Name": "minecraft:suspicious_gravel",

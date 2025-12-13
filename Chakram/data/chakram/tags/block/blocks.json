@@ -63,5 +63,12 @@
     "#minecraft:buttons",
     "minecraft:lever",
     "#minecraft:wool_carpets",
-    "minecraft:light"
+    "#minecraft:inside_step_sound_blocks",
+    "minecraft:firefly_bush",
+    "minecraft:bush",
+    "minecraft:cactus_flower",
+    "minecraft:short_dry_grass",
+    "minecraft:tall_dry_grass",
+    "minecraft:light",
+    "minecraft:sweet_berry_bush"
 ]}

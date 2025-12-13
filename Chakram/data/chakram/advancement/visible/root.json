@@ -11,7 +11,7 @@
       "translate": "chakram:adv_root_desc",
       "fallback": "A new mid-range throwing weapon!"
     },
-    "background": "minecraft:textures/block/chiseled_tuff.png",
+    "background": "minecraft:block/chiseled_tuff",
     "show_toast": false,
     "announce_to_chat": false
   },

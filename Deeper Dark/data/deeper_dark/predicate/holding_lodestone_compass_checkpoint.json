@@ -5,7 +5,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "nbt": "{Inventory:[{Slot: -106b, components: {\"minecraft:lodestone_tracker\": {target: {dimension: \"deeper_dark:deeper_dark\"}}}, id: \"minecraft:compass\"}]}"
+        "nbt": "{equipment:{offhand:{components: {\"minecraft:lodestone_tracker\": {target: {dimension: \"deeper_dark:deeper_dark\"}}}, id: \"minecraft:compass\"}}}"
       }
     },
     {
@@ -14,7 +14,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "nbt": "{Inventory:[{Slot: -106b, components: {\"minecraft:custom_data\": {deeper_dark_located: 1}}}]}"
+          "nbt": "{equipment:{offhand:{components: {\"minecraft:custom_data\": {deeper_dark_located: 1}}}}}"
         }
       }
     }

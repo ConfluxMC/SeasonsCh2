@@ -1,6 +1,6 @@
 {
     "name": "hopo:mobs/archer",
-    "fallback": "hopo:mobs/archer",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 100,

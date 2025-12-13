@@ -2,19 +2,39 @@
   "condition": "minecraft:any_of",
   "terms": [
     {
-      "condition": "minecraft:entity_properties",
-      "entity": "this",
-      "predicate": {
-        "equipment": {
-          "head": {
-            "components": {
-              "minecraft:custom_data": {
-                "miners_helmet.miners_helmet": true
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "head": {
+                "components": {
+                  "minecraft:custom_data": {
+                    "miners_helmet.miners_helmet": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "minecraft:player",
+                "gamemode": [
+                  "spectator"
+                ]
               }
             }
           }
         }
-      }
+      ]
     },
     {
       "condition": "minecraft:entity_properties",

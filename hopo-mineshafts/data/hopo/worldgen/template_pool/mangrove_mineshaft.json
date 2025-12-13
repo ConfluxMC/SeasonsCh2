@@ -1,6 +1,6 @@
 {
     "name": "hopo:mangrove_mineshaft",
-    "fallback": "hopo:mangrove_mineshaft",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 80,

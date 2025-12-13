@@ -1,6 +1,6 @@
 {
     "name": "hopo:deepslate_mineshaft",
-    "fallback": "hopo:deepslate_mineshaft",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 80,

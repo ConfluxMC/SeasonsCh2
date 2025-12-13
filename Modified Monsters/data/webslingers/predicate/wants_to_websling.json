@@ -1,0 +1,22 @@
+{
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+        "targeted_entity": {
+            "location": {
+                "light": {
+                    "light": {
+                        "min": 0,
+                        "max": 7
+                    }
+                }
+            },
+            "distance": {
+                "absolute": {
+                    "min": 5,
+                    "max": 24
+                }
+            }
+        }
+    }
+}

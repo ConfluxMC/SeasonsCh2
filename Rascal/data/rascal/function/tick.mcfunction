@@ -1,8 +1,8 @@
 #If rascal is not tagged as invisible, give armor stand rascal cosmetics
-execute as @e[tag=rascal_stand,tag=!rascal_is_invis] at @s run data merge entity @s {HandItems:[{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_1"]}}},{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_2"]}}}],ArmorItems:[{},{},{},{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_body"]}}}]}
+execute as @e[tag=rascal_stand,tag=!rascal_is_invis] at @s run data merge entity @s {equipment:{mainhand:{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_1"]}}}, offhand:{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_2"]}}},head:{id:"minecraft:glow_item_frame",count:1,components:{"minecraft:custom_model_data":{strings:["rascal_body"]}}}}}
 
 #If rascal is tagged as invisible, remove rascal cosmetics
-execute as @e[tag=rascal_stand,tag=rascal_is_invis] at @s run data merge entity @s {ShowArms:1b,HandItems:[{},{}],ArmorItems:[{},{},{},{}]}
+execute as @e[tag=rascal_stand,tag=rascal_is_invis] at @s run data modify entity @s equipment set value {}
 
 #execute as @e[tag=rascal_can_be_caught,scores={rascal_can_be_caught_cooldown=..199}] run say failed caught
 #execute as @e[tag=!rascal_is_invis,scores={rascal_stay_invis_timer=..400}] run say failed invis

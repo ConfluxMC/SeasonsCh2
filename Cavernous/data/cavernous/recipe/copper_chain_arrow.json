@@ -1,0 +1,34 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		"minecraft:copper_chain",
+		"minecraft:copper_chain",
+		"minecraft:copper_chain",
+		"minecraft:copper_chain",
+		"minecraft:copper_chain",
+		"minecraft:copper_chain",
+		"minecraft:copper_chain",
+		"minecraft:copper_chain",
+		"minecraft:arrow"
+	],
+	"result": {
+		"id": "minecraft:tipped_arrow",
+		"components": {
+			"custom_name": {
+				"text": "Copper Chain Arrow",
+				"type": "text",
+				"italic": false
+			},
+			"lore": [
+				{
+					"text": "Shoot to create a climbable chain"
+				},
+				{
+					"text": "rope."
+				}
+			],
+			"potion_contents": {"custom_color": 4080477},
+			"tooltip_display": {"hidden_components":["potion_contents"]}
+		}
+	}
+}

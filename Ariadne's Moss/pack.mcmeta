@@ -1,6 +1,7 @@
 {
-    "pack": {
-      "pack_format": 61,
-      "description": "Replace sculk with moss with the boot enchantment by gnago"
-    }
+	"pack": {
+		"min_format": 82,
+		"max_format": 94,
+		"description": "Replace sculk with moss with the boot enchantment by gnago"
+	}
 }

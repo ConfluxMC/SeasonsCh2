@@ -17,6 +17,18 @@
 					}
 				},
 				{
+					"weight": 5,
+					"data": {
+						"Name": "minecraft:bush"
+					}
+				},
+				{
+					"weight": 1,
+					"data": {
+						"Name": "minecraft:firefly_bush"
+					}
+				},
+				{
 					"weight": 14,
 					"data": {
 						"Name": "minecraft:large_fern",

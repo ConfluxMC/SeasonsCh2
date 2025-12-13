@@ -1,6 +1,6 @@
 {
     "name": "hopo:mud_mineshaft",
-    "fallback": "hopo:mud_mineshaft",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 80,

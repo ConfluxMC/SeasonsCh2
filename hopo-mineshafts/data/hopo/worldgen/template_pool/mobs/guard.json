@@ -1,6 +1,6 @@
 {
     "name": "hopo:mobs/guard",
-    "fallback": "hopo:mobs/guard",
+    "fallback": "minecraft:empty",
     "elements": [
         {
             "weight": 100,

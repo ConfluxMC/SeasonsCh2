@@ -27,7 +27,7 @@ execute if score @s chakram_bounces matches 5.. run data modify storage chakram:
 execute as @n[dx=0,type=!#chakram:raybanned,tag=!smithed.strict] at @s run function chakram:entity/hit/damage/apply with storage chakram:entity
 
 #fire aspect
-execute if data entity @s item.components."minecraft:enchantments".levels."minecraft:fire_aspect" run data modify entity @n[dx=0,type=!#chakram:raybanned,tag=!smithed.strict] Fire set value 90s
+execute if data entity @s item.components."minecraft:enchantments"."minecraft:fire_aspect" run data modify entity @n[dx=0,type=!#chakram:raybanned,tag=!smithed.strict] Fire set value 90s
 
 #durability
 function chakram:durability/apply

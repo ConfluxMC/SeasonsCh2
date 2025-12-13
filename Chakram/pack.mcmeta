@@ -1,7 +1,8 @@
 {
    "id": "chakram",
    "pack":{
-      "pack_format":46,
-      "description":"Chakrams, a new mid-range throwing weapon!"
-   }
+    "min_format": 82,
+    "max_format": 94,
+    "description":"Chakrams, a new mid-range throwing weapon!"
+  }
 }
