@@ -43,3 +43,9 @@ scoreboard objectives add nox.time_poisoned dummy
 
     #### Openings
     scoreboard objectives add title_card.delay dummy
+
+### Exit Portal Locator
+scoreboard objectives add cavernous_exit_portal.distx+1 dummy
+scoreboard objectives add cavernous_exit_portal.distx-1 dummy
+scoreboard objectives add cavernous_exit_portal.distz+1 dummy
+scoreboard objectives add cavernous_exit_portal.distz-1 dummy
