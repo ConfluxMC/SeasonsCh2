@@ -39,10 +39,10 @@
 		"misc": [],
 		"monster": [
 			{
-				"type": "minecraft:husk",
-				"weight": 5,
+				"type": "minecraft:zombie",
+				"weight": 3,
 				"minCount": 1,
-				"maxCount": 3
+				"maxCount": 1
 			},
 			{
 				"type": "minecraft:skeleton",
