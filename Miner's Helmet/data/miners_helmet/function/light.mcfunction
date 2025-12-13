@@ -1,8 +1,8 @@
-execute at @s if entity @e[predicate=miners_helmet:wearing_miners_helmet,distance=..1] if block ~ ~ ~ air run setblock ~ ~ ~ light[level=13,waterlogged=false]
-execute at @s if entity @e[predicate=miners_helmet:wearing_miners_helmet,distance=..1] positioned ~ ~ ~ if predicate miners_helmet:not_flowing if block ~ ~ ~ water run setblock ~ ~ ~ light[level=9,waterlogged=true]
+execute at @s if entity @e[predicate=miners_helmet:wearing_miners_helmet,distance=..1] if block ~ ~ ~ air run setblock ~ ~ ~ light[level=15,waterlogged=false]
+execute at @s if entity @e[predicate=miners_helmet:wearing_miners_helmet,distance=..1] positioned ~ ~ ~ if predicate miners_helmet:not_flowing if block ~ ~ ~ water run setblock ~ ~ ~ light[level=12,waterlogged=true]
 
-execute at @s if entity @e[predicate=miners_helmet:wearing_miners_helmet,distance=..1] if block ~ ~1 ~ air run setblock ~ ~1 ~ light[level=13,waterlogged=false]
-execute at @s if entity @e[predicate=miners_helmet:wearing_miners_helmet,distance=..1] positioned ~ ~1 ~ if predicate miners_helmet:not_flowing if block ~ ~ ~ water run setblock ~ ~ ~ light[level=9,waterlogged=true]
+execute at @s if entity @e[predicate=miners_helmet:wearing_miners_helmet,distance=..1] if block ~ ~1 ~ air run setblock ~ ~1 ~ light[level=15,waterlogged=false]
+execute at @s if entity @e[predicate=miners_helmet:wearing_miners_helmet,distance=..1] positioned ~ ~1 ~ if predicate miners_helmet:not_flowing if block ~ ~ ~ water run setblock ~ ~ ~ light[level=12,waterlogged=true]
 
 
 execute at @s unless entity @e[predicate=miners_helmet:wearing_miners_helmet,distance=..1] if block ~ ~ ~ light[waterlogged=false] run setblock ~ ~ ~ air
