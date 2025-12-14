@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:goat_horn",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "!minecraft:jukebox_playable": {},
+                "minecraft:item_model": "minecraft:echo_shard",
+                "minecraft:item_name": "Warden Flute",
+                "minecraft:use_cooldown": {
+                  "seconds": 30,
+                  "cooldown_group": "warden_flute"
+                },
+                "minecraft:rarity": "epic",
+                "minecraft:instrument": "minecraft:seek_goat_horn"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

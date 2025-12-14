@@ -1,0 +1,1 @@
+execute if entity @e[type=item,distance=..1,predicate=hollow_earth:warden_flute_bundle] if entity @s[tag=!has_crafted] run function hollow_earth:warden_flute/craft/craft

@@ -1,0 +1,48 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "minecraft:item",
+    "nbt": {
+      "Item": {
+        "id": "minecraft:bundle",
+        "components": {
+          "minecraft:bundle_contents": [
+            {
+              "id": "minecraft:nether_star"
+            },
+            {
+              "id": "minecraft:player_head",
+              "components": {
+                "minecraft:profile": {
+                  "properties": [
+                    {
+                      "name": "textures",
+                      "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzJkOThhOTA2N2ZmOWQzOTVhMjdiYmRkMGE5MTZlNjQ0YTFlMDJmYjdkOGQxZDc3NzAyNjU1MjEzZTQzZDA5In19fQ"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "minecraft:music_disc_5",
+              "components": {
+                "minecraft:custom_data": {
+                  "deeper_dark_altar_fragment": 1
+                }
+              }
+            },
+            {
+              "id": "minecraft:music_disc_relic",
+              "components": {
+                "minecraft:custom_data": {
+                  "rascals_flute": 1
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
