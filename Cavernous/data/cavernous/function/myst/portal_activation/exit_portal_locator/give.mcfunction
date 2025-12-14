@@ -1,0 +1,1 @@
+$data modify entity @s equipment.feet set value {id:"minecraft:compass",components:{"minecraft:lodestone_tracker":{target:{pos:[$(x),$(y),$(z)],dimension:"cavernous:the_myst"}}}}
