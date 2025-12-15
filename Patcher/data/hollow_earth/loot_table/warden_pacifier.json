@@ -11,15 +11,17 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "!minecraft:jukebox_playable": {},
+                "minecraft:custom_data": {
+                  "warden_pacifier": 1
+                },
                 "minecraft:item_model": "minecraft:echo_shard",
                 "minecraft:item_name": "Warden Flute",
                 "minecraft:use_cooldown": {
                   "seconds": 30,
-                  "cooldown_group": "warden_flute"
+                  "cooldown_group": "warden_pacifier"
                 },
                 "minecraft:rarity": "epic",
-                "minecraft:instrument": "minecraft:seek_goat_horn"
+                "minecraft:instrument": "hollow_earth:warden_pacifier"
               }
             }
           ]

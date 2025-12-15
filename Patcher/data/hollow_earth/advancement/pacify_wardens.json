@@ -1,0 +1,24 @@
+{
+  "criteria": {
+    "pacifies_wardens": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "components": {
+            "minecraft:custom_data": {
+              "warden_pacifier": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "pacifies_wardens"
+    ]
+  ],
+  "rewards": {
+    "function": "hollow_earth:warden_pacifier/use"
+  }
+}
