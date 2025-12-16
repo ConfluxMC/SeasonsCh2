@@ -5,6 +5,11 @@
       "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:loot_table",
+          "value": "rascal:rascal_flute",
+          "weight": 1
+        },
+        {
           "type": "minecraft:item",
           "name": "minecraft:iron_pickaxe",
           "weight": 4,
