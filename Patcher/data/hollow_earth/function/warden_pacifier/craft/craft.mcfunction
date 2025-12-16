@@ -1,6 +1,7 @@
-kill @n[type=item,predicate=hollow_earth:warden_pacifier_bundle]
-loot spawn ~ ~0.5 ~ loot hollow_earth:warden_pacifier
+item modify entity @n[type=item,distance=..1,predicate=hollow_earth:warden_pacifier_bundle] contents {function:"set_contents",component:"bundle_contents",entries:[{type:"minecraft:loot_table",value:"hollow_earth:warden_pacifier"}]}
 tag @s add has_crafted
 
 particle dust{color:[0.443, 0.055, 0.055],scale:2} ~ ~ ~ 0.3 0.3 0.3 1 30 normal @a
 playsound block.end_portal_frame.fill block @a ~ ~ ~ 0.8 0.3 0
+playsound minecraft:entity.warden.sonic_boom block @a ~ ~ ~ 0.2 1.8
+particle minecraft:sculk_charge{roll:0} ~ ~ ~ 0 0 0 0.5 40 normal @a

@@ -5,7 +5,6 @@
     "type": "minecraft:item",
     "nbt": {
       "Item": {
-        "id": "minecraft:bundle",
         "components": {
           "minecraft:bundle_contents": [
             {
