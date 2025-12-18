@@ -140,10 +140,10 @@
     [
       "cavernous:generic/ores/special/treasure",
       "cavernous:generic/ores/special/gold_chunk",
-      "cavernous:generic/ores/special/copper_chunk"
+      "cavernous:generic/ores/special/copper_chunk",
+      "cavernous:biomes/thermal/caldera/spring"
     ],
     [
-      "cavernous:biomes/thermal/caldera/spring",
       "cavernous:biomes/thermal/caldera/geyser",
       "minecraft:glow_lichen"
     ],

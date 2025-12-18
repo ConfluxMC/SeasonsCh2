@@ -708,7 +708,7 @@
               0.05
             ],
             "temperature": [
-              -1,
+              0.25,
               1
             ],
             "humidity": [
@@ -2119,7 +2119,7 @@
             ],
             "temperature": [
               -1,
-              1
+              -0.15
             ],
             "humidity": [
               -1,
@@ -2132,6 +2132,36 @@
             "offset": 0
           },
           "biome": "cavernous:icy_caves"
+        },
+        {
+          "parameters": {
+            "weirdness": [
+              -1,
+              1
+            ],
+            "continentalness": [
+              -0.455,
+              -0.19
+            ],
+            "erosion": [
+              -0.55,
+              -0.38
+            ],
+            "temperature": [
+              -1,
+              1
+            ],
+            "humidity": [
+              -1,
+              1
+            ],
+            "depth": [
+              0.2,
+              0.53
+            ],
+            "offset": 0
+          },
+          "biome": "cavernous:marble_caves"
         },
         {
           "parameters": {
@@ -2402,36 +2432,6 @@
             "offset": 0
           },
           "biome": "cavernous:lush_dripstone_caves"
-        },
-        {
-          "parameters": {
-            "weirdness": [
-              -1,
-              1
-            ],
-            "continentalness": [
-              -0.455,
-              -0.19
-            ],
-            "erosion": [
-              0.45,
-              0.55
-            ],
-            "temperature": [
-              -1,
-              1
-            ],
-            "humidity": [
-              -1,
-              1
-            ],
-            "depth": [
-              0.2,
-              0.53
-            ],
-            "offset": 0
-          },
-          "biome": "cavernous:marble_caves"
         },
         {
           "parameters": {
