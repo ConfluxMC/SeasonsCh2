@@ -1,31 +1,5 @@
 {
-	"feature": {
-		"type": "minecraft:ore",
-		"config": {
-			"size": 7,
-			"discard_chance_on_air_exposure": 0,
-			"targets": [
-				{
-					"target": {
-						"predicate_type": "minecraft:tag_match",
-						"tag": "cavernous:stone_ore"
-					},
-					"state": {
-						"Name": "minecraft:lapis_ore"
-					}
-				},
-				{
-					"target": {
-						"predicate_type": "minecraft:tag_match",
-						"tag": "cavernous:deepslate_ore"
-					},
-					"state": {
-						"Name": "minecraft:deepslate_lapis_ore"
-					}
-				}
-			]
-		}
-	},
+	"feature": "cavernous:generic/ores/lapis",
 	"placement": [
 		{
 			"type": "minecraft:count",
