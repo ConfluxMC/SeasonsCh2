@@ -1,38 +1,41 @@
 {
-	"temperature": 0.8,
-	"downfall": 1,
-	"has_precipitation": true,
-	"effects": {
-		"sky_color": 1902343,
-		"fog_color": 4327946,
-		"water_color": 5834760,
-		"water_fog_color": 3147784,
-		"grass_color": 13631745,
-		"foliage_color": 8717573,
-		"grass_color_modifier": "none",
-		"mood_sound": {
-			"sound": "minecraft:ambient.cave",
-			"tick_delay": 6000,
-			"block_search_extent": 8,
-			"offset": 2
+	"attributes": {
+		"minecraft:visual/sky_color": 1902343,
+		"minecraft:visual/fog_color": 4327946,
+		"minecraft:visual/water_fog_color": 3147784,
+		"minecraft:audio/ambient_sounds": {
+			"mood": {
+				"sound": "minecraft:ambient.cave",
+				"tick_delay": 6000,
+				"block_search_extent": 8,
+				"offset": 2
+			}
 		},
-		"music": [
-			{
-			  "weight": 1,
-			  "data": {
+		"minecraft:audio/background_music": {
+			"default": {
 				"sound": "minecraft:music.overworld.dripstone_caves",
 				"min_delay": 12000,
 				"max_delay": 24000,
 				"replace_current_music": false
-			  }
 			}
-		  ],
-		"particle": {
-			"options": {
-				"type": "minecraft:falling_honey"
-			},
-			"probability": 0.00075
-		}
+		},
+		"minecraft:visual/ambient_particles": [
+			{
+				"particle": {
+					"type": "minecraft:falling_honey"
+				},
+				"probability": 0.00075
+			}
+		]
+	},
+	"temperature": 0.8,
+	"downfall": 1,
+	"has_precipitation": true,
+	"effects": {
+		"water_color": 5834760,
+		"grass_color": 13631745,
+		"foliage_color": 8717573,
+		"grass_color_modifier": "none"
 	},
 	"spawners": {
 		"ambient": [],

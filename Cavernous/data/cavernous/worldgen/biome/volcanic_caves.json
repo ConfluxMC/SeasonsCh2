@@ -1,46 +1,50 @@
 {
   "attributes": {
-    "minecraft:gameplay/snow_golem_melts": true
+    "minecraft:gameplay/snow_golem_melts": true,
+    "minecraft:visual/sky_color": 8870956,
+    "minecraft:visual/fog_color": 13464130,
+    "minecraft:visual/water_fog_color": 3552822,
+    "minecraft:audio/ambient_sounds": {
+      "loop": "minecraft:ambient.basalt_deltas.loop",
+      "mood": {
+        "sound": "minecraft:ambient.basalt_deltas.mood",
+        "tick_delay": 6000,
+        "block_search_extent": 8,
+        "offset": 2
+      },
+      "additions": {
+        "sound": "minecraft:ambient.basalt_deltas.additions",
+        "tick_chance": 0.0111
+      }
+    },
+    "minecraft:audio/background_music": {
+      "default": {
+        "sound": "minecraft:music.overworld.dripstone_caves",
+        "min_delay": 12000,
+        "max_delay": 24000,
+        "replace_current_music": false
+      }
+    },
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "minecraft:white_ash"
+        },
+        "probability": 0.118093334
+      }
+    ],
+    "minecraft:visual/default_dripstone_particle": {
+      "type": "minecraft:dripping_dripstone_lava"
+    }
   },
   "temperature": 2,
   "downfall": 0,
   "has_precipitation": false,
   "effects": {
-    "sky_color": 8870956,
-    "fog_color": 13464130,
     "water_color": 7039851,
-    "water_fog_color": 3552822,
     "grass_color": 7039851,
     "foliage_color": 7039851,
-    "grass_color_modifier": "none",
-    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
-    "mood_sound": {
-      "sound": "minecraft:ambient.basalt_deltas.mood",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2
-    },
-    "additions_sound": {
-      "sound": "minecraft:ambient.basalt_deltas.additions",
-      "tick_chance": 0.0111
-    },
-    "music": [
-      {
-        "weight": 1,
-        "data": {
-          "sound": "minecraft:music.overworld.dripstone_caves",
-          "min_delay": 12000,
-          "max_delay": 24000,
-          "replace_current_music": false
-        }
-      }
-    ],
-    "particle": {
-      "options": {
-        "type": "minecraft:white_ash"
-      },
-      "probability": 0.118093334
-    }
+    "grass_color_modifier": "none"
   },
   "spawners": {
     "ambient": [],
@@ -145,7 +149,6 @@
       "cavernous:generic/ores/lapis_buried_inverse",
       "cavernous:generic/ores/redstone",
       "cavernous:generic/ores/redstone_lower",
-
       "cavernous:biomes/thermal/volcanic/ore_diamond_extra",
       "cavernous:biomes/thermal/volcanic/ore_coal_block"
     ],

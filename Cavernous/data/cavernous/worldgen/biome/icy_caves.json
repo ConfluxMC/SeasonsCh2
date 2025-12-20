@@ -1,30 +1,39 @@
 {
+  "attributes": {
+    "minecraft:visual/sky_color": 7907327,
+    "minecraft:visual/fog_color": 12638463,
+    "minecraft:visual/water_fog_color": 40447,
+    "minecraft:audio/ambient_sounds": {
+      "mood": {
+        "sound": "minecraft:ambient.cave",
+        "tick_delay": 6000,
+        "block_search_extent": 8,
+        "offset": 2
+      }
+    },
+    "minecraft:audio/background_music": {
+      "default": {
+        "sound": "minecraft:music.overworld.dripstone_caves",
+        "min_delay": 12000,
+        "max_delay": 24000,
+        "replace_current_music": false
+      }
+    },
+    "minecraft:visual/ambient_particles": [
+      {
+        "particle": {
+          "type": "minecraft:snowflake"
+        },
+        "probability": 0.0003
+      }
+    ]
+  },
   "temperature": -0.7,
   "downfall": 0.9,
   "has_precipitation": true,
   "effects": {
-    "sky_color": 7907327,
-    "fog_color": 12638463,
     "water_color": 40447,
-    "water_fog_color": 40447,
-    "grass_color_modifier": "none",
-    "mood_sound": {
-      "sound": "minecraft:ambient.cave",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2
-    },
-    "music": [
-      {
-        "weight": 1,
-        "data": {
-          "sound": "minecraft:music.overworld.dripstone_caves",
-          "min_delay": 12000,
-          "max_delay": 24000,
-          "replace_current_music": false
-        }
-      }
-    ]
+    "grass_color_modifier": "none"
   },
   "spawners": {
     "ambient": [
@@ -41,13 +50,7 @@
     "monster": [
       {
         "type": "minecraft:skeleton",
-        "weight": 25,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:stray",
-        "weight": 75,
+        "weight": 100,
         "minCount": 4,
         "maxCount": 4
       },
@@ -147,7 +150,6 @@
       "cavernous:generic/ores/lapis_buried_inverse",
       "cavernous:generic/ores/redstone",
       "cavernous:generic/ores/redstone_lower",
-
       "cavernous:biomes/ice/icy/ore_iron_extra",
       "cavernous:biomes/ice/icy/ore_diamond_extra"
     ],

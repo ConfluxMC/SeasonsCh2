@@ -1,0 +1,57 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 16,
+    "xz_spread": 12,
+    "y_spread": 0,
+    "feature": {
+      "feature": {
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "weight": 45,
+                "data": {
+                  "Name": "minecraft:nether_wart",
+                  "Properties": {
+                    "age": "0"
+                  }
+                }
+              },
+              {
+                "weight": 35,
+                "data": {
+                  "Name": "minecraft:nether_wart",
+                  "Properties": {
+                    "age": "1"
+                  }
+                }
+              },
+              {
+                "weight": 15,
+                "data": {
+                  "Name": "minecraft:nether_wart",
+                  "Properties": {
+                    "age": "2"
+                  }
+                }
+              },
+              {
+                "weight": 5,
+                "data": {
+                  "Name": "minecraft:nether_wart",
+                  "Properties": {
+                    "age": "3"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "type": "minecraft:simple_block"
+      },
+      "placement": []
+    }
+  }
+}
