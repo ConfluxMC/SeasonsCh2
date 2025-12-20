@@ -133,7 +133,8 @@
 			"cavernous:biomes/undergrowth/sprout",
 			"cavernous:biomes/undergrowth/sprout_3",
 			"cavernous:biomes/undergrowth/sprout_2",
-			"cavernous:biomes/undergrowth/hanging_roots"
+			"cavernous:biomes/undergrowth/hanging_roots",
+			"cavernous:biomes/undergrowth/patch_nether_wart"
 		],
 		[
 			"minecraft:freeze_top_layer"
