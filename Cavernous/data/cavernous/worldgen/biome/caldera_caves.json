@@ -1,33 +1,32 @@
 {
   "attributes": {
-    "minecraft:gameplay/snow_golem_melts": true
+    "minecraft:gameplay/snow_golem_melts": true,
+    "minecraft:visual/sky_color": 7907327,
+    "minecraft:visual/fog_color": 12638463,
+    "minecraft:visual/water_fog_color": 271709,
+    "minecraft:audio/ambient_sounds": {
+      "mood": {
+        "sound": "minecraft:ambient.cave",
+        "tick_delay": 6000,
+        "block_search_extent": 8,
+        "offset": 2
+      }
+    },
+    "minecraft:audio/background_music": {
+      "default": {
+        "sound": "minecraft:music.overworld.dripstone_caves",
+        "min_delay": 12000,
+        "max_delay": 24000,
+        "replace_current_music": false
+      }
+    }
   },
   "temperature": 0.8,
   "downfall": 0.4,
   "has_precipitation": true,
   "effects": {
-    "sky_color": 7907327,
-    "fog_color": 12638463,
     "water_color": 895429,
-    "water_fog_color": 271709,
-    "grass_color_modifier": "none",
-    "mood_sound": {
-      "sound": "minecraft:ambient.cave",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2
-    },
-    "music": [
-      {
-        "weight": 1,
-        "data": {
-          "sound": "minecraft:music.overworld.dripstone_caves",
-          "min_delay": 12000,
-          "max_delay": 24000,
-          "replace_current_music": false
-        }
-      }
-    ]
+    "grass_color_modifier": "none"
   },
   "spawners": {
     "ambient": [

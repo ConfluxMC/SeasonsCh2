@@ -1,36 +1,41 @@
 {
+	"attributes": {
+		"minecraft:visual/sky_color": 859144,
+		"minecraft:visual/fog_color": 3165975,
+		"minecraft:visual/water_fog_color": 5995825,
+		"minecraft:audio/ambient_sounds": {
+			"mood": {
+				"sound": "minecraft:ambient.cave",
+				"tick_delay": 6000,
+				"block_search_extent": 8,
+				"offset": 2
+			}
+		},
+		"minecraft:audio/background_music": {
+			"default": {
+				"sound": "minecraft:music.overworld.dripstone_caves",
+				"min_delay": 12000,
+				"max_delay": 24000,
+				"replace_current_music": false
+			}
+		},
+		"minecraft:visual/ambient_particles": [
+			{
+				"particle": {
+					"type": "minecraft:spore_blossom_air"
+				},
+				"probability": 0.005
+			}
+		]
+	},
 	"temperature": 0.8,
 	"downfall": 1,
 	"has_precipitation": true,
 	"effects": {
-		"sky_color": 859144,
-		"fog_color": 3165975,
 		"water_color": 8499004,
-		"water_fog_color": 5995825,
 		"grass_color": 15779635,
 		"foliage_color": 7560330,
-		"grass_color_modifier": "none",
-		"mood_sound": {
-			"sound": "minecraft:ambient.cave",
-			"tick_delay": 6000,
-			"block_search_extent": 8,
-			"offset": 2
-		},
-		"music": [
-			{
-			  "weight": 1,
-			  "data": {
-			"sound": "minecraft:music.overworld.dripstone_caves",
-			"min_delay": 12000,
-			"max_delay": 24000,
-			"replace_current_music": false
-		}}],
-		"particle": {
-			"options": {
-				"type": "minecraft:spore_blossom_air"
-			},
-			"probability": 0.005
-		}
+		"grass_color_modifier": "none"
 	},
 	"spawners": {
 		"ambient": [],

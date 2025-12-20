@@ -1,28 +1,31 @@
 {
+	"attributes": {
+		"minecraft:visual/sky_color": 8103167,
+		"minecraft:visual/fog_color": 12638463,
+		"minecraft:visual/water_fog_color": 329011,
+		"minecraft:audio/ambient_sounds": {
+			"mood": {
+				"sound": "minecraft:ambient.cave",
+				"tick_delay": 6000,
+				"block_search_extent": 8,
+				"offset": 2
+			}
+		},
+		"minecraft:audio/background_music": {
+			"default": {
+				"sound": "minecraft:music.overworld.dripstone_caves",
+				"min_delay": 12000,
+				"max_delay": 24000,
+				"replace_current_music": false
+			}
+		}
+	},
 	"temperature": 2,
 	"downfall": 0,
 	"has_precipitation": false,
 	"effects": {
-		"sky_color": 8103167,
-		"fog_color": 12638463,
 		"water_color": 4163300,
-		"water_fog_color": 329011,
-		"grass_color_modifier": "none",
-		"mood_sound": {
-			"sound": "minecraft:ambient.cave",
-			"tick_delay": 6000,
-			"block_search_extent": 8,
-			"offset": 2
-		},
-		"music": [
-			{
-			  "weight": 1,
-			  "data": {
-			"sound": "minecraft:music.overworld.dripstone_caves",
-			"min_delay": 12000,
-			"max_delay": 24000,
-			"replace_current_music": false
-		}}]
+		"grass_color_modifier": "none"
 	},
 	"spawners": {
 		"ambient": [
@@ -118,17 +121,16 @@
 	},
 	"spawn_costs": {},
 	"carvers": [
-			"minecraft:cave",
-			"minecraft:cave_extra_underground",
-			"minecraft:canyon",
-			"cavernous:sinkhole",
-			"cavernous:snaking_ravine",
-			"cavernous:flat_cave",
-			"cavernous:flat_ravine"
-		],
+		"minecraft:cave",
+		"minecraft:cave_extra_underground",
+		"minecraft:canyon",
+		"cavernous:sinkhole",
+		"cavernous:snaking_ravine",
+		"cavernous:flat_cave",
+		"cavernous:flat_ravine"
+	],
 	"features": [
-		[
-		],
+		[],
 		[
 			"minecraft:lake_lava_underground"
 		],
