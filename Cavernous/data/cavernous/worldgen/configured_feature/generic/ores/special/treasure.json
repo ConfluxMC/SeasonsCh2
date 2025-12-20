@@ -67,7 +67,7 @@
 			{
 				"target": {
 					"predicate_type": "minecraft:tag_match",
-					"tag": "cavernous:stone_ore"
+					"tag": "minecraft:stone_ore_replaceables"
 				},
 				"state": {
 					"Name": "minecraft:redstone_ore",
@@ -79,7 +79,7 @@
 			{
 				"target": {
 					"predicate_type": "minecraft:tag_match",
-					"tag": "cavernous:deepslate_ore"
+					"tag": "minecraft:deepslate_ore_replaceables"
 				},
 				"state": {
 					"Name": "minecraft:deepslate_redstone_ore",
