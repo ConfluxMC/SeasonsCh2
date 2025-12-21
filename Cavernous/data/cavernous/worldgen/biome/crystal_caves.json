@@ -142,11 +142,7 @@
 		[],
 		[],
 		[
-			"cavernous:generic/splotches/gravel",
-			"cavernous:generic/splotches/andesite",
-			"cavernous:generic/splotches/diorite",
-			"cavernous:generic/splotches/granite",
-			"cavernous:generic/splotches/tuff"
+			"cavernous:generic/splotches/diorite"
 		],
 		[
 			"cavernous:generic/ores/coal_upper",
@@ -171,7 +167,8 @@
 			"cavernous:generic/ores/lapis_inverse",
 			"cavernous:generic/ores/lapis_buried_inverse",
 			"cavernous:generic/ores/redstone",
-			"cavernous:generic/ores/redstone_lower"
+			"cavernous:generic/ores/redstone_lower",
+			"cavernous:generic/ores/quartz_crystal_caves"
 		],
 		[
 			"cavernous:generic/ores/special/treasure",
