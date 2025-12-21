@@ -166,7 +166,8 @@
 			"cavernous:generic/ores/lapis_buried_inverse",
 			"cavernous:generic/ores/redstone",
 			"cavernous:generic/ores/redstone_lower",
-			"cavernous:generic/ores/gold_extra"
+			"cavernous:generic/ores/gold_extra",
+			"cavernous:generic/ores/quartz"
 		],
 		[
 			"cavernous:generic/ores/special/treasure",
