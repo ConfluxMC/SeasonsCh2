@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": "minecraft:glass",
+    "O": "minecraft:obsidian",
+    "S": "minecraft:nether_star"
+  },
+  "pattern": [
+    "GGG",
+    "GSG",
+    "OOO"
+  ],
+  "result": {
+    "components": {
+      "minecraft:lore": [
+        {
+          "text": "A powerful monument rendered useless underground.",
+          "color": "gray",
+          "italic": false
+        }
+      ]
+    },
+    "count": 1,
+    "id": "minecraft:beacon"
+  }
+}

@@ -34,8 +34,9 @@ scoreboard players set @a broke.spore_blossom 0
 
 ### NEW CONVERSION
 
-execute as @e[type=#cavernous:convertables,tag=!converted] run tag @s add unconverted
+tag @e[type=#cavernous:convertables,tag=!converted] add unconverted
 
 execute as @e[type=zombie,tag=unconverted] at @s run function cavernous:mob_conversion/zombie_main
 execute as @e[type=skeleton,tag=unconverted] at @s run function cavernous:mob_conversion/skeleton_main
 execute as @e[type=creeper,tag=unconverted] at @s run function cavernous:mob_conversion/creeper_main
+execute as @e[type=magma_cube,tag=unconverted] at @s run function cavernous:mob_conversion/magma_cube_main

@@ -1,0 +1,16 @@
+{
+	"condition": "minecraft:entity_properties",
+	"entity": "this",
+	"predicate": {
+		"type": "minecraft:magma_cube",
+		"location": {
+			"biomes": "cavernous:volcanic_caves",
+			"light": {
+				"light": {
+					"min": 0,
+					"max": 10
+				}
+			}
+		}
+	}
+}
