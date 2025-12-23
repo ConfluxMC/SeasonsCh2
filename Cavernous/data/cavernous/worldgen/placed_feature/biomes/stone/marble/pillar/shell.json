@@ -1,0 +1,24 @@
+{
+  "feature": "cavernous:biomes/stone/marble/pillar/shell",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 256
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+          "above_bottom": 32
+        },
+        "max_inclusive": {
+          "below_top": 32
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

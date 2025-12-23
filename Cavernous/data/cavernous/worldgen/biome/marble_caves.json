@@ -24,8 +24,10 @@
   "downfall": 0.4,
   "has_precipitation": true,
   "effects": {
-    "water_color": 11782388,
-    "grass_color_modifier": "none"
+    "dry_foliage_color": "#a0a69c",
+    "foliage_color": "#878d76",
+    "grass_color": "#778272",
+    "water_color": 11782388
   },
   "spawners": {
     "ambient": [
@@ -37,14 +39,7 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:skeleton_horse",
-        "weight": 100,
-        "minCount": 1,
-        "maxCount": 3
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {
@@ -145,7 +140,9 @@
     [
       "cavernous:generic/ores/special/treasure",
       "cavernous:generic/ores/special/gold_chunk",
-      "cavernous:generic/ores/special/copper_chunk"
+      "cavernous:generic/ores/special/copper_chunk",
+      "cavernous:biomes/stone/marble/pillar/core",
+      "cavernous:biomes/stone/marble/pillar/shell"
     ],
     [
       "minecraft:glow_lichen"
