@@ -37,17 +37,13 @@
 			"height_rand_b": 4,
 			"extra_branch_steps": {
 				"type": "minecraft:uniform",
-				
-					"min_inclusive": 3,
-					"max_inclusive": 5
-				
+				"min_inclusive": 3,
+				"max_inclusive": 5
 			},
 			"extra_branch_length": {
 				"type": "minecraft:uniform",
-				
-					"min_inclusive": 0,
-					"max_inclusive": 1
-				
+				"min_inclusive": 0,
+				"max_inclusive": 1
 			},
 			"place_branch_per_log_probability": 0.35,
 			"can_grow_through": "minecraft:air"
@@ -59,6 +55,55 @@
 			"foliage_height": 1,
 			"leaf_placement_attempts": 0
 		},
-		"decorators": []
+		"decorators": [
+			{
+				"type": "minecraft:attached_to_logs",
+				"probability": 0.01,
+				"block_provider": {
+					"type": "minecraft:weighted_state_provider",
+					"entries": [
+						{
+							"weight": 1,
+							"data": {
+								"Name": "minecraft:dried_ghast",
+								"Properties": {
+									"facing": "north"
+								}
+							}
+						},
+						{
+							"weight": 1,
+							"data": {
+								"Name": "minecraft:dried_ghast",
+								"Properties": {
+									"facing": "south"
+								}
+							}
+						},
+						{
+							"weight": 1,
+							"data": {
+								"Name": "minecraft:dried_ghast",
+								"Properties": {
+									"facing": "west"
+								}
+							}
+						},
+						{
+							"weight": 1,
+							"data": {
+								"Name": "minecraft:dried_ghast",
+								"Properties": {
+									"facing": "east"
+								}
+							}
+						}
+					]
+				},
+				"directions": [
+					"up"
+				]
+			}
+		]
 	}
 }

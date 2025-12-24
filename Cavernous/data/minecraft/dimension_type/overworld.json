@@ -5,7 +5,7 @@
     "minecraft:audio/ambient_sounds": {
       "mood": {
         "block_search_extent": 8,
-        "offset": 2.0,
+        "offset": 2,
         "sound": "minecraft:ambient.cave",
         "tick_delay": 6000
       }
@@ -30,12 +30,13 @@
         "translate": "block.minecraft.bed.no_sleep"
       }
     },
-    "minecraft:gameplay/nether_portal_spawns_piglin": true,
+    "minecraft:gameplay/nether_portal_spawns_piglin": false,
+    "minecraft:gameplay/piglins_zombify": false,
+    "minecraft:gameplay/respawn_anchor_works": false,
     "minecraft:gameplay/eyeblossom_open": true,
     "minecraft:gameplay/creaking_active": true,
     "minecraft:gameplay/bees_stay_in_hive": false,
     "minecraft:gameplay/cat_waking_up_gift_chance": 0.7,
-    "minecraft:gameplay/respawn_anchor_works": false,
     "minecraft:visual/cloud_color": "#5a646c99",
     "minecraft:visual/cloud_height": 62.33
   },

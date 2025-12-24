@@ -38,8 +38,8 @@
       {
         "type": "minecraft:skeleton",
         "weight": 1,
-        "minCount": 2,
-        "maxCount": 6
+        "minCount": 4,
+        "maxCount": 7
       }
     ],
     "underground_water_creature": [
@@ -57,9 +57,9 @@
       },
       {
         "type": "minecraft:nautilus",
-        "maxCount": 1,
+        "weight": 1,
         "minCount": 1,
-        "weight": 1
+        "maxCount": 2
       }
     ],
     "water_ambient": [
@@ -72,7 +72,20 @@
     ],
     "water_creature": []
   },
-  "spawn_costs": {},
+  "spawn_costs": {
+    "minecraft:skeleton": {
+      "energy_budget": 0.7,
+      "charge": 0.1
+    },
+    "minecraft:squid": {
+      "energy_budget": 0.1,
+      "charge": 0.1
+    },
+    "minecraft:nautilus": {
+      "energy_budget": 0.4,
+      "charge": 0.2
+    }
+  },
   "carvers": [
     "minecraft:cave",
     "minecraft:cave_extra_underground",

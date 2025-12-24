@@ -1,4 +1,4 @@
-data modify entity @e[type=parched,limit=1,sort=nearest] equipment set from entity @e[type=minecraft:skeleton,limit=1,sort=nearest] equipment
-data modify entity @e[type=parched,limit=1,sort=nearest] drop_chances set from entity @e[type=minecraft:skeleton,limit=1,sort=nearest] drop_chances
-data modify entity @e[type=parched,limit=1,sort=nearest] CanPickUpLoot set from entity @e[type=minecraft:skeleton,limit=1,sort=nearest] CanPickUpLoot
-data modify entity @e[type=parched,limit=1,sort=nearest] attributes set from entity @e[type=minecraft:skeleton,limit=1,sort=nearest] attributes
+data modify entity @n[type=parched] equipment set from entity @n[type=minecraft:skeleton] equipment
+data modify entity @n[type=parched] drop_chances set from entity @n[type=minecraft:skeleton] drop_chances
+data modify entity @n[type=parched] CanPickUpLoot set from entity @n[type=minecraft:skeleton] CanPickUpLoot
+data modify entity @n[type=parched] attributes set from entity @n[type=minecraft:skeleton] attributes

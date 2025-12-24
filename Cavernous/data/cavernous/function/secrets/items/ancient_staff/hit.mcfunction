@@ -6,7 +6,7 @@ playsound entity.blaze.death player @a ~ ~ ~ 0.7 0.8 0
 particle minecraft:enchant ~ ~ ~ 0.8 1 0.8 1 120 normal @a
 
 
-execute as @e[tag=to_damage_with_staff] unless score @s ancient_staff.casting matches 1 at @s run damage @s 3 magic by @e[scores={ancient_staff.casting=1},sort=nearest,limit=1]
+execute as @e[tag=to_damage_with_staff] unless score @s ancient_staff.casting matches 1 at @s run damage @s 3 magic by @n[scores={ancient_staff.casting=1}]
 tag @e[tag=to_damage_with_staff] remove to_damage_with_staff
 
 

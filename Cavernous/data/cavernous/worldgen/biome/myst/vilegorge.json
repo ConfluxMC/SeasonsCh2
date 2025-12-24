@@ -59,6 +59,10 @@
 			"cavernous:myst/vilegorge/pillars"
 		],
 		[
+			"cavernous:myst/vilegorge/ancient_debris_small",
+			"cavernous:myst/vilegorge/ancient_debris_large"
+		],
+		[
 			"minecraft:freeze_top_layer"
 		]
 	]

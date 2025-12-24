@@ -1,4 +1,4 @@
-kill @e[type=item,nbt={Item:{id:"minecraft:diamond_chestplate",count:1}},limit=1,sort=nearest]
+kill @n[type=item,nbt={Item:{id:"minecraft:diamond_chestplate",count:1}}]
 summon item ~ ~0.5 ~ {Item:{id:"minecraft:leather_chestplate",count:1,components:{unbreakable:{},tooltip_display:{hidden_components:[dyed_color,trim,unbreakable]},repair_cost:1000,custom_data:{tag:ancient_armor},enchantment_glint_override:true,item_name:[{"text":"Ancient Robe","italic":false,"color":"dark_red"}],lore:[[{"text":"Strength I","italic":false,"color":"gray"},{"text":"","italic":false,"color":"dark_purple"}],[{"text":"","italic":false,"color":"dark_purple"}],[{"text":"-3.0 ❤","italic":false,"color":"red"},{"text":"","italic":false,"color":"dark_purple"}],[{"text":"","italic":false,"color":"dark_purple"}],[{"text":"Set Bonus:","italic":false,"color":"dark_purple"},{"text":"","italic":false,"color":"dark_purple"}],[{"text":"-No blood toll on ancient","italic":false,"color":"dark_purple"},{"text":"","italic":false,"color":"dark_purple"}],[{"text":"items","italic":false,"color":"dark_purple"}]],trim:{pattern:vex,material:redstone},dyed_color:7622482}}}
 tag @s add has_crafted
 
