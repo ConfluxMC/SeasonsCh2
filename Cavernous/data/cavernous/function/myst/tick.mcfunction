@@ -16,7 +16,7 @@ tag @a[tag=to_clear_glass_bottle] remove to_clear_glass_bottle
 
 ### Openings
 execute as @a[tag=entered_myst_1st_time] run scoreboard players add @s title_card.delay 1
-execute as @a[tag=entered_myst_1st_time,scores={title_card.delay=100}] run function cavernous:myst/title_cards/dreadmire
+execute as @a[tag=entered_myst_1st_time,scores={title_card.delay=100}] at @s run function cavernous:myst/title_cards/dreadmire
 
 ### Mobs
 
