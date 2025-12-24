@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      {
+        "feature": "cavernous:biomes/stone/marble/tree_fancy_grown",
+        "placement": []
+      },
+      {
+        "feature": "cavernous:biomes/stone/marble/tree_straight_grown",
+        "placement": []
+      }
+    ]
+  }
+}
