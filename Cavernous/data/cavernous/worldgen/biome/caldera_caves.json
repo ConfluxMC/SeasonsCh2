@@ -42,12 +42,6 @@
     "misc": [],
     "monster": [
       {
-        "type": "minecraft:spider",
-        "weight": 25,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
         "type": "minecraft:zombie",
         "weight": 125,
         "minCount": 4,
@@ -58,12 +52,6 @@
         "weight": 15,
         "minCount": 1,
         "maxCount": 1
-      },
-      {
-        "type": "minecraft:zombie_horse",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 10
       },
       {
         "type": "minecraft:creeper",
