@@ -1,0 +1,1 @@
+execute unless function cavernous:hollow_earth/single_pale_sapling/grow2 run function cavernous:hollow_earth/single_pale_sapling/failed_growth

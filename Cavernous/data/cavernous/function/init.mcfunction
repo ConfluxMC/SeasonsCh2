@@ -10,4 +10,7 @@ scoreboard objectives add thrower.check dummy
 
 scoreboard objectives add chain_arrow.timer dummy
 
+scoreboard objectives add single_pale_sapling.fail_counter dummy
+scoreboard players set .max_fails single_pale_sapling.fail_counter 80
+
 function cavernous:secrets/init

@@ -24,60 +24,42 @@
   "downfall": 0.4,
   "has_precipitation": true,
   "effects": {
-    "water_color": 11782388,
-    "grass_color_modifier": "none"
+    "dry_foliage_color": "#a0a69c",
+    "foliage_color": "#878d76",
+    "grass_color": "#778272",
+    "water_color": 11782388
   },
   "spawners": {
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "weight": 10,
-        "minCount": 8,
-        "maxCount": 8
-      }
-    ],
+    "ambient": [],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:skeleton_horse",
-        "weight": 100,
-        "minCount": 1,
-        "maxCount": 3
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {
         "type": "minecraft:skeleton",
-        "weight": 100,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:enderman",
-        "weight": 10,
-        "minCount": 1,
-        "maxCount": 4
+        "weight": 1,
+        "minCount": 2,
+        "maxCount": 6
       }
     ],
     "underground_water_creature": [
       {
         "type": "minecraft:squid",
-        "weight": 9,
-        "minCount": 4,
-        "maxCount": 6
+        "weight": 3,
+        "minCount": 2,
+        "maxCount": 4
       },
       {
         "type": "minecraft:glow_squid",
         "weight": 1,
-        "minCount": 4,
-        "maxCount": 6
+        "minCount": 1,
+        "maxCount": 2
       },
       {
         "type": "minecraft:nautilus",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 5
+        "weight": 1
       }
     ],
     "water_ambient": [
@@ -85,7 +67,7 @@
         "type": "minecraft:cod",
         "maxCount": 3,
         "minCount": 1,
-        "weight": 15
+        "weight": 5
       }
     ],
     "water_creature": []
@@ -145,9 +127,13 @@
     [
       "cavernous:generic/ores/special/treasure",
       "cavernous:generic/ores/special/gold_chunk",
-      "cavernous:generic/ores/special/copper_chunk"
+      "cavernous:generic/ores/special/copper_chunk",
+      "cavernous:biomes/stone/marble/pillar/core",
+      "cavernous:biomes/stone/marble/pillar/shell"
     ],
     [
+      "cavernous:biomes/stone/marble/tree_straight",
+      "cavernous:biomes/stone/marble/tree_fancy",
       "minecraft:glow_lichen"
     ],
     [

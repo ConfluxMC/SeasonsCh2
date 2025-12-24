@@ -40,3 +40,9 @@ execute as @e[type=zombie,tag=unconverted] at @s run function cavernous:mob_conv
 execute as @e[type=skeleton,tag=unconverted] at @s run function cavernous:mob_conversion/skeleton_main
 execute as @e[type=creeper,tag=unconverted] at @s run function cavernous:mob_conversion/creeper_main
 execute as @e[type=magma_cube,tag=unconverted] at @s run function cavernous:mob_conversion/magma_cube_main
+
+### SINGLE PALE SAPLING
+
+kill @e[type=marker,tag=single_pale_sapling,predicate=!cavernous:single_pale_sapling/valid_marker]
+execute as @e[type=item,predicate=cavernous:single_pale_sapling/quartz_at_sapling] at @s align xyz positioned ~0.5 ~0.5 ~0.5 unless entity @n[type=minecraft:marker,tag=single_pale_sapling,distance=..0.6] run function cavernous:hollow_earth/single_pale_sapling/mark
+execute as @e[type=marker,tag=single_pale_sapling,predicate=cavernous:single_pale_sapling/grow_ready] at @s run function cavernous:hollow_earth/single_pale_sapling/grow

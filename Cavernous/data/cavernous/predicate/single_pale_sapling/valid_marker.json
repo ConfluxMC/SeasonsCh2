@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "minecraft:marker",
+    "location": {
+      "block": {
+        "blocks": "minecraft:pale_oak_sapling"
+      }
+    }
+  }
+}
