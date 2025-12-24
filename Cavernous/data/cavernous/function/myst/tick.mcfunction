@@ -1,10 +1,9 @@
 ### Noxwoods Poison Water
-execute as @e[predicate=cavernous:in_noxwoods,predicate=cavernous:swimming] at @s if block ~ ~ ~ water run scoreboard players set @s nox.time_poisoned 20
-execute as @e[predicate=cavernous:in_noxwoods,predicate=cavernous:standing] at @s if block ~ ~ ~ water run scoreboard players set @s nox.time_poisoned 20
-execute as @e[predicate=cavernous:in_noxwoods,predicate=cavernous:standing] at @s if block ~ ~1 ~ water run scoreboard players set @s nox.time_poisoned 20
+scoreboard players add @e[type=!#cavernous:resist_noxwood_poison,predicate=cavernous:in_poison_water] nox.time_poisoned 0
+scoreboard players add @e[type=!#cavernous:resist_noxwood_poison,predicate=cavernous:in_poison_water,scores={nox.time_poisoned=..80}] nox.time_poisoned 2
 
-execute as @e[scores={nox.time_poisoned=0..}] run effect give @s poison 3 1 true
-execute as @e[scores={nox.time_poisoned=0..}] run scoreboard players remove @s nox.time_poisoned 1
+effect give @e[type=!#cavernous:resist_noxwood_poison,scores={nox.time_poisoned=20..}] poison 3 1 true
+scoreboard players remove @e[type=!#cavernous:resist_noxwood_poison,scores={nox.time_poisoned=1..}] nox.time_poisoned 1
 
 ### Remnant Crafting
 execute as @e[type=item,nbt={Item:{id:"minecraft:nether_wart",count:3,components:{"minecraft:custom_data":{tag:blood_remnant}}}}] at @s run function cavernous:myst/remnant_craft
@@ -25,6 +24,9 @@ execute as @a[tag=entered_myst_1st_time,scores={title_card.delay=100}] at @s run
 
     #### Ghost
     execute as @e[type=skeleton,tag=ghost] at @s if entity @a[distance=..30] run function cavernous:myst/mobs/ghost/run
+
+    #### Noxwood Bogged
+    execute as @e[type=bogged,tag=!converted] at @s if biome ~ ~ ~ cavernous:myst/noxwoods run function cavernous:myst/mobs/bogged/convert
 
 ### Final Boss
 

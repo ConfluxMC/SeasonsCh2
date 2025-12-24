@@ -1,5 +1,5 @@
 kill @s
-kill @e[type=armor_stand,tag=remnant,sort=nearest,limit=1]
+kill @n[type=armor_stand,tag=remnant]
 particle dust{color:[0.443, 0.055, 0.055],scale:3.5} ~ ~ ~ 1 1 1 1 50 force @a
 playsound minecraft:block.end_portal.spawn block @a ~ ~ ~ 0.5 0.5 0
 

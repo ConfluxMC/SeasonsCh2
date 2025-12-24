@@ -2,8 +2,11 @@
 	"condition": "minecraft:entity_properties",
 	"entity": "this",
 	"predicate": {
+		"location": {
+			"biomes": "cavernous:myst/noxwoods"
+		},
 		"flags": {
-			"is_swimming": false
+			"is_in_water": true
 		}
 	}
 }

@@ -1,7 +1,6 @@
-data modify entity @e[type=husk,limit=1,sort=nearest] equipment set from entity @e[type=minecraft:zombie,limit=1,sort=nearest] equipment
-data modify entity @e[type=husk,limit=1,sort=nearest] drop_chances set from entity @e[type=minecraft:zombie,limit=1,sort=nearest] drop_chances
-data modify entity @e[type=husk,limit=1,sort=nearest] IsBaby set from entity @e[type=minecraft:zombie,limit=1,sort=nearest] IsBaby
-data modify entity @e[type=husk,limit=1,sort=nearest] IsBaby set from entity @e[type=minecraft:zombie,limit=1,sort=nearest] IsBaby
-data modify entity @e[type=husk,limit=1,sort=nearest] CanPickUpLoot set from entity @e[type=minecraft:zombie,limit=1,sort=nearest] CanPickUpLoot
-data modify entity @e[type=husk,limit=1,sort=nearest] attributes set from entity @e[type=minecraft:zombie,limit=1,sort=nearest] attributes
-#idk if i messed up attributes or baby field
+data modify entity @n[type=husk] equipment set from entity @n[type=minecraft:zombie] equipment
+data modify entity @n[type=husk] drop_chances set from entity @n[type=minecraft:zombie] drop_chances
+data modify entity @n[type=husk] IsBaby set from entity @n[type=minecraft:zombie] IsBaby
+data modify entity @n[type=husk] IsBaby set from entity @n[type=minecraft:zombie] IsBaby
+data modify entity @n[type=husk] CanPickUpLoot set from entity @n[type=minecraft:zombie] CanPickUpLoot
+data modify entity @n[type=husk] attributes set from entity @n[type=minecraft:zombie] attributes

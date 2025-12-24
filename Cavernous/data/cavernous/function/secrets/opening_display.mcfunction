@@ -19,10 +19,10 @@ execute if entity @s[scores={opening.timer=0..10}] run title @s title ["The Unde
 
 scoreboard players operation @s opening.timer.a = @s opening.timer
 scoreboard players operation @s opening.timer.a %= 10 num
-execute if score @s opening.timer.a matches 0 if entity @s[scores={opening.timer=0..140}] run playsound minecraft:block.sculk.step master @s ~ ~ ~ 1 0.5 1
-execute if score @s opening.timer.a matches 0 if entity @s[scores={opening.timer=0..140}] run playsound minecraft:block.copper.place master @s ~ ~ ~ 1 1.8 1
+execute if score @s opening.timer.a matches 0 if entity @s[scores={opening.timer=0..140}] run playsound minecraft:block.sculk.step ui @s ~ ~ ~ 1 0.5 1
+execute if score @s opening.timer.a matches 0 if entity @s[scores={opening.timer=0..140}] run playsound minecraft:block.copper.place ui @s ~ ~ ~ 1 1.8 1
 
 execute if entity @s[scores={opening.timer=0..10}] run title @s subtitle {"text":"DISCOVERED","color":"yellow"}
-execute if score @s opening.timer matches 15 run playsound minecraft:block.end_portal.spawn master @s ~ ~ ~ 0.7 0.1 1
+execute if score @s opening.timer matches 15 run playsound minecraft:block.end_portal.spawn ui @s ~ ~ ~ 0.7 0.1 1
 
 scoreboard players remove @s opening.timer 1
