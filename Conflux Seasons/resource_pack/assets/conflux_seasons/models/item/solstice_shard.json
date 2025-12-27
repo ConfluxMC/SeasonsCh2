@@ -1,0 +1,6 @@
+{
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "conflux_seasons:item/solstice_shard"
+	}
+}

@@ -1,0 +1,1 @@
+scoreboard objectives add solstice_shards dummy Sols

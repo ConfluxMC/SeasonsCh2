@@ -1,0 +1,12 @@
+{
+    "pack": {
+        "min_format": 69,
+        "max_format": 75,
+        "description": [
+            {
+                "text": "Conflux Seasons",
+                "color": "green"
+            }
+        ]
+    }
+}
