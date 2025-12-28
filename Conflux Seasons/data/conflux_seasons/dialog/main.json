@@ -1,0 +1,51 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "Conflux Seasons Chapter 2: Hollow Earth"
+  },
+  "external_title": {
+    "text": "Conflux Seasons"
+  },
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": [
+      {
+        "text": "Welcome to Conflux Seasons Chapter 2: Hollow Earth!"
+      },
+      {
+        "text": "\nView your progress in the Conflux Seasons tab in Advancements [ ",
+        "extra": [
+          {
+            "keybind": "key.advancements"
+          },
+          {
+            "text": " ]."
+          }
+        ]
+      }
+    ]
+  },
+  "columns": 2,
+  "actions": [
+    {
+      "label": {
+        "text": "Wiki"
+      },
+      "width": 75,
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://docs.google.com/document/d/125V6kCtJn9oAYURjDKD7Nq6zv5yOOjMXFdDCpbLLW-s/edit?usp=sharing"
+      }
+    },
+    {
+      "label": {
+        "text": "Shop"
+      },
+      "width": 75,
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger trg_shop_open set 1"
+      }
+    }
+  ]
+}

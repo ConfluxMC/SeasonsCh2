@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "first_join": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "rewards": {
+    "function": "conflux_seasons:first_join"
+  }
+}
