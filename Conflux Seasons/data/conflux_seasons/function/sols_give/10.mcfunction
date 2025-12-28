@@ -1,1 +1,0 @@
-function conflux_seasons:sols_give/give {sols: 10}

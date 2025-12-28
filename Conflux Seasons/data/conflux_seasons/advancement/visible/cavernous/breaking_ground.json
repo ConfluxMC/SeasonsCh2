@@ -27,6 +27,6 @@
     }
   },
   "rewards": {
-    "function": "conflux_seasons:sols_give/10"
+    "function": "conflux_seasons:advancement_rewards/cavernous/breaking_ground"
   }
 }

@@ -1,6 +1,28 @@
 {
-	"parent": "item/handheld",
+	"parent": "item/generated",
 	"textures": {
 		"layer0": "conflux_seasons:item/solstice_shard"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [ 0.3, 0.3, 0.3 ]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [ 0, 0, 75 ],
+			"scale": [ 0.3, 0.3, 0.3 ]
+		},
+		"firstperson_righthand": {
+			"rotation": [ 0, -75, -13 ],
+			"translation": [ 1.5, 3.25, 2 ],
+			"scale": [ 0.3, 0.3, 0.3 ]
+		},
+		"firstperson_lefthand": {
+			"rotation": [ 0, -75, 87 ],
+			"translation": [ 1.5, 3.25, 2 ],
+			"scale": [ 0.3, 0.3, 0.3 ]
+		},
+		"ground": {
+			"scale": [ 0.4, 0.4, 0.4 ]
+		}
 	}
 }

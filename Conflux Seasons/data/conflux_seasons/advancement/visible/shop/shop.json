@@ -13,5 +13,8 @@
     "buy": {
       "trigger": "minecraft:impossible"
     }
+  },
+  "rewards": {
+    "function": "conflux_seasons:advancement_rewards/shop/shop"
   }
 }

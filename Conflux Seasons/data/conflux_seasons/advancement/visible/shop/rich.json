@@ -30,6 +30,7 @@
     }
   },
   "rewards": {
+    "function": "conflux_seasons:advancement_rewards/shop/rich",
     "experience": 500
   }
 }

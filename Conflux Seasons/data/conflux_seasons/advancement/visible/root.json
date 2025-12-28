@@ -10,7 +10,7 @@
     "description": {
       "text": "Chapter 2: Hollow Earth"
     },
-    "background": "minecraft:block/jungle_leaves",
+    "background": "conflux_seasons:block/conflux_leaves",
     "show_toast": false,
     "announce_to_chat": false
   },
@@ -20,6 +20,6 @@
     }
   },
   "rewards": {
-    "function": "conflux_seasons:first_join"
+    "function": "conflux_seasons:advancement_reward/root"
   }
 }
