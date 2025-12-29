@@ -1,1 +1,0 @@
-tag @n[distance=..0.5,type=armor_stand,tag=rascal_stand,tag=rascal_moving] remove rascal_moving

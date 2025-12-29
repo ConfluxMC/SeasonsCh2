@@ -1,0 +1,17 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "ocelot",
+    "components": {
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:movement_speed",
+          "id": "rascal_sprinting_speed_boost",
+          "amount": 0.15,
+          "operation": "add_value"
+        }
+      ]
+    }
+  }
+}

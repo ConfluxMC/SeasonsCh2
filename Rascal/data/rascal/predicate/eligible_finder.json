@@ -8,7 +8,15 @@
       "gamemode": [
         "survival",
         "adventure"
-      ]
+      ],
+      "looking_at": {
+        "type": "minecraft:ocelot",
+        "effects": {
+          "minecraft:invisibility": {
+            "duration": -1
+          }
+        }
+      }
     }
   }
 }
