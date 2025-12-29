@@ -20,7 +20,9 @@
       "minecraft:consumable": {"consume_seconds":2147483648},
       "minecraft:max_damage": 1500,
       "minecraft:rarity": "epic",
-      "minecraft:repairable": {"items":"minecraft:echo_shard"}
+      "minecraft:repairable": {"items":"minecraft:echo_shard"},
+      "minecraft:use_effects": {"can_sprint":true, "speed_multiplier":1, "interact_vibrations":true},
+      "minecraft:attack_range": {"max_reach":3, "max_creative_reach":4}
     }
   }
 }

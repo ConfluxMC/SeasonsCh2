@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:emerald",
+      "components": {
+        "minecraft:item_model": "conflux_seasons:solstice_shard"
+      }
+    },
+    "title": "Conflux Seasons",
+    "description": {
+      "text": "Chapter 2: Hollow Earth"
+    },
+    "background": "conflux_seasons:block/conflux_leaves",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "rewards": {
+    "function": "conflux_seasons:advancement_reward/root"
+  }
+}

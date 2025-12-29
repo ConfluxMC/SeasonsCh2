@@ -1,0 +1,20 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:flower_banner_pattern"
+    },
+    "title": "Valued Customer",
+    "description": {
+      "text": "Purchase something from the Sols Shop."
+    }
+  },
+  "parent": "conflux_seasons:root",
+  "criteria": {
+    "buy": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "function": "conflux_seasons:advancement_rewards/shop/shop"
+  }
+}

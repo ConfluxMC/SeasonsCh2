@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "get": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": {
+          "items": "minecraft:emerald",
+          "components": {
+            "minecraft:custom_data": {
+              "solstice_shard": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "conflux_seasons:sols_give/shard"
+  }
+}
