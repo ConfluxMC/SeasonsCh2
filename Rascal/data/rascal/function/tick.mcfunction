@@ -36,7 +36,7 @@ execute as @e[type=armor_stand,tag=rascal_stand,tag=!rascal_can_be_caught] at @s
 execute as @e[type=ocelot,tag=rascal_ocelot] at @s if block ^ ^0.4 ^0.5 #minecraft:rails if block ^ ^0.4 ^1 #rascal:rascal_safe_tp_destinations run tp ^ ^0.4 ^0.5
 
 # Exit vehicles
-execute at @e[type=armor_stand,tag=rascal_stand,tag=!rascal_can_be_caught] as @n[tag=rascal_ocelot] on vehicle run damage @s 0.5 minecraft:mob_attack_no_aggro
+execute at @e[type=armor_stand,tag=rascal_stand,tag=!rascal_can_be_caught] as @n[type=ocelot,tag=rascal_ocelot] on vehicle run damage @s 0.5 minecraft:mob_attack_no_aggro
 
 # Attack leashers
 execute as @e[type=ocelot,tag=rascal_ocelot] on leasher run tag @s add rascal_leasher
@@ -48,6 +48,8 @@ tag @e[tag=rascal_leasher] remove rascal_leasher
 execute as @e[type=ocelot,tag=rascal_ocelot,nbt={HurtTime:9s}] at @s run function rascal:hurt
 execute as @e[type=ocelot,tag=rascal_ocelot,nbt={HurtTime:6s}] at @s run function rascal:throw_defense_potion
 
+# Cure defense potion effects on self
+execute as @e[type=ocelot,tag=rascal_ocelot,predicate=rascal:affected_by_defense_potion] at @s run function rascal:clear_defense_potion_effects
 
 
 ############ - Анимация ног (Leg Animations)
@@ -56,56 +58,56 @@ execute as @e[type=ocelot,tag=rascal_ocelot,nbt={HurtTime:6s}] at @s run functio
 #      rascal_moving     -Идёт (coming/ok) (is moving?)
 
 ### - Стоит (Not moving)
-execute at @e[type=ocelot,tag=rascal_ocelot,nbt={Motion:[0.0d,0.0d,0.0d]}] run tag @n[distance=..0.5,type=minecraft:armor_stand,tag=rascal_stand,tag=rascal_moving] remove rascal_moving
+execute at @e[type=ocelot,tag=rascal_ocelot,predicate=rascal:not_moving] run tag @n[distance=..0.5,type=armor_stand,tag=rascal_stand,tag=rascal_moving] remove rascal_moving
 
 ### - Движется (Moving)
-execute at @e[type=ocelot,tag=rascal_ocelot,nbt=!{Motion:[0.0d,0.0d,0.0d]}] run tag @n[distance=..0.5,type=minecraft:armor_stand,tag=rascal_stand,tag=!rascal_moving] add rascal_moving
+execute at @e[type=ocelot,tag=rascal_ocelot,predicate=!rascal:not_moving] run tag @n[distance=..0.5,type=armor_stand,tag=rascal_stand,tag=!rascal_moving] add rascal_moving
 
 ###Right
-scoreboard players set @e[tag=rascal_moving,tag=rascal_moving,tag=!go_1_rascal_minliv,tag=!go_2_rascal_minliv,tag=!go_3_rascal_minliv] ShowArms_1_rascal_minliv 360
-tag @e[tag=rascal_moving,tag=rascal_moving,tag=!go_1_rascal_minliv,tag=!go_2_rascal_minliv,tag=!go_3_rascal_minliv] add go_1_rascal_minliv
+scoreboard players set @e[tag=rascal_moving,tag=!go_1_rascal_minliv,tag=!go_2_rascal_minliv,tag=!go_3_rascal_minliv] ShowArms_1_rascal_minliv 360
+tag @e[type=armor_stand,tag=rascal_moving,tag=!go_1_rascal_minliv,tag=!go_2_rascal_minliv,tag=!go_3_rascal_minliv] add go_1_rascal_minliv
 
-execute as @e[tag=go_1_rascal_minliv,tag=!go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s store result entity @s Pose.RightArm[0] float 1 run scoreboard players get @s ShowArms_1_rascal_minliv
-execute as @e[tag=go_1_rascal_minliv,tag=!go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches ..369 run scoreboard players add @s ShowArms_1_rascal_minliv 1
-execute as @e[tag=go_1_rascal_minliv,tag=!go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches ..369 run scoreboard players add @s ShowArms_1_rascal_minliv 1
+execute as @e[type=armor_stand,tag=go_1_rascal_minliv,tag=!go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s store result entity @s Pose.RightArm[0] float 1 run scoreboard players get @s ShowArms_1_rascal_minliv
+execute as @e[type=armor_stand,tag=go_1_rascal_minliv,tag=!go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches ..369 run scoreboard players add @s ShowArms_1_rascal_minliv 1
+execute as @e[type=armor_stand,tag=go_1_rascal_minliv,tag=!go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches ..369 run scoreboard players add @s ShowArms_1_rascal_minliv 1
 
-execute as @e[tag=go_1_rascal_minliv,tag=!go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 370 run tag @s add go_2_rascal_minliv
+execute as @e[type=armor_stand,tag=go_1_rascal_minliv,tag=!go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 370 run tag @s add go_2_rascal_minliv
 
-execute as @e[tag=go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s store result entity @s Pose.RightArm[0] float 1 run scoreboard players get @s ShowArms_1_rascal_minliv
-execute as @e[tag=go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 346.. run scoreboard players remove @s ShowArms_1_rascal_minliv 1
-execute as @e[tag=go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 346.. run scoreboard players remove @s ShowArms_1_rascal_minliv 1
+execute as @e[type=armor_stand,tag=go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s store result entity @s Pose.RightArm[0] float 1 run scoreboard players get @s ShowArms_1_rascal_minliv
+execute as @e[type=armor_stand,tag=go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 346.. run scoreboard players remove @s ShowArms_1_rascal_minliv 1
+execute as @e[type=armor_stand,tag=go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 346.. run scoreboard players remove @s ShowArms_1_rascal_minliv 1
 
-execute as @e[tag=go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 345 run tag @s add go_3_rascal_minliv
+execute as @e[type=armor_stand,tag=go_2_rascal_minliv,tag=!go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 345 run tag @s add go_3_rascal_minliv
 
-execute as @e[tag=go_3_rascal_minliv] at @s store result entity @s Pose.RightArm[0] float 1 run scoreboard players get @s ShowArms_1_rascal_minliv
-execute as @e[tag=go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches ..359 run scoreboard players add @s ShowArms_1_rascal_minliv 1
-execute as @e[tag=go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches ..359 run scoreboard players add @s ShowArms_1_rascal_minliv 1
+execute as @e[type=armor_stand,tag=go_3_rascal_minliv] at @s store result entity @s Pose.RightArm[0] float 1 run scoreboard players get @s ShowArms_1_rascal_minliv
+execute as @e[type=armor_stand,tag=go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches ..359 run scoreboard players add @s ShowArms_1_rascal_minliv 1
+execute as @e[type=armor_stand,tag=go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches ..359 run scoreboard players add @s ShowArms_1_rascal_minliv 1
 
-execute as @e[tag=go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 360 run tag @s remove go_1_rascal_minliv
-execute as @e[tag=go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 360 run tag @s remove go_2_rascal_minliv
-execute as @e[tag=go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 360 run tag @s remove go_3_rascal_minliv
+execute as @e[type=armor_stand,tag=go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 360 run tag @s remove go_1_rascal_minliv
+execute as @e[type=armor_stand,tag=go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 360 run tag @s remove go_2_rascal_minliv
+execute as @e[type=armor_stand,tag=go_3_rascal_minliv] at @s if score @s ShowArms_1_rascal_minliv matches 360 run tag @s remove go_3_rascal_minliv
 
 
 ###Left
-scoreboard players set @e[type=minecraft:armor_stand,tag=rascal_stand,tag=rascal_moving,tag=!go_4_rascal_minliv,tag=!go_5_rascal_minliv,tag=!go_6_rascal_minliv] ShowArms_2_rascal_minliv 360
-tag @e[tag=rascal_moving,tag=!go_4_rascal_minliv,tag=!go_5_rascal_minliv,tag=!go_6_rascal_minliv] add go_4_rascal_minliv
+scoreboard players set @e[type=armor_stand,tag=rascal_stand,tag=rascal_moving,tag=!go_4_rascal_minliv,tag=!go_5_rascal_minliv,tag=!go_6_rascal_minliv] ShowArms_2_rascal_minliv 360
+tag @e[type=armor_stand,tag=rascal_moving,tag=!go_4_rascal_minliv,tag=!go_5_rascal_minliv,tag=!go_6_rascal_minliv] add go_4_rascal_minliv
 
-execute as @e[tag=go_4_rascal_minliv,tag=!go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s store result entity @s Pose.LeftArm[0] float 1 run scoreboard players get @s ShowArms_2_rascal_minliv
-execute as @e[tag=go_4_rascal_minliv,tag=!go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 346.. run scoreboard players remove @s ShowArms_2_rascal_minliv 1
-execute as @e[tag=go_4_rascal_minliv,tag=!go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 346.. run scoreboard players remove @s ShowArms_2_rascal_minliv 1
+execute as @e[type=armor_stand,tag=go_4_rascal_minliv,tag=!go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s store result entity @s Pose.LeftArm[0] float 1 run scoreboard players get @s ShowArms_2_rascal_minliv
+execute as @e[type=armor_stand,tag=go_4_rascal_minliv,tag=!go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 346.. run scoreboard players remove @s ShowArms_2_rascal_minliv 1
+execute as @e[type=armor_stand,tag=go_4_rascal_minliv,tag=!go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 346.. run scoreboard players remove @s ShowArms_2_rascal_minliv 1
 
-execute as @e[tag=go_4_rascal_minliv,tag=!go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 345 run tag @s add go_5_rascal_minliv
+execute as @e[type=armor_stand,tag=go_4_rascal_minliv,tag=!go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 345 run tag @s add go_5_rascal_minliv
 
-execute as @e[tag=go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s store result entity @s Pose.LeftArm[0] float 1 run scoreboard players get @s ShowArms_2_rascal_minliv
-execute as @e[tag=go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches ..369 run scoreboard players add @s ShowArms_2_rascal_minliv 1
-execute as @e[tag=go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches ..369 run scoreboard players add @s ShowArms_2_rascal_minliv 1
+execute as @e[type=armor_stand,tag=go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s store result entity @s Pose.LeftArm[0] float 1 run scoreboard players get @s ShowArms_2_rascal_minliv
+execute as @e[type=armor_stand,tag=go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches ..369 run scoreboard players add @s ShowArms_2_rascal_minliv 1
+execute as @e[type=armor_stand,tag=go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches ..369 run scoreboard players add @s ShowArms_2_rascal_minliv 1
 
-execute as @e[tag=go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 370 run tag @s add go_6_rascal_minliv
+execute as @e[type=armor_stand,tag=go_5_rascal_minliv,tag=!go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 370 run tag @s add go_6_rascal_minliv
 
-execute as @e[tag=go_6_rascal_minliv] at @s store result entity @s Pose.LeftArm[0] float 1 run scoreboard players get @s ShowArms_2_rascal_minliv
-execute as @e[tag=go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 360.. run scoreboard players remove @s ShowArms_2_rascal_minliv 1
-execute as @e[tag=go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 360.. run scoreboard players remove @s ShowArms_2_rascal_minliv 1
+execute as @e[type=armor_stand,tag=go_6_rascal_minliv] at @s store result entity @s Pose.LeftArm[0] float 1 run scoreboard players get @s ShowArms_2_rascal_minliv
+execute as @e[type=armor_stand,tag=go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 360.. run scoreboard players remove @s ShowArms_2_rascal_minliv 1
+execute as @e[type=armor_stand,tag=go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 360.. run scoreboard players remove @s ShowArms_2_rascal_minliv 1
 
-execute as @e[tag=go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 360 run tag @s remove go_4_rascal_minliv
-execute as @e[tag=go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 360 run tag @s remove go_5_rascal_minliv
-execute as @e[tag=go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 360 run tag @s remove go_6_rascal_minliv
+execute as @e[type=armor_stand,tag=go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 360 run tag @s remove go_4_rascal_minliv
+execute as @e[type=armor_stand,tag=go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 360 run tag @s remove go_5_rascal_minliv
+execute as @e[type=armor_stand,tag=go_6_rascal_minliv] at @s if score @s ShowArms_2_rascal_minliv matches 360 run tag @s remove go_6_rascal_minliv

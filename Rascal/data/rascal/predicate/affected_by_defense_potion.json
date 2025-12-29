@@ -1,0 +1,17 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "effects": {
+      "minecraft:blindness": {
+        "visible": false
+      },
+      "minecraft:slowness": {
+        "visible": false
+      },
+      "minecraft:poison": {
+        "visible": false
+      }
+    }
+  }
+}

@@ -19,7 +19,7 @@ execute as @s[scores={rascal_times_found=4..}] run return run function rascal:gi
 
 # If not final, play mischief sound, then teleport behind player and facing away
 tag @s add rascal_teleport_behind
-tag @n[tag=rascal_ocelot] add rascal_teleport_behind
+tag @n[type=ocelot,tag=rascal_ocelot] add rascal_teleport_behind
 playsound minecraft:entity.witch.celebrate neutral @a ~ ~ ~ 1 2
 execute as @n[type=player,predicate=rascal:eligible_finder] at @s if block ^ ^ ^-0.5 #rascal:rascal_safe_tp_destinations run tp @e[tag=rascal_teleport_behind] ^ ^ ^-0.3 ~180 ~
 tag @e[tag=rascal_teleport_behind] remove rascal_teleport_behind
