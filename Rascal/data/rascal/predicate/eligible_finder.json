@@ -1,22 +1,39 @@
 {
-  "condition": "minecraft:entity_properties",
-  "entity": "this",
-  "predicate": {
-    "type": "minecraft:player",
-    "type_specific": {
-      "type": "minecraft:player",
-      "gamemode": [
-        "survival",
-        "adventure"
-      ],
-      "looking_at": {
-        "type": "minecraft:ocelot",
-        "effects": {
-          "minecraft:invisibility": {
-            "duration": -1
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "minecraft:player",
+        "type_specific": {
+          "type": "minecraft:player",
+          "gamemode": [
+            "survival",
+            "adventure"
+          ],
+          "looking_at": {
+            "type": "minecraft:ocelot",
+            "effects": {
+              "minecraft:invisibility": {
+                "duration": -1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:inverted",
+      "term": {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "effects": {
+            "minecraft:blindness": {}
           }
         }
       }
     }
-  }
+  ]
 }
