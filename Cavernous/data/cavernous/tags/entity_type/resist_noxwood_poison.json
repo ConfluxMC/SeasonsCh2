@@ -6,6 +6,7 @@
 		"#minecraft:ignores_poison_and_regen",
 		"minecraft:item",
 		"minecraft:armor_stand",
+		"minecraft:marker",
 		"#minecraft:boat",
 		"#minecraft:impact_projectiles"
 	]
