@@ -17,7 +17,7 @@ execute as @a if score @s geyser.msg matches 1 unless score .global geyser.msg.a
 ###GEYSER
 
     # As Geyser
-        execute as @e[tag=geyser,type=armor_stand,tag=placed] at @s run function geyser:geyser_run
+        execute as @e[type=armor_stand,tag=geyser,tag=placed] at @s run function geyser:geyser_run
 
     # Placing
         execute as @e[type=armor_stand,tag=geyser,tag=!placed] run function geyser:place_check
@@ -25,8 +25,8 @@ execute as @a if score @s geyser.msg matches 1 unless score .global geyser.msg.a
         execute as @e[type=armor_stand,tag=geyser,tag=!placed,tag=generated] run function geyser:place_geyser
 
     # Breaking
-        execute as @e[tag=geyser,type=armor_stand,tag=placed] at @s unless block ~ ~1 ~ basalt run tag @s add broken
-        execute at @e[tag=geyser,type=armor_stand,tag=placed] unless block ~ ~1 ~ basalt run function geyser:break_geyser
+        execute as @e[type=armor_stand,tag=geyser,tag=placed] at @s unless block ~ ~1 ~ basalt run tag @s add broken
+        execute at @e[type=armor_stand,tag=geyser,tag=placed] unless block ~ ~1 ~ basalt run function geyser:break_geyser
 
     # Geysered Entities
         execute as @e[tag=geysered] run function geyser:geysered

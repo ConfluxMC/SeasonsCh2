@@ -1,6 +1,6 @@
 bossbar set high_priest_health players
 bossbar set high_priest_health color red
-scoreboard players set @n[tag=return_portal] return_portal.active 1
+scoreboard players set @n[type=marker,tag=return_portal] return_portal.active 1
 
 loot spawn ~ ~1 ~ loot cavernous:myst/high_priest
 

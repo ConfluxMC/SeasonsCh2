@@ -1,0 +1,87 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:nether_wart",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "tag": "blood_remnant"
+                },
+                "minecraft:item_name": {
+                  "text": "Blood Remnant",
+                  "color": "dark_red",
+                  "italic": false
+                },
+                "minecraft:lore": [
+                  [
+                    {
+                      "text": "The essence of a lost",
+                      "italic": false,
+                      "color": "gray"
+                    },
+                    {
+                      "text": "",
+                      "italic": false,
+                      "color": "dark_purple"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "civilization. ",
+                      "italic": false,
+                      "color": "gray"
+                    },
+                    {
+                      "text": "",
+                      "italic": false,
+                      "color": "dark_purple"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "Combine 3 on the ground",
+                      "italic": false,
+                      "color": "yellow"
+                    },
+                    {
+                      "text": "",
+                      "italic": false,
+                      "color": "dark_purple"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "to create a powerful",
+                      "italic": false,
+                      "color": "yellow"
+                    },
+                    {
+                      "text": "",
+                      "italic": false,
+                      "color": "dark_purple"
+                    }
+                  ],
+                  [
+                    {
+                      "text": "potion.",
+                      "italic": false,
+                      "color": "yellow"
+                    }
+                  ]
+                ],
+                "minecraft:enchantment_glint_override": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

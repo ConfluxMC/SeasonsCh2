@@ -4,9 +4,9 @@ particle dust{color:[0.443, 0.055, 0.055],scale:4} ~ ~1.5 ~ 1.7 1.7 1.7 0.2 200 
 title @a[distance=..50] subtitle {"text":"PRISONER OF THE MYST","bold":true,"color":"yellow"}
 title @a[distance=..50] title {"text":"HIGH PRIEST VERIDIAN","bold":true,"color":"red"}
 
-execute as @n[tag=return_portal] at @s run playsound minecraft:music_disc.ward record @a ~ ~ ~ 3 1.85 0
+execute as @n[type=marker,tag=return_portal] at @s run playsound minecraft:music_disc.ward record @a ~ ~ ~ 3 1.85 0
 
 advancement grant @a[distance=..500] only cavernous:expansion/myst/priest_summon
 
 
-scoreboard players set @n[tag=return_portal] return_portal.active 0
+scoreboard players set @n[type=marker,tag=return_portal] return_portal.active 0
