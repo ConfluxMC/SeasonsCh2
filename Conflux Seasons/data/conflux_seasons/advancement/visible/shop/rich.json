@@ -10,7 +10,7 @@
     },
     "frame": "challenge"
   },
-  "parent": "conflux_seasons:shop/shop",
+  "parent": "conflux_seasons:visible/shop/shop",
   "criteria": {
     "hoard": {
       "trigger": "minecraft:tick",
@@ -30,7 +30,7 @@
     }
   },
   "rewards": {
-    "function": "conflux_seasons:advancement_rewards/shop/rich",
+    "function": "conflux_seasons:advancement_reward/shop/rich",
     "experience": 500
   }
 }

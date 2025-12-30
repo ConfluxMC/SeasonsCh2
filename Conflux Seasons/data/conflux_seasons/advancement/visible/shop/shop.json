@@ -8,13 +8,13 @@
       "text": "Purchase something from the Sols Shop."
     }
   },
-  "parent": "conflux_seasons:root",
+  "parent": "conflux_seasons:visible/root",
   "criteria": {
     "buy": {
       "trigger": "minecraft:impossible"
     }
   },
   "rewards": {
-    "function": "conflux_seasons:advancement_rewards/shop/shop"
+    "function": "conflux_seasons:advancement_reward/shop/shop"
   }
 }

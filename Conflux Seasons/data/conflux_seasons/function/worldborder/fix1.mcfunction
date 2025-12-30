@@ -1,1 +1,1 @@
-execute in minecraft:overworld run worldborder set $(distance)
+$execute in minecraft:overworld run worldborder set $(distance)
