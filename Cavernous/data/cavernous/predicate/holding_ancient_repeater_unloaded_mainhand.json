@@ -7,11 +7,11 @@
 			"predicate": {
 				"equipment": {
 					"mainhand": {
-						"items": [
-							"minecraft:crossbow"
-						],
-						"components": {
-							"minecraft:custom_data": {"tag":"ancient_repeater"}
+						"items": "minecraft:crossbow",
+						"predicates": {
+							"minecraft:custom_data": {
+								"tag": "ancient_repeater"
+							}
 						}
 					}
 				}
@@ -25,12 +25,19 @@
 				"predicate": {
 					"equipment": {
 						"mainhand": {
-							"items": [
-								"minecraft:crossbow"
-							],
+							"items": "minecraft:crossbow",
 							"components": {
-								"minecraft:custom_data": {"tag":"ancient_repeater"},
-								"charged_projectiles": [{"id":"arrow","count":1}]
+								"minecraft:charged_projectiles": [
+									{
+										"id": "minecraft:arrow",
+										"count": 1
+									}
+								]
+							},
+							"predicates": {
+								"minecraft:custom_data": {
+									"tag": "ancient_repeater"
+								}
 							}
 						}
 					}

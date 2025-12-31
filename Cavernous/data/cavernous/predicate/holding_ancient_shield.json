@@ -7,12 +7,12 @@
 			"predicate": {
 				"equipment": {
 					"mainhand": {
-						"items": [
-							"minecraft:shield"
-						],
-						"components": {
-									"minecraft:custom_data": {"tag":"ancient_shield"}
-								}
+						"items": "minecraft:shield",
+						"predicates": {
+							"minecraft:custom_data": {
+								"tag": "ancient_shield"
+							}
+						}
 					}
 				}
 			}
@@ -23,12 +23,12 @@
 			"predicate": {
 				"equipment": {
 					"offhand": {
-						"items": [
-							"minecraft:shield"
-						],
-						"components": {
-									"minecraft:custom_data": {"tag":"ancient_shield"}
-								}
+						"items": "minecraft:shield",
+						"predicates": {
+							"minecraft:custom_data": {
+								"tag": "ancient_shield"
+							}
+						}
 					}
 				}
 			}

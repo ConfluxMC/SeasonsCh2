@@ -65,24 +65,6 @@ scoreboard objectives add curse.cooldown_timer dummy
     scoreboard objectives add health dummy
 
     #### Ancient Armor
-    scoreboard objectives add motion.y dummy
     scoreboard objectives add armor.hunger food
 
-    scoreboard objectives add armor.health_sub dummy
-    scoreboard objectives add armor.health_set dummy
-    scoreboard objectives add armor.strength_set dummy
-
-    scoreboard objectives add armor.mask.on dummy
-    scoreboard objectives add armor.robe.on dummy
-    scoreboard objectives add armor.leggings.on dummy
-    scoreboard objectives add armor.boots.on dummy
-
     scoreboard objectives add armor.mask_hint_given dummy
-    
-        ##### Original
-    scoreboard objectives add armor.mask.on.o dummy
-    scoreboard objectives add armor.robe.on.o dummy
-    scoreboard objectives add armor.leggings.on.o dummy
-    scoreboard objectives add armor.boots.on.o dummy
-    
-    scoreboard objectives add armor.update dummy

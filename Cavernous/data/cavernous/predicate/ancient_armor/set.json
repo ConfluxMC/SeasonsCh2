@@ -1,40 +1,21 @@
 {
-	"condition": "minecraft:entity_properties",
-	"entity": "this",
-	"predicate": {
-		"equipment": {
-			"head": {
-				"items": [
-					"minecraft:player_head"
-				],
-				"components": {
-					"minecraft:custom_data": {"tag":"ancient_armor"}
-				}
-			},
-			"chest": {
-				"items": [
-					"minecraft:leather_chestplate"
-				],
-				"components": {
-					"minecraft:custom_data": {"tag":"ancient_armor"}
-				}
-			},
-			"legs": {
-				"items": [
-					"minecraft:leather_leggings"
-				],
-				"components": {
-					"minecraft:custom_data": {"tag":"ancient_armor"}
-				}
-			},
-			"feet": {
-				"items": [
-					"minecraft:leather_boots"
-				],
-				"components": {
-					"minecraft:custom_data": {"tag":"ancient_armor"}
-				}
-			}
+	"condition": "minecraft:all_of",
+	"terms": [
+		{
+			"condition": "minecraft:reference",
+			"name": "cavernous:ancient_armor/mask"
+		},
+		{
+			"condition": "minecraft:reference",
+			"name": "cavernous:ancient_armor/robe"
+		},
+		{
+			"condition": "minecraft:reference",
+			"name": "cavernous:ancient_armor/leggings"
+		},
+		{
+			"condition": "minecraft:reference",
+			"name": "cavernous:ancient_armor/boots"
 		}
-	}
+	]
 }

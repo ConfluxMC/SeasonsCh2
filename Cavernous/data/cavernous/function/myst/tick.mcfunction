@@ -1,6 +1,6 @@
 ### Noxwoods Poison Water
-scoreboard players add @e[type=!#cavernous:resist_noxwood_poison,predicate=cavernous:in_poison_water] nox.time_poisoned 0
-scoreboard players add @e[type=!#cavernous:resist_noxwood_poison,predicate=cavernous:in_poison_water,scores={nox.time_poisoned=..80}] nox.time_poisoned 2
+scoreboard players add @e[type=!#cavernous:resist_noxwood_poison,predicate=cavernous:in_poison_water,predicate=!cavernous:ancient_armor/mask] nox.time_poisoned 0
+scoreboard players add @e[type=!#cavernous:resist_noxwood_poison,predicate=cavernous:in_poison_water,predicate=!cavernous:ancient_armor/mask,scores={nox.time_poisoned=..80}] nox.time_poisoned 2
 
 effect give @e[type=!#cavernous:resist_noxwood_poison,scores={nox.time_poisoned=20..}] poison 3 1 true
 scoreboard players remove @e[type=!#cavernous:resist_noxwood_poison,scores={nox.time_poisoned=1..}] nox.time_poisoned 1

@@ -1,4 +1,3 @@
-
 scoreboard players add @s ancient_staff.distance_travelled 1
 
 execute if block ~ ~ ~ #cavernous:can_teleport_through positioned ^ ^ ^0.5 unless score @s ancient_staff.distance_travelled matches 30.. run function cavernous:secrets/items/ancient_staff/cast

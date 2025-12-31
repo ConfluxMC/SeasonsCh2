@@ -5,7 +5,7 @@
 		"equipment": {
 			"mainhand": {
 				"items": "minecraft:stone_sword",
-				"components": {
+				"predicates": {
 					"minecraft:custom_data": {
 						"tag": "ancient_blade"
 					}
