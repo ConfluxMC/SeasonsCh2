@@ -1,0 +1,2 @@
+item modify entity @s weapon.mainhand cavernous:ancient_repeater_autoload
+function cavernous:secrets/items/ancient_repeater/autoload_effects

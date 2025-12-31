@@ -1,0 +1,68 @@
+{
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "minecraft:reference",
+          "name": "cavernous:holding_ancient_repeater_unloaded_mainhand"
+        },
+        {
+          "condition": "minecraft:reference",
+          "name": "cavernous:holding_ancient_repeater_unloaded_offhand"
+        }
+      ]
+    },
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "slots": {
+              "inventory.*": {
+                "items": "minecraft:arrow"
+              }
+            }
+          }
+        },
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "slots": {
+              "hotbar.*": {
+                "items": "minecraft:arrow"
+              }
+            }
+          }
+        },
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "slots": {
+              "weapon.*": {
+                "items": "minecraft:arrow"
+              }
+            }
+          }
+        },
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type_specific": {
+              "type": "minecraft:player",
+              "gamemode": [
+                "creative"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -79,18 +79,11 @@ execute as @a[scores={curse.cooldown_active=1,curse.cooldown_timer=7200..}] run 
 
     execute as @a[predicate=cavernous:ancient_armor/set] at @s run function cavernous:secrets/items/ancient_armor/run
 
-        #Fix placed helmet 
-    scoreboard players enable @a fix_ancient_mask
-    execute as @a[scores={fix_ancient_mask=1..}] run function cavernous:secrets/items/ancient_armor/mask_replace
-
     #### Ancient Blade
-
     execute as @a[predicate=cavernous:holding_ancient_blade,predicate=!cavernous:ancient_armor/set] at @s run function cavernous:secrets/items/ancient_blade/run
 
     #### Ancient Tablet
-
     execute as @e[type=item,nbt={Item:{id:"minecraft:shelter_pottery_sherd",count:1,components:{"minecraft:custom_data":{tag:ancient_tablet}}}}] at @s run function cavernous:secrets/items/ancient_tablet/run
 
     #### Ancient Repeater
-    
-    execute as @a[predicate=cavernous:holding_ancient_repeater] at @s run function cavernous:secrets/items/ancient_repeater/run
+    execute as @a[predicate=cavernous:holding_ancient_repeater,predicate=cavernous:holding_ancient_repeater_can_autoload] at @s run function cavernous:secrets/items/ancient_repeater/autoload

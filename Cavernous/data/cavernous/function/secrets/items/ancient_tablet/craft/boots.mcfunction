@@ -1,6 +1,5 @@
 kill @n[type=item,nbt={Item:{id:"minecraft:diamond_boots",count:1}}]
-summon item ~ ~0.5 ~ {Item:{id:"minecraft:leather_boots",count:1,components:{"unbreakable":{},tooltip_display:{hidden_components:[dyed_color,trim,unbreakable]},repair_cost:1000,custom_data:{tag:ancient_armor},enchantments:{feather_falling:4},item_name:[{"text":"Ancient Boots","italic":false,"color":"dark_red"}],lore:[[{"text":"Speed I","italic":false,"color":"gray"},{"text":"","italic":false,"color":"dark_purple"}],[{"text":"","italic":false,"color":"dark_purple"}],[{"text":"-2.0 ❤","italic":false,"color":"red"},{"text":"","italic":false,"color":"dark_purple"}],[{"text":"","italic":false,"color":"dark_purple"}],[{"text":"Set Bonus:","italic":false,"color":"dark_purple"}],[{"text":"-No blood toll on ancient","italic":false,"color":"dark_purple"}],[{"text":"items","italic":false,"color":"dark_purple"}]],dyed_color:7622482,trim:{pattern:wild,material:redstone}}}}
-
+loot spawn ~ ~0.5 ~ loot cavernous:secrets/items/ancient_boots
 tag @s add has_crafted
 
 particle dust{color:[0.443, 0.055, 0.055],scale:2} ~ ~ ~ 0.3 0.3 0.3 1 30 normal @a

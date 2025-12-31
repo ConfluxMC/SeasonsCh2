@@ -1,0 +1,2 @@
+execute if predicate cavernous:holding_ancient_repeater_unloaded_mainhand run return run function cavernous:secrets/items/ancient_repeater/autoload_mainhand
+execute if predicate cavernous:holding_ancient_repeater_unloaded_offhand run return run function cavernous:secrets/items/ancient_repeater/autoload_offhand
