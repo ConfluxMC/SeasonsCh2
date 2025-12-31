@@ -31,10 +31,7 @@ execute as @a[scores={curse.cooldown_active=1,curse.cooldown_timer=7200..}] run 
     #### Glob
     
     execute as @e[type=creeper,tag=glob] at @s run function cavernous:secrets/mobs/glob/run
-    
     execute as @e[type=block_display,tag=glob_display] at @s run function cavernous:secrets/mobs/glob/display_run
-
-    execute as @e[type=armor_stand,tag=glob_spawn_stand] at @s run function cavernous:secrets/items/eggs/glob/stand_run
 
 ### Items
 
@@ -63,7 +60,7 @@ execute as @a[scores={curse.cooldown_active=1,curse.cooldown_timer=7200..}] run 
     execute as @a[predicate=cavernous:ancient_armor/mask] at @s if biome ~ ~ ~ cavernous:the_undergrowth run effect give @s water_breathing 2 0 true
     execute as @a[predicate=cavernous:ancient_armor/mask] at @s if biome ~ ~ ~ cavernous:myst/noxwoods run effect clear @s poison
 
-       #Regain food when hungry
+       #Gain saturation when hungry
     execute as @a[predicate=cavernous:ancient_armor/set] at @s run function cavernous:secrets/items/ancient_armor/run
 
     #### Ancient Blade

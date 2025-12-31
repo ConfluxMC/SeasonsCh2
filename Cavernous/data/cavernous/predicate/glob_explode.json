@@ -7,6 +7,9 @@
       "potion_contents": {
         "custom_effects": [
           {
+            "id": "minecraft:invisibility"
+          },
+          {
             "id": "minecraft:luck"
           }
         ]
