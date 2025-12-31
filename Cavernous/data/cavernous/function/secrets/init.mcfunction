@@ -86,6 +86,3 @@ scoreboard objectives add curse.cooldown_timer dummy
     scoreboard objectives add armor.boots.on.o dummy
     
     scoreboard objectives add armor.update dummy
-
-    #### Ancient Blade
-    scoreboard objectives add ancient_sword.dammage_timer dummy

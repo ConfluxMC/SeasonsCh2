@@ -1,5 +1,5 @@
 kill @n[type=item,nbt={Item:{id:"minecraft:stone_sword",count:1}}]
-loot spawn ~ ~0.5 ~ loot cavernous:secrets/items/ancient_sword
+loot spawn ~ ~0.5 ~ loot cavernous:secrets/items/ancient_blade
 
 tag @s add has_crafted
 

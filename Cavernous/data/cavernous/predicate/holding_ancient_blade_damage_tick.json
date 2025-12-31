@@ -4,13 +4,14 @@
 	"predicate": {
 		"equipment": {
 			"mainhand": {
-				"items": [
-					"minecraft:stone_sword"
-				],
+				"items": "minecraft:stone_sword",
 				"components": {
-							"minecraft:custom_data": {"tag":"ancient_blade"}
-						}
+					"minecraft:custom_data": {
+						"tag": "ancient_blade"
+					}
+				}
 			}
-		}
+		},
+		"periodic_tick": 10
 	}
 }

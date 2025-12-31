@@ -80,7 +80,7 @@ execute as @a[scores={curse.cooldown_active=1,curse.cooldown_timer=7200..}] run 
     execute as @a[predicate=cavernous:ancient_armor/set] at @s run function cavernous:secrets/items/ancient_armor/run
 
     #### Ancient Blade
-    execute as @a[predicate=cavernous:holding_ancient_blade,predicate=!cavernous:ancient_armor/set] at @s run function cavernous:secrets/items/ancient_blade/run
+    execute as @a[predicate=cavernous:holding_ancient_blade_damage_tick,predicate=!cavernous:ancient_armor/set] at @s run function cavernous:secrets/items/ancient_blade/damage_self
 
     #### Ancient Tablet
     execute as @e[type=item,nbt={Item:{id:"minecraft:shelter_pottery_sherd",count:1,components:{"minecraft:custom_data":{tag:ancient_tablet}}}}] at @s run function cavernous:secrets/items/ancient_tablet/run
