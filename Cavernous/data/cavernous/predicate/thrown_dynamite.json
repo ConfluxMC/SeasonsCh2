@@ -1,0 +1,21 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "minecraft:item",
+    "flags": {
+      "is_on_ground": true
+    },
+    "slots": {
+      "contents": {
+        "items": "minecraft:tnt",
+        "count": 1,
+        "predicates": {
+          "minecraft:custom_data": {
+            "tag": "dynamite"
+          }
+        }
+      }
+    }
+  }
+}

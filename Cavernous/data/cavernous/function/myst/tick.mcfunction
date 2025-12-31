@@ -6,7 +6,7 @@ effect give @e[type=!#cavernous:resist_noxwood_poison,scores={nox.time_poisoned=
 scoreboard players remove @e[type=!#cavernous:resist_noxwood_poison,scores={nox.time_poisoned=1..}] nox.time_poisoned 1
 
 ### Remnant Crafting
-execute as @e[type=item,nbt={Item:{id:"minecraft:nether_wart",count:3,components:{"minecraft:custom_data":{tag:blood_remnant}}}}] at @s run function cavernous:myst/remnant_craft
+execute as @e[type=item,predicate=cavernous:craft_potion_remnants] at @s run function cavernous:myst/remnant_craft
 
 ### Portal
 execute as @e[type=marker,tag=gate_center,scores={portal.activating=1..}] at @s run function cavernous:myst/portal_activation/run
@@ -20,7 +20,7 @@ execute as @a[tag=entered_myst_1st_time,scores={title_card.delay=100}] at @s run
 ### Mobs
 
     #### Oozer
-    execute as @e[type=item,nbt={Item:{id:"minecraft:rotten_flesh",count:1,components:{"minecraft:custom_data":{tag:oozer_death}}}}] at @s positioned ~ ~1 ~ run function cavernous:myst/mobs/oozer/explode
+    execute as @e[type=item,predicate=cavernous:oozer_death_rotten_flesh] at @s positioned ~ ~1 ~ run function cavernous:myst/mobs/oozer/explode
 
     #### Ghost
     execute as @e[type=skeleton,tag=ghost] at @s if entity @a[distance=..30] run function cavernous:myst/mobs/ghost/run

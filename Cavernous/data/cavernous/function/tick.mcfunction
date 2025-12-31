@@ -19,7 +19,7 @@ scoreboard players set @a broke.spore_blossom 0
     execute as @e[type=arrow,nbt={inGround:1b,item:{components:{"minecraft:potion_contents":{custom_color:16763190}}}}] at @s run function cavernous:items/torch_arrow/check
 
     #Dynamite
-    execute as @e[type=item,nbt={Item:{id:"minecraft:tnt",count:1,components:{"minecraft:custom_data":{tag:dynamite}}},OnGround:1b}] if data entity @s Thrower at @s run function cavernous:items/dynamite/summon
+    execute as @e[type=item,predicate=cavernous:thrown_dynamite] if data entity @s Thrower at @s run function cavernous:items/dynamite/summon
 
     #Dynamite Arrow
     execute as @e[type=arrow,nbt={inGround:1b,item:{components:{"minecraft:potion_contents":{custom_color:5855577}}}}] at @s run function cavernous:items/explosive_arrow/explode

@@ -1,0 +1,67 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:magma_cube_spawn_egg",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "text": "Geyser Block",
+                  "italic": false
+                },
+                "minecraft:item_model": "minecraft:player_head",
+                "minecraft:profile": {
+                  "properties": [
+                    {
+                      "name": "textures",
+                      "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzIxZDA5MzBiZDYxZmVhNGNiOTAyN2IwMGU5NGUxM2Q2MjAyOWM1MjRlYTBiMzI2MGM3NDc0NTdiYTFiY2ZhMSJ9fX0="
+                    }
+                  ]
+                },
+                "minecraft:entity_data": {
+                  "id": "minecraft:armor_stand",
+                  "Rotation": [
+                    0,
+                    0
+                  ],
+                  "NoGravity": true,
+                  "Tags": [
+                    "geyser"
+                  ],
+                  "equipment": {
+                    "head": {
+                      "id": "minecraft:player_head",
+                      "components": {
+                        "minecraft:profile": {
+                          "properties": [
+                            {
+                              "name": "textures",
+                              "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzIxZDA5MzBiZDYxZmVhNGNiOTAyN2IwMGU5NGUxM2Q2MjAyOWM1MjRlYTBiMzI2MGM3NDc0NTdiYTFiY2ZhMSJ9fX0="
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "drop_chances": {
+                    "head": 0
+                  },
+                  "Invisible": true,
+                  "Marker": true,
+                  "NoBasePlate": true,
+                  "DisabledSlots": 4144959
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

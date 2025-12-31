@@ -31,7 +31,6 @@ execute as @a[scores={curse.cooldown_active=1,curse.cooldown_timer=7200..}] run 
     #### Glob
     
     execute as @e[type=creeper,tag=glob] at @s run function cavernous:secrets/mobs/glob/run
-    execute as @e[type=area_effect_cloud,nbt={potion_contents:{custom_effects:[{id:"minecraft:luck"}]}}] at @s run function cavernous:secrets/mobs/glob/explode
     
     execute as @e[type=block_display,tag=glob_display] at @s run function cavernous:secrets/mobs/glob/display_run
 
@@ -71,7 +70,7 @@ execute as @a[scores={curse.cooldown_active=1,curse.cooldown_timer=7200..}] run 
     execute as @a[predicate=cavernous:holding_ancient_blade_damage_tick,predicate=!cavernous:ancient_armor/set] at @s run function cavernous:secrets/items/ancient_blade/damage_self
 
     #### Ancient Tablet
-    execute as @e[type=item,nbt={Item:{id:"minecraft:shelter_pottery_sherd",count:1,components:{"minecraft:custom_data":{tag:ancient_tablet}}}}] at @s run function cavernous:secrets/items/ancient_tablet/run
+    execute as @e[type=item,predicate=cavernous:ancient_tablet] at @s run function cavernous:secrets/items/ancient_tablet/run
 
     #### Ancient Repeater
     execute as @a[predicate=cavernous:holding_ancient_repeater,predicate=cavernous:holding_ancient_repeater_can_autoload] at @s run function cavernous:secrets/items/ancient_repeater/autoload
