@@ -26,8 +26,8 @@ scoreboard players set @a broke.spore_blossom 0
     execute as @e[type=arrow,predicate=cavernous:arrows/explosive] at @s run function cavernous:items/explosive_arrow/explode
 
     #Chain arrow
-    execute as @e[type=arrow,tag=!chain_arrow_started,predicate=cavernous:arrows/chain] at @s run function cavernous:items/chain_arrow_init
-    execute as @e[type=arrow,tag=chain_arrow_started] at @s run function cavernous:items/chain_arrow_tick
+    execute as @e[type=arrow,tag=!chain_arrow_started,predicate=cavernous:arrows/chain] at @s run function cavernous:items/chain_arrow/init
+    execute as @e[type=arrow,tag=chain_arrow_started] at @s run function cavernous:items/chain_arrow/tick
 
 ### NEW CONVERSION
 
