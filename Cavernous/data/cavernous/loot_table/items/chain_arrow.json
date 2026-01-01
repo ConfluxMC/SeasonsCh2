@@ -1,0 +1,51 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tipped_arrow",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Iron Chain Arrow",
+                  "italic": false
+                },
+                "minecraft:lore": [
+                  [
+                    {
+                      "text": "Shoot to create a climbable chain",
+                      "color": "gray",
+                      "italic": false
+                    },
+                    {
+                      "text": "rope.",
+                      "color": "gray",
+                      "italic": false
+                    }
+                  ]
+                ],
+                "minecraft:potion_contents": {
+                  "custom_color": 4080476
+                },
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "potion_contents"
+                  ]
+                },
+                "minecraft:custom_data": {
+                  "tag": "chain_arrow",
+                  "chain": "iron"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

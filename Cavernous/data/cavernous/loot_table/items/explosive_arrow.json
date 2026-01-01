@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tipped_arrow",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Explosive Arrow",
+                  "italic": false
+                },
+                "minecraft:lore": [
+                  {
+                    "text": "Explodes on contact with any",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "block.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ],
+                "minecraft:potion_contents": {
+                  "custom_color": 5855577
+                },
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "potion_contents"
+                  ]
+                },
+                "minecraft:custom_data": {
+                  "tag": "explosive_arrow"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

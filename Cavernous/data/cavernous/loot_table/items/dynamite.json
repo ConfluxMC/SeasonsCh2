@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tnt",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "custom_data": {
+                  "tag": "dynamite"
+                },
+                "item_name": {
+                  "text": "Dynamite",
+                  "type": "text",
+                  "italic": false
+                },
+                "lore": [
+                  {
+                    "text": "Throw out of your inventory to",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "set the dynamite to explode.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -9,11 +9,19 @@
 		"components": {
 			"minecraft:custom_name": {
 				"text": "Torch Arrow",
-				"type": "text",
 				"italic": false
 			},
-			"potion_contents": {"custom_color": 16763190},
-			"tooltip_display": {"hidden_components":["potion_contents"]}
+			"minecraft:potion_contents": {
+				"custom_color": 16763190
+			},
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"potion_contents"
+				]
+			},
+			"minecraft:custom_data": {
+				"tag": "torch_arrow"
+			}
 		}
 	}
 }

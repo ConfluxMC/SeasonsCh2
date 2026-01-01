@@ -14,21 +14,34 @@
 	"result": {
 		"id": "minecraft:tipped_arrow",
 		"components": {
-			"custom_name": {
+			"minecraft:custom_name": {
 				"text": "Waxed Copper Chain Arrow",
-				"type": "text",
 				"italic": false
 			},
-			"lore": [
+			"minecraft:lore": [
 				{
-					"text": "Shoot to create a climbable chain"
+					"text": "Shoot to create a climbable chain",
+					"color": "gray",
+					"italic": false
 				},
 				{
-					"text": "rope."
+					"text": "rope.",
+					"color": "gray",
+					"italic": false
 				}
 			],
-			"potion_contents": {"custom_color": 4080478},
-			"tooltip_display": {"hidden_components":["potion_contents"]}
+			"minecraft:potion_contents": {
+				"custom_color": 4080478
+			},
+			"minecraft:tooltip_display": {
+				"hidden_components": [
+					"potion_contents"
+				]
+			},
+			"minecraft:custom_data": {
+				"tag": "chain_arrow",
+				"chain": "waxed_copper"
+			}
 		}
 	}
 }
