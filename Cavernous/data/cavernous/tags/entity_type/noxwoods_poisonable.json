@@ -1,0 +1,20 @@
+{
+  "values": [
+    "minecraft:player",
+    "minecraft:chicken",
+    "minecraft:bee",
+    "minecraft:axolotl",
+    "minecraft:cod",
+    "minecraft:salmon",
+    "minecraft:tropical_fish",
+    "minecraft:frog",
+    "minecraft:tadpole",
+    "minecraft:silverfish",
+    "minecraft:endermite",
+    "minecraft:turtle",
+    "minecraft:warden",
+    "minecraft:sniffer",
+    "minecraft:happy_ghast",
+    "minecraft:copper_golem"
+  ]
+}

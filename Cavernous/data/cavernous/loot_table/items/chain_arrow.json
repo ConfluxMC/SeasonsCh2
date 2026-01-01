@@ -21,7 +21,9 @@
                       "text": "Shoot to create a climbable chain",
                       "color": "gray",
                       "italic": false
-                    },
+                    }
+                  ],
+                  [
                     {
                       "text": "rope.",
                       "color": "gray",
@@ -30,7 +32,16 @@
                   ]
                 ],
                 "minecraft:potion_contents": {
-                  "custom_color": 4080476
+                  "custom_color": 4080476,
+                  "custom_effects": [
+                    {
+                      "id": "minecraft:slowness",
+                      "amplifier": 1,
+                      "duration": 560,
+                      "show_particles": false,
+                      "show_icon": true
+                    }
+                  ]
                 },
                 "minecraft:tooltip_display": {
                   "hidden_components": [

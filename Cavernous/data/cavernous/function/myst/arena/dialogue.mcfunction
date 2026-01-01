@@ -1,11 +1,11 @@
 #In first phase priest goes from 550 hp to 275
 
-execute if score @s health matches ..525 if score @s priest.dialogue_counter matches 0 run function cavernous:myst/arena/msg/0
-execute if score @s health matches ..500 if score @s priest.dialogue_counter matches 1 run function cavernous:myst/arena/msg/1
-execute if score @s health matches ..475 if score @s priest.dialogue_counter matches 2 run function cavernous:myst/arena/msg/2
-execute if score @s health matches ..450 if score @s priest.dialogue_counter matches 3 run function cavernous:myst/arena/msg/3
-execute if score @s health matches ..430 if score @s priest.dialogue_counter matches 4 run function cavernous:myst/arena/msg/4
-execute if score @s health matches ..390 if score @s priest.dialogue_counter matches 5 run function cavernous:myst/arena/msg/5
-execute if score @s health matches ..355 if score @s priest.dialogue_counter matches 6 run function cavernous:myst/arena/msg/6
-execute if score @s health matches ..315 if score @s priest.dialogue_counter matches 7 run function cavernous:myst/arena/msg/7
-execute if score @s health matches ..280 if score @s priest.dialogue_counter matches 8 run function cavernous:myst/arena/msg/8
+execute as @s[scores={health=..525,priest.dialogue_counter=0}] run return run function cavernous:myst/arena/msg/0
+execute as @s[scores={health=..500,priest.dialogue_counter=1}] run return run function cavernous:myst/arena/msg/1
+execute as @s[scores={health=..475,priest.dialogue_counter=2}] run return run function cavernous:myst/arena/msg/2
+execute as @s[scores={health=..450,priest.dialogue_counter=3}] run return run function cavernous:myst/arena/msg/3
+execute as @s[scores={health=..430,priest.dialogue_counter=4}] run return run function cavernous:myst/arena/msg/4
+execute as @s[scores={health=..390,priest.dialogue_counter=5}] run return run function cavernous:myst/arena/msg/5
+execute as @s[scores={health=..355,priest.dialogue_counter=6}] run return run function cavernous:myst/arena/msg/6
+execute as @s[scores={health=..315,priest.dialogue_counter=7}] run return run function cavernous:myst/arena/msg/7
+execute as @s[scores={health=..280,priest.dialogue_counter=8}] run return run function cavernous:myst/arena/msg/8
