@@ -1,0 +1,19 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "minecraft:area_effect_cloud",
+    "nbt": {
+      "potion_contents": {
+        "custom_effects": [
+          {
+            "id": "minecraft:invisibility"
+          },
+          {
+            "id": "minecraft:luck"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,4 +1,3 @@
-
 ### Mob Upkeep
 scoreboard players operation $current glob.id = @s glob.id
 
@@ -25,12 +24,9 @@ execute if score @s moving matches 1 if score @s glob.step_timer matches 7 run p
 execute if score @s glob.step_timer matches 7 run scoreboard players set @s glob.step_timer 0
 
 #Fuse
-execute if score @s moving matches 0 if entity @a[distance=..3] if score @s glob.has_played_fuse matches 0 run playsound minecraft:entity.bee.hurt hostile @a ~ ~ ~ 0.4 0.1 0
-execute if score @s moving matches 0 if entity @a[distance=..3] if score @s glob.has_played_fuse matches 0 run scoreboard players set @s glob.has_played_fuse 1
+execute if score @s moving matches 0 if entity @a[distance=..3,gamemode=!creative,gamemode=!spectator] if score @s glob.has_played_fuse matches 0 run function cavernous:secrets/mobs/glob/fuse
 execute if score @s moving matches 1 run scoreboard players set @s glob.has_played_fuse 0
-execute unless entity @a[distance=..3] run scoreboard players set @s glob.has_played_fuse 0
+execute unless entity @a[distance=..3,gamemode=!creative,gamemode=!spectator] run scoreboard players set @s glob.has_played_fuse 0
 
 ### Particle Display
 particle dust{color:[0.443, 0.055, 0.055],scale:2} ~ ~0.5 ~ 0.38 0.38 0.38 0 1 normal @a
-
-#Ambient Sound playsound minecraft:block.sculk.charge hostile @a ~ ~ ~ 1 0.1 0

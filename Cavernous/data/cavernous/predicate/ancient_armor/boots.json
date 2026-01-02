@@ -4,11 +4,11 @@
 	"predicate": {
 		"equipment": {
 			"feet": {
-				"items": [
-					"minecraft:leather_boots"
-				],
-				"components": {
-					"minecraft:custom_data": {"tag":"ancient_armor"}
+				"items": "minecraft:leather_boots",
+				"predicates": {
+					"minecraft:custom_data": {
+						"tag": "ancient_armor"
+					}
 				}
 			}
 		}

@@ -1,0 +1,62 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tipped_arrow",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_name": {
+                  "text": "Copper Chain Arrow",
+                  "italic": false
+                },
+                "minecraft:lore": [
+                  [
+                    {
+                      "text": "Shoot to create a climbable chain",
+                      "color": "gray",
+                      "italic": false
+                    }
+                  ],
+                  [
+                    {
+                      "text": "rope.",
+                      "color": "gray",
+                      "italic": false
+                    }
+                  ]
+                ],
+                "minecraft:potion_contents": {
+                  "custom_color": 4080477,
+                  "custom_effects": [
+                    {
+                      "id": "minecraft:slowness",
+                      "amplifier": 1,
+                      "duration": 560,
+                      "show_particles": false,
+                      "show_icon": true
+                    }
+                  ]
+                },
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "potion_contents"
+                  ]
+                },
+                "minecraft:custom_data": {
+                  "tag": "chain_arrow",
+                  "chain": "copper"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

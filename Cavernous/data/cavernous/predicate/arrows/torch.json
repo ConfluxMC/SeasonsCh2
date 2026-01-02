@@ -1,0 +1,20 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "minecraft:arrow",
+    "nbt": {
+      "inGround": true
+    },
+    "slots": {
+      "contents": {
+        "items": "minecraft:tipped_arrow",
+        "predicates": {
+          "minecraft:custom_data": {
+            "tag": "torch_arrow"
+          }
+        }
+      }
+    }
+  }
+}

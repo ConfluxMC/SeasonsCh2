@@ -1,6 +1,6 @@
 
 # Display
-execute as @e[tag=priest_2] at @s run particle dust{color:[0.443, 0.055, 0.055],scale:2} ~ ~1 ~ 0.65 0.5 0.65 0.1 3 normal @a
+particle dust{color:[0.443, 0.055, 0.055],scale:2} ~ ~1 ~ 0.65 0.5 0.65 0.1 3 normal @a
 
 
 # Special Attack

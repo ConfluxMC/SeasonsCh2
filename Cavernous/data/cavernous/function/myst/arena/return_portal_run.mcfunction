@@ -8,5 +8,5 @@ execute if score @s portal.ambient_sound_timer matches 80 if predicate cavernous
 execute if score @s portal.ambient_sound_timer matches 80 run scoreboard players set @s portal.ambient_sound_timer 0
 
 ### Teleport
-execute as @a[gamemode=!spectator,distance=..1.5,tag=!priest_1,tag=!priest_2] at @s run function cavernous:myst/arena/through_return_portal
-execute as @e[type=!player,type=!armor_stand,distance=..1.5] at @s run scoreboard players set @s return_portal.to_be_tped_to_ws 1
+execute as @a[gamemode=!spectator,distance=..1.5] at @s run function cavernous:myst/arena/through_return_portal
+execute as @e[type=!player,type=!marker,tag=!priest_boss,distance=..1.5] at @s run function cavernous:myst/arena/through_return_portal_using_near_player

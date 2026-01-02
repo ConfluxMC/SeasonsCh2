@@ -5,15 +5,14 @@ execute as @a[scores={opening.playing=1,opening.timer=..0}] run scoreboard playe
 
 ### Structure Stands
 
-execute as @e[type=armor_stand,tag=redstone_updater] at @s if loaded ~-25 ~-5 ~-25 if loaded ~25 ~20 ~25 run function cavernous:secrets/structure_stands/redstone_updater
-execute as @e[type=armor_stand,tag=biome_setter] at @s if loaded ~-25 ~-5 ~-25 if loaded ~25 ~20 ~25 run function cavernous:secrets/structure_stands/biome_setter
+execute as @e[type=marker,tag=redstone_updater] at @s if loaded ~-25 ~-5 ~-25 if loaded ~25 ~20 ~25 run function cavernous:secrets/structure_stands/redstone_updater
+execute as @e[type=marker,tag=biome_setter] at @s if loaded ~-25 ~-5 ~-25 if loaded ~25 ~20 ~25 run function cavernous:secrets/structure_stands/biome_setter
 
-execute as @e[type=armor_stand,tag=gate_center] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/gate_center
-execute as @e[type=armor_stand,tag=remnant] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/remnant
-execute as @e[type=interaction,tag=remnant] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/remnant_interaction
-execute as @e[type=armor_stand,tag=prison] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/prison_entrance
-execute as @e[type=armor_stand,tag=study] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/study
-execute as @e[type=armor_stand,tag=draining] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/draining
+execute as @e[type=marker,tag=gate_center] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/gate_center
+execute as @e[type=interaction,tag=remnant] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/remnant
+execute as @e[type=marker,tag=prison] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/prison_entrance
+execute as @e[type=marker,tag=study] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/study
+execute as @e[type=marker,tag=draining] at @s if loaded ~ ~ ~ run function cavernous:secrets/structure_stands/draining
 
 ### Curse
 
@@ -32,11 +31,7 @@ execute as @a[scores={curse.cooldown_active=1,curse.cooldown_timer=7200..}] run 
     #### Glob
     
     execute as @e[type=creeper,tag=glob] at @s run function cavernous:secrets/mobs/glob/run
-    execute as @e[type=area_effect_cloud,nbt={potion_contents:{custom_effects:[{id:"minecraft:luck"}]}}] at @s run function cavernous:secrets/mobs/glob/explode
-    
     execute as @e[type=block_display,tag=glob_display] at @s run function cavernous:secrets/mobs/glob/display_run
-
-    execute as @e[type=armor_stand,tag=glob_spawn_stand] at @s run function cavernous:secrets/items/eggs/glob/stand_run
 
 ### Items
 
@@ -61,37 +56,18 @@ execute as @a[scores={curse.cooldown_active=1,curse.cooldown_timer=7200..}] run 
     execute as @e[scores={shield.stunned=1}] at @s run function cavernous:secrets/items/ancient_shield/stunned_run
 
     #### Armor
-
-        #Changes in armor and updating health
-    execute as @a run function cavernous:secrets/items/ancient_armor/detect
-    execute as @a[scores={armor.update=1}] run function cavernous:secrets/items/ancient_armor/calc
-    execute as @a[scores={armor.update=1}] run scoreboard players set @s armor.update 0
-
         #Effects per piece
     execute as @a[predicate=cavernous:ancient_armor/mask] at @s if biome ~ ~ ~ cavernous:the_undergrowth run effect give @s water_breathing 2 0 true
-    
+    execute as @a[predicate=cavernous:ancient_armor/mask] at @s if biome ~ ~ ~ cavernous:myst/noxwoods run effect clear @s poison
 
-    execute as @a[scores={armor.strength_set=1}] run effect give @s strength 2 0 true
-    execute as @a[scores={armor.strength_set=2}] run effect give @s strength 2 1 true
-
-    execute as @a[predicate=cavernous:ancient_armor/boots] run effect give @s speed 2 0 true
-
-
-
+       #Gain saturation when hungry
     execute as @a[predicate=cavernous:ancient_armor/set] at @s run function cavernous:secrets/items/ancient_armor/run
 
-        #Fix placed helmet 
-    scoreboard players enable @a fix_ancient_mask
-    execute as @a[scores={fix_ancient_mask=1..}] run function cavernous:secrets/items/ancient_armor/mask_replace
-
     #### Ancient Blade
-
-    execute as @a[predicate=cavernous:holding_ancient_blade,predicate=!cavernous:ancient_armor/set] at @s run function cavernous:secrets/items/ancient_blade/run
+    execute as @a[predicate=cavernous:holding_ancient_blade_damage_tick,predicate=!cavernous:ancient_armor/set] at @s run function cavernous:secrets/items/ancient_blade/damage_self
 
     #### Ancient Tablet
-
-    execute as @e[type=item,nbt={Item:{id:"minecraft:shelter_pottery_sherd",count:1,components:{"minecraft:custom_data":{tag:ancient_tablet}}}}] at @s run function cavernous:secrets/items/ancient_tablet/run
+    execute as @e[type=item,predicate=cavernous:ancient_tablet] at @s run function cavernous:secrets/items/ancient_tablet/run
 
     #### Ancient Repeater
-    
-    execute as @a[predicate=cavernous:holding_ancient_repeater] at @s run function cavernous:secrets/items/ancient_repeater/run
+    execute as @a[predicate=cavernous:holding_ancient_repeater,predicate=cavernous:holding_ancient_repeater_can_autoload] at @s run function cavernous:secrets/items/ancient_repeater/autoload

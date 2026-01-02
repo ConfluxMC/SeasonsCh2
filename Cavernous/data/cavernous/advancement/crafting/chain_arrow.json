@@ -9,7 +9,10 @@
 	},
 	"rewards": {
 		"recipes": [
-			"cavernous:chain_arrow"
+			"cavernous:chain_arrow",
+			"cavernous:copper_chain_arrow",
+			"cavernous:waxed_copper_chain_arrow",
+			"cavernous:torch_arrow"
 		]
 	}
 }

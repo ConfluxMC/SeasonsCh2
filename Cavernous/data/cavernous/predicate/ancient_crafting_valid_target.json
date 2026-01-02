@@ -1,0 +1,44 @@
+{
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "minecraft:item",
+        "slots": {
+          "contents": {
+            "items": [
+              "minecraft:diamond_helmet",
+              "minecraft:diamond_chestplate",
+              "minecraft:diamond_leggings",
+              "minecraft:diamond_boots",
+              "minecraft:stone_sword",
+              "minecraft:shield",
+              "minecraft:crossbow"
+            ],
+            "count": 1
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:inverted",
+      "term": {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "slots": {
+            "contents": {
+              "predicates": {
+                "minecraft:custom_data": {
+                  "ancient_artifact": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

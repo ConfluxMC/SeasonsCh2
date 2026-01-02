@@ -1,0 +1,16 @@
+{
+  "values": [
+    "#cavernous:torch_cannot_place",
+    "#minecraft:bars",
+    "#minecraft:chains",
+    "#minecraft:fences",
+    "#minecraft:lightning_rods",
+    "#minecraft:walls",
+    "minecraft:sniffer_egg",
+    "minecraft:grindstone",
+    "minecraft:composter",
+    "minecraft:scaffolding",
+    "minecraft:decorated_pot",
+    "minecraft:piston_head"
+  ]
+}

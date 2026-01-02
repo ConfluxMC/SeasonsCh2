@@ -1,50 +1,41 @@
 {
-	"condition": "minecraft:all_of",
-	"terms": [
-		{
-			"condition": "minecraft:inverted",
-			"term": {
-				"condition": "minecraft:entity_properties",
-				"entity": "this",
-				"predicate": {
-					"location": {
-						"structures": "minecraft:trial_chambers"
-					}
-				}
-			}
-		},
-{
 	"condition": "minecraft:any_of",
 	"terms": [
 		{
-			"condition": "minecraft:entity_properties",
-			"entity": "this",
-			"predicate": {
-				"type": "minecraft:creeper",
-				"location": {
-					"biomes": "cavernous:the_undergrowth"
+			"condition": "minecraft:all_of",
+			"terms": [
+				{
+					"condition": "minecraft:inverted",
+					"term": {
+						"condition": "minecraft:location_check",
+						"predicate": {
+							"structures": "minecraft:trial_chambers"
+						}
+					}
+				},
+				{
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"biomes": [
+							"cavernous:the_undergrowth",
+							"cavernous:myst/dreadmire",
+							"cavernous:myst/dreadmire_"
+						]
+					}
 				}
-			}
+			]
 		},
 		{
 			"condition": "minecraft:entity_properties",
 			"entity": "this",
 			"predicate": {
 				"type": "minecraft:creeper",
-				"location": {
-					"biomes": "cavernous:myst/dreadmire"
-				}
-			}
-		},
-		{
-			"condition": "minecraft:entity_properties",
-			"entity": "this",
-			"predicate": {
-				"type": "minecraft:creeper",
-				"location": {
-					"biomes": "cavernous:myst/dreadmire_"
+				"predicates": {
+					"minecraft:custom_data": {
+						"tag": "glob_spawn_creeper"
+					}
 				}
 			}
 		}
 	]
-}]}
+}

@@ -1,6 +1,0 @@
-kill @n[type=item,nbt={Item:{id:"minecraft:shield",count:1}}]
-summon item ~ ~0.5 ~ {Item:{id:"minecraft:shield",count:1,components:{unbreakable:{},tooltip_display:{hidden_components:[unbreakable]},repair_cost:1000,custom_data:{tag:ancient_shield},custom_name:[{"text":"Ancient Shield","italic":false,"color":"dark_red"}],lore:[[{"text":"Build up blocked damage to","italic":false,"color":"gray"}],[{"text":"stun nearby enemies.","italic":false,"color":"gray"}],[{"text":"","italic":false,"color":"gray"}],[{"text":"Crouch to teleport forward,","italic":false,"color":"gray"}],[{"text":"damaging enemies in your path","italic":false,"color":"gray"}]],enchantment_glint_override:true,base_color:brown,banner_patterns:[{color:red,pattern:small_stripes},{color:red,pattern:gradient},{color:white,pattern:circle},{color:yellow,pattern:flower},{color:yellow,pattern:border}]}}}
-tag @s add has_crafted
-
-particle dust{color:[0.443, 0.055, 0.055],scale:2} ~ ~ ~ 0.3 0.3 0.3 1 30 normal @a
-playsound block.end_portal_frame.fill block @a ~ ~ ~ 0.8 0.3 0

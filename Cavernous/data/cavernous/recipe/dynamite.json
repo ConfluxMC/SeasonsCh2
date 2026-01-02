@@ -6,7 +6,9 @@
 	"result": {
 		"id": "minecraft:tnt",
 		"components": {
-			"custom_data": {"tag":"dynamite"},
+			"custom_data": {
+				"tag": "dynamite"
+			},
 			"item_name": {
 				"text": "Dynamite",
 				"type": "text",
@@ -14,10 +16,14 @@
 			},
 			"lore": [
 				{
-					"text": "Throw out of your inventory to"
+					"text": "Throw out of your inventory to",
+					"color": "gray",
+					"italic": false
 				},
 				{
-					"text": "set the dynamite to explode."
+					"text": "set the dynamite to explode.",
+					"color": "gray",
+					"italic": false
 				}
 			]
 		}

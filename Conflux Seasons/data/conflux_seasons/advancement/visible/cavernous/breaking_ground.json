@@ -10,7 +10,7 @@
     "show_toast": false,
     "announce_to_chat": false
   },
-  "parent": "conflux_seasons:root",
+  "parent": "conflux_seasons:visible/root",
   "criteria": {
     "get": {
       "trigger": "minecraft:tick",
@@ -27,6 +27,6 @@
     }
   },
   "rewards": {
-    "function": "conflux_seasons:advancement_rewards/cavernous/breaking_ground"
+    "function": "conflux_seasons:advancement_reward/cavernous/breaking_ground"
   }
 }

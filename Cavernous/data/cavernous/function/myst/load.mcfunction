@@ -37,10 +37,6 @@ scoreboard objectives add nox.time_poisoned dummy
         scoreboard objectives add conduit.has_activated dummy
         scoreboard objectives add conduit.has_powered dummy
 
-    #### Remnant
-    scoreboard objectives add remnant.used dummy
-    scoreboard objectives add remnant.has_set_up dummy
-
     #### Openings
     scoreboard objectives add title_card.delay dummy
 

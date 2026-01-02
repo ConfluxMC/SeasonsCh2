@@ -4,11 +4,11 @@
 	"predicate": {
 		"equipment": {
 			"chest": {
-				"items": [
-					"minecraft:leather_chestplate"
-				],
-				"components": {
-					"minecraft:custom_data": {"tag":"ancient_armor"}
+				"items": "minecraft:leather_chestplate",
+				"predicates": {
+					"minecraft:custom_data": {
+						"tag": "ancient_armor"
+					}
 				}
 			}
 		}

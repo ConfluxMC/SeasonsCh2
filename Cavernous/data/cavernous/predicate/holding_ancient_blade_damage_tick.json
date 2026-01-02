@@ -1,0 +1,17 @@
+{
+	"condition": "minecraft:entity_properties",
+	"entity": "this",
+	"predicate": {
+		"equipment": {
+			"mainhand": {
+				"items": "minecraft:stone_sword",
+				"predicates": {
+					"minecraft:custom_data": {
+						"tag": "ancient_blade"
+					}
+				}
+			}
+		},
+		"periodic_tick": 10
+	}
+}

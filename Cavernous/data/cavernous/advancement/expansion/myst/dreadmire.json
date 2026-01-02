@@ -21,14 +21,22 @@
       "conditions": {
         "player": [
           {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
+            "condition": "minecraft:location_check",
             "predicate": {
-              "location": {
-                "biomes": [
-                  "cavernous:myst/dreadmire_",
-                  "cavernous:myst/dreadmire"
-                ]
+              "biomes": [
+                "cavernous:myst/dreadmire",
+                "cavernous:myst/dreadmire_"
+              ],
+              "dimension": "cavernous:the_myst"
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "structures": "cavernous:exit_portal",
+                "dimension": "cavernous:the_myst"
               }
             }
           }
@@ -37,6 +45,6 @@
     }
   },
   "rewards": {
-    "function": "cavernous:myst/title_cards/dreadmire_delay"
+    "function": "cavernous:myst/title_cards/dreadmire"
   }
 }

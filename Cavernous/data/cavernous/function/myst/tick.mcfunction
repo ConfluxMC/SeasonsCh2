@@ -1,26 +1,17 @@
 ### Noxwoods Poison Water
-scoreboard players add @e[type=!#cavernous:resist_noxwood_poison,predicate=cavernous:in_poison_water] nox.time_poisoned 0
-scoreboard players add @e[type=!#cavernous:resist_noxwood_poison,predicate=cavernous:in_poison_water,scores={nox.time_poisoned=..80}] nox.time_poisoned 2
+execute as @e[type=#cavernous:noxwoods_poisonable,predicate=cavernous:in_noxwoods] run function cavernous:myst/noxwoods_poison
 
-effect give @e[type=!#cavernous:resist_noxwood_poison,scores={nox.time_poisoned=20..}] poison 3 1 true
-scoreboard players remove @e[type=!#cavernous:resist_noxwood_poison,scores={nox.time_poisoned=1..}] nox.time_poisoned 1
 
 ### Remnant Crafting
-execute as @e[type=item,nbt={Item:{id:"minecraft:nether_wart",count:3,components:{"minecraft:custom_data":{tag:blood_remnant}}}}] at @s run function cavernous:myst/remnant_craft
+execute as @e[type=item,predicate=cavernous:craft_potion_remnants] at @s run function cavernous:myst/remnant_craft
 
 ### Portal
-execute as @e[type=armor_stand,tag=gate_center,scores={portal.activating=1..}] at @s run function cavernous:myst/portal_activation/run
-execute as @a[tag=to_clear_glass_bottle] run clear @s glass_bottle 1
-tag @a[tag=to_clear_glass_bottle] remove to_clear_glass_bottle
-
-### Openings
-execute as @a[tag=entered_myst_1st_time] run scoreboard players add @s title_card.delay 1
-execute as @a[tag=entered_myst_1st_time,scores={title_card.delay=100}] at @s run function cavernous:myst/title_cards/dreadmire
+execute as @e[type=marker,tag=gate_center,scores={portal.activating=1..}] at @s run function cavernous:myst/portal_activation/run
 
 ### Mobs
 
     #### Oozer
-    execute as @e[type=item,nbt={Item:{id:"minecraft:rotten_flesh",count:1,components:{"minecraft:custom_data":{tag:oozer_death}}}}] at @s positioned ~ ~1 ~ run function cavernous:myst/mobs/oozer/explode
+    execute as @e[type=item,predicate=cavernous:oozer_death_rotten_flesh] at @s positioned ~ ~1 ~ run function cavernous:myst/mobs/oozer/explode
 
     #### Ghost
     execute as @e[type=skeleton,tag=ghost] at @s if entity @a[distance=..30] run function cavernous:myst/mobs/ghost/run
@@ -29,23 +20,11 @@ execute as @a[tag=entered_myst_1st_time,scores={title_card.delay=100}] at @s run
     execute as @e[type=bogged,tag=!converted] at @s if biome ~ ~ ~ cavernous:myst/noxwoods run function cavernous:myst/mobs/bogged/convert
 
 ### Final Boss
+    execute as @e[type=skeleton,tag=priest_boss] at @s run function cavernous:myst/arena/priest_run
 
-    #### Phase 1
-execute as @e[type=skeleton,tag=priest_1] at @s run function cavernous:myst/arena/priest_run_1
-
-    #### Phase 2
-    
-execute as @e[type=skeleton,tag=priest_2] at @s run function cavernous:myst/arena/priest_run_2
-
-
-    #### Management
-    execute if entity @e[type=skeleton,tag=priest_1] run scoreboard players set .global priest.active_global 1
-    execute if entity @e[type=skeleton,tag=priest_2] run scoreboard players set .global priest.active_global 1
-    execute unless entity @e[type=skeleton,tag=priest_1] unless entity @e[type=skeleton,tag=priest_2] run scoreboard players set .global priest.active_global 0
-
+    #### If no priest is alive, set score to 0 to indicate he is summonable again
+    execute unless entity @e[type=skeleton,tag=priest_boss] run scoreboard players set .global priest.active_global 0
     execute if score .global priest.active_global matches 0 run bossbar set high_priest_health players
 
     #### return Portal
-    execute as @e[type=armor_stand,tag=return_portal,scores={return_portal.active=1}] at @s if entity @a[distance=..30] run function cavernous:myst/arena/return_portal_run
-    execute as @e[scores={return_portal.to_be_tped_to_ws=1}] positioned over world_surface run tp @s ~ ~ ~
-    execute as @e[scores={return_portal.to_be_tped_to_ws=1}] run scoreboard players set @s return_portal.to_be_tped_to_ws 0
+    execute as @e[type=marker,tag=return_portal,scores={return_portal.active=1}] at @s if entity @a[distance=..30] run function cavernous:myst/arena/return_portal_run
