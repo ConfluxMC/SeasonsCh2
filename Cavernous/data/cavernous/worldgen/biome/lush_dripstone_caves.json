@@ -174,8 +174,7 @@
 		[
 			"cavernous:generic/ores/special/treasure",
 			"cavernous:generic/ores/special/gold_chunk",
-			"cavernous:generic/ores/special/copper_chunk",
-			"cavernous:generic/silverfish_nest"
+			"cavernous:generic/ores/special/copper_chunk"
 		],
 		[
 			"minecraft:glow_lichen",

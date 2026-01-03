@@ -1,0 +1,8 @@
+{
+   "id": "woodfish",
+   "pack":{
+    "min_format": 69,
+    "max_format": 75,
+    "description":"Changes texture and sounds of silverfish"
+  }
+}

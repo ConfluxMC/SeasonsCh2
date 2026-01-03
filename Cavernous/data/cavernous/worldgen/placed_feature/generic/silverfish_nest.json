@@ -1,12 +1,9 @@
 {
-	"feature": {
-		"type": "minecraft:no_op",
-		"config": {}
-	},
+	"feature": "cavernous:generic/silverfish_nest",
 	"placement": [
 		{
 			"type": "minecraft:rarity_filter",
-			"chance": 38
+			"chance": 18
 		},
 		{
 			"type": "minecraft:in_square"
@@ -19,7 +16,7 @@
 					"absolute": 5
 				},
 				"max_inclusive": {
-					"absolute": 45
+					"below_top": 32
 				}
 			}
 		},

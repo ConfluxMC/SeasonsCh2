@@ -1,6 +1,7 @@
 {
   "values": [
     "cn:tick",
-    "webslingers:tick"
+    "webslingers:tick",
+    "woodfish:tick"
   ]
 }
