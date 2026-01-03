@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:mangrove_log",
+          "weight": 3,
+          "conditions": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 50
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:mangrove_propagule",
+          "weight": 7
+        }
+      ]
+    }
+  ]
+}

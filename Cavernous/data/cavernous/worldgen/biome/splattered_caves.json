@@ -134,7 +134,8 @@
 			"cavernous:generic/splotches/diorite",
 			"cavernous:generic/splotches/granite",
 			"cavernous:generic/splotches/tuff",
-			"cavernous:biomes/stone/splattered/splotch_placer"
+			"cavernous:biomes/stone/splattered/splotch_placer",
+			"cavernous:generic/splotches/infested"
 		],
 		[
 			"cavernous:generic/ores/coal_upper",

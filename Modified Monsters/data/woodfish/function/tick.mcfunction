@@ -1,1 +1,1 @@
-execute as @e[type=silverfish,tag=!woodfish] at @s run function woodfish:silverfish_process
+execute as @e[type=silverfish,tag=!woodfish] at @s run function woodfish:woodfish_process
