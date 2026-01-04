@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:chest",
+    "d": [
+      "minecraft:deepslate",
+      "minecraft:cobbled_deepslate"
+    ],
+    "e": "minecraft:echo_shard"
+  },
+  "pattern": [
+    "ded",
+    "dcd",
+    "ddd"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:shulker_box"
+  }
+}
