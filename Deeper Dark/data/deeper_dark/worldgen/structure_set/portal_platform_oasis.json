@@ -1,0 +1,19 @@
+{
+  "structures": [
+    {
+      "structure": "deeper_dark:portal_platform_oasis",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 653794329,
+    "spacing": 4,
+    "separation": 1,
+    "locate_offset": [
+      -4,
+      0,
+      4
+    ]
+  }
+}
