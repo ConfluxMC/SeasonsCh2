@@ -1,7 +1,7 @@
-execute positioned ~1 ~ ~ store result score Game deeper_dark.distx+1 run locate structure deeper_dark:sniffer_pot
-execute positioned ~-1 ~ ~ store result score Game deeper_dark.distx-1 run locate structure deeper_dark:sniffer_pot
-execute positioned ~ ~ ~1 store result score Game deeper_dark.distz+1 run locate structure deeper_dark:sniffer_pot
-execute positioned ~ ~ ~-1 store result score Game deeper_dark.distz-1 run locate structure deeper_dark:sniffer_pot
+execute positioned ~1 ~ ~ store result score Game deeper_dark.distx+1 run locate structure deeper_dark:portal_platform_oasis
+execute positioned ~-1 ~ ~ store result score Game deeper_dark.distx-1 run locate structure deeper_dark:portal_platform_oasis
+execute positioned ~ ~ ~1 store result score Game deeper_dark.distz+1 run locate structure deeper_dark:portal_platform_oasis
+execute positioned ~ ~ ~-1 store result score Game deeper_dark.distz-1 run locate structure deeper_dark:portal_platform_oasis
 scoreboard players operation Game deeper_dark.distx-1 -= Game deeper_dark.distx+1
 scoreboard players operation Game deeper_dark.distz-1 -= Game deeper_dark.distz+1
 execute unless score Game deeper_dark.distx+1 matches 2 if score Game deeper_dark.distx-1 matches 1..3 at @s run tp @s ~16 ~ ~

@@ -5,7 +5,7 @@
     },
     "title": {
     "translate": "advancement.deeper_dark.hint.title",
-    "fallback": "Echos in the Wind"
+    "fallback": "Echoes in the Wind"
 },
     "description": {
     "translate": "advancement.deeper_dark.hint.desc",
