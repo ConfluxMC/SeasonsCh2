@@ -10,6 +10,9 @@ execute as @e[predicate=deeper_dark:in_deeper_dark,scores={deeper_dark.outofboun
 effect give @e[predicate=deeper_dark:in_volcanic_caverns] minecraft:jump_boost 3 3 true
 effect give @e[predicate=deeper_dark:in_volcanic_caverns] minecraft:slow_falling 3 0 true
 
+#sniffer safety teleport
+execute as @e[type=sniffer,predicate=deeper_dark:sniffer_needs_tp] at @s run function deeper_dark:sniffer_safety_tp
+
 #shockwave
 execute as @a at @s as @e[sort=nearest,limit=2,predicate=deeper_dark:in_deeper_dark,tag=deeper_dark.amethyst_mineshaft.floor] at @s positioned ~-128 ~-6 ~-128 unless entity @e[tag=deeper_dark.shockwave,type=pig,dy=12,dx=256,dz=256] if entity @p[dy=12,dx=256,dz=256,gamemode=!spectator] at @s if loaded ~ ~ ~ facing entity @e[limit=1,sort=random] feet rotated ~ 0 positioned ^ ^ ^50 unless entity @p[gamemode=!spectator,distance=..40] if predicate deeper_dark:in_amethyst_mineshaft if loaded ~ ~ ~ if block ~ ~ ~ air run function deeper_dark:shockwave/spawn
 execute as @e[tag=deeper_dark.shockwave_display,limit=1,sort=random] unless predicate deeper_dark:is_passenger run kill @s

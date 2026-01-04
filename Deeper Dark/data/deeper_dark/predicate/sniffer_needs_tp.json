@@ -1,0 +1,22 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "minecraft:sniffer",
+    "location": {
+      "position": {
+        "y": {
+          "max": 0
+        }
+      },
+      "biomes": [
+        "deeper_dark:deeper_dark_cavern",
+        "deeper_dark:deep_oasis"
+      ],
+      "dimension": "deeper_dark:deeper_dark"
+    },
+    "flags": {
+      "is_on_ground": true
+    }
+  }
+}
