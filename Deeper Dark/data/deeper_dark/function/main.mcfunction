@@ -3,107 +3,78 @@ scoreboard objectives add deeper_dark.var dummy
 #datafixers
 execute unless score first_ver deeper_dark.datafixers = current_ver deeper_dark.datafixers run function deeper_dark:datafixers
 #gamerules
-function deeper_dark:default_gamerules
+function deeper_dark:gamerules/default_gamerules
 
+### Teleporting between
 #in
-execute as @r[nbt={SelectedItem:{id:"minecraft:echo_shard"}},predicate=!deeper_dark:in_deeper_dark,tag=!deeper_dark.tp_cooldown,gamemode=!spectator] at @s if block ~ ~-.1 ~ minecraft:reinforced_deepslate at @s unless entity @e[tag=deeper_dark.portal_marker,distance=0..2] run function deeper_dark:tp_in
-
+execute as @r[predicate=deeper_dark:tp_in,tag=!deeper_dark.tp_cooldown] at @s unless entity @n[type=marker,tag=deeper_dark.portal_marker,distance=0..2] run function deeper_dark:tp_in
 
 #out
-execute as @p[nbt={SelectedItem:{id:"minecraft:echo_shard",components:{"minecraft:custom_data":{deeper_dark:{EntrancePosition:{}}}}}},predicate=deeper_dark:in_deeper_dark,tag=!deeper_dark.tp_cooldown,gamemode=!spectator] at @s unless entity @e[tag=deeper_dark.portal_marker,distance=0..2] if block ~ ~-.1 ~ minecraft:reinforced_deepslate unless entity @a[tag=deeper_dark.tp_out_player] unless entity @e[type=minecraft:warden,predicate=deeper_dark:in_deeper_dark,distance=0..50] run function deeper_dark:tp_out
-execute as @p[nbt={SelectedItem:{id:"minecraft:echo_shard",components:{"minecraft:custom_data":{deeper_dark:{EntrancePosition:{}}}}}},predicate=deeper_dark:in_deeper_dark,tag=!deeper_dark.tp_cooldown,gamemode=!spectator] at @s unless entity @e[tag=deeper_dark.portal_marker,distance=0..2] if block ~ ~-.1 ~ minecraft:reinforced_deepslate unless entity @a[tag=deeper_dark.tp_out_player] if entity @e[type=minecraft:warden,predicate=deeper_dark:in_deeper_dark,distance=0..50] run playsound minecraft:block.respawn_anchor.charge ambient @a ~ ~ ~ 1 0 1
-execute as @p[nbt={SelectedItem:{id:"minecraft:echo_shard",components:{"minecraft:custom_data":{deeper_dark:{EntrancePosition:{}}}}}},predicate=deeper_dark:in_deeper_dark,tag=!deeper_dark.tp_cooldown,gamemode=!spectator] at @s unless entity @e[tag=deeper_dark.portal_marker,distance=0..2] if block ~ ~-.1 ~ minecraft:reinforced_deepslate unless entity @a[tag=deeper_dark.tp_out_player] if entity @e[type=minecraft:warden,predicate=deeper_dark:in_deeper_dark,distance=0..50] run advancement grant @s only deeper_dark:locked_out
-execute as @p[nbt={SelectedItem:{id:"minecraft:echo_shard",components:{"minecraft:custom_data":{deeper_dark:{EntrancePosition:{}}}}}},predicate=deeper_dark:in_deeper_dark,tag=!deeper_dark.tp_cooldown,gamemode=!spectator] at @s unless entity @e[tag=deeper_dark.portal_marker,distance=0..2] if block ~ ~-.1 ~ minecraft:reinforced_deepslate unless entity @a[tag=deeper_dark.tp_out_player] if entity @e[type=minecraft:warden,predicate=deeper_dark:in_deeper_dark,distance=0..50] run tag @s add deeper_dark.tp_cooldown
-
+execute as @p[predicate=deeper_dark:tp_out,tag=!deeper_dark.tp_cooldown] at @s unless entity @e[type=marker,tag=deeper_dark.portal_marker,distance=0..2] unless entity @a[tag=deeper_dark.tp_out_player] run function deeper_dark:tp_out
 
 #cooldown
 execute as @e[tag=deeper_dark.tp_cooldown] at @s if loaded ~ ~ ~ unless block ~ ~-.1 ~ minecraft:reinforced_deepslate unless block ~ ~-.5 ~ minecraft:reinforced_deepslate positioned ~-0.5 ~-0.5 ~-0.5 unless entity @e[dx=0.01,dy=0.01,dz=0.01,tag=deeper_dark.portal_marker] run tag @s remove deeper_dark.tp_cooldown
 
-#particle
-execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 as @a[nbt={SelectedItem:{id:"minecraft:echo_shard"}},predicate=!deeper_dark:in_deeper_dark,tag=!deeper_dark.tp_cooldown,gamemode=!spectator] at @s store success score @s deeper_dark.var run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 chain_command_block{Command:"deeper_dark.near_portal"} replace reinforced_deepslate
-execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 as @a[nbt={SelectedItem:{id:"minecraft:echo_shard"}},predicate=!deeper_dark:in_deeper_dark,tag=!deeper_dark.tp_cooldown,gamemode=!spectator] at @s run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 reinforced_deepslate replace chain_command_block{Command:"deeper_dark.near_portal"}
-execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 at @a[scores={deeper_dark.var=1}] run particle minecraft:sculk_soul ~ ~ ~ 2 2 2 0 1 force
-execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 at @a[scores={deeper_dark.var=1}] run playsound minecraft:block.sculk_catalyst.bloom ambient @a ~ ~ ~ .75 0
-scoreboard players set @a deeper_dark.var 0
+#particles
+execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 run function deeper_dark:gamerules/disable_portal_particles
 
-execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 as @a[nbt={SelectedItem:{id:"minecraft:echo_shard",components:{"minecraft:custom_data":{deeper_dark:{EntrancePosition:{}}}}}},predicate=deeper_dark:in_deeper_dark,tag=!deeper_dark.tp_cooldown,gamemode=!spectator] at @s unless entity @e[type=minecraft:warden,predicate=deeper_dark:in_deeper_dark,distance=0..50] store success score @s deeper_dark.var run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 chain_command_block{Command:"deeper_dark.near_portal"} replace reinforced_deepslate
-execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 as @a[nbt={SelectedItem:{id:"minecraft:echo_shard",components:{"minecraft:custom_data":{deeper_dark:{EntrancePosition:{}}}}}},predicate=deeper_dark:in_deeper_dark,tag=!deeper_dark.tp_cooldown,gamemode=!spectator] at @s unless entity @e[type=minecraft:warden,predicate=deeper_dark:in_deeper_dark,distance=0..50] run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 reinforced_deepslate replace chain_command_block{Command:"deeper_dark.near_portal"}
-execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 at @a[scores={deeper_dark.var=1}] run particle minecraft:sculk_soul ~ ~ ~ 2 2 2 0 1 force
-execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 at @a[scores={deeper_dark.var=1}] run playsound minecraft:block.sculk_catalyst.bloom ambient @a ~ ~ ~ .75 0
-scoreboard players set @a deeper_dark.var 0
-
+### Main deeper dark dimension tick function
 execute in deeper_dark:deeper_dark if entity @e[distance=0..] run function deeper_dark:in_deeper_dark
 
 
-#items
-scoreboard players add @e[tag=deeper_dark.sonicattack] deeper_dark.sonicattack 1
-execute as @a[scores={deeper_dark.sonicattack=1..99}] unless entity @s[x_rotation=70..90,predicate=deeper_dark:is_sneaking] run title @s actionbar {"translate":"enchantment.deeper_dark.sonic_boom.canceled","fallback":"Canceled","color":"#007A8A"}
-execute as @a[predicate=!deeper_dark:enchantment_sonic_boom] run scoreboard players set @s deeper_dark.sonicattack 0
-execute as @a[scores={deeper_dark.sonicattack=0..99}] unless score @s deeper_dark.sonicattack matches 100..999 unless entity @s[x_rotation=70..90] run scoreboard players set @s deeper_dark.sonicattack 0
-execute as @a[scores={deeper_dark.sonicattack=0..99},predicate=!deeper_dark:is_sneaking] unless score @s deeper_dark.sonicattack matches 100.. run scoreboard players set @s deeper_dark.sonicattack 0
-execute at @a[scores={deeper_dark.sonicattack=3}] run playsound minecraft:entity.warden.sonic_charge ambient @a ~ ~ ~ 2 1
-scoreboard players add @a[predicate=deeper_dark:enchantment_sonic_boom,x_rotation=70..90,predicate=deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=0..99}] deeper_dark.sonicattack 3
-scoreboard players set @a[scores={deeper_dark.sonicattack=90..}] deeper_dark.sonicattack 100
+### Items
+# Sonic attack
+execute as @a[predicate=deeper_dark:enchantment_sonic_boom] run scoreboard players add @s deeper_dark.sonicattack 0
+execute as @a[scores={deeper_dark.sonicattack=0..99}] run function deeper_dark:armor/sonicattack_charging
 execute as @a[predicate=deeper_dark:enchantment_sonic_boom,x_rotation=70..90,predicate=deeper_dark:is_sneaking] run title @s actionbar [{"score":{"name":"@s","objective":"deeper_dark.sonicattack"},"color":"#007A8A"},{"text":"%"}]
 
-tag @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] add deeper_dark.selected
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^1 run function deeper_dark:armor/sonicattack
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^2 run function deeper_dark:armor/sonicattack
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^3 run function deeper_dark:armor/sonicattack
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^4 run function deeper_dark:armor/sonicattack
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^5 run function deeper_dark:armor/sonicattack
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^6 run function deeper_dark:armor/sonicattack
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^7 run function deeper_dark:armor/sonicattack
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^8 run function deeper_dark:armor/sonicattack
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^9 run function deeper_dark:armor/sonicattack
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^10 run function deeper_dark:armor/sonicattack
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^11 run function deeper_dark:armor/sonicattack
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^12 run function deeper_dark:armor/sonicattack
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^13 run function deeper_dark:armor/sonicattack
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^14 run function deeper_dark:armor/sonicattack
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s anchored eyes positioned ^ ^ ^15 run function deeper_dark:armor/sonicattack
-tag @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] remove deeper_dark.selected
-
-execute at @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] run playsound minecraft:entity.warden.sonic_boom ambient @a ~ ~ ~ 2 1
-execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] run scoreboard players set @s deeper_dark.sonicattack -60
+execute as @a[predicate=!deeper_dark:is_sneaking,scores={deeper_dark.sonicattack=100}] at @s run function deeper_dark:armor/sonicattack_run
 execute as @a[scores={deeper_dark.sonicattack=..-2}] run title @s actionbar {"translate":"enchantment.deeper_dark.sonic_boom.cooldown","fallback":"Cooldown","color":"#007A8A"}
 execute as @a[scores={deeper_dark.sonicattack=-1}] run title @s actionbar {"translate":"enchantment.deeper_dark.sonic_boom.ready","fallback":"Ready","color":"#007A8A"}
 scoreboard players add @a[scores={deeper_dark.sonicattack=..-1}] deeper_dark.sonicattack 1
 
-execute as @e[predicate=deeper_dark:enchantment_resonate,predicate=deeper_dark:living] if data entity @s {HurtTime:1s} at @s on attacker run function deeper_dark:armor/resonate_item
+# Resonate
+execute as @e[predicate=deeper_dark:enchantment_resonate,predicate=deeper_dark:living] if data entity @s {HurtTime:1s} at @s run function deeper_dark:armor/resonate
 
+# Shrieker Sense
 execute as @a[predicate=deeper_dark:enchantment_shrieker_sense,advancements={deeper_dark:functions/using_spyglass=true}] at @s anchored eyes positioned ^ ^ ^ run function deeper_dark:armor/shrieker_sense
 advancement revoke @a only deeper_dark:functions/using_spyglass
-execute as @e[tag=deeper_dark.shrieker_sense_marker] run scoreboard players add @s deeper_dark.shrieker_sense_marker_duration 1
-execute as @e[tag=deeper_dark.shrieker_sense_marker] at @s unless block ~ ~ ~ sculk_shrieker run tag @s add deeper_dark.silent_despawn
-tag @e[tag=deeper_dark.shrieker_sense_marker,scores={deeper_dark.shrieker_sense_marker_duration=4800..}] add deeper_dark.silent_despawn
+execute as @e[type=text_display,tag=deeper_dark.shrieker_sense_marker] at @s run function deeper_dark:armor/shrieker_sense_marker_lifecount
 
+# Warden Tracker
 execute as @a[scores={deeper_dark.sonicattack=0},predicate=deeper_dark:holding_warden_tracker] at @s run function deeper_dark:items/warden_tracker
 
-#blocks
+### Blocks
+# Tentacles
 scoreboard players set @e[tag=deeper_dark.tentacle_segment] deeper_dark.var 0
 execute as @e[type=minecraft:block_display,tag=deeper_dark.tentacle_segment,predicate=deeper_dark:loaded] at @s unless entity @n[type=minecraft:marker,distance=..10,tag=deeper_dark.tentacles] run kill @s
 execute as @e[type=minecraft:marker,tag=deeper_dark.tentacles] at @s if loaded ~ ~ ~ if entity @p[gamemode=!spectator,distance=0..32] run function deeper_dark:tentacle/ai
 execute as @e[type=minecraft:block_display,scores={deeper_dark.var=0},tag=deeper_dark.tentacle_segment] unless entity @p[gamemode=!spectator,distance=0..32] run tag @s add deeper_dark.silent_despawn
 
+# Claw
 execute as @e[tag=deeper_dark.sculk_claw,tag=!deeper_dark.sculk_claw.closed] at @s positioned ~-.5 ~ ~-.5 if entity @n[dx=0,dy=0,dz=0,predicate=deeper_dark:living,type=!minecraft:warden] run function deeper_dark:claw/close
 execute as @e[tag=deeper_dark.sculk_claw.closed] at @s run function deeper_dark:claw/close
 execute as @e[tag=deeper_dark.sculk_claw] at @s if loaded ~ ~ ~ unless block ~ ~-.1 ~ minecraft:sculk run function deeper_dark:claw/break
 
+# Syphon
 execute as @e[type=minecraft:marker,tag=deeper_dark.syphon] at @s if loaded ~ ~ ~ run function deeper_dark:syphon/ai
 execute as @e[tag=deeper_dark.cursor_tracker] at @s run data modify entity @s data.cursors set from block ~ ~ ~ cursors
 execute as @e[tag=deeper_dark.cursor_tracker] at @s run function deeper_dark:syphon/cursor
 
+# Anticatalyst
 execute as @e[type=minecraft:marker,tag=deeper_dark.anticatalyst,sort=random,limit=20] at @s if loaded ~ ~ ~ run function deeper_dark:anticatalyst/ai
 
+# Sonic Blaster
 execute as @e[type=minecraft:marker,tag=deeper_dark.sonic_blaster] at @s if loaded ~ ~ ~ run function deeper_dark:sonic_blaster/ai
 
+# Placing blocks
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{deeper_dark_sculk_tentacle:1b}}}}] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if function deeper_dark:has_origin run function deeper_dark:tentacle/spawn
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{deeper_dark_sculk_claw:1b}}}}] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if block ~ ~-1 ~ sculk if function deeper_dark:has_origin run function deeper_dark:claw/spawn
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{deeper_dark_sculk_syphon:1b}}}}] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if function deeper_dark:has_origin run function deeper_dark:syphon/spawn
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{deeper_dark_anticatalyst:1b}}}}] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if function deeper_dark:has_origin run function deeper_dark:anticatalyst/spawn
 execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{deeper_dark_sonic_blaster:1b}}}}] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if function deeper_dark:has_origin run function deeper_dark:sonic_blaster/spawn
-#boss
+
+### Boss
 scoreboard players set @e[tag=deeper_dark.boss_segment] deeper_dark.var 0
 execute as @e[tag=deeper_dark.boss_spawner] at @s if entity @p[distance=0..19,gamemode=!spectator] run function deeper_dark:boss/activate
 execute as @e[tag=deeper_dark.boss] at @s run function deeper_dark:boss/ai
@@ -115,29 +86,9 @@ execute as @e[tag=deeper_dark.boss_hitbox] at @s run function deeper_dark:boss/d
 
 
 advancement revoke @a only deeper_dark:functions/using_shield
-#sculk conversion
-execute as @e[tag=deeper_dark.sculk_converter] at @s if score @s deeper_dark.sculk_converter.conversion_time matches 1.. run function deeper_dark:sculk_converter/sculk_conversion_animation
-execute as @e[tag=deeper_dark.sculk_converter] at @s if score @s deeper_dark.sculk_converter.conversion_time matches 1 run function deeper_dark:sculk_converter/sculk_conversion
+### Sculk conversion
 execute if score Game deeper_dark.gamerule.disable_sculk_conversion matches 0 as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{deeper_dark_altar_fragment:1b}}}}] at @s if block ~ ~-.1 ~ minecraft:sculk_catalyst positioned ~ ~-.1 ~ align xyz positioned ~.5 ~.5 ~.5 run function deeper_dark:sculk_converter/setup
-execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ unless block ~ ~ ~ minecraft:sculk_catalyst if data entity @s data.Item run function deeper_dark:sculk_converter/hitbox_remove
-execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ positioned ~ ~3 ~1 if block ~ ~ ~ minecraft:hopper[enabled=true,facing=north] unless data entity @s data.Item run function deeper_dark:sculk_converter/hopper_place
-execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ positioned ~-1 ~3 ~ if block ~ ~ ~ minecraft:hopper[enabled=true,facing=east] unless data entity @s data.Item run function deeper_dark:sculk_converter/hopper_place
-execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ positioned ~ ~3 ~-1 if block ~ ~ ~ minecraft:hopper[enabled=true,facing=south] unless data entity @s data.Item run function deeper_dark:sculk_converter/hopper_place
-execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ positioned ~1 ~3 ~ if block ~ ~ ~ minecraft:hopper[enabled=true,facing=west] unless data entity @s data.Item run function deeper_dark:sculk_converter/hopper_place
-execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ unless block ~ ~ ~ minecraft:sculk_catalyst run function deeper_dark:sculk_converter/remove_fragment
-execute as @e[tag=deeper_dark.sculk_converter] at @s positioned ~ ~1 ~ run function deeper_dark:sculk_converter/display_fragments
-execute as @e[tag=deeper_dark.sculk_converter] at @s run scoreboard players set @s deeper_dark.sculk_converter.flames 0
-execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ rotated 0 0 positioned ^ ^ ^3 if predicate deeper_dark:soul_flame if score @s deeper_dark.sculk_converter.flames < @s deeper_dark.sculk_converter.fragments run scoreboard players add @s deeper_dark.sculk_converter.flames 1
-execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ rotated 45 0 positioned ^ ^ ^3 if predicate deeper_dark:soul_flame if score @s deeper_dark.sculk_converter.flames < @s deeper_dark.sculk_converter.fragments run scoreboard players add @s deeper_dark.sculk_converter.flames 1
-execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ rotated 90 0 positioned ^ ^ ^3 if predicate deeper_dark:soul_flame if score @s deeper_dark.sculk_converter.flames < @s deeper_dark.sculk_converter.fragments run scoreboard players add @s deeper_dark.sculk_converter.flames 1
-execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ rotated 135 0 positioned ^ ^ ^3 if predicate deeper_dark:soul_flame if score @s deeper_dark.sculk_converter.flames < @s deeper_dark.sculk_converter.fragments run scoreboard players add @s deeper_dark.sculk_converter.flames 1
-execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ rotated 180 0 positioned ^ ^ ^3 if predicate deeper_dark:soul_flame if score @s deeper_dark.sculk_converter.flames < @s deeper_dark.sculk_converter.fragments run scoreboard players add @s deeper_dark.sculk_converter.flames 1
-execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ rotated 225 0 positioned ^ ^ ^3 if predicate deeper_dark:soul_flame if score @s deeper_dark.sculk_converter.flames < @s deeper_dark.sculk_converter.fragments run scoreboard players add @s deeper_dark.sculk_converter.flames 1
-execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ rotated 270 0 positioned ^ ^ ^3 if predicate deeper_dark:soul_flame if score @s deeper_dark.sculk_converter.flames < @s deeper_dark.sculk_converter.fragments run scoreboard players add @s deeper_dark.sculk_converter.flames 1
-execute as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ rotated 315 0 positioned ^ ^ ^3 if predicate deeper_dark:soul_flame if score @s deeper_dark.sculk_converter.flames < @s deeper_dark.sculk_converter.fragments run scoreboard players add @s deeper_dark.sculk_converter.flames 1
-execute as @e[tag=deeper_dark.sculk_converter] at @s if score @s deeper_dark.sculk_converter.conversion_time matches 1.. if score @s deeper_dark.sculk_converter.flames < @s deeper_dark.sculk_converter.flame_cost run scoreboard players set @s deeper_dark.sculk_converter.conversion_time 0
-execute if score Game deeper_dark.gamerule.disable_sculk_conversion matches 0 as @e[tag=deeper_dark.sculk_converter] at @s if loaded ~ ~ ~ if data block ~ ~ ~ cursors[0].charge run function deeper_dark:sculk_converter/charge
-execute as @e[tag=deeper_dark.sculk_converter] at @s positioned ~ ~1.5 ~ run function deeper_dark:sculk_converter/display_xp
+execute as @e[tag=deeper_dark.sculk_converter] at @s run function deeper_dark:sculk_converter/run
 execute as @e[tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction positioned ~ ~-2.6 ~ if data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_remove
 execute as @e[tag=deeper_dark.sculk_converter_hitbox] at @s if block ~ ~ ~ moving_piston positioned ~ ~-2.6 ~ if data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_remove
 execute as @e[tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction positioned ~ ~-2.6 ~ unless data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_place
@@ -164,7 +115,7 @@ execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 as
 execute if score Game deeper_dark.gamerule.disable_portals matches 0 as @e[tag=deeper_dark.portal_marker] at @s positioned ~-.5 ~ ~-.5 as @n[dx=0,dy=0,dz=0,type=!marker,type=!text_display,type=!block_display,type=!item_display,type=!armor_stand,predicate=!deeper_dark:has_passenger,tag=!deeper_dark.tp_cooldown,distance=0..] at @s positioned ~-0.5 ~ ~-0.5 if entity @e[dx=0,dy=0,dz=0,tag=deeper_dark.portal_marker] at @s[tag=!deeper_dark.tp_cooldown] run function deeper_dark:portal/prep_teleport
 
 
-execute as @e[tag=deeper_dark.portal_marker] at @s unless data entity @s data.location run kill @s
+execute as @e[type=marker,tag=deeper_dark.portal_marker] at @s unless data entity @s data.location run kill @s
 
 
 #warden spawning

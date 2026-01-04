@@ -1,3 +1,5 @@
+execute if entity @e[type=minecraft:warden,predicate=deeper_dark:in_deeper_dark,distance=0..50] run return run function deeper_dark:tp_out_fail
+
 tag @s add deeper_dark.tp_cooldown
 function deeper_dark:remove_shard_label
 function deeper_dark:teleport_dimension with entity @s SelectedItem.components.minecraft:custom_data.deeper_dark.EntrancePosition
