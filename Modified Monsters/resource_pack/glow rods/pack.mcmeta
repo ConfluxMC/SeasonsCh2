@@ -1,0 +1,8 @@
+{
+   "id": "glowrods",
+   "pack":{
+    "min_format": 69,
+    "max_format": 75,
+    "description":"Changes texture of blaze rods to glow squid tentacles"
+  }
+}
