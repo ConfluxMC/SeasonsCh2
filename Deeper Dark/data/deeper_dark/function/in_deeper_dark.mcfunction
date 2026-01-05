@@ -43,8 +43,7 @@ execute as @e[type=marker,tag=deeper_dark.spawner,predicate=deeper_dark:in_deepe
 
 
 #ancient_dark_active
-execute as @a[predicate=deeper_dark:in_ancient_dark,predicate=deeper_dark:touching_sculk,gamemode=!spectator] unless score @s deeper_dark.ancient_dark_active matches 1.. at @s unless entity @e[tag=deeper_dark.boss,distance=0..30] run function deeper_dark:ancient_dark_active
-execute as @a[predicate=deeper_dark:in_ancient_dark,predicate=deeper_dark:touching_sculk,gamemode=!spectator] at @s run scoreboard players set @s deeper_dark.ancient_dark_active 300
+execute as @a[predicate=deeper_dark:in_ancient_dark,predicate=deeper_dark:touching_sculk,gamemode=!spectator] at @s run function deeper_dark:ancient_dark_touching_sculk
 
 
 #execute as @a[scores={deeper_dark.ancient_dark_active=1..}]deeper_dark.ancient_dark_active matches 1..

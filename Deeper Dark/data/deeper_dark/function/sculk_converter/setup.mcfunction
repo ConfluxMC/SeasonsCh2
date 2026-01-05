@@ -1,10 +1,4 @@
 scoreboard objectives add deeper_dark.var dummy
-scoreboard objectives add deeper_dark.sculk_converter.fragments dummy
-scoreboard objectives add deeper_dark.sculk_converter.flames dummy
-scoreboard objectives add deeper_dark.sculk_converter.xp dummy
-scoreboard objectives add deeper_dark.sculk_converter.flame_cost dummy
-scoreboard objectives add deeper_dark.sculk_converter.xp_cost dummy
-scoreboard objectives add deeper_dark.sculk_converter.conversion_time dummy
 
 execute unless entity @e[tag=deeper_dark.sculk_converter,distance=0...1] unless function deeper_dark:has_origin run return fail
 execute unless entity @e[tag=deeper_dark.sculk_converter,distance=0...1] on origin unless entity @s[distance=0..] run return fail

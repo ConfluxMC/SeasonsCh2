@@ -13,7 +13,7 @@ execute as @e[type=sniffer,predicate=deeper_dark:sniffer_needs_tp] at @s run fun
 
 #shockwave
 execute as @a at @s as @e[sort=nearest,limit=2,predicate=deeper_dark:in_deeper_dark,tag=deeper_dark.amethyst_mineshaft.floor] at @s positioned ~-128 ~-6 ~-128 unless entity @e[tag=deeper_dark.shockwave,type=pig,dy=12,dx=256,dz=256] if entity @p[dy=12,dx=256,dz=256,gamemode=!spectator] at @s if loaded ~ ~ ~ facing entity @e[limit=1,sort=random] feet rotated ~ 0 positioned ^ ^ ^50 unless entity @p[gamemode=!spectator,distance=..40] if predicate deeper_dark:in_amethyst_mineshaft if loaded ~ ~ ~ if block ~ ~ ~ air run function deeper_dark:shockwave/spawn
-execute as @e[tag=deeper_dark.shockwave_display,limit=1,sort=random] unless predicate deeper_dark:is_passenger run kill @s
+execute as @e[type=text_display,tag=deeper_dark.shockwave_display,limit=1,sort=random] unless predicate deeper_dark:is_passenger run kill @s
 
 
 execute as @a[predicate=deeper_dark:holding_warden_tracker] at @s run function deeper_dark:items/warden_tracker_track_wardens

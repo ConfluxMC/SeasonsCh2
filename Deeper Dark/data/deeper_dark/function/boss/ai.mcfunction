@@ -1,19 +1,19 @@
 scoreboard players set @a[distance=0..25] deeper_dark.ancient_dark_active 0
-execute store result bossbar minecraft:deeper_dark/boss value run data get entity @n[tag=deeper_dark.boss_hitbox] Health
+execute store result bossbar minecraft:deeper_dark/boss value run data get entity @n[type=ghast,tag=deeper_dark.boss_hitbox] Health
 bossbar set minecraft:deeper_dark/boss players @a[distance=0..30]
 execute as @e[type=minecraft:warden,predicate=deeper_dark:in_deeper_dark] at @s if entity @e[tag=deeper_dark.boss,distance=0..25] run data remove entity @s Brain.memories.minecraft:dig_cooldown
-effect clear @e[tag=deeper_dark.boss_hitbox] glowing
-execute as @n[tag=deeper_dark.boss_hitbox] at @s if data entity @s {HurtTime:1s} run playsound minecraft:block.decorated_pot.shatter hostile @a ~ ~ ~ 3 0
-execute as @n[tag=deeper_dark.boss_hitbox] at @s if data entity @s {HurtTime:1s} run particle minecraft:sculk_soul ~ ~ ~ 0 0 0 0.1 1 force
+effect clear @e[type=ghast,tag=deeper_dark.boss_hitbox] glowing
+execute as @n[type=ghast,tag=deeper_dark.boss_hitbox] at @s if data entity @s {HurtTime:1s} run playsound minecraft:block.decorated_pot.shatter hostile @a ~ ~ ~ 3 0
+execute as @n[type=ghast,tag=deeper_dark.boss_hitbox] at @s if data entity @s {HurtTime:1s} run particle minecraft:sculk_soul ~ ~ ~ 0 0 0 0.1 1 force
 
 
 execute as @e[predicate=deeper_dark:living,predicate=deeper_dark:touching_sculk,predicate=!deeper_dark:sculk_entity,distance=0..30] run tag @s add deeper_dark.boss.target
-execute as @n[tag=deeper_dark.boss_hitbox] on attacker run tag @s[predicate=!deeper_dark:sculk_entity] add deeper_dark.boss.target
+execute as @n[type=ghast,tag=deeper_dark.boss_hitbox] on attacker run tag @s[predicate=!deeper_dark:sculk_entity] add deeper_dark.boss.target
 
 
 execute unless score @s deeper_dark.tentacle_attack_time matches 1.. run rotate @s facing entity @n[tag=deeper_dark.boss.target]
 #say @n[tag=deeper_dark.boss.target]
-tag @e[tag=deeper_dark.boss_hitbox] remove deeper_dark.boss.target
+tag @e[type=ghast,tag=deeper_dark.boss_hitbox] remove deeper_dark.boss.target
 scoreboard players remove @s deeper_dark.boss_attack_cooldown 1
 
 #attacks
@@ -30,11 +30,11 @@ execute if score @s deeper_dark.tentacle_attack_time matches 40 run tag @e[tag=d
 
 
 
-execute unless score @s deeper_dark.boss_attack_cooldown matches 1.. if predicate deeper_dark:chance_50 at @n[tag=deeper_dark.boss_hitbox] if entity @n[tag=deeper_dark.boss.target] facing entity @n[tag=deeper_dark.boss.target] eyes run function deeper_dark:boss/attacks/sonicattack_start
+execute unless score @s deeper_dark.boss_attack_cooldown matches 1.. if predicate deeper_dark:chance_50 at @n[type=ghast,tag=deeper_dark.boss_hitbox] if entity @n[tag=deeper_dark.boss.target] facing entity @n[tag=deeper_dark.boss.target] eyes run function deeper_dark:boss/attacks/sonicattack_start
 execute if score @s deeper_dark.sonicattack matches 1.. run scoreboard players remove @s deeper_dark.sonicattack 1
 execute if score @s deeper_dark.sonicattack matches 2.. unless entity @n[tag=deeper_dark.boss.target] run scoreboard players set @s deeper_dark.boss_attack_cooldown 0
 execute if score @s deeper_dark.sonicattack matches 2.. unless entity @n[tag=deeper_dark.boss.target] run scoreboard players set @s deeper_dark.tentacle_attack_time 0
-execute if score @s deeper_dark.sonicattack matches 1 as @n[tag=deeper_dark.boss_hitbox] at @s facing entity @n[tag=deeper_dark.boss.target] eyes run function deeper_dark:boss/attacks/sonicattack
+execute if score @s deeper_dark.sonicattack matches 1 as @n[type=ghast,tag=deeper_dark.boss_hitbox] at @s facing entity @n[tag=deeper_dark.boss.target] eyes run function deeper_dark:boss/attacks/sonicattack
 
 
 
@@ -103,9 +103,9 @@ execute as @e[type=minecraft:block_display,tag=deeper_dark.selected_5] at @s pos
 
 execute as @e[type=minecraft:block_display,tag=deeper_dark.selected_6] at @s positioned ^ ^ ^1 rotated as @n[tag=deeper_dark.selected] rotated ~ 85 run rotate @s facing ^ ^ ^0.5
 execute if score @s deeper_dark.tentacle_attack_time matches 1..40 as @e[type=minecraft:block_display,tag=deeper_dark.selected_6] at @s run function deeper_dark:boss/attacks/slam_2
-execute as @e[type=minecraft:block_display,tag=deeper_dark.selected_6] at @s positioned ^ ^3 ^ run tp @n[tag=deeper_dark.boss_hitbox] ~ ~-.5 ~
-execute as @e[tag=deeper_dark.boss_hitbox] at @s run tp @s @n[tag=deeper_dark.boss.target_point,distance=0..4]
-execute as @e[tag=deeper_dark.boss_hitbox] at @s if entity @n[tag=deeper_dark.boss.target_point,distance=0..4] unless entity @s[tag=deeper_dark.boss.attack_done] run function deeper_dark:boss/attacks/slam_attack
+execute as @e[type=minecraft:block_display,tag=deeper_dark.selected_6] at @s positioned ^ ^3 ^ run tp @n[type=ghast,tag=deeper_dark.boss_hitbox] ~ ~-.5 ~
+execute as @e[type=ghast,tag=deeper_dark.boss_hitbox] at @s run tp @s @n[tag=deeper_dark.boss.target_point,distance=0..4]
+execute as @e[type=ghast,tag=deeper_dark.boss_hitbox] at @s if entity @n[tag=deeper_dark.boss.target_point,distance=0..4] unless entity @s[tag=deeper_dark.boss.attack_done] run function deeper_dark:boss/attacks/slam_attack
 
 
 
@@ -114,8 +114,8 @@ execute as @e[tag=deeper_dark.boss_hitbox] at @s if entity @n[tag=deeper_dark.bo
 tp @n[type=minecraft:block_display,tag=deeper_dark.selected_1] ~ ~-0.5 ~
 execute as @e[type=minecraft:block_display,tag=deeper_dark.selected_all] at @s run function deeper_dark:tentacle/move
 
-execute as @n[tag=deeper_dark.boss_hitbox] at @s run tp @e[tag=deeper_dark.boss.block.base,limit=25,sort=nearest] ~ ~.5 ~
-execute as @n[tag=deeper_dark.boss_hitbox] at @s run tp @e[tag=deeper_dark.boss.block.sculk,limit=24,sort=nearest] ~ ~.5 ~
+execute as @n[type=ghast,tag=deeper_dark.boss_hitbox] at @s run tp @e[tag=deeper_dark.boss.block.base,limit=25,sort=nearest] ~ ~.5 ~
+execute as @n[type=ghast,tag=deeper_dark.boss_hitbox] at @s run tp @e[tag=deeper_dark.boss.block.sculk,limit=24,sort=nearest] ~ ~.5 ~
 
 #die
 #execute unless block ~ ~ ~ sculk_sensor run function deeper_dark:tentacle/break

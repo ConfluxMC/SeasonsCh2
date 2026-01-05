@@ -97,34 +97,34 @@ execute as @e[tag=deeper_dark.sculk_converter_item] at @s positioned ~ ~-3 ~ run
 execute as @e[tag=deeper_dark.sculk_converter_item] at @s positioned ~ ~-3 ~ unless data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run data remove entity @s item
 
 
-#shockwave
-execute if entity @e[tag=deeper_dark.shockwave_part,limit=1] run function deeper_dark:shockwave/ai
+# If any shockwaves exist, run shockwave ai
+execute if entity @e[type=#deeper_dark:shockwave_part,tag=deeper_dark.shockwave_part,limit=1] run function deeper_dark:shockwave/ai
 
 #portal
-execute as @e[tag=deeper_dark.portal_sync,limit=1,sort=random] at @s if loaded ~ ~ ~ if loaded ~16 ~ ~ if loaded ~-16 ~ ~ if loaded ~ ~ ~16 if loaded ~ ~ ~-16 run function deeper_dark:portal/portal_sync
+execute as @e[type=marker,tag=deeper_dark.portal_sync,limit=1,sort=random] at @s if loaded ~ ~ ~ if loaded ~16 ~ ~ if loaded ~-16 ~ ~ if loaded ~ ~ ~16 if loaded ~ ~ ~-16 run function deeper_dark:portal/portal_sync
 
-execute as @e[tag=deeper_dark.portal_marker] at @s if loaded ~ ~ ~ run function deeper_dark:portal/unlight
-execute as @e[tag=deeper_dark.portal_marker] at @s if loaded ~ ~ ~ unless block ~ ~ ~ light run kill @s
-execute as @a at @s at @e[tag=deeper_dark.portal_display,limit=10,sort=nearest] unless entity @e[distance=0...1,tag=deeper_dark.portal_marker] if block ~ ~ ~ minecraft:light run playsound minecraft:entity.warden.death block @s ~ ~ ~ 10 0
-execute as @e[tag=deeper_dark.portal_display] at @s unless entity @e[distance=0...1,tag=deeper_dark.portal_marker] if block ~ ~ ~ minecraft:light run setblock ~ ~ ~ minecraft:air
-execute as @e[tag=deeper_dark.portal_display] at @s unless entity @e[distance=0...1,tag=deeper_dark.portal_marker] run kill @s
-execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 as @e[tag=deeper_dark.portal_marker] if predicate deeper_dark:chance_50 at @s run particle minecraft:sculk_soul ~ ~ ~ .5 .5 .5 0.01 1 force
-execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 as @e[tag=deeper_dark.portal_marker] if predicate deeper_dark:chance_50 at @s run particle minecraft:sculk_charge_pop ~ ~ ~ .5 .5 .5 0 1
-execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 as @a at @s at @e[tag=deeper_dark.portal_marker,limit=1,sort=nearest] run playsound minecraft:block.sculk_catalyst.bloom block @s ~ ~ ~ 2 0
+execute as @e[type=marker,tag=deeper_dark.portal_marker] at @s if loaded ~ ~ ~ run function deeper_dark:portal/unlight
+execute as @e[type=marker,tag=deeper_dark.portal_marker] at @s if loaded ~ ~ ~ unless block ~ ~ ~ light run kill @s
+execute as @a at @s at @e[tag=deeper_dark.portal_display,limit=10,sort=nearest] unless entity @e[type=marker,distance=0...1,tag=deeper_dark.portal_marker] if block ~ ~ ~ minecraft:light run playsound minecraft:entity.warden.death block @s ~ ~ ~ 10 0
+execute as @e[tag=deeper_dark.portal_display] at @s unless entity @e[type=marker,distance=0...1,tag=deeper_dark.portal_marker] if block ~ ~ ~ minecraft:light run setblock ~ ~ ~ minecraft:air
+execute as @e[tag=deeper_dark.portal_display] at @s unless entity @e[type=marker,distance=0...1,tag=deeper_dark.portal_marker] run kill @s
+execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 as @e[type=marker,tag=deeper_dark.portal_marker] if predicate deeper_dark:chance_50 at @s run particle minecraft:sculk_soul ~ ~ ~ .5 .5 .5 0.01 1 force
+execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 as @e[type=marker,tag=deeper_dark.portal_marker] if predicate deeper_dark:chance_50 at @s run particle minecraft:sculk_charge_pop ~ ~ ~ .5 .5 .5 0 1
+execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 as @a at @s at @e[type=marker,tag=deeper_dark.portal_marker,limit=1,sort=nearest] run playsound minecraft:block.sculk_catalyst.bloom block @s ~ ~ ~ 2 0
 
-execute if score Game deeper_dark.gamerule.disable_portals matches 0 as @e[tag=deeper_dark.portal_marker] at @s positioned ~-.5 ~ ~-.5 as @n[dx=0,dy=0,dz=0,type=!marker,type=!text_display,type=!block_display,type=!item_display,type=!armor_stand,predicate=!deeper_dark:has_passenger,tag=!deeper_dark.tp_cooldown,distance=0..] at @s positioned ~-0.5 ~ ~-0.5 if entity @e[dx=0,dy=0,dz=0,tag=deeper_dark.portal_marker] at @s[tag=!deeper_dark.tp_cooldown] run function deeper_dark:portal/prep_teleport
+execute if score Game deeper_dark.gamerule.disable_portals matches 0 as @e[type=marker,tag=deeper_dark.portal_marker] at @s positioned ~-.5 ~ ~-.5 as @n[dx=0,dy=0,dz=0,type=!marker,type=!text_display,type=!block_display,type=!item_display,type=!armor_stand,predicate=!deeper_dark:has_passenger,tag=!deeper_dark.tp_cooldown,distance=0..] at @s positioned ~-0.5 ~ ~-0.5 if entity @e[type=marker,dx=0,dy=0,dz=0,tag=deeper_dark.portal_marker] at @s[tag=!deeper_dark.tp_cooldown] run function deeper_dark:portal/prep_teleport
 
 
 execute as @e[type=marker,tag=deeper_dark.portal_marker] at @s unless data entity @s data.location run kill @s
 
 
 #warden spawning
-execute as @e[tag=deeper_dark.warden_spawned_3] at @s run tp @s ~ ~-9999.5 ~
-execute as @e[tag=deeper_dark.warden_spawned_3] run tag @s remove deeper_dark.warden_spawned
-execute as @e[tag=deeper_dark.warden_spawned_3] run tag @s remove deeper_dark.warden_spawned_2
-execute as @e[tag=deeper_dark.warden_spawned_3] run tag @s remove deeper_dark.warden_spawned_3
-execute as @e[tag=deeper_dark.warden_spawned_2] run tag @s add deeper_dark.warden_spawned_3
-execute as @e[tag=deeper_dark.warden_spawned] run tag @s add deeper_dark.warden_spawned_2
+execute as @e[type=warden,tag=deeper_dark.warden_spawned_3] at @s run tp @s ~ ~-9999.5 ~
+execute as @e[type=warden,tag=deeper_dark.warden_spawned_3] run tag @s remove deeper_dark.warden_spawned
+execute as @e[type=warden,tag=deeper_dark.warden_spawned_3] run tag @s remove deeper_dark.warden_spawned_2
+execute as @e[type=warden,tag=deeper_dark.warden_spawned_3] run tag @s remove deeper_dark.warden_spawned_3
+execute as @e[type=warden,tag=deeper_dark.warden_spawned_2] run tag @s add deeper_dark.warden_spawned_3
+execute as @e[type=warden,tag=deeper_dark.warden_spawned] run tag @s add deeper_dark.warden_spawned_2
 
 #silent_despawn
 execute as @e[tag=deeper_dark.silent_despawn,type=!player] at @s run function deeper_dark:silent_despawn
