@@ -1,0 +1,117 @@
+{
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:location_check",
+      "offsetY": -1,
+      "predicate": {
+        "block": {
+          "blocks": "air"
+        }
+      }
+    },
+    {
+      "condition": "minecraft:location_check",
+      "predicate": {
+        "block": {
+          "blocks": "minecraft:sculk"
+        }
+      }
+    },
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "minecraft:location_check",
+          "offsetY": -3,
+          "predicate": {
+            "block": {
+              "blocks": "sculk"
+            }
+          }
+        },
+        {
+          "condition": "minecraft:location_check",
+          "offsetY": -4,
+          "predicate": {
+            "block": {
+              "blocks": "sculk"
+            }
+          }
+        },
+        {
+          "condition": "minecraft:location_check",
+          "offsetY": -5,
+          "predicate": {
+            "block": {
+              "blocks": "sculk"
+            }
+          }
+        },
+        {
+          "condition": "minecraft:location_check",
+          "offsetY": -6,
+          "predicate": {
+            "block": {
+              "blocks": "sculk"
+            }
+          }
+        },
+        {
+          "condition": "minecraft:location_check",
+          "offsetY": -7,
+          "predicate": {
+            "block": {
+              "blocks": "sculk"
+            }
+          }
+        },
+        {
+          "condition": "minecraft:location_check",
+          "offsetY": -8,
+          "predicate": {
+            "block": {
+              "blocks": "sculk"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "condition": "minecraft:location_check",
+      "offsetX": -1,
+      "predicate": {
+        "block": {
+          "blocks": "minecraft:sculk"
+        }
+      }
+    },
+    {
+      "condition": "minecraft:location_check",
+      "offsetX": 1,
+      "predicate": {
+        "block": {
+          "blocks": "minecraft:sculk"
+        }
+      }
+    },
+    {
+      "condition": "minecraft:location_check",
+      "offsetZ": -1,
+      "predicate": {
+        "block": {
+          "blocks": "minecraft:sculk"
+        }
+      }
+    },
+    {
+      "condition": "minecraft:location_check",
+      "offsetZ": 1,
+      "predicate": {
+        "block": {
+          "blocks": "minecraft:sculk"
+        }
+      }
+    }
+  ]
+}

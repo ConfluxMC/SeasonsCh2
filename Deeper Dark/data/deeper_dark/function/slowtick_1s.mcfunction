@@ -1,14 +1,12 @@
 schedule function deeper_dark:slowtick_1s 1s
-execute as @e[tag=deeper_dark.silent_despawn,type=!player] at @s run tp @s ~ ~-10000 ~
-execute as @e[tag=deeper_dark.silent_despawn,type=!player] run kill @s
+execute as @e[tag=deeper_dark.silent_despawn,type=!player] at @s run function deeper_dark:silent_despawn
 
 
 execute as @e[predicate=deeper_dark:in_deeper_dark,scores={deeper_dark.outofbounds=200..}] at @s run effect give @s minecraft:darkness 3 1
 execute as @e[predicate=deeper_dark:in_deeper_dark,scores={deeper_dark.outofbounds=400..}] at @s run effect give @s minecraft:blindness 3 1
 
 #volcanic caverns effects
-effect give @e[predicate=deeper_dark:in_volcanic_caverns] minecraft:jump_boost 3 3 true
-effect give @e[predicate=deeper_dark:in_volcanic_caverns] minecraft:slow_falling 3 0 true
+execute as @e[predicate=deeper_dark:in_volcanic_caverns] run function deeper_dark:volcanic_caverns_effects
 
 #sniffer safety teleport
 execute as @e[type=sniffer,predicate=deeper_dark:sniffer_needs_tp] at @s run function deeper_dark:sniffer_safety_tp
@@ -45,4 +43,3 @@ execute as @e[tag=deeper_dark.anticatalyst_target,limit=1,sort=random] at @s unl
 #tellraw @p {"score":{"name":"@p","objective":"deeper_dark.deepslate"}}
 execute as @a[scores={deeper_dark.deepslate=20..}] if predicate {"condition":"minecraft:any_of","terms":[{"condition":"minecraft:entity_properties","entity":"this","predicate":{"equipment":{"mainhand":{"predicates":{"minecraft:enchantments":[{"enchantments":"deeper_dark:undermine"}]}}}}}]} run advancement grant @s only deeper_dark:undermine
 scoreboard players reset @a deeper_dark.deepslate
-

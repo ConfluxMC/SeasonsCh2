@@ -18,7 +18,7 @@ execute as @e[tag=deeper_dark.tp_cooldown] at @s if loaded ~ ~ ~ unless block ~ 
 #particles
 execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 run function deeper_dark:gamerules/disable_portal_particles
 
-### Main deeper dark dimension tick function
+### Main deeper dark dimension tick function. Run if there are any entities in the dimension.
 execute in deeper_dark:deeper_dark if entity @e[distance=0..] run function deeper_dark:in_deeper_dark
 
 
@@ -47,7 +47,7 @@ execute as @a[scores={deeper_dark.sonicattack=0},predicate=deeper_dark:holding_w
 ### Blocks
 # Tentacles
 scoreboard players set @e[tag=deeper_dark.tentacle_segment] deeper_dark.var 0
-execute as @e[type=minecraft:block_display,tag=deeper_dark.tentacle_segment,predicate=deeper_dark:loaded] at @s unless entity @n[type=minecraft:marker,distance=..10,tag=deeper_dark.tentacles] run kill @s
+execute as @e[type=minecraft:block_display,tag=deeper_dark.tentacle_segment] at @s if loaded ~ ~ ~ unless entity @n[type=minecraft:marker,distance=..10,tag=deeper_dark.tentacles] run kill @s
 execute as @e[type=minecraft:marker,tag=deeper_dark.tentacles] at @s if loaded ~ ~ ~ if entity @p[gamemode=!spectator,distance=0..32] run function deeper_dark:tentacle/ai
 execute as @e[type=minecraft:block_display,scores={deeper_dark.var=0},tag=deeper_dark.tentacle_segment] unless entity @p[gamemode=!spectator,distance=0..32] run tag @s add deeper_dark.silent_despawn
 
@@ -127,8 +127,7 @@ execute as @e[tag=deeper_dark.warden_spawned_2] run tag @s add deeper_dark.warde
 execute as @e[tag=deeper_dark.warden_spawned] run tag @s add deeper_dark.warden_spawned_2
 
 #silent_despawn
-execute as @e[tag=deeper_dark.silent_despawn,type=!player] at @s run tp @s ~ ~-10000 ~
-execute as @e[tag=deeper_dark.silent_despawn,type=!player] run kill @s
+execute as @e[tag=deeper_dark.silent_despawn,type=!player] at @s run function deeper_dark:silent_despawn
 
 
 
