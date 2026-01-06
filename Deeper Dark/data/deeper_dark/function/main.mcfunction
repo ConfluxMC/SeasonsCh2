@@ -66,11 +66,11 @@ execute as @e[type=minecraft:marker,tag=deeper_dark.anticatalyst,sort=random,lim
 execute as @e[type=minecraft:marker,tag=deeper_dark.sonic_blaster] at @s if loaded ~ ~ ~ run function deeper_dark:sonic_blaster/ai
 
 # Placing blocks
-execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{deeper_dark_sculk_tentacle:1b}}}}] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if function deeper_dark:has_origin run function deeper_dark:tentacle/spawn
-execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{deeper_dark_sculk_claw:1b}}}}] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if block ~ ~-1 ~ sculk if function deeper_dark:has_origin run function deeper_dark:claw/spawn
-execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{deeper_dark_sculk_syphon:1b}}}}] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if function deeper_dark:has_origin run function deeper_dark:syphon/spawn
-execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{deeper_dark_anticatalyst:1b}}}}] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if function deeper_dark:has_origin run function deeper_dark:anticatalyst/spawn
-execute as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{deeper_dark_sonic_blaster:1b}}}}] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if function deeper_dark:has_origin run function deeper_dark:sonic_blaster/spawn
+execute as @e[type=item,predicate=deeper_dark:item_sculk_tentacle] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if function deeper_dark:has_origin run function deeper_dark:tentacle/spawn
+execute as @e[type=item,predicate=deeper_dark:item_sculk_claw] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if block ~ ~-1 ~ sculk if function deeper_dark:has_origin run function deeper_dark:claw/spawn
+execute as @e[type=item,predicate=deeper_dark:item_sculk_syphon] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if function deeper_dark:has_origin run function deeper_dark:syphon/spawn
+execute as @e[type=item,predicate=deeper_dark:item_anticatalyst] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if function deeper_dark:has_origin run function deeper_dark:anticatalyst/spawn
+execute as @e[type=item,predicate=deeper_dark:item_sonic_blaster] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if function deeper_dark:has_origin run function deeper_dark:sonic_blaster/spawn
 
 ### Boss
 scoreboard players set @e[tag=deeper_dark.boss_segment] deeper_dark.var 0
@@ -85,7 +85,7 @@ execute as @e[tag=deeper_dark.boss_hitbox] at @s run function deeper_dark:boss/d
 
 advancement revoke @a only deeper_dark:functions/using_shield
 ### Sculk conversion
-execute if score Game deeper_dark.gamerule.disable_sculk_conversion matches 0 as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{deeper_dark_altar_fragment:1b}}}}] at @s if block ~ ~-.1 ~ minecraft:sculk_catalyst positioned ~ ~-.1 ~ align xyz positioned ~.5 ~.5 ~.5 run function deeper_dark:sculk_converter/setup
+execute if score Game deeper_dark.gamerule.disable_sculk_conversion matches 0 as @e[type=item,predicate=deeper_dark:item_altar_fragment] at @s if block ~ ~-.1 ~ minecraft:sculk_catalyst positioned ~ ~-.1 ~ align xyz positioned ~.5 ~.5 ~.5 run function deeper_dark:sculk_converter/setup
 execute as @e[type=marker,tag=deeper_dark.sculk_converter] at @s run function deeper_dark:sculk_converter/run
 execute as @e[type=interaction,tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction positioned ~ ~-2.6 ~ if data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_remove
 execute as @e[type=interaction,tag=deeper_dark.sculk_converter_hitbox] at @s if block ~ ~ ~ moving_piston positioned ~ ~-2.6 ~ if data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_remove

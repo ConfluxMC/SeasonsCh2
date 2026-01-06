@@ -1,10 +1,10 @@
 ### Wardens
-# If there are no alive non-spectator players in the deeper dark, force a random warden that does not have any suspects to dig away
-execute unless entity @a[gamemode=!spectator,distance=0..,nbt=!{Health:0f}] as @e[type=minecraft:warden,predicate=deeper_dark:in_deeper_dark,limit=1,sort=random] at @s unless data entity @s anger.suspects[0] run data remove entity @s Brain.memories.minecraft:dig_cooldown
+# If there are no non-spectator players in the deeper dark, force a random warden that does not have any suspects to dig away
+execute unless entity @a[gamemode=!spectator,distance=0..] as @e[type=minecraft:warden,predicate=deeper_dark:in_deeper_dark,limit=1,sort=random] at @s unless data entity @s anger.suspects[0] run data remove entity @s Brain.memories.minecraft:dig_cooldown
 
 # Wardens in deeper dark have Resistance VI
 effect give @e[type=minecraft:warden,predicate=deeper_dark:in_deeper_dark] minecraft:resistance 5 1 true
-#execute as @a[predicate=deeper_dark:in_deeper_dark] at @s if entity @e[type= minecraft:warden,distance=0..50] run advancement grant @s only deeper_dark:warden
+#execute as @a[predicate=deeper_dark:in_deeper_dark] at @s if entity @e[type=minecraft:warden,distance=0..50] run advancement grant @s only deeper_dark:warden
 
 # Stop music if there's a warden nearby
 execute at @a[predicate=deeper_dark:in_deeper_dark] if entity @n[type=minecraft:warden,distance=..50] run stopsound @s music
@@ -12,7 +12,7 @@ execute at @a[predicate=deeper_dark:in_deeper_dark] if entity @n[type=minecraft:
 # Track warden deaths to light nearby portals
 execute as @e[type=arrow,tag=deeper_dark.warden_death_tracker] on origin if data entity @s {Health:0.0f} at @s run summon minecraft:marker ~ ~1.5 ~ {Tags:["deeper_dark.portal_activation"]}
 kill @e[type=arrow,tag=deeper_dark.warden_death_tracker]
-execute if score Game deeper_dark.gamerule.disable_portals matches 0 as @e[type=minecraft:warden,predicate=deeper_dark:in_deeper_dark] at @s if entity @e[distance=0..64,type=#minecraft:item_frames,nbt={Item:{id:"minecraft:echo_shard",components:{"minecraft:custom_data":{deeper_dark:{EntrancePosition:{}}}}}},limit=1,sort=nearest,tag=!deeper_dark.active_portal,tag=!deeper_dark.invalid_portal] run function deeper_dark:warden_death_tracker
+execute if score Game deeper_dark.gamerule.disable_portals matches 0 as @e[type=minecraft:warden,predicate=deeper_dark:in_deeper_dark] at @s if entity @n[distance=0..64,type=#minecraft:item_frames,predicate=deeper_dark:item_echo_shard_key,tag=!deeper_dark.active_portal,tag=!deeper_dark.invalid_portal] run function deeper_dark:warden_death_tracker
 
 
 
