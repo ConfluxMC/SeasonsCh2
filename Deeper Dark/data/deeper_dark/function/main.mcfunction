@@ -46,10 +46,11 @@ execute as @a[scores={deeper_dark.sonicattack=0},predicate=deeper_dark:holding_w
 
 ### Blocks
 # Tentacles
-scoreboard players set @e[tag=deeper_dark.tentacle_segment] deeper_dark.var 0
+# This enables the deeper_dark.var score for existing tentacle segments
+scoreboard players set @e[type=block_display,tag=deeper_dark.tentacle_segment] deeper_dark.var 0
 execute as @e[type=minecraft:block_display,tag=deeper_dark.tentacle_segment] at @s if loaded ~ ~ ~ unless entity @n[type=minecraft:marker,distance=..10,tag=deeper_dark.tentacles] run kill @s
 execute as @e[type=minecraft:marker,tag=deeper_dark.tentacles] at @s if loaded ~ ~ ~ if entity @p[gamemode=!spectator,distance=0..32] run function deeper_dark:tentacle/ai
-execute as @e[type=minecraft:block_display,scores={deeper_dark.var=0},tag=deeper_dark.tentacle_segment] unless entity @p[gamemode=!spectator,distance=0..32] run tag @s add deeper_dark.silent_despawn
+execute as @e[type=minecraft:block_display,tag=deeper_dark.tentacle_segment,scores={deeper_dark.var=0}] unless entity @p[gamemode=!spectator,distance=0..32] run tag @s add deeper_dark.silent_despawn
 
 # Claw
 execute as @e[type=block_display,tag=deeper_dark.sculk_claw] at @s run function deeper_dark:claw/run

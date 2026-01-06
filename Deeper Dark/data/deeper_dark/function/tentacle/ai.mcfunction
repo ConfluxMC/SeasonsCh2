@@ -1,65 +1,48 @@
-#spawn
+### spawn
+# validate will tag the tentacle segments belonging to this tentacle for use in this function.
 function deeper_dark:tentacle/validate
-execute at @e[tag=deeper_dark.selected_all] run scoreboard players add @s deeper_dark.var 1
-#somebody is stealing the 6es!
-execute unless score @s deeper_dark.var matches 6 run function deeper_dark:tentacle/setup
-#tellraw @a {"score":{"name":"@s","objective":"deeper_dark.var"}}
-scoreboard players set @e[tag=deeper_dark.selected_all] deeper_dark.var 0
-#execute if score @s deeper_dark.var matches ..4 run say @s
+
+# if there isn't 6 tentacle segments, reset the tentacle. var is now # of tentacle segments
+execute at @e[type=block_display,tag=deeper_dark.selected_all,distance=..10] run scoreboard players add @s deeper_dark.var 1
+execute unless score @s deeper_dark.var matches 6 run return run function deeper_dark:tentacle/setup
 
 
-#attack
-execute if data block ~ ~ ~ listener.selector.event.pos unless data entity @s data.target run function deeper_dark:tentacle/prep_attack_1
-execute if data block ~ ~ ~ listener.event.pos unless data entity @s data.target run function deeper_dark:tentacle/prep_attack_1
-execute unless score @s deeper_dark.var matches 1 unless data entity @s data.target at @e[type=minecraft:block_display,tag=deeper_dark.selected_all] positioned ^ ^.75 ^ positioned ~-.5 ~-.5 ~-.5 if entity @n[dx=0,dy=0,dz=0,predicate=deeper_dark:living,type=!minecraft:warden] run function deeper_dark:tentacle/prep_attack_2
+### attack
+# if tentacle has no target, look for one (location of a vibration that triggered the sculk sensor)
+execute unless data entity @s data.target unless function deeper_dark:tentacle/prep_attack_1 at @e[type=minecraft:block_display,tag=deeper_dark.selected_all,distance=..10] positioned ^ ^.75 ^ positioned ~-.5 ~-.5 ~-.5 if entity @n[dx=0,dy=0,dz=0,predicate=deeper_dark:living,type=!minecraft:warden] run function deeper_dark:tentacle/prep_attack_2
+# unless var is 1 or has a target already, look for an entity that is touching one of the tentacle segments. That is the new target
+#execute unless score @s deeper_dark.var matches 1 unless data entity @s data.target at @e[type=minecraft:block_display,tag=deeper_dark.selected_all,distance=..10] positioned ^ ^.75 ^ positioned ~-.5 ~-.5 ~-.5 if entity @n[dx=0,dy=0,dz=0,predicate=deeper_dark:living,type=!minecraft:warden] run function deeper_dark:tentacle/prep_attack_2
 
 
+# Add to attack time
 execute if score @s deeper_dark.tentacle_attack_time matches 1.. run scoreboard players add @s deeper_dark.tentacle_attack_time 1
+# if sculk sensor is active, tentacle has a target, and attack is not already in progress, then begin the attack
 execute if block ~ ~ ~ minecraft:sculk_sensor[sculk_sensor_phase=active] if data entity @s data.target unless score @s deeper_dark.tentacle_attack_time matches 1.. run scoreboard players add @s deeper_dark.tentacle_attack_time 1
 
 
-execute if score @s deeper_dark.tentacle_attack_time matches 1..2 run playsound minecraft:block.sculk_sensor.clicking_stop block @a ~ ~ ~ 1 1
-execute if score @s deeper_dark.tentacle_attack_time matches 1..10 as @n[tag=deeper_dark.selected_1] at @s run rotate @s ~ ~-10
-execute if score @s deeper_dark.tentacle_attack_time matches 1..10 as @n[tag=deeper_dark.selected_2] at @s run rotate @s ~ ~-20
-execute if score @s deeper_dark.tentacle_attack_time matches 1..10 as @n[tag=deeper_dark.selected_3] at @s run rotate @s ~ ~-30
-execute if score @s deeper_dark.tentacle_attack_time matches 1..10 as @n[tag=deeper_dark.selected_4] at @s run rotate @s ~ ~-40
-execute if score @s deeper_dark.tentacle_attack_time matches 1..10 as @n[tag=deeper_dark.selected_5] at @s run rotate @s ~ ~-50
-execute if score @s deeper_dark.tentacle_attack_time matches 1..10 as @n[tag=deeper_dark.selected_6] at @s run rotate @s ~ ~-60
-execute if score @s deeper_dark.tentacle_attack_time matches 1..30 run tag @s add deeper_dark.selected
-execute if score @s deeper_dark.tentacle_attack_time matches 1..3 as @e[type=minecraft:block_display,tag=deeper_dark.selected_all] at @s run function deeper_dark:tentacle/turn_to with entity @n[tag=deeper_dark.selected] data.target
-execute if score @s deeper_dark.tentacle_attack_time matches 10.. run scoreboard players set @s deeper_dark.var 1
-execute if score @s deeper_dark.tentacle_attack_time matches 10 as @e[type=minecraft:block_display,tag=deeper_dark.selected_all] at @s run rotate @s ~ ~60
-execute if score @s deeper_dark.tentacle_attack_time matches 11.. as @e[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=!deeper_dark.tentacle.landed,sort=nearest] at @s run function deeper_dark:tentacle/attack
-execute if score @s deeper_dark.tentacle_attack_time matches 1..30 run tag @s remove deeper_dark.selected
-execute if score @s deeper_dark.tentacle_attack_time matches 30 run data remove entity @s data.target
-execute unless data entity @s data.target run scoreboard players set @s deeper_dark.tentacle_attack_time 0
-execute unless data entity @s data.target run tag @e[tag=deeper_dark.selected_all,tag=deeper_dark.tentacle.landed] remove deeper_dark.tentacle.landed
-
+# run through attack. if attack time 10.., var is set to 1 to indicate what extra idle movements to animate below
+execute if score @s deeper_dark.tentacle_attack_time matches 1.. run function deeper_dark:tentacle/attack_process
+execute unless data entity @s data.target run tag @e[type=block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle.landed,distance=..10] remove deeper_dark.tentacle.landed
 
 
 #animate
 
-execute unless score @s deeper_dark.var matches 1 as @e[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=!deeper_dark.selected_1] at @s positioned ^ ^ ^1 rotated ~ 0 run rotate @s facing ^ ^-0.01 ^0.01
-execute unless score @s deeper_dark.var matches 1 as @e[type=minecraft:block_display,tag=deeper_dark.selected_1] at @s positioned ^ ^ ^1 rotated ~ 0 run rotate @s facing ^ ^ ^0.03
-execute unless score @s deeper_dark.var matches 1 as @e[type=minecraft:block_display,tag=deeper_dark.selected_all] at @s run function deeper_dark:tentacle/move
-execute positioned ~ ~ ~ run tp @n[type=minecraft:block_display,tag=deeper_dark.selected_1] ~ ~ ~
-execute as @e[type=minecraft:block_display,tag=deeper_dark.selected_1] at @s positioned ^ ^1.25 ^ run tp @e[type=minecraft:block_display,tag=deeper_dark.selected_2] ~ ~ ~
-execute as @e[type=minecraft:block_display,tag=deeper_dark.selected_2] at @s positioned ^ ^1.25 ^ run tp @e[type=minecraft:block_display,tag=deeper_dark.selected_3] ~ ~ ~
-execute if score @s deeper_dark.var matches 1 if entity @e[tag=deeper_dark.selected_1,x_rotation=90] as @e[type=minecraft:block_display,tag=deeper_dark.selected_2] at @s run tp @s[x_rotation=90] ^ ^ ^.25
-execute if score @s deeper_dark.var matches 1 if entity @e[tag=deeper_dark.selected_2,x_rotation=90] as @e[type=minecraft:block_display,tag=deeper_dark.selected_3] at @s run tp @s[x_rotation=90] ^ ^ ^.5
-execute as @e[type=minecraft:block_display,tag=deeper_dark.selected_3] at @s positioned ^ ^1.25 ^ run tp @e[type=minecraft:block_display,tag=deeper_dark.selected_4] ~ ~ ~
-execute as @e[type=minecraft:block_display,tag=deeper_dark.selected_4] at @s positioned ^ ^1.25 ^ run tp @e[type=minecraft:block_display,tag=deeper_dark.selected_5] ~ ~ ~
-execute as @e[type=minecraft:block_display,tag=deeper_dark.selected_5] at @s positioned ^ ^1.25 ^ run tp @e[type=minecraft:block_display,tag=deeper_dark.selected_6] ~ ~ ~
+execute unless score @s deeper_dark.var matches 1 as @e[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=!deeper_dark.tentacle_segment.1,distance=..10] at @s positioned ^ ^ ^1 rotated ~ 0 run rotate @s facing ^ ^-0.01 ^0.01
+execute unless score @s deeper_dark.var matches 1 as @n[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.1,distance=..10] at @s positioned ^ ^ ^1 rotated ~ 0 run rotate @s facing ^ ^ ^0.03
+execute unless score @s deeper_dark.var matches 1 as @e[type=minecraft:block_display,tag=deeper_dark.selected_all,distance=..10] at @s run function deeper_dark:tentacle/move
+execute positioned ~ ~ ~ run tp @n[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.1,distance=..10] ~ ~ ~
+execute as @n[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.1,distance=..10] at @s positioned ^ ^1.25 ^ run tp @n[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.2,distance=..10] ~ ~ ~
+execute as @n[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.2,distance=..10] at @s positioned ^ ^1.25 ^ run tp @n[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.3,distance=..10] ~ ~ ~
+execute if score @s deeper_dark.var matches 1 if entity @n[type=block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.1,x_rotation=90,distance=..10] as @n[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.2,distance=..10] at @s run tp @s[x_rotation=90] ^ ^ ^.25
+execute if score @s deeper_dark.var matches 1 if entity @n[type=block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.2,x_rotation=90,distance=..10] as @n[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.3,distance=..10] at @s run tp @s[x_rotation=90] ^ ^ ^.5
+execute as @n[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.3,distance=..10] at @s positioned ^ ^1.25 ^ run tp @n[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.4,distance=..10] ~ ~ ~
+execute as @n[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.4,distance=..10] at @s positioned ^ ^1.25 ^ run tp @n[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.5,distance=..10] ~ ~ ~
+execute as @n[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.5,distance=..10] at @s positioned ^ ^1.25 ^ run tp @n[type=minecraft:block_display,tag=deeper_dark.selected_all,tag=deeper_dark.tentacle_segment.6,distance=..10] ~ ~ ~
 
 
 #die
 execute unless block ~ ~ ~ sculk_sensor run function deeper_dark:tentacle/break
 #untag
-scoreboard players set @e[tag=deeper_dark.selected_all] deeper_dark.var 1
-tag @e[tag=deeper_dark.selected_1] remove deeper_dark.selected_1
-tag @e[tag=deeper_dark.selected_2] remove deeper_dark.selected_2
-tag @e[tag=deeper_dark.selected_3] remove deeper_dark.selected_3
-tag @e[tag=deeper_dark.selected_4] remove deeper_dark.selected_4
-tag @e[tag=deeper_dark.selected_5] remove deeper_dark.selected_5
-tag @e[tag=deeper_dark.selected_6] remove deeper_dark.selected_6
-tag @e[tag=deeper_dark.selected_all] remove deeper_dark.selected_all
+# set var to 1 to mark these tentacles as safe to not despawn for this tick, and to mark them as processed to not be used by other nearby tentacles
+scoreboard players set @e[type=block_display,tag=deeper_dark.selected_all,distance=..10] deeper_dark.var 1
+tag @e[type=block_display,tag=deeper_dark.selected_all,distance=..10] remove deeper_dark.selected_all
