@@ -1,31 +1,5 @@
-execute positioned ~-1 ~-1 ~-1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~-1 ~-1 ~0 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~-1 ~-1 ~1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~-1 ~0 ~-1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~-1 ~0 ~0 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~-1 ~0 ~1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~-1 ~1 ~-1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~-1 ~1 ~0 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~-1 ~1 ~1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~0 ~-1 ~-1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~0 ~-1 ~0 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~0 ~-1 ~1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~0 ~0 ~-1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~0 ~0 ~0 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~0 ~0 ~1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~0 ~1 ~-1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~0 ~1 ~0 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~0 ~1 ~1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~1 ~-1 ~-1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~1 ~-1 ~0 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~1 ~-1 ~1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~1 ~0 ~-1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~1 ~0 ~0 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~1 ~0 ~1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~1 ~1 ~-1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~1 ~1 ~0 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-execute positioned ~1 ~1 ~1 if block ~ ~ ~ #deeper_dark:sculk run setblock ~ ~ ~ minecraft:air destroy
-tag @e[tag=deeper_dark.anticatalyst_target,tag=!deeper_dark.silent_despawn,distance=5..10] add deeper_dark.silent_despawn
+fill ~-1 ~-1 ~-1 ~1 ~1 ~1 air replace #deeper_dark:sculk destroy
+tag @e[type=marker,tag=deeper_dark.anticatalyst_target,tag=!deeper_dark.silent_despawn,distance=5..10] add deeper_dark.silent_despawn
 summon marker ~-2 ~-2 ~-2 {Tags:["deeper_dark.anticatalyst_target"]}
 summon marker ~-2 ~-2 ~-1 {Tags:["deeper_dark.anticatalyst_target"]}
 summon marker ~-2 ~-2 ~0 {Tags:["deeper_dark.anticatalyst_target"]}

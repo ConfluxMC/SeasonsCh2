@@ -12,15 +12,15 @@ execute as @e[predicate=deeper_dark:in_volcanic_caverns] run function deeper_dar
 execute as @e[type=sniffer,predicate=deeper_dark:sniffer_needs_tp] at @s run function deeper_dark:sniffer_safety_tp
 
 #shockwave
-execute as @a at @s as @e[sort=nearest,limit=2,predicate=deeper_dark:in_deeper_dark,tag=deeper_dark.amethyst_mineshaft.floor] at @s positioned ~-128 ~-6 ~-128 unless entity @e[tag=deeper_dark.shockwave,type=pig,dy=12,dx=256,dz=256] if entity @p[dy=12,dx=256,dz=256,gamemode=!spectator] at @s if loaded ~ ~ ~ facing entity @e[limit=1,sort=random] feet rotated ~ 0 positioned ^ ^ ^50 unless entity @p[gamemode=!spectator,distance=..40] if predicate deeper_dark:in_amethyst_mineshaft if loaded ~ ~ ~ if block ~ ~ ~ air run function deeper_dark:shockwave/spawn
-execute as @e[type=text_display,tag=deeper_dark.shockwave_display,limit=1,sort=random] unless predicate deeper_dark:is_passenger run kill @s
+execute as @a at @s as @e[type=marker,sort=nearest,limit=2,predicate=deeper_dark:in_deeper_dark,tag=deeper_dark.amethyst_mineshaft.floor] at @s positioned ~-128 ~-6 ~-128 unless entity @e[type=pig,tag=deeper_dark.shockwave,dy=12,dx=256,dz=256] if entity @p[dy=12,dx=256,dz=256,gamemode=!spectator] at @s if loaded ~ ~ ~ facing entity @e[limit=1,sort=random] feet rotated ~ 0 positioned ^ ^ ^50 unless entity @p[gamemode=!spectator,distance=..40] if predicate deeper_dark:in_amethyst_mineshaft if loaded ~ ~ ~ if block ~ ~ ~ air run function deeper_dark:shockwave/spawn
+execute as @e[type=#deeper_dark:shockwave_part,tag=deeper_dark.shockwave_display,limit=1,sort=random] unless predicate deeper_dark:is_passenger run kill @s
 
 
 execute as @a[predicate=deeper_dark:holding_warden_tracker] at @s run function deeper_dark:items/warden_tracker_track_wardens
 
 
 
-execute as @e[predicate=deeper_dark:in_deeper_dark,tag=deeper_dark.amethyst_mineshaft.floor,tag=!deeper_dark.amethyst_mineshaft.floor_spawned_goal] at @s if loaded ~-128 ~ ~-128 if loaded ~-128 ~ ~127 if loaded ~127 ~ ~-128 if loaded ~127 ~ ~127 run function deeper_dark:amethyst_mineshaft_generate_goal
+execute as @e[type=marker,predicate=deeper_dark:in_deeper_dark,tag=deeper_dark.amethyst_mineshaft.floor,tag=!deeper_dark.amethyst_mineshaft.floor_spawned_goal] at @s if loaded ~-128 ~ ~-128 if loaded ~-128 ~ ~127 if loaded ~127 ~ ~-128 if loaded ~127 ~ ~127 run function deeper_dark:amethyst_mineshaft_generate_goal
 
 #portal
 execute as @e[type=#minecraft:item_frames,nbt={Item:{id:"minecraft:echo_shard",components:{"minecraft:custom_data":{deeper_dark:{EntrancePosition:{}}}}}},tag=!deeper_dark.invalid_portal] at @s positioned ^ ^1 ^-.5 rotated ~90 0 align xyz positioned ~.5 ~.5 ~.5 unless entity @e[distance=0...1,tag=deeper_dark.portal_display] run tag @s remove deeper_dark.active_portal
@@ -37,7 +37,7 @@ execute as @e[type=minecraft:marker,tag=deeper_dark.arena,predicate=deeper_dark:
 
 
 #anticatalyst
-execute as @e[tag=deeper_dark.anticatalyst_target,limit=1,sort=random] at @s unless entity @n[tag=deeper_dark.anticatalyst,distance=0..126]
+#execute as @e[type=marker,tag=deeper_dark.anticatalyst_target,limit=1,sort=random] at @s unless entity @n[tag=deeper_dark.anticatalyst,distance=0..126]
 
 #advancement
 #tellraw @p {"score":{"name":"@p","objective":"deeper_dark.deepslate"}}

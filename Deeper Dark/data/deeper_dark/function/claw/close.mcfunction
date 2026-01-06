@@ -1,5 +1,5 @@
-data merge entity @s[tag=!deeper_dark.sculk_claw.closed] {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.35f,-1.25f,-0.35f],scale:[0.7f,2f,0.7f]}}
-execute at @s[tag=!deeper_dark.sculk_claw.closed] unless predicate deeper_dark:water run playsound minecraft:entity.warden.attack_impact block @a ~ ~ ~ 1 0
+execute as @s[tag=!deeper_dark.sculk_claw.closed] run data merge entity @s {start_interpolation:-1,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.35f,-1.25f,-0.35f],scale:[0.7f,2f,0.7f]}}
+execute at @s[tag=!deeper_dark.sculk_claw.closed,predicate=!deeper_dark:water] run playsound minecraft:entity.warden.attack_impact block @a ~ ~ ~ 1 0
 execute at @s positioned ~-0.5 ~ ~-0.5 run tag @n[dx=0,dy=0,dz=0,predicate=deeper_dark:living,type=!minecraft:warden] add deeper_dark.grabbed
 damage @n[tag=deeper_dark.grabbed,distance=0..3] 1 minecraft:mob_attack by @s[tag=!deeper_dark.sculk_claw.closed]
 tag @s add deeper_dark.sculk_claw.closed

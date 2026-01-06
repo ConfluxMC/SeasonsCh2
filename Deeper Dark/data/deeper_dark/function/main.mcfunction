@@ -5,7 +5,7 @@ execute unless score first_ver deeper_dark.datafixers = current_ver deeper_dark.
 #gamerules
 function deeper_dark:gamerules/default_gamerules
 
-### Teleporting between
+### Teleporting between dimensions
 #in
 execute as @r[predicate=deeper_dark:tp_in,tag=!deeper_dark.tp_cooldown] at @s unless entity @n[type=marker,tag=deeper_dark.portal_marker,distance=0..2] run function deeper_dark:tp_in
 
@@ -52,14 +52,12 @@ execute as @e[type=minecraft:marker,tag=deeper_dark.tentacles] at @s if loaded ~
 execute as @e[type=minecraft:block_display,scores={deeper_dark.var=0},tag=deeper_dark.tentacle_segment] unless entity @p[gamemode=!spectator,distance=0..32] run tag @s add deeper_dark.silent_despawn
 
 # Claw
-execute as @e[tag=deeper_dark.sculk_claw,tag=!deeper_dark.sculk_claw.closed] at @s positioned ~-.5 ~ ~-.5 if entity @n[dx=0,dy=0,dz=0,predicate=deeper_dark:living,type=!minecraft:warden] run function deeper_dark:claw/close
-execute as @e[tag=deeper_dark.sculk_claw.closed] at @s run function deeper_dark:claw/close
-execute as @e[tag=deeper_dark.sculk_claw] at @s if loaded ~ ~ ~ unless block ~ ~-.1 ~ minecraft:sculk run function deeper_dark:claw/break
+execute as @e[type=block_display,tag=deeper_dark.sculk_claw] at @s run function deeper_dark:claw/run
 
 # Syphon
 execute as @e[type=minecraft:marker,tag=deeper_dark.syphon] at @s if loaded ~ ~ ~ run function deeper_dark:syphon/ai
-execute as @e[tag=deeper_dark.cursor_tracker] at @s run data modify entity @s data.cursors set from block ~ ~ ~ cursors
-execute as @e[tag=deeper_dark.cursor_tracker] at @s run function deeper_dark:syphon/cursor
+execute as @e[type=marker,tag=deeper_dark.cursor_tracker] at @s run data modify entity @s data.cursors set from block ~ ~ ~ cursors
+execute as @e[type=marker,tag=deeper_dark.cursor_tracker] at @s run function deeper_dark:syphon/cursor
 
 # Anticatalyst
 execute as @e[type=minecraft:marker,tag=deeper_dark.anticatalyst,sort=random,limit=20] at @s if loaded ~ ~ ~ run function deeper_dark:anticatalyst/ai
@@ -88,13 +86,13 @@ execute as @e[tag=deeper_dark.boss_hitbox] at @s run function deeper_dark:boss/d
 advancement revoke @a only deeper_dark:functions/using_shield
 ### Sculk conversion
 execute if score Game deeper_dark.gamerule.disable_sculk_conversion matches 0 as @e[type=item,nbt={Item:{components:{"minecraft:custom_data":{deeper_dark_altar_fragment:1b}}}}] at @s if block ~ ~-.1 ~ minecraft:sculk_catalyst positioned ~ ~-.1 ~ align xyz positioned ~.5 ~.5 ~.5 run function deeper_dark:sculk_converter/setup
-execute as @e[tag=deeper_dark.sculk_converter] at @s run function deeper_dark:sculk_converter/run
-execute as @e[tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction positioned ~ ~-2.6 ~ if data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_remove
-execute as @e[tag=deeper_dark.sculk_converter_hitbox] at @s if block ~ ~ ~ moving_piston positioned ~ ~-2.6 ~ if data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_remove
-execute as @e[tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction positioned ~ ~-2.6 ~ unless data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_place
-execute as @e[tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction run data remove entity @s interaction
-execute as @e[tag=deeper_dark.sculk_converter_item] at @s positioned ~ ~-3 ~ run data modify entity @s item set from entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item
-execute as @e[tag=deeper_dark.sculk_converter_item] at @s positioned ~ ~-3 ~ unless data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run data remove entity @s item
+execute as @e[type=marker,tag=deeper_dark.sculk_converter] at @s run function deeper_dark:sculk_converter/run
+execute as @e[type=interaction,tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction positioned ~ ~-2.6 ~ if data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_remove
+execute as @e[type=interaction,tag=deeper_dark.sculk_converter_hitbox] at @s if block ~ ~ ~ moving_piston positioned ~ ~-2.6 ~ if data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_remove
+execute as @e[type=interaction,tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction positioned ~ ~-2.6 ~ unless data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_place
+execute as @e[type=interaction,tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction run data remove entity @s interaction
+execute as @e[type=item_display,tag=deeper_dark.sculk_converter_item] at @s positioned ~ ~-3 ~ run data modify entity @s item set from entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item
+execute as @e[type=item_display,tag=deeper_dark.sculk_converter_item] at @s positioned ~ ~-3 ~ unless data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run data remove entity @s item
 
 
 # If any shockwaves exist, run shockwave ai
