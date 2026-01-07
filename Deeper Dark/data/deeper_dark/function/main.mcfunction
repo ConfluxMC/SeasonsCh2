@@ -10,7 +10,7 @@ function deeper_dark:gamerules/default_gamerules
 execute as @r[predicate=deeper_dark:tp_in,tag=!deeper_dark.tp_cooldown] at @s unless entity @n[type=marker,tag=deeper_dark.portal_marker,distance=0..2] run function deeper_dark:tp_in
 
 #out
-execute as @p[predicate=deeper_dark:tp_out,tag=!deeper_dark.tp_cooldown] at @s unless entity @e[type=marker,tag=deeper_dark.portal_marker,distance=0..2] unless entity @a[tag=deeper_dark.tp_out_player] run function deeper_dark:tp_out
+execute as @p[predicate=deeper_dark:tp_out,tag=!deeper_dark.tp_cooldown] at @s unless entity @n[type=marker,tag=deeper_dark.portal_marker,distance=0..2] unless entity @a[tag=deeper_dark.tp_out_player] run function deeper_dark:tp_out
 
 #cooldown
 execute as @e[tag=deeper_dark.tp_cooldown] at @s if loaded ~ ~ ~ unless block ~ ~-.1 ~ minecraft:reinforced_deepslate unless block ~ ~-.5 ~ minecraft:reinforced_deepslate positioned ~-0.5 ~-0.5 ~-0.5 unless entity @e[dx=0.01,dy=0.01,dz=0.01,tag=deeper_dark.portal_marker] run tag @s remove deeper_dark.tp_cooldown
@@ -19,7 +19,7 @@ execute as @e[tag=deeper_dark.tp_cooldown] at @s if loaded ~ ~ ~ unless block ~ 
 execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 run function deeper_dark:gamerules/disable_portal_particles
 
 ### Main deeper dark dimension tick function. Run if there are any entities in the dimension.
-execute in deeper_dark:deeper_dark if entity @e[distance=0..] run function deeper_dark:in_deeper_dark
+execute in deeper_dark:deeper_dark if entity @n[distance=0..] run function deeper_dark:in_deeper_dark
 
 
 ### Items
