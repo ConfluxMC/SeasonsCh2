@@ -74,14 +74,14 @@ execute as @e[type=item,predicate=deeper_dark:item_anticatalyst] at @s if loaded
 execute as @e[type=item,predicate=deeper_dark:item_sonic_blaster] at @s if loaded ~ ~ ~ if predicate deeper_dark:block_can_place if function deeper_dark:has_origin run function deeper_dark:sonic_blaster/spawn
 
 ### Boss
-scoreboard players set @e[tag=deeper_dark.boss_segment] deeper_dark.var 0
-execute as @e[tag=deeper_dark.boss_spawner] at @s if entity @p[distance=0..19,gamemode=!spectator] run function deeper_dark:boss/activate
-execute as @e[tag=deeper_dark.boss] at @s run function deeper_dark:boss/ai
-execute unless entity @e[tag=deeper_dark.boss] run bossbar set minecraft:deeper_dark/boss players "○"
-execute as @e[type=minecraft:block_display,scores={deeper_dark.var=0},tag=deeper_dark.boss_segment] run tag @s add deeper_dark.silent_despawn
-execute as @e[tag=deeper_dark.boss.death_tracker] on origin at @s if data entity @s {Health:0.0f} at @s run function deeper_dark:boss/death
-kill @e[tag=deeper_dark.boss.death_tracker]
-execute as @e[tag=deeper_dark.boss_hitbox] at @s run function deeper_dark:boss/death_tracker
+scoreboard players set @e[type=block_display,tag=deeper_dark.boss_segment] deeper_dark.var 0
+execute as @e[type=marker,tag=deeper_dark.boss_spawner] at @s if entity @p[distance=0..19,gamemode=!spectator] run function deeper_dark:boss/activate
+execute as @e[type=marker,tag=deeper_dark.boss] at @s run function deeper_dark:boss/ai
+execute unless entity @e[type=marker,tag=deeper_dark.boss] run bossbar set minecraft:deeper_dark/boss players "○"
+execute as @e[type=minecraft:block_display,tag=deeper_dark.boss_segment,scores={deeper_dark.var=0}] run tag @s add deeper_dark.silent_despawn
+execute as @e[type=arrow,tag=deeper_dark.boss.death_tracker] on origin if data entity @s {Health:0.0f} at @s run function deeper_dark:boss/death
+kill @e[type=arrow,tag=deeper_dark.boss.death_tracker]
+execute as @e[type=ghast,tag=deeper_dark.boss_hitbox] at @s run function deeper_dark:boss/death_tracker
 
 
 advancement revoke @a only deeper_dark:functions/using_shield

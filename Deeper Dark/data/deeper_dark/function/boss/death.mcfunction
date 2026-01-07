@@ -1,10 +1,9 @@
-kill @e[tag=deeper_dark.boss.block.base,limit=25,sort=nearest,type=!player]
-kill @e[tag=deeper_dark.boss.block.sculk,limit=24,sort=nearest,type=!player]
-execute as @n[tag=deeper_dark.boss] at @s run setblock ~ ~ ~ air
-execute as @n[tag=deeper_dark.boss] at @s run function deeper_dark:anticatalyst/spawn
-execute as @n[tag=deeper_dark.boss] at @s run fill ~-2 ~-1 ~-1 ~2 ~-1 ~1 minecraft:reinforced_deepslate
-execute as @n[tag=deeper_dark.boss] at @s run fill ~-1 ~-1 ~-2 ~1 ~-1 ~2 minecraft:reinforced_deepslate
-tag @n[tag=deeper_dark.boss,type=!player] add deeper_dark.silent_despawn
+kill @e[type=#deeper_dark:defender_block_part,tag=deeper_dark.boss.block.on,limit=49,sort=nearest]
+execute as @n[type=marker,tag=deeper_dark.boss] at @s run setblock ~ ~ ~ air
+execute as @n[type=marker,tag=deeper_dark.boss] at @s run function deeper_dark:anticatalyst/spawn
+execute as @n[type=marker,tag=deeper_dark.boss] at @s run fill ~-2 ~-1 ~-1 ~2 ~-1 ~1 minecraft:reinforced_deepslate
+execute as @n[type=marker,tag=deeper_dark.boss] at @s run fill ~-1 ~-1 ~-2 ~1 ~-1 ~2 minecraft:reinforced_deepslate
+tag @n[type=marker,tag=deeper_dark.boss] add deeper_dark.silent_despawn
 execute summon minecraft:experience_orb run function deeper_dark:random_motion {force:1}
 execute summon minecraft:experience_orb run function deeper_dark:random_motion {force:1}
 execute summon minecraft:experience_orb run function deeper_dark:random_motion {force:1}

@@ -33,7 +33,8 @@ execute as @e[type=#minecraft:item_frames,predicate=deeper_dark:item_echo_shard_
 execute at @a[scores={deeper_dark.ancient_dark_active=1..},predicate=deeper_dark:in_deeper_dark,gamemode=!spectator] summon minecraft:marker run function deeper_dark:warden_spawn_location
 scoreboard players remove @a[scores={deeper_dark.ancient_dark_active=1..}] deeper_dark.ancient_dark_active 1
 
-execute as @e[type=minecraft:marker,tag=deeper_dark.arena,predicate=deeper_dark:in_deeper_dark] at @s run function deeper_dark:laboratory_generate_arena
+# Generate final boss arenas
+execute as @e[type=minecraft:marker,tag=deeper_dark.arena,predicate=deeper_dark:in_deeper_dark] at @s if loaded ~ ~ ~ run function deeper_dark:laboratory_generate_arena
 
 
 #anticatalyst
