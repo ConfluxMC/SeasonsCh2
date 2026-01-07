@@ -1,6 +1,6 @@
 # Sounds and particles
-playsound minecraft:item.totem.use master @a ~ ~ ~
-playsound minecraft:entity.warden.death master @a ~ ~ ~ 0.4 1
+playsound minecraft:item.totem.use player @a ~ ~ ~
+playsound minecraft:entity.warden.death player @a ~ ~ ~ 0.4 1
 particle minecraft:sonic_boom ~ ~ ~ 0 0 0 1 3
 particle minecraft:sculk_charge_pop ~ ~ ~ 0.1 1 0.1 0.5 40
 

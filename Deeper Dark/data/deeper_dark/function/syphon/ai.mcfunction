@@ -8,4 +8,4 @@ execute if score detect deeper_dark.var matches 1 run tag @e[tag=deeper_dark.syp
 
 
 #cursors
-execute at @s if data block ~ ~ ~ cursors[0] unless entity @n[tag=deeper_dark.sculk_converter,distance=0..1] run summon marker ~ ~ ~ {Tags:["deeper_dark.cursor_tracker"]}
+execute at @s if data block ~ ~ ~ cursors[0] unless entity @n[type=marker,tag=deeper_dark.sculk_converter,distance=0..1] run summon marker ~ ~ ~ {Tags:["deeper_dark.cursor_tracker"]}

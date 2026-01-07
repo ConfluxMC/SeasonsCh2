@@ -1,4 +1,3 @@
-scoreboard objectives add deeper_dark.var dummy
 data modify entity @s data.Item set from block ~ ~ ~ Items[0]
 execute if data entity @s data.Item run data modify entity @s data.Item.count set value 1
 execute store result score @s deeper_dark.var run data get block ~ ~ ~ Items[0].count

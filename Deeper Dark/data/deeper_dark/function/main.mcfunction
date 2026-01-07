@@ -88,12 +88,7 @@ advancement revoke @a only deeper_dark:functions/using_shield
 ### Sculk conversion
 execute if score Game deeper_dark.gamerule.disable_sculk_conversion matches 0 as @e[type=item,predicate=deeper_dark:item_altar_fragment] at @s if block ~ ~-.1 ~ minecraft:sculk_catalyst positioned ~ ~-.1 ~ align xyz positioned ~.5 ~.5 ~.5 run function deeper_dark:sculk_converter/setup
 execute as @e[type=marker,tag=deeper_dark.sculk_converter] at @s run function deeper_dark:sculk_converter/run
-execute as @e[type=interaction,tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction positioned ~ ~-2.6 ~ if data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_remove
-execute as @e[type=interaction,tag=deeper_dark.sculk_converter_hitbox] at @s if block ~ ~ ~ moving_piston positioned ~ ~-2.6 ~ if data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_remove
-execute as @e[type=interaction,tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction positioned ~ ~-2.6 ~ unless data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox_place
-execute as @e[type=interaction,tag=deeper_dark.sculk_converter_hitbox] at @s if data entity @s interaction run data remove entity @s interaction
-execute as @e[type=item_display,tag=deeper_dark.sculk_converter_item] at @s positioned ~ ~-3 ~ run data modify entity @s item set from entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item
-execute as @e[type=item_display,tag=deeper_dark.sculk_converter_item] at @s positioned ~ ~-3 ~ unless data entity @e[tag=deeper_dark.sculk_converter,limit=1,sort=nearest,distance=0...1] data.Item run data remove entity @s item
+execute as @e[type=interaction,tag=deeper_dark.sculk_converter_hitbox] at @s if loaded ~ ~ ~ run function deeper_dark:sculk_converter/hitbox/run
 
 
 # If any shockwaves exist, run shockwave ai

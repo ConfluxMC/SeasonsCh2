@@ -1,0 +1,6 @@
+# Load the item of the first hopper to pass check of facing towards hitbox and has items. Priority: Above, South, West, North, East
+execute positioned ~ ~4 ~ if block ~ ~ ~ minecraft:hopper[enabled=true,facing=down] if data block ~ ~ ~ Items[0] run return run function deeper_dark:sculk_converter/hopper_place
+execute positioned ~ ~3 ~1 if block ~ ~ ~ minecraft:hopper[enabled=true,facing=north] if data block ~ ~ ~ Items[0] run return run function deeper_dark:sculk_converter/hopper_place
+execute positioned ~-1 ~3 ~ if block ~ ~ ~ minecraft:hopper[enabled=true,facing=east] if data block ~ ~ ~ Items[0] run return run function deeper_dark:sculk_converter/hopper_place
+execute positioned ~ ~3 ~-1 if block ~ ~ ~ minecraft:hopper[enabled=true,facing=south] if data block ~ ~ ~ Items[0] run return run function deeper_dark:sculk_converter/hopper_place
+execute positioned ~1 ~3 ~ if block ~ ~ ~ minecraft:hopper[enabled=true,facing=west] if data block ~ ~ ~ Items[0] run return run function deeper_dark:sculk_converter/hopper_place
