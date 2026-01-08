@@ -11,12 +11,8 @@ execute store result score y deeper_dark.var run data get entity @s Pos[1]
 execute store result score z deeper_dark.var run data get entity @s Pos[2]
 execute as @s at @s run item modify entity @s weapon.mainhand deeper_dark:key
 
-function deeper_dark:valid_spawn/setup
+#tp
+execute if predicate deeper_dark:holding_lodestone_compass_checkpoint run return run function deeper_dark:checkpoints/run_lodestone
+execute if predicate deeper_dark:holding_recovery_compass_checkpoint run return run function deeper_dark:checkpoints/run_recovery_compass
 
-execute in deeper_dark:deeper_dark run function deeper_dark:teleport with storage deeper_dark:data lastfoundstructure2
-execute at @s run spreadplayers ~ ~ 0 10 under 63 false @s[predicate=deeper_dark:in_deeper_dark]
-
-#saftey
-execute at @s run function deeper_dark:valid_spawn/safety_check_loaded
-
-execute at @s run function deeper_dark:tp_in_effects
+function deeper_dark:tp_in_without_compass

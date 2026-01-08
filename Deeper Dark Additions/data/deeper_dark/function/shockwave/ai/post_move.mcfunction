@@ -70,3 +70,6 @@ if block ~.25 ~ ~.25 #deeper_dark:shockwave_ignore at @s run function deeper_dar
 
 #lawnmower easter egg
 fill ^-2 ^-1 ^-2 ^2 ^-1 ^-2 minecraft:air replace minecraft:short_grass
+
+#replace shriekers
+fill ~16 ~8 ~16 ~-16 ~-8 ~-16 minecraft:command_block{auto:1b,Command:"function deeper_dark:shockwave/replace_shriekers"} replace minecraft:sculk_shrieker[can_summon=true]
