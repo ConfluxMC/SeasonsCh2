@@ -1,6 +1,6 @@
 
 summon block_display ~ ~ ~ {Tags:["deeper_dark.sonic_blaster_inner","deeper_dark.sonic_blaster_display"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-.5f,-.5f,0f],scale:[1f,1f,0f]},block_state:{Name:"minecraft:sculk"}}
-execute as @e[tag=deeper_dark.sonic_blaster_inner,type=minecraft:block_display,limit=1,sort=nearest,distance=0...1] run tp @s ~ ~ ~ facing ^ ^ ^1
+execute as @n[type=block_display,tag=deeper_dark.sonic_blaster_inner,distance=0...1] run tp @s ~ ~ ~ facing ^ ^ ^1
 
 
 #up
@@ -14,7 +14,7 @@ summon text_display ~ ~ ~ {Tags:["deeper_dark.sonic_blaster_top","deeper_dark.so
 
 
 #Generated with EMD's datapack texture generator 2
-execute as @e[tag=deeper_dark.sonic_blaster_top,type=minecraft:text_display,limit=4,sort=nearest,distance=0...1] run rotate @s ~180 -90
+execute as @e[type=text_display,tag=deeper_dark.sonic_blaster_top,limit=4,sort=nearest,distance=0...1] run rotate @s ~180 -90
 
 
 
@@ -29,7 +29,7 @@ summon text_display ~ ~ ~ {Tags:["deeper_dark.sonic_blaster_left","deeper_dark.s
 
 
 #Generated with EMD's datapack texture generator 2
-execute as @e[tag=deeper_dark.sonic_blaster_left,type=minecraft:text_display,limit=4,sort=nearest,distance=0...1] run rotate @s ~-90 0
+execute as @e[type=text_display,tag=deeper_dark.sonic_blaster_left,limit=4,sort=nearest,distance=0...1] run rotate @s ~-90 0
 
 
 
@@ -45,4 +45,4 @@ summon text_display ~ ~ ~ {Tags:["deeper_dark.sonic_blaster_right","deeper_dark.
 
 
 #Generated with EMD's datapack texture generator 2
-execute as @e[tag=deeper_dark.sonic_blaster_right,type=minecraft:text_display,limit=4,sort=nearest,distance=0...1] run rotate @s ~90 0
+execute as @e[type=text_display,tag=deeper_dark.sonic_blaster_right,limit=4,sort=nearest,distance=0...1] run rotate @s ~90 0

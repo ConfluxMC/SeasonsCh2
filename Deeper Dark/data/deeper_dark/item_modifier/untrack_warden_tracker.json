@@ -1,0 +1,9 @@
+{
+  "function": "minecraft:set_components",
+  "components": {
+    "minecraft:lodestone_tracker": {
+      "tracked": false
+    },
+    "minecraft:enchantment_glint_override": false
+  }
+}

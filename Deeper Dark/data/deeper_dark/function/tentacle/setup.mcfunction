@@ -1,4 +1,4 @@
-kill @e[type=minecraft:block_display,tag=deeper_dark.selected_all]
+kill @e[type=minecraft:block_display,tag=deeper_dark.selected_all,distance=..10]
 summon block_display ~ ~ ~ {width:2f,height:2f,teleport_duration:2,Rotation:[0F,0F],Tags:["deeper_dark.tentacle_segment","deeper_dark.tentacle_segment.1"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.35f,-0.35f,-0.35f],scale:[0.7f,1.5f,0.7f]},block_state:{Name:"minecraft:sculk"}}
 summon block_display ~ ~ ~ {width:2f,height:2f,teleport_duration:2,Rotation:[90F,0F],Tags:["deeper_dark.tentacle_segment","deeper_dark.tentacle_segment.2"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.3f,-0.3f,-0.3f],scale:[0.6f,1.5f,0.6f]},block_state:{Name:"minecraft:sculk"}}
 summon block_display ~ ~ ~ {width:2f,height:2f,teleport_duration:2,Rotation:[180F,0F],Tags:["deeper_dark.tentacle_segment","deeper_dark.tentacle_segment.3"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.25f,-0.25f,-0.25f],scale:[0.5f,1.5f,0.5f]},block_state:{Name:"minecraft:sculk"}}

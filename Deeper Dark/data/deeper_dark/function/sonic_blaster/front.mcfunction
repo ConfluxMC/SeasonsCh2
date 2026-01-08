@@ -10,4 +10,4 @@ summon text_display ~ ~-0.51 ~ {Tags:["deeper_dark.sonic_blaster_front","deeper_
 
 #Generated with EMD's datapack texture generator 2
 
-execute positioned ~ ~-0.51 ~ as @e[tag=deeper_dark.sonic_blaster_front,type=minecraft:text_display,limit=4,sort=nearest] positioned ~ ~0.51 ~ run tp @s ^ ^ ^0.51 facing ^ ^ ^1
+execute positioned ~ ~-0.51 ~ as @e[type=text_display,tag=deeper_dark.sonic_blaster_front,limit=4,sort=nearest] positioned ~ ~0.51 ~ run tp @s ^ ^ ^0.51 facing ^ ^ ^1

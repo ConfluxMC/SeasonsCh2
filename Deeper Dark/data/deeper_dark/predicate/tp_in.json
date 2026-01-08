@@ -1,0 +1,41 @@
+{
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:inverted",
+      "term": {
+        "condition": "minecraft:reference",
+        "name": "deeper_dark:in_deeper_dark"
+      }
+    },
+    {
+      "condition": "minecraft:location_check",
+      "offsetY": -1,
+      "predicate": {
+        "block": {
+          "blocks": "minecraft:reinforced_deepslate"
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "minecraft:player",
+        "type_specific": {
+          "type": "minecraft:player",
+          "gamemode": [
+            "survival",
+            "creative",
+            "adventure"
+          ]
+        },
+        "equipment": {
+          "mainhand": {
+            "items": "minecraft:echo_shard"
+          }
+        }
+      }
+    }
+  ]
+}

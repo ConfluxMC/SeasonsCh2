@@ -12,18 +12,7 @@ execute store result score z deeper_dark.var run data get entity @s Pos[2]
 execute as @s at @s run item modify entity @s weapon.mainhand deeper_dark:key
 
 #tp
-execute as @s[predicate=!deeper_dark:holding_lodestone_compass_checkpoint,predicate=!deeper_dark:holding_recovery_compass_checkpoint] run function deeper_dark:tp_in_without_compass
-execute as @s[predicate=deeper_dark:holding_lodestone_compass_checkpoint] run function deeper_dark:checkpoints/run_lodestone
-execute as @s[predicate=deeper_dark:holding_recovery_compass_checkpoint] run function deeper_dark:checkpoints/run_recovery_compass
+execute if predicate deeper_dark:holding_lodestone_compass_checkpoint run return run function deeper_dark:checkpoints/run_lodestone
+execute if predicate deeper_dark:holding_recovery_compass_checkpoint run return run function deeper_dark:checkpoints/run_recovery_compass
 
-
-tag @s add deeper_dark.tp_cooldown
-advancement grant @s only deeper_dark:hint
-
-#sound
-execute at @s run playsound minecraft:entity.warden.sonic_boom ambient @s ~ ~ ~ 1 0 1
-execute at @s run playsound minecraft:block.portal.ambient ambient @s ~ ~ ~ 1 2 1
-execute at @s run playsound minecraft:block.sculk_shrieker.shriek ambient @s ~ ~ ~ 1 0 1
-execute at @s run playsound minecraft:block.respawn_anchor.set_spawn ambient @s ~ ~ ~ 1 0 1
-execute at @s run playsound minecraft:block.enchantment_table.use ambient @s ~ ~ ~ 1 2 1
-
+function deeper_dark:tp_in_without_compass

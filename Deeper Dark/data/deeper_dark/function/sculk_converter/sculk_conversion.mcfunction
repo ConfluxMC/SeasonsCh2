@@ -23,4 +23,4 @@ execute if score @s deeper_dark.sculk_converter.flame_cost matches 5.. run funct
 execute if score @s deeper_dark.sculk_converter.flame_cost matches 6.. run function deeper_dark:sculk_converter/remove_flame
 execute if score @s deeper_dark.sculk_converter.flame_cost matches 7.. run function deeper_dark:sculk_converter/remove_flame
 execute if score @s deeper_dark.sculk_converter.flame_cost matches 8.. run function deeper_dark:sculk_converter/remove_flame
-execute if block ~ ~2 ~ minecraft:hopper[enabled=true] if data entity @s data.Item run function deeper_dark:sculk_converter/hitbox_remove
+execute if block ~ ~2 ~ minecraft:hopper[enabled=true] if data entity @s data.Item run function deeper_dark:sculk_converter/hitbox/remove

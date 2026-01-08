@@ -14,7 +14,16 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "nbt": "{equipment:{offhand:{components: {\"minecraft:custom_data\": {deeper_dark_located: 1}}}}}"
+          "equipment": {
+            "offhand": {
+              "items": "minecraft:compass",
+              "predicates": {
+                "minecraft:custom_data": {
+                  "deeper_dark_located": 1
+                }
+              }
+            }
+          }
         }
       }
     }

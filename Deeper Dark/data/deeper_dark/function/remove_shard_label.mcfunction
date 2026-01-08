@@ -11,7 +11,7 @@ execute if score compare deeper_dark.var matches 0 store result storage deeper_d
 execute if score compare deeper_dark.var matches 0 run return run function deeper_dark:remove_shard_label2 with storage deeper_dark:data
 
 
-kill @e[tag=deeper_dark.item]
+kill @e[type=armor_stand,tag=deeper_dark.item]
 scoreboard players add @s deeper_dark.var 1
 data remove storage deeper_dark:data shardlines[0]
 execute unless score compare deeper_dark.var matches 0 if data storage deeper_dark:data shardlines[0] run function deeper_dark:remove_shard_label

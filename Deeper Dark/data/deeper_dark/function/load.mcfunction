@@ -36,6 +36,19 @@ scoreboard objectives add deeper_dark.gamerule.shrieker_sense_scan_limit dummy
 scoreboard objectives add deeper_dark.gamerule.disable_portals dummy
 scoreboard objectives add deeper_dark.gamerule.sonic_boom_damage dummy
 
+# Shockwave
+scoreboard objectives add deeper_dark.shockwave.has_turned dummy
+scoreboard objectives add deeper_dark.shockwave.turn_rng dummy
+scoreboard objectives add deeper_dark.shockwave.direction dummy
+
+# Sculk Converter
+scoreboard objectives add deeper_dark.sculk_converter.fragments dummy
+scoreboard objectives add deeper_dark.sculk_converter.flames dummy
+scoreboard objectives add deeper_dark.sculk_converter.xp dummy
+scoreboard objectives add deeper_dark.sculk_converter.flame_cost dummy
+scoreboard objectives add deeper_dark.sculk_converter.xp_cost dummy
+scoreboard objectives add deeper_dark.sculk_converter.conversion_time dummy
+
 #execute store result score Game deeper_dark.var run gamerule maxCommandChainLength
 #execute if score Game deeper_dark.var matches 65536 run gamerule maxCommandChainLength 2147483647
 #execute store result score Game deeper_dark.var run gamerule maxCommandForkCount

@@ -1,0 +1,4 @@
+execute if data entity @s interaction positioned ~ ~-2.6 ~ if data entity @n[type=marker,tag=deeper_dark.sculk_converter,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox/remove
+execute if block ~ ~ ~ moving_piston positioned ~ ~-2.6 ~ if data entity @n[type=marker,tag=deeper_dark.sculk_converter,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox/remove
+execute if data entity @s interaction positioned ~ ~-2.6 ~ unless data entity @n[type=marker,tag=deeper_dark.sculk_converter,distance=0...1] data.Item run function deeper_dark:sculk_converter/hitbox/place
+execute if data entity @s interaction run data remove entity @s interaction

@@ -1,0 +1,2 @@
+execute unless score @s deeper_dark.ancient_dark_active matches 1.. unless entity @e[type=marker,tag=deeper_dark.boss,distance=0..30] run function deeper_dark:ancient_dark_active
+scoreboard players set @s deeper_dark.ancient_dark_active 300

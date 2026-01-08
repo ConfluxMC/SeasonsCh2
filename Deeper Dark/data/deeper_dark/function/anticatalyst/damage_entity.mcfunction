@@ -1,2 +1,2 @@
-execute positioned ~-1 ~-1 ~-1 as @e[predicate=deeper_dark:sculk_entity,dx=2,dy=2,dz=2] run damage @s 50 minecraft:wither
+execute positioned ~-1 ~-1 ~-1 as @e[dx=2,dy=2,dz=2,predicate=deeper_dark:sculk_entity] run damage @s 50 minecraft:wither
 execute align xyz positioned ~.5 ~.5 ~.5 run function deeper_dark:anticatalyst/clear_sculk

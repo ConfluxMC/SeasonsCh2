@@ -1,0 +1,9 @@
+execute positioned ~1 ~ ~1 unless block ~ ~ ~ #deeper_dark:shockwave_immune run setblock ~ ~ ~ minecraft:air destroy
+execute positioned ~1 ~ ~ unless block ~ ~ ~ #deeper_dark:shockwave_immune run setblock ~ ~ ~ minecraft:air destroy
+execute positioned ~1 ~ ~-1 unless block ~ ~ ~ #deeper_dark:shockwave_immune run setblock ~ ~ ~ minecraft:air destroy
+execute positioned ~ ~ ~1 unless block ~ ~ ~ #deeper_dark:shockwave_immune run setblock ~ ~ ~ minecraft:air destroy
+execute positioned ~ ~ ~ unless block ~ ~ ~ #deeper_dark:shockwave_immune run setblock ~ ~ ~ minecraft:air destroy
+execute positioned ~ ~ ~-1 unless block ~ ~ ~ #deeper_dark:shockwave_immune run setblock ~ ~ ~ minecraft:air destroy
+execute positioned ~-1 ~ ~1 unless block ~ ~ ~ #deeper_dark:shockwave_immune run setblock ~ ~ ~ minecraft:air destroy
+execute positioned ~-1 ~ ~ unless block ~ ~ ~ #deeper_dark:shockwave_immune run setblock ~ ~ ~ minecraft:air destroy
+execute positioned ~-1 ~ ~-1 unless block ~ ~ ~ #deeper_dark:shockwave_immune run setblock ~ ~ ~ minecraft:air destroy
