@@ -1,0 +1,1 @@
+function deeper_dark:sculk_converter_recipe_types/replace_item_with_loot {replace:"minecraft:nether_star",with:"deeper_dark:items/altar_fragment",flames:7,xp:29,conversion_time:340}

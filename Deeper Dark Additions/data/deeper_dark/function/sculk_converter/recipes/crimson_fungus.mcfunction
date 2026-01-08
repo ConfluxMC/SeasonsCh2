@@ -1,0 +1,1 @@
+function deeper_dark:sculk_converter_recipe_types/replace_item_id {replace:"minecraft:red_mushroom",with:"minecraft:crimson_fungus",flames:0,xp:1,conversion_time:20}

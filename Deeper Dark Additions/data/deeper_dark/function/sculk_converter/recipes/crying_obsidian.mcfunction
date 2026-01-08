@@ -1,0 +1,1 @@
+function deeper_dark:sculk_converter_recipe_types/replace_item_id {replace:"minecraft:obsidian",with:"minecraft:crying_obsidian",flames:1,xp:0,conversion_time:20}

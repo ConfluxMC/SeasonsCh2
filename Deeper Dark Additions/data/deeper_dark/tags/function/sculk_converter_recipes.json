@@ -1,0 +1,36 @@
+{
+  "values": [
+    {
+      "id": "deeper_dark:sculk_converter/recipes/altar_fragment",
+      "required": false
+    },
+    {
+      "id": "deeper_dark:sculk_converter/recipes/crying_obsidian",
+      "required": false
+    },
+    {
+      "id": "deeper_dark:sculk_converter/recipes/lingering_potion",
+      "required": false
+    },
+    {
+      "id": "deeper_dark:sculk_converter/recipes/ominous_bottle",
+      "required": false
+    },
+    {
+      "id": "deeper_dark:sculk_converter/recipes/red_mushroom",
+      "required": false
+    },
+    {
+      "id": "deeper_dark:sculk_converter/recipes/brown_mushroom",
+      "required": false
+    },
+    {
+      "id": "deeper_dark:sculk_converter/recipes/crimson_fungus",
+      "required": false
+    },
+    {
+      "id": "deeper_dark:sculk_converter/recipes/warped_fungus",
+      "required": false
+    }
+  ]
+}

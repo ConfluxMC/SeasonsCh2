@@ -1,0 +1,1 @@
+function deeper_dark:sculk_converter_recipe_types/replace_item_using_modifier {replace:"minecraft:splash_potion",with:"deeper_dark:lingering_potion_sculk_conversion",flames:0,xp:2,conversion_time:80}

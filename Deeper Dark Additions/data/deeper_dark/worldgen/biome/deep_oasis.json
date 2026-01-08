@@ -3,34 +3,24 @@
   "downfall": 0.4,
   "has_precipitation": false,
   "effects": {
-    "sky_color": 656640,
-    "fog_color": 3216642,
-    "water_color": 5005189,
+    "sky_color": 529416,
+    "fog_color": 529416,
+    "water_color": 4159204,
     "water_fog_color": 329011,
-    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
+    "grass_color_modifier": "dark_forest",
     "mood_sound": {
       "sound": "minecraft:ambient.soul_sand_valley.mood",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
     },
-    "music": [
-      {
-        "data": {
-          "sound": "minecraft:music.overworld.deep_dark",
-          "min_delay": 1,
-          "max_delay": 2,
-          "replace_current_music": true
-        },
-        "weight": 1
-      }
-    ],
-    "music_volume": 1,
+    "music": [],
+    "music_volume": 0,
     "particle": {
       "options": {
-        "type": "smoke"
+        "type": "minecraft:spore_blossom_air"
       },
-      "probability": 0.01
+      "probability": 0.005
     }
   },
   "spawners": {
@@ -38,10 +28,16 @@
     "axolotls": [],
     "creature": [
       {
-        "type": "minecraft:strider",
-        "weight": 100,
+        "type": "minecraft:sniffer",
+        "weight": 1,
         "minCount": 1,
-        "maxCount": 3
+        "maxCount": 2
+      },
+      {
+        "type": "minecraft:bat",
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 1
       }
     ],
     "misc": [],
@@ -53,20 +49,19 @@
   "spawn_costs": {},
   "carvers": [],
   "features": [
-    [],
-    [],
-    [],
     [
-      "deeper_dark:lava_patch",
-      "deeper_dark:deeper_dark_fossil",
-      "deeper_dark:basalt_columns_ceiling",
-      "deeper_dark:basalt_columns_floor"
+      "deeper_dark:sniffer_nest"
     ],
     [],
     [],
+    [],
     [
-      "minecraft:ore_gravel",
-      "deeper_dark:ore_tuff",
+      "deeper_dark:lake"
+    ],
+    [
+      "deeper_dark:deep_oasis_trees"
+    ],
+    [
       "minecraft:ore_emerald",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -83,21 +78,22 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper_large",
-      "deeper_dark:ore_glowstone",
-      "deeper_dark:ore_ancient_debris",
-      "deeper_dark:ore_magma",
-      "deeper_dark:lava_spring"
+      "deeper_dark:ore_glowstone"
     ],
     [
-      "minecraft:sculk_vein",
-      "deeper_dark:sculk_patch_deeper_dark",
-      "deeper_dark:sculk_patch_deeper_dark_small"
+      "deeper_dark:wooded_vine",
+      "deeper_dark:wooded_vine_branch",
+      "minecraft:glow_lichen",
+      "minecraft:vines",
+      "minecraft:spore_blossom",
+      "deeper_dark:deep_oasis_ceiling",
+      "deeper_dark:deep_oasis_floor",
+      "deeper_dark:deep_oasis_flowers",
+      "deeper_dark:deep_oasis_common_decoration",
+      "deeper_dark:oasis_shrieker"
     ],
     [],
-    [
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal"
-    ],
+    [],
     [
       "minecraft:freeze_top_layer"
     ]
