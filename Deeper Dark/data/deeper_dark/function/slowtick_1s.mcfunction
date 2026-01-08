@@ -16,7 +16,8 @@ execute as @a at @s as @e[type=marker,sort=nearest,limit=2,predicate=deeper_dark
 execute as @e[type=#deeper_dark:shockwave_part,tag=deeper_dark.shockwave_display,limit=1,sort=random] unless predicate deeper_dark:is_passenger run kill @s
 
 
-execute as @a[predicate=deeper_dark:holding_warden_tracker] at @s run function deeper_dark:items/warden_tracker_track_wardens
+# Warden Tracker
+execute as @a[predicate=deeper_dark:holding_warden_tracker] at @s run function deeper_dark:items/warden_tracker/track
 
 
 

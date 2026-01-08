@@ -41,8 +41,6 @@ execute as @a[predicate=deeper_dark:enchantment_shrieker_sense,advancements={dee
 advancement revoke @a only deeper_dark:functions/using_spyglass
 execute as @e[type=text_display,tag=deeper_dark.shrieker_sense_marker] at @s run function deeper_dark:armor/shrieker_sense_marker_lifecount
 
-# Warden Tracker
-execute as @a[scores={deeper_dark.sonicattack=0},predicate=deeper_dark:holding_warden_tracker] at @s run function deeper_dark:items/warden_tracker
 
 ### Blocks
 # Tentacles
