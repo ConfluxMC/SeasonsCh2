@@ -1,3 +1,3 @@
 execute align xyz run summon minecraft:pig ~.5 ~ ~.5 {CustomName:{"translate":"entity.deeper_dark.shockwave","fallback":"Shockwave"},Silent:1b,DeathLootTable:"deeper_dark:entities/shockwave",NoAI:1b,Age:999999999,Tags:["deeper_dark.shockwave","deeper_dark.shockwave_part"],active_effects:[{id:"minecraft:invisibility",amplifier:0b,duration:-1,show_particles:0b},{id:"minecraft:fire_resistance",amplifier:0b,duration:-1,show_particles:0b}],Health:100f,attributes:[{id:"minecraft:max_health",base:100}]}
 function deeper_dark:shockwave/texture
-execute as @e[tag=deeper_dark.shockwave_display,sort=nearest,distance=0..1,predicate=!deeper_dark:is_passenger] run ride @s mount @n[type=pig,tag=deeper_dark.shockwave]
+execute as @e[type=#deeper_dark:shockwave_part,tag=deeper_dark.shockwave_display,sort=nearest,distance=0..1,predicate=!deeper_dark:is_passenger] run ride @s mount @n[type=pig,tag=deeper_dark.shockwave]

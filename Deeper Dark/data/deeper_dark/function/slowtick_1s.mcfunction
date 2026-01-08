@@ -6,7 +6,7 @@ execute as @e[predicate=deeper_dark:in_deeper_dark,scores={deeper_dark.outofboun
 execute as @e[predicate=deeper_dark:in_deeper_dark,scores={deeper_dark.outofbounds=400..}] at @s run effect give @s minecraft:blindness 3 1
 
 #volcanic caverns effects
-execute as @e[predicate=deeper_dark:in_volcanic_caverns] run function deeper_dark:volcanic_caverns_effects
+execute as @e[predicate=deeper_dark:in_volcanic_caverns,predicate=deeper_dark:living] run function deeper_dark:volcanic_caverns_effects
 
 #sniffer safety teleport
 execute as @e[type=sniffer,predicate=deeper_dark:sniffer_needs_tp] at @s run function deeper_dark:sniffer_safety_tp
@@ -29,7 +29,7 @@ execute as @e[type=#minecraft:item_frames,predicate=deeper_dark:item_echo_shard_
 execute as @e[type=#minecraft:item_frames,predicate=deeper_dark:item_echo_shard_key,tag=!deeper_dark.invalid_portal] at @s unless block ^ ^ ^-.5 minecraft:reinforced_deepslate 
 execute as @e[type=#minecraft:item_frames,predicate=deeper_dark:item_echo_shard_key,tag=!deeper_dark.invalid_portal] at @s unless block ^ ^1 ^-.5 #deeper_dark:structure_support_noclip run tag @s add deeper_dark.invalid_portal
 execute as @e[type=#minecraft:item_frames,predicate=deeper_dark:item_echo_shard_key,tag=deeper_dark.invalid_portal] at @s if block ^ ^ ^-.5 minecraft:reinforced_deepslate if block ^ ^1 ^-.5 #deeper_dark:structure_support_noclip run tag @s remove deeper_dark.invalid_portal
-execute as @e[type=#minecraft:item_frames,predicate=deeper_dark:item_echo_shard_key,tag=!deeper_dark.invalid_portal] at @s if entity @e[type=marker,tag=deeper_dark.portal_activation,distance=0..1] unless entity @e[tag=deeper_dark.portal_display,distance=0..1.5] run function deeper_dark:portal/portal
+execute as @e[type=#minecraft:item_frames,predicate=deeper_dark:item_echo_shard_key,tag=!deeper_dark.invalid_portal] at @s if entity @e[type=marker,tag=deeper_dark.portal_activation,distance=0..1] unless entity @e[type=text_display,tag=deeper_dark.portal_display,distance=0..1.5] run function deeper_dark:portal/portal
 
 execute at @a[scores={deeper_dark.ancient_dark_active=1..},predicate=deeper_dark:in_deeper_dark,gamemode=!spectator] summon minecraft:marker run function deeper_dark:warden_spawn_location
 scoreboard players remove @a[scores={deeper_dark.ancient_dark_active=1..}] deeper_dark.ancient_dark_active 1

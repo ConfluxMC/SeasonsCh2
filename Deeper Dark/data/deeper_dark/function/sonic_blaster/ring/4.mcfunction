@@ -10,4 +10,4 @@ summon text_display ~ ~ ~ {brightness:{sky:15,block:15},Tags:["deeper_dark.sonic
 
 #Generated with EMD's datapack texture generator 2
 
-execute as @e[tag=deeper_dark.sonic_blaster_ring_4,type=minecraft:text_display,limit=4,sort=nearest,distance=0...1] run rotate @s facing ^ ^ ^1
+execute as @e[type=text_display,tag=deeper_dark.sonic_blaster_ring_4,limit=4,sort=nearest,distance=0...1] run rotate @s facing ^ ^ ^1

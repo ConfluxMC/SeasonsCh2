@@ -1,8 +1,8 @@
 playsound minecraft:entity.warden.sonic_boom block @a ~ ~ ~ 2 1
 tag @s add deeper_dark.selected
-tag @e[tag=deeper_dark.sonic_blaster_ring_4,distance=0...1,limit=4,sort=nearest] add deeper_dark.silent_despawn
-tag @e[tag=deeper_dark.sonic_blaster_ring_5,distance=0...1,limit=4,sort=nearest] add deeper_dark.silent_despawn
-tag @e[tag=deeper_dark.sonic_blaster_ring_6,distance=0...1,limit=4,sort=nearest] add deeper_dark.silent_despawn
+tag @e[type=text_display,tag=deeper_dark.sonic_blaster_ring_4,distance=0...1,limit=4,sort=nearest] add deeper_dark.silent_despawn
+tag @e[type=text_display,tag=deeper_dark.sonic_blaster_ring_5,distance=0...1,limit=4,sort=nearest] add deeper_dark.silent_despawn
+tag @e[type=text_display,tag=deeper_dark.sonic_blaster_ring_6,distance=0...1,limit=4,sort=nearest] add deeper_dark.silent_despawn
 execute positioned ^ ^ ^1 run function deeper_dark:armor/sonicattack
 execute positioned ^ ^ ^2 run function deeper_dark:armor/sonicattack
 execute positioned ^ ^ ^3 run function deeper_dark:armor/sonicattack

@@ -1,11 +1,12 @@
 execute unless block ~ ~ ~ sculk_sensor run return run function deeper_dark:sonic_blaster/break
-scoreboard players add @s deeper_dark.sonicattack 1
 
+
+execute if score @s deeper_dark.sonicattack matches ..-1 run scoreboard players add @s deeper_dark.sonicattack 1
 execute if score @s deeper_dark.sonicattack matches -1 at @s run function deeper_dark:sonic_blaster/ring/1
 execute if score @s deeper_dark.sonicattack matches -1 at @s run function deeper_dark:sonic_blaster/ring/2
 execute if score @s deeper_dark.sonicattack matches -1 at @s run return run function deeper_dark:sonic_blaster/ring/3
 
-execute if score @s deeper_dark.sonicattack matches 1.. run scoreboard players add @s deeper_dark.sonicattack 2
+execute if score @s deeper_dark.sonicattack matches 1.. run scoreboard players add @s deeper_dark.sonicattack 3
 
 # If sensor gets triggered while not charging up (if the sonicattack score is 0 or not enabled)
 execute if block ~ ~ ~ minecraft:sculk_sensor[sculk_sensor_phase=active] unless score @s deeper_dark.sonicattack matches 1.. unless score @s deeper_dark.sonicattack matches ..-1 run scoreboard players set @s deeper_dark.sonicattack 3

@@ -5,14 +5,14 @@ execute if data entity @s {Inventory:[{components:{"minecraft:custom_data":{"dee
 execute if data entity @s {Inventory:[{components:{"minecraft:custom_data":{"deeper_dark_locator":"laboratory"}}}]} run data modify storage deeper_dark:data findstructure set value laboratory
 execute if data entity @s {Inventory:[{components:{"minecraft:custom_data":{"deeper_dark_locator":"ancient_village"}}}]} run data modify storage deeper_dark:data findstructure set value ancient_village
 execute if data entity @s {Inventory:[{components:{"minecraft:custom_data":{"deeper_dark_locator":"deep_oasis"}}}]} run data modify storage deeper_dark:data findstructure set value deep_oasis
-kill @e[tag=deeper_dark.locator]
+kill @e[type=marker,tag=deeper_dark.locator]
 summon minecraft:marker ~ 0 ~ {Tags:["deeper_dark.locator"]}
 #start locating
-execute if data storage deeper_dark:data {findstructure:amethyst_mineshaft} as @e[tag=deeper_dark.locator] at @s run function deeper_dark:locator/amethyst_mineshaft/align_to_chunk
-execute if data storage deeper_dark:data {findstructure:ancient_fortress} as @e[tag=deeper_dark.locator] at @s run function deeper_dark:locator/ancient_fortress/align_to_chunk
-execute if data storage deeper_dark:data {findstructure:laboratory} as @e[tag=deeper_dark.locator] at @s run function deeper_dark:locator/laboratory/align_to_chunk
-execute if data storage deeper_dark:data {findstructure:ancient_village} as @e[tag=deeper_dark.locator] at @s run function deeper_dark:locator/ancient_village/align_to_chunk
-execute if data storage deeper_dark:data {findstructure:deep_oasis} as @e[tag=deeper_dark.locator] at @s run function deeper_dark:locator/deep_oasis/align_to_chunk
+execute if data storage deeper_dark:data {findstructure:amethyst_mineshaft} as @e[type=marker,tag=deeper_dark.locator] at @s run function deeper_dark:locator/amethyst_mineshaft/align_to_chunk
+execute if data storage deeper_dark:data {findstructure:ancient_fortress} as @e[type=marker,tag=deeper_dark.locator] at @s run function deeper_dark:locator/ancient_fortress/align_to_chunk
+execute if data storage deeper_dark:data {findstructure:laboratory} as @e[type=marker,tag=deeper_dark.locator] at @s run function deeper_dark:locator/laboratory/align_to_chunk
+execute if data storage deeper_dark:data {findstructure:ancient_village} as @e[type=marker,tag=deeper_dark.locator] at @s run function deeper_dark:locator/ancient_village/align_to_chunk
+execute if data storage deeper_dark:data {findstructure:deep_oasis} as @e[type=marker,tag=deeper_dark.locator] at @s run function deeper_dark:locator/deep_oasis/align_to_chunk
 
 #give
 execute if data storage deeper_dark:data {findstructure:amethyst_mineshaft} at @s run function deeper_dark:locator/amethyst_mineshaft/give with storage deeper_dark:data lastfoundstructure2
@@ -21,5 +21,5 @@ execute if data storage deeper_dark:data {findstructure:laboratory} at @s run fu
 execute if data storage deeper_dark:data {findstructure:ancient_village} at @s run function deeper_dark:locator/ancient_village/give with storage deeper_dark:data lastfoundstructure2
 execute if data storage deeper_dark:data {findstructure:deep_oasis} at @s run function deeper_dark:locator/deep_oasis/give with storage deeper_dark:data lastfoundstructure2
 
-kill @e[tag=deeper_dark.locator]
+kill @e[type=marker,tag=deeper_dark.locator]
 advancement grant @s only deeper_dark:underground_map
