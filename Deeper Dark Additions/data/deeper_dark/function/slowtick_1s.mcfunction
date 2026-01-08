@@ -5,6 +5,12 @@ execute as @e[tag=deeper_dark.silent_despawn,type=!player] at @s run function de
 execute as @e[predicate=deeper_dark:in_deeper_dark,scores={deeper_dark.outofbounds=200..}] at @s run effect give @s minecraft:darkness 3 1
 execute as @e[predicate=deeper_dark:in_deeper_dark,scores={deeper_dark.outofbounds=400..}] at @s run effect give @s minecraft:blindness 3 1
 
+#volcanic caverns effects
+execute as @e[predicate=deeper_dark:in_volcanic_caverns,predicate=deeper_dark:living] run function deeper_dark:volcanic_caverns_effects
+
+#sniffer safety teleport
+execute as @e[type=sniffer,predicate=deeper_dark:sniffer_needs_tp] at @s run function deeper_dark:sniffer_safety_tp
+
 #shockwave
 execute as @a at @s as @e[type=marker,sort=nearest,limit=2,predicate=deeper_dark:in_deeper_dark,tag=deeper_dark.amethyst_mineshaft.floor] at @s positioned ~-128 ~-6 ~-128 unless entity @e[type=pig,tag=deeper_dark.shockwave,dy=12,dx=256,dz=256] if entity @p[dy=12,dx=256,dz=256,gamemode=!spectator] at @s if loaded ~ ~ ~ facing entity @e[limit=1,sort=random] feet rotated ~ 0 positioned ^ ^ ^50 unless entity @p[gamemode=!spectator,distance=..40] if predicate deeper_dark:in_amethyst_mineshaft if loaded ~ ~ ~ if block ~ ~ ~ air run function deeper_dark:shockwave/spawn
 execute as @e[type=#deeper_dark:shockwave_part,tag=deeper_dark.shockwave_display,limit=1,sort=random] unless predicate deeper_dark:is_passenger run kill @s
