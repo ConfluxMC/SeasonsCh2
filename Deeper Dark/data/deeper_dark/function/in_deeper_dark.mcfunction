@@ -46,5 +46,9 @@ execute as @e[type=marker,tag=deeper_dark.spawner,predicate=deeper_dark:in_deepe
 execute as @a[predicate=deeper_dark:in_ancient_dark,predicate=deeper_dark:touching_sculk,gamemode=!spectator] at @s run function deeper_dark:ancient_dark_touching_sculk
 
 
+#ancient dark warden spawning
+execute as @e[type=warden,tag=deeper_dark.warden_spawned] at @s run function deeper_dark:warden_spawn_tick
+
+
 #execute as @a[scores={deeper_dark.ancient_dark_active=1..}]deeper_dark.ancient_dark_active matches 1..
 

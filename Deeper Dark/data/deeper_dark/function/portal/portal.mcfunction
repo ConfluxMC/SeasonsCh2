@@ -5,6 +5,6 @@ execute if score @s deeper_dark.var matches 1 as @e[type=marker,tag=deeper_dark.
 execute if score @s deeper_dark.var matches 1 as @e[type=marker,tag=deeper_dark.portal_marker] at @s run function deeper_dark:portal/unlight
 execute if score @s deeper_dark.var matches 1 as @e[type=marker,tag=deeper_dark.portal_marker,distance=0..1.5] at @s run playsound minecraft:block.end_portal.spawn block @a ~ ~ ~ 10 0
 execute if score @s deeper_dark.var matches 1 as @e[type=marker,tag=deeper_dark.portal_marker,distance=0..1.5] at @s run playsound minecraft:entity.warden.sonic_boom block @a ~ ~ ~ 10 0
-execute if score @s deeper_dark.var matches 1 as @e[type=marker,tag=deeper_dark.portal_marker] at @s unless entity @e[distance=0...1,tag=deeper_dark.portal_display] run function deeper_dark:portal/light
+execute if score @s deeper_dark.var matches 1 as @e[type=marker,tag=deeper_dark.portal_marker] at @s unless entity @e[type=text_display,distance=0...1,tag=deeper_dark.portal_display] run function deeper_dark:portal/light
 execute if score @s deeper_dark.var matches 1 run tag @s add deeper_dark.active_portal
 #tag @e remove deeper_dark.active_portal

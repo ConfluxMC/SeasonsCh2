@@ -1,0 +1,3 @@
+execute as @e[type=marker,tag=deeper_dark.portal_marker] if predicate deeper_dark:chance_50 at @s run particle minecraft:sculk_soul ~ ~ ~ .5 .5 .5 0.01 1 force
+execute as @e[type=marker,tag=deeper_dark.portal_marker] if predicate deeper_dark:chance_50 at @s run particle minecraft:sculk_charge_pop ~ ~ ~ .5 .5 .5 0 1
+execute as @a at @s at @n[type=marker,tag=deeper_dark.portal_marker] run playsound minecraft:block.sculk_catalyst.bloom block @s ~ ~ ~ 2 0

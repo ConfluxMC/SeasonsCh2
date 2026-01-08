@@ -99,60 +99,19 @@ execute as @e[type=marker,tag=deeper_dark.portal_sync,limit=1,sort=random] at @s
 
 execute as @e[type=marker,tag=deeper_dark.portal_marker] at @s if loaded ~ ~ ~ run function deeper_dark:portal/unlight
 execute as @e[type=marker,tag=deeper_dark.portal_marker] at @s if loaded ~ ~ ~ unless block ~ ~ ~ light run kill @s
-execute as @a at @s at @e[tag=deeper_dark.portal_display,limit=10,sort=nearest] unless entity @e[type=marker,distance=0...1,tag=deeper_dark.portal_marker] if block ~ ~ ~ minecraft:light run playsound minecraft:entity.warden.death block @s ~ ~ ~ 10 0
-execute as @e[tag=deeper_dark.portal_display] at @s unless entity @e[type=marker,distance=0...1,tag=deeper_dark.portal_marker] if block ~ ~ ~ minecraft:light run setblock ~ ~ ~ minecraft:air
-execute as @e[tag=deeper_dark.portal_display] at @s unless entity @e[type=marker,distance=0...1,tag=deeper_dark.portal_marker] run kill @s
-execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 as @e[type=marker,tag=deeper_dark.portal_marker] if predicate deeper_dark:chance_50 at @s run particle minecraft:sculk_soul ~ ~ ~ .5 .5 .5 0.01 1 force
-execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 as @e[type=marker,tag=deeper_dark.portal_marker] if predicate deeper_dark:chance_50 at @s run particle minecraft:sculk_charge_pop ~ ~ ~ .5 .5 .5 0 1
-execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 as @a at @s at @e[type=marker,tag=deeper_dark.portal_marker,limit=1,sort=nearest] run playsound minecraft:block.sculk_catalyst.bloom block @s ~ ~ ~ 2 0
+
+execute as @a at @s at @e[type=text_display,tag=deeper_dark.portal_display,limit=10,sort=nearest] unless entity @n[type=marker,distance=0...1,tag=deeper_dark.portal_marker] run playsound minecraft:entity.warden.death block @s ~ ~ ~ 10 0
+execute as @e[type=text_display,tag=deeper_dark.portal_display] at @s unless entity @n[type=marker,distance=0...1,tag=deeper_dark.portal_marker] run function deeper_dark:portal/kill_display
+execute if score Game deeper_dark.gamerule.disable_portal_particles matches 0 run function deeper_dark:portal/particles
 
 execute if score Game deeper_dark.gamerule.disable_portals matches 0 as @e[type=marker,tag=deeper_dark.portal_marker] at @s positioned ~-.5 ~ ~-.5 as @n[dx=0,dy=0,dz=0,type=!marker,type=!text_display,type=!block_display,type=!item_display,type=!armor_stand,predicate=!deeper_dark:has_passenger,tag=!deeper_dark.tp_cooldown,distance=0..] at @s positioned ~-0.5 ~ ~-0.5 if entity @e[type=marker,dx=0,dy=0,dz=0,tag=deeper_dark.portal_marker] at @s[tag=!deeper_dark.tp_cooldown] run function deeper_dark:portal/prep_teleport
-
 
 execute as @e[type=marker,tag=deeper_dark.portal_marker] at @s unless data entity @s data.location run kill @s
 
 
-#warden spawning
-execute as @e[type=warden,tag=deeper_dark.warden_spawned_3] at @s run tp @s ~ ~-9999.5 ~
-execute as @e[type=warden,tag=deeper_dark.warden_spawned_3] run tag @s remove deeper_dark.warden_spawned
-execute as @e[type=warden,tag=deeper_dark.warden_spawned_3] run tag @s remove deeper_dark.warden_spawned_2
-execute as @e[type=warden,tag=deeper_dark.warden_spawned_3] run tag @s remove deeper_dark.warden_spawned_3
-execute as @e[type=warden,tag=deeper_dark.warden_spawned_2] run tag @s add deeper_dark.warden_spawned_3
-execute as @e[type=warden,tag=deeper_dark.warden_spawned] run tag @s add deeper_dark.warden_spawned_2
-
 #silent_despawn
 execute as @e[tag=deeper_dark.silent_despawn,type=!player] at @s run function deeper_dark:silent_despawn
 
-
-
 #creative items
-tellraw @a[scores={deeper_dark.items=1}] [{"hover_event":{"action":"show_text","value":[{"translate":"deeper_dark.gui.creative_items.hint","fallback":"Click on an item to get it"}]},"text":"\n"},{"translate":"deeper_dark.gui.creative_items","fallback":"Items From %s:","with":[{"translate":"deeper_dark.name","color":"#007A8A","click_event":{"action":"open_url","url":"https://www.planetminecraft.com/data-pack/deeper-dark-dimension/"},"hover_event":{"action":"show_text","value":[{"translate":"deeper_dark.gui.creative_items.website_hint","fallback":"Go To Website"}]},"fallback":"Deeper Dark"}]},{"text":"\n"}\
-,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 2"},"translate":"item.deeper_dark.activated_sculk_shrieker","color":"yellow","fallback":"Activated Sculk Shrieker"},{"text":"\n"}\
-,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 3"},"translate":"item.deeper_dark.splash_potion_of_blindness","fallback":"Splash Potion of Blindness"},{"text":"\n"}\
-,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 4"},"translate":"item.deeper_dark.locator_amethyst_mineshaft","fallback":"Amethyst Mineshaft Locator Compass"},{"text":"\n"}\
-,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 5"},"translate":"item.deeper_dark.warden_tracker","color":"yellow","fallback":"Warden Tracker"},{"text":"\n"}\
-,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 6"},"translate":"item.deeper_dark.altar_fragment","color":"aqua","fallback":"Conversion Altar Fragment"},{"text":"\n"}\
-,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 7"},"translate":"item.deeper_dark.locator_ancient_fortress","fallback":"Ancient Fortress Locator Compass"},{"text":"\n"}\
-,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 8"},"translate":"item.deeper_dark.sculk_tentacle","fallback":"Sculk Tentacle"},{"text":"\n"}\
-,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 9"},"translate":"item.deeper_dark.sculk_claw","fallback":"Sculk Claw"},{"text":"\n"}\
-,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 10"},"translate":"item.deeper_dark.sculk_syphon","fallback":"Sculk Syphon"},{"text":"\n"}\
-,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 11"},"translate":"item.deeper_dark.locator_laboratory","fallback":"Laboratory Locator Compass"},{"text":"\n"}\
-,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 12"},"translate":"item.deeper_dark.anticatalyst","color":"light_purple","fallback":"Anticatalyst"},{"text":"\n"}\
-,{"click_event":{"action":"run_command","command":"/trigger deeper_dark.items set 13"},"translate":"item.deeper_dark.sonic_blaster","fallback":"Sonic Blaster"},{"text":"\n"}\
-]
-
-loot give @a[scores={deeper_dark.items=2}] loot deeper_dark:items/activated_sculk_shrieker
-loot give @a[scores={deeper_dark.items=3}] loot deeper_dark:items/splash_potion_of_blindness
-loot give @a[scores={deeper_dark.items=4}] loot deeper_dark:items/locator_amethyst_mineshaft
-loot give @a[scores={deeper_dark.items=5}] loot deeper_dark:items/warden_tracker
-loot give @a[scores={deeper_dark.items=6}] loot deeper_dark:items/altar_fragment
-loot give @a[scores={deeper_dark.items=7}] loot deeper_dark:items/locator_ancient_fortress
-loot give @a[scores={deeper_dark.items=8}] loot deeper_dark:items/sculk_tentacle
-loot give @a[scores={deeper_dark.items=9}] loot deeper_dark:items/sculk_claw
-loot give @a[scores={deeper_dark.items=10}] loot deeper_dark:items/sculk_syphon
-loot give @a[scores={deeper_dark.items=11}] loot deeper_dark:items/locator_laboratory
-loot give @a[scores={deeper_dark.items=12}] loot deeper_dark:items/anticatalyst
-loot give @a[scores={deeper_dark.items=13}] loot deeper_dark:items/sonic_blaster
-
-scoreboard players reset @a deeper_dark.items
+execute as @a[scores={deeper_dark.items=1..}] run function deeper_dark:items/creative
 scoreboard players enable @a[gamemode=creative] deeper_dark.items
