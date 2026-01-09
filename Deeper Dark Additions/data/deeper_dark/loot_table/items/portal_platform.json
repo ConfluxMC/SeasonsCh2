@@ -47,8 +47,7 @@
                 "max": 21
               }
             }
-          ],
-          "conditions": []
+          ]
         },
         {
           "type": "minecraft:item",
@@ -114,6 +113,45 @@
         {
           "type": "minecraft:loot_table",
           "value": "minecraft:chests/ancient_city"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": {
+            "pools": [
+              {
+                "rolls": 1,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:warped_fungus_on_a_stick",
+                    "weight": 1
+                  }
+                ]
+              },
+              {
+                "rolls": 1,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:saddle"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:location_check",
+          "predicate": {
+            "biomes": "deeper_dark:volcanic_caverns"
+          }
         }
       ]
     }
