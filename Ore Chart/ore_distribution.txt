@@ -1,0 +1,36 @@
+id,ore,dimension,type,count,size,min,minType,max,maxType,notes
+1,1,ow,0,30.0,17.0,136,a,0,bt
+2,1,ow,1,20.0,17.0,-260,bt,260,bt
+3,2,ow,1,16.0,17.0,16,ab,16,bt
+4,2,ow,1,16.0,20.0,16,ab,16,bt
+5,5,ow,1,7.0,4.0,-80,ab,80,ab
+6,5,ow,1,7.0,4.0,80,bt,-80,bt
+7,5,ow,1,4.0,8.0,-80,ab,80,ab
+8,5,ow,1,4.0,8.0,80,bt,-80,bt
+9,5,ow,1,0.09,12.0,-80,ab,80,ab
+10,5,ow,1,0.09,12.0,80,bt,-80,bt
+11,5,ow,0,2.0,8.0,0,ab,60,ab
+12,5,ow,0,2.0,8.0,60,bt,0,bt
+13,8,ow,1,100.0,3.0,480,a,-16,a
+14,4,ow,1,4.0,9.0,0,ab,96,ab
+15,4,ow,1,4.0,9.0,96,bt,0,bt
+16,4,ow,0,0.5,9.0,0,ab,16,ab
+17,4,ow,0,0.5,9.0,16,bt,0,bt
+18,3,ow,1,12.0,9.0,40,ab,40,bt
+19,3,ow,0,10.0,4.0,16,ab,16,bt
+20,7,ow,1,2.0,7.0,32,ab,96,ab
+21,7,ow,1,2.0,7.0,96,bt,32,bt
+22,7,ow,0,4.0,7.0,0,ab,128,ab
+23,7,ow,0,4.0,7.0,128,bt,0,bt
+24,9,ow,0,48.0,16.0,10,ab,10,bt,Marble Caves only: Can only replace diorite
+25,9,ow,0,208.0,44.0,10,ab,10,bt,Crystal Caves only: Can only replace diorite
+26,6,ow,0,4.0,8.0,0,ab,112,a
+27,6,ow,1,8.0,8.0,-64,ab,64,ab
+28,10,my,1,8.0,3.0,220,a,8,bt
+29,10,my,1,2.0,3.0,264,a,8,bt
+30,10,dd,1,7.0,4.0,-80,ab,80,ab,Only in volcanic caverns
+31,11,dd,0,8.0,28.0,8,ab,8,bt,Only in volcanic caverns and deep oases
+32,4,ow,0,50.0,9.0,96,ab,96,bt,Extra gold in warm biomes
+33,5,ow,0,0.14,4.0,4,ab,64,a,Extra diamonds in volcanic caves
+34,5,ow,0,2.0,6.0,4,ab,0,a,Extra diamonds in icy caves
+35,3,ow,0,10.0,15.0,0,ab,0,bt,Extra iron in icy caves
