@@ -6,7 +6,7 @@
 
 To add an item (assuming shop is already initialized)
 Where # is the index of the new entry in the shop
-1. /data modify storage conflux_seasons:shop items append value {key:#,cost:18,icon:{atlas:"minecraft:items",sprite:"chakram:item/chakram"},label:{text:" New shop item name "}}
+1. /data modify storage conflux_seasons:shop items append value {key:#,cost:10,icon:{atlas:"minecraft:items",sprite:"conflux_seasons:item/solstice_shard"},label:{text:" New shop item name "}}
 1a. Make SURE to replace key with the index of this entry in the shop
 2. /data modify storage conflux_seasons:shop items[#] set from entity @s SelectedItem
 3. Run /function conflux_seasons:shop/rebuild

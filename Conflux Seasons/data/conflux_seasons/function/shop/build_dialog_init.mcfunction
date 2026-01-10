@@ -13,7 +13,6 @@ data modify storage conflux_seasons:dialog_construction temporary.items set from
 function conflux_seasons:shop/build_dialog_loop0
 
 # Add withdraw button to beginning
-$data modify storage conflux_seasons:dialog_construction dialog.actions prepend value {label:[\
-    {text:"Withdraw "}, $(sols_icon)]}
+$data modify storage conflux_seasons:dialog_construction dialog.actions prepend value {label:[{text:"Withdraw "}, $(sols_icon)]}
 
 function conflux_seasons:shop/build_dialog_insert_withdraw_action
