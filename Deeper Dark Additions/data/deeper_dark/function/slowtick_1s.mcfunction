@@ -37,6 +37,9 @@ scoreboard players remove @a[scores={deeper_dark.ancient_dark_active=1..}] deepe
 # Generate final boss arenas
 execute as @e[type=minecraft:marker,tag=deeper_dark.arena,predicate=deeper_dark:in_deeper_dark] at @s if loaded ~ ~ ~ run function deeper_dark:laboratory_generate_arena
 
+# Resummon final boss
+execute as @e[type=marker,tag=deeper_dark.boss_respawn_point] at @s if loaded ~ ~ ~ if entity @n[type=item,distance=..3,predicate=deeper_dark:item_destabilized_anticatalyst] run function deeper_dark:boss/reactivate
+
 
 #anticatalyst
 #execute as @e[type=marker,tag=deeper_dark.anticatalyst_target,limit=1,sort=random] at @s unless entity @n[tag=deeper_dark.anticatalyst,distance=0..126]

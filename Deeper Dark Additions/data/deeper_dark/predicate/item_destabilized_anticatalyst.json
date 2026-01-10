@@ -1,0 +1,15 @@
+{
+	"condition": "minecraft:entity_properties",
+	"entity": "this",
+	"predicate": {
+		"slots": {
+			"contents": {
+				"predicates": {
+					"minecraft:custom_data": {
+						"deeper_dark_destabilized_anticatalyst": true
+					}
+				}
+			}
+		}
+	}
+}
