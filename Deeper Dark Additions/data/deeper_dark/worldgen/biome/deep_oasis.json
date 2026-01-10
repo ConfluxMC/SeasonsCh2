@@ -50,7 +50,11 @@
   "carvers": [],
   "features": [
     [
-      "deeper_dark:sniffer_nest"
+      "deeper_dark:sniffer_nest",
+      "deeper_dark:sniffer_nest_drop_eggs_1",
+      "deeper_dark:sniffer_nest_drop_eggs_2",
+      "deeper_dark:sniffer_nest_drop_eggs_3",
+      "deeper_dark:sniffer_nest_drop_eggs_4"
     ],
     [],
     [],

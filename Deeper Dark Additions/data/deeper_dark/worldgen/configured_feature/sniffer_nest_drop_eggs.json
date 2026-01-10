@@ -1,0 +1,85 @@
+{
+  "type": "minecraft:disk",
+  "config": {
+    "state_provider": {
+      "fallback": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "air"
+        }
+      },
+      "rules": [
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "offset": [
+              0,
+              -1,
+              0
+            ],
+            "blocks": "minecraft:moss_block"
+          },
+          "then": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "minecraft:sniffer_egg"
+            }
+          }
+        },
+        {
+          "if_true": {
+            "type": "minecraft:matching_blocks",
+            "offset": [
+              0,
+              1,
+              0
+            ],
+            "blocks": [
+              "minecraft:moss_block"
+            ]
+          },
+          "then": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "weight": 3,
+                "data": {
+                  "Name": "minecraft:cave_vines",
+                  "Properties": {
+                    "berries": "true"
+                  }
+                }
+              },
+              {
+                "weight": 1,
+                "data": {
+                  "Name": "minecraft:cave_vines",
+                  "Properties": {
+                    "berries": "false"
+                  }
+                }
+              },
+              {
+                "weight": 6,
+                "data": {
+                  "Name": "minecraft:air"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "radius": 8,
+    "half_height": 4,
+    "target": {
+      "type": "minecraft:all_of",
+      "predicates": [
+        {
+          "type": "minecraft:matching_blocks",
+          "blocks": "minecraft:sniffer_egg"
+        }
+      ]
+    }
+  }
+}

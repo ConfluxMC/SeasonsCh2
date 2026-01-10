@@ -8,7 +8,7 @@
     {
       "type": "minecraft:random_offset",
       "xz_spread": 13,
-      "y_spread": 0
+      "y_spread": 4
     },
     {
       "type": "minecraft:height_range",
