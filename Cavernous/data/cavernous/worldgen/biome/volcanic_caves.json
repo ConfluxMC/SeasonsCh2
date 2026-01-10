@@ -62,15 +62,15 @@
     "underground_water_creature": [
       {
         "type": "minecraft:glow_squid",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 6
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 2
       },
       {
         "type": "minecraft:nautilus",
-        "maxCount": 1,
+        "weight": 10,
         "minCount": 1,
-        "weight": 5
+        "maxCount": 1
       }
     ],
     "water_ambient": [],

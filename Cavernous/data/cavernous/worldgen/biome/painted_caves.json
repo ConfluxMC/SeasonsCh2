@@ -57,14 +57,20 @@
 			{
 				"type": "minecraft:glow_squid",
 				"weight": 10,
-				"minCount": 4,
-				"maxCount": 6
+				"minCount": 1,
+				"maxCount": 3
+			},
+			{
+				"type": "minecraft:squid",
+				"weight": 6,
+				"minCount": 1,
+				"maxCount": 3
 			},
 			{
 				"type": "minecraft:nautilus",
+				"weight": 1,
 				"maxCount": 1,
-				"minCount": 1,
-				"weight": 5
+				"minCount": 1
 			}
 		],
 		"water_ambient": [
