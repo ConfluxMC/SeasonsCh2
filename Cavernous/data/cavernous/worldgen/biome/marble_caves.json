@@ -142,7 +142,8 @@
       "cavernous:generic/ores/special/gold_chunk",
       "cavernous:generic/ores/special/copper_chunk",
       "cavernous:biomes/stone/marble/pillar/core",
-      "cavernous:biomes/stone/marble/pillar/shell"
+      "cavernous:biomes/stone/marble/pillar/shell_1",
+      "cavernous:biomes/stone/marble/pillar/shell_2"
     ],
     [
       "cavernous:biomes/stone/marble/tree_straight",
