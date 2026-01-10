@@ -1,0 +1,1 @@
+data modify storage conflux_seasons:dialog_construction dialog.actions[0].action set value {type:"minecraft:dynamic/run_command",template:"trigger trg_shop_withdraw_sols set $(withdraw_range)"}
