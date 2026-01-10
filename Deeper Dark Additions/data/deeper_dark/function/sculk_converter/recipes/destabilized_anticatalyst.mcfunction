@@ -1,0 +1,1 @@
+execute if entity @n[type=item_display,tag=deeper_dark.sculk_converter_item,distance=..5,predicate=deeper_dark:item_anticatalyst] run function deeper_dark:sculk_converter_recipe_types/replace_item_with_loot {replace:"minecraft:music_disc_5",with:"deeper_dark:items/destabilized_anticatalyst",flames:4,xp:5,conversion_time:500}

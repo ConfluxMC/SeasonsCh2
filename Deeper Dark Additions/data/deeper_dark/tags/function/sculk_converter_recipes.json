@@ -31,6 +31,10 @@
     {
       "id": "deeper_dark:sculk_converter/recipes/warped_fungus",
       "required": false
+    },
+    {
+      "id": "deeper_dark:sculk_converter/recipes/destabilized_anticatalyst",
+      "required": false
     }
   ]
 }

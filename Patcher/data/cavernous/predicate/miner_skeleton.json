@@ -1,4 +1,79 @@
 {
-	"condition": "minecraft:random_chance",
-	"chance": 0.021
+	"condition": "minecraft:any_of",
+	"terms": [
+		{
+			"condition": "minecraft:random_chance",
+			"chance": 0.021
+		},
+		{
+			"condition": "minecraft:all_of",
+			"terms": [
+				{
+					"condition": "minecraft:any_of",
+					"terms": [
+						{
+							"condition": "minecraft:location_check",
+							"predicate": {
+								"structures": "#minecraft:mineshaft"
+							}
+						},
+						{
+							"condition": "minecraft:location_check",
+							"predicate": {
+								"structures": "#hopo:mineshaftsstructure"
+							}
+						}
+					]
+				},
+				{
+					"condition": "minecraft:inverted",
+					"term": {
+						"condition": "minecraft:all_of",
+						"terms": [
+							{
+								"condition": "minecraft:entity_properties",
+								"entity": "this",
+								"predicate": {
+									"equipment": {
+										"chest": {
+											"items": [
+												"minecraft:netherite_chestplate",
+												"minecraft:diamond_chestplate",
+												"minecraft:golden_chestplate",
+												"minecraft:iron_chestplate",
+												"minecraft:chainmail_chestplate",
+												"minecraft:copper_chestplate",
+												"minecraft:leather_chestplate"
+											]
+										}
+									}
+								}
+							},
+							{
+								"condition": "minecraft:random_chance",
+								"chance": 0.6
+							}
+						]
+					}
+				}
+			]
+		},
+		{
+			"condition": "minecraft:all_of",
+			"terms": [
+				{
+					"condition": "minecraft:location_check",
+					"predicate": {
+						"biomes": [
+							"cavernous:splattered_caves"
+						]
+					}
+				},
+				{
+					"condition": "minecraft:random_chance",
+					"chance": 0.2
+				}
+			]
+		}
+	]
 }

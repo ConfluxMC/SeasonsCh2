@@ -1,5 +1,5 @@
 item modify entity @n[type=item,distance=..1,predicate=hollow_earth:warden_pacifier_bundle] contents {function:"set_contents",component:"bundle_contents",entries:[{type:"minecraft:loot_table",value:"hollow_earth:warden_pacifier"}]}
-tag @s add has_crafted
+kill @s
 
 particle dust{color:[0.443, 0.055, 0.055],scale:2} ~ ~ ~ 0.3 0.3 0.3 1 30 normal @a
 playsound block.end_portal_frame.fill block @a ~ ~ ~ 0.8 0.3 0

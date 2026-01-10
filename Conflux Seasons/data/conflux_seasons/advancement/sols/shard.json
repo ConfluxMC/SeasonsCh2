@@ -15,6 +15,6 @@
     }
   },
   "rewards": {
-    "function": "conflux_seasons:sols_give/shard"
+    "function": "conflux_seasons:sols/shard"
   }
 }
