@@ -85,7 +85,22 @@
         {
           "type": "minecraft:loot_table",
           "value": "deeper_dark:items/sniffer_snack",
-          "weight": 3
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "ariadnes_moss:sniffer_ariadnes_moss",
+          "weight": 2
         }
       ]
     }

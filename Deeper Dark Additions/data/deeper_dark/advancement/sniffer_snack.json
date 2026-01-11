@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "use": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": "minecraft:music_disc_5",
+          "components": {
+            "minecraft:custom_data": {
+              "deeper_dark_sniffer_snack": 1
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "deeper_dark:sniffer_snack"
+  }
+}
