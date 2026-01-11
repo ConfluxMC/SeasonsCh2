@@ -1,11 +1,6 @@
 {
   "values": [
-    "chakram:bouncing",
-    "chakram:harvesting",
-    "chakram:lightweight",
-    "chakram:phasing",
-    "chakram:ricochet",
-    "chakram:shadowstep",
-    "chakram:snare"
+    "#chakram:non_treasure",
+    "#chakram:treasure"
   ]
 }

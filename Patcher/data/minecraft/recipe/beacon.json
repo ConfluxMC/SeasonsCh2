@@ -15,7 +15,12 @@
     "components": {
       "minecraft:lore": [
         {
-          "text": "A powerful monument rendered useless underground.",
+          "text": "A powerful monument",
+          "color": "gray",
+          "italic": false
+        },
+        {
+          "text": "rendered useless underground.",
           "color": "gray",
           "italic": false
         }

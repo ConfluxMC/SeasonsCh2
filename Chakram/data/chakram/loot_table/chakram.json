@@ -10,7 +10,10 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_name": "[\"\",{\"translate\":\"chakram:chakram\",\"fallback\":\"Chakram\",\"italic\":false}]",
+                "minecraft:item_name": {
+                  "translate": "chakram:chakram",
+                  "fallback": "Chakram"
+                },
                 "minecraft:item_model": "chakram:chakram",
                 "minecraft:custom_data": {
                   "chakram_chakram": true,

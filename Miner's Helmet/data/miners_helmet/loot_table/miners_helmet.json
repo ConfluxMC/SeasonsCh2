@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:copper_helmet",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:equippable": {
+                  "slot": "head",
+                  "asset_id": "miners_helmet:miners_helmet"
+                },
+                "minecraft:max_damage": 110,
+                "minecraft:custom_name": [
+                  {
+                    "italic": false,
+                    "text": "Miner's Helmet"
+                  }
+                ],
+                "minecraft:item_name": [
+                  {
+                    "italic": false,
+                    "text": "Miner's Helmet"
+                  }
+                ],
+                "minecraft:item_model": "miners_helmet:miners_helmet",
+                "minecraft:rarity": "common",
+                "minecraft:damage": 0,
+                "minecraft:custom_data": {
+                  "miners_helmet.miners_helmet": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
