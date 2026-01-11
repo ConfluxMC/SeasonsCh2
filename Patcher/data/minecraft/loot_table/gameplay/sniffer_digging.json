@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:gift",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "deeper_dark:items/sniffer_snack",
+          "weight": 37
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pitcher_pod",
+          "weight": 37
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "ariadnes_moss:sniffer_ariadnes_moss",
+          "weight": 26
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "minecraft:gameplay/sniffer_digging"
+}

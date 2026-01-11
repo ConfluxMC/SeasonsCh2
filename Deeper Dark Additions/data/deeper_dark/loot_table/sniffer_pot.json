@@ -31,16 +31,16 @@
           ]
         },
         {
-          "type": "minecraft:item",
-          "name": "minecraft:torchflower_seeds",
+          "type": "minecraft:loot_table",
+          "value": "deeper_dark:items/sniffer_snack",
           "weight": 6,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 2,
-                "max": 28
+                "min": 1,
+                "max": 19
               }
             }
           ]
@@ -81,11 +81,6 @@
               "id": "minecraft:slow_falling"
             }
           ]
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "deeper_dark:items/sniffer_snack",
-          "weight": 3
         }
       ]
     }

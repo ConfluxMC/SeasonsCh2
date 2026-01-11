@@ -6,27 +6,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:music_disc_5",
+          "name": "minecraft:torchflower_seeds",
           "functions": [
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:item_name": {
-                  "text": "Sniffer Berries"
-                },
-                "minecraft:item_model": "minecraft:sweet_berries",
-                "!minecraft:jukebox_playable": {},
-                "max_stack_size": 64,
-                "minecraft:rarity": "uncommon",
-                "minecraft:lore": [
-                  {
-                    "text": "Smells interesting...",
-                    "color": "gray"
-                  }
-                ],
-                "minecraft:custom_data": {
-                  "deeper_dark_sniffer_snack": 1
-                },
                 "minecraft:consumable": {},
                 "minecraft:food": {
                   "nutrition": 1,
