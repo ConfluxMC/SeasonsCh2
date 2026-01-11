@@ -40,7 +40,7 @@ execute as @e[type=magma_cube,tag=unconverted] at @s run function cavernous:mob_
 
 ### MARBLE SKELETONS
 execute as @e[type=skeleton,tag=marble_skeleton] at @s run function cavernous:hollow_earth/marble_skeleton/run
-execute as @a[predicate=cavernous:marble_skeleton_disguised] at @s anchored eyes if entity @n[type=creaking,distance=..10] run function cavernous:hollow_earth/marble_skeleton/creaking_player1
+execute as @a[predicate=cavernous:marble_skeleton_disguised] at @s anchored eyes if entity @n[type=creaking,distance=..12] run function cavernous:hollow_earth/marble_skeleton/creaking_player1
 
 ### SINGLE PALE SAPLING
 
