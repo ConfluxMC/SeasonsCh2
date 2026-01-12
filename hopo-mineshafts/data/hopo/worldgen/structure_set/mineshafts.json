@@ -60,7 +60,7 @@
 			"other_set": "minecraft:trial_chambers",
 			"chunk_count": 10
 		},
-		"spacing": 28,
+		"spacing": 26,
 		"separation": 7
 	}
 }

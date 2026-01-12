@@ -175,3 +175,8 @@
 ♦ Copper room has been changed, adding a copper golem statue.
 --- Hotfix - Room with a command block --- 20/10/2025
 ♦ The title say it all, i forgot to remove a command block in a room, accidents happens...
+--- Mounts of mayhem! --- 3/1/2026
+♦ Added spears in loots.
+♦ Added some copper gear in loots.
+♦ Make mineshaft just a little bit more easier to find, feedback note.
+♦ 1.21.11 compatibility.

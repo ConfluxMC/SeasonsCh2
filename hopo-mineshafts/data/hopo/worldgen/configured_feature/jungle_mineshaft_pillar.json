@@ -19,7 +19,7 @@
 			"type": "minecraft:weighted_state_provider",
 			"entries": [
 			  {
-				"weight": 7,
+				"weight": 8,
 				"data": {
 				  "Name": "minecraft:jungle_log"
 				}
