@@ -19,7 +19,7 @@
 			"type": "minecraft:weighted_state_provider",
 			"entries": [
 			  {
-				"weight": 7,
+				"weight": 9,
 				"data": {
 				  "Name": "minecraft:birch_log"
 				}

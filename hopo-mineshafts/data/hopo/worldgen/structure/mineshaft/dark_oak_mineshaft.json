@@ -4,7 +4,7 @@
     "step": "surface_structures",
     "spawn_overrides": {},
     "start_pool": "hopo:dark_oak_mineshaft",
-    "size": 4,  
+    "size": 3,  
     "start_height": {
     "type": "minecraft:uniform",
     "min_inclusive": {

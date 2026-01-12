@@ -121,7 +121,7 @@
                         {
                             "function": "minecraft:set_damage",
                             "damage": {
-                                "min": 0.05,
+                                "min": 0.17,
                                 "max": 0.4
                             },
                             "add": false
@@ -136,7 +136,7 @@
                         {
                             "function": "minecraft:set_damage",
                             "damage": {
-                                "min": 0.05,
+                                "min": 0.17,
                                 "max": 0.4
                             },
                             "add": false
@@ -151,7 +151,7 @@
                         {
                             "function": "minecraft:set_count",
                             "count": {
-                                "min": 0.05,
+                                "min": 0.17,
                                 "max": 0.4
                             },
                             "add": false
@@ -161,12 +161,12 @@
                 {
                     "type": "minecraft:item",
                     "name": "minecraft:iron_pickaxe",
-                    "weight": 6,
+                    "weight": 10,
                     "functions": [
                         {
                             "function": "minecraft:set_damage",
                             "damage": {
-                                "min": 0.05,
+                                "min": 0.17,
                                 "max": 0.4
                             },
                             "add": false
@@ -180,12 +180,12 @@
                 {
                     "type": "minecraft:item",
                     "name": "minecraft:iron_shovel",
-                    "weight": 6,
+                    "weight": 10,
                     "functions": [
                         {
                             "function": "minecraft:set_damage",
                             "damage": {
-                                "min": 0.05,
+                                "min": 0.17,
                                 "max": 0.4
                             },
                             "add": false
@@ -204,8 +204,110 @@
                         {
                             "function": "minecraft:set_damage",
                             "damage": {
-                                "min": 0.05,
+                                "min": 0.17,
                                 "max": 0.4
+                            },
+                            "add": false
+                        },
+                        {
+                            "function": "minecraft:enchant_randomly",
+                            "options": "#minecraft:on_random_loot"
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:copper_pickaxe",
+                    "weight": 9,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_damage",
+                            "damage": {
+                                "min": 0.3,
+                                "max": 0.7
+                            },
+                            "add": false
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:copper_shovel",
+                    "weight": 9,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_damage",
+                            "damage": {
+                                "min": 0.3,
+                                "max": 0.7
+                            },
+                            "add": false
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:copper_hoe",
+                    "weight": 9,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_damage",
+                            "damage": {
+                                "min": 0.3,
+                                "max": 0.7
+                            },
+                            "add": false
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:copper_pickaxe",
+                    "weight": 9,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_damage",
+                            "damage": {
+                                "min": 0.3,
+                                "max": 0.7
+                            },
+                            "add": false
+                        },
+                        {
+                            "function": "minecraft:enchant_randomly",
+                            "options": "#minecraft:on_random_loot"
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:copper_shovel",
+                    "weight": 9,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_damage",
+                            "damage": {
+                                "min": 0.3,
+                                "max": 0.7
+                            },
+                            "add": false
+                        },
+                        {
+                            "function": "minecraft:enchant_randomly",
+                            "options": "#minecraft:on_random_loot"
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:copper_hoe",
+                    "weight": 9,
+                    "functions": [
+                        {
+                            "function": "minecraft:set_damage",
+                            "damage": {
+                                "min": 0.3,
+                                "max": 0.7
                             },
                             "add": false
                         },
