@@ -123,11 +123,6 @@
             {
               "type": "minecraft:item",
               "name": "minecraft:echo_shard",
-              "weight": 4
-            },
-            {
-              "type": "minecraft:item",
-              "name": "minecraft:echo_shard",
               "weight": 20,
               "conditions": [
                 {
@@ -146,6 +141,11 @@
                   }
                 }
               ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:echo_shard",
+              "weight": 4
             }
           ]
         }
