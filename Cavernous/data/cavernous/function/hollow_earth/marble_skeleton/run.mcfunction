@@ -1,0 +1,2 @@
+execute if predicate cavernous:marble_skeleton_pacify run function cavernous:hollow_earth/marble_skeleton/pacify
+execute if entity @n[type=creaking,distance=..12] run function cavernous:hollow_earth/marble_skeleton/creaking_stare

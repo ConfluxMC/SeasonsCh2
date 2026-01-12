@@ -102,9 +102,9 @@
       },
       {
         "type": "minecraft:nautilus",
+        "weight": 1,
         "maxCount": 1,
-        "minCount": 1,
-        "weight": 5
+        "minCount": 1
       }
     ],
     "water_ambient": [

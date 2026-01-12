@@ -38,6 +38,10 @@ execute as @e[type=skeleton,tag=unconverted] at @s run function cavernous:mob_co
 execute as @e[type=creeper,tag=unconverted] at @s run function cavernous:mob_conversion/creeper_main
 execute as @e[type=magma_cube,tag=unconverted] at @s run function cavernous:mob_conversion/magma_cube_main
 
+### MARBLE SKELETONS
+execute as @e[type=skeleton,tag=marble_skeleton] at @s run function cavernous:hollow_earth/marble_skeleton/run
+execute as @a[predicate=cavernous:marble_skeleton_disguised] at @s anchored eyes if entity @n[type=creaking,distance=..12] run function cavernous:hollow_earth/marble_skeleton/creaking_player1
+
 ### SINGLE PALE SAPLING
 
 kill @e[type=marker,tag=single_pale_sapling,predicate=!cavernous:single_pale_sapling/valid_marker]
