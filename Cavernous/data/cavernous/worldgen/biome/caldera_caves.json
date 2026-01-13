@@ -42,18 +42,6 @@
     "misc": [],
     "monster": [
       {
-        "type": "minecraft:zombie",
-        "weight": 125,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:zombie_villager",
-        "weight": 15,
-        "minCount": 1,
-        "maxCount": 1
-      },
-      {
         "type": "minecraft:creeper",
         "weight": 50,
         "minCount": 4,
@@ -66,26 +54,13 @@
         "maxCount": 4
       },
       {
-        "type": "minecraft:enderman",
-        "weight": 5,
-        "minCount": 1,
-        "maxCount": 4
-      },
-      {
         "type": "minecraft:witch",
         "weight": 5,
         "minCount": 1,
         "maxCount": 1
       }
     ],
-    "underground_water_creature": [
-      {
-        "type": "minecraft:nautilus",
-        "weight": 1,
-        "maxCount": 1,
-        "minCount": 1
-      }
-    ],
+    "underground_water_creature": [],
     "water_ambient": [],
     "water_creature": []
   },
