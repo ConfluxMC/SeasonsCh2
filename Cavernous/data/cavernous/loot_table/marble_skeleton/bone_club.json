@@ -52,6 +52,17 @@
                 "minimum_attack_charge": 1,
                 "custom_data": {
                   "bone_club": 1
+                },
+                "minecraft:tool": {
+                  "rules": [
+                    {
+                      "blocks": "#cavernous:mineable/bone_club",
+                      "speed": 6,
+                      "correct_for_drops": true
+                    }
+                  ],
+                  "damage_per_block": 2,
+                  "can_destroy_blocks_in_creative": false
                 }
               }
             }
