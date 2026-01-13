@@ -1,5 +1,7 @@
 keepVanillaSpawning: true
 pools:
+# DRY CAVES
+    # ARID
   - rolls: 2
     conditions:
       - type: biome
@@ -12,6 +14,7 @@ pools:
     entries:
       - type: ARMADILLO
         chance: 0.25
+    # DESERT
   - rolls: 4
     conditions:
       - type: biome
@@ -24,22 +27,197 @@ pools:
     entries:
       - type: ARMADILLO
         chance: 0.25
-  - rolls: 1
+    # PAINTED
+  - rolls: 4
     conditions:
       - type: biome
-        biome: CAVERNOUS:CALDERA_CAVES
+        biome: CAVERNOUS:PAINTED_CAVES
+      - type: entity_limit
+        range: 100
+        limit: 18
+        filter:
+          - PIG
+          - COW
+          - CHICKEN
+    entries:
+      - type: PIG
+        chance: 0.25
+      - type: COW
+        chance: 0.25
+      - type: CHICKEN
+        chance: 0.25
+  - rolls: 2
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:PAINTED_CAVES
+      - type: entity_limit
+        range: 100
+        limit: 4
+        filter:
+          - POLAR_BEAR
+    entries:
+      - type: POLAR_BEAR
+        chance: 0.3
+  - rolls: 4
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:PAINTED_CAVES
+      - type: entity_limit
+        range: 240
+        limit: 4
+        filter:
+          - WOLF
+    entries:
+      - type: WOLF
+        chance: 0.03
+        attributes:
+          - values:
+              Variant: CHESTNUT
+      - type: WOLF
+        chance: 0.5
+        attributes:
+          - values:
+              Variant: SPOTTED
+      - type: WOLF
+        chance: 0.5
+        attributes:
+          - values:
+              Variant: BLACK
+  - rolls: 2
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:PAINTED_CAVES
+      - type: entity_limit
+        range: 100
+        limit: 4
+        filter:
+          - POLAR_BEAR
+    entries:
+      - type: POLAR_BEAR
+        chance: 0.3
+  - rolls: 3
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:PAINTED_CAVES
+      - type: block
+        filter:
+          - WATER
+      - type: entity_limit
+        range: 100
+        limit: 10
+        filter:
+          - SQUID
+          - GLOW_SQUID
+    entries:
+      - type: SQUID
+        chance: 0.6
+# STONY CAVES
+    # ICY
+  - rolls: 2
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:ICY_CAVES
+      - type: block
+        filter:
+          - GRASS_BLOCK
+          - SNOW_BLOCK
+          - ICE
+          - PACKED_ICE
+          - BLUE_ICE
+          - CALCITE
+      - type: entity_limit
+        range: 100
+        limit: 16
+        filter:
+          - GOAT
+          - FOX
+          - CHICKEN
+    entries:
+      - type: FOX
+        chance: 0.06
+        attributes:
+          - values:
+              Variant: SNOW
+      - type: GOAT
+        chance: 0.1
+      - type: CHICKEN
+        chance: 0.3
+  - rolls: 2
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:ICY_CAVES
+      - type: block
+        filter:
+          - SNOW_BLOCK
+      - type: entity_limit
+        range: 100
+        limit: 8
+        filter:
+          - SNOW_GOLEM
+    entries:
+      - type: SNOW_GOLEM
+        chance: 0.1
+    # MARBLE
+  - rolls: 2
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:MARBLE_CAVES
+      - type: block
+        filter:
+          - CALCITE
+          - DIORITE
+        offset:
+          x: 0
+          y: -2
+          z: 0
+      - type: block
+        filter:
+          - WATER
+        offset:
+          x: 0
+          y: 0
+          z: 0
       - type: entity_limit
         range: 100
         limit: 6
         filter:
-          - BLAZE
+          - SKELETON_HORSE
+    entries:
+      - type: SKELETON_HORSE
+        chance: 0.4
+        attributes:
+          - values:
+              Tame: true
+  - rolls: 3
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:MARBLE_CAVES
       - type: block
-        invert: true
         filter:
           - WATER
+      - type: entity_limit
+        range: 100
+        limit: 10
+        filter:
+          - SQUID
     entries:
-      - type: BLAZE
+      - type: SQUID
+        chance: 0.6
+    # SPLATTERED
+  - rolls: 2
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:SPLATTERED_CAVES
+      - type: entity_limit
+        range: 100
+        limit: 8
+        filter:
+          - POLAR_BEAR
+    entries:
+      - type: POLAR_BEAR
         chance: 0.3
+# LUSH CAVES
+    # FUNGAL
   - rolls: 2
     conditions:
       - type: biome
@@ -57,6 +235,7 @@ pools:
           - MOOSHROOM
           - FOX
           - CHICKEN
+          - SHEEP
     entries:
       - type: MOOSHROOM
         chance: 0.7
@@ -70,6 +249,21 @@ pools:
               Variant: RED
       - type: CHICKEN
         chance: 0.3
+      - type: SHEEP
+        chance: 0.01
+  - rolls: 1
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:FUNGAL_CAVES
+      - type: entity_limit
+        range: 100
+        limit: 2
+        filter:
+          - POLAR_BEAR
+    entries:
+      - type: POLAR_BEAR
+        chance: 0.3
+    # GLOWSHROOM
   - rolls: 2
     conditions:
       - type: biome
@@ -110,76 +304,44 @@ pools:
         attributes:
           - values:
               Variant: SALT_AND_PEPPER
-  - rolls: 2
-    conditions:
-      - type: biome
-        biome: CAVERNOUS:ICY_CAVES
-      - type: block
-        filter:
-          - GRASS_BLOCK
-          - SNOW_BLOCK
-          - ICE
-          - PACKED_ICE
-          - BLUE_ICE
-          - CALCITE
-      - type: entity_limit
-        range: 100
-        limit: 16
-        filter:
-          - POLAR_BEAR
-          - GOAT
-          - FOX
-    entries:
-      - type: POLAR_BEAR
-        chance: 0.09
-      - type: FOX
-        chance: 0.06
-        attributes:
-          - values:
-              Variant: SNOW
-      - type: GOAT
-        chance: 0.1
   - rolls: 1
     conditions:
       - type: biome
-        biome: CAVERNOUS:MARBLE_CAVES
+        biome: CAVERNOUS:GLOWSHROOM_CAVES
       - type: block
-        invert: true
         filter:
-          - CALCITE
-          - DIORITE
-        offset1:
-          x: -4
-          y: 1
-          z: -4
-        offset2:
-          x: 4
-          y: 6
-          z: 4
+          - GRASS_BLOCK
+          - MUD
+          - MYCELIUM
       - type: entity_limit
         range: 100
-        limit: 2
+        limit: 3
         filter:
-          - GHAST
+          - SHEEP
     entries:
-      - type: GHAST
-        chance: 0.06
-  - rolls: 5
+      - type: SHEEP
+        chance: 0.2
+        attributes:
+          - values:
+              Color: BROWN
+  - rolls: 2
     conditions:
       - type: biome
-        biome: CAVERNOUS:MARBLE_CAVES
+        biome: CAVERNOUS:GLOWSHROOM_CAVES
       - type: block
         filter:
-          - CALCITE
-          - DIORITE
+          - GRASS_BLOCK
+          - MUD
+          - MYCELIUM
       - type: entity_limit
-        range: 120
-        limit: 6
+        range: 100
+        limit: 4
         filter:
-          - SKELETON_HORSE
+          - POLAR_BEAR
     entries:
-      - type: SKELETON_HORSE
-        chance: 0.2
+      - type: POLAR_BEAR
+        chance: 0.7
+    # MARSHY
   - rolls: 3
     conditions:
       - type: biome
@@ -189,7 +351,6 @@ pools:
           - GRASS_BLOCK
           - MUD
           - MUDDY_MANGROVE_ROOTS
-          - WATER
       - type: entity_limit
         range: 100
         limit: 6
@@ -201,6 +362,51 @@ pools:
         attributes:
           - values:
               Variant: TEMPERATE
+  - rolls: 1
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:MARSHY_CAVES
+      - type: block
+        filter:
+          - GRASS_BLOCK
+          - MUD
+          - MUDDY_MANGROVE_ROOTS
+      - type: entity_limit
+        range: 100
+        limit: 4
+        filter:
+          - ZOMBIE_HORSE
+    entries:
+      - type: ZOMBIE_HORSE
+        chance: 0.7
+  - rolls: 3
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:MARSHY_CAVES
+      - type: entity_limit
+        range: 100
+        limit: 12
+        filter:
+          - DROWNED
+    entries:
+      - type: DROWNED
+        chance: 0.7
+  - rolls: 1
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:MARSHY_CAVES
+      - type: entity_limit
+        range: 100
+        limit: 6
+        filter:
+          - ZOMBIE_NAUTILUS
+      - type: block
+        filter:
+          - WATER
+    entries:
+      - type: ZOMBIE_NAUTILUS
+        chance: 0.7
+    # TROPICAL
   - rolls: 4
     conditions:
       - type: biome
@@ -280,6 +486,7 @@ pools:
           - ACACIA_LEAVES
           - AZALEA_LEAVES
           - MOSS_BLOCK
+          - BAMBOO
       - type: entity_limit
         range: 100
         limit: 3
@@ -288,6 +495,25 @@ pools:
     entries:
       - type: PARROT
         chance: 0.2
+  - rolls: 2
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:TROPICAL_CAVES
+      - type: block
+        filter:
+          - GRASS_BLOCK
+          - MOSS_BLOCK
+          - MUD
+          - COARSE_DIRT
+      - type: entity_limit
+        range: 240
+        limit: 8
+        filter:
+          - SHEEP
+    entries:
+      - type: SHEEP
+        chance: 0.4
+    # LUSH DRIPSTONE
   - rolls: 7
     conditions:
       - type: biome
@@ -300,6 +526,38 @@ pools:
     entries:
       - type: PARROT
         chance: 0.65
+# THERMAL CAVES
+    # CALDERA
+  - rolls: 1
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:CALDERA_CAVES
+      - type: entity_limit
+        range: 100
+        limit: 12
+        filter:
+          - DROWNED
+      - type: block
+        filter:
+          - WATER
+    entries:
+      - type: DROWNED
+        chance: 0.7
+  - rolls: 1
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:CALDERA_CAVES
+      - type: entity_limit
+        range: 100
+        limit: 6
+        filter:
+          - NAUTILUS
+      - type: block
+        filter:
+          - WATER
+    entries:
+      - type: NAUTILUS
+        chance: 0.7
   - rolls: 1
     conditions:
       - type: biome
@@ -307,9 +565,6 @@ pools:
       - type: block
         filter:
           - LAVA
-          - MAGMA_BLOCK
-          - BLACKSTONE
-          - SMOOTH_BASALT
       - type: entity_limit
         range: 100
         limit: 2
@@ -318,24 +573,21 @@ pools:
     entries:
       - type: STRIDER
         chance: 0.6
-  - rolls: 1
+# UNIVERSAL
+  - rolls: 2
     conditions:
       - type: biome
-        biome: CAVERNOUS:VOLCANIC_CAVES
+        biome: CAVERNOUS:MARBLE_CAVES
+        invert: true
       - type: block
         filter:
-          - MAGMA_BLOCK
-          - BLACKSTONE
-          - BASALT
-          - SMOOTH_BASALT
+          - WATER
       - type: entity_limit
         range: 100
-        limit: 2
+        limit: 10
         filter:
-          - MAGMA_CUBE
+          - GLOW_SQUID
+          - SQUID
     entries:
-      - type: MAGMA_CUBE
-        chance: 0.4
-        attributes:
-          - values:
-              Size: 0..2
+      - type: GLOW_SQUID
+        chance: 0.6
