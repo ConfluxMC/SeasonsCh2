@@ -1,2 +1,2 @@
 schedule function cavernous:hollow_earth/marble_skeleton/confirm_pacify 3s
-execute as @e[type=skeleton,tag=marble_skeleton_pacified] at @s unless entity @p[predicate=cavernous:marble_skeleton_disguised,distance=..16] run function cavernous:hollow_earth/marble_skeleton/end_pacify
+execute as @e[type=skeleton,tag=marble_skeleton_pacified] at @s unless entity @p[predicate=cavernous:marble_skeleton/disguised,distance=..16] run function cavernous:hollow_earth/marble_skeleton/end_pacify

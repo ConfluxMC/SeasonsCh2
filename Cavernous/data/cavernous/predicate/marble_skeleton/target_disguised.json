@@ -13,10 +13,20 @@
       },
       "equipment": {
         "offhand": {
-          "items": "minecraft:quartz"
+          "items": "minecraft:quartz",
+          "components": {
+            "minecraft:custom_data": {
+              "devotion_quartz": 1
+            }
+          }
         },
         "mainhand": {
-          "items": "minecraft:bone"
+          "items": "minecraft:bone",
+          "components": {
+            "minecraft:custom_data": {
+              "bone_club": 1
+            }
+          }
         },
         "chest": {
           "items": "minecraft:leather_chestplate",

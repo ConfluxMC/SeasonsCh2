@@ -1,0 +1,24 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "minecraft:player",
+    "type_specific": {
+      "type": "minecraft:player",
+      "gamemode": [
+        "adventure",
+        "survival"
+      ]
+    },
+    "slots": {
+      "weapon.*": {
+        "items": "minecraft:quartz",
+        "components": {
+          "minecraft:custom_data": {
+            "devotion_quartz": 1
+          }
+        }
+      }
+    }
+  }
+}
