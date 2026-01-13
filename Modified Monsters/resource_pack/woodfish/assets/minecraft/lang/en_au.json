@@ -1,8 +1,8 @@
 {
-  "entity.minecraft.silverfish": "Woodfish",
-  "item.minecraft.silverfish_spawn_egg": "Woodfish Spawn Egg",
+  "entity.minecraft.silverfish": "Sprigg",
+  "item.minecraft.silverfish_spawn_egg": "Sprigg Spawn Egg",
   "subtitles.entity.parrot.imitate.silverfish": "Parrot snaps",
-  "subtitles.entity.silverfish.ambient": "Woodfish rustles",
-  "subtitles.entity.silverfish.death": "Woodfish dies",
-  "subtitles.entity.silverfish.hurt": "Woodfish hurts"
+  "subtitles.entity.silverfish.ambient": "Sprigg rustles",
+  "subtitles.entity.silverfish.death": "Sprigg dies",
+  "subtitles.entity.silverfish.hurt": "Sprigg hurts"
 }
