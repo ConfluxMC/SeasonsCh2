@@ -42,26 +42,7 @@
         "maxCount": 7
       }
     ],
-    "underground_water_creature": [
-      {
-        "type": "minecraft:squid",
-        "weight": 3,
-        "minCount": 2,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:glow_squid",
-        "weight": 1,
-        "minCount": 1,
-        "maxCount": 1
-      },
-      {
-        "type": "minecraft:nautilus",
-        "weight": 1,
-        "minCount": 1,
-        "maxCount": 1
-      }
-    ],
+    "underground_water_creature": [],
     "water_ambient": [
       {
         "type": "minecraft:cod",
@@ -76,14 +57,6 @@
     "minecraft:skeleton": {
       "energy_budget": 0.7,
       "charge": 0.1
-    },
-    "minecraft:squid": {
-      "energy_budget": 0.1,
-      "charge": 0.1
-    },
-    "minecraft:nautilus": {
-      "energy_budget": 0.4,
-      "charge": 0.2
     }
   },
   "carvers": [

@@ -90,14 +90,7 @@
         "maxCount": 1
       }
     ],
-    "underground_water_creature": [
-      {
-        "type": "minecraft:glow_squid",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 6
-      }
-    ],
+    "underground_water_creature": [],
     "water_ambient": [
       {
         "type": "minecraft:pufferfish",
@@ -112,14 +105,7 @@
         "weight": 25
       }
     ],
-    "water_creature": [
-      {
-        "type": "minecraft:nautilus",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 5
-      }
-    ]
+    "water_creature": []
   },
   "spawn_costs": {},
   "carvers": [

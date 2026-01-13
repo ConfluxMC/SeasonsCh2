@@ -1,0 +1,56 @@
+{
+  "type": "minecraft:command",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:quartz",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "item_name": "Devotion Crystal",
+                "rarity": "uncommon",
+                "attribute_modifiers": [
+                  {
+                    "type": "attack_speed",
+                    "amount": 0.8,
+                    "slot": "offhand",
+                    "operation": "add_multiplied_base",
+                    "id": "cavernous:devotion_quartz_attack_speed"
+                  },
+                  {
+                    "type": "follow_range",
+                    "amount": 1,
+                    "slot": "offhand",
+                    "operation": "add_multiplied_total",
+                    "id": "cavernous:devotion_quartz_follow_range"
+                  },
+                  {
+                    "type": "attack_damage",
+                    "amount": -0.8,
+                    "slot": "offhand",
+                    "operation": "add_multiplied_total",
+                    "id": "cavernous:devotion_quartz_weakness"
+                  },
+                  {
+                    "type": "max_health",
+                    "id": "cavernous:devotion_quartz_health",
+                    "amount": -0.5,
+                    "operation": "add_multiplied_base",
+                    "slot": "offhand"
+                  }
+                ],
+                "custom_data": {
+                  "devotion_quartz": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

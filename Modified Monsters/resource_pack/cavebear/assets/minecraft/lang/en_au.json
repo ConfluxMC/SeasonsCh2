@@ -1,0 +1,9 @@
+{
+  "entity.minecraft.polar_bear": "Cave Bear",
+  "item.minecraft.polar_bear_spawn_egg": "Cave Bear Spawn Egg",
+  "subtitles.entity.polar_bear.ambient": "Cave Bear groans",
+  "subtitles.entity.polar_bear.ambient_baby": "Baby Cave Bear hums",
+  "subtitles.entity.polar_bear.death": "Cave Bear dies",
+  "subtitles.entity.polar_bear.hurt": "Cave Bear hurts",
+  "subtitles.entity.polar_bear.warning": "Cave Bear roars"
+}

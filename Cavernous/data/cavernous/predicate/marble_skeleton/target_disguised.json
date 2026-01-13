@@ -1,0 +1,66 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "targeted_entity": {
+      "type": "minecraft:player",
+      "type_specific": {
+        "type": "minecraft:player",
+        "gamemode": [
+          "adventure",
+          "survival"
+        ]
+      },
+      "equipment": {
+        "offhand": {
+          "items": "minecraft:quartz",
+          "components": {
+            "minecraft:custom_data": {
+              "devotion_quartz": 1
+            }
+          }
+        },
+        "mainhand": {
+          "items": "minecraft:bone",
+          "components": {
+            "minecraft:custom_data": {
+              "bone_club": 1
+            }
+          }
+        },
+        "chest": {
+          "items": "minecraft:leather_chestplate",
+          "components": {
+            "minecraft:trim": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:flow"
+            },
+            "minecraft:dyed_color": 5197647
+          }
+        },
+        "legs": {
+          "items": "minecraft:chainmail_leggings",
+          "components": {
+            "minecraft:trim": {
+              "material": "minecraft:netherite",
+              "pattern": "minecraft:silence"
+            }
+          }
+        },
+        "feet": {
+          "items": "minecraft:leather_boots",
+          "components": {
+            "minecraft:trim": {
+              "material": "minecraft:quartz",
+              "pattern": "minecraft:flow"
+            },
+            "minecraft:dyed_color": 5197647
+          }
+        },
+        "head": {
+          "items": "minecraft:skeleton_skull"
+        }
+      }
+    }
+  }
+}

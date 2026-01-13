@@ -1,0 +1,74 @@
+{
+  "type": "minecraft:command",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bone",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "item_name": "Bone Club",
+                "rarity": "uncommon",
+                "weapon": {
+                  "disable_blocking_for_seconds": 1
+                },
+                "repairable": {
+                  "items": "quartz"
+                },
+                "max_stack_size": 1,
+                "max_damage": 250,
+                "damage": 0,
+                "enchantable": {
+                  "value": 22
+                },
+                "enchantments": {},
+                "attribute_modifiers": [
+                  {
+                    "type": "attack_damage",
+                    "amount": 9,
+                    "slot": "mainhand",
+                    "id": "cavernous:bone_club_damage",
+                    "operation": "add_value"
+                  },
+                  {
+                    "type": "knockback_resistance",
+                    "amount": 0.1,
+                    "slot": "mainhand",
+                    "operation": "add_multiplied_total",
+                    "id": "cavernous:bone_club_sturdy"
+                  },
+                  {
+                    "type": "attack_speed",
+                    "amount": -0.8,
+                    "slot": "mainhand",
+                    "id": "cavernous:bone_club_attack_speed",
+                    "operation": "add_multiplied_base"
+                  }
+                ],
+                "minimum_attack_charge": 1,
+                "custom_data": {
+                  "bone_club": 1
+                },
+                "minecraft:tool": {
+                  "rules": [
+                    {
+                      "blocks": "#cavernous:mineable/bone_club",
+                      "speed": 6,
+                      "correct_for_drops": true
+                    }
+                  ],
+                  "damage_per_block": 2,
+                  "can_destroy_blocks_in_creative": false
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
