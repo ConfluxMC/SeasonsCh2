@@ -1,0 +1,23 @@
+{
+  "parent": "conflux_seasons:visible/vanilla/trial_chamber/under_lock_and_key",
+  "criteria": {
+    "effect": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "minecraft:conduit_power": {
+            "ambient": true
+          }
+        }
+      }
+    }
+  },
+  "display": {
+    "description": "Activate a Conduit",
+    "icon": {
+      "id": "minecraft:heart_of_the_sea"
+    },
+    "frame": "goal",
+    "title": "Cave-Diver"
+  }
+}

@@ -1,7 +1,19 @@
 {
-    "pack": {
-        "min_format": 82,
-        "max_format": 94,
-        "description": "Conflux Seasons Chapter 2: Hollow Earth datapack patcher"
-    }
+  "pack": {
+    "min_format": 82,
+    "max_format": 94,
+    "description": "Conflux Seasons Chapter 2: Hollow Earth datapack patcher"
+  },
+  "filter": {
+    "block": [
+      {
+        "namespace": "minecraft",
+        "path": "^advancements?\\/(?!recipes?\\/)[^\\/]+\\/?"
+      },
+      {
+        "namespace": "chakram",
+        "path": "advancement/visible"
+      }
+    ]
+  }
 }

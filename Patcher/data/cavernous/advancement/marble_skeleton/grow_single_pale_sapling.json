@@ -1,0 +1,15 @@
+{
+  "parent": "cavernous:marble_skeleton/root",
+  "criteria": {
+    "single_pale_sapling": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": "Grow a pale tree with a single sapling",
+    "icon": {
+      "id": "minecraft:pale_oak_sapling"
+    },
+    "title": "This one has bark?"
+  }
+}

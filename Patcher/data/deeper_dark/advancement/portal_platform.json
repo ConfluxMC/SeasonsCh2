@@ -1,0 +1,26 @@
+{
+  "parent": "deeper_dark:root",
+  "criteria": {
+    "platform": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": [
+              "deeper_dark:portal_platform",
+              "deeper_dark:portal_platform_cavern",
+              "deeper_dark:portal_platform_oasis"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "display": {
+    "description": "Find a Portal Platform Structure",
+    "icon": {
+      "id": "minecraft:reinforced_deepslate"
+    },
+    "title": "A Portal Home"
+  }
+}

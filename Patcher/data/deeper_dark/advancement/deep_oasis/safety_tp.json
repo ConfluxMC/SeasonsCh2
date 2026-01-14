@@ -1,0 +1,15 @@
+{
+  "parent": "deeper_dark:deep_oasis/obtain_sniffer_egg",
+  "criteria": {
+    "safety_tp": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": "Teleport to a Portal Platform in the Deep Oasis by eating torchflower seeds.",
+    "icon": {
+      "id": "minecraft:torchflower_seeds"
+    },
+    "title": "Beam me up, Sniffy!"
+  }
+}

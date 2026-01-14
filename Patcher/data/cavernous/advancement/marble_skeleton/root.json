@@ -1,0 +1,35 @@
+{
+  "parent": "cavernous:breaking_ground",
+  "criteria": {
+    "marble_skeleton": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "type_specific": {
+            "type": "minecraft:player",
+            "looking_at": {
+              "type": "minecraft:skeleton",
+              "slots": {
+                "weapon.offhand": {
+                  "items": "minecraft:quartz",
+                  "components": {
+                    "minecraft:custom_data": {
+                      "devotion_quartz": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "display": {
+    "description": "Find a Marble Skeleton",
+    "icon": {
+      "id": "minecraft:quartz_pillar"
+    },
+    "title": "An Unusual Skeleton"
+  }
+}

@@ -100,6 +100,18 @@
           "type": "minecraft:item",
           "functions": [
             {
+              "add": false,
+              "count": 1,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "minecraft:totem_of_undying",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
               "function": "minecraft:set_potion",
               "id": "minecraft:slowness"
             },
