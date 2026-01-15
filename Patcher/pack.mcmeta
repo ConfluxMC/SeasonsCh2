@@ -1,7 +1,27 @@
 {
-    "pack": {
-        "min_format": 82,
-        "max_format": 94,
-        "description": "Conflux Seasons Chapter 2: Hollow Earth datapack patcher"
-    }
+  "pack": {
+    "min_format": 82,
+    "max_format": 94,
+    "description": "Conflux Seasons Chapter 2: Hollow Earth datapack patcher"
+  },
+  "filter": {
+    "block": [
+      {
+        "namespace": "chakram",
+        "path": "^advancement\\/(visible\\/((?!chakram\\.json$|target\\.json$).*)|loot\\.json$)"
+      },
+      {
+        "namespace": "chakram",
+        "path": "function/loot"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "^advancement\/(nether|end|story\/(root|enter_the_nether|follow_ender_eye|enter_the_end)\\.json)"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "^advancement\\/adventure\\/(play_jukebox_in_meadows|spyglass_at_dragon|throw_trident|very_very_frightening|lightning_rod_with_villager_no_fire|trade_at_world_height)\\.json"
+      }
+    ]
+  }
 }

@@ -1,0 +1,49 @@
+{
+  "parent": "minecraft:adventure/root",
+  "criteria": {
+    "fall_from_world_height": {
+      "conditions": {
+        "distance": {
+          "y": {
+            "min": 369
+          }
+        },
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "position": {
+                  "y": {
+                    "max": -59
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "start_position": {
+          "position": {
+            "y": {
+              "min": 309
+            }
+          }
+        }
+      },
+      "trigger": "minecraft:fall_from_height"
+    }
+  },
+  "display": {
+    "description": "Free fall from the top of the world (below the bedrock ceiling) to the bottom of the world and survive",
+    "icon": {
+      "id": "minecraft:water_bucket"
+    },
+    "title": "Caves & Cliffs"
+  },
+  "requirements": [
+    [
+      "fall_from_world_height"
+    ]
+  ]
+}

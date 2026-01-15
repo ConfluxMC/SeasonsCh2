@@ -1,0 +1,20 @@
+{
+  "criteria": {
+    "get": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "type_specific": {
+            "type": "minecraft:player",
+            "advancements": {
+              "cavernous:breaking_ground": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "conflux_seasons:advancement_reward/cavernous/breaking_ground"
+  }
+}

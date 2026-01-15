@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " N",
+    "P "
+  ],
+  "key": {
+    "N": [
+      "minecraft:copper_nugget",
+      "minecraft:gold_nugget",
+      "minecraft:iron_nugget"
+    ],
+    "P": [
+      "minecraft:paper"
+    ]
+  },
+  "result": {
+    "id": "minecraft:name_tag"
+  }
+}

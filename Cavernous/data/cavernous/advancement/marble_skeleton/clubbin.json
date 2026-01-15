@@ -1,0 +1,43 @@
+{
+  "parent": "cavernous:marble_skeleton/root",
+  "criteria": {
+    "marble_skeleton": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "mainhand": {
+              "items": "bone",
+              "components": {
+                "minecraft:custom_data": {
+                  "bone_club": 1
+                }
+              }
+            }
+          }
+        },
+        "entity": {
+          "type": "minecraft:skeleton",
+          "equipment": {
+            "offhand": {
+              "items": "minecraft:quartz",
+              "components": {
+                "minecraft:custom_data": {
+                  "devotion_quartz": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "display": {
+    "description": "Kill a Marble Skeleton with its own weapon",
+    "icon": {
+      "id": "minecraft:bone"
+    },
+    "title": "Clubbin'!",
+    "frame": "task"
+  }
+}

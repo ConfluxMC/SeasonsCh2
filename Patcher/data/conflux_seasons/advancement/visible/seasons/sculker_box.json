@@ -1,0 +1,18 @@
+{
+	"parent": "conflux_seasons:visible/seasons/root",
+	"criteria": {
+		"craft": {
+			"trigger": "minecraft:recipe_crafted",
+			"conditions": {
+				"recipe_id": "minecraft:shulker_box"
+			}
+		}
+	},
+	"display": {
+		"description": "Craft Sculker Box",
+		"icon": {
+			"id": "minecraft:shulker_box"
+		},
+		"title": "Storage Solutions"
+	}
+}

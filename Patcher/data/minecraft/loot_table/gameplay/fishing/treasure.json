@@ -6,14 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:name_tag"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:saddle"
-        },
-        {
-          "type": "minecraft:item",
+          "weight": 10,
           "functions": [
             {
               "add": false,
@@ -34,6 +27,7 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 10,
           "functions": [
             {
               "add": false,
@@ -54,6 +48,7 @@
         },
         {
           "type": "minecraft:item",
+          "weight": 10,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -65,12 +60,8 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:nautilus_shell"
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:potion",
-          "weight": 5,
+          "weight": 7,
           "functions": [
             {
               "function": "minecraft:set_potion",
@@ -81,7 +72,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:potion",
-          "weight": 2,
+          "weight": 3,
           "functions": [
             {
               "function": "minecraft:set_potion",
@@ -90,24 +81,48 @@
           ]
         },
         {
-          "type": "minecraft:loot_table",
-          "value": "chakram:random_chakram_loot",
-          "weight": 10
+          "type": "minecraft:item",
+          "name": "minecraft:heart_of_the_sea",
+          "weight": 4
         },
         {
-          "type": "minecraft:loot_table",
-          "value": "cavernous:secrets/items/ancient_tablet",
-          "weight": 2,
-          "conditions": [
+          "type": "minecraft:item",
+          "name": "minecraft:nautilus_shell",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:alternatives",
+          "children": [
             {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": [
-                  "cavernous:the_undergrowth",
-                  "cavernous:myst/dreadmire",
-                  "cavernous:myst/dreadmire_"
-                ]
-              }
+              "type": "minecraft:loot_table",
+              "value": "cavernous:secrets/items/ancient_tablet",
+              "weight": 7,
+              "conditions": [
+                {
+                  "condition": "minecraft:any_of",
+                  "terms": [
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "biomes": [
+                          "cavernous:the_undergrowth"
+                        ]
+                      }
+                    },
+                    {
+                      "condition": "minecraft:location_check",
+                      "predicate": {
+                        "dimension": "cavernous:the_myst"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "chakram:random_chakram_loot",
+              "weight": 7
             }
           ]
         }

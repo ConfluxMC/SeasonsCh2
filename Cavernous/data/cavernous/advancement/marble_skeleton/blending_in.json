@@ -1,0 +1,31 @@
+{
+  "parent": "cavernous:marble_skeleton/clubbin",
+  "criteria": {
+    "marble_skeleton": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "cavernous:marble_skeleton/disguised"
+          }
+        ]
+      }
+    }
+  },
+  "display": {
+    "description": "Wear a disguise to blend in among the Marble Skeletons",
+    "icon": {
+      "id": "minecraft:leather_chestplate",
+      "components": {
+        "minecraft:trim": {
+          "material": "minecraft:quartz",
+          "pattern": "minecraft:flow"
+        },
+        "minecraft:dyed_color": 5197647
+      }
+    },
+    "title": "Blending In",
+    "frame": "goal"
+  }
+}

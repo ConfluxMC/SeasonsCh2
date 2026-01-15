@@ -11,3 +11,5 @@ execute at @s[predicate=cavernous:marble_skeleton/creaking_make_sound] on target
 effect give @s[distance=4..10] minecraft:slowness 1 4 true
 effect give @s[distance=..4] minecraft:strength 1 2 true
 effect clear @s[distance=..4] minecraft:slowness
+
+execute as @s[distance=..2,predicate=cavernous:marble_skeleton/target_disguised] on target run advancement grant @s only cavernous:marble_skeleton/devoted

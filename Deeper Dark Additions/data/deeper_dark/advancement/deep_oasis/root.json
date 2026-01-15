@@ -1,0 +1,22 @@
+{
+	"display": {
+		"icon": {
+			"id": "minecraft:moss_block"
+		},
+		"title": "Hidden Sanctuary",
+		"description": "Find a Deep Oasis Biome"
+	},
+	"parent": "deeper_dark:underground_map",
+	"criteria": {
+		"oasis": {
+			"trigger": "minecraft:location",
+			"conditions": {
+				"player": {
+					"location": {
+						"biomes": "deeper_dark:deep_oasis"
+					}
+				}
+			}
+		}
+	}
+}

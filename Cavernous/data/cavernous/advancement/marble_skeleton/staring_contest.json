@@ -1,0 +1,69 @@
+{
+  "parent": "cavernous:marble_skeleton/blending_in",
+  "criteria": {
+    "creaking": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "cavernous:marble_skeleton/holding_devotion_quartz"
+          },
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "minecraft:player",
+                "looking_at": {
+                  "type": "minecraft:creaking",
+                  "distance": {
+                    "absolute": {
+                      "max": 12
+                    }
+                  },
+                  "targeted_entity": {
+                    "type": "minecraft:player",
+                    "equipment": {
+                      "offhand": {
+                        "items": "minecraft:quartz",
+                        "components": {
+                          "minecraft:custom_data": {
+                            "devotion_quartz": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "equipment": {
+                  "head": {
+                    "items": "#minecraft:gaze_disguise_equipment"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "display": {
+    "description": "Become locked in a staring contest with a creaking",
+    "icon": {
+      "id": "minecraft:quartz"
+    },
+    "title": "Staring Contest!",
+    "frame": "task",
+    "hidden": true
+  }
+}
