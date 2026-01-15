@@ -1,0 +1,16 @@
+{
+  "parent": "cavernous:marble_skeleton/mark_single_pale_sapling",
+  "criteria": {
+    "single_pale_sapling": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": "Grow a pale tree from a single sapling",
+    "icon": {
+      "id": "minecraft:pale_oak_log"
+    },
+    "title": "This one has bark?",
+    "hidden": true
+  }
+}

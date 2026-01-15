@@ -1,0 +1,16 @@
+{
+  "parent": "cavernous:marble_skeleton/staring_contest",
+  "criteria": {
+    "creaking": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": "Show your Devotion to the Pillars of Marble",
+    "icon": {
+      "id": "minecraft:resin_clump"
+    },
+    "title": "Devoted",
+    "frame": "challenge"
+  }
+}

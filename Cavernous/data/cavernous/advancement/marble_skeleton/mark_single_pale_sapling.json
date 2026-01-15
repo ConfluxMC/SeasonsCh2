@@ -1,0 +1,15 @@
+{
+  "parent": "cavernous:marble_skeleton/root",
+  "criteria": {
+    "single_pale_sapling": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": "Drop a quartz on a pale sapling to let it grow into a small pale oak tree",
+    "icon": {
+      "id": "minecraft:pale_oak_sapling"
+    },
+    "title": "Glad I don't need 4"
+  }
+}

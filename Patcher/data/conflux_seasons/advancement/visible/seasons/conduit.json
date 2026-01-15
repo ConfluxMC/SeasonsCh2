@@ -1,0 +1,23 @@
+{
+  "parent": "conflux_seasons:visible/seasons/root",
+  "criteria": {
+    "effect": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "effects": {
+          "minecraft:conduit_power": {
+            "ambient": true
+          }
+        }
+      }
+    }
+  },
+  "display": {
+    "description": "Activate a Conduit",
+    "icon": {
+      "id": "minecraft:heart_of_the_sea"
+    },
+    "frame": "goal",
+    "title": "Cave-Diver"
+  }
+}
