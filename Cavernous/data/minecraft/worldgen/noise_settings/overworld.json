@@ -1889,10 +1889,10 @@
 					"type": "minecraft:vertical_gradient",
 					"random_name": "minecraft:deepslate",
 					"true_at_and_below": {
-						"absolute": 56
+						"absolute": 24
 					},
 					"false_at_and_above": {
-						"absolute": 64
+						"absolute": 32
 					}
 				},
 				"then_run": {
