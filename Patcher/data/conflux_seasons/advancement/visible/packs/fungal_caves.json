@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:shroomlight"
+    },
+    "title": "Fungal Cave Pack",
+    "description": [
+      "Complete the following advancements:",
+      "\nCavernous",
+      "\n  Fungal Funk",
+      "\nVanilla",
+      "\n  Bee Our Guest",
+      "\n  Total Beelocation",
+      "\n  Sticky Situation"
+    ]
+  },
+  "parent": "conflux_seasons:visible/packs/root",
+  "criteria": {
+    "pack": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "type": "minecraft:player",
+          "type_specific": {
+            "type": "minecraft:player",
+            "advancements": {
+              "cavernous:fungal_funk": true,
+              "minecraft:husbandry/safely_harvest_honey": true,
+              "minecraft:husbandry/silk_touch_nest": true,
+              "minecraft:adventure/honey_block_slide": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

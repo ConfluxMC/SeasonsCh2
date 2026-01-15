@@ -17,6 +17,10 @@
       {
         "namespace": "minecraft",
         "path": "^advancement\/(nether|end|story\/(root|enter_the_nether|follow_ender_eye|enter_the_end)\\.json)"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "^advancement\\/adventure\\/(play_jukebox_in_meadows|spyglass_at_dragon|throw_trident|very_very_frightening|lightning_rod_with_villager_no_fire|trade_at_world_height)\\.json"
       }
     ]
   }
