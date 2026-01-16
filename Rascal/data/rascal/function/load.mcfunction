@@ -5,6 +5,8 @@ scoreboard objectives add rascal_bite_cooldown dummy
 scoreboard objectives add rascal_arm_rotation_left dummy
 scoreboard objectives add rascal_arm_rotation_right dummy
 
+scoreboard objectives add rascal.id dummy
+
 # The way rascals target for throwing the defense potion requires some blocks around 0 0 0 to be loaded.
 forceload add 1 1 -1 -1
 

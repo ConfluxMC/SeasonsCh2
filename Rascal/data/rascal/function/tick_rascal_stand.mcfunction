@@ -1,8 +1,9 @@
+scoreboard players operation $current rascal.id = @s rascal.id
 ### - Keep the armor stand at the ocelot
-teleport @s @n[type=ocelot,tag=rascal_ocelot,distance=..2]
+teleport @s @n[type=ocelot,tag=rascal_ocelot,predicate=rascal:rascal_id]
 
 ### - Kill ocelot-less armor stands
-execute unless entity @n[type=ocelot,tag=rascal_ocelot,distance=..2] run kill @s
+execute unless entity @n[type=ocelot,tag=rascal_ocelot,predicate=rascal:rascal_id] run return run kill @s
 
 # Found
 execute as @s[tag=!rascal_is_invis,tag=rascal_can_be_caught] if entity @n[distance=1..4,type=minecraft:player,predicate=rascal:eligible_finder] run function rascal:found
