@@ -1,0 +1,24 @@
+{
+  "condition": "minecraft:entity_scores",
+  "entity": "this",
+  "scores": {
+    "rascal.id": {
+      "min": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$current"
+        },
+        "score": "rascal.id"
+      },
+      "max": {
+        "type": "minecraft:score",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$current"
+        },
+        "score": "rascal.id"
+      }
+    }
+  }
+}

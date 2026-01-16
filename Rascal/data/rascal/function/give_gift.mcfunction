@@ -6,4 +6,4 @@ scoreboard players reset @s rascal_times_found
 playsound minecraft:entity.witch.ambient neutral @a ~ ~ ~ 1 2
 
 # Then despawn
-execute as @n[type=ocelot,tag=rascal_ocelot,distance=..1] run function rascal:despawn
+execute as @n[type=ocelot,tag=rascal_ocelot,predicate=rascal:rascal_id] run function rascal:despawn

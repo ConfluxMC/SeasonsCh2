@@ -1,8 +1,8 @@
 # chase the leasher
 rotate @s facing entity @n[tag=rascal_leasher] feet
 execute unless entity @e[tag=rascal_leasher,distance=..2] run tp ^ ^ ^0.35
-execute unless entity @e[tag=rascal_leasher,distance=..2] run tag @n[distance=..0.5,type=armor_stand,tag=rascal_stand,tag=!rascal_moving] add rascal_moving
-execute unless entity @e[tag=rascal_leasher,distance=..2] as @n[type=armor_stand,tag=rascal_stand,distance=..0.5] at @s run function rascal:move/moving
+execute unless entity @e[tag=rascal_leasher,distance=..2] run tag @n[type=armor_stand,tag=rascal_stand,distance=..0.5,tag=!rascal_moving,predicate=rascal:rascal_id] add rascal_moving
+execute unless entity @e[tag=rascal_leasher,distance=..2] as @n[type=armor_stand,tag=rascal_stand,distance=..0.5,predicate=rascal:rascal_id] at @s run function rascal:move/moving
 
 # countdown (or countup I guess) bite cooldown
 scoreboard players add @s rascal_bite_cooldown 1

@@ -1,5 +1,6 @@
+scoreboard players operation $current rascal.id = @s rascal.id
 ### - Kill stand-less ocelots
-execute unless entity @n[type=armor_stand,tag=rascal_stand,distance=..2] run kill @s
+execute unless entity @n[type=armor_stand,tag=rascal_stand,predicate=rascal:rascal_id] run kill @s
 
 
 # Keep the ocelot distrusting so it runs away
@@ -13,9 +14,9 @@ execute as @s[predicate=!rascal:is_sprinting,predicate=rascal:has_speed_modifier
 execute if block ^ ^0.4 ^0.5 #minecraft:rails if block ^ ^0.4 ^1 #rascal:rascal_safe_tp_destinations run tp ^ ^0.4 ^0.5
 
 # Remove Obstacles if hiding
-execute if entity @n[type=armor_stand,tag=rascal_stand,tag=!rascal_can_be_caught] run function rascal:clear_obstacles
+execute if entity @n[type=armor_stand,tag=rascal_stand,tag=!rascal_can_be_caught,predicate=rascal:rascal_id] run function rascal:clear_obstacles
 # Exit vehicles
-execute if entity @n[type=armor_stand,tag=rascal_stand,tag=!rascal_can_be_caught] on vehicle run damage @s 0.5 minecraft:mob_attack_no_aggro
+execute if entity @n[type=armor_stand,tag=rascal_stand,tag=!rascal_can_be_caught,predicate=rascal:rascal_id] on vehicle run damage @s 0.5 minecraft:mob_attack_no_aggro
 
 # Attack leashers
 execute on leasher run tag @s add rascal_leasher
@@ -32,7 +33,7 @@ execute as @s[predicate=rascal:affected_by_defense_potion] run function rascal:c
 
 
 # Not Moving
-execute as @s[predicate=rascal:not_moving] run return run tag @n[distance=..0.5,type=armor_stand,tag=rascal_stand,tag=rascal_moving] remove rascal_moving
+execute as @s[predicate=rascal:not_moving] run return run tag @n[type=armor_stand,tag=rascal_stand,tag=rascal_moving,predicate=rascal:rascal_id] remove rascal_moving
 
 # Moving
-tag @n[distance=..0.5,type=armor_stand,tag=rascal_stand,tag=!rascal_moving] add rascal_moving
+tag @n[type=armor_stand,tag=rascal_stand,tag=!rascal_moving,predicate=rascal:rascal_id] add rascal_moving
