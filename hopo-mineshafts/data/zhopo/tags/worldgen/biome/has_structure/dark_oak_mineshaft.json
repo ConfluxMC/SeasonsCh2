@@ -22,7 +22,7 @@
         {"id": "regions_unexplored:towering_cliffs", "required": false},
         {"id": "clifftree:cold_caves", "required": false},
         {"id": "clifftree:frozen_caves", "required": false},
-        {"id": "cavernous:marble_caves", "required": false},
+        {"id": "cavernous:painted_caves", "required": false},
         {"id": "cavernous:fungal_caves", "required": false},
         {"id": "cavernous:caldera_caves", "required": false}
     ]

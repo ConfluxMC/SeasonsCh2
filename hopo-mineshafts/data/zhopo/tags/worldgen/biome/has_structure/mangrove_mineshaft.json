@@ -10,6 +10,6 @@
         {"id": "regions_unexplored:willow_forest", "required": false},
         {"id": "clifftree:caves", "required": false},
         {"id": "cavernous:marshy_caves", "required": false},
-        {"id": "cavernous:fungal_caves", "required": false}
+        {"id": "cavernous:splattered_caves", "required": false}
    ]
 }

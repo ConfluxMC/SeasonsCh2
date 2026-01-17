@@ -31,11 +31,11 @@
 			"type": "minecraft:height_range",
 			"height": {
 				"type": "minecraft:biased_to_bottom",
-				"min_inclusive": {
-					"above_bottom": 4
-				},
 				"max_inclusive": {
-					"above_bottom": 64
+					"below_top": 4
+				},
+				"min_inclusive": {
+					"below_top": 64
 				}
 			}
 		},
