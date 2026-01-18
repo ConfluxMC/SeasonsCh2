@@ -8,7 +8,7 @@
 				"absolute": 10
 			},
 			"max_inclusive": {
-				"absolute": 67
+				"below_top": 10
 			}
 		},
 		"yScale": {
