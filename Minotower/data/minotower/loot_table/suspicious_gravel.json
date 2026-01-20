@@ -1,0 +1,190 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "name": "minecraft:decorated_pot_sherds",
+          "expand": true,
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_nugget",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_ingot",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:raw_gold_block",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:sculk",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:piglin_banner_pattern",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:creeper_banner_pattern",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:torchflower_seeds",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:tag",
+          "name": "minotower:minotower_trim_template",
+          "expand": true,
+          "weight": 12
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": {
+            "pools": [
+              {
+                "rolls": 1,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:suspicious_stew",
+                    "functions": [
+                      {
+                        "function": "minecraft:set_stew_effect",
+                        "effects": [
+                          {
+                            "type": "minecraft:saturation",
+                            "duration": 7
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:suspicious_stew",
+                    "functions": [
+                      {
+                        "function": "minecraft:set_stew_effect",
+                        "effects": [
+                          {
+                            "type": "minecraft:blindness",
+                            "duration": 11
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:suspicious_stew",
+                    "functions": [
+                      {
+                        "function": "minecraft:set_stew_effect",
+                        "effects": [
+                          {
+                            "type": "minecraft:nausea",
+                            "duration": 7
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:suspicious_stew",
+                    "functions": [
+                      {
+                        "function": "minecraft:set_stew_effect",
+                        "effects": [
+                          {
+                            "type": "minecraft:night_vision",
+                            "duration": 15
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:suspicious_stew",
+                    "functions": [
+                      {
+                        "function": "minecraft:set_stew_effect",
+                        "effects": [
+                          {
+                            "type": "minecraft:fire_resistance",
+                            "duration": 6
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:suspicious_stew",
+                    "functions": [
+                      {
+                        "function": "minecraft:set_stew_effect",
+                        "effects": [
+                          {
+                            "type": "minecraft:regeneration",
+                            "duration": 7
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:suspicious_stew",
+                    "functions": [
+                      {
+                        "function": "minecraft:set_stew_effect",
+                        "effects": [
+                          {
+                            "type": "minecraft:poison",
+                            "duration": 11
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:suspicious_stew",
+                    "functions": [
+                      {
+                        "function": "minecraft:set_stew_effect",
+                        "effects": [
+                          {
+                            "type": "minecraft:jump_boost",
+                            "duration": 10
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}

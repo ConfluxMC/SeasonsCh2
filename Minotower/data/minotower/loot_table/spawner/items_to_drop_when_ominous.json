@@ -1,0 +1,158 @@
+{
+	"type": "minecraft:chest",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": 1,
+							"function": "minecraft:set_count"
+						},
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:potion_contents": {
+									"custom_color": 16777088,
+									"custom_effects": [
+										{
+											"id": "minecraft:glowing",
+											"duration": 1800
+										}
+									]
+								}
+							}
+						}
+					],
+					"name": "minecraft:lingering_potion"
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": 1,
+							"function": "minecraft:set_count"
+						},
+						{
+							"function": "minecraft:set_potion",
+							"id": "minecraft:fire_resistance"
+						}
+					],
+					"name": "minecraft:lingering_potion"
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": 1,
+							"function": "minecraft:set_count"
+						},
+						{
+							"function": "minecraft:set_potion",
+							"id": "minecraft:wind_charged"
+						}
+					],
+					"name": "minecraft:lingering_potion"
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": 1,
+							"function": "minecraft:set_count"
+						},
+						{
+							"function": "minecraft:set_potion",
+							"id": "minecraft:strength"
+						}
+					],
+					"name": "minecraft:lingering_potion"
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": 1,
+							"function": "minecraft:set_count"
+						},
+						{
+							"function": "minecraft:set_potion",
+							"id": "minecraft:swiftness"
+						}
+					],
+					"name": "minecraft:lingering_potion"
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": 1,
+							"function": "minecraft:set_count"
+						},
+						{
+							"function": "minecraft:set_potion",
+							"id": "minecraft:slow_falling"
+						}
+					],
+					"name": "minecraft:lingering_potion"
+				}
+			],
+			"rolls": 1
+		},
+		{
+			"bonus_rolls": 0,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": 1,
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:arrow"
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 3,
+								"min": 1
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:fire_charge"
+				},
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"add": false,
+							"count": {
+								"type": "minecraft:uniform",
+								"max": 3,
+								"min": 1
+							},
+							"function": "minecraft:set_count"
+						}
+					],
+					"name": "minecraft:wind_charge"
+				}
+			]
+		}
+	],
+	"random_sequence": "minecraft:spawners/trial_chamber/items_to_drop_when_ominous"
+}

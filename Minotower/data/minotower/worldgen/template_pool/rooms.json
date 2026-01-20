@@ -1,0 +1,36 @@
+{
+  "name": "minotower:rooms",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 50,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:room_basic",
+        "processors": "minotower:base_processor",
+        "override_liquid_settings": "apply_waterlogging"
+      }
+    },
+    {
+      "weight": 35,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:room_kitchen",
+        "processors": "minotower:base_processor",
+        "override_liquid_settings": "apply_waterlogging"
+      }
+    },
+    {
+      "weight": 15,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:room_spawner",
+        "processors": "minotower:base_processor",
+        "override_liquid_settings": "apply_waterlogging"
+      }
+    }
+  ]
+}

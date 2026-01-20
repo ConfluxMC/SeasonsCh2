@@ -1,0 +1,16 @@
+{
+  "name": "minotower:top",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:top",
+        "processors": "minotower:base_processor",
+        "override_liquid_settings": "apply_waterlogging"
+      }
+    }
+  ]
+}

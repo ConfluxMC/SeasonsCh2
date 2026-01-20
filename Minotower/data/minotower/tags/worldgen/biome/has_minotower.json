@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "#cavernous:is_cave",
+      "required": false
+    },
+    {
+      "id": "minecraft:plains",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "minotower:minotower",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 653794329,
+    "spacing": 12,
+    "separation": 6
+  }
+}
