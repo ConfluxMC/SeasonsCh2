@@ -145,6 +145,7 @@
 		],
 		[
 			"cavernous:biomes/desert/ground_patch",
+			"cavernous:biomes/desert/desert/patch_cactus",
 			"minecraft:glow_lichen"
 		],
 		[

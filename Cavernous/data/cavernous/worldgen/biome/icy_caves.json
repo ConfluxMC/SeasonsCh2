@@ -132,7 +132,8 @@
       "cavernous:generic/ores/redstone",
       "cavernous:generic/ores/redstone_lower",
       "cavernous:biomes/ice/icy/ore_iron_extra",
-      "cavernous:biomes/ice/icy/ore_diamond_extra"
+      "cavernous:biomes/ice/icy/ore_diamond_extra",
+      "cavernous:biomes/ice/icy/ore_diamond_extra_inverse"
     ],
     [
       "cavernous:generic/ores/special/treasure",

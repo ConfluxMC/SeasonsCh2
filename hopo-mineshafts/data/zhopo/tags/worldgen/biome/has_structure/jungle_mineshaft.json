@@ -10,7 +10,6 @@
         {"id": "regions_unexplored:sparse_rainforest", "required": false},
         {"id": "regions_unexplored:tropics", "required": false},
         {"id": "clifftree:caves", "required": false},
-        {"id": "cavernous:tropical_caves", "required": false},
-        {"id": "cavernous:marshy_caves", "required": false}
+        {"id": "cavernous:tropical_caves", "required": false}
     ]
 }

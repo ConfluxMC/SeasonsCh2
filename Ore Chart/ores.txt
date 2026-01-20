@@ -1,12 +1,13 @@
 id,ore,color
-1,Coal,#1515159A
-2,Copper,#E3826C9A
-3,Iron,#FEDEC89A
-4,Gold,#F7C4319A
-5,Diamond,#77E7D19A
-6,Redstone,#CA07079A
-7,Lapis,#1855BD9A
-8,Emerald,#41F3849A
-9,Quartz,#EAE2DA9A
-10,Ancient Debris,#7E60599A
-11,Glowstone,#FBDA749A
+1,2x Coal,#151515BF
+2,Copper,#E3826CBF
+3,Iron,#FEDEC8BF
+4,Gold,#F7C431BF
+5,Diamond,#77E7D1BF
+6,Redstone,#CA0707BF
+7,Lapis,#1855BDBF
+8,Emerald,#41F384BF
+9,4x Quartz,#EAE2DABF
+10,Ancient Debris,#7E6059BF
+11,Glowstone,#FBDA74BF
+12,Amethyst,#8560C1BF

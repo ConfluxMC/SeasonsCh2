@@ -17,6 +17,7 @@
         {"id": "clifftree:caves", "required": false},
         {"id": "cavernous:caves", "required": false},
         {"id": "cavernous:icy_caves", "required": false},
+        {"id": "cavernous:caldera_caves", "required": false},
         {"id": "cavernous:volcanic_caves", "required": false}
     ]
 }

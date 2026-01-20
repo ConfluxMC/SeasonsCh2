@@ -2,6 +2,7 @@
     "replace": false,
     "values": [
         "minecraft:lush_caves",
-        {"id": "clifftree:caves", "required": false}
+        {"id": "clifftree:caves", "required": false},
+        {"id": "cavernous:lush_dripstone_caves", "required": false}
     ]
 }
