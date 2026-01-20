@@ -1,11 +1,27 @@
 {
   "values": [
     {
-      "id": "#cavernous:is_cave",
+      "id": "#cavernous:desert",
       "required": false
     },
     {
-      "id": "minecraft:plains",
+      "id": "#cavernous:ice",
+      "required": false
+    },
+    {
+      "id": "#cavernous:lush",
+      "required": false
+    },
+    {
+      "id": "#cavernous:stone",
+      "required": false
+    },
+    {
+      "id": "#cavernous:thermal",
+      "required": false
+    },
+    {
+      "id": "#cavernous:sculk",
       "required": false
     }
   ]
