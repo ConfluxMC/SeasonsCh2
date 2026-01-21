@@ -1,2 +1,4 @@
-execute as @e[predicate=miners_helmet:wearing_miners_helmet] run execute at @s unless entity @e[tag=miningHelmetStand,distance=..0.8] align xyz run summon armor_stand ~0.5 ~ ~0.5 {Invulnerable:1b,Invisible:1b,Marker:1b,NoBasePlate:1b,Tags:["miningHelmetStand"]}
-execute as @e[tag=miningHelmetStand] run function miners_helmet:light
+execute as @e[predicate=miners_helmet:wearing_miners_helmet] at @s run function miners_helmet:tick_wearer
+execute as @e[type=marker,tag=miningHelmetMarker] at @s run function miners_helmet:light
+
+execute as @a[advancements={miners_helmet:using_spyglass=true}] run advancement revoke @s only miners_helmet:using_spyglass
