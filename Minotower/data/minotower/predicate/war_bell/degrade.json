@@ -5,15 +5,17 @@
       "condition": "minecraft:entity_scores",
       "entity": "this",
       "scores": {
-        "minotower.war_bell_active_countdown": 0
+        "minotower.war_bell_active_countdown": {
+          "max": 0
+        }
       }
     },
     {
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "equipment": {
-          "offhand": {
+        "slots": {
+          "weapon.*": {
             "components": {
               "minecraft:custom_data": {
                 "minotauri_war_bell": true
@@ -29,8 +31,8 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "equipment": {
-            "offhand": {
+          "slots": {
+            "weapon.*": {
               "predicates": {
                 "minecraft:damage": {
                   "damage": 499

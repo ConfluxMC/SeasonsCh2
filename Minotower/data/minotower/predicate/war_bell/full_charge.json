@@ -1,0 +1,18 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "equipment": {
+      "offhand": {
+        "predicates": {
+          "minecraft:custom_data": {
+            "minotauri_war_bell": true
+          },
+          "minecraft:damage": {
+            "damage": 0
+          }
+        }
+      }
+    }
+  }
+}

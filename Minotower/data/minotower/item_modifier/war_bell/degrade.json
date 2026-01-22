@@ -8,8 +8,8 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "equipment": {
-            "offhand": {
+          "slots": {
+            "weapon.*": {
               "components": {
                 "minecraft:custom_data": {
                   "minotauri_war_bell": true
