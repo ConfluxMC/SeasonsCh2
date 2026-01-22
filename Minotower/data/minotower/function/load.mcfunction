@@ -1,0 +1,3 @@
+scoreboard objectives add minotower.war_bell dummy
+scoreboard objectives add minotower.war_bell_hit dummy
+scoreboard objectives add minotower.war_bell_active_countdown dummy
