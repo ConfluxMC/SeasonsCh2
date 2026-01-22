@@ -1,0 +1,1 @@
+execute as @e[type=#minotower:piglin,tag=!converted] run function minotower:convert_piglin_to_minotaur

@@ -9,7 +9,7 @@
         "projection": "rigid",
         "location": "minotower:room_basic",
         "processors": "minotower:base_processor",
-        "override_liquid_settings": "apply_waterlogging"
+        "override_liquid_settings": "ignore_waterlogging"
       }
     },
     {
@@ -19,7 +19,7 @@
         "projection": "rigid",
         "location": "minotower:room_kitchen",
         "processors": "minotower:base_processor",
-        "override_liquid_settings": "apply_waterlogging"
+        "override_liquid_settings": "ignore_waterlogging"
       }
     },
     {
@@ -29,7 +29,7 @@
         "projection": "rigid",
         "location": "minotower:room_library",
         "processors": "minotower:base_processor",
-        "override_liquid_settings": "apply_waterlogging"
+        "override_liquid_settings": "ignore_waterlogging"
       }
     },
     {
@@ -39,7 +39,7 @@
         "projection": "rigid",
         "location": "minotower:room_spawner",
         "processors": "minotower:base_processor",
-        "override_liquid_settings": "apply_waterlogging"
+        "override_liquid_settings": "ignore_waterlogging"
       }
     },
     {
@@ -49,7 +49,7 @@
         "projection": "rigid",
         "location": "minotower:room_sculk_converter",
         "processors": "minotower:base_processor",
-        "override_liquid_settings": "apply_waterlogging"
+        "override_liquid_settings": "ignore_waterlogging"
       }
     }
   ]
