@@ -1,0 +1,3 @@
+function minotower:war_bell/armor_check/feet/material
+function minotower:war_bell/armor_check/feet/trim_material
+function minotower:war_bell/armor_check/feet/trim_pattern

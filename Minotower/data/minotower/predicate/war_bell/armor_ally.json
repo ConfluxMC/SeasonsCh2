@@ -1,0 +1,162 @@
+{
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "minotower.war_bell_armor_chest_id": {
+              "min": 1
+            }
+          }
+        },
+        {
+          "condition": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "minotower.war_bell_armor_chest_id": {
+              "min": {
+                "type": "minecraft:score",
+                "target": {
+                  "type": "minecraft:fixed",
+                  "name": "$current"
+                },
+                "score": "minotower.war_bell_armor_chest_id"
+              },
+              "max": {
+                "type": "minecraft:score",
+                "target": {
+                  "type": "minecraft:fixed",
+                  "name": "$current"
+                },
+                "score": "minotower.war_bell_armor_chest_id"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_scores",
+              "entity": "this",
+              "scores": {
+                "minotower.war_bell_armor_head_id": {
+                  "min": 1
+                }
+              }
+            },
+            {
+              "condition": "minecraft:entity_scores",
+              "entity": "this",
+              "scores": {
+                "minotower.war_bell_armor_head_id": {
+                  "min": {
+                    "type": "minecraft:score",
+                    "target": {
+                      "type": "minecraft:fixed",
+                      "name": "$current"
+                    },
+                    "score": "minotower.war_bell_armor_head_id"
+                  },
+                  "max": {
+                    "type": "minecraft:score",
+                    "target": {
+                      "type": "minecraft:fixed",
+                      "name": "$current"
+                    },
+                    "score": "minotower.war_bell_armor_head_id"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_scores",
+              "entity": "this",
+              "scores": {
+                "minotower.war_bell_armor_legs_id": {
+                  "min": 1
+                }
+              }
+            },
+            {
+              "condition": "minecraft:entity_scores",
+              "entity": "this",
+              "scores": {
+                "minotower.war_bell_armor_legs_id": {
+                  "min": {
+                    "type": "minecraft:score",
+                    "target": {
+                      "type": "minecraft:fixed",
+                      "name": "$current"
+                    },
+                    "score": "minotower.war_bell_armor_legs_id"
+                  },
+                  "max": {
+                    "type": "minecraft:score",
+                    "target": {
+                      "type": "minecraft:fixed",
+                      "name": "$current"
+                    },
+                    "score": "minotower.war_bell_armor_legs_id"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_scores",
+              "entity": "this",
+              "scores": {
+                "minotower.war_bell_armor_feet_id": {
+                  "min": 1
+                }
+              }
+            },
+            {
+              "condition": "minecraft:entity_scores",
+              "entity": "this",
+              "scores": {
+                "minotower.war_bell_armor_feet_id": {
+                  "min": {
+                    "type": "minecraft:score",
+                    "target": {
+                      "type": "minecraft:fixed",
+                      "name": "$current"
+                    },
+                    "score": "minotower.war_bell_armor_feet_id"
+                  },
+                  "max": {
+                    "type": "minecraft:score",
+                    "target": {
+                      "type": "minecraft:fixed",
+                      "name": "$current"
+                    },
+                    "score": "minotower.war_bell_armor_feet_id"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
