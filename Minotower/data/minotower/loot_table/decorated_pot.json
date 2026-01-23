@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "name": "minecraft:decorated_pot_sherds",
+          "expand": true,
+          "weight": 10
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+scoreboard objectives add minotower.war_bell dummy
+scoreboard objectives add minotower.war_bell_hit dummy
+scoreboard objectives add minotower.war_bell_hit_full_charge dummy
+scoreboard objectives add minotower.war_bell_active_countdown dummy
+
+scoreboard objectives add minotower.war_bell_armor_chest_id dummy
+scoreboard objectives add minotower.war_bell_armor_head_id dummy
+scoreboard objectives add minotower.war_bell_armor_legs_id dummy
+scoreboard objectives add minotower.war_bell_armor_feet_id dummy

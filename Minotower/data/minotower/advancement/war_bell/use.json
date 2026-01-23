@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "offhand": {
+              "predicates": {
+                "minecraft:custom_data": {
+                  "minotauri_war_bell": true
+                }
+              }
+            }
+          }
+        },
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": {
+              "minotauri_war_bell": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "minotower:war_bell/check"
+  }
+}

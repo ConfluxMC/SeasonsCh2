@@ -1,0 +1,16 @@
+{
+  "values": [
+    "minecraft:player",
+    "#minotower:piglin",
+    "#minecraft:zombies",
+    "#minecraft:skeletons",
+    "#minecraft:raiders",
+    "minecraft:vex",
+    "minecraft:iron_golem",
+    "minecraft:warden",
+    "minecraft:guardian",
+    "minecraft:elder_guardian",
+    "minecraft:breeze",
+    "minecraft:blaze"
+  ]
+}

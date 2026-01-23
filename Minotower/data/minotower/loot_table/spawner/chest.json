@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 6,
+      "entries": [
+        {
+          "type": "minecraft:tag",
+          "name": "minecraft:decorated_pot_sherds",
+          "expand": true,
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_ingot",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:moss_block",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:brush",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "minecraft:set_damage",
+              "damage": {
+                "type": "minecraft:uniform",
+                "min": 0,
+                "max": 32
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

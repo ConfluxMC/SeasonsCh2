@@ -1,0 +1,8 @@
+{
+  "replace":  true,
+  "values": [
+    "minecraft:torchflower_seeds",
+    "minecraft:beetroot_soup",
+    "minecraft:beetroot"
+  ]
+}

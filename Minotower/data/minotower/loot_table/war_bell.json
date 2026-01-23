@@ -1,0 +1,48 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:goat_horn",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "custom_data": {
+                  "minotauri_war_bell": true
+                },
+                "item_name": "Minotauri War Bell",
+                "item_model": "minecraft:bell",
+                "max_damage": 500,
+                "weapon": {
+                  "item_damage_per_attack": 0
+                },
+                "max_stack_size": 1,
+                "repairable": {
+                  "items": "air"
+                },
+                "rarity": "uncommon",
+                "instrument": "minotower:war_bell",
+                "use_cooldown": {
+                  "seconds": 0.01,
+                  "cooldown_group": "minotower:war_bell"
+                },
+                "tooltip_display": {
+                  "hidden_components": [
+                    "damage"
+                  ]
+                }
+              }
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "minotower:war_bell/reset"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

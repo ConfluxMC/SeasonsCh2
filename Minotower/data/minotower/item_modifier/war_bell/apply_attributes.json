@@ -1,0 +1,399 @@
+[
+  {
+    "function": "minecraft:set_components",
+    "components": {
+      "minecraft:item_model": "minecraft:golden_nautilus_armor",
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:scale",
+          "id": "minotower:war_bell_bonus_5",
+          "amount": 0.4,
+          "operation": "add_value",
+          "slot": "offhand",
+          "display": {
+            "type": "default"
+          }
+        },
+        {
+          "type": "minecraft:attack_damage",
+          "id": "minotower:war_bell_bonus_5",
+          "amount": 8,
+          "operation": "add_value",
+          "slot": "offhand"
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "id": "minotower:war_bell_bonus_5",
+          "amount": 12,
+          "operation": "add_value",
+          "slot": "offhand"
+        },
+        {
+          "type": "minecraft:movement_speed",
+          "id": "minotower:war_bell_bonus_5",
+          "amount": 0.3,
+          "operation": "add_multiplied_total",
+          "slot": "offhand"
+        },
+        {
+          "type": "minecraft:water_movement_efficiency",
+          "id": "minotower:war_bell_bonus_5",
+          "amount": 0.3,
+          "operation": "add_multiplied_total",
+          "slot": "offhand"
+        },
+        {
+          "type": "minecraft:knockback_resistance",
+          "id": "minotower:war_bell_bonus_5",
+          "amount": 0.5,
+          "operation": "add_multiplied_total",
+          "slot": "offhand"
+        },
+        {
+          "type": "minecraft:explosion_knockback_resistance",
+          "id": "minotower:war_bell_bonus_5",
+          "amount": 0.8,
+          "operation": "add_multiplied_total",
+          "slot": "offhand"
+        },
+        {
+          "type": "minecraft:sweeping_damage_ratio",
+          "id": "minotower:war_bell_bonus_5",
+          "amount": 0.33,
+          "operation": "add_value",
+          "slot": "offhand"
+        }
+      ]
+    },
+    "conditions": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "slots": {
+            "weapon.*": {
+              "components": {
+                "minecraft:custom_data": {
+                  "minotauri_war_bell": true
+                }
+              },
+              "predicates": {
+                "minecraft:damage": {
+                  "damage": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "function": "minecraft:set_components",
+    "components": {
+      "minecraft:item_model": "minecraft:bell",
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:scale",
+          "id": "minotower:war_bell_bonus_4",
+          "amount": 0.3,
+          "operation": "add_value",
+          "slot": "offhand",
+          "display": {
+            "type": "default"
+          }
+        },
+        {
+          "type": "minecraft:attack_damage",
+          "id": "minotower:war_bell_bonus_4",
+          "amount": 4,
+          "operation": "add_value",
+          "slot": "offhand"
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "id": "minotower:war_bell_bonus_4",
+          "amount": 6,
+          "operation": "add_value",
+          "slot": "offhand"
+        },
+        {
+          "type": "minecraft:movement_speed",
+          "id": "minotower:war_bell_bonus_4",
+          "amount": 0.125,
+          "operation": "add_multiplied_total",
+          "slot": "offhand"
+        },
+        {
+          "type": "minecraft:water_movement_efficiency",
+          "id": "minotower:war_bell_bonus_4",
+          "amount": 0.125,
+          "operation": "add_multiplied_total",
+          "slot": "offhand"
+        },
+        {
+          "type": "minecraft:knockback_resistance",
+          "id": "minotower:war_bell_bonus_4",
+          "amount": 0.2,
+          "operation": "add_multiplied_total",
+          "slot": "offhand"
+        },
+        {
+          "type": "minecraft:explosion_knockback_resistance",
+          "id": "minotower:war_bell_bonus_4",
+          "amount": 0.33,
+          "operation": "add_multiplied_total",
+          "slot": "offhand"
+        }
+      ]
+    },
+    "conditions": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "slots": {
+            "weapon.*": {
+              "components": {
+                "minecraft:custom_data": {
+                  "minotauri_war_bell": true
+                }
+              },
+              "predicates": {
+                "minecraft:damage": {
+                  "damage": {
+                    "min": 1,
+                    "max": 100
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "function": "minecraft:set_components",
+    "components": {
+      "minecraft:item_model": "minecraft:bell",
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:scale",
+          "id": "minotower:war_bell_bonus_3",
+          "amount": 0.2,
+          "operation": "add_value",
+          "slot": "offhand",
+          "display": {
+            "type": "default"
+          }
+        },
+        {
+          "type": "minecraft:attack_damage",
+          "id": "minotower:war_bell_bonus_3",
+          "amount": 2,
+          "operation": "add_value",
+          "slot": "offhand"
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "id": "minotower:war_bell_bonus_3",
+          "amount": 3,
+          "operation": "add_value",
+          "slot": "offhand"
+        }
+      ]
+    },
+    "conditions": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "slots": {
+            "weapon.*": {
+              "components": {
+                "minecraft:custom_data": {
+                  "minotauri_war_bell": true
+                }
+              },
+              "predicates": {
+                "minecraft:damage": {
+                  "damage": {
+                    "min": 101,
+                    "max": 200
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "function": "minecraft:set_components",
+    "components": {
+      "minecraft:item_model": "minecraft:bell",
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:scale",
+          "id": "minotower:war_bell_bonus_2",
+          "amount": 0.1,
+          "operation": "add_value",
+          "slot": "offhand",
+          "display": {
+            "type": "default"
+          }
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "id": "minotower:war_bell_bonus_2",
+          "amount": 2,
+          "operation": "add_value",
+          "slot": "offhand"
+        }
+      ]
+    },
+    "conditions": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "slots": {
+            "weapon.*": {
+              "components": {
+                "minecraft:custom_data": {
+                  "minotauri_war_bell": true
+                }
+              },
+              "predicates": {
+                "minecraft:damage": {
+                  "damage": {
+                    "min": 201,
+                    "max": 300
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "function": "minecraft:set_components",
+    "components": {
+      "minecraft:item_model": "minecraft:bell",
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:attack_damage",
+          "id": "minotower:war_bell_bonus_2",
+          "amount": -0.33,
+          "operation": "add_multiplied_total",
+          "slot": "hand"
+        },
+        {
+          "type": "minecraft:movement_speed",
+          "id": "minotower:war_bell_bonus_2",
+          "amount": -0.1,
+          "operation": "add_multiplied_total",
+          "slot": "hand"
+        },
+        {
+          "type": "minecraft:water_movement_efficiency",
+          "id": "minotower:war_bell_bonus_2",
+          "amount": -0.1,
+          "operation": "add_multiplied_total",
+          "slot": "hand"
+        }
+      ]
+    },
+    "conditions": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "slots": {
+            "weapon.*": {
+              "components": {
+                "minecraft:custom_data": {
+                  "minotauri_war_bell": true
+                }
+              },
+              "predicates": {
+                "minecraft:damage": {
+                  "damage": {
+                    "min": 301,
+                    "max": 400
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "function": "minecraft:reference",
+    "components": {
+      "minecraft:item_model": "minecraft:bell",
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:attack_damage",
+          "id": "minotower:war_bell_bonus_1",
+          "amount": -0.66,
+          "operation": "add_multiplied_total",
+          "slot": "hand"
+        },
+        {
+          "type": "minecraft:movement_speed",
+          "id": "minotower:war_bell_bonus_1",
+          "amount": -0.25,
+          "operation": "add_multiplied_total",
+          "slot": "hand"
+        },
+        {
+          "type": "minecraft:water_movement_efficiency",
+          "id": "minotower:war_bell_bonus_1",
+          "amount": -0.25,
+          "operation": "add_multiplied_total",
+          "slot": "hand"
+        },
+        {
+          "type": "minecraft:attack_speed",
+          "id": "minotower:war_bell_bonus_1",
+          "amount": -0.25,
+          "operation": "add_multiplied_total",
+          "slot": "hand"
+        }
+      ]
+    },
+    "name": "minotower:war_bell/reset",
+    "conditions": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "slots": {
+            "weapon.*": {
+              "components": {
+                "minecraft:custom_data": {
+                  "minotauri_war_bell": true
+                }
+              },
+              "predicates": {
+                "minecraft:damage": {
+                  "damage": {
+                    "min": 401,
+                    "max": 500
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+]

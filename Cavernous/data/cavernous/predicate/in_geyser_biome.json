@@ -1,0 +1,13 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "location": {
+      "biomes": [
+        "cavernous:volcanic_caves",
+        "cavernous:caldera_caves",
+        "cavernous:icy_caves"
+      ]
+    }
+  }
+}

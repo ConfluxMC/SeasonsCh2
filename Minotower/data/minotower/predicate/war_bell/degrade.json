@@ -1,0 +1,47 @@
+{
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "minotower.war_bell_active_countdown": {
+          "max": 0
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "slots": {
+          "weapon.*": {
+            "components": {
+              "minecraft:custom_data": {
+                "minotauri_war_bell": true
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:inverted",
+      "term": {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "slots": {
+            "weapon.*": {
+              "predicates": {
+                "minecraft:damage": {
+                  "damage": 499
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

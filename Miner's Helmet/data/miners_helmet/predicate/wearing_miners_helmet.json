@@ -41,7 +41,16 @@
       "entity": "this",
       "predicate": {
         "type": "minecraft:item",
-        "nbt": "{Item:{components:{\"minecraft:custom_data\":{miners_helmet.miners_helmet: 1b}}}}"
+        "slots": {
+          "contents": {
+            "items": "minecraft:copper_helmet",
+            "components": {
+              "minecraft:custom_data": {
+                "miners_helmet.miners_helmet": true
+              }
+            }
+          }
+        }
       }
     }
   ]

@@ -1,0 +1,2 @@
+scoreboard players operation $current miners_helmet.id = @s miners_helmet.id
+execute unless entity @n[type=marker,tag=miningHelmetMarker,predicate=miners_helmet:miners_helmet_id] anchored eyes run function miners_helmet:summon_light

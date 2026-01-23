@@ -1,0 +1,2 @@
+scoreboard objectives add minersHelmetForward dummy
+scoreboard objectives add miners_helmet.id dummy

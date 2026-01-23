@@ -1,0 +1,144 @@
+{
+  "type": "minecraft:equipment",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "chance": 0.5,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "components": {
+                "minecraft:trim": {
+                  "material": "minecraft:netherite",
+                  "pattern": "minecraft:host"
+                }
+              },
+              "function": "minecraft:set_components"
+            }
+          ],
+          "name": "minecraft:golden_helmet"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "chance": 0.5,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "components": {
+                "minecraft:trim": {
+                  "material": "minecraft:netherite",
+                  "pattern": "minecraft:host"
+                }
+              },
+              "function": "minecraft:set_components"
+            }
+          ],
+          "name": "minecraft:golden_chestplate"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "chance": 0.5,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "components": {
+                "minecraft:trim": {
+                  "material": "minecraft:netherite",
+                  "pattern": "minecraft:host"
+                }
+              },
+              "function": "minecraft:set_components"
+            }
+          ],
+          "name": "minecraft:golden_leggings"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "chance": 0.5,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "components": {
+                "minecraft:trim": {
+                  "material": "minecraft:netherite",
+                  "pattern": "minecraft:host"
+                }
+              },
+              "function": "minecraft:set_components"
+            }
+          ],
+          "name": "minecraft:golden_boots"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_axe",
+          "weight": 85
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_spear",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "minecraft:set_enchantments",
+              "enchantments": {
+                "minecraft:lunge": 2
+              },
+              "add": false,
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.25
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "random_sequence": "minecraft:equipment/trial_chamber"
+}

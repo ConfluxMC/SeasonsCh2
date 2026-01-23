@@ -44,7 +44,7 @@
 		"monster": [
 			{
 				"type": "minecraft:zombie",
-				"weight": 100,
+				"weight": 50,
 				"minCount": 1,
 				"maxCount": 3
 			},
