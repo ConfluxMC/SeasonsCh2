@@ -15,6 +15,13 @@
           }
         },
         {
+          "type": "minecraft:entity_interaction_range",
+          "id": "minotower:war_bell_bonus_5",
+          "amount": 0.75,
+          "operation": "add_value",
+          "slot": "offhand"
+        },
+        {
           "type": "minecraft:attack_damage",
           "id": "minotower:war_bell_bonus_5",
           "amount": 8,
@@ -102,6 +109,13 @@
           "display": {
             "type": "default"
           }
+        },
+        {
+          "type": "minecraft:entity_interaction_range",
+          "id": "minotower:war_bell_bonus_4",
+          "amount": 0.25,
+          "operation": "add_value",
+          "slot": "offhand"
         },
         {
           "type": "minecraft:attack_damage",

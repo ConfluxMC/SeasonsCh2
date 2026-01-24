@@ -1,9 +1,10 @@
 {
-  "description": "Virulence",
+  "description": "Virulent",
   "exclusive_set": [
     "minotower:cleansing",
     "minotower:concentration",
-    "minotower:revitalizing"
+    "minotower:revitalizing",
+    "minotower:virtuous"
   ],
   "supported_items": "minecraft:goat_horn",
   "primary_items": "minecraft:goat_horn",

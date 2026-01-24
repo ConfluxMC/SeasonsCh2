@@ -1,8 +1,9 @@
 {
   "description": "Virtuous",
   "exclusive_set": [
-    "minotower:virulent",
-    "minotower:revitalizing"
+    "minotower:revitalizing",
+    "minotower:vindictive",
+    "minotower:virulent"
   ],
   "supported_items": "minecraft:goat_horn",
   "primary_items": "minecraft:goat_horn",
