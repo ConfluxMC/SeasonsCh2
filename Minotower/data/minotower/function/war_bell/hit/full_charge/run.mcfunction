@@ -18,6 +18,9 @@ scoreboard players operation $current minotower.war_bell_armor_feet_id = @s mino
 # Cleanse if applicable
 execute if items entity @s weapon.offhand goat_horn[enchantments~[{enchantments:"minotower:cleansing"}]] as @e[type=#minotower:affected_by_war_bell,distance=..12,predicate=minotower:war_bell/armor_ally] run function minotower:war_bell/hit/full_charge/cleanse
 
+# Vindictive if applicable. Apply for 10 seconds
+execute if items entity @s weapon.offhand goat_horn[enchantments~[{enchantments:"minotower:vindictive"}]] as @e[type=#minotower:affected_by_war_bell,distance=..12,predicate=minotower:war_bell/armor_ally] unless score @s minotower.war_bell_hit_full_charge matches 5.. at @s run function minotower:war_bell/hit/full_charge/vindictive_mark
+
 # Apply effects to applicable surrounding entities (Excluding self). Don't apply negative effects if Virtuous.
 function minotower:war_bell/hit/full_charge/effects_positive_select
 execute unless items entity @s weapon.offhand goat_horn[enchantments~[{enchantments:"minotower:virtuous"}]] run function minotower:war_bell/hit/full_charge/effects_negative_select

@@ -19,5 +19,15 @@
   "anvil_cost": 1,
   "slots": [
     "offhand"
-  ]
+  ],
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "attribute": "minecraft:max_health",
+        "id": "minotower:war_bell_virtuous",
+        "amount": 4,
+        "operation": "add_value"
+      }
+    ]
+  }
 }

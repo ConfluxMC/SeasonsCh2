@@ -20,5 +20,92 @@
   "anvil_cost": 7,
   "slots": [
     "offhand"
-  ]
+  ],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "offhand": {
+                "predicates": {
+                  "minecraft:damage": {
+                    "damage": {
+                      "max": 400
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "effect": {
+          "type": "minecraft:apply_mob_effect",
+          "to_apply": "minecraft:wither",
+          "min_duration": 4,
+          "max_duration": 4,
+          "min_amplifier": 1,
+          "max_amplifier": 1
+        },
+        "enchanted": "victim",
+        "affected": "victim"
+      },
+      {
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "offhand": {
+                "predicates": {
+                  "minecraft:damage": {
+                    "damage": {
+                      "max": 200
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "effect": {
+          "type": "minecraft:ignite",
+          "duration": 4
+        },
+        "enchanted": "victim",
+        "affected": "victim"
+      },
+      {
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "offhand": {
+                "predicates": {
+                  "minecraft:damage": {
+                    "damage": {
+                      "max": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "effect": {
+          "type": "minecraft:apply_mob_effect",
+          "to_apply": "minecraft:blindness",
+          "min_duration": 5,
+          "max_duration": 5,
+          "min_amplifier": 0,
+          "max_amplifier": 0
+        },
+        "enchanted": "victim",
+        "affected": "victim"
+      }
+    ]
+  }
 }
