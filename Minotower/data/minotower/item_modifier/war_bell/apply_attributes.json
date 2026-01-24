@@ -15,6 +15,13 @@
           }
         },
         {
+          "type": "minecraft:entity_interaction_range",
+          "id": "minotower:war_bell_bonus_5",
+          "amount": 0.75,
+          "operation": "add_value",
+          "slot": "offhand"
+        },
+        {
           "type": "minecraft:attack_damage",
           "id": "minotower:war_bell_bonus_5",
           "amount": 8,
@@ -102,6 +109,13 @@
           "display": {
             "type": "default"
           }
+        },
+        {
+          "type": "minecraft:entity_interaction_range",
+          "id": "minotower:war_bell_bonus_4",
+          "amount": 0.25,
+          "operation": "add_value",
+          "slot": "offhand"
         },
         {
           "type": "minecraft:attack_damage",
@@ -336,39 +350,6 @@
   },
   {
     "function": "minecraft:reference",
-    "components": {
-      "minecraft:item_model": "minecraft:bell",
-      "minecraft:attribute_modifiers": [
-        {
-          "type": "minecraft:attack_damage",
-          "id": "minotower:war_bell_bonus_1",
-          "amount": -0.66,
-          "operation": "add_multiplied_total",
-          "slot": "hand"
-        },
-        {
-          "type": "minecraft:movement_speed",
-          "id": "minotower:war_bell_bonus_1",
-          "amount": -0.25,
-          "operation": "add_multiplied_total",
-          "slot": "hand"
-        },
-        {
-          "type": "minecraft:water_movement_efficiency",
-          "id": "minotower:war_bell_bonus_1",
-          "amount": -0.25,
-          "operation": "add_multiplied_total",
-          "slot": "hand"
-        },
-        {
-          "type": "minecraft:attack_speed",
-          "id": "minotower:war_bell_bonus_1",
-          "amount": -0.25,
-          "operation": "add_multiplied_total",
-          "slot": "hand"
-        }
-      ]
-    },
     "name": "minotower:war_bell/reset",
     "conditions": [
       {
@@ -388,6 +369,77 @@
                     "min": 401,
                     "max": 500
                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "function": "minecraft:reference",
+    "name": "minotower:war_bell/revitalizing",
+    "conditions": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "slots": {
+            "weapon.*": {
+              "components": {
+                "minecraft:custom_data": {
+                  "minotauri_war_bell": true
+                }
+              },
+              "predicates": {
+                "minecraft:enchantments": [
+                  {
+                    "enchantments": "minotower:revitalizing"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "function": "minecraft:set_attributes",
+    "modifiers": [
+      {
+        "attribute": "minecraft:knockback_resistance",
+        "id": "minotower:war_bell_wardenblight_knockback",
+        "amount": 0.1,
+        "operation": "add_value",
+        "slot": "offhand"
+      }
+    ],
+    "replace": false,
+    "conditions": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "effects": {
+            "minecraft:darkness": {}
+          },
+          "slots": {
+            "weapon.offhand": {
+              "components": {
+                "minecraft:custom_data": {
+                  "minotauri_war_bell": true
+                }
+              },
+              "predicates": {
+                "minecraft:enchantments": [
+                  {
+                    "enchantments": "minotower:wardenblight"
+                  }
+                ],
+                "minecraft:damage": {
+                  "damage": 0
                 }
               }
             }

@@ -1,0 +1,67 @@
+{
+  "description": "Wardenblight",
+  "exclusive_set": [
+    "minotower:cleansing",
+    "minotower:concentration",
+    "minotower:revitalizing",
+    "minotower:vindictive",
+    "minotower:virulent"
+  ],
+  "supported_items": "minecraft:goat_horn",
+  "primary_items": "minecraft:goat_horn",
+  "weight": 1,
+  "max_level": 4,
+  "min_cost": {
+    "base": 9,
+    "per_level_above_first": 6
+  },
+  "max_cost": {
+    "base": 11,
+    "per_level_above_first": 11
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "offhand"
+  ],
+  "effects": {
+    "minecraft:damage_protection": [
+      {
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "attacker",
+              "predicate": {
+                "type": "minecraft:warden"
+              }
+            },
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "equipment": {
+                  "offhand": {
+                    "predicates": {
+                      "minecraft:damage": {
+                        "damage": 0
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "effect": {
+          "type": "minecraft:add",
+          "value": {
+            "type": "minecraft:linear",
+            "base": 5,
+            "per_level_above_first": 5
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "#minotower:affected_by_war_bell",
+    "periodic_tick": 35
+  }
+}

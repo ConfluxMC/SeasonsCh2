@@ -33,6 +33,6 @@
     }
   },
   "rewards": {
-    "function": "minotower:war_bell/hit_early"
+    "function": "minotower:war_bell/hit/early"
   }
 }

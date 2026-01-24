@@ -33,7 +33,8 @@
           "operation": "add_multiplied_total",
           "slot": "hand"
         }
-      ]
+      ],
+      "!minecraft:death_protection": {}
     }
   }
 ]
