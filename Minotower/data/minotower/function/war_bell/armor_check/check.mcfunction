@@ -22,7 +22,3 @@ execute if items entity @s armor.head #minecraft:trimmable_armor[minecraft:trim~
 execute if items entity @s armor.legs #minecraft:trimmable_armor[minecraft:trim~{}] run function minotower:war_bell/armor_check/legs/check
 # Feet
 execute if items entity @s armor.feet #minecraft:trimmable_armor[minecraft:trim~{}] run function minotower:war_bell/armor_check/feet/check
-
-
-playsound minecraft:block.note_block.flute
-say ARMOR CHECKED

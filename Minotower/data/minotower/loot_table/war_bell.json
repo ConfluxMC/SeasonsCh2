@@ -20,9 +20,6 @@
                   "item_damage_per_attack": 0
                 },
                 "max_stack_size": 1,
-                "repairable": {
-                  "items": "air"
-                },
                 "rarity": "uncommon",
                 "instrument": "minotower:war_bell",
                 "use_cooldown": {
@@ -33,7 +30,12 @@
                   "hidden_components": [
                     "damage"
                   ]
-                }
+                },
+                "minecraft:enchantable": {
+                  "value": 1
+                },
+                "!minecraft:repairable": {},
+                "minecraft:repair_cost": 50
               }
             },
             {

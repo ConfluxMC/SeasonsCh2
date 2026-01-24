@@ -1,0 +1,18 @@
+{
+  "description": "Resolute",
+  "supported_items": "#minecraft:chest_armor",
+  "weight": 3,
+  "max_level": 1,
+  "min_cost": {
+    "base": 17,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 31,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 5,
+  "slots": [
+    "chest"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "description": "Virtuous",
+  "exclusive_set": [
+    "minotower:virulent",
+    "minotower:revitalizing"
+  ],
+  "supported_items": "minecraft:goat_horn",
+  "primary_items": "minecraft:goat_horn",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 5,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 1,
+  "slots": [
+    "offhand"
+  ]
+}

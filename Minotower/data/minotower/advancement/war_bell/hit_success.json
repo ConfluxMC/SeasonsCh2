@@ -35,6 +35,6 @@
     }
   },
   "rewards": {
-    "function": "minotower:war_bell/hit_success"
+    "function": "minotower:war_bell/hit/success"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "description": "Virulence",
+  "exclusive_set": [
+    "minotower:cleansing",
+    "minotower:concentration",
+    "minotower:revitalizing"
+  ],
+  "supported_items": "minecraft:goat_horn",
+  "primary_items": "minecraft:goat_horn",
+  "weight": 1,
+  "max_level": 2,
+  "min_cost": {
+    "base": 13,
+    "per_level_above_first": 11
+  },
+  "max_cost": {
+    "base": 22,
+    "per_level_above_first": 14
+  },
+  "anvil_cost": 7,
+  "slots": [
+    "offhand"
+  ]
+}

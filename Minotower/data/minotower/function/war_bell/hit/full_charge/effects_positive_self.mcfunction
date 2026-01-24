@@ -1,0 +1,3 @@
+execute unless items entity @s weapon.offhand goat_horn[enchantments~[{enchantments:"minotower:concentration"}]] run return run function minotower:war_bell/hit/full_charge/effects_positive_no_concentration
+execute if items entity @s weapon.offhand goat_horn[enchantments~[{enchantments:"minotower:concentration",levels:1}]] run return run function minotower:war_bell/hit/full_charge/effects_positive_concentration_1
+execute if items entity @s weapon.offhand goat_horn[enchantments~[{enchantments:"minotower:concentration",levels:2}]] run return run function minotower:war_bell/hit/full_charge/effects_positive_concentration_2
