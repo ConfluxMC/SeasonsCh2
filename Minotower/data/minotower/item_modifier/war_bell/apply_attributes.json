@@ -390,5 +390,48 @@
         }
       }
     ]
+  },
+  {
+    "function": "minecraft:set_attributes",
+    "modifiers": [
+      {
+        "attribute": "minecraft:knockback_resistance",
+        "id": "minotower:war_bell_wardenblight_knockback",
+        "amount": 0.1,
+        "operation": "add_value",
+        "slot": "offhand"
+      }
+    ],
+    "replace": false,
+    "conditions": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "effects": {
+            "minecraft:darkness": {}
+          },
+          "slots": {
+            "weapon.offhand": {
+              "components": {
+                "minecraft:custom_data": {
+                  "minotauri_war_bell": true
+                }
+              },
+              "predicates": {
+                "minecraft:enchantments": [
+                  {
+                    "enchantments": "minotower:wardenblight"
+                  }
+                ],
+                "minecraft:damage": {
+                  "damage": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
   }
 ]

@@ -5,6 +5,9 @@ particle minecraft:totem_of_undying ~ ~1 ~ 0 0 0 0.6 30
 playsound minotower:item.war_bell player @a ~ ~ ~ 1 0.6
 playsound minotower:item.war_bell player @a ~ ~ ~ 1 0.2
 
+# If wardenblight, don't bother with rest of function
+execute if items entity @s weapon.offhand goat_horn[enchantments~[{enchantments:"minotower:wardenblight"}]] run return run function minotower:war_bell/hit/full_charge/wardenblight
+
 function minotower:war_bell/hit/full_charge/effects_positive_self
 
 # Check armor and trims to identify friend and foe. This check will also include self

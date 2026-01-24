@@ -5,8 +5,8 @@ advancement revoke @s only minotower:war_bell/hit_success
 scoreboard players set @s minotower.war_bell_hit 1
 # Extend active countdown to 8 seconds
 scoreboard players set @s minotower.war_bell_active_countdown 160
-# If bell has revitalizing, increase countdown add 8 seconds to countdown
-execute if items entity @s weapon.offhand goat_horn[enchantments~[{enchantments:"minotower:revitalizing"}]] run scoreboard players add @s minotower.war_bell_active_countdown 160
+# If bell has revitalizing or wardenblight, increase countdown add 8 seconds to countdown
+execute if items entity @s weapon.offhand goat_horn[enchantments~[{enchantments:"minotower:revitalizing"}]|enchantments~[{enchantments:"minotower:wardenblight"}]] run scoreboard players add @s minotower.war_bell_active_countdown 160
 
 # If bell is fully charged (and bell does not have revitalizing)
 execute if predicate minotower:war_bell/full_charge unless items entity @s weapon.offhand goat_horn[enchantments~[{enchantments:"minotower:revitalizing"}]] run return run function minotower:war_bell/hit/full_charge/run
