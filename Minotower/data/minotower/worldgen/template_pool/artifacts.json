@@ -1,0 +1,602 @@
+{
+  "name": "minotower:artifacts",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/acacia",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/azalea",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/bamboo",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/birch",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/blue_orchid",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/cactus",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/cherry",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/dark_oak",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/eyeblossom",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/jungle",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/lily_of_the_valley",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/oak",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/orange_tulip",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/pink_tulip",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/propagule",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/red_mushroom",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/red_tulip",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/spruce",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 4,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/torchflower",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/white_tulip",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 6,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/potted/wither",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 25,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/amethyst",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/ancient_debris",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/banner",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 7,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/beacon",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 24,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/bee_nest",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 35,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/bell",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 65,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/brewing_stand",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 25,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/cobweb",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/creaking_heart",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 20,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/creeper_head",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/dried_ghast",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 15,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/dripstone_1",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/dripstone_2",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/dripstone_3",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 12,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/golem_statue",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 12,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/golem_statue_exposed",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 12,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/golem_statue_oxidized",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 12,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/golem_statue_weathered",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/heavy_core",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/lodestone",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 15,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/mangrove_log",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 20,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/mangrove_roots",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 55,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/marble_skeleton",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 45,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/minecart",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 100,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/pitcher_plant",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 15,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/quartz_ore",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 50,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/raw_gold",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 60,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/redstone",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/sculker_box",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/shrieker",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/sponge",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 25,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/sprigg",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/strider",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 15,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/trial_spawner",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 15,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/wither_skeleton_head",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 20,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:artifact/zombie_head",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:decorated_pot/sniffer",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:decorated_pot/creeper",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    }
+  ]
+}
