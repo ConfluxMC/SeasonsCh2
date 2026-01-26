@@ -169,7 +169,9 @@
       "cavernous:biomes/lush/marshy/ground_patch",
       "cavernous:biomes/lush/marshy/flower_patch",
       "cavernous:biomes/lush/marshy/grass_patch",
+      "cavernous:biomes/lush/marshy/sugarcane_patch",
       "minecraft:glow_lichen",
+      "cavernous:biomes/lush/sea_pickle",
       "cavernous:biomes/lush/patch_pumpkin"
     ],
     [
