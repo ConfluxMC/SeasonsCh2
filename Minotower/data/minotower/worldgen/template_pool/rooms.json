@@ -3,7 +3,7 @@
   "fallback": "minotower:bottom",
   "elements": [
     {
-      "weight": 28,
+      "weight": 2,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
@@ -13,7 +13,7 @@
       }
     },
     {
-      "weight": 35,
+      "weight": 18,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
@@ -23,7 +23,17 @@
       }
     },
     {
-      "weight": 15,
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:room_farm",
+        "processors": "minotower:base_processor",
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 16,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
@@ -33,7 +43,37 @@
       }
     },
     {
-      "weight": 20,
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:room_museum",
+        "processors": "minotower:base_processor",
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:room_class",
+        "processors": "minotower:base_processor",
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 7,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:room_prison",
+        "processors": "minotower:base_processor",
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 16,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
@@ -43,11 +83,31 @@
       }
     },
     {
-      "weight": 2,
+      "weight": 10,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
-        "location": "minotower:room_sculk_converter",
+        "location": "minotower:room_tree_farm",
+        "processors": "minotower:base_processor",
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:room_glow_squid_farm",
+        "processors": "minotower:base_processor",
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:room_craft",
         "processors": "minotower:base_processor",
         "override_liquid_settings": "ignore_waterlogging"
       }

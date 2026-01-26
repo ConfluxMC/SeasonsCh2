@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/template_stone_painting",
+  "textures": {
+    "end": "minecraft:block/stone",
+    "side": "minecraft:block/stone_painting_16",
+    "particle": "minecraft:block/stone_painting_16"
+  }
+}

@@ -112,7 +112,8 @@
     ],
     [
       "minecraft:amethyst_geode",
-      "cavernous:generic/big_geode"
+      "cavernous:generic/big_geode",
+      "cavernous:generic/silverfish_nest"
     ],
     [],
     [],
@@ -153,8 +154,7 @@
     [
       "cavernous:generic/ores/special/treasure",
       "cavernous:generic/ores/special/gold_chunk",
-      "cavernous:generic/ores/special/copper_chunk",
-      "cavernous:generic/silverfish_nest"
+      "cavernous:generic/ores/special/copper_chunk"
     ],
     [
       "cavernous:biomes/lush/marshy/roots/init",
@@ -169,7 +169,9 @@
       "cavernous:biomes/lush/marshy/ground_patch",
       "cavernous:biomes/lush/marshy/flower_patch",
       "cavernous:biomes/lush/marshy/grass_patch",
+      "cavernous:biomes/lush/marshy/sugarcane_patch",
       "minecraft:glow_lichen",
+      "cavernous:biomes/lush/sea_pickle",
       "cavernous:biomes/lush/patch_pumpkin"
     ],
     [
