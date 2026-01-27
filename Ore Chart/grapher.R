@@ -26,8 +26,8 @@ mydata
 
 # Select Dimension
 #mydata <- sqldf("select * from mydata where dimension = 'ow'")
-#mydata <- sqldf("select * from mydata where dimension = 'my'")
-mydata <- sqldf("select * from mydata where dimension = 'dd'")
+mydata <- sqldf("select * from mydata where dimension = 'my'")
+#mydata <- sqldf("select * from mydata where dimension = 'dd'")
 
 
 mydata <- sqldf("select id, oreId, ore, cname, dimension, biomes, type, count, totalCount,
@@ -145,13 +145,13 @@ setwd("D:/Modding/Minecraft Mods/SeasonsCh2/Ore Chart")
 img.ow <- "D:/Modding/Minecraft Mods/SeasonsCh2/Ore Chart/cavenoise2.png"
 img.my <- "D:/Modding/Minecraft Mods/SeasonsCh2/Ore Chart/mystnoise.png"
 img.dd <- "D:/Modding/Minecraft Mods/SeasonsCh2/Ore Chart/deeperdarknoise.png"
-img <- png::readPNG(img.dd)
+img <- png::readPNG(img.my)
 
 limits.ow <- c(-64,320)
 limits.my <- c(-32,352)
 limits.dd <- c(-64,128)
 
-limitsy <- limits.dd
+limitsy <- limits.my
 
 limitsx <- c(0,576)
 
@@ -159,7 +159,7 @@ limitsx <- c(0,576)
 # Select Biome
 #mydata <- sqldf("select * from mydata where biomes = 'all'")
 #mydata <- sqldf("select * from mydata where biomes = 'all' OR biomes like '%icy%'")
-mydata <- sqldf("select * from mydata where biomes like '%amethyst%'")
+mydata <- sqldf("select * from mydata where biomes like '%noxwood%'")
 
 ggplot(mydata, aes(x=x+((oreId-1))+xoffset,y=y)) +
   background_image(img) +

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "minotower:searing",
+  "category": "misc",
+  "ingredients": [
+      "minecraft:magma_cream",
+      "minecraft:moss_block"
+  ],
+  "result": {
+    "id": "minecraft:magma_cream",
+    "components": {
+      "minecraft:provides_trim_material": "minotower:moss",
+      "minecraft:item_name": "Searing Moss",
+      "minecraft:item_model": "minotower:searing_moss"
+    }
+  }
+}

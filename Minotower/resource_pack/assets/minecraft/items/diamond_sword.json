@@ -1,0 +1,26 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minotower:item/moss/diamond_sword"
+        },
+        "when": "minotower:moss"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minotower:item/beetroot/diamond_sword"
+        },
+        "when": "minotower:beetroot"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/diamond_sword"
+    },
+    "property": "minecraft:trim_material"
+  }
+}

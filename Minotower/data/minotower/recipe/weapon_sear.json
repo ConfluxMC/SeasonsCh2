@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:smithing_trim",
+  "base": "#minotower:trimmable_weapons",
+  "addition": "minecraft:magma_cream",
+  "template": "minecraft:blaze_powder",
+  "pattern": "minotower:seared"
+}

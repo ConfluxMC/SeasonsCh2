@@ -36,3 +36,4 @@ id,ore,dimension,type,count,size,min,minType,max,maxType,biomes,notes
 35,5,ow,0,2.0,6.0,4,ab,64,ab,icy_caves
 36,5,ow,0,2.0,6.0,64,bt,4,bt,icy_caves
 37,12,dd,0,16,32,0,ab,0,bt,amethyst_mines
+38,13,my,0,12,16,120,a,200,a,noxwoods

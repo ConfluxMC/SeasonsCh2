@@ -1,0 +1,26 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minotower:item/moss/netherite_axe"
+        },
+        "when": "minotower:moss"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minotower:item/beetroot/netherite_axe"
+        },
+        "when": "minotower:beetroot"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/netherite_axe"
+    },
+    "property": "minecraft:trim_material"
+  }
+}
