@@ -15,6 +15,20 @@
           "model": "minotower:item/beetroot/stone_axe"
         },
         "when": "minotower:beetroot"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minotower:item/honey/stone_axe"
+        },
+        "when": "minotower:honey"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minotower:item/sculk/stone_axe"
+        },
+        "when": "minotower:sculk"
       }
     ],
     "fallback": {

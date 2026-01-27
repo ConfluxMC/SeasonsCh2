@@ -15,6 +15,20 @@
           "model": "minotower:item/beetroot/diamond_sword"
         },
         "when": "minotower:beetroot"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minotower:item/honey/diamond_sword"
+        },
+        "when": "minotower:honey"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minotower:item/sculk/diamond_sword"
+        },
+        "when": "minotower:sculk"
       }
     ],
     "fallback": {

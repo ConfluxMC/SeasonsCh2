@@ -15,6 +15,20 @@
           "model": "minotower:item/beetroot/golden_sword"
         },
         "when": "minotower:beetroot"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minotower:item/honey/golden_sword"
+        },
+        "when": "minotower:honey"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minotower:item/sculk/golden_sword"
+        },
+        "when": "minotower:sculk"
       }
     ],
     "fallback": {

@@ -15,6 +15,20 @@
           "model": "minotower:item/beetroot/wooden_sword"
         },
         "when": "minotower:beetroot"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minotower:item/honey/wooden_sword"
+        },
+        "when": "minotower:honey"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "minotower:item/sculk/wooden_sword"
+        },
+        "when": "minotower:sculk"
       }
     ],
     "fallback": {
