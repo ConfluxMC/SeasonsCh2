@@ -1,0 +1,30 @@
+{
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type": "minecraft:item",
+        "slots": {
+          "contents": {
+            "items": "#minotower:trimmable_weapons",
+            "predicates": {
+              "minecraft:trim": {
+                "pattern": "minotower:seared"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:location_check",
+      "predicate": {
+        "block": {
+          "blocks": "minecraft:water_cauldron"
+        }
+      }
+    }
+  ]
+}
