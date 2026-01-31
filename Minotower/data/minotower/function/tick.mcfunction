@@ -1,4 +1,7 @@
 execute as @e[type=#minotower:piglin,tag=!converted] run function minotower:convert_piglin_to_minotaur
+execute as @e[type=#minotower:prisoner,tag=minotower_prisoner,tag=!converted_minotower_prisoner] run function minotower:convert_prisoner
+
+execute as @e[type=item,predicate=minotower:remove_weapon_trim] at @s run function minotower:remove_weapon_trim
 
 ### WAR BELL
 execute as @a[scores={minotower.war_bell=1..}] at @s run function minotower:war_bell/timing

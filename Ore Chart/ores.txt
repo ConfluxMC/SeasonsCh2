@@ -11,3 +11,4 @@ id,ore,color
 10,Ancient Debris,#7E6059BF
 11,Glowstone,#FBDA74BF
 12,Amethyst,#8560C1BF
+13,Sponge,#AEBB4ABF

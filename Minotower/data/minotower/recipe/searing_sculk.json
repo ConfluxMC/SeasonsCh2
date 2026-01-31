@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "minotower:searing",
+  "category": "misc",
+  "ingredients": [
+      "minecraft:magma_cream",
+      "minecraft:sculk"
+  ],
+  "result": {
+    "id": "minecraft:magma_cream",
+    "components": {
+      "minecraft:provides_trim_material": "minotower:sculk",
+      "minecraft:item_name": "Searing Sculk",
+      "minecraft:item_model": "minotower:searing_sculk"
+    }
+  }
+}

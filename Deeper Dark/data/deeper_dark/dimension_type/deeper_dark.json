@@ -1,24 +1,31 @@
 {
-  "ultrawarm": false,
-  "natural": false,
-  "piglin_safe": false,
-  "respawn_anchor_works": true,
-  "bed_works": false,
-  "has_raids": false,
+  "attributes": {
+    "minecraft:gameplay/bed_rule": {
+      "can_sleep": "never",
+      "can_set_spawn": "never",
+      "explodes": true
+    },
+    "minecraft:gameplay/respawn_anchor_works": true,
+    "minecraft:gameplay/piglins_zombify": true,
+    "minecraft:visual/default_dripstone_particle": {
+      "type": "minecraft:dripping_dripstone_lava"
+    },
+    "minecraft:gameplay/can_start_raid": false
+  },
   "has_skylight": false,
   "has_ceiling": true,
   "coordinate_scale": 1,
   "ambient_light": 0,
-  "fixed_time": 18000,
+  "has_fixed_time": true,
   "logical_height": 128,
-  "effects": "minecraft:the_nether",
+  "skybox": "none",
   "infiniburn": "#minecraft:infiniburn_overworld",
   "min_y": -64,
   "height": 128,
   "monster_spawn_light_level": {
     "type": "minecraft:uniform",
-      "min_inclusive": 0,
-      "max_inclusive": 7
+    "min_inclusive": 0,
+    "max_inclusive": 7
   },
   "monster_spawn_block_light_limit": 0
 }

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 15,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:mud",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:muddy_mangrove_roots",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

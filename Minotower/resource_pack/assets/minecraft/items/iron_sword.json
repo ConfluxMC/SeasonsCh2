@@ -1,0 +1,100 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "cases": [
+      {
+        "model": {
+          "type": "minecraft:condition",
+          "property": "minecraft:component",
+          "on_false": {
+            "type": "minecraft:model",
+            "model": "minotower:item/moss/iron_sword"
+          },
+          "predicate": "minecraft:custom_data",
+          "value": {
+            "chakram_chakram": true
+          },
+          "on_true": {
+            "type": "minecraft:model",
+            "model": "minotower:item/moss/chakram"
+          }
+        },
+        "when": "minotower:moss"
+      },
+      {
+        "model": {
+          "type": "minecraft:condition",
+          "property": "minecraft:component",
+          "on_false": {
+            "type": "minecraft:model",
+            "model": "minotower:item/beetroot/iron_sword"
+          },
+          "predicate": "minecraft:custom_data",
+          "value": {
+            "chakram_chakram": true
+          },
+          "on_true": {
+            "type": "minecraft:model",
+            "model": "minotower:item/beetroot/chakram"
+          }
+        },
+        "when": "minotower:beetroot"
+      },
+      {
+        "model": {
+          "type": "minecraft:condition",
+          "property": "minecraft:component",
+          "on_false": {
+            "type": "minecraft:model",
+            "model": "minotower:item/honey/iron_sword"
+          },
+          "predicate": "minecraft:custom_data",
+          "value": {
+            "chakram_chakram": true
+          },
+          "on_true": {
+            "type": "minecraft:model",
+            "model": "minotower:item/honey/chakram"
+          }
+        },
+        "when": "minotower:honey"
+      },
+      {
+        "model": {
+          "type": "minecraft:condition",
+          "property": "minecraft:component",
+          "on_false": {
+            "type": "minecraft:model",
+            "model": "minotower:item/sculk/iron_sword"
+          },
+          "predicate": "minecraft:custom_data",
+          "value": {
+            "chakram_chakram": true
+          },
+          "on_true": {
+            "type": "minecraft:model",
+            "model": "minotower:item/sculk/chakram"
+          }
+        },
+        "when": "minotower:sculk"
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:condition",
+      "property": "minecraft:component",
+      "predicate": "minecraft:custom_data",
+      "value": {
+        "chakram_chakram": true
+      },
+      "on_true": {
+        "type": "minecraft:model",
+        "model": "chakram:item/chakram"
+      },
+      "on_false": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/iron_sword"
+      }
+    },
+    "property": "minecraft:trim_material"
+  }
+}
