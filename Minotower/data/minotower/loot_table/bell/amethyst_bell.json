@@ -13,14 +13,14 @@
                 "custom_data": {
                   "amethyst_bell": true
                 },
-                "item_name": "Echo Locator",
+                "item_name": "Echo Locatotion Bell",
                 "item_model": "minecraft:bat_spawn_egg",
                 "max_stack_size": 1,
                 "rarity": "uncommon",
                 "instrument": "minotower:amethyst_bell",
                 "use_cooldown": {
                   "seconds": 16,
-                  "cooldown_group": "minotower:amethyst_bell"
+                  "cooldown_group": "minotower:bell"
                 }
               }
             }

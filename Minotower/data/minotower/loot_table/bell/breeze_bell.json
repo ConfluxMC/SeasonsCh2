@@ -20,7 +20,7 @@
                 "instrument": "minotower:breeze_bell",
                 "use_cooldown": {
                   "seconds": 3,
-                  "cooldown_group": "minotower:breeze_bell"
+                  "cooldown_group": "minotower:bell"
                 }
               }
             }
