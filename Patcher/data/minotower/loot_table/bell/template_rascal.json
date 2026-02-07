@@ -1,0 +1,26 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "gold_ingot",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "custom_data": {
+                  "is_bell_template": true,
+                  "bell_template": "rascal"
+                },
+                "item_name": "Rascal Bell Template",
+                "rarity": "uncommon"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

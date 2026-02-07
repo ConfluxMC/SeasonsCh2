@@ -28,15 +28,6 @@
                   }
                 },
                 {
-                  "items": "minecraft:music_disc_relic",
-                  "count": 1,
-                  "predicates": {
-                    "minecraft:custom_data": {
-                      "rascals_flute": true
-                    }
-                  }
-                },
-                {
                   "items": "minecraft:player_head",
                   "count": 1,
                   "components": {
@@ -47,6 +38,16 @@
                           "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzJkOThhOTA2N2ZmOWQzOTVhMjdiYmRkMGE5MTZlNjQ0YTFlMDJmYjdkOGQxZDc3NzAyNjU1MjEzZTQzZDA5In19fQ"
                         }
                       ]
+                    }
+                  }
+                },
+                {
+                  "items": "minecraft:gold_ingot",
+                  "count": 1,
+                  "predicates": {
+                    "minecraft:custom_data": {
+                      "is_bell_template": true,
+                      "bell_template": "rascal"
                     }
                   }
                 }

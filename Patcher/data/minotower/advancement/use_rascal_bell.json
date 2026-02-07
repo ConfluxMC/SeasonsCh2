@@ -20,7 +20,7 @@
         "item": {
           "predicates": {
             "minecraft:custom_data": {
-              "breeze_bell": true
+              "rascal_bell": true
             }
           }
         }
@@ -28,6 +28,6 @@
     }
   },
   "rewards": {
-    "function": "minotower:breeze_bell"
+    "function": "minotower:rascal_bell"
   }
 }
