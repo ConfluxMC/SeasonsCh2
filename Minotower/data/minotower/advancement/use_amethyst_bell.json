@@ -1,0 +1,53 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:all_of",
+            "terms": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "equipment": {
+                    "offhand": {
+                      "predicates": {
+                        "minecraft:custom_data": {
+                          "amethyst_bell": true
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:inverted",
+                "term": {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "minotower.amethyst_bell_active_countdown": {
+                      "min": 1
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "item": {
+          "predicates": {
+            "minecraft:custom_data": {
+              "amethyst_bell": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "minotower:amethyst_bell"
+  }
+}

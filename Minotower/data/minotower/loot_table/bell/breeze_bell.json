@@ -1,0 +1,32 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:goat_horn",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "custom_data": {
+                  "breeze_bell": true
+                },
+                "item_name": "Breeze Bell",
+                "item_model": "minecraft:breeze_spawn_egg",
+                "max_stack_size": 1,
+                "rarity": "uncommon",
+                "instrument": "minotower:breeze_bell",
+                "use_cooldown": {
+                  "seconds": 3,
+                  "cooldown_group": "minotower:breeze_bell"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

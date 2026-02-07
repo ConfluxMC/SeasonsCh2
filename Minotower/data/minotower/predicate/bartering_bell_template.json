@@ -1,0 +1,17 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "minecraft:piglin",
+    "equipment": {
+      "offhand": {
+        "items": "minecraft:gold_ingot",
+        "predicates": {
+          "minecraft:custom_data": {
+            "is_bell_template": true
+          }
+        }
+      }
+    }
+  }
+}

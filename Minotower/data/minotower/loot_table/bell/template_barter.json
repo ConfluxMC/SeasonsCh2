@@ -1,0 +1,79 @@
+{
+  "type": "minecraft:command",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:bell/war_bell",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "equipment": {
+                  "offhand": {
+                    "items": "minecraft:gold_ingot",
+                    "predicates": {
+                      "minecraft:custom_data": {
+                        "is_bell_template": true,
+                        "bell_template": "minotauri"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:bell/amethyst_bell",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "equipment": {
+                  "offhand": {
+                    "items": "minecraft:gold_ingot",
+                    "predicates": {
+                      "minecraft:custom_data": {
+                        "is_bell_template": true,
+                        "bell_template": "amethyst"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:bell/breeze_bell",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "equipment": {
+                  "offhand": {
+                    "items": "minecraft:gold_ingot",
+                    "predicates": {
+                      "minecraft:custom_data": {
+                        "is_bell_template": true,
+                        "bell_template": "breeze"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
