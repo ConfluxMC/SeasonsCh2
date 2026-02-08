@@ -17,7 +17,7 @@
                 "minecraft:item_name": "Warden Bell",
                 "minecraft:use_cooldown": {
                   "seconds": 30,
-                  "cooldown_group": "minotower:bell"
+                  "cooldown_group": "minotower:warden_bell"
                 },
                 "minecraft:rarity": "epic",
                 "minecraft:instrument": "minotower:warden_bell"

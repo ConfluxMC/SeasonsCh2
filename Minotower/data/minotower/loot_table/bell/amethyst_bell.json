@@ -13,7 +13,7 @@
                 "custom_data": {
                   "amethyst_bell": true
                 },
-                "item_name": "Echo Locatotion Bell",
+                "item_name": "Echo Location Bell",
                 "item_model": "minecraft:bat_spawn_egg",
                 "max_stack_size": 1,
                 "rarity": "uncommon",

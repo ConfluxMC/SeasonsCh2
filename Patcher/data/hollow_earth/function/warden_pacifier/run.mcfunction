@@ -24,6 +24,14 @@ execute if score @s warden_pacifier_effect_temp matches 45 run playsound minecra
 execute if score @s warden_pacifier_effect_temp matches 65 run playsound minecraft:weather.end_flash player @s ~ ~ ~ 6 1.7
 execute if score @s warden_pacifier_effect_temp matches 70 run playsound minecraft:particle.soul_escape player @s ~ ~ ~ 1 1
 
+execute if score @s warden_pacifier_effect_temp matches 70 run particle minecraft:soul_fire_flame ~ ~ ~ -1 0 -1 0.5 0 normal
+execute if score @s warden_pacifier_effect_temp matches 70 run particle minecraft:soul_fire_flame ~ ~ ~ -1 0 0 0.5 0 normal
+execute if score @s warden_pacifier_effect_temp matches 70 run particle minecraft:soul_fire_flame ~ ~ ~ -1 0 1 0.5 0 normal
+execute if score @s warden_pacifier_effect_temp matches 70 run particle minecraft:soul_fire_flame ~ ~ ~ 0 0 -1 0.5 0 normal
+execute if score @s warden_pacifier_effect_temp matches 70 run particle minecraft:soul_fire_flame ~ ~ ~ 0 0 1 0.5 0 normal
+execute if score @s warden_pacifier_effect_temp matches 70 run particle minecraft:soul_fire_flame ~ ~ ~ 1 0 -1 0.5 0 normal
+execute if score @s warden_pacifier_effect_temp matches 70 run particle minecraft:soul_fire_flame ~ ~ ~ 1 0 1 0.5 0 normal
+
 
 scoreboard players add @s warden_pacifier_effect 1
 execute as @s[predicate=!hollow_earth:pacifies_wardens] run function hollow_earth:warden_pacifier/end
