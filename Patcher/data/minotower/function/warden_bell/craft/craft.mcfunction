@@ -1,4 +1,4 @@
-item modify entity @n[type=item,distance=..1,predicate=hollow_earth:warden_bell_template_bundle] contents {function:"set_contents",component:"bundle_contents",entries:[{type:"minecraft:loot_table",value:"minotower:bell/template_warden"}]}
+item modify entity @n[type=item,distance=..1,predicate=minotower:warden_bell_template_bundle] contents {function:"set_contents",component:"bundle_contents",entries:[{type:"minecraft:loot_table",value:"minotower:bell/template_warden"}]}
 kill @s
 
 particle dust{color:[0.443, 0.055, 0.055],scale:2} ~ ~ ~ 0.3 0.3 0.3 1 30 normal @a

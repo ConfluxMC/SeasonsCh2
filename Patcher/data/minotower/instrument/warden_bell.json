@@ -1,9 +1,9 @@
 {
   "sound_event": {
-    "sound_id": "hollow_earth:item.warden_pacifier",
+    "sound_id": "minotower:item.warden_pacifier",
     "range": 64
   },
   "range": 64,
-  "use_duration": 300,
+  "use_duration": 20,
   "description": "Daze Wardens"
 }

@@ -28,6 +28,6 @@
     }
   },
   "rewards": {
-    "function": "hollow_earth:warden_pacifier/use"
+    "function": "minotower:warden_bell/use"
   }
 }

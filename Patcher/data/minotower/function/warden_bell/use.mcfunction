@@ -4,4 +4,4 @@ scoreboard players add @s warden_pacifier_effect 1
 
 playsound minecraft:entity.creaking.twitch player @s ~ ~ ~ 0.4 0.5
 
-execute as @e[type=warden,distance=..50] at @s run function hollow_earth:warden_pacifier/daze_warden
+execute as @e[type=warden,distance=..50] at @s run function minotower:warden_bell/daze_warden
