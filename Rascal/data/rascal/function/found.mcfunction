@@ -13,9 +13,8 @@ playsound minecraft:entity.breeze.land master @a ~ ~ ~ 2 0.6
 
 scoreboard players add @s rascal_times_found 1
 
-# Times found is off by 1 due to initial encounter counting as a time found
-# If found 3 times, give gift
-execute as @s[scores={rascal_times_found=4..}] run return run function rascal:give_gift
+# If found 3 times (including initial discovery), give gift
+execute as @s[scores={rascal_times_found=3..}] run return run function rascal:give_gift
 
 # If not final, play mischief sound, then teleport behind player and facing away
 playsound minecraft:entity.witch.celebrate neutral @a ~ ~ ~ 1 2
