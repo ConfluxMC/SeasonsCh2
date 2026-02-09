@@ -7,13 +7,8 @@
           {
             "condition": "minecraft:inverted",
             "term": {
-              "condition": "minecraft:entity_scores",
-              "entity": "this",
-              "scores": {
-                "minotower.bell_active_countdown": {
-                  "min": 1
-                }
-              }
+              "condition": "minecraft:reference",
+              "name": "minotower:pacifies_wardens"
             }
           }
         ],

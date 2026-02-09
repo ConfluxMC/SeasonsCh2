@@ -1,9 +1,9 @@
 {
   "sound_event": {
     "sound_id": "minotower:item.warden_pacifier",
-    "range": 64
+    "range": 50
   },
-  "range": 64,
-  "use_duration": 20,
+  "range": 50,
+  "use_duration": 150,
   "description": "Daze Wardens"
 }

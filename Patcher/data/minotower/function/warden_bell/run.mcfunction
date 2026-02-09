@@ -1,4 +1,5 @@
-execute as @e[type=warden,distance=..50] at @s run function minotower:warden_bell/pacify_warden
+execute if predicate minotower:warden_bell_pulse run function minotower:warden_bell/pulse
+execute at @e[type=warden,distance=..50] run particle minecraft:electric_spark ~ ~3.5 ~ 0.5 0.1 0.5 0.1 1
 
 effect clear @a[distance=..8] darkness
 
@@ -11,9 +12,7 @@ particle minecraft:sculk_charge_pop ~ ~1 ~ 2.5 0.7 2.5 0.1 1
 scoreboard players operation @s warden_pacifier_effect_temp = @s warden_pacifier_effect
 scoreboard players operation @s warden_pacifier_effect_temp %= warden_pacifier_ambient_sounds warden_pacifier_effect_temp
 
-
 function minotower:warden_bell/run_effects
-
 
 scoreboard players add @s warden_pacifier_effect 1
 execute as @s[predicate=!minotower:pacifies_wardens] run function minotower:warden_bell/end
