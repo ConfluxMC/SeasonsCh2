@@ -1,0 +1,3 @@
+scoreboard objectives add warden_bell_effect dummy
+scoreboard objectives add warden_bell_effect_temp dummy
+scoreboard players set warden_bell_ambient_sounds warden_bell_effect_temp 100

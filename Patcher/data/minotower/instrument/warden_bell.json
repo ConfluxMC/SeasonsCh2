@@ -1,0 +1,9 @@
+{
+  "sound_event": {
+    "sound_id": "minotower:item.warden_bell",
+    "range": 50
+  },
+  "range": 50,
+  "use_duration": 150,
+  "description": "Daze Wardens"
+}

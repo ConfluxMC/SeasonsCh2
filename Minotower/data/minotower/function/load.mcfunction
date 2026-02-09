@@ -8,3 +8,7 @@ scoreboard objectives add minotower.war_bell_armor_chest_id dummy
 scoreboard objectives add minotower.war_bell_armor_head_id dummy
 scoreboard objectives add minotower.war_bell_armor_legs_id dummy
 scoreboard objectives add minotower.war_bell_armor_feet_id dummy
+
+scoreboard objectives add minotower.bell_active_countdown dummy
+
+schedule function minotower:loop_5s 5s

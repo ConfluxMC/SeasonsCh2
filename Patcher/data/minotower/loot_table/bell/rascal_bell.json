@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:goat_horn",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "rascal_bell": 1
+                },
+                "minecraft:item_model": "minecraft:raw_iron",
+                "minecraft:item_name": "Rascal Bell",
+                "minecraft:use_cooldown": {
+                  "seconds": 200,
+                  "cooldown_group": "minotower:bell"
+                },
+                "minecraft:rarity": "epic",
+                "minecraft:instrument": "minotower:rascal_bell"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

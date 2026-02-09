@@ -4,5 +4,5 @@ execute as @e[type=#minotower:affected_by_war_bell,distance=..12,predicate=minot
 
 #say revitalized!
 
-execute unless items entity @s weapon.offhand * run return run loot replace entity @s weapon.offhand loot minotower:war_bell
-loot give @s loot minotower:war_bell
+execute unless items entity @s weapon.offhand * run return run loot replace entity @s weapon.offhand loot minotower:bell/war_bell
+loot give @s loot minotower:bell/war_bell

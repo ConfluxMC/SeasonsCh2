@@ -1,0 +1,8 @@
+{
+  "sound_event": {
+    "sound_id": "minecraft:entity.splash_potion.break"
+  },
+  "range": 32,
+  "use_duration": 10,
+  "description": "Reveal Rascal"
+}

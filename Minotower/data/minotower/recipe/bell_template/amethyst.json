@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:smithing_transform",
+  "group": "bell_template",
+  "base": "minecraft:bell",
+  "addition": "minecraft:amethyst_shard",
+  "result": {
+    "id": "minecraft:gold_ingot",
+    "components": {
+      "custom_data": {
+        "is_bell_template": true,
+        "bell_template": "amethyst"
+      },
+      "item_name": "Echo Location Bell Template",
+      "rarity": "uncommon"
+    }
+  }
+}

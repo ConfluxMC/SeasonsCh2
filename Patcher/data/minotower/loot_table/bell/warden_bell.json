@@ -1,0 +1,31 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:goat_horn",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "warden_bell": 1
+                },
+                "minecraft:item_model": "minecraft:echo_shard",
+                "minecraft:item_name": "Warden Bell",
+                "minecraft:use_cooldown": {
+                  "seconds": 30,
+                  "cooldown_group": "minotower:warden_bell"
+                },
+                "minecraft:rarity": "epic",
+                "minecraft:instrument": "minotower:warden_bell"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,3 +1,0 @@
-scoreboard objectives add warden_pacifier_effect dummy
-scoreboard objectives add warden_pacifier_effect_temp dummy
-scoreboard players set warden_pacifier_ambient_sounds warden_pacifier_effect_temp 100

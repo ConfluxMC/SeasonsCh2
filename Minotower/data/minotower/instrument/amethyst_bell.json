@@ -1,0 +1,8 @@
+{
+  "sound_event": {
+    "sound_id": "minecraft:block.amethyst_block.resonate"
+  },
+  "range": 64,
+  "use_duration": 16,
+  "description": "Echo Location"
+}

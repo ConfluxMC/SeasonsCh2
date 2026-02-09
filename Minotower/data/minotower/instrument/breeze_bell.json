@@ -1,0 +1,8 @@
+{
+  "sound_event": {
+    "sound_id": "minecraft:entity.breeze.deflect"
+  },
+  "range": 16,
+  "use_duration": 3,
+  "description": "Breeze Bell"
+}
