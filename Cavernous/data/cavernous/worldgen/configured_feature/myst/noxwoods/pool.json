@@ -9,10 +9,8 @@
 		"vegetation_chance": 0.2,
 		"xz_radius": {
 			"type": "minecraft:uniform",
-			
-				"min_inclusive": 1,
-				"max_inclusive": 3
-			
+			"min_inclusive": 1,
+			"max_inclusive": 3
 		},
 		"replaceable": "#cavernous:myst/noxwoods_pool_replaceable",
 		"ground_state": {
@@ -29,7 +27,7 @@
 						"type": "minecraft:weighted_state_provider",
 						"entries": [
 							{
-								"weight": 7,
+								"weight": 70,
 								"data": {
 									"Name": "minecraft:horn_coral",
 									"Properties": {
@@ -38,7 +36,27 @@
 								}
 							},
 							{
-								"weight": 1,
+								"weight": 10,
+								"data": {
+									"Name": "minecraft:sea_pickle",
+									"Properties": {
+										"pickles": "1",
+										"waterlogged": "true"
+									}
+								}
+							},
+							{
+								"weight": 2,
+								"data": {
+									"Name": "minecraft:sea_pickle",
+									"Properties": {
+										"pickles": "2",
+										"waterlogged": "true"
+									}
+								}
+							},
+							{
+								"weight": 10,
 								"data": {
 									"Name": "minecraft:wet_sponge"
 								}
