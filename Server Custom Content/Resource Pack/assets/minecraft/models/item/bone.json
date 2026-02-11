@@ -1,0 +1,13 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "item/bone"
+  },
+  "display": {
+    "head": {
+      "rotation": [ 0, 0, -45 ],
+      "translation": [ 0, 4, -1.25 ],
+      "scale": [ 2, 2, 2 ]
+    }
+  }
+}

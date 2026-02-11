@@ -1,0 +1,2 @@
+execute as @a[tag=conflux_seasons.increment_day] run function conflux_seasons:advancement_reset/player_daily
+execute as @a[tag=conflux_seasons.increment_week] run function conflux_seasons:advancement_reset/player_weekly

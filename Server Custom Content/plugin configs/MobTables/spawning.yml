@@ -83,18 +83,6 @@ pools:
         attributes:
           - values:
               Variant: BLACK
-  - rolls: 2
-    conditions:
-      - type: biome
-        biome: CAVERNOUS:PAINTED_CAVES
-      - type: entity_limit
-        range: 100
-        limit: 4
-        filter:
-          - POLAR_BEAR
-    entries:
-      - type: POLAR_BEAR
-        chance: 0.3
   - rolls: 3
     conditions:
       - type: biome
@@ -112,51 +100,27 @@ pools:
       - type: SQUID
         chance: 0.6
 # STONY CAVES
-    # ICY
+    # CRYSTAL
   - rolls: 2
     conditions:
       - type: biome
-        biome: CAVERNOUS:ICY_CAVES
+        biome: CAVERNOUS:CRYSTAL_CAVES
       - type: block
         filter:
-          - GRASS_BLOCK
-          - SNOW_BLOCK
-          - ICE
-          - PACKED_ICE
-          - BLUE_ICE
-          - CALCITE
-      - type: entity_limit
-        range: 100
-        limit: 16
-        filter:
-          - GOAT
-          - FOX
-          - CHICKEN
-    entries:
-      - type: FOX
-        chance: 0.06
-        attributes:
-          - values:
-              Variant: SNOW
-      - type: GOAT
-        chance: 0.1
-      - type: CHICKEN
-        chance: 0.3
-  - rolls: 2
-    conditions:
-      - type: biome
-        biome: CAVERNOUS:ICY_CAVES
-      - type: block
-        filter:
-          - SNOW_BLOCK
+          - WATER
       - type: entity_limit
         range: 100
         limit: 8
         filter:
-          - SNOW_GOLEM
+          - GUARDIAN
+      - type: entity_limit
+        range: 64
+        limit: 1
+        filter:
+          - AXOLOTL
     entries:
-      - type: SNOW_GOLEM
-        chance: 0.1
+      - type: GUARDIAN
+        chance: 0.2
     # MARBLE
   - rolls: 2
     conditions:
@@ -527,6 +491,51 @@ pools:
       - type: PARROT
         chance: 0.65
 # THERMAL CAVES
+    # ICY
+  - rolls: 2
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:ICY_CAVES
+      - type: block
+        filter:
+          - GRASS_BLOCK
+          - SNOW_BLOCK
+          - ICE
+          - PACKED_ICE
+          - BLUE_ICE
+          - CALCITE
+      - type: entity_limit
+        range: 100
+        limit: 16
+        filter:
+          - GOAT
+          - FOX
+          - CHICKEN
+    entries:
+      - type: FOX
+        chance: 0.06
+        attributes:
+          - values:
+              Variant: SNOW
+      - type: GOAT
+        chance: 0.1
+      - type: CHICKEN
+        chance: 0.3
+  - rolls: 2
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:ICY_CAVES
+      - type: block
+        filter:
+          - SNOW_BLOCK
+      - type: entity_limit
+        range: 100
+        limit: 8
+        filter:
+          - SNOW_GOLEM
+    entries:
+      - type: SNOW_GOLEM
+        chance: 0.1
     # CALDERA
   - rolls: 1
     conditions:

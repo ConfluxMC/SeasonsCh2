@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:oxidized_copper_lantern"
+    },
+    "title": "One-Time",
+    "description": {
+      "text": "Can only be completed once"
+    },
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "parent": "conflux_seasons:visible/packs/root",
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

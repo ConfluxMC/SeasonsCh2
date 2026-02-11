@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "new_day": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:reference",
+              "name": "conflux_seasons:matches_day"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "conflux_seasons:advancement_reset/player_daily_delay"
+  }
+}
