@@ -1,8 +1,7 @@
 {
   "display": {
     "icon": {
-      "id": "minecraft:bundle",
-      "components": {}
+      "id": "minecraft:bundle"
     },
     "title": "Hoarder",
     "description": {
@@ -30,7 +29,6 @@
     }
   },
   "rewards": {
-    "function": "conflux_seasons:advancement_reward/shop/rich",
     "experience": 500
   }
 }
