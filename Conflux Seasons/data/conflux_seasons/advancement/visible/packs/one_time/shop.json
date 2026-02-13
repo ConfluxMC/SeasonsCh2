@@ -1,0 +1,41 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:emerald",
+      "components": {
+        "minecraft:item_model": "conflux_seasons:solstice_shard"
+      }
+    },
+    "title": "Sols Shop Pack",
+    "description": [
+      "Complete the following advancements:",
+      {
+        "text": "\nConflux Seasons",
+        "color": "light_purple"
+      },
+      "\n  Valued Customer",
+      "\n  Hoarder"
+    ]
+  },
+  "parent": "conflux_seasons:visible/packs/one_time",
+  "criteria": {
+    "pack": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "type": "minecraft:player",
+          "type_specific": {
+            "type": "minecraft:player",
+            "advancements": {
+              "conflux_seasons:visible/seasons/shop/shop": true,
+              "conflux_seasons:visible/seasons/shop/rich": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "conflux_seasons:advancement_reward/packs/one_time/shop"
+  }
+}

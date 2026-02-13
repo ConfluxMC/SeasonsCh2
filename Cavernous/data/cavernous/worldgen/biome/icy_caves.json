@@ -97,7 +97,9 @@
       "minecraft:amethyst_geode",
       "cavernous:generic/big_geode"
     ],
-    [],
+    [
+      "cavernous:biomes/ice/icy/mammoth"
+    ],
     [],
     [],
     [
@@ -141,7 +143,6 @@
       "cavernous:generic/ores/special/copper_chunk"
     ],
     [
-      "cavernous:biomes/ice/icy/mammoth",
       "cavernous:biomes/ice/icy/ice_pillar_hang",
       "cavernous:biomes/ice/icy/geyser",
       "minecraft:glow_lichen"

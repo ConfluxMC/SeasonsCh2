@@ -1,0 +1,33 @@
+{
+  "criteria": {
+    "reset": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type_specific": {
+                "type": "minecraft:player",
+                "advancements": {
+                  "conflux_seasons:visible/packs/weekly/fungal_caves": true
+                }
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:reference",
+              "name": "conflux_seasons:matches_week"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "conflux_seasons:packs_reset/weekly/fungal_caves"
+  }
+}

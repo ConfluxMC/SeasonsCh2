@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:copper_lantern"
+    },
+    "title": "Daily",
+    "description": {
+      "text": "Resets every day at 12:00am UTC"
+    },
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "parent": "conflux_seasons:visible/packs/root",
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

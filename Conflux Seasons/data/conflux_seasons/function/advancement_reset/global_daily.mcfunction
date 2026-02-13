@@ -1,0 +1,1 @@
+scoreboard players add .global conflux_seasons.day 1

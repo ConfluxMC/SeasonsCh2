@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:exposed_copper_lantern"
+    },
+    "title": "Weekly",
+    "description": {
+      "text": "Resets every week on Sundays at 12:00am UTC"
+    },
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "parent": "conflux_seasons:visible/packs/root",
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}
