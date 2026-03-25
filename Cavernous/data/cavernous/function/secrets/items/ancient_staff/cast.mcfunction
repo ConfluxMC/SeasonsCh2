@@ -7,7 +7,7 @@ execute positioned ~ ~ ~ run tag @e[distance=..4,scores={ancient_staff.casting=0
 
 
 particle dust{color:[0.443, 0.055, 0.055],scale:2} ~ ~0.5 ~ 0.38 0.38 0.38 0 15 normal @a
-playsound block.nether_wart.break player @a ~ ~ ~ 0.7 0.5 0
+playsound block.nether_wart.break player @a ~ ~ ~ 0.7 0.5
 
 
 execute unless block ~ ~ ~ #cavernous:can_teleport_through run function cavernous:secrets/items/ancient_staff/hit

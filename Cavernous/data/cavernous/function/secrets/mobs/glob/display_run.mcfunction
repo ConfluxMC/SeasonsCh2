@@ -9,4 +9,4 @@ execute if score @s glob.animation_timer matches 25 run function cavernous:secre
 execute if score @s glob.animation_timer matches 50 run function cavernous:secrets/mobs/glob/animations/shrink
 
 #Ambient Sound
-execute if score @s glob.animation_timer matches 35 run playsound minecraft:block.sculk.charge hostile @a ~ ~ ~ 1 0.1 0
+execute if score @s glob.animation_timer matches 35 run playsound minecraft:block.sculk.charge hostile @a ~ ~ ~ 1 0.1

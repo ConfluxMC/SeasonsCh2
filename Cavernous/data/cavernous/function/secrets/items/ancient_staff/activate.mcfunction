@@ -1,6 +1,6 @@
 execute unless predicate cavernous:ancient_armor/set run damage @s 7 magic at ~ ~ ~
 particle minecraft:enchant ~ ~ ~ 0.8 1 0.8 1 120 normal @a
-playsound entity.blaze.death player @a ~ ~ ~ 0.5 0.8 0
+playsound entity.blaze.death player @a ~ ~ ~ 0.5 0.8
 
 execute positioned ^ ^ ^0.5 run function cavernous:secrets/items/ancient_staff/cast
 
