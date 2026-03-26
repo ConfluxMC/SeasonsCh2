@@ -1,0 +1,25 @@
+{
+  "parent": "conflux_seasons:visible/seasons/root",
+  "criteria": {
+    "spawn": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Sprigg to Life!"
+    },
+    "description": {
+      "text": "Summon a Sprigg"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:infested_stone"
+    }
+  },
+  "requirements": [
+    [
+      "spawn"
+    ]
+  ]
+}

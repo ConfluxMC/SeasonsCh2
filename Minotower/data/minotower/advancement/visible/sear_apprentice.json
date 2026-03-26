@@ -16,7 +16,7 @@
       "text": "Sear a weapon"
     },
     "icon": {
-      "id": "minecraft:iron_axe",
+      "id": "minecraft:copper_axe",
       "components": {
         "minecraft:trim": {
           "material": "minotower:moss",

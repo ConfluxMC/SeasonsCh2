@@ -8,4 +8,6 @@ playsound minecraft:entity.lightning_bolt.thunder player @a ~ ~ ~ 0.8 2
 
 execute as @e[distance=..7,predicate=!cavernous:holding_ancient_shield] at @s run function cavernous:secrets/items/ancient_shield/stun
 
+advancement grant @s only cavernous:expansion/secrets/crafting/use_shield
+
 scoreboard players set @s shield.damage_blocked 0

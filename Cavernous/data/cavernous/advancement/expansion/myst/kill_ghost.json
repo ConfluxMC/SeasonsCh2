@@ -1,0 +1,35 @@
+{
+  "parent": "cavernous:expansion/myst/vilegorge",
+  "criteria": {
+    "kill": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:skeleton",
+          "equipment": {
+            "chest": {
+              "items": "minecraft:chainmail_chestplate"
+            }
+          },
+          "effects": {}
+        }
+      }
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Haunter Hunter"
+    },
+    "description": {
+      "text": "Kill a ghost in the vilegorge"
+    },
+    "icon": {
+      "id": "minecraft:chainmail_chestplate"
+    }
+  },
+  "requirements": [
+    [
+      "kill"
+    ]
+  ]
+}

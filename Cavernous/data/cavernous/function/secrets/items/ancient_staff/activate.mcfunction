@@ -6,3 +6,5 @@ execute positioned ^ ^ ^0.5 run function cavernous:secrets/items/ancient_staff/c
 
 scoreboard players set @s ancient_staff.casting 1
 scoreboard players set @s ancient_staff.cooldown_timer 0
+
+advancement grant @s only cavernous:expansion/secrets/crafting/use_staff
