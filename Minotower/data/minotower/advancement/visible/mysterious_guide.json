@@ -1,0 +1,43 @@
+{
+  "parent": "minotower:visible/library_patron",
+  "criteria": {
+    "find_book": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "minotower:minotower"
+          }
+        },
+        "items": [
+          {
+            "items": "minecraft:written_book",
+            "predicates": {
+              "minecraft:custom_data": {
+                "sculk_converter_guide": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Mysterious Craft"
+    },
+    "description": {
+      "text": "Find a special book in a Minotauri Library"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:written_book"
+    },
+    "hidden": true
+  },
+  "requirements": [
+    [
+      "find_book"
+    ]
+  ]
+}

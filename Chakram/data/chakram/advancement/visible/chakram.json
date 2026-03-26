@@ -1,17 +1,14 @@
 {
   "display": {
     "icon": {
-      "id": "minecraft:iron_sword",
-      "components": {
-        "minecraft:item_model": "chakram:chakram"
-      }
+      "id": "minecraft:breeze_rod"
     },
     "title": {
-      "translate": "chakram:adv_chakram_title",
-      "fallback": "What Goes Around"
+      "translate": "chakram:adv_chakram_craft_title",
+      "fallback": "Blade of Vishnu"
     },
     "description": {
-      "translate": "chakram:adv_chakram_desc",
+      "translate": "chakram:adv_chakram_craft_desc",
       "fallback": "Craft a Chakram"
     },
     "show_toast": true,

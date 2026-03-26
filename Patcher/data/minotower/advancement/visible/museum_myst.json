@@ -1,0 +1,59 @@
+{
+  "parent": "minotower:visible/root",
+  "criteria": {
+    "artifact": {
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:all_of",
+            "terms": [
+              {
+                "condition": "minecraft:location_check",
+                "predicate": {
+                  "block": {
+                    "components": {
+                      "minecraft:profile": {
+                        "properties": [
+                          {
+                            "name": "textures",
+                            "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzJkOThhOTA2N2ZmOWQzOTVhMjdiYmRkMGE5MTZlNjQ0YTFlMDJmYjdkOGQxZDc3NzAyNjU1MjEzZTQzZDA5In19fQ"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:reference",
+                "name": "minotower:on_museum_pedestal"
+              }
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "This belongs in a museum!"
+    },
+    "description": {
+      "text": "Bring an artifact from The Myst to a museum"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:chiseled_tuff_bricks"
+    },
+    "frame": "challenge"
+  },
+  "requirements": [
+    [
+      "artifact"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  }
+}

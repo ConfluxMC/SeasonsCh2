@@ -1,0 +1,21 @@
+{
+  "parent": "chakram:visible/throw",
+  "display": {
+    "icon": {
+      "id": "minecraft:wheat"
+    },
+    "title": {
+      "translate": "chakram:adv_big_harvest_title",
+      "fallback": "Annapurna's Abundance"
+    },
+    "description": {
+      "translate": "chakram:adv_big_harvest_desc",
+      "fallback": "Harvest 30+ crops with a chakram"
+    }
+  },
+  "criteria": {
+    "throw": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

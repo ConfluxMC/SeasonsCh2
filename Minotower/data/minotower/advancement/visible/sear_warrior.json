@@ -1,0 +1,74 @@
+{
+  "parent": "minotower:visible/sear_apprentice",
+  "criteria": {
+    "axe": {
+      "conditions": {
+        "recipe_id": "minotower:weapon_sear",
+        "ingredients": [
+          {
+            "items": "#minecraft:axes"
+          }
+        ]
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "sword": {
+      "conditions": {
+        "recipe_id": "minotower:weapon_sear",
+        "ingredients": [
+          {
+            "items": "#minecraft:swords"
+          }
+        ]
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "chakram": {
+      "conditions": {
+        "recipe_id": "minotower:weapon_sear",
+        "ingredients": [
+          {
+            "items": "minecraft:iron_sword",
+            "predicates": {
+              "minecraft:custom_data": {
+                "chakram_chakram": true
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:recipe_crafted"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Sear-Warrior"
+    },
+    "description": {
+      "text": "Sear an axe, a sword, and a chakram"
+    },
+    "icon": {
+      "id": "minecraft:iron_sword",
+      "components": {
+        "minecraft:custom_data": {
+          "chakram_chakram": true
+        },
+        "minecraft:trim": {
+          "material": "minotower:beetroot",
+          "pattern": "minotower:seared"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "axe"
+    ],
+    [
+      "sword"
+    ],
+    [
+      "chakram"
+    ]
+  ]
+}

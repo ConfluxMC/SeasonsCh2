@@ -1,0 +1,33 @@
+{
+  "parent": "minotower:visible/sear_novice",
+  "criteria": {
+    "sear": {
+      "conditions": {
+        "recipe_id": "minotower:weapon_sear"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Sear-Apprentice"
+    },
+    "description": {
+      "text": "Sear a weapon"
+    },
+    "icon": {
+      "id": "minecraft:iron_axe",
+      "components": {
+        "minecraft:trim": {
+          "material": "minotower:moss",
+          "pattern": "minotower:seared"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "sear"
+    ]
+  ]
+}

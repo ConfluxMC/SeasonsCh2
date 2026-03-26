@@ -7,7 +7,7 @@ execute if entity @s[tag=!chakram_return,tag=chakram_bounce] run function chakra
 function chakram:entity/move
 
 #handle harvesting
-execute if entity @s[tag=!chakram_return,tag=!chakram_pickup,tag=chakram_harvesting] at @s if block ~ ~ ~ #chakram:harvesting run setblock ~ ~ ~ minecraft:air destroy
+execute if entity @s[tag=!chakram_return,tag=!chakram_pickup,tag=chakram_harvesting] at @s if block ~ ~ ~ #chakram:harvesting run function chakram:entity/harvest
 
 #check return
 execute if entity @s[tag=!chakram_return,tag=!chakram_pickup] if score @s chakram_distance >= @s chakram_max_distance run function chakram:entity/return

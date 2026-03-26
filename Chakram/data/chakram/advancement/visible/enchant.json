@@ -1,0 +1,46 @@
+{
+  "parent": "chakram:visible/chakram",
+  "criteria": {
+    "enchanted_item": {
+      "trigger": "minecraft:enchanted_item",
+      "conditions": {
+        "item": {
+          "predicates": {
+            "minecraft:enchantments": [
+              {
+                "enchantments": [
+                  "chakram:bouncing",
+                  "chakram:harvesting",
+                  "chakram:lightweight",
+                  "chakram:phasing",
+                  "chakram:ricochet",
+                  "chakram:shadowstep",
+                  "chakram:snare"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "chakram:adv_enchant_desc",
+      "fallback": "Enchant a Chakram with any Chakram-specific enchantment."
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:enchanted_book"
+    },
+    "title": {
+      "translate": "chakram:adv_enchant_title",
+      "fallback": "Advanced Throwing"
+    }
+  },
+  "requirements": [
+    [
+      "enchanted_item"
+    ]
+  ]
+}

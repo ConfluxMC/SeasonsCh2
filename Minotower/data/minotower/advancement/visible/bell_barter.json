@@ -1,0 +1,31 @@
+{
+  "parent": "minotower:visible/root",
+  "criteria": {
+    "craft": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Bell Barterer"
+    },
+    "description": {
+      "text": "Find a Bell Crafter Minotaur and have it craft a bell template"
+    },
+    "icon": {
+      "components": {
+        "minecraft:custom_data": {
+          "bell_template": "minotauri",
+          "is_bell_template": true
+        }
+      },
+      "count": 1,
+      "id": "minecraft:gold_ingot"
+    }
+  },
+  "requirements": [
+    [
+      "craft"
+    ]
+  ]
+}

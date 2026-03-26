@@ -1,0 +1,35 @@
+{
+  "parent": "minotower:visible/root",
+  "criteria": {
+    "mmm": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "minotower:minotower"
+          }
+        },
+        "item": {
+          "items": "minecraft:beetroot_soup"
+        }
+      }
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Local Delicacy"
+    },
+    "description": {
+      "text": "Partake in some Minotauri cuisine"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:beetroot_soup"
+    }
+  },
+  "requirements": [
+    [
+      "mmm"
+    ]
+  ]
+}

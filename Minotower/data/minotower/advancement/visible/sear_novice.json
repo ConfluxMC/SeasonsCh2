@@ -1,0 +1,51 @@
+{
+  "parent": "minotower:visible/root",
+  "criteria": {
+    "moss": {
+      "conditions": {
+        "recipe_id": "minotower:searing_moss"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "honeycomb": {
+      "conditions": {
+        "recipe_id": "minotower:searing_honeycomb"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "sculk": {
+      "conditions": {
+        "recipe_id": "minotower:searing_sculk"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "beetroot": {
+      "conditions": {
+        "recipe_id": "minotower:searing_beetroot"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Sear-Novice"
+    },
+    "description": {
+      "text": "Craft any type of searing cream"
+    },
+    "icon": {
+      "id": "minecraft:magma_cream",
+      "components": {
+        "minecraft:item_model": "minotower:searing_honeycomb"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "moss",
+      "honeycomb",
+      "sculk",
+      "beetroot"
+    ]
+  ]
+}
