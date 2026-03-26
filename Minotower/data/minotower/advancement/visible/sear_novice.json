@@ -1,5 +1,5 @@
 {
-  "parent": "minotower:visible/root",
+  "parent": "minotower:visible/sear_admirer",
   "criteria": {
     "moss": {
       "conditions": {

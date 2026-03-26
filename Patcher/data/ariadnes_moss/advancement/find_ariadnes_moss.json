@@ -1,0 +1,57 @@
+{
+  "parent": "conflux_seasons:visible/seasons/root",
+  "criteria": {
+    "boots": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:foot_armor",
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "ariadnes_moss:ariadnes_moss"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "book": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:enchanted_book",
+            "predicates": {
+              "minecraft:stored_enchantments": [
+                {
+                  "enchantments": "ariadnes_moss:ariadnes_moss"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Ariadne's Moss"
+    },
+    "description": {
+      "text": "Find Ariadne's Moss"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:moss_block"
+    }
+  },
+  "requirements": [
+    [
+      "boots",
+      "book"
+    ]
+  ]
+}

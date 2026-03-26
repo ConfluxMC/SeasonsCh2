@@ -1,0 +1,26 @@
+{
+  "parent": "rascal:find",
+  "criteria": {
+    "find": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Hide & Seek"
+    },
+    "description": {
+      "text": "Win the rascal's Hide & Seek game for a gift!"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:chest_minecart"
+    },
+    "frame": "goal"
+  },
+  "requirements": [
+    [
+      "find"
+    ]
+  ]
+}

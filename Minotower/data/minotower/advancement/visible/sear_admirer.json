@@ -1,0 +1,44 @@
+{
+  "parent": "minotower:visible/root",
+  "criteria": {
+    "admire": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "predicates": {
+              "minecraft:trim": {
+                "pattern": "minotower:seared"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Sear-Admirer"
+    },
+    "description": {
+      "text": "Hold a seared weapon"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:blaze_powder"
+    }
+  },
+  "requirements": [
+    [
+      "admire"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minotower:searing_beetroot",
+      "minotower:searing_honeycomb",
+      "minotower:searing_moss",
+      "minotower:searing_sculk"
+    ]
+  }
+}

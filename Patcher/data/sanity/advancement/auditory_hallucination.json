@@ -1,0 +1,27 @@
+{
+  "parent": "sanity:manifestation",
+  "criteria": {
+    "sanity": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Hearing things..."
+    },
+    "description": {
+      "text": "Experience an auditory hallucination"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:parrot_spawn_egg"
+    },
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "requirements": [
+    [
+      "sanity"
+    ]
+  ]
+}

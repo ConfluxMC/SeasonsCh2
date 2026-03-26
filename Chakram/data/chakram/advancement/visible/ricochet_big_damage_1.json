@@ -1,5 +1,5 @@
 {
-  "parent": "chakram:visible/throw",
+  "parent": "chakram:visible/enchant",
   "criteria": {
     "big_damage": {
       "conditions": {

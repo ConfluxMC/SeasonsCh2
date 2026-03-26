@@ -1,5 +1,5 @@
 {
-  "parent": "chakram:visible/chakram",
+  "parent": "chakram:visible/throw",
   "criteria": {
     "enchanted_item": {
       "trigger": "minecraft:enchanted_item",

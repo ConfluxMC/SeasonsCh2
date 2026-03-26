@@ -1,0 +1,27 @@
+{
+  "parent": "sanity:low_sanity",
+  "criteria": {
+    "sanity": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "This doesn't feel right"
+    },
+    "description": {
+      "text": "Experience a fake sanity bar"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:purple_dye"
+    },
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "requirements": [
+    [
+      "sanity"
+    ]
+  ]
+}
