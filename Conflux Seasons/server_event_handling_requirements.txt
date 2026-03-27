@@ -29,12 +29,6 @@ command /shop-init:
         make player execute command "data modify storage conflux_seasons:shop items set value [{}]"
         make player execute command "function conflux_seasons:shop/rebuild"
 
-
-command /shop-get-held-item:
-    permission: server.admin
-    trigger:
-        send full nbt of player's held item to player
-
 #                  Index     Cost      Name
 command /shop-add <integer> <integer> <text>:
     permission: server.admin
