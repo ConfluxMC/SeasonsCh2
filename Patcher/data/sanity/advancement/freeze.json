@@ -1,0 +1,27 @@
+{
+  "parent": "sanity:low_sanity",
+  "criteria": {
+    "sanity": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Brrr!"
+    },
+    "description": {
+      "text": "Experience a personal chill"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:powder_snow_bucket"
+    },
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "requirements": [
+    [
+      "sanity"
+    ]
+  ]
+}

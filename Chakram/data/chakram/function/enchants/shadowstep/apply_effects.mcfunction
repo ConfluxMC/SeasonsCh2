@@ -11,3 +11,5 @@ tag @s add chakram.shadowstep_under_effects
 
 # 4 seconds
 scoreboard players set @s chakram_shadowstep_timer_sneak_speed 80
+
+advancement grant @s only chakram:visible/shadowstep

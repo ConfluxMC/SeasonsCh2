@@ -1,0 +1,40 @@
+{
+  "parent": "cavernous:expansion/myst/kill_glob",
+  "criteria": {
+    "kill": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:rabbit",
+          "components": {
+            "minecraft:custom_name": {
+              "text": "Pet",
+              "color": "dark_red",
+              "obfuscated": true
+            },
+            "minecraft:rabbit/variant": "evil"
+          }
+        }
+      }
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Pet Slayer"
+    },
+    "description": {
+      "text": "Kill a dreadmire rabbit"
+    },
+    "icon": {
+      "id": "minecraft:rabbit_spawn_egg",
+      "components": {
+        "minecraft:item_model": "minecraft:dreadmire_rabbit_spawn_egg"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "kill"
+    ]
+  ]
+}

@@ -1,9 +1,9 @@
 execute if score @s chain_arrow.timer matches 9.. run return run kill @s
 scoreboard players add @s chain_arrow.timer 1
 
-execute as @s[tag=chain_arrow_iron,tag=!chain_arrow_obstructed] if function cavernous:items/chain_arrow/place_iron run return run playsound block.chain.place block @a ~ ~ ~ 1 1 0
-execute as @s[tag=chain_arrow_copper,tag=!chain_arrow_obstructed] if function cavernous:items/chain_arrow/place_copper run return run playsound block.chain.place block @a ~ ~ ~ 1 1 0
-execute as @s[tag=chain_arrow_waxed_copper,tag=!chain_arrow_obstructed] if function cavernous:items/chain_arrow/place_waxed_copper run return run playsound block.chain.place block @a ~ ~ ~ 1 1 0
+execute as @s[tag=chain_arrow_iron,tag=!chain_arrow_obstructed] if function cavernous:items/chain_arrow/place_iron run return run playsound block.chain.place block @a ~ ~ ~ 1 1
+execute as @s[tag=chain_arrow_copper,tag=!chain_arrow_obstructed] if function cavernous:items/chain_arrow/place_copper run return run playsound block.chain.place block @a ~ ~ ~ 1 1
+execute as @s[tag=chain_arrow_waxed_copper,tag=!chain_arrow_obstructed] if function cavernous:items/chain_arrow/place_waxed_copper run return run playsound block.chain.place block @a ~ ~ ~ 1 1
 
 execute as @s[tag=chain_arrow_iron,tag=chain_arrow_obstructed] run return run summon item ^ ^-0.5 ^-0.2 {Item:{id:iron_chain}}
 execute as @s[tag=chain_arrow_copper,tag=chain_arrow_obstructed] run return run summon item ^ ^-0.5 ^-0.2 {Item:{id:copper_chain}}

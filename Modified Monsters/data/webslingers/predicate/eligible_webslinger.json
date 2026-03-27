@@ -1,7 +1,7 @@
 {
-    "condition": "minecraft:entity_properties",
-    "entity": "this",
-    "predicate": {
-        "type": "minecraft:spider"
-    }
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "type": "#webslingers:webslinger_candidate"
+  }
 }

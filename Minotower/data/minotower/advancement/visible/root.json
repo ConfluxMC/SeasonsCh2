@@ -1,0 +1,29 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:deepslate_bricks"
+    },
+    "title": {
+      "text": "Piercing Tower"
+    },
+    "description": {
+      "text": "Enter a Minotower"
+    },
+    "background": "minecraft:block/stripped_dark_oak_log",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "enter": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "minotower:minotower"
+          }
+        }
+      }
+    }
+  }
+}

@@ -16,7 +16,7 @@
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "chakram:visible/chakram",
+  "parent": "chakram:visible/throw",
   "criteria": {
     "": {
       "trigger": "minecraft:impossible"

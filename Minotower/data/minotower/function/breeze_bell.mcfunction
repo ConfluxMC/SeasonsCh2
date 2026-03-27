@@ -7,3 +7,5 @@ tag @e[type=minecraft:wind_charge,tag=bell_wind,distance=..4] remove bell_wind
 scoreboard players set @s minotower.bell_active_countdown 60
 
 advancement revoke @s only minotower:use_breeze_bell
+
+advancement grant @s only minotower:visible/bell_use breeze

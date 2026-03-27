@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "reset": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:reference",
+              "name": "conflux_seasons:matches_week"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "conflux_seasons:packs_reset/weekly"
+  }
+}

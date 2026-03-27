@@ -1,6 +1,6 @@
 scoreboard players add @s portal.activation_timer 1
 particle dust{color:[0.443, 0.055, 0.055],scale:1.5} ~ ~ ~ 0.15 0.15 0.15 0 3 force @a
-execute if predicate cavernous:chance_25 run playsound minecraft:block.bubble_column.upwards_ambient block @a ~ ~ ~ 0.6 0.3 0
+execute if predicate cavernous:chance_25 run playsound minecraft:block.bubble_column.upwards_ambient block @a ~ ~ ~ 0.6 0.3
 
 execute if score @s portal.activation_timer matches 80 as @n[type=marker,tag=conduit,scores={conduit.has_activated=0}] at @s run return run function cavernous:myst/portal_activation/conduit_activate
 execute if score @s portal.activation_timer matches 120 as @n[type=marker,tag=conduit,scores={conduit.has_activated=0}] at @s run return run function cavernous:myst/portal_activation/conduit_activate

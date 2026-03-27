@@ -1,0 +1,25 @@
+{
+  "parent": "conflux_seasons:visible/seasons/root",
+  "criteria": {
+    "caught": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Not so Itsy Bitsy"
+    },
+    "description": {
+      "text": "Get caught in the web of a webslinger"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:cobweb"
+    }
+  },
+  "requirements": [
+    [
+      "caught"
+    ]
+  ]
+}

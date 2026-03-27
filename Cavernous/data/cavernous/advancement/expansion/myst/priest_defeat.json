@@ -9,7 +9,7 @@
 		"description": {
 			"text": "Defeat the priest and open a portal back to the Overworld."
 		},
-		"frame": "task",
+		"frame": "goal",
 		"show_toast": false,
 		"announce_to_chat": true,
 		"hidden": false

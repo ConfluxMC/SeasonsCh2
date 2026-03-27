@@ -1,0 +1,93 @@
+{
+  "parent": "minotower:visible/sear_warrior",
+  "criteria": {
+    "moss": {
+      "conditions": {
+        "recipe_id": "minotower:weapon_sear",
+        "ingredients": [
+          {
+            "items": "minecraft:magma_cream",
+            "components": {
+              "minecraft:provides_trim_material": "minotower:moss"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "honeycomb": {
+      "conditions": {
+        "recipe_id": "minotower:weapon_sear",
+        "ingredients": [
+          {
+            "items": "minecraft:magma_cream",
+            "components": {
+              "minecraft:provides_trim_material": "minotower:honey"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "sculk": {
+      "conditions": {
+        "recipe_id": "minotower:weapon_sear",
+        "ingredients": [
+          {
+            "items": "minecraft:magma_cream",
+            "components": {
+              "minecraft:provides_trim_material": "minotower:sculk"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:recipe_crafted"
+    },
+    "beetroot": {
+      "conditions": {
+        "recipe_id": "minotower:weapon_sear",
+        "ingredients": [
+          {
+            "items": "minecraft:magma_cream",
+            "components": {
+              "minecraft:provides_trim_material": "minotower:beetroot"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:recipe_crafted"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Sear-Connaisseur"
+    },
+    "description": {
+      "text": "Use all variants of searing cream"
+    },
+    "icon": {
+      "id": "minecraft:copper_sword",
+      "components": {
+        "minecraft:trim": {
+          "material": "minotower:sculk",
+          "pattern": "minotower:seared"
+        }
+      }
+    },
+    "frame": "goal"
+  },
+  "requirements": [
+    [
+      "moss"
+    ],
+    [
+      "honeycomb"
+    ],
+    [
+      "sculk"
+    ],
+    [
+      "beetroot"
+    ]
+  ]
+}

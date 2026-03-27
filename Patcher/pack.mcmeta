@@ -8,7 +8,11 @@
     "block": [
       {
         "namespace": "chakram",
-        "path": "^advancement\\/(visible\\/((?!chakram\\.json$|target\\.json$).*)|loot\\.json$)"
+        "path": "^advancement\\/loot\\.json$"
+      },
+      {
+        "namespace": "chakram",
+        "path": "^advancement\\/visible\\/(root|bouncing|harvesting|lightweight|phasing|ricochet)\\.json$"
       },
       {
         "namespace": "chakram",
@@ -20,7 +24,7 @@
       },
       {
         "namespace": "minecraft",
-        "path": "^advancement\\/adventure\\/(play_jukebox_in_meadows|spyglass_at_dragon|throw_trident|very_very_frightening|lightning_rod_with_villager_no_fire|trade_at_world_height)\\.json"
+        "path": "^advancement\\/adventure\\/(adventuring_time|play_jukebox_in_meadows|spyglass_at_dragon|throw_trident|very_very_frightening|lightning_rod_with_villager_no_fire|trade_at_world_height)\\.json"
       }
     ]
   }

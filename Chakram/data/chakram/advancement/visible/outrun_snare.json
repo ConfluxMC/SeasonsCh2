@@ -1,0 +1,21 @@
+{
+  "parent": "chakram:visible/enchant",
+  "display": {
+    "icon": {
+      "id": "minecraft:cobweb"
+    },
+    "title": {
+      "translate": "chakram:adv_outrun_snare_title",
+      "fallback": "Fear of Bagalamukhi"
+    },
+    "description": {
+      "translate": "chakram:adv_outrun_snare_desc",
+      "fallback": "Outrun your own snare chakram for 20 seconds"
+    }
+  },
+  "criteria": {
+    "throw": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

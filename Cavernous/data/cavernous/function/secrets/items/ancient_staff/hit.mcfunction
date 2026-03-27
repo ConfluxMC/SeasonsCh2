@@ -2,7 +2,7 @@ tp @s ^ ^ ^-1
 effect give @s slow_falling 2 0 true
 effect give @s resistance 1 255 true
 
-playsound entity.blaze.death player @a ~ ~ ~ 0.7 0.8 0
+playsound entity.blaze.death player @a ~ ~ ~ 0.7 0.8
 particle minecraft:enchant ~ ~ ~ 0.8 1 0.8 1 120 normal @a
 
 
