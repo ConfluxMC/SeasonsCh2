@@ -1,0 +1,1 @@
+function conflux_seasons:shop/build_dialog_init with storage conflux_seasons:shop meta

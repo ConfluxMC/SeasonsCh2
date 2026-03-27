@@ -43,8 +43,8 @@
       },
       "width": 75,
       "action": {
-        "type": "minecraft:run_command",
-        "command": "trigger trg_shop_open set 1"
+        "type": "minecraft:custom",
+        "id": "conflux_seasons:shop_open"
       }
     }
   ]

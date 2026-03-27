@@ -1,6 +1,3 @@
-scoreboard players reset @s trg_shop_open
-scoreboard players enable @s trg_shop_open
-
 # Store the player's balance in temp storage
 execute store result storage conflux_seasons:dialog_construction temporary.wallet int 1 run scoreboard players get @s solstice_shards
 

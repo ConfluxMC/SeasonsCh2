@@ -1,5 +1,5 @@
-$scoreboard players set shop shop_cost $(cost)
-$execute if score @s solstice_shards >= shop shop_cost run return run function conflux_seasons:shop/buy/deliver {item: $(item), cost: $(cost), label: $(label)}
+$scoreboard players set shop_cost solstice_shards $(cost)
+$execute if score @s solstice_shards >= shop_cost solstice_shards run return run function conflux_seasons:shop/buy/deliver {item: $(item), cost: $(cost), label: $(label)}
 
 # If player had enough funds, the function would have returned and this code would not be reached
 # Lack of funds
