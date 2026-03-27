@@ -1,0 +1,35 @@
+{
+  "parent": "cavernous:miner_inconvenience",
+  "criteria": {
+    "helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "miners_helmet:wearing_miners_helmet"
+          }
+        ]
+      }
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Miner's Helmet"
+    },
+    "description": {
+      "text": "Wear a Miner Helmet"
+    },
+    "icon": {
+      "id": "minecraft:copper_helmet",
+      "components": {
+        "minecraft:item_model": "miners_helmet:miners_helmet"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "helmet"
+    ]
+  ]
+}
