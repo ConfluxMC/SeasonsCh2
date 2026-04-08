@@ -18,8 +18,5 @@
     "tick": {
       "trigger": "minecraft:tick"
     }
-  },
-  "rewards": {
-    "function": "conflux_seasons:advancement_reward/root"
   }
 }

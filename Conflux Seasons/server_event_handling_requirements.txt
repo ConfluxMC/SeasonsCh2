@@ -1,0 +1,57 @@
+conflux_seasons:shop_open should call function conflux_seasons:shop/pre_open
+conflux_seasons:shop_buy should call function conflux_seasons:shop/buy/check_balance with storage conflux_seasons:shop items[$(order)], where order is the index of the item to buy
+conflux_seasons:shop_withdraw_sols should give the player $(withdraw_range) sols from loot table conflux_seasons:solstice_shard, and remove $(withdraw_range) from player's solstice_shards score. Also validate that $(withdraw_range) is not greater than player's solstice_shards score before withdrawing.
+
+
+The server should also add helper methods for adding items to the shop. Here's a skript example:
+
+on load:
+    set {solstice_shard} to first element of loot of loot table "conflux_seasons:solstice_shard"
+
+on custom click:
+    if event-namespacedkey is "conflux_seasons:shop_open":
+        make player execute command "function conflux_seasons:shop/pre_open"
+    else:
+        set {_payload} to event-nbt
+        if event-namespacedkey is "conflux_seasons:shop_buy":
+            set {_index} to int tag "index" of {_payload}
+            make player execute command "function conflux_seasons:shop/buy/check_balance with storage conflux_seasons:shop items[%{_index}%]"
+        else if event-namespacedkey is "conflux_seasons:shop_withdraw_sols":
+            set {_amt} to float tag "withdraw_range" of {_payload}
+            if {_amt} > 0:
+                remove {_amt} from score of player for objective with id "solstice_shards"
+                give {_amt} of {solstice_shard} to player
+
+command /shop-init:
+    permission: server.admin
+    trigger:
+        make player execute command "function conflux_seasons:shop/shop_defaults"
+        make player execute command "data modify storage conflux_seasons:shop items set value [{}]"
+        make player execute command "function conflux_seasons:shop/rebuild"
+
+#                  Index     Cost      Name
+command /shop-add <integer> <integer> <text>:
+    permission: server.admin
+    trigger:
+        #send "data modify storage conflux_seasons:shop items append value {key:%arg-1%,cost:%arg-2%,icon:{atlas:""minecraft:items"",sprite:""conflux_seasons:item/solstice_shard""},label:{text:"" %arg-3% ""}}" to player
+        make player execute command "data modify storage conflux_seasons:shop items append value {key:%arg-1%,cost:%arg-2%,icon:{atlas:""minecraft:items"",sprite:""conflux_seasons:item/solstice_shard""},label:{text:"" %arg-3% ""}}"
+        make player execute command "data modify storage conflux_seasons:shop items[%arg-1%].item set from entity @s SelectedItem"
+        make player execute command "function conflux_seasons:shop/rebuild"
+
+#                       Index     Atlas  Sprite
+command /shop-set-icon <integer> <text> <text>:
+    permission: server.admin
+    trigger:
+        if arg-1 is set:
+            if arg-2 is not set:
+                set {_atlas} to "minecraft:items"
+            else:
+                set {_atlas} to arg-2
+            if arg-3 is not set:
+                set {_sprite} to "conflux_seasons:item/solstice_shard"
+            else:
+                set {_sprite} to arg-3
+            make player execute command "data modify storage conflux_seasons:shop items[%arg-1%].icon set value {atlas:""%{_atlas}%"",sprite:""%{_sprite}%"",shadow_color:0}"
+            make player execute command "function conflux_seasons:shop/rebuild"
+        else:
+            send "Must specify the slot!" to player

@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:consumable": {
+                  "consume_seconds": 100,
+                  "animation": "none",
+                  "sound": "minecraft:block.amethyst_block.step",
+                  "has_consume_particles": false
+                },
+                "minecraft:item_model": "conflux_seasons:solstice_shard",
+                "minecraft:custom_data": {
+                  "solstice_shard": 1
+                },
+                "minecraft:item_name": "Solstice Shard"
+              }
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:score",
+                "target": "this",
+                "score": "trg_shop_withdraw_sols",
+                "scale": 1
+              },
+              "add": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

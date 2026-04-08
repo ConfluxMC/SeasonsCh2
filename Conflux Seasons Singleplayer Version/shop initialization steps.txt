@@ -1,0 +1,12 @@
+1. Run /function conflux_seasons:shop/shop_defaults
+2. In a command block, run /data modify storage conflux_seasons:shop items set value [{},{item:{components:{"minecraft:enchantments":{"minecraft:bane_of_arthropods":2}},count:1,id:"minecraft:golden_sword"},cost:18,icon:{atlas:"minecraft:items",sprite:"chakram:item/chakram"},label:{text:" Sharp-Thing "},key:1},{item:{components:{"minecraft:enchantments":{"minecraft:sharpness":2}},count:1,id:"minecraft:golden_sword"},cost:18,icon:{atlas:"minecraft:items",sprite:"chakram:item/chakram"},label:{text:" Sharper-Thing "},key:2}]
+2a. Replace items in that command as you wish
+3. Run /function conflux_seasons:shop/rebuild
+
+
+To add an item (assuming shop is already initialized)
+Where # is the index of the new entry in the shop
+1. /data modify storage conflux_seasons:shop items append value {key:#,cost:10,icon:{atlas:"minecraft:items",sprite:"conflux_seasons:item/solstice_shard"},label:{text:" New shop item name "}}
+1a. Make SURE to replace key with the index of this entry in the shop
+2. /data modify storage conflux_seasons:shop items[#] set from entity @s SelectedItem
+3. Run /function conflux_seasons:shop/rebuild

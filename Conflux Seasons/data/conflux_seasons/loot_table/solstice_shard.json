@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:generic",
+  "type": "minecraft:command",
   "pools": [
     {
       "rolls": 1,
@@ -23,16 +23,6 @@
                 },
                 "minecraft:item_name": "Solstice Shard"
               }
-            },
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:score",
-                "target": "this",
-                "score": "trg_shop_withdraw_sols",
-                "scale": 1
-              },
-              "add": false
             }
           ]
         }
