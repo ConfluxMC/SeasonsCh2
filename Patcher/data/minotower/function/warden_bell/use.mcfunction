@@ -1,4 +1,6 @@
 advancement revoke @s only minotower:use_warden_bell
+
+advancement grant @s only minotower:visible/bell_use warden
 scoreboard players add @s warden_bell_effect 1
 
 # Remove this when the instrument gets a sound. this is just a placeholder (I think, maybe)

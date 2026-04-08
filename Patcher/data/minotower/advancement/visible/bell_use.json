@@ -1,0 +1,59 @@
+{
+  "parent": "minotower:visible/bell_barter",
+  "criteria": {
+    "amethyst": {
+      "trigger": "minecraft:impossible"
+    },
+    "breeze": {
+      "trigger": "minecraft:impossible"
+    },
+    "war": {
+      "trigger": "minecraft:impossible"
+    },
+    "warden": {
+      "trigger": "minecraft:impossible"
+    },
+    "rascal": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Ringer of Bells"
+    },
+    "description": {
+      "text": "Ring every kind of Minotauri bell"
+    },
+    "icon": {
+      "components": {
+        "minecraft:custom_data": {
+          "bell_template": "minotauri",
+          "is_bell_template": true
+        }
+      },
+      "count": 1,
+      "id": "minecraft:gold_ingot"
+    },
+    "frame": "goal"
+  },
+  "requirements": [
+    [
+      "amethyst"
+    ],
+    [
+      "breeze"
+    ],
+    [
+      "war"
+    ],
+    [
+      "warden"
+    ],
+    [
+      "rascal"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  }
+}

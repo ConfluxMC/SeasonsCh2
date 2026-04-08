@@ -1,0 +1,25 @@
+{
+  "parent": "hopo:minecraft/adventure/locate_mineshaft",
+  "criteria": {
+    "find": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Rascally Rascal"
+    },
+    "description": {
+      "text": "Find a rascal in a mineshaft"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:minecart"
+    }
+  },
+  "requirements": [
+    [
+      "find"
+    ]
+  ]
+}

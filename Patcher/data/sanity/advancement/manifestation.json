@@ -1,0 +1,27 @@
+{
+  "parent": "conflux_seasons:visible/seasons/root",
+  "criteria": {
+    "sanity": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Did anyone else notice that?"
+    },
+    "description": {
+      "text": "Experience a sanity manifestation"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:ender_eye"
+    },
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "requirements": [
+    [
+      "sanity"
+    ]
+  ]
+}

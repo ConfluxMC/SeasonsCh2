@@ -1,0 +1,24 @@
+{
+  "parent": "conflux_seasons:visible/seasons/root",
+  "criteria": {
+    "liftoff": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "We Have Liftoff!"
+    },
+    "description": {
+      "text": "Get caught in the explosion radius of a creeper"
+    },
+    "icon": {
+      "id": "minecraft:creeper_head"
+    }
+  },
+  "requirements": [
+    [
+      "liftoff"
+    ]
+  ]
+}

@@ -5,7 +5,9 @@
     },
     "title": "Vanilla",
     "description": "Advancements from the base game",
-    "background": "minecraft:block/dirt"
+    "background": "minecraft:block/dirt",
+    "show_toast": false,
+    "announce_to_chat": false
   },
   "criteria": {
     "tick": {

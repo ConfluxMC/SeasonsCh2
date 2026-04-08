@@ -1,0 +1,76 @@
+{
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:location_check",
+      "offsetY": -1,
+      "predicate": {
+        "structures": "minotower:minotower",
+        "block": {
+          "blocks": "minecraft:chiseled_tuff_bricks"
+        }
+      }
+    },
+    {
+      "condition": "minecraft:location_check",
+      "offsetY": -2,
+      "predicate": {
+        "block": {
+          "blocks": "minecraft:tuff_bricks"
+        }
+      }
+    },
+    {
+      "condition": "minecraft:location_check",
+      "offsetX": 1,
+      "offsetY": -2,
+      "predicate": {
+        "block": {
+          "blocks": "minecraft:dark_oak_shelf",
+          "state": {
+            "facing": "east"
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:location_check",
+      "offsetX": -1,
+      "offsetY": -2,
+      "predicate": {
+        "block": {
+          "blocks": "minecraft:dark_oak_shelf",
+          "state": {
+            "facing": "west"
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:location_check",
+      "offsetY": -2,
+      "offsetZ": 1,
+      "predicate": {
+        "block": {
+          "blocks": "minecraft:dark_oak_shelf",
+          "state": {
+            "facing": "south"
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:location_check",
+      "offsetY": -2,
+      "offsetZ": -1,
+      "predicate": {
+        "block": {
+          "blocks": "minecraft:dark_oak_shelf",
+          "state": {
+            "facing": "north"
+          }
+        }
+      }
+    }
+  ]
+}

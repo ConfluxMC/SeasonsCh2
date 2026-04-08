@@ -1,0 +1,29 @@
+{
+  "parent": "minotower:visible/museum_myst",
+  "criteria": {
+    "artifact": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "This belongs in a museum!"
+    },
+    "description": {
+      "text": "Bring an artifact from The Deeper Dark to a museum"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:chiseled_tuff_bricks"
+    },
+    "frame": "challenge"
+  },
+  "requirements": [
+    [
+      "artifact"
+    ]
+  ],
+  "rewards": {
+    "experience": 50
+  }
+}
