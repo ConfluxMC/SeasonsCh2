@@ -53,5 +53,15 @@
   "subtitles.entity.polar_bear.ambient_baby": "Young Cave Beast hums",
   "subtitles.entity.polar_bear.death": "Cave Beast dies",
   "subtitles.entity.polar_bear.hurt": "Cave Beast hurts",
-  "subtitles.entity.polar_bear.warning": "Cave Beast roars"
+  "subtitles.entity.polar_bear.warning": "Cave Beast roars",
+  
+  "entity.minecraft.phantom": "Flyin' devil moth",
+  "item.minecraft.ghast_tear": "Flyin' devil moth stuff",
+  "subtitles.entity.parrot.imitate.phantom": "Parrot purrs",
+  "subtitles.entity.phantom.ambient": "Flyin' devil moth purrs",
+  "subtitles.entity.phantom.bite": "Flyin' devil moth smooches",
+  "subtitles.entity.phantom.death": "Flyin' devil moth perishes",
+  "subtitles.entity.phantom.flap": "Flyin' devil moth flaps",
+  "subtitles.entity.phantom.hurt": "Flyin' devil moth hurts",
+  "subtitles.entity.phantom.swoop": "Flyin' devil moth flutters"
 }

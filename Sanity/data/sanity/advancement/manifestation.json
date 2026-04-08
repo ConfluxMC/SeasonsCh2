@@ -1,0 +1,27 @@
+{
+  "criteria": {
+    "sanity": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Sanity"
+    },
+    "description": {
+      "text": "Experience a sanity manifestation"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:ender_eye"
+    },
+    "background": "minecraft:block/stripped_crimson_stem",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "requirements": [
+    [
+      "sanity"
+    ]
+  ]
+}

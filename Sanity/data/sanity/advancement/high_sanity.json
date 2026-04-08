@@ -1,0 +1,26 @@
+{
+  "parent": "sanity:manifestation",
+  "criteria": {
+    "sanity": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Fully Sane"
+    },
+    "description": {
+      "text": "Reach over 95 sanity"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:brain_coral_block"
+    },
+    "frame": "task"
+  },
+  "requirements": [
+    [
+      "sanity"
+    ]
+  ]
+}

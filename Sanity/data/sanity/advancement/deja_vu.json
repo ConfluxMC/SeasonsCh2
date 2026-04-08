@@ -1,0 +1,26 @@
+{
+  "parent": "sanity:auditory_hallucination",
+  "criteria": {
+    "sanity": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Deja vu"
+    },
+    "description": {
+      "text": "Experience a save state restore manifestation"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:respawn_anchor"
+    },
+    "announce_to_chat": false
+  },
+  "requirements": [
+    [
+      "sanity"
+    ]
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "parent": "sanity:low_sanity",
+  "criteria": {
+    "sanity": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Somebody's watching me"
+    },
+    "description": {
+      "text": "Why's everybody staring at me?"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:eye_armor_trim_smithing_template"
+    },
+    "announce_to_chat": false
+  },
+  "requirements": [
+    [
+      "sanity"
+    ]
+  ]
+}

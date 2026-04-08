@@ -1,0 +1,11 @@
+{
+  "entity.minecraft.phantom": "Phantom-Moth",
+  "item.minecraft.ghast_tear": "Phantom-Moth Extract",
+  "subtitles.entity.parrot.imitate.phantom": "Parrot purrs",
+  "subtitles.entity.phantom.ambient": "Phantom-Moth purrs",
+  "subtitles.entity.phantom.bite": "Phantom-Moth pecks",
+  "subtitles.entity.phantom.death": "Phantom-Moth dies",
+  "subtitles.entity.phantom.flap": "Phantom-Moth flaps",
+  "subtitles.entity.phantom.hurt": "Phantom-Moth hurts",
+  "subtitles.entity.phantom.swoop": "Phantom-Moth swoops"
+}

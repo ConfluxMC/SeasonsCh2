@@ -1,0 +1,31 @@
+{
+  "parent": "sanity:low_sanity",
+  "criteria": {
+    "sanity": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "That wasn't me!"
+    },
+    "description": {
+      "text": "Or was it?"
+    },
+    "icon": {
+      "components": {
+        "minecraft:block_state": {
+          "mode": "log"
+        }
+      },
+      "count": 1,
+      "id": "minecraft:test_block"
+    },
+    "announce_to_chat": false
+  },
+  "requirements": [
+    [
+      "sanity"
+    ]
+  ]
+}

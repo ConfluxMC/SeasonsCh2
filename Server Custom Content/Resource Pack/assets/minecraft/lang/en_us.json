@@ -56,5 +56,15 @@
   "subtitles.entity.polar_bear.ambient_baby": "Baby Cave Bear hums",
   "subtitles.entity.polar_bear.death": "Cave Bear dies",
   "subtitles.entity.polar_bear.hurt": "Cave Bear hurts",
-  "subtitles.entity.polar_bear.warning": "Cave Bear roars"
+  "subtitles.entity.polar_bear.warning": "Cave Bear roars",
+  
+  "entity.minecraft.phantom": "Phantom-Moth",
+  "item.minecraft.ghast_tear": "Phantom-Moth Extract",
+  "subtitles.entity.parrot.imitate.phantom": "Parrot purrs",
+  "subtitles.entity.phantom.ambient": "Phantom-Moth purrs",
+  "subtitles.entity.phantom.bite": "Phantom-Moth pecks",
+  "subtitles.entity.phantom.death": "Phantom-Moth dies",
+  "subtitles.entity.phantom.flap": "Phantom-Moth flaps",
+  "subtitles.entity.phantom.hurt": "Phantom-Moth hurts",
+  "subtitles.entity.phantom.swoop": "Phantom-Moth swoops"
 }

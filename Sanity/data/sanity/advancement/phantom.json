@@ -1,0 +1,26 @@
+{
+  "parent": "sanity:deja_vu",
+  "criteria": {
+    "sanity": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Phantoms?"
+    },
+    "description": {
+      "text": "Discover the phantoms of Hollow Earth"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:ghast_tear"
+    },
+    "announce_to_chat": false
+  },
+  "requirements": [
+    [
+      "sanity"
+    ]
+  ]
+}

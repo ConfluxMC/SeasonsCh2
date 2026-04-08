@@ -1,0 +1,15 @@
+{
+  "pack": {
+    "min_format": 82,
+    "max_format": 94,
+    "description": "Sanity pack for Conflux Seasons Chapter 2: Hollow Earth"
+  },
+  "filter": {
+    "block": [
+      {
+        "namespace": "minecraft",
+        "path": "^recipe\\/dried_ghast\\.json$"
+      }
+    ]
+  }
+}
