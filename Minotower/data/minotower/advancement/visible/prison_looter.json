@@ -1,0 +1,31 @@
+{
+  "parent": "minotower:visible/construct_crusher",
+  "criteria": {
+    "loot": {
+      "trigger": "minecraft:player_generates_container_loot",
+      "conditions": {
+        "loot_table": "minotower:prison_treasure"
+      }
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Secret Cache"
+    },
+    "description": {
+      "text": "Find a prisoner's secret cache"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:moss_carpet"
+    },
+    "frame": "goal",
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "requirements": [
+    [
+      "loot"
+    ]
+  ]
+}

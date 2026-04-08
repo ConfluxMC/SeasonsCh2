@@ -1,0 +1,24 @@
+{
+  "parent": "chakram:visible/chakram",
+  "display": {
+    "icon": {
+      "id": "minecraft:iron_sword",
+      "components": {
+        "minecraft:item_model": "chakram:chakram"
+      }
+    },
+    "title": {
+      "translate": "chakram:adv_chakram_throw_title",
+      "fallback": "What Goes Around"
+    },
+    "description": {
+      "translate": "chakram:adv_chakram_throw_desc",
+      "fallback": "Throw a Chakram"
+    }
+  },
+  "criteria": {
+    "throw": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

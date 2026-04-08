@@ -1,0 +1,33 @@
+{
+  "parent": "minotower:visible/local_delicacy",
+  "criteria": {
+    "mmm": {
+      "trigger": "minecraft:enchanted_item",
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "minotower:minotower"
+          }
+        }
+      }
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Library Patron"
+    },
+    "description": {
+      "text": "Use an enchanting table in a Minotauri library"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:enchanting_table"
+    },
+    "frame": "task"
+  },
+  "requirements": [
+    [
+      "mmm"
+    ]
+  ]
+}

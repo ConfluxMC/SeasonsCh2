@@ -1,0 +1,62 @@
+{
+  "parent": "chakram:visible/ricochet_big_damage_2",
+  "criteria": {
+    "big_damage": {
+      "conditions": {
+        "damage": {
+          "type": {
+            "source_entity": {
+              "type": "minecraft:player"
+            },
+            "direct_entity": {
+              "type": "minecraft:item_display",
+              "slots": {
+                "contents": {
+                  "items": "minecraft:iron_sword",
+                  "predicates": {
+                    "minecraft:custom_data": {
+                      "chakram_chakram": true
+                    },
+                    "minecraft:enchantments": [
+                      {
+                        "enchantments": "chakram:ricochet"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "dealt": {
+            "min": 100
+          }
+        }
+      },
+      "trigger": "minecraft:player_hurt_entity"
+    }
+  },
+  "display": {
+    "hidden": true,
+    "description": {
+      "translate": "chakram:adv_ricochet_big_damage_3_desc",
+      "fallback": "Deal 100 damage or more with the ricochet enchantment"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:mace"
+    },
+    "title": {
+      "translate": "chakram:adv_ricochet_big_damage_3_title",
+      "fallback": "Impossible Trickshot!"
+    }
+  },
+  "requirements": [
+    [
+      "big_damage"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
+}

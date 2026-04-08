@@ -1,0 +1,21 @@
+{
+  "parent": "chakram:visible/enchant",
+  "display": {
+    "icon": {
+      "id": "minecraft:feather"
+    },
+    "title": {
+      "translate": "chakram:adv_shadowstep_title",
+      "fallback": "Dance like Indrajit"
+    },
+    "description": {
+      "translate": "chakram:adv_shadowstep_desc",
+      "fallback": "Perform a successful shadowstep with a chakram"
+    }
+  },
+  "criteria": {
+    "throw": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

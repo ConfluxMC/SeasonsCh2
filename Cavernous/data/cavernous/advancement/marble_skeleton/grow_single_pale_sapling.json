@@ -11,6 +11,7 @@
       "id": "minecraft:pale_oak_log"
     },
     "title": "This one has bark?",
-    "hidden": true
+    "hidden": true,
+    "frame": "goal"
   }
 }

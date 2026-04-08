@@ -1,0 +1,30 @@
+{
+  "parent": "minotower:visible/root",
+  "criteria": {
+    "kill": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:piglin_brute"
+        }
+      }
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Construct Crusher"
+    },
+    "description": {
+      "text": "Kill a Minotauri Construct"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:trial_spawner"
+    }
+  },
+  "requirements": [
+    [
+      "kill"
+    ]
+  ]
+}

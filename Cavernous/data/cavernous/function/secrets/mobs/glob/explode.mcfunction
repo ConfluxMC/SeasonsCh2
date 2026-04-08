@@ -5,6 +5,6 @@ effect give @e[distance=..5] slowness 10 1 true
 effect give @e[type=!player,distance=..5] weakness 5 2 true
 
 particle dust{color:[0.443, 0.055, 0.055],scale:3} ~ ~1 ~ 0.9 0.9 0.9 0 70 normal @a
-playsound minecraft:entity.allay.death hostile @a ~ ~ ~ 1 0.1 0
+playsound minecraft:entity.allay.death hostile @a ~ ~ ~ 1 0.1
 
 kill @s

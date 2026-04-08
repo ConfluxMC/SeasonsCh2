@@ -1,0 +1,25 @@
+{
+  "parent": "minotower:visible/sear_apprentice",
+  "criteria": {
+    "remove": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Sear-Regretter"
+    },
+    "description": {
+      "text": "Remove a weapon's sear pattern"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:cauldron"
+    }
+  },
+  "requirements": [
+    [
+      "remove"
+    ]
+  ]
+}

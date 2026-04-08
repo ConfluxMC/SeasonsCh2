@@ -1,0 +1,40 @@
+{
+  "parent": "cavernous:expansion/myst/dreadmire",
+  "criteria": {
+    "kill": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:creeper",
+          "location": {
+            "biomes": [
+              "cavernous:myst/dreadmire",
+              "cavernous:myst/dreadmire_",
+              "cavernous:the_undergrowth"
+            ]
+          },
+          "effects": {
+            "minecraft:luck": {},
+            "minecraft:invisibility": {}
+          }
+        }
+      }
+    }
+  },
+  "display": {
+    "title": {
+      "text": "How Nauseating"
+    },
+    "description": {
+      "text": "Kill a glob in the dreadmire"
+    },
+    "icon": {
+      "id": "minecraft:nether_wart_block"
+    }
+  },
+  "requirements": [
+    [
+      "kill"
+    ]
+  ]
+}

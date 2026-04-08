@@ -5,3 +5,5 @@ particle minecraft:small_flame ~ ~ ~ 1 1 1 0.05 0 normal
 
 loot spawn ^ ^1 ^0.25 loot minotower:bell/template_barter
 item replace entity @s weapon.offhand with air
+
+advancement grant @p only minotower:visible/bell_barter

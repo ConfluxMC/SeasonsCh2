@@ -20,7 +20,7 @@ execute unless score @s stored_z = @s current_z run scoreboard players set @s mo
 ### Sounds
 #Walking
 execute if score @s moving matches 1 run scoreboard players add @s glob.step_timer 1
-execute if score @s moving matches 1 if score @s glob.step_timer matches 7 run playsound minecraft:block.honey_block.slide hostile @a ~ ~ ~ 0.4 0.1 0
+execute if score @s moving matches 1 if score @s glob.step_timer matches 7 run playsound minecraft:block.honey_block.slide hostile @a ~ ~ ~ 0.4 0.1
 execute if score @s glob.step_timer matches 7 run scoreboard players set @s glob.step_timer 0
 
 #Fuse

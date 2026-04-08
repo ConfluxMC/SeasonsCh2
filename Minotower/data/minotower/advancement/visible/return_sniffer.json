@@ -1,0 +1,41 @@
+{
+  "parent": "minotower:visible/mysterious_guide",
+  "criteria": {
+    "return_sniffer": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "minecraft:sniffer_egg"
+          },
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "structures": "minotower:minotower"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Welcome back, old friend"
+    },
+    "description": {
+      "text": "Bring a sniffer egg back to a Minotower"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:snort_pottery_sherd"
+    },
+    "frame": "challenge",
+    "hidden": true
+  },
+  "requirements": [
+    [
+      "return_sniffer"
+    ]
+  ]
+}
