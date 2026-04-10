@@ -13,7 +13,7 @@
                 "minecraft:custom_data": {
                   "warden_bell": 1
                 },
-                "minecraft:item_model": "minecraft:echo_shard",
+                "minecraft:item_model": "minotower:bell/warden",
                 "minecraft:item_name": "Warden Bell",
                 "minecraft:use_cooldown": {
                   "seconds": 30,

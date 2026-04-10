@@ -26,13 +26,10 @@
     },
     "icon": {
       "components": {
-        "minecraft:custom_data": {
-          "bell_template": "minotauri",
-          "is_bell_template": true
-        }
+        "minecraft:item_model": "minotower:bell/minotauri"
       },
       "count": 1,
-      "id": "minecraft:gold_ingot"
+      "id": "minecraft:goat_horn"
     },
     "frame": "goal"
   },

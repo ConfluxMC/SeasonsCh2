@@ -14,7 +14,7 @@
                   "minotauri_war_bell": true
                 },
                 "item_name": "Minotauri War Bell",
-                "item_model": "minecraft:bell",
+                "item_model": "minotower:bell/minotauri",
                 "max_damage": 500,
                 "weapon": {
                   "item_damage_per_attack": 0

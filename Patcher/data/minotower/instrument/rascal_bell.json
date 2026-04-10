@@ -1,6 +1,6 @@
 {
   "sound_event": {
-    "sound_id": "minecraft:entity.splash_potion.break"
+    "sound_id": "minotower:item.rascal_bell"
   },
   "range": 32,
   "use_duration": 10,

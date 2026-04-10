@@ -14,7 +14,7 @@
                   "breeze_bell": true
                 },
                 "item_name": "Breeze Bell",
-                "item_model": "minecraft:breeze_spawn_egg",
+                "item_model": "minotower:bell/breeze",
                 "max_stack_size": 1,
                 "rarity": "uncommon",
                 "instrument": "minotower:breeze_bell",

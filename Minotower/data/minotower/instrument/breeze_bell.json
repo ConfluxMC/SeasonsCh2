@@ -1,6 +1,6 @@
 {
   "sound_event": {
-    "sound_id": "minecraft:entity.breeze.deflect"
+    "sound_id": "minotower:item.breeze_bell"
   },
   "range": 16,
   "use_duration": 3,

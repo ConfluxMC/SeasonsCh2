@@ -1,6 +1,6 @@
 {
   "sound_event": {
-    "sound_id": "minecraft:block.amethyst_block.resonate"
+    "sound_id": "minotower:item.amethyst_bell"
   },
   "range": 64,
   "use_duration": 16,

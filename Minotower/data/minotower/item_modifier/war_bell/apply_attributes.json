@@ -2,7 +2,7 @@
   {
     "function": "minecraft:set_components",
     "components": {
-      "minecraft:item_model": "minecraft:golden_nautilus_armor",
+      "minecraft:item_model": "minotower:bell/minotauri_5",
       "minecraft:attribute_modifiers": [
         {
           "type": "minecraft:scale",
@@ -98,7 +98,7 @@
   {
     "function": "minecraft:set_components",
     "components": {
-      "minecraft:item_model": "minecraft:bell",
+      "minecraft:item_model": "minotower:bell/minotauri_4",
       "minecraft:attribute_modifiers": [
         {
           "type": "minecraft:scale",
@@ -190,7 +190,7 @@
   {
     "function": "minecraft:set_components",
     "components": {
-      "minecraft:item_model": "minecraft:bell",
+      "minecraft:item_model": "minotower:bell/minotauri_3",
       "minecraft:attribute_modifiers": [
         {
           "type": "minecraft:scale",
@@ -247,7 +247,7 @@
   {
     "function": "minecraft:set_components",
     "components": {
-      "minecraft:item_model": "minecraft:bell",
+      "minecraft:item_model": "minotower:bell/minotauri_2",
       "minecraft:attribute_modifiers": [
         {
           "type": "minecraft:scale",
@@ -297,25 +297,25 @@
   {
     "function": "minecraft:set_components",
     "components": {
-      "minecraft:item_model": "minecraft:bell",
+      "minecraft:item_model": "minotower:bell/minotauri_1",
       "minecraft:attribute_modifiers": [
         {
           "type": "minecraft:attack_damage",
-          "id": "minotower:war_bell_bonus_2",
+          "id": "minotower:war_bell_bonus_1",
           "amount": -0.33,
           "operation": "add_multiplied_total",
           "slot": "hand"
         },
         {
           "type": "minecraft:movement_speed",
-          "id": "minotower:war_bell_bonus_2",
+          "id": "minotower:war_bell_bonus_1",
           "amount": -0.1,
           "operation": "add_multiplied_total",
           "slot": "hand"
         },
         {
           "type": "minecraft:water_movement_efficiency",
-          "id": "minotower:war_bell_bonus_2",
+          "id": "minotower:war_bell_bonus_1",
           "amount": -0.1,
           "operation": "add_multiplied_total",
           "slot": "hand"

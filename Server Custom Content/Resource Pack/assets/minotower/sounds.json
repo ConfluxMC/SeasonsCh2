@@ -1,3 +1,7 @@
 {
-	"item.war_bell": {"sounds": [{"name": "minotower:item/war_bell"}], "subtitle": "War bell rings"}
+	"item.war_bell": {"sounds": [{"name": "minotower:item/bell/minotauri"}], "subtitle": "War bell rings"},
+	"item.breeze_bell": {"sounds": [{"name": "minotower:item/bell/breeze"}], "subtitle": "Breeze bell rings"},
+	"item.amethyst_bell": {"sounds": [{"name": "minotower:item/bell/amethyst"}], "subtitle": "Bat bell rings"},
+	"item.warden_bell": {"sounds": [{"name": "minotower:item/bell/warden"}], "subtitle": "Warden bell rings"},
+	"item.rascal_bell": {"sounds": [{"name": "minotower:item/bell/rascal"}], "subtitle": "Rascal bell rings"}
 }

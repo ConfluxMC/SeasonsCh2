@@ -14,7 +14,7 @@
                   "amethyst_bell": true
                 },
                 "item_name": "Echo Location Bell",
-                "item_model": "minecraft:bat_spawn_egg",
+                "item_model": "minotower:bell/amethyst",
                 "max_stack_size": 1,
                 "rarity": "uncommon",
                 "instrument": "minotower:amethyst_bell",
