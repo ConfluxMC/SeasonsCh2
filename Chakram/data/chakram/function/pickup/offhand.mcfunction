@@ -1,4 +1,4 @@
-playsound entity.item.pickup master @a ~ ~ ~ 0.2 1
+playsound entity.item.pickup player @a ~ ~ ~ 0.2 1
 $execute if data entity @s equipment.offhand run return run loot give @s loot {"pools":[{"rolls":1,"entries":[{"type":"minecraft:item","name":"minecraft:iron_sword","functions":[{"function":"minecraft:set_components","components":$(components)},{"function":"minecraft:set_count","count":1}]}]}]}
 $loot replace entity @s weapon.offhand loot {"pools":[{"rolls":1,"entries":[{"type":"minecraft:item","name":"minecraft:iron_sword","functions":[{"function":"minecraft:set_components","components":$(components)},{"function":"minecraft:set_count","count":1}]}]}]}
 function chakram:durability/offhand/check

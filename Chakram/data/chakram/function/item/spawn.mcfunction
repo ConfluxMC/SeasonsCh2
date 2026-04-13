@@ -1,3 +1,3 @@
-playsound minecraft:entity.sniffer.drop_seed master @a ~ ~ ~ 0.5 1
+playsound minecraft:entity.item.pickup player @a ~ ~ ~ 0.4 0.7
 $execute if entity @s run summon minecraft:item ~ ~ ~ {Item:$(item)}
 kill @s

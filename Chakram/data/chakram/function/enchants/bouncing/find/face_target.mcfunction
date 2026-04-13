@@ -6,6 +6,6 @@ scoreboard players add @s chakram_bouncing_count 1
 
 #effect
 particle minecraft:gust ~ ~ ~ 0 0 0 0.1 1 force
-playsound minecraft:entity.breeze.deflect master @a ~ ~ ~ 0.5 1.3
+playsound chakram:turn neutral @a ~ ~ ~ 0.5
 
 return 1
