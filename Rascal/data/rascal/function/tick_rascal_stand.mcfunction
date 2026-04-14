@@ -19,6 +19,6 @@ execute as @s[scores={rascal_can_be_caught_cooldown=200..}] run tag @s add rasca
 execute as @s[scores={rascal_can_be_caught_cooldown=200..}] run scoreboard players reset @s rascal_can_be_caught_cooldown
 
 # Ambient noises
-execute as @s[tag=!rascal_is_invis,tag=rascal_can_be_caught,predicate=rascal:ambient_noise] run playsound minecraft:entity.witch.ambient neutral @a ~ ~ ~ 1 2
+execute as @s[tag=!rascal_is_invis,tag=rascal_can_be_caught,predicate=rascal:ambient_noise] run playsound rascal:entity.rascal.ambient neutral @a ~ ~ ~
 
 execute as @s[tag=!rascal_is_invis] run function rascal:move/moving

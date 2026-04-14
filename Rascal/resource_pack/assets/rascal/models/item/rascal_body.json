@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "minecraft:block/cube",
 	"textures": {
-		"0": "item/rascal",
-		"particle": "item/rascal"
+		"0": "rascal:item/rascal",
+		"particle": "rascal:item/rascal"
 	},
 	"elements": [
 		{

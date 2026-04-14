@@ -6,4 +6,4 @@ data modify entity @n[type=minecraft:splash_potion,tag=rascal_defense_potion] Mo
 
 kill @e[tag=rascal_direction]
 
-playsound minecraft:entity.witch.throw neutral @a ~ ~ ~
+playsound rascal:entity.rascal.throw neutral @a ~ ~ ~

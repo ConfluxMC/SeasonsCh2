@@ -8,13 +8,13 @@ execute unless entity @e[tag=rascal_leasher,distance=..2] as @n[type=armor_stand
 scoreboard players add @s rascal_bite_cooldown 1
 
 # bite
-execute as @s[scores={rascal_bite_cooldown=1}] at @s if entity @e[tag=rascal_leasher,distance=..2] run playsound minecraft:entity.fox.bite hostile @a ~ ~ ~ 1 0.8
+execute as @s[scores={rascal_bite_cooldown=1}] at @s if entity @e[tag=rascal_leasher,distance=..2] run playsound rascal:entity.rascal.bite neutral @a ~ ~ ~
 execute as @s[scores={rascal_bite_cooldown=1}] at @s if entity @e[tag=rascal_leasher,distance=..2] run particle minecraft:crit ~ ~0.2 ~ 0.2 0.2 0.2 0.5 3 normal @a
 execute as @s[scores={rascal_bite_cooldown=1}] at @s if entity @e[tag=rascal_leasher,distance=..2] run return run damage @n[tag=rascal_leasher] 3 minecraft:mob_attack by @s
 
 # swallow
-execute as @s[scores={rascal_bite_cooldown=11}] at @s if entity @e[tag=rascal_leasher,distance=..1.8] run return run playsound minecraft:entity.fox.eat hostile @a ~ ~ ~ 0.7 0.8
-execute as @s[scores={rascal_bite_cooldown=18}] at @s if entity @e[tag=rascal_leasher,distance=..1] run return run playsound minecraft:entity.witch.drink hostile @a ~ ~ ~ 0.1 0.8
+execute as @s[scores={rascal_bite_cooldown=11}] at @s if entity @e[tag=rascal_leasher,distance=..1.8] run return run playsound rascal:entity.rascal.eat neutral @a ~ ~ ~ 0.7
+execute as @s[scores={rascal_bite_cooldown=18}] at @s if entity @e[tag=rascal_leasher,distance=..1] run return run playsound rascal:entity.rascal.swallow neutral @a ~ ~ ~ 0.1
 
 # reset cooldown
 scoreboard players set @s[scores={rascal_bite_cooldown=28..}] rascal_bite_cooldown 0

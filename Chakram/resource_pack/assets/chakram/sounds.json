@@ -10,12 +10,10 @@
     "sounds": [
       {
         "name": "minecraft:mob/breeze/land1",
-        "volume": 2.0,
         "pitch": 0.6
       },
       {
         "name": "minecraft:mob/breeze/land2",
-        "volume": 2.0,
         "pitch": 0.6
       }
     ],
