@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:adventure/spyglass_at_bear",
+  "parent": "minecraft:adventure/spyglass_at_parrot",
   "criteria": {
-    "spyglass_at_ghast": {
+    "spyglass_at_bear": {
       "conditions": {
         "item": {
           "items": "minecraft:spyglass"
@@ -15,8 +15,7 @@
                 "type": "minecraft:player",
                 "looking_at": {
                   "type": [
-                    "minecraft:ghast",
-                    "minecraft:happy_ghast"
+                    "minecraft:polar_bear"
                   ]
                 }
               }
@@ -28,20 +27,18 @@
     }
   },
   "display": {
-    "description": {
-      "translate": "advancements.adventure.spyglass_at_ghast.description"
-    },
+    "description": "Look at a Cave Bear through a Spyglass",
     "icon": {
       "count": 1,
       "id": "minecraft:spyglass"
     },
     "title": {
-      "translate": "advancements.adventure.spyglass_at_ghast.title"
+      "translate": "Is It a Tank?"
     }
   },
   "requirements": [
     [
-      "spyglass_at_ghast"
+      "spyglass_at_bear"
     ]
   ],
   "sends_telemetry_event": true

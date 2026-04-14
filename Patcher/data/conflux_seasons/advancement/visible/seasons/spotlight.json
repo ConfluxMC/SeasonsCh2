@@ -1,35 +1,35 @@
 {
-  "parent": "cavernous:miner_inconvenience",
+  "parent": "conflux_seasons:visible/seasons/miners_helmet",
   "criteria": {
-    "helmet": {
-      "trigger": "minecraft:inventory_changed",
+    "focus": {
+      "trigger": "minecraft:using_item",
       "conditions": {
         "player": [
           {
             "condition": "minecraft:reference",
             "name": "miners_helmet:wearing_miners_helmet"
           }
-        ]
+        ],
+        "item": {
+          "items": "minecraft:spyglass"
+        }
       }
     }
   },
   "display": {
     "title": {
-      "text": "Miner's Helmet"
+      "text": "Spotlight"
     },
     "description": {
-      "text": "Wear a Miner's Helmet"
+      "text": "Focus your headlamp with a spyglass"
     },
     "icon": {
-      "id": "minecraft:copper_helmet",
-      "components": {
-        "minecraft:item_model": "miners_helmet:miners_helmet"
-      }
+      "id": "minecraft:spyglass"
     }
   },
   "requirements": [
     [
-      "helmet"
+      "focus"
     ]
   ]
 }

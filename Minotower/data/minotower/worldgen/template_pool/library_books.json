@@ -1,0 +1,66 @@
+{
+  "name": "minotower:decorated_pots",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 8,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:library_books/decorative",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 36,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:library_books/plain",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 18,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:library_books/writable",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:library_books/sculk_converter",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 15,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:library_books/marble_skeletons",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    },
+    {
+      "weight": 15,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:library_books/ariadnes_moss",
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
+      }
+    }
+  ]
+}
