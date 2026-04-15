@@ -14,6 +14,21 @@ pools:
     entries:
       - type: ARMADILLO
         chance: 0.25
+  - rolls: 2
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:ARID_CAVES
+      - type: block
+        filter:
+          - WATER
+      - type: entity_limit
+        range: 100
+        limit: 3
+        filter:
+          - TURTLE
+    entries:
+      - type: TURTLE
+        chance: 0.1
     # DESERT
   - rolls: 4
     conditions:
@@ -27,6 +42,21 @@ pools:
     entries:
       - type: ARMADILLO
         chance: 0.25
+  - rolls: 2
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:DESERT_CAVES
+      - type: block
+        filter:
+          - WATER
+      - type: entity_limit
+        range: 100
+        limit: 3
+        filter:
+          - TURTLE
+    entries:
+      - type: TURTLE
+        chance: 0.1
     # PAINTED
   - rolls: 4
     conditions:
@@ -34,17 +64,23 @@ pools:
         biome: CAVERNOUS:PAINTED_CAVES
       - type: entity_limit
         range: 100
-        limit: 18
+        limit: 20
         filter:
           - PIG
           - COW
           - CHICKEN
+          - DONKEY
+          - LLAMA
     entries:
       - type: PIG
         chance: 0.25
       - type: COW
         chance: 0.25
       - type: CHICKEN
+        chance: 0.25
+      - type: DONKEY
+        chance: 0.25
+      - type: LLAMA
         chance: 0.25
   - rolls: 2
     conditions:
@@ -83,6 +119,21 @@ pools:
         attributes:
           - values:
               Variant: BLACK
+  - rolls: 2
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:PAINTED_CAVES
+      - type: block
+        filter:
+          - WATER
+      - type: entity_limit
+        range: 100
+        limit: 3
+        filter:
+          - TURTLE
+    entries:
+      - type: TURTLE
+        chance: 0.1
   - rolls: 3
     conditions:
       - type: biome
@@ -110,17 +161,12 @@ pools:
           - WATER
       - type: entity_limit
         range: 100
-        limit: 8
+        limit: 4
         filter:
-          - GUARDIAN
-      - type: entity_limit
-        range: 64
-        limit: 1
-        filter:
-          - AXOLOTL
+          - DOLPHIN
     entries:
-      - type: GUARDIAN
-        chance: 0.2
+      - type: DOLPHIN
+        chance: 0.1
     # MARBLE
   - rolls: 2
     conditions:
@@ -536,6 +582,21 @@ pools:
     entries:
       - type: SNOW_GOLEM
         chance: 0.1
+  - rolls: 3
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:ICY_CAVES
+      - type: block
+        filter:
+          - WATER
+      - type: entity_limit
+        range: 150
+        limit: 3
+        filter:
+          - DOLPHIN
+    entries:
+      - type: DOLPHIN
+        chance: 0.1
     # CALDERA
   - rolls: 1
     conditions:
@@ -567,6 +628,22 @@ pools:
     entries:
       - type: NAUTILUS
         chance: 0.7
+  - rolls: 1
+    conditions:
+      - type: biome
+        biome: CAVERNOUS:CALDERA_CAVES
+      - type: block
+        filter:
+          - WATER
+      - type: entity_limit
+        range: 100
+        limit: 4
+        filter:
+          - DOLPHIN
+    entries:
+      - type: DOLPHIN
+        chance: 0.1
+    # VOLCANIC
   - rolls: 1
     conditions:
       - type: biome
