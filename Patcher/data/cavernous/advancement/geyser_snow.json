@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:powder_snow_bucket"
+    },
+    "title": {
+      "text": "Makes you say real"
+    },
+    "description": {
+      "text": "Use a geyser to turn snow into powder snow"
+    }
+  },
+  "parent": "cavernous:come_on_geys",
+  "criteria": {
+    "real": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

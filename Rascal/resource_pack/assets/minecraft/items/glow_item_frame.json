@@ -11,21 +11,21 @@
 				"when": "rascal_1",
 				"model": {
 					"type": "model",
-					"model": "item/rascal_1"
+					"model": "rascal:item/rascal_1"
 				}
 			},
 			{
 				"when": "rascal_2",
 				"model": {
 					"type": "model",
-					"model": "item/rascal_2"
+					"model": "rascal:item/rascal_2"
 				}
 			},
 			{
 				"when": "rascal_body",
 				"model": {
 					"type": "model",
-					"model": "item/rascal_body"
+					"model": "rascal:item/rascal_body"
 				}
 			}
 		]

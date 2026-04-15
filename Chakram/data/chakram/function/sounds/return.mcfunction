@@ -1,1 +1,0 @@
-playsound minecraft:item.trident.return master @s ~ ~ ~ 0.5 1.5

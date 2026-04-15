@@ -13,7 +13,7 @@
                 "minecraft:custom_data": {
                   "rascal_bell": 1
                 },
-                "minecraft:item_model": "minecraft:raw_iron",
+                "minecraft:item_model": "minotower:bell/rascal",
                 "minecraft:item_name": "Rascal Bell",
                 "minecraft:use_cooldown": {
                   "seconds": 200,

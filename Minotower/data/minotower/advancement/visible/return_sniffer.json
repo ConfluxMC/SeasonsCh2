@@ -1,5 +1,5 @@
 {
-  "parent": "minotower:visible/mysterious_guide",
+  "parent": "minotower:visible/library_books",
   "criteria": {
     "return_sniffer": {
       "trigger": "minecraft:placed_block",

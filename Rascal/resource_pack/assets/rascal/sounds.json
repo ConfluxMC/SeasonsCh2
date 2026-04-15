@@ -1,0 +1,148 @@
+{
+  "entity.rascal.revealed": {
+    "sounds": [
+      "rascal:entity/rascal/revealed1",
+      "rascal:entity/rascal/revealed2"
+    ],
+    "subtitle": "rascal:subtitles.entity.rascal.revealed"
+  },
+  "entity.rascal.hide": {
+    "sounds": [
+      {
+        "name": "minecraft:mob/breeze/land1",
+        "pitch": 0.6
+      },
+      {
+        "name": "minecraft:mob/breeze/land2",
+        "pitch": 0.6
+      }
+    ],
+    "subtitle": "rascal:subtitles.entity.rascal.hide"
+  },
+  "entity.rascal.laugh": {
+    "sounds": [
+      {
+        "name": "minecraft:entity/witch/ambient1",
+        "pitch": 2
+      },
+      {
+        "name": "minecraft:entity/witch/ambient4",
+        "pitch": 2
+      },
+      {
+        "name": "minecraft:entity/witch/celebrate",
+        "pitch": 2
+      }
+    ],
+    "subtitle": "rascal:subtitles.entity.rascal.laugh"
+  },
+  "entity.rascal.ambient": {
+    "sounds": [
+      {
+        "name": "minecraft:entity/witch/ambient1",
+        "pitch": 2
+      },
+      {
+        "name": "minecraft:entity/witch/ambient2",
+        "pitch": 2
+      },
+      {
+        "name": "minecraft:entity/witch/ambient3",
+        "pitch": 2
+      },
+      {
+        "name": "minecraft:entity/witch/ambient4",
+        "pitch": 2
+      },
+      {
+        "name": "minecraft:entity/witch/ambient5",
+        "pitch": 2
+      }
+    ],
+    "subtitle": "rascal:subtitles.entity.rascal.ambient"
+  },
+  "entity.rascal.hurt": {
+    "sounds": [
+      {
+        "name": "minecraft:entity/witch/hurt1",
+        "pitch": 1.6
+      },
+      {
+        "name": "minecraft:entity/witch/hurt2",
+        "pitch": 1.6
+      },
+      {
+        "name": "minecraft:entity/witch/hurt3",
+        "pitch": 1.6
+      }
+    ],
+    "subtitle": "rascal:subtitles.entity.rascal.hurt"
+  },
+  "entity.rascal.throw": {
+    "sounds": [
+      "entity/witch/throw1",
+      "entity/witch/throw2",
+      "entity/witch/throw3"
+    ],
+    "subtitle": "rascal:subtitles.entity.rascal.throw"
+  },
+  "entity.rascal.bite": {
+    "sounds": [
+      {
+        "name": "mob/fox/bite1",
+        "pitch": 0.85,
+        "volume": 0.6
+      },
+      {
+        "name": "mob/fox/bite2",
+        "pitch": 0.85,
+        "volume": 0.6
+      },
+      {
+        "name": "mob/fox/bite3",
+        "pitch": 0.85,
+        "volume": 0.6
+      }
+    ],
+    "subtitle": "rascal:subtitles.entity.rascal.bite"
+  },
+  "entity.rascal.eat": {
+    "sounds": [
+      {
+        "name": "mob/fox/eat1",
+        "volume": 0.65,
+        "pitch": 0.8
+      },
+      {
+        "name": "mob/fox/eat2",
+        "volume": 0.65,
+        "pitch": 0.8
+      },
+      {
+        "name": "mob/fox/eat3",
+        "volume": 0.65,
+        "pitch": 0.8
+      }
+    ]
+  },
+  "entity.rascal.swallow": {
+    "sounds": [
+      {
+        "name": "entity/witch/drink1",
+        "pitch": 0.8
+      },
+      {
+        "name": "entity/witch/drink2",
+        "pitch": 0.8
+      },
+      {
+        "name": "entity/witch/drink3",
+        "pitch": 0.8
+      },
+      {
+        "name": "entity/witch/drink4",
+        "pitch": 0.8
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "parent": "minotower:visible/library_patron",
+  "criteria": {
+    "sculk_converter": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "minotower:minotower"
+          }
+        },
+        "items": [
+          {
+            "items": "minecraft:written_book",
+            "components": {
+              "minecraft:custom_data": {
+                "sculk_converter_guide": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "marble_skeletons": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "minotower:minotower"
+          }
+        },
+        "items": [
+          {
+            "items": "minecraft:written_book",
+            "components": {
+              "minecraft:custom_data": {
+                "marble_skeleton_guide": true
+              }
+            }
+          }
+        ]
+      }
+    },
+    "ariadnes_moss": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "minotower:minotower"
+          }
+        },
+        "items": [
+          {
+            "items": "minecraft:written_book",
+            "components": {
+              "minecraft:custom_data": {
+                "ariadnes_moss_guide": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Language Barrier"
+    },
+    "description": {
+      "text": "Find unique books in Minotauri libraries"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:written_book"
+    },
+    "frame": "goal",
+    "hidden": false
+  },
+  "requirements": [
+    [
+      "sculk_converter"
+    ],
+    [
+      "marble_skeletons"
+    ],
+    [
+      "ariadnes_moss"
+    ]
+  ]
+}

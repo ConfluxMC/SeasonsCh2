@@ -2,7 +2,7 @@
   {
     "function": "minecraft:set_components",
     "components": {
-      "minecraft:item_model": "minecraft:bell",
+      "minecraft:item_model": "minotower:bell/minotauri",
       "minecraft:damage": 499,
       "minecraft:attribute_modifiers": [
         {

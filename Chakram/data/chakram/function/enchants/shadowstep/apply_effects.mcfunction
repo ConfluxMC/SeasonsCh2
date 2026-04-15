@@ -1,5 +1,4 @@
-function chakram:enchants/shadowstep/cloud_effect_enter
-playsound minecraft:entity.ender_eye.death master @s ~ ~ ~ 0.2 0.1
+execute at @s run function chakram:enchants/shadowstep/cloud_effect_enter
 
 attribute @s minecraft:safe_fall_distance modifier add chakram:shadowstepping 30 add_value
 

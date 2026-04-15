@@ -6,7 +6,7 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "minotower:item/bell_template/amethyst"
+          "model": "minotower:item/bell/template/amethyst"
         },
         "when": {
           "bell_template": "amethyst",
@@ -16,7 +16,7 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "minotower:item/bell_template/breeze"
+          "model": "minotower:item/bell/template/breeze"
         },
         "when": {
           "bell_template": "breeze",
@@ -26,7 +26,7 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "minotower:item/bell_template/evoker"
+          "model": "minotower:item/bell/template/evoker"
         },
         "when": {
           "bell_template": "evoker",
@@ -36,7 +36,7 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "minotower:item/bell_template/minotauri"
+          "model": "minotower:item/bell/template/minotauri"
         },
         "when": {
           "bell_template": "minotauri",
@@ -46,7 +46,7 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "minotower:item/bell_template/rascal"
+          "model": "minotower:item/bell/template/rascal"
         },
         "when": {
           "bell_template": "rascal",
@@ -56,7 +56,7 @@
       {
         "model": {
           "type": "minecraft:model",
-          "model": "minotower:item/bell_template/warden"
+          "model": "minotower:item/bell/template/warden"
         },
         "when": {
           "bell_template": "warden",

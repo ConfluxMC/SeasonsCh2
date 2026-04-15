@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/template_stone_painting",
-  "textures": {
-    "end": "minecraft:block/stone",
-    "side": "minecraft:block/stone_painting_29",
-    "particle": "minecraft:block/stone_painting_29"
-  }
-}

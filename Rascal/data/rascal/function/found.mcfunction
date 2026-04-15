@@ -9,7 +9,7 @@ tag @s remove rascal_can_be_caught
 data modify entity @s equipment set value {}
 
 particle minecraft:dust_color_transition{from_color:[0.0,0.0,0.0],to_color:[0.0,0.4,0.5],scale:3} ~ ~1 ~ 0.5 0.5 0.5 0 30
-playsound minecraft:entity.breeze.land master @a ~ ~ ~ 2 0.6
+playsound rascal:entity.rascal.hide neutral @a ~ ~ ~ 2
 
 scoreboard players add @s rascal_times_found 1
 
@@ -17,5 +17,5 @@ scoreboard players add @s rascal_times_found 1
 execute as @s[scores={rascal_times_found=3..}] run return run function rascal:give_gift
 
 # If not final, play mischief sound, then teleport behind player and facing away
-playsound minecraft:entity.witch.celebrate neutral @a ~ ~ ~ 1 2
+playsound rascal:entity.rascal.laugh neutral @a ~ ~ ~
 execute at @n[type=player,predicate=rascal:eligible_finder] if block ^ ^ ^-0.5 #rascal:rascal_safe_tp_destinations run tp @n[type=ocelot,tag=rascal_ocelot,predicate=rascal:rascal_id] ^ ^ ^-0.3 ~180 ~

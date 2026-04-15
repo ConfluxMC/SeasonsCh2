@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:adventure/spyglass_at_parrot",
+  "parent": "minecraft:adventure/spyglass_at_bear",
   "criteria": {
     "spyglass_at_ghast": {
       "conditions": {

@@ -1,0 +1,35 @@
+{
+  "parent": "conflux_seasons:visible/seasons/miners_helmet",
+  "criteria": {
+    "focus": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:reference",
+            "name": "miners_helmet:wearing_miners_helmet"
+          }
+        ],
+        "item": {
+          "items": "minecraft:spyglass"
+        }
+      }
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Spotlight"
+    },
+    "description": {
+      "text": "Focus your headlamp with a spyglass"
+    },
+    "icon": {
+      "id": "minecraft:spyglass"
+    }
+  },
+  "requirements": [
+    [
+      "focus"
+    ]
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "rascal:subtitles.entity.rascal.revealed": "Rascal appears",
+  "rascal:subtitles.entity.rascal.hide": "Rascal disappears",
+  "rascal:subtitles.entity.rascal.laugh": "Rascal giggles",
+  "rascal:subtitles.entity.rascal.ambient": "Rascal grunts",
+  "rascal:subtitles.entity.rascal.hurt": "Rascal hurt",
+  "rascal:subtitles.entity.rascal.throw": "Rascal throws a potion",
+  "rascal:subtitles.entity.rascal.bite": "Rascal bites"
+}
