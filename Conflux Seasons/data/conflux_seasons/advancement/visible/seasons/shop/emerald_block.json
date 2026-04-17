@@ -1,0 +1,120 @@
+{
+  "parent": "conflux_seasons:visible/seasons/shop/rich",
+  "criteria": {
+    "green_block": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "minecraft:emerald_block",
+        "ingredients": [
+          {
+            "items": "minecraft:emerald",
+            "components": {
+              "minecraft:custom_data": {
+                "solstice_shard": true
+              }
+            }
+          },
+          {
+            "items": "minecraft:emerald",
+            "components": {
+              "minecraft:custom_data": {
+                "solstice_shard": true
+              }
+            }
+          },
+          {
+            "items": "minecraft:emerald",
+            "components": {
+              "minecraft:custom_data": {
+                "solstice_shard": true
+              }
+            }
+          },
+          {
+            "items": "minecraft:emerald",
+            "components": {
+              "minecraft:custom_data": {
+                "solstice_shard": true
+              }
+            }
+          },
+          {
+            "items": "minecraft:emerald",
+            "components": {
+              "minecraft:custom_data": {
+                "solstice_shard": true
+              }
+            }
+          },
+          {
+            "items": "minecraft:emerald",
+            "components": {
+              "minecraft:custom_data": {
+                "solstice_shard": true
+              }
+            }
+          },
+          {
+            "items": "minecraft:emerald",
+            "components": {
+              "minecraft:custom_data": {
+                "solstice_shard": true
+              }
+            }
+          },
+          {
+            "items": "minecraft:emerald",
+            "components": {
+              "minecraft:custom_data": {
+                "solstice_shard": true
+              }
+            }
+          },
+          {
+            "items": "minecraft:emerald",
+            "components": {
+              "minecraft:custom_data": {
+                "solstice_shard": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "display": {
+    "title": [
+      {
+        "text": "! ",
+        "color": "yellow",
+        "bold": true
+      },
+      {
+        "text": "TRADE OFFER",
+        "color": "red",
+        "bold": false,
+        "underlined": true
+      },
+      {
+        "text": " !",
+        "color": "yellow",
+        "bold": true
+      }
+    ],
+    "description": {
+      "text": "Craft 9 Solstice Shards into an emerald block... for some reason. No refunds.",
+      "color": "dark_purple",
+      "bold": false
+    },
+    "icon": {
+      "id": "minecraft:emerald_block"
+    },
+    "frame": "challenge",
+    "hidden": true
+  },
+  "requirements": [
+    [
+      "green_block"
+    ]
+  ]
+}

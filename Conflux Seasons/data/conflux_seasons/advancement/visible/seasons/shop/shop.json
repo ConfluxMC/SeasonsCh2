@@ -5,7 +5,7 @@
     },
     "title": "Valued Customer",
     "description": {
-      "text": "Purchase something from the Sols Shop."
+      "text": "Buy something from the Sols Shop"
     }
   },
   "parent": "conflux_seasons:visible/seasons/root",
@@ -13,8 +13,5 @@
     "buy": {
       "trigger": "minecraft:impossible"
     }
-  },
-  "rewards": {
-    "function": "conflux_seasons:advancement_reward/shop/shop"
   }
 }

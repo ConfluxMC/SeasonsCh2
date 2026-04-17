@@ -1,50 +1,43 @@
 {
   "type": "minecraft:multi_action",
   "title": {
-    "text": "Conflux Seasons Chapter 2: Hollow Earth"
+    "text": "Welcome to Conflux Seasons Chapter 2: Hollow Earth!"
   },
   "external_title": {
     "text": "Conflux Seasons"
   },
-  "body": {
-    "type": "minecraft:plain_message",
-    "contents": [
-      {
-        "text": "Welcome to Conflux Seasons Chapter 2: Hollow Earth!"
-      },
-      {
-        "text": "\nView your progress in the Conflux Seasons tab in Advancements [ ",
-        "extra": [
-          {
-            "keybind": "key.advancements"
-          },
-          {
-            "text": " ]."
-          }
-        ]
-      }
-    ]
-  },
-  "columns": 2,
+  "columns": 1,
   "actions": [
     {
-      "label": {
-        "text": "Wiki"
-      },
-      "width": 75,
+      "label": "Quests",
       "action": {
-        "type": "minecraft:open_url",
-        "url": "https://confluxseasons.miraheze.org/wiki/"
+        "type": "minecraft:custom",
+        "id": "conflux_seasons:quests_open"
+      }
+    },
+    {
+      "label": "Rewards",
+      "action": {
+        "type": "minecraft:custom",
+        "id": "conflux_seasons:rewards_open"
       }
     },
     {
       "label": {
         "text": "Sols Shop"
       },
-      "width": 75,
       "action": {
         "type": "minecraft:custom",
         "id": "conflux_seasons:shop_open"
+      }
+    },
+    {
+      "label": {
+        "text": "Wiki"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://confluxseasons.miraheze.org/wiki/"
       }
     }
   ]
