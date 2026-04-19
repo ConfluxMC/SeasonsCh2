@@ -9,17 +9,10 @@
   "columns": 1,
   "actions": [
     {
-      "label": "Quests",
+      "label": "Battlepass",
       "action": {
         "type": "minecraft:custom",
-        "id": "conflux_seasons:quests_open"
-      }
-    },
-    {
-      "label": "Rewards",
-      "action": {
-        "type": "minecraft:custom",
-        "id": "conflux_seasons:rewards_open"
+        "id": "conflux_seasons:battlepass_open"
       }
     },
     {

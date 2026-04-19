@@ -3,6 +3,12 @@
   "values": [
     "minecraft:brown_mushroom",
     "minecraft:red_mushroom",
-    "minecraft:sculk_sensor"
+    "minecraft:crimson_fungus",
+    "minecraft:warped_fungus",
+    "minecraft:crimson_roots",
+    "minecraft:warped_fungus",
+    "minecraft:nether_sprouts",
+    "minecraft:sculk_sensor",
+    "minecraft:cobweb"
   ]
 }

@@ -1,0 +1,24 @@
+{
+  "parent": "conflux_seasons:visible/seasons/root",
+  "criteria": {
+    "bear_jockey": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Bear Jockey"
+    },
+    "description": {
+      "text": "Ride a cave bear and command it to attack"
+    },
+    "icon": {
+      "id": "minecraft:salmon"
+    }
+  },
+  "requirements": [
+    [
+      "bear_jockey"
+    ]
+  ]
+}

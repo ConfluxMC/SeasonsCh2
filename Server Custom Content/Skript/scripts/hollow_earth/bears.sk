@@ -1,0 +1,133 @@
+on right click:
+    set {_v} to vehicle of player
+    if all: # Apparently clicking on your own vehicle does not trigger the "click on entity" event
+        target of player is {_v}
+        {_v} is a polar bear
+        minecraft tag "bear_food" contains held item of player
+    then:
+        feedBear(player, {_v})
+        cancel event
+    else:
+        setBearTarget(player, target of player)
+
+on right click on polar bear:
+    if minecraft tag "bear_food" contains type of held item of player:
+        feedBear(player, event-entity)
+    else if all:
+        held item of player is air
+        target of event-entity is not player
+    then:
+        make player swing hand
+        make player ride event-entity
+
+local function feedBear(p: player, bear: livingentity):
+    if all:
+        max health of {_bear} > health of {_bear}
+        {_bear} is not dead
+    then:
+        if target of {_bear} is {_p}:
+            set {_rand} to random integer between 3 and 7
+            make {_rand} angry_villager particle at block above {_bear} with offset vector(0.5,0.5,0.5) with extra 3
+            play sound "minecraft:entity.polar_bear.warning" in neutral category at {_bear}
+        else:
+            set {_rand} to random integer between 3 and 7
+            make {_rand} heart particle at block above {_bear} with offset vector(0.5,0.5,0.5) with extra 3
+            play sound "minecraft:entity.cat.eat" in neutral category at {_bear}
+        heal {_bear} by 3
+        useBearSnack({_p})
+    else:
+        if all:
+            {_target} of {_bear} is not {_p}
+            {bearsInLove::%uuid of {_bear}%} is not set
+            age of {_bear} >= 0
+        then:
+            set {bearsInLove::%uuid of {_bear}%} to 30
+            set {bearBreeders::%uuid of {_bear}%} to uuid of {_p}
+            set {_rand} to random integer between 3 and 7
+            make {_rand} heart particle at block above {_bear} with offset vector(0.5,0.5,0.5) with extra 3
+            useBearSnack({_p})
+
+local function useBearSnack(p: player):
+    make {_p} swing hand
+    if gamemode of {_p} is not creative:
+        remove 1 of (type of held item of {_p}) from held item of {_p}
+
+# Breed checking
+every 1 second:
+    loop indices of {bearsInLove::*}:
+        set {_bear} to entity from (loop-value parsed as uuid)
+        if any:
+            {_bear} is not set
+            {bearsInLove::%loop-value%} is 0
+        then:
+            delete {bearBreeders::%loop-value%}
+            delete {bearsInLove::%loop-value%}
+        else:
+            if {bearsInLove::%loop-value%} < 0: # This is the love mode cooldown
+                add 1 to {bearsInLove::%loop-value%}
+            else: # If love mode is positive
+                subtract 1 from {bearsInLove::%loop-value%}
+                set {_partner} to nearest polar bear in radius 8 at {_bear} excluding (all polar bears where [{bearsInLove::%uuid of input%} is not greater than 0])
+                if {_partner} is set:
+                    if distance between {_bear} and {_partner} <= 2:
+                        spawn polar bear at {_bear}:
+                            set age of polar bear to -12000
+                        set {_rand} to random integer between 5 and 11
+                        make {_rand} heart particle at block above last spawned polar bear with offset vector(0.8,0.8,0.8) with extra 3
+                        spawn 1 experience orb at {_bear}:
+                            set experience of experience orb to (random integer between 1 and 7)
+                        set {bearsInLove::%uuid of {_bear}%} to -300
+                        set {bearsInLove::%uuid of {_partner}%} to -300
+                        set {_bearBreeder} to {bearBreeders::%uuid of {_bear}%} parsed as player
+                        set {_partnerBreeder} to {bearBreeders::%uuid of {_partner}%} parsed as player
+                        grantAdvancement("bred","minecraft:husbandry/breed_an_animal",{_bearBreeder})
+                        grantAdvancement("minecraft:bear","minecraft:husbandry/bred_all_animals",{_bearBreeder})
+                        grantAdvancement("bred","minecraft:husbandry/breed_an_animal",{_partnerBreeder})
+                        grantAdvancement("minecraft:bear","minecraft:husbandry/bred_all_animals",{_partnerBreeder})
+                        delete {bearBreeders::%uuid of {_bear}%}
+                        delete {bearBreeders::%uuid of {_partner}%}
+                    else:
+                        make {_bear} pathfind to {_partner}
+            
+local function grantAdvancement(criteria: string, advancement: string, p: player):
+    set {_adv} to {_advancement} parsed as advancement
+    set {_prog} to advancement progress of {_adv} for {_p}
+    award criteria {_criteria} of {_prog}
+
+local function setBearTarget(p: player, target: livingentity):: boolean:
+    set {_v} to vehicle of {_p}
+    if all:
+        {_v} is a polar bear
+        minecraft tag "bear_food" contains held item of {_p}
+    then:
+        if {_target} is not a polar bear:
+            set target of {_v} to {_target}
+            #send "Now targeting %{_target}%" to {_p}
+            if {_target} is set:
+                grantAdvancement("bear_jockey","conflux_seasons:visible/seasons/bear_jockey",{_p})
+                addPlaceholder({_p},"bears_commanded",1)
+                play sound "minecraft:entity.cat.eat" in neutral category at {_v}
+                play sound "minecraft:entity.polar_bear.warning" in neutral category at volume 1.25 at {_v}
+                useBearSnack({_p})
+                apply potion effect of speed to {_v} for 10 seconds:
+                    hide the particles
+                apply resistance 2 to {_v} for 10 seconds
+                return true
+            else if distance between {_v} and targeted block of {_p} < 32:
+                addPlaceholder({_p},"bears_commanded",1)
+                play sound "minecraft:entity.cat.eat" in neutral category at {_v}
+                useBearSnack({_p})
+                apply potion effect of speed to {_v} for 10 seconds:
+                    hide the particles
+                make {_v} pathfind to targeted block of {_p}
+                return true
+    return false
+
+on spawn of polar bear:
+    if age of polar bear >= 0:
+        chance of 25%:
+            spawn polar bear at event-entity:
+                set age of polar bear to -12000
+            chance of 15%:
+                spawn polar bear at event-entity:
+                    set age of polar bear to -12000

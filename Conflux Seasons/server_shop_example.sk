@@ -65,20 +65,31 @@ on custom click:
         set {_payload} to event-nbt
         if event-namespacedkey is "conflux_seasons:shop_buy":
             set {_key} to string tag "index" of {_payload}
-            set {_index} to {sols_shop.items.index::%{_key}%}
-            if {sols_shop.players::*} does not contain player:
-                add player to {sols_shop.players::*}
-            add 1 to {sols_shop.players::%player%::%{_key}%}
-            make console execute command "execute as %player% at @s run function conflux_seasons:shop/buy/check_balance with storage conflux_seasons:shop items[%{_index}%]"
+            if {sols_shop.items.cost::%{_key}%} <= solsBalance(player):
+                set {_index} to {sols_shop.items.index::%{_key}%}
+                if {sols_shop.players::*} does not contain player:
+                    add player to {sols_shop.players::*}
+                add 1 to {sols_shop.players::%player%::%{_key}%}
+                make console execute command "execute as %player% at @s run function conflux_seasons:shop/buy/check_balance with storage conflux_seasons:shop items[%{_index}%]"
+                ################# BATTLEPASS PALCEHOLDER MARKER FOR DAILY PURCHASE ####################
+                addPlaceholder(player, "sols_shop_purchases", 1)
+            else:
+                play sound "minecraft:entity.villager.no" at player for player
+                send "&cYou need %solsSprite({sols_shop.items.cost::%{_key}%} - solsBalance(player),player,"#")%&c more to purchase {@itemClr}%{sols_shop.items.name::%{_key}%}%&c."
         else if event-namespacedkey is "conflux_seasons:shop_withdraw_sols":
             set {_amt} to float tag "withdraw_range" of {_payload}
-            if {_amt} > 0:
+            if all:
+                {_amt} > 0
+                {_amt} <= solsBalance(player)
+            then:
                 giveSols({_amt}*-1,player,false)
                 giveSols({_amt},player,true)
-        else if event-namespacedkey is "conflux_seasons:quests_open":
-            make player execute command "bp open daily-quests"
-        else if event-namespacedkey is "conflux_seasons:rewards_open":
-            make player execute command "bp open rewards"
+                play sound "minecraft:block.amethyst_block.step" with pitch 1.4 at player for player
+            else:
+                play sound "minecraft:entity.villager.no" at player for player
+                send "&cCould not withdraw %solsSprite({_amt},player,"#")%&c."
+        else if event-namespacedkey is "conflux_seasons:battlepass_open":
+            make player execute command "bp open portal"
         else if event-namespacedkey is "conflux_seasons:sols_noise_easter_egg":
             play sound "minecraft:block.amethyst_block.step" with pitch 1.4 at player for player
 
@@ -173,6 +184,8 @@ command /shop-remove <string>:
         delete {sols_shop.items.index::%{_key}%}
         delete {sols_shop.items.name::%{_key}%}
         delete {sols_shop.items.cost::%{_key}%}
+        loop {sols_shop.players::*}:
+            delete {sols_shop.players::%loop-value%::%{_key}%}
         loop {sols_shop.items.index::*}:
             if loop-value > {_index}:
                 set {sols_shop.items.index::%loop-index%} to loop-value - 1 # Since the storage data will decrements its indexes, update tracking in skript too

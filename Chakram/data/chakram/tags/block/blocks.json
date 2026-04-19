@@ -1,4 +1,6 @@
-{"replace":false,"values":[
+{
+  "replace": false,
+  "values": [
     "minecraft:air",
     "minecraft:cave_air",
     "minecraft:void_air",
@@ -54,6 +56,8 @@
     "#minecraft:rails",
     "#minecraft:fire",
     "minecraft:snow",
+    "minecraft:moss_carpet",
+    "minecraft:pale_moss_carpet",
     "minecraft:redstone_torch",
     "minecraft:torch",
     "minecraft:soul_torch",
@@ -71,4 +75,5 @@
     "minecraft:tall_dry_grass",
     "minecraft:light",
     "minecraft:sweet_berry_bush"
-]}
+  ]
+}

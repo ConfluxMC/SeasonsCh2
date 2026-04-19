@@ -1,0 +1,13 @@
+on spawn of drowned:
+    set {_ent} to event-entity
+    if any:
+        {_ent}'s tool is a trident
+        chance of 0.1
+    then:
+        set {_ent}'s tool to fishing rod
+        if offhand item of {_ent} is air:
+            randomly enchant {_ent}'s tool at level 15 allowing treasure enchantments
+            set {_lootctx} to loot context at event-location:
+                set looter to nearest player relative to {_ent}
+            set {_item} to first element of loot of loot table "minecraft:gameplay/fishing" using {_lootctx}
+            set offhand item of {_ent} to {_item}

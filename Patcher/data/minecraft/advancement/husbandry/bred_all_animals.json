@@ -312,6 +312,9 @@
         ]
       },
       "trigger": "minecraft:bred_animals"
+    },
+    "minecraft:bear": {
+      "trigger": "minecraft:impossible"
     }
   },
   "display": {
@@ -390,6 +393,9 @@
     ],
     [
       "minecraft:sniffer"
+    ],
+    [
+      "minecraft:bear"
     ]
   ],
   "rewards": {

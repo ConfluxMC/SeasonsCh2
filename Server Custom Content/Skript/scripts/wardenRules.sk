@@ -1,4 +1,0 @@
-on spawn of warden:
-    if "%biome at event-location%" contains "amethyst_mines":
-        cancel event
-        send "prevented" to all players

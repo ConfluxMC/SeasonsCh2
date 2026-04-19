@@ -1,3 +1,3 @@
 playsound minecraft:block.sculk_shrieker.shriek hostile @a ~ ~ ~ 1 0.8
-tellraw @a ["",{"text":"<","color":"white"},{"text":"High Priest Veridian","bold":true,"color":"red"},{"text":"> NOTHING CAN STOP ME NOW","color":"white"}]
+tellraw @a[distance=..50] ["",{"text":"<","color":"white"},{"text":"High Priest Veridian","bold":true,"color":"red"},{"text":"> NOTHING CAN STOP ME NOW","color":"white"}]
 scoreboard players add @s priest.dialogue_counter 1
