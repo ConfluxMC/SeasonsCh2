@@ -5,7 +5,7 @@ $data modify storage conflux_seasons:dialog_construction dialog set value {type:
     inputs:[{type: "number_range",key: "withdraw_range",\
       label: [{text: "Withdraw Solstice Shards"},$(sols_icon)],\
       start:1,end:1,step:1,initial:1}],\
-    columns:$(cols),exit_action:{label:"Exit",width:200},\
+    columns:$(cols),exit_action:{label:{translate:"gui.done",fallback:"Done"},width:200},\
     title:[$(sols_icon),{text:" Shop "},$(sols_icon)],actions:[]}
 
 # Add all the items

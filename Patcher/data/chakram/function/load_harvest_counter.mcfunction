@@ -1,0 +1,1 @@
+scoreboard objectives add chakram_harvest_quest_count dummy

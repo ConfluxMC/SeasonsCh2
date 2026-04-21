@@ -1,0 +1,607 @@
+actions-version: 2
+
+quests:
+  '1': # Quest id
+    type: login
+    name: Daily Login
+    required-progress: 1
+    points: 1
+    complete-commands:
+    - sols-give 5 %player%
+    - daily-logins-add %player%
+    item:
+      material: iron_door
+      name: '&eDaily Login'
+      lore:
+      - ''
+      - '&a%percentage_progress% %progress_bar%'
+  '2': # Quest id
+    type: placeholderapi_integer_seasonsquests_sols_shop_purchases
+    name: Daily Purchase
+    required-progress: 3
+    points: 1
+    complete-commands:
+    - sols-give 5 %player%
+    item:
+      material: emerald
+      item-model: conflux_seasons:solstice_shard
+      name: '&eDaily Sols Shop Patron'
+      lore:
+      - '&7Buy %required_progress% of anything from the Sols Shop'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '3': # Quest id
+    type: placeholderapi_integer_seasonsquests_distance_to_worldborder_percent
+    name: Scouting Ahead
+    required-progress: 1
+    variable:
+      root: none
+      conditions:
+        or: []
+        and:
+        - '%seasonsquests_distance_to_worldborder% < 3'
+    points: 1
+    item:
+      material: compass
+      name: '&eScouting Beyond'
+      lore:
+      - '&7Visit the world border'
+      - ''
+      - '&b%seasonsquests_distance_to_worldborder%&7 blocks away'
+  '4': # Quest id
+    type: placeholderapi_integer_seasonsquests_rascals_found
+    name: Hide & Seek
+    required-progress: 1
+    points: 1
+    item:
+      material: chest_minecart
+      name: '&eHide & Seek'
+      lore:
+      - '&7Find a Rascal 3 times in a row'
+      - ''
+      - '&a%percentage_progress% %progress_bar%'
+  '5': # Quest id
+    type: placeholderapi_integer_seasonsquests_spriggs_punched
+    name: Who Needs a Pickaxe?
+    required-progress: 5
+    points: 1
+    item:
+      material: mangrove_propagule
+      item-model: minecraft:silverfish_spawn_egg
+      name: '&eWho Needs a Pickaxe?'
+      lore:
+      - '&7Punch %required_progress% Spriggs'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '6': # Quest id
+    type: placeholderapi_integer_seasonsquests_chakram_damage
+    name: Flying Blade
+    required-progress: 100
+    points: 1
+    item:
+      material: iron_sword
+      item-model: chakram:chakram
+      name: '&eFlying Blade'
+      lore:
+      - '&7Deal %required_progress% damage using a chakram'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '7': # Quest id
+    type: block-break
+    variable: stone OR deepslate OR tuff OR diorite
+    name: Miner
+    required-progress: 100
+    points: 1
+    item:
+      material: cobblestone
+      name: '&eMiner'
+      lore:
+      - '&7Mine %required_progress% stone, deepslate, tuff,'
+      - '&7 or diorite blocks'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '8': # Quest id
+    type: right-click
+    variable:
+      root: none
+      holding:
+        item: spyglass
+      conditions:
+        or: []
+        and:
+        - '%seasonsquests_wearing_miners_helmet% == true'
+    name: Spotlight
+    required-progress: 1
+    points: 1
+    item:
+      material: copper_helmet
+      item-model: miners_helmet:miners_helmet
+      name: '&eSpotlight'
+      lore:
+      - '&7Focus your mining helmet''s'
+      - '&7light using a spyglass'
+      - ''
+      - '&7(&a%percentage_progress%&7)'
+  '9': # Quest id
+    type: placeholderapi_integer_seasonsquests_seared_damage
+    name: Decorated Warrior
+    required-progress: 100
+    points: 1
+    item:
+      material: b64:rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABnQAAj09dAALRGF0YVZlcnNpb250AAJpZHQABWNvdW50dAAKY29tcG9uZW50c3QADnNjaGVtYV92ZXJzaW9udXEAfgAGAAAABnQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAABI/dAAXbWluZWNyYWZ0Om5ldGhlcml0ZV9heGVzcQB+ABAAAAABc3IAF2phdmEudXRpbC5MaW5rZWRIYXNoTWFwNMBOXBBswPsCAAFaAAthY2Nlc3NPcmRlcnhyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAx3CAAAABAAAAABdAAObWluZWNyYWZ0OnRyaW10ADd7bWF0ZXJpYWw6Im1pbm90b3dlcjpob25leSIscGF0dGVybjoibWlub3Rvd2VyOnNlYXJlZCJ9eABxAH4AFA==
+      item-flags:
+      - HIDE_ARMOR_TRIM
+      name: '&eDecorated Warrior'
+      lore:
+      - '&7Deal %required_progress% damage using any seared weapon'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '10':
+    type: placeholderapi_integer_seasonsquests_custom_arrows_shot
+    name: Remote Placement
+    required-progress: 5
+    points: 1
+    item:
+      material: b64:rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABnQAAj09dAALRGF0YVZlcnNpb250AAJpZHQABWNvdW50dAAKY29tcG9uZW50c3QADnNjaGVtYV92ZXJzaW9udXEAfgAGAAAABnQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAABI/dAAWbWluZWNyYWZ0OnRpcHBlZF9hcnJvd3NxAH4AEAAAAAFzcgAXamF2YS51dGlsLkxpbmtlZEhhc2hNYXA0wE5cEGzA+wIAAVoAC2FjY2Vzc09yZGVyeHIAEWphdmEudXRpbC5IYXNoTWFwBQfawcMWYNEDAAJGAApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcIAAAAEAAAAAR0ABltaW5lY3JhZnQ6cG90aW9uX2NvbnRlbnRzdAAXe2N1c3RvbV9jb2xvcjoxNjc2MzE5MH10ABltaW5lY3JhZnQ6dG9vbHRpcF9kaXNwbGF5dAAxe2hpZGRlbl9jb21wb25lbnRzOlsibWluZWNyYWZ0OnBvdGlvbl9jb250ZW50cyJdfXQAFW1pbmVjcmFmdDpjdXN0b21fbmFtZXQAHntpdGFsaWM6MGIsdGV4dDoiVG9yY2ggQXJyb3cifXQAFW1pbmVjcmFmdDpjdXN0b21fZGF0YXQAE3t0YWc6InRvcmNoX2Fycm93In14AHEAfgAU
+      name: '&eRemote Placement'
+      lore:
+      - '&7Fire %required_progress% chain arrows or torch arrows'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '11':
+    type: placeholderapi_integer_sanity_sanity
+    name: Sane
+    required-progress: 80
+    points: 1
+    item:
+      material: brain_coral_block
+      name: '&eSane'
+      lore:
+      - '&7Reach %required_progress%+ sanity'
+  '12': # Quest id
+    type: placeholderapi_integer_seasonsquests_negative_sanity
+    name: Insane
+    required-progress: 50
+    points: 1
+    item:
+      material: dead_brain_coral_block
+      name: '&eInsane'
+      lore:
+      - '&7Drop below -%required_progress% sanity'
+  '13': # Quest id
+    type: placeholderapi_integer_seasonsquests_sanity_manifestations
+    name: Paranoia
+    required-progress: 10
+    points: 1
+    item:
+      material: ender_eye
+      name: '&eParanoia'
+      lore:
+      - '&7Experience %required_progress% sanity manifestations'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '14': # Quest id
+    type: fish
+    name: Fish!
+    required-progress: 10
+    points: 1
+    item:
+      material: fishing_rod
+      name: '&eFish!'
+      lore:
+      - '&7Catch %required_progress% fish'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '15': # Quest id
+    type: placeholderapi_integer_seasonsquests_phantom_moth_kisses
+    name: Aid From Above
+    required-progress: 3
+    points: 1
+    item:
+      material: ghast_tear
+      name: '&eAid From Above'
+      lore:
+      - '&7Receive %required_progress% pecks from phantom moths'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '16': # Quest id
+    type: placeholderapi_integer_seasonsquests_trades
+    name: What a Deal!
+    required-progress: 3
+    points: 1
+    item:
+      material: emerald
+      name: '&eWhat a Deal!'
+      lore:
+      - '&7Conduct %required_progress% trades with villagers'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '17': # Quest id
+    type: placeholderapi_integer_seasonsquests_barters
+    name: Towering Profits
+    required-progress: 3
+    points: 1
+    item:
+      material: gold_ingot
+      name: '&eTowering Profits'
+      lore:
+      - '&7Barter with a minotaur %required_progress% times'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '18': # Quest id
+    type: placeholderapi_integer_seasonsquests_minotauri_bells_rung
+    name: Bell Ringer
+    required-progress: 10
+    points: 1
+    item:
+      material: bell
+      item-model: minotower:bell/breeze
+      name: '&eBell Ringer'
+      lore:
+      - '&7Ring %required_progress% minotauri bells'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '19': # Quest id
+    type: placeholderapi_integer_seasonsquests_war_bell_full_charge_damage
+    name: Bell Paladin
+    required-progress: 100
+    points: 1
+    item:
+      material: bell
+      item-model: minotower:bell/minotauri_5
+      name: '&eBell Paladin'
+      lore:
+      - '&7Deal %required_progress% damage using the Minotauri War Bell'
+      - '&7at full charge'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '20': # Quest id
+    type: placeholderapi_integer_seasonsquests_minotauri_books_read
+    name: Well Read
+    required-progress: 1
+    points: 1
+    item:
+      material: chiseled_bookshelf
+      name: '&eWell Read'
+      lore:
+      - '&7Read a book from a Minotauri library'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '21': # Quest id
+    type: placeholderapi_integer_seasonsquests_creepers_ignited
+    name: Prepare For Takeoff
+    required-progress: 1
+    points: 1
+    item:
+      material: flint_and_steel
+      name: '&ePrepare For Takeoff'
+      lore:
+      - '&7Ignite a creeper'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '22':
+    type: placeholderapi_integer_seasonsquests_bears_commanded
+    name: Bear Commander
+    required-progress: 3
+    points: 1
+    item:
+      material: salmon
+      name: '&eBear Commander'
+      lore:
+      - '&7Command a bear to move or'
+      - '&7attack something %required_progress% times'
+      - ''
+      - '&7Cave bears respond to fish,'
+      - '&7honeycomb, and sweet berries'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '23': # Quest id
+    type: placeholderapi_integer_seasonsquests_suspicious_blocks_dusted
+    name: Respecting the Remnants
+    required-progress: 3
+    points: 1
+    item:
+      material: brush
+      name: '&eRespecting the Remnants'
+      lore:
+      - '&7Dust %required_progress% suspicious blocks'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '24': # Quest id
+    type: placeholderapi_integer_seasonsquests_sculk_converter_sacrifices
+    name: Sacrifice at the Altar
+    required-progress: 2
+    points: 1
+    item:
+      material: sculk_catalyst
+      name: '&eSacrifice at the Altar'
+      lore:
+      - '&7Sacrifice %required_progress% entities at'
+      - '&7a Sculk Converter'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '25': # Quest id
+    type: move
+    variable:
+      root: none
+      conditions:
+        or: []
+        and:
+        - '%seasonsquests_in_deeper_dark% == true'
+    name: Deeper Dark Explorer
+    required-progress: 800
+    points: 1
+    item:
+      material: sculk
+      name: '&eDeeper Dark Explorer'
+      lore:
+      - '&7Explore the Deeper Dark'
+      - ''
+      - '&a%percentage_progress% %progress_bar%'
+  '26':
+    type: kill-mob
+    variable: glow_squid
+    name: Tentacle Farmer
+    required-progress: 10
+    points: 1
+    item:
+      material: blaze_rod
+      name: '&eTentacle Farmer'
+      lore:
+      - '&7Kill %required_progress% glow squids'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '27':
+    type: kill-mob
+    variable: piglin_brute OR zombified_piglin
+    name: Theseus Wannabe
+    required-progress: 15
+    points: 1
+    item:
+      material: b64:rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABnQAAj09dAALRGF0YVZlcnNpb250AAJpZHQABWNvdW50dAAKY29tcG9uZW50c3QADnNjaGVtYV92ZXJzaW9udXEAfgAGAAAABnQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAABI/dAAUbWluZWNyYWZ0OmdvbGRlbl9heGVzcQB+ABAAAAABc3IAF2phdmEudXRpbC5MaW5rZWRIYXNoTWFwNMBOXBBswPsCAAFaAAthY2Nlc3NPcmRlcnhyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAx3CAAAABAAAAABdAAObWluZWNyYWZ0OnRyaW10ADp7bWF0ZXJpYWw6Im1pbm90b3dlcjpiZWV0cm9vdCIscGF0dGVybjoibWlub3Rvd2VyOnNlYXJlZCJ9eABxAH4AFA== # Maybe replace with horns after that's made
+      name: '&eTheseus Wannabe'
+      lore:
+      - '&7Kill %required_progress% Minotauri constructs'
+      - '&7or sculkified minotaurs'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '28':
+    type: kill-mob
+    variable: spider OR cave_spider
+    name: Arachnophobic
+    required-progress: 25
+    points: 1
+    item:
+      material: spider_eye
+      name: '&eArachnophobic'
+      lore:
+      - '&7Kill %required_progress% Spiders'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '29':
+    type: placeholderapi_integer_seasonsquests_creeper_kills
+    name: Defuser
+    required-progress: 15
+    points: 1
+    item:
+      material: creeper_head
+      name: '&eDefuser'
+      lore:
+      - '&7Kill %required_progress% creepers'
+      - '&7or globs (&ax2&7)'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '30':
+    type: placeholderapi_integer_seasonsquests_skeleton_kills
+    name: Deboned
+    required-progress: 30
+    points: 1
+    item:
+      material: skeleton_skull
+      name: '&eDeboned'
+      lore:
+      - '&7Kill %required_progress% skeletons, strays, parched'
+      - '&7bogged (&ax3&7 if in The Myst), wither skeletons (&ax3&7),'
+      - '&7skeleton horses, marble skeletons (&ax2&7),'
+      - '&7veil guards (&ax2&7), ghosts (&ax3&7),'
+      - '&7and %seasonsquests_priest_quest_description% (&ax15&7)'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '31':
+    type: placeholderapi_integer_seasonsquests_priest_kills
+    name: Thwarted
+    required-progress: 1
+    points: 1
+    item:
+      material: b64:rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABnQAAj09dAALRGF0YVZlcnNpb250AAJpZHQABWNvdW50dAAKY29tcG9uZW50c3QADnNjaGVtYV92ZXJzaW9udXEAfgAGAAAABnQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAABI/dAAVbWluZWNyYWZ0OnBsYXllcl9oZWFkc3EAfgAQAAAAAXNyABdqYXZhLnV0aWwuTGlua2VkSGFzaE1hcDTATlwQbMD7AgABWgALYWNjZXNzT3JkZXJ4cgARamF2YS51dGlsLkhhc2hNYXAFB9rBwxZg0QMAAkYACmxvYWRGYWN0b3JJAAl0aHJlc2hvbGR4cD9AAAAAAAAMdwgAAAAQAAAAAnQAEW1pbmVjcmFmdDpwcm9maWxldADde3Byb3BlcnRpZXM6W3tuYW1lOiJ0ZXh0dXJlcyIsdmFsdWU6ImV5SjBaWGgwZFhKbGN5STZleUpUUzBsT0lqcDdJblZ5YkNJNkltaDBkSEE2THk5MFpYaDBkWEpsY3k1dGFXNWxZM0poWm5RdWJtVjBMM1JsZUhSMWNtVXZObVZtTjJVek1UWTVZekUwTVRBMVlURmxPRGN4WXpkbVpqWXlPRGhpTW1ZM01qVmpZamcyTjJRMllXSTRaVGRtWXpBM01EZzVNV1U0WXpjME9UQmlaaUo5ZlgwPSJ9XX10ABNtaW5lY3JhZnQ6aXRlbV9uYW1ldAAdIkhpZ2ggUHJpZXN0IFZlcmlkaWFuJ3MgSGVhZCJ4AHEAfgAU
+      name: '&eThwarted'
+      lore:
+      - '&7Kill %seasonsquests_priest_quest_description%'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '32':
+    type: placeholderapi_integer_seasonsquests_zombie_kills
+    name: Rotten To The Core
+    required-progress: 30
+    points: 1
+    item:
+      material: zombie_head
+      name: '&eRotten To The Core'
+      lore:
+      - '&7Kill %required_progress% zombies, drowned, husks'
+      - '&7zombie villagers, zombie horses,'
+      - '&7camel husks, zombie nautiluses,'
+      - '&7zoglins, oozers (&ax3&7), and'
+      - '&7dreadmire rabbits (&ax5&7)'
+      - ''
+      - '&7(&a+1&7 if baby)'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '33':
+    type: placeholderapi_integer_seasonsquests_bone_club_kills
+    name: Clubbin'
+    required-progress: 20
+    points: 1
+    item:
+      material: bone
+      name: '&eClubbin'''
+      lore:
+      - '&7Kill %required_progress% using the bone club'
+      - ''
+      - '&7(&ax2&7 if marble skeletons)'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '34':
+    type: placeholderapi_match_seasonsquests_wearing_marble_skeleton_disguise
+    variable: 'true'
+    required-progress: 1
+    name: Cosplay
+    points: 1
+    item:
+      material: LEATHER_CHESTPLATE
+      item-flags:
+      - HIDE_ARMOR_TRIM
+      armor-trim: "quartz flow"
+      rgb: 79,79,79
+      name: '&eCosplay'
+      lore:
+      - '&7Wear a marble skeleton disguise'
+      - ''
+      - '&a%percentage_progress% %progress_bar%'
+  '35':
+    type: placeholderapi_integer_seasonsquests_geysers_launched_from
+    required-progress: 5
+    name: Temporary Flight
+    points: 1
+    item:
+      material: 'head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzIxZDA5MzBiZDYxZmVhNGNiOTAyN2IwMGU5NGUxM2Q2MjAyOWM1MjRlYTBiMzI2MGM3NDc0NTdiYTFiY2ZhMSJ9fX0='
+      name: '&eTemporary Flight'
+      lore:
+      - '&7Get launched by a geyser'
+      - '&7%required_progress% times by standing on it'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '36':
+    type: placeholderapi_match_seasonsquests_wearing_ancient_armor
+    variable: 'true'
+    required-progress: 1
+    name: Ancient Fashion
+    points: 1
+    item:
+      material: LEATHER_CHESTPLATE
+      item-flags:
+      - HIDE_ARMOR_TRIM
+      armor-trim: "redstone vex"
+      rgb: 116,79,82
+      name: '&eAncient Fashion'
+      lore:
+      - '&7Wear a piece of ancient armor'
+      - ''
+      - '&a%percentage_progress% %progress_bar%'
+  '37':
+    type: placeholderapi_integer_seasonsquests_used_ancient_weapon
+    required-progress: 5
+    name: Blood Magician
+    points: 1
+    item:
+      material: 'b64:rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABnQAAj09dAALRGF0YVZlcnNpb250AAJpZHQABWNvdW50dAAKY29tcG9uZW50c3QADnNjaGVtYV92ZXJzaW9udXEAfgAGAAAABnQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAABI/dAAQbWluZWNyYWZ0OnNoaWVsZHNxAH4AEAAAAAFzcgAXamF2YS51dGlsLkxpbmtlZEhhc2hNYXA0wE5cEGzA+wIAAVoAC2FjY2Vzc09yZGVyeHIAEWphdmEudXRpbC5IYXNoTWFwBQfawcMWYNEDAAJGAApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcIAAAAEAAAAAJ0ABltaW5lY3JhZnQ6YmFubmVyX3BhdHRlcm5zdADfW3tjb2xvcjoicmVkIixwYXR0ZXJuOiJtaW5lY3JhZnQ6c21hbGxfc3RyaXBlcyJ9LHtjb2xvcjoicmVkIixwYXR0ZXJuOiJtaW5lY3JhZnQ6Z3JhZGllbnQifSx7Y29sb3I6IndoaXRlIixwYXR0ZXJuOiJtaW5lY3JhZnQ6Y2lyY2xlIn0se2NvbG9yOiJ5ZWxsb3ciLHBhdHRlcm46Im1pbmVjcmFmdDpmbG93ZXIifSx7Y29sb3I6InllbGxvdyIscGF0dGVybjoibWluZWNyYWZ0OmJvcmRlciJ9XXQAFG1pbmVjcmFmdDpiYXNlX2NvbG9ydAAHImJyb3duIngAcQB+ABQ='
+      item-flags:
+      - HIDE_ADDITIONAL_TOOLTIP
+      name: '&eBlood Magician'
+      lore:
+      - '&7Use an ancient weapon %required_progress% times'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '38':
+    type: placeholderapi_match_seasonsquests_wearing_ariadnes_moss
+    variable: 'true'
+    required-progress: 1
+    name: Fear of Sculk
+    points: 1
+    item:
+      material: moss_carpet
+      name: '&eFear of Sculk'
+      lore:
+      - '&7Equip Ariadne''s Moss'
+      - ''
+      - '&a%percentage_progress% %progress_bar%'
+  '39':
+    type: ride-mob
+    variable: happy_ghast
+    required-progress: 1
+    name: '"I Can Show You The World"'
+    points: 1
+    item:
+      material: lime_harness
+      name: '&e"I Can Show You The World"'
+      lore:
+      - '&7Ride a happy ghast'
+      - ''
+      - '&a%percentage_progress% %progress_bar%'
+  '40': # Quest id
+    type: placeholderapi_integer_seasonsquests_rascals_found
+    name: Hide & Seek, Again
+    required-progress: 5
+    points: 1
+    item:
+      material: chest_minecart
+      item-model: minotower:bell/rascal
+      name: '&eHide & Seek, Again'
+      lore:
+      - '&7Win %required_progress% games of Hide & Seek'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '41':
+    type: placeholderapi_integer_seasonsquests_marble_pillar_devotions
+    required-progress: 1
+    name: Marble Devotee
+    points: 1
+    item:
+      material: quartz
+      name: '&eMarble Devotee'
+      lore:
+      - '&7Devote yourself to'
+      - '&7the Marble Pillars'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '42':
+    type: placeholderapi_integer_seasonsquests_specific_animal_fed
+    required-progress: 10
+    name: Exotic Animal Feeder
+    points: 1
+    item:
+      material: seagrass
+      name: '&eExotic Animal Feeder'
+      lore:
+      - '&7Feed %required_progress% turtles, dolphins,'
+      - '&7cave bears, bats, or hoglins'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '43':
+    type: placeholderapi_integer_seasonsquests_biomes_experienced
+    required-progress: 4
+    name: Worldly Experience
+    points: 1
+    item:
+      material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmM2MjExMGQ4MTg4NDQxZDIxNzk0NDM0ZjY3ZDEyYTAyMWI3NDAyYzhkYWE0MmQ0ZmVhMzIzZTdlMTllMGJiNyJ9fX0=
+      name: '&eWorldly Experience'
+      lore:
+      - '&7Pickup experience in %required_progress%'
+      - '&7different cave biomes'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '44':
+    type: placeholderapi_integer_seasonsquests_spring_cleaning
+    required-progress: 10
+    name: Spring Cleaning
+    points: 1
+    item:
+      material: b64:rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABnQAAj09dAALRGF0YVZlcnNpb250AAJpZHQABWNvdW50dAAKY29tcG9uZW50c3QADnNjaGVtYV92ZXJzaW9udXEAfgAGAAAABnQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAABI/dAAUbWluZWNyYWZ0Omlyb25fc3dvcmRzcQB+ABAAAAABc3IAF2phdmEudXRpbC5MaW5rZWRIYXNoTWFwNMBOXBBswPsCAAFaAAthY2Nlc3NPcmRlcnhyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAx3CAAAABAAAAAGdAAUbWluZWNyYWZ0Om1heF9kYW1hZ2V0AAQxNTAwdAAUbWluZWNyYWZ0OmNvbnN1bWFibGV0AB57Y29uc3VtZV9zZWNvbmRzOjIuMTQ3NDgzNkU5Zn10ABBtaW5lY3JhZnQ6cmFyaXR5dAAGImVwaWMidAAVbWluZWNyYWZ0OmN1c3RvbV9kYXRhdABEe2NoYWtyYW1fY2hha3JhbToxYixzbWl0aGVkOntpZ25vcmU6e2NyYWZ0aW5nOjFiLGZ1bmN0aW9uYWxpdHk6MWJ9fX10ABNtaW5lY3JhZnQ6aXRlbV9uYW1ldAAwe2ZhbGxiYWNrOiJDaGFrcmFtIix0cmFuc2xhdGU6ImNoYWtyYW06Y2hha3JhbSJ9dAAObWluZWNyYWZ0OnRyaW10ADZ7bWF0ZXJpYWw6Im1pbm90b3dlcjptb3NzIixwYXR0ZXJuOiJtaW5vdG93ZXI6c2VhcmVkIn14AHEAfgAU
+      item-flags:
+      - HIDE_ARMOR_TRIM
+      name: '&eSpring Cleaning'
+      lore:
+      - '&7Remove %required_progress% cobwebs'
+      - '&7and sculk sensors'
+      - ''
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'

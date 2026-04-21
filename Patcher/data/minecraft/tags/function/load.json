@@ -1,5 +1,6 @@
 {
 	"values": [
-		"minotower:warden_bell/load"
+		"minotower:warden_bell/load",
+		"chakram:load_harvest_counter"
 	]
 }

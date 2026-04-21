@@ -1,6 +1,6 @@
 advancement revoke @s only minotower:war_bell/revitalize
 # Give allies boons
-execute as @e[type=#minotower:affected_by_war_bell,distance=..12,predicate=minotower:war_bell/armor_ally] run function minotower:war_bell/hit/full_charge/effects_revitalize_ally
+execute as @e[type=#minotower:affected_by_war_bell,distance=0.1..12,predicate=minotower:war_bell/armor_ally] run function minotower:war_bell/hit/full_charge/effects_revitalize_ally
 
 #say revitalized!
 

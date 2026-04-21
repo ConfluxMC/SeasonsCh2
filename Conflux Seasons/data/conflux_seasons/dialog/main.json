@@ -4,33 +4,85 @@
     "text": "Welcome to Conflux Seasons Chapter 2: Hollow Earth!"
   },
   "external_title": {
-    "text": "Conflux Seasons"
+    "text": "Conflux Seasons",
+    "color": "aqua"
+  },
+  "exit_action": {
+    "label": {
+      "translate": "gui.done",
+      "fallback": "Done"
+    },
+    "width": 200
   },
   "columns": 1,
   "actions": [
     {
-      "label": "Battlepass",
+      "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "minecraft:item/knowledge_book",
+          "shadow_color": 0
+        },
+        {
+          "text": " Wiki "
+        },
+        {
+          "player": {
+            "properties": [
+              {
+                "name": "textures",
+                "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmM2MjExMGQ4MTg4NDQxZDIxNzk0NDM0ZjY3ZDEyYTAyMWI3NDAyYzhkYWE0MmQ0ZmVhMzIzZTdlMTllMGJiNyJ9fX0="
+              }
+            ]
+          },
+          "shadow_color": 0
+        }
+      ],
       "action": {
-        "type": "minecraft:custom",
-        "id": "conflux_seasons:battlepass_open"
+        "type": "minecraft:open_url",
+        "url": "https://confluxseasons.miraheze.org/wiki/"
       }
     },
     {
-      "label": {
-        "text": "Sols Shop"
-      },
+      "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "conflux_seasons:item/solstice_shard",
+          "shadow_color": 0
+        },
+        {
+          "text": " Sols Shop "
+        },
+        {
+          "atlas": "minecraft:items",
+          "sprite": "conflux_seasons:item/solstice_shard",
+          "shadow_color": 0
+        }
+      ],
       "action": {
         "type": "minecraft:custom",
         "id": "conflux_seasons:shop_open"
       }
     },
     {
-      "label": {
-        "text": "Wiki"
-      },
+      "label": [
+        {
+          "atlas": "minecraft:items",
+          "sprite": "conflux_seasons:item/battlepass/questbook",
+          "shadow_color": 0
+        },
+        {
+          "text": " Battlepass "
+        },
+        {
+          "atlas": "minecraft:items",
+          "sprite": "conflux_seasons:item/battlepass/reward_claimed",
+          "shadow_color": 0
+        }
+      ],
       "action": {
-        "type": "minecraft:open_url",
-        "url": "https://confluxseasons.miraheze.org/wiki/"
+        "type": "minecraft:custom",
+        "id": "conflux_seasons:battlepass_open"
       }
     }
   ]
