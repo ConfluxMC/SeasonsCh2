@@ -1,63 +1,63 @@
 {
-  "name": "minotower:library_books",
+  "name": "minotower:prisoners",
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 8,
+      "weight": 2,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
-        "location": "minotower:library_books/decorative",
+        "location": "minotower:prisoner/breeze",
         "processors": [],
         "override_liquid_settings": "ignore_waterlogging"
       }
     },
     {
-      "weight": 36,
+      "weight": 3,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
-        "location": "minotower:library_books/plain",
+        "location": "minotower:prisoner/construct",
         "processors": [],
         "override_liquid_settings": "ignore_waterlogging"
       }
     },
     {
-      "weight": 18,
+      "weight": 3,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
-        "location": "minotower:library_books/writable",
+        "location": "minotower:prisoner/sculkified_minotaur",
         "processors": [],
         "override_liquid_settings": "ignore_waterlogging"
       }
     },
     {
-      "weight": 10,
+      "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
-        "location": "minotower:library_books/sculk_converter",
+        "location": "minotower:prisoner/creeper",
         "processors": [],
         "override_liquid_settings": "ignore_waterlogging"
       }
     },
     {
-      "weight": 15,
+      "weight": 2,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
-        "location": "minotower:library_books/marble_skeletons",
+        "location": "minotower:prisoner/skeleton",
         "processors": [],
         "override_liquid_settings": "ignore_waterlogging"
       }
     },
     {
-      "weight": 15,
+      "weight": 2,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
-        "location": "minotower:library_books/ariadnes_moss",
+        "location": "minotower:prisoner/vindicator",
         "processors": [],
         "override_liquid_settings": "ignore_waterlogging"
       }

@@ -1,9 +1,12 @@
 {
   "values": [
     "minecraft:piglin_brute",
+    "minecraft:zombified_piglin",
     "minecraft:evoker",
     "minecraft:vindicator",
     "minecraft:witch",
-    "minecraft:breeze"
+    "minecraft:breeze",
+    "minecraft:creeper",
+    "minecraft:skeleton"
   ]
 }
