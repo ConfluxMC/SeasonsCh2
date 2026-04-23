@@ -1,0 +1,52 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_scores",
+      "entity": "this",
+      "scores": {
+        "minotower.war_bell": {
+          "max": 1
+        },
+        "minotower.war_bell_hit": 0
+      }
+    },
+    {
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "offhand": {
+                "items": "minecraft:goat_horn",
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "minotower:rigor"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "condition": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "minotower.war_bell": {
+              "max": 14
+            },
+            "minotower.war_bell_hit": 0
+          }
+        },
+        {
+          "condition": "minecraft:reference",
+          "name": "minotower:war_bell/full_charge"
+        }
+      ]
+    }
+  ]
+}

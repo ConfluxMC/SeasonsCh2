@@ -1,0 +1,224 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:torchflower",
+          "functions": [
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                [
+                  {
+                    "atlas": "minecraft:blocks",
+                    "sprite": "minecraft:block/torchflower",
+                    "color": "white"
+                  },
+                  " ",
+                  {
+                    "atlas": "items",
+                    "sprite": "item/barrier",
+                    "color": "white"
+                  },
+                  " ",
+                  {
+                    "atlas": "items",
+                    "sprite": "item/sniffer_egg",
+                    "color": "white"
+                  }
+                ]
+              ],
+              "mode": "append"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pitcher_pod",
+          "functions": [
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                [
+                  {
+                    "atlas": "items",
+                    "sprite": "minecraft:item/pitcher_pod",
+                    "color": "white"
+                  },
+                  " ",
+                  {
+                    "atlas": "items",
+                    "sprite": "item/barrier",
+                    "color": "white"
+                  },
+                  " ",
+                  {
+                    "atlas": "items",
+                    "sprite": "item/sniffer_egg",
+                    "color": "white"
+                  }
+                ]
+              ],
+              "mode": "append"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pitcher_plant",
+          "functions": [
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                [
+                  {
+                    "atlas": "items",
+                    "sprite": "minecraft:item/pitcher_plant",
+                    "color": "white"
+                  },
+                  " ",
+                  {
+                    "atlas": "items",
+                    "sprite": "item/barrier",
+                    "color": "white"
+                  },
+                  " ",
+                  {
+                    "atlas": "items",
+                    "sprite": "item/sniffer_egg",
+                    "color": "white"
+                  }
+                ]
+              ],
+              "mode": "append"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:moss_block",
+          "functions": [
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                [
+                  {
+                    "atlas": "minecraft:blocks",
+                    "sprite": "minecraft:block/moss_block",
+                    "color": "white"
+                  },
+                  " ",
+                  {
+                    "atlas": "items",
+                    "sprite": "item/barrier",
+                    "color": "white"
+                  },
+                  " ",
+                  {
+                    "atlas": "items",
+                    "sprite": "item/sniffer_egg",
+                    "color": "white"
+                  }
+                ]
+              ],
+              "mode": "append"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:snort_pottery_sherd",
+          "functions": [
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                [
+                  {
+                    "atlas": "items",
+                    "sprite": "minecraft:item/snort_pottery_sherd",
+                    "color": "white"
+                  },
+                  " ",
+                  {
+                    "atlas": "items",
+                    "sprite": "item/barrier",
+                    "color": "white"
+                  },
+                  " ",
+                  {
+                    "atlas": "items",
+                    "sprite": "item/sniffer_egg",
+                    "color": "white"
+                  }
+                ]
+              ],
+              "mode": "append"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:torchflower_seeds_edible",
+          "functions": [
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                [
+                  {
+                    "atlas": "items",
+                    "sprite": "minecraft:item/torchflower_seeds",
+                    "color": "white"
+                  },
+                  " ",
+                  {
+                    "atlas": "items",
+                    "sprite": "item/barrier",
+                    "color": "white"
+                  },
+                  " ",
+                  {
+                    "atlas": "items",
+                    "sprite": "item/sniffer_egg",
+                    "color": "white"
+                  }
+                ]
+              ],
+              "mode": "append"
+            }
+          ]
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_lore",
+          "lore": [
+            [
+              {
+                "atlas": "blocks",
+                "sprite": "block/sculk_catalyst_side_bloom",
+                "italic": false,
+                "color": "white"
+              },
+              " ",
+              {
+                "atlas": "gui",
+                "sprite": "container/crafter/unpowered_redstone",
+                "color": "aqua"
+              },
+              " ",
+              {
+                "atlas": "blocks",
+                "sprite": "block/sculk_catalyst_side_bloom",
+                "italic": false,
+                "color": "white"
+              }
+            ]
+          ],
+          "mode": "append"
+        }
+      ]
+    }
+  ]
+}

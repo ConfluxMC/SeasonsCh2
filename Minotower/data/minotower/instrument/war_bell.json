@@ -3,6 +3,6 @@
     "sound_id": "minotower:item.war_bell"
   },
   "range": 64,
-  "use_duration": 2,
+  "use_duration": 1.25,
   "description": "Power through precision"
 }

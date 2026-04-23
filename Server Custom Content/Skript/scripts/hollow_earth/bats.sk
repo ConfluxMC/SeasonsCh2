@@ -1,0 +1,21 @@
+options:
+    acceptableBatSnacks: tropical fish, cod, salmon, magma cream, slime ball, glow berries, sweet berries, honeycomb, nether wart, glow lichen, sculk vein, spider eye, fermented spider eye, melon slice, beetroot, golden carrot, sugar, rabbit, rotten flesh, and bone meal
+    effectTime: 6 seconds
+
+on right click on bat:
+    if {@acceptableBatSnacks} contains type of player's tool:
+        make (random number between 3 and 7) heart particle at location of event-entity with offset vector(0.6, 0.5, 0.6)
+        play sound "minecraft:entity.cat.eat" to the player
+        if player's gamemode is not creative:
+            remove 1 of player's tool from player
+        if event-entity's scale attribute < 2.5:
+            add 0.01 to event-entity's scale attribute
+        make event-entity persistent
+        addPlaceholder(player, "specific_animal_fed", 1)
+        apply regeneration to player for {@effectTime}
+        set {_effect} to the player's active night vision effect
+        apply infinite night vision to player
+        wait {@effectTime}
+        remove night vision from player
+        subtract {@effectTime} from {_effect}
+        apply {_effect} to player

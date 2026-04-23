@@ -1,10 +1,10 @@
 options:
-    defClr: &5
-    numClr: &a
-    plrClr: &b
-    itemClr: &b
-    keyClr: &7
-    multStr: " &8× "
+    defClr: <dark_purple>
+    numClr: <green>
+    plrClr: <aqua>
+    itemClr: <aqua>
+    keyClr: <gray>
+    multStr: " <dark_gray>× "
 
 on load:
     set {solstice_shard} to first element of loot of loot table "conflux_seasons:solstice_shard"
@@ -13,29 +13,45 @@ command /sols:
     aliases: /shards, /solstice-shards
     executable by: players
     trigger:
-        send "{@defClr}You have %solsSprite(solsBalance(player), sender, "#")%{@defClr} Solstice Shards." to player
+        set {_cmp} to minimessage from "{@defClr}You have "
+        add solsSprite(solsBalance(player), sender, "#") to {_cmp}
+        add "{@defClr} Solstice Shards." to {_cmp}
+        send component {_cmp} to player
 command /sols-balances [<player>]:
     aliases: /sols-report
     permission: server.admin
     trigger:
         if arg-1 is set:
-            send "{@plrClr}%arg-1%{@defClr} has %solsSprite(solsBalance(arg-1), sender, "#")%{@defClr} Solstice Shards."
+            set {_cmp} to minimessage from "{@plrClr}%arg-1%{@defClr} has "
+            add solsSprite(solsBalance(arg-1), sender, "#") to {_cmp}
+            add minimessage from "{@defClr} Solstice Shards." to {_cmp}
+            send component {_cmp} to sender
         else:
             loop offline players:
                 add "%solsBalance(loop-value)%,%loop-value%" to {_solsList::*}
-            set {_report} to "{@defClr}Solstice Shard Balances"
+            set {_report} to minimessage from "{@defClr}Solstice Shard Balances"
             sort {_solsList::*} in descending order
             loop {_solsList::*}:
                 set {_balPlr::*} to loop-value split by ","
-                set {_p} to 2nd element of {_balPlr::*} parsed as player
-                add "%nl%{@plrClr}%{_p}% %solsSprite(solsBalance({_p}), sender, "#")%" to {_report}
+                set {_p} to 2nd element of {_balPlr::*} parsed as offlineplayer
+                add minimessage from "%nl%{@plrClr}%{_p}% " to {_report}
+                add solsSprite(solsBalance({_p}), sender, "#") to {_report}
                 
         if sender is console:
-            set {_report} to "&rGenerating Sols Balances report...%nl%%{_report}%"
-        send {_report} to sender
+            set {_actualReport} to {_report}
+            set {_report} to minimessage from "Generating Sols Balances report...%nl%"
+            add {_actualReport} to {_report}
+        send component {_report} to sender
 
-function solsBalance(p: player):: integer:
-    return score of {_p} for objective with id "solstice_shards"
+function solsBalance(p: offlineplayer):: integer:
+    if {_p} is online:
+        set {_scoreSols} to score of {_p} for objective with id "solstice_shards"
+        set {sols_shop.players.sols::%{_p}%} to {_scoreSols}
+        return {_scoreSols}
+    return {sols_shop.players.sols::%{_p}%}
+
+on quit:
+    set {sols_shop.players.sols::%player%} to solsBalance(player)
 
 command /sols-give-item <integer> [<player>]:
     permission: server.admin
@@ -93,15 +109,15 @@ on custom click:
         else if event-namespacedkey is "conflux_seasons:sols_noise_easter_egg":
             play sound "minecraft:block.amethyst_block.step" with pitch 1.4 at player for player
 
-command /shop [<string>]:
-    aliases: /sols-shop
+command /sols-shop [<string>]:
+    aliases: /shop
     trigger:
         if arg-1 is "sols_noise_easter_egg":
             play sound "minecraft:block.amethyst_block.step" with pitch 1.4 at player for player
         else:
             make console execute command "execute as %player% run function conflux_seasons:shop/pre_open"
 
-command /shop-init [<string>]:
+command /sols-shop-init [<string>]:
     permission: server.admin
     trigger:
         if arg-1 is "confirm":
@@ -139,19 +155,19 @@ local function shopBuild():
     make console execute command "function conflux_seasons:shop/rebuild"
 
 #                        key      Cost      Name
-command /shop-set-keyed <string> <integer> <text>:
+command /sols-shop-set-keyed <string> <integer> <text>:
     permission: server.admin
     trigger:
         shopAdd(player,arg-2,arg-3,arg-1)
         shopBuild()
 
-on tab complete of "/shop-set-keyed":
+on tab complete of "/sols-shop-set-keyed":
 	set tab completions for position 1 to "new_key", and indexes of {sols_shop.items.index::*}
 	set tab completions for position 2 to "cost"
 	set tab completions for position 3 to "name"
 
 #                       key      Atlas  Sprite
-command /shop-set-icon <string> <text> <text>:
+command /sols-shop-set-icon <string> <text> <text>:
     permission: server.admin
     trigger:
         if arg-1 is set:
@@ -169,12 +185,12 @@ command /shop-set-icon <string> <text> <text>:
         else:
             send "Must specify the key!" to player
 
-on tab complete of "/shop-set-icon":
+on tab complete of "/sols-shop-set-icon":
     set tab completions for position 1 to indexes of {sols_shop.items.index::*}
     set tab completions for position 2 to "atlas"
     set tab completions for position 3 to "sprite"
 
-command /shop-remove <string>:
+command /sols-shop-remove <string>:
     permission: server.admin
     trigger:
         set {_key} to arg-1
@@ -190,10 +206,10 @@ command /shop-remove <string>:
             if loop-value > {_index}:
                 set {sols_shop.items.index::%loop-index%} to loop-value - 1 # Since the storage data will decrements its indexes, update tracking in skript too
 
-on tab complete of "/shop-remove":
+on tab complete of "/sols-shop-remove":
     set tab completions for position 1 to indexes of {sols_shop.items.index::*}
 
-command /shop-set-from-chest <integer> <integer> <integer>:
+command /sols-shop-set-from-chest <integer> <integer> <integer>:
     permission: server.admin
     executable by: players
     trigger:
@@ -238,21 +254,31 @@ command /shop-set-from-chest <integer> <integer> <integer>:
         else:
             send "&cInvalid block" to player
 
-on tab complete of "/shop-set-from-chest":
+on tab complete of "/sols-shop-set-from-chest":
     set tab completions for position 1 to floor(x coordinate of target block of player)
     set tab completions for position 2 to floor(y coordinate of target block of player)
     set tab completions for position 3 to floor(z coordinate of target block of player)
 
-local function solsSprite(amt: integer, s: sender, format: string = "00"):: string:
+
+local function solsSprite(amt: integer, s: sender, format: string = "00"):: text component:
     if {_s} is console:
-        return "&d%formatNumber({_amt},{_format})% Sols"
+        return minimessage from "<light_purple>%formatNumber({_amt},{_format})% Sols"
     else:
-        return "&d%formatNumber({_amt},{_format})%&r<click:run_command:shop sols_noise_easter_egg><sprite:""minecraft:items"":""conflux_seasons:item/solstice_shard""></click>"
+        set {_cmp} to minimessage from "<light_purple>%formatNumber({_amt},{_format})%"
+        set {_spr} to object text component with atlas "minecraft:items" with sprite "conflux_seasons:item/solstice_shard"
+        #add click event to run command "sols-shop sols_noise_easter_egg" to {_spr}
+        set {_emptyNbt} to nbt compound from "{}"
+        add click event to run custom payload with key "conflux_seasons:sols_noise_easter_egg" with data {_emptyNbt} to {_spr}
+        set color format of {_spr} to white
+        add {_spr} to {_cmp}
+        return {_cmp}
 
-local function itemString(key: string, s: sender):: string:
-    return "%solsSprite({sols_shop.items.cost::%{_key}%},{_s})% {@itemClr}%{sols_shop.items.name::%{_key}%}% {@keyClr}(%{_key}%)"
+local function itemString(key: string, s: sender):: text component:
+    set {_cmp} to solsSprite({sols_shop.items.cost::%{_key}%},{_s})
+    add minimessage from "{@itemClr}%{sols_shop.items.name::%{_key}%}% {@keyClr}(%{_key}%)" to {_cmp}
+    return {_cmp}
 
-command /shop-records-player [<string>] [<string>]:
+command /sols-shop-records-player [<string>] [<string>]:
     trigger:
         if sender is not op:
             set {_p} to player
@@ -265,7 +291,7 @@ command /shop-records-player [<string>] [<string>]:
         set {_solsTotal} to 0
         set {_total} to 0
         if {_p} is set:
-            set {_report} to "{@defClr}Purchase History for {@plrClr}%{_p}%"
+            set {_report} to minimessage from "{@defClr}Purchase History for {@plrClr}%{_p}%"
             loop {sols_shop.players::%{_p}%::*}:
                 if any:
                     arg-2 is not set
@@ -274,15 +300,18 @@ command /shop-records-player [<string>] [<string>]:
                     set {_itemCost} to {sols_shop.items.cost::%loop-index%}
                     add ({_itemCost} * loop-value) to {_solsTotal}
                     add loop-value to {_total}
-                    add "%nl%{@numClr}%formatNumber(loop-value,"00")%%{@multStr}%%itemString(loop-index,sender)%" to {_report}
+                    add minimessage from "%nl%{@numClr}%formatNumber(loop-value,"00")%%{@multStr}%" to {_report}
+                    add itemString(loop-index,sender) to {_report}
             if {_total} is 1:
                 set {_purchaseStr} to "purchase"
             else:
                 set {_purchaseStr} to "purchases"
-            add "%nl%{@defClr}Total of %solsSprite({_solsTotal},sender)%{@defClr} spent across {@numClr}%{_total}%{@defClr} %{_purchaseStr}%." to {_report}
+            add minimessage from "%nl%{@defClr}Total of " to {_report}
+            add solsSprite({_solsTotal},sender) to {_report}
+            add minimessage from "{@defClr} spent across {@numClr}%{_total}%{@defClr} %{_purchaseStr}%." to {_report}
         else:
             set {_totalPlrs} to 0
-            set {_report} to "{@defClr}Purchase History"
+            set {_report} to minimessage from "{@defClr}Purchase History"
             loop {sols_shop.players::*}:
                 set {_p} to loop-value
                 add 1 to {_totalPlrs}
@@ -296,7 +325,8 @@ command /shop-records-player [<string>] [<string>]:
                             set {_itemCost} to {sols_shop.items.cost::%loop-index-2%}
                             add ({_itemCost} * loop-value-2) to {_solsTotal}
                             add loop-value-2 to {_total}
-                            add "%nl%{@plrClr}%{_p}% {@numClr}%formatNumber(loop-value-2,"00")%%{@multStr}%%itemString(loop-index-2,sender)%" to {_report}
+                            add minimessage from "%nl%{@plrClr}%{_p}% {@numClr}%formatNumber(loop-value-2,"00")%%{@multStr}%" to {_report}
+                            add itemString(loop-index-2,sender) to {_report}
             if {_total} is 1:
                 set {_purchaseStr} to "purchase"
             else:
@@ -305,31 +335,36 @@ command /shop-records-player [<string>] [<string>]:
                 set {_plrStr} to "player"
             else:
                 set {_plrStr} to "players"
-            add "%nl%{@defClr}Total of %solsSprite({_solsTotal},sender)%{@defClr} spent across {@numClr}%{_total}%{@defClr} %{_purchaseStr}% and {@numClr}%{_totalPlrs}%{@defClr} %{_plrStr}%." to {_report}
+            add minimessage from "%nl%{@defClr}Total of " to {_report}
+            add solsSprite({_solsTotal},sender) to {_report}
+            add minimessage from "{@defClr} spent across {@numClr}%{_total}%{@defClr} %{_purchaseStr}% and {@numClr}%{_totalPlrs}%{@defClr} %{_plrStr}%." to {_report}
         if sender is console:
-            set {_report} to "&rGenerating Sols Shop report...%nl%%{_report}%"
-        send {_report} to sender
+            set {_actualReport} to {_report}
+            set {_report} to minimessage from "Generating Sols Shop report...%nl%"
+            add {_actualReport} to {_report}
+        send component {_report} to sender
 
-on tab complete of "/shop-records-player":
+on tab complete of "/sols-shop-records-player":
     set tab completions for position 1 to {sols_shop.players::*}
     set tab completions for position 2 to indexes of {sols_shop.items.index::*}
         
-command /shop-records-item [<string>]:
+command /sols-shop-records-item [<string>]:
     permission: server.admin
     trigger:
         set {_total} to 0
         if arg-1 is set:
             set {_key} to arg-1
-            set {_report} to "{@defClr}Purchase Records for %itemString({_key},sender)%"
+            set {_report} to minimessage from "{@defClr}Purchase Records for "
+            add itemString({_key},sender) to {_report}
             loop {sols_shop.players::*}:
                 set {_plr} to loop-value
                 if {sols_shop.players::%{_plr}%::%{_key}%} is set:
                     set {_plrPurchased} to {sols_shop.players::%{_plr}%::%{_key}%}
                     add {_plrPurchased} to {_total}
-                    add "%nl%{@numClr}%formatNumber({_plrPurchased} ,"00")%%{@multStr}%{@plrClr}%{_plr}%" to {_report}
-            add "%nl%{@defClr}Total Purchased:{@numClr} %{_total}%" to {_report}
+                    add minimessage from "%nl%{@numClr}%formatNumber({_plrPurchased} ,"00")%%{@multStr}%{@plrClr}%{_plr}%" to {_report}
+            add minimessage from "%nl%{@defClr}Total Purchased:{@numClr} %{_total}%" to {_report}
         else:
-            set {_report} to "{@defClr}Item Purchase Records"
+            set {_report} to minimessage from "{@defClr}Item Purchase Records"
             set {_solsTotal} to 0
             loop indexes of {sols_shop.items.index::*}:
                 set {_plrPurchased} to 0
@@ -340,7 +375,8 @@ command /shop-records-item [<string>]:
                         set {_plrPurchased} to {sols_shop.players::%{_plr}%::%{_key}%}
                         add {_plrPurchased} to {_total}
                         add ({_plrPurchased} * {sols_shop.items.cost::%{_key}%}) to {_solsTotal}
-                add "%nl%{@numClr}%formatNumber({_plrPurchased} ,"000")%%{@multStr}%%itemString({_key},sender)%" to {_report}
+                add minimessage from "%nl%{@numClr}%formatNumber({_plrPurchased} ,"000")%%{@multStr}%" to {_report}
+                add itemString({_key},sender) to {_report}
             if {_total} is 1:
                 set {_purchaseStr} to "purchase"
             else:
@@ -350,11 +386,15 @@ command /shop-records-item [<string>]:
             else:
                 set {_plrStr} to "players"
             set {_totalPlrs} to size of {sols_shop.players::*}
-            add "%nl%{@defClr}Total of %solsSprite({_solsTotal},sender)%{@defClr} spent across {@numClr}%{_total}%{@defClr} %{_purchaseStr}% and {@numClr}%{_totalPlrs}%{@defClr} %{_plrStr}%." to {_report}
+            add minimessage from "%nl%{@defClr}Total of " to {_report}
+            add solsSprite({_solsTotal},sender) to {_report}
+            add minimessage from "{@defClr} spent across {@numClr}%{_total}%{@defClr} %{_purchaseStr}% and {@numClr}%{_totalPlrs}%{@defClr} %{_plrStr}%." to {_report}
                 
         if sender is console:
-            set {_report} to "&rGenerating Sols Shop report...%nl%%{_report}%"
-        send {_report} to sender
+            set {_actualReport} to {_report}
+            set {_report} to minimessage from "Generating Sols Shop report...%nl%"
+            add {_actualReport} to {_report}
+        send component {_report} to sender
 
-on tab complete of "/shop-records-item":
+on tab complete of "/sols-shop-records-item":
     set tab completions for position 1 to indexes of {sols_shop.items.index::*}

@@ -51,6 +51,7 @@ local function useBearSnack(p: player):
     make {_p} swing hand
     if gamemode of {_p} is not creative:
         remove 1 of (type of held item of {_p}) from held item of {_p}
+    addPlaceholder({_p}, "specific_animal_fed", 1)
 
 # Breed checking
 every 1 second:

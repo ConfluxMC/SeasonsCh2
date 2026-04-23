@@ -4,8 +4,10 @@
     "minotower:virulent",
     "minotower:vindictive",
     "minotower:virtuous",
+    "minotower:rigor",
     "minotower:cleansing",
-    "minotower:concentration"
+    "minotower:concentration",
+    "minotower:wardenblight"
   ],
   "supported_items": "minecraft:goat_horn",
   "primary_items": "minecraft:goat_horn",
