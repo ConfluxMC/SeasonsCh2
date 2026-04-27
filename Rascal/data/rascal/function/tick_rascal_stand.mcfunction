@@ -15,8 +15,8 @@ execute as @s[scores={rascal_stay_invis_timer=400..}] run function rascal:exit_i
 # Cooldown between when the rascal stops being invisible and can be "caught" again
 scoreboard players add @s[tag=!rascal_is_invis,tag=!rascal_can_be_caught] rascal_can_be_caught_cooldown 1
 
-execute as @s[scores={rascal_can_be_caught_cooldown=200..}] run tag @s add rascal_can_be_caught
-execute as @s[scores={rascal_can_be_caught_cooldown=200..}] run scoreboard players reset @s rascal_can_be_caught_cooldown
+execute as @s[scores={rascal_can_be_caught_cooldown=100..}] run tag @s add rascal_can_be_caught
+execute as @s[scores={rascal_can_be_caught_cooldown=100..}] run scoreboard players reset @s rascal_can_be_caught_cooldown
 
 # Ambient noises
 execute as @s[tag=!rascal_is_invis,tag=rascal_can_be_caught,predicate=rascal:ambient_noise] run playsound rascal:entity.rascal.ambient neutral @a ~ ~ ~

@@ -350,7 +350,58 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "value": "minotower:bell/template_minotauri"
+          "value": "minotower:bell/template_minotauri",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_boots",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 12,
+              "options": "#minecraft:on_random_loot",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.8
+                }
+              ]
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "ariadnes_moss:ariadnes_moss"
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:trim": {
+                  "material": "minecraft:gold",
+                  "pattern": "minecraft:host"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "chakram:random_enchanted_chakram",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:trim": {
+                  "material": "minotower:honey",
+                  "pattern": "minotower:seared"
+                }
+              }
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "chakram:snare"
+            }
+          ]
         }
       ]
     }
