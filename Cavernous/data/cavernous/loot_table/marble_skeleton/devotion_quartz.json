@@ -13,6 +13,7 @@
               "components": {
                 "item_name": "Devotion Crystal",
                 "rarity": "uncommon",
+                "item_model": "cavernous:devotion_quartz",
                 "attribute_modifiers": [
                   {
                     "type": "attack_speed",

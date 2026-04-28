@@ -7,5 +7,7 @@
   "subtitles.entity.phantom.death": "Phantom-Moth dies",
   "subtitles.entity.phantom.flap": "Phantom-Moth flaps",
   "subtitles.entity.phantom.hurt": "Phantom-Moth hurts",
-  "subtitles.entity.phantom.swoop": "Phantom-Moth swoops"
+  "subtitles.entity.phantom.swoop": "Phantom-Moth swoops",
+
+  "block.minecraft.dragon_egg": "Ender Egg"
 }

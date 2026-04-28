@@ -1,9 +1,9 @@
 {
-  "entity.minecraft.polar_bear": "Cave Beast",
-  "item.minecraft.polar_bear_spawn_egg": "Cave Beast Spawn Egg",
-  "subtitles.entity.polar_bear.ambient": "Cave Beast groans",
-  "subtitles.entity.polar_bear.ambient_baby": "Young Cave Beast hums",
-  "subtitles.entity.polar_bear.death": "Cave Beast dies",
-  "subtitles.entity.polar_bear.hurt": "Cave Beast hurts",
-  "subtitles.entity.polar_bear.warning": "Cave Beast roars"
+  "entity.minecraft.polar_bear": "Cave beast",
+  "item.minecraft.polar_bear_spawn_egg": "Cave beast cackle fruit",
+  "subtitles.entity.polar_bear.ambient": "Cave beast groans",
+  "subtitles.entity.polar_bear.ambient_baby": "Young cave beast hums",
+  "subtitles.entity.polar_bear.death": "Cave beast dies",
+  "subtitles.entity.polar_bear.hurt": "Cave beast hurts",
+  "subtitles.entity.polar_bear.warning": "Cave beast roars"
 }

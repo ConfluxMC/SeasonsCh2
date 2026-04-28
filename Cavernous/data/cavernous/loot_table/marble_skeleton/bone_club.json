@@ -13,6 +13,7 @@
               "components": {
                 "item_name": "Bone Club",
                 "rarity": "uncommon",
+                "item_model": "cavernous:bone_club",
                 "weapon": {
                   "disable_blocking_for_seconds": 1
                 },
