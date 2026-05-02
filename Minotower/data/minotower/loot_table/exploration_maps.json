@@ -1,0 +1,49 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:map",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:exploration_map",
+              "destination": "minecraft:on_trial_chambers_maps",
+              "decoration": "minecraft:trial_chambers",
+              "skip_existing_chunks": false
+            },
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": "Trial Chamber Exploration Map",
+              "target": "item_name"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:map",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": "Ancient City Explorer Map",
+              "target": "item_name"
+            },
+            {
+              "function": "minecraft:exploration_map",
+              "destination": "minecraft:ancient_city",
+              "decoration": "minecraft:banner_cyan",
+              "zoom": 1,
+              "search_radius": 50,
+              "skip_existing_chunks": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

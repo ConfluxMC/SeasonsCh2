@@ -1,0 +1,436 @@
+placeholderapi placeholder with the prefix "seasonsquests":
+    if identifier is "negative_sanity":
+        set result to sanity of player * -1
+    else if identifier is "distance_to_worldborder":
+        set result to floor(distanceToWorldborder(player, false))
+    else if identifier is "distance_to_worldborder_percent":
+        set result to distanceToWorldborder(player, true) * 100
+    else if identifier is "wearing_miners_helmet":
+        set result to wearingMinersHelmet(player)
+    else if identifier is "in_deeper_dark":
+        if world is "world_deeper_dark_deeper_dark":
+            set result to true
+        else:
+            set result to false
+    else if identifier is "priest_quest_description":
+        set {_adv} to "cavernous:expansion/myst/priest_summon" parsed as advancement
+        set {_prog} to advancement progress of {_adv} for player
+        if {_prog} is done:
+            set result to "High Priest Veridian"
+        else:
+            set result to "???"
+    else if identifier is "wearing_marble_skeleton_disguise":
+        set result to disguisedAsMarbleSkeleton(player)
+    else if identifier is "wearing_ancient_armor":
+        if any:
+            string tag "minecraft:custom_data;tag" of nbt of player's helmet is "ancient_armor"
+            string tag "minecraft:custom_data;tag" of nbt of player's chestplate is "ancient_armor"
+            string tag "minecraft:custom_data;tag" of nbt of player's leggings is "ancient_armor"
+            string tag "minecraft:custom_data;tag" of nbt of player's boots is "ancient_armor"
+        then:
+            set result to true
+        else:
+            set result to false
+    else if identifier is "wearing_ariadnes_moss":
+        if enchantments of player's boots contains ("ariadnes_moss:ariadnes_moss" parsed as enchantment):
+            set result to true
+        else:
+            set result to false
+    else if identifier is "biomes_experienced":
+        set result to size of {seasonsquests.biomes_visited::%player%::*}
+    else if identifier is "spring_cleaning":
+        set result to score of player for objective with id "chakram_harvest_quest_count"
+    else if identifier is "researed_weapons":
+        set result to getPlaceholder(player,"unseared_weapons") + getPlaceholder(player,"seared_weapons")
+    else:
+        set the result to getPlaceholder(player, identifier)
+
+## Get
+function getPlaceholder(plr: offlineplayer, identifier: text):: object:
+    return {seasonsquests::%{_plr}%::%{_identifier}%}
+
+## Set
+function setPlaceholder(plr: offlineplayer, identifier: text, val: object):
+    set {seasonsquests::%{_plr}%::%{_identifier}%} to {_val}
+    
+    if {seasonsquests.players::*} does not contain {_plr}:
+        add {_plr} to {seasonsquests.players::*}
+
+function addPlaceholder(plr: offlineplayer, identifier: text, val: number):
+    if getPlaceholder({_plr},{_identifier}) is not set:
+        setPlaceholder({_plr}, {_identifier}, 0)
+    setPlaceholder({_plr}, {_identifier}, getPlaceholder({_plr}, {_identifier}) + {_val})
+
+### Unique triggers
+
+local function resetPlaceholders(p: offlineplayer):
+    setPlaceholder({_p},"sols_shop_purchases",0)
+    setPlaceholder({_p},"rascals_found",0)
+    setPlaceholder({_p},"spriggs_punched",0)
+    setPlaceholder({_p},"chakram_damage",0)
+    setPlaceholder({_p},"seared_damage",0)
+    setPlaceholder({_p},"custom_arrows_shot",0)
+    setPlaceholder({_p},"sanity_manifestations",0)
+    setPlaceholder({_p},"trades",0)
+    setPlaceholder({_p},"barters",0)
+    setPlaceholder({_p},"miners_helmet_spotlights",0)
+    setPlaceholder({_p},"minotauri_bells_rung",0)
+    setPlaceholder({_p},"war_bell_full_charge_damage",0)
+    setPlaceholder({_p},"minotauri_books_read",0)
+    setPlaceholder({_p},"creepers_ignited",0)
+    setPlaceholder({_p},"bears_commanded",0)
+    setPlaceholder({_p},"suspicious_blocks_dusted",0)
+    setPlaceholder({_p},"sculk_converter_sacrifices",0)
+    setPlaceholder({_p},"spider_kills",0)
+    setPlaceholder({_p},"creeper_kills",0)
+    setPlaceholder({_p},"skeleton_kills",0)
+    setPlaceholder({_p},"zombie_kills",0)
+    setPlaceholder({_p},"priest_kills",0)
+    setPlaceholder({_p},"bone_club_kills",0)
+    setPlaceholder({_p},"geysers_launched_from",0)
+    setPlaceholder({_p},"used_ancient_weapon",0)
+    setPlaceholder({_p},"marble_pillar_devotions",0)
+    setPlaceholder({_p},"specific_animal_fed",0)
+    setPlaceholder({_p},"unseared_weapons",0)
+    setPlaceholder({_p},"seared_weapons",0)
+    delete {seasonsquests.biomes_visited::%{_p}%::*}
+    set score of {_p} for objective with id "chakram_harvest_quest_count" to 0
+    #setPlaceholder({_p},"",0)
+
+command /seasons-reset-placeholders:
+    permission: server.admin
+    trigger:
+        loop {seasonsquests.players::*}:
+            resetPlaceholders(loop-value)
+            send "Reset quests for &e%loop-value%" to console
+command /seasons-reset-placeholders-of <offlineplayer>:
+    permission: server.admin
+    trigger:
+        resetPlaceholders(arg-1)
+        send "Reset quests for &e%arg-1%" to sender
+
+local function distanceToWorldborder(p: player, asPercent: boolean):: number:
+    set {_wb} to worldborder of {_p}'s world
+    set {_wbc} to worldborder center of {_wb}
+    set {_wbr} to worldborder radius of {_wb}
+    set {_xDist} to difference between x coordinate of {_p} and x coordinate of {_wbc}
+    set {_zDist} to difference between z coordinate of {_p} and z coordinate of {_wbc}
+    #send "%{_xDist}%x %{_zDist}%z radius: %{_wbr}%" to {_p}
+    if {_asPercent} is true:
+        return max({_xDist},{_zDist}) / {_wbr}
+    else:
+        return {_wbr} - max({_xDist},{_zDist})
+
+# Win Rascal game
+on ocelot teleport:
+    set {_ent} to nearest armor stand relative to event-entity
+    set {_found} to score of {_ent} for objective with id "rascal_times_found"
+    set {_yDiff} to (y coordinate of past event-location) - (y coordinate of event-location)
+    #send "Ocelot: %event-entity% Stand: {_ent} (%uuid of {_ent}%) dist: %{_yDiff}% found-times: %{_found}%" to "gnago" parsed as player
+    if all:
+        {_yDiff} > 450
+        {_found} >= 3
+    then:
+        loop all players within 5 metres of past event-location:
+            addPlaceholder(loop-value,"rascals_found",1)
+
+on player teleport:
+    # geyser
+    set {_yDiff} to (y coordinate of past event-location) - (y coordinate of event-location)
+    if all:
+        event-teleportcause is command
+        {_yDiff} is -1000
+    then:
+        set {_expectedGeyserLoc} to block 2 below past event-location
+        set {_geyser} to nearest armor stand in radius 0.5 at {_expectedGeyserLoc} excluding (armor stands where [scoreboard tags of input does not contain "geyser"])
+        if {_geyser} is set:
+            set {_stoodOnTime} to score of {_geyser} for objective with id "geyser.time_stood_on"
+            if {_stoodOnTime} >= 20:
+                addPlaceholder(player,"geysers_launched_from",1)
+    
+    # Ancient shield
+    if all:
+        event-teleportcause is command
+        score of player for objective with id "ancient_staff.distance_travelled" > 0
+    then:
+        addPlaceholder(player,"used_ancient_weapon",1)
+
+on player trade:
+    addPlaceholder(player,"trades",1)
+    
+on piglin barter:
+    addPlaceholder(player,"barters",1)
+
+on right click with flint and steel on creeper:
+    addPlaceholder(player,"creepers_ignited",1)
+
+on right click with written book:
+    set {_main} to held item of player
+    set {_off} to held item of player
+    if any:
+        byte tag "minecraft:custom_data;ariadnes_moss_guide" of nbt of {_main} is 1
+        byte tag "minecraft:custom_data;marble_skeleton_guide" of nbt of {_main} is 1
+        byte tag "minecraft:custom_data;sculk_converter_guide" of nbt of {_main} is 1
+        byte tag "minecraft:custom_data;ariadnes_moss_guide" of nbt of {_off} is 1
+        byte tag "minecraft:custom_data;marble_skeleton_guide" of nbt of {_off} is 1
+        byte tag "minecraft:custom_data;sculk_converter_guide" of nbt of {_off} is 1
+    then:
+        addPlaceholder(player,"minotauri_books_read",1)
+
+on right click with spyglass:
+    if wearingMinersHelmet(player) is true:
+        addPlaceholder(player, "miners_helmet_spotlights", 1)
+
+on right click on dolphin with pufferfish, cod, salmon, or tropical fish:
+    addPlaceholder(player, "specific_animal_fed", 1)
+
+on love mode enter:
+    if any:
+        event-entity is a turtle
+        event-entity is hoglin
+    then:
+        set {_p} to nearest player in radius 10 of event-entity excluding (players where [target of input is not event-entity])
+        addPlaceholder({_p}, "specific_animal_fed", 1)
+
+on player drop:
+    if isSeared(event-item) is true:
+        set {seasonsquests.dropped_seared_weapons::%uuid of event-dropped item%} to event-entity
+on player pickup:
+    if {seasonsquests.dropped_seared_weapons::%uuid of event-dropped item%} is set:
+        if isSeared(event-item) is false:
+            addPlaceholder(event-entity, "unseared_weapons", 1)
+        delete {seasonsquests.dropped_seared_weapons::%uuid of event-dropped item%}
+on inventory click:
+    if all:
+        getPlaceholder(player, "unseared_weapons") > 0
+        type of event-inventory is smithing inventory
+        index of event-slot is 3 # Output slot of smithing inventory
+        isSeared(event-item) is true
+    then:
+        if event-inventory action is not nothing:
+            addPlaceholder(player, "seared_weapons", 1)
+        else if all:
+            event-click type is left mouse
+            minecraft item tag "bundles" contains type of cursor slot of player
+            size of bundle contents of cursor slot of player is 0
+        then:
+            addPlaceholder(player, "seared_weapons", 1)
+            
+
+on item damage:
+    if all:
+        event-item is brush
+        gravel and sand contains type of targeted block of player
+    then:
+        addPlaceholder(player,"suspicious_blocks_dusted",1)
+
+on block break:
+    if any:
+        event-block is cobweb
+        event-block is sculk sensor
+    then:
+        add 1 to score of player for objective with id "chakram_harvest_quest_count"
+
+on sanity manifestation:
+    if name of manifestation does not contain ".": # If it contains a dot that means it's a sub manifestation
+        addPlaceholder(player,"sanity_manifestations",1)
+
+on player shoot bow:
+    if "torch_arrow" and "chain_arrow" contains string tag "data;tag" of nbt of event-entity:
+        addPlaceholder(shooter,"custom_arrows_shot",1)
+    if string tag "minecraft:custom_data;tag" of nbt of shot bow is "ancient_repeater":
+        addPlaceholder(shooter,"used_ancient_weapon",1)
+
+on advancement done:
+    if "minotower:use_amethyst_bell", "minotower:use_breeze_bell", "minotower:war_bell/use", "minotower:use_rascal_bell", and "minotower:use_warden_bell" contains event-advancement:
+        addPlaceholder(player,"minotauri_bells_rung",1)
+
+on player pickup xp:
+    if all:
+        world of player is "world"
+        {seasonsquests.biomes_visited::%player%::*} does not contain biome at player
+    then:
+        add biome at player to {seasonsquests.biomes_visited::%player%::*}
+
+on death:
+    set {_ce} to causing entity of event-damagesource
+    if {_ce} is tameable:
+        set {_ce} to owner of {_ce}
+    else if {_ce} is a polar bear: # Bear Jockeys
+        set {_ce} to first element of passengers of {_ce}
+        
+    if {_ce} is a player:
+        set {_converter} to nearest item display in radius 8 of victim excluding (all item displays where [scoreboard tags of input does not contain "deeper_dark.sculk_converter_item"])
+        if {_converter} is set:
+            addPlaceholder({_ce},"sculk_converter_sacrifices",1)
+        
+        if victim is a creeper:
+            if scoreboard tags of victim contains "glob":
+                addPlaceholder({_ce},"creeper_kills",1)
+            else:
+                addPlaceholder({_ce},"creeper_kills",1)
+        ### Spiders
+        if any:
+            victim is a spider
+            victim is a cave spider
+        then:
+            if scoreboard tags of victim contains "webslinger":
+                addPlaceholder({_ce},"creeper_kills",2)
+            else:
+                addPlaceholder({_ce},"spider_kills",1)
+        ### Skeletons
+        else if victim is a skeleton:
+            if scoreboard tags of victim contains "marble_skeleton":
+                addPlaceholder({_ce},"skeleton_kills",2)
+            else if scoreboard tags of victim contains "veil_guard":
+                addPlaceholder({_ce},"skeleton_kills",2)
+            else if scoreboard tags of victim contains "ghost":
+                addPlaceholder({_ce},"skeleton_kills",3)
+        else if victim is a skeleton horse:
+            addPlaceholder({_ce},"skeleton_kills",1)
+        else if victim is a wither skeleton:
+            addPlaceholder({_ce},"skeleton_kills",3)
+        else if victim is a stray:
+            addPlaceholder({_ce},"skeleton_kills",1)
+        else if victim is a parched:
+            addPlaceholder({_ce},"skeleton_kills",1)
+        else if victim is a bogged:
+            if world of victim is "world_cavernous_the_myst":
+                addPlaceholder({_ce},"skeleton_kills",3)
+            else:
+                addPlaceholder({_ce},"skeleton_kills",1)
+        ### Zombies
+        else if victim is a zombie:
+            if victim is a baby:
+                addPlaceholder({_ce},"zombie_kills",1)
+            if scoreboard tags of victim contains "oozer":
+                addPlaceholder({_ce},"zombie_kills",3)
+            else:
+                addPlaceholder({_ce},"zombie_kills",1)
+        else if any:
+            victim is a zombie villager
+            victim is a drowned
+            victim is a husk
+        then:
+            addPlaceholder({_ce},"zombie_kills",1)
+        else if all:
+            victim is a rabbit
+            scoreboard tags of victim contains "dreadmire_rabbit"
+        then:
+            addPlaceholder({_ce},"zombie_kills",5)
+        else if any:
+            victim is a zombie horse
+            victim is a camel husk
+            victim is a zombie nautilus
+            victim is a zoglin
+        then:
+            addPlaceholder({_ce},"zombie_kills",1)
+            
+    ### Priest
+    if all:
+        victim is a skeleton
+        scoreboard tags of victim contains "priest_boss"
+    then:
+        loop players within radius 50 of victim: # 50 is what's in the datapack for the advancement
+            addPlaceholder(loop-value,"priest_kills",1)
+            addPlaceholder({_ce},"skeleton_kills",10)
+    
+    
+    # Direct attacks only
+    if attacker is player:
+        if byte tag "minecraft:custom_data;bone_club" of nbt of held item of attacker is 1:
+            if all:
+                victim is a skeleton
+                scoreboard tags of victim contains "marble_skeleton"
+            then:
+                addPlaceholder({_ce},"bone_club_kills",2)
+            else:
+                addPlaceholder({_ce},"bone_club_kills",1)
+
+on damage:
+    set {_ce} to causing entity of event-damagesource
+    set {_de} to direct entity of event-damagesource
+    if {_ce} is a player:
+        # Direct attacks
+        if {_de} is {_ce}:
+            if all:
+                victim is a silverfish
+                held item of {_ce} is air
+            then:
+                addPlaceholder(attacker,"spriggs_punched",1)
+            if isSeared(held item of {_ce}) is true:
+                addPlaceholder({_ce},"seared_damage",damage)
+            
+            # Ancient Blade
+            if all:
+                {_ce}'s tool is stone sword
+                string tag "minecraft:custom_data;tag" of nbt of {_ce}'s tool is "ancient_blade"
+            then:
+                addPlaceholder({_ce},"used_ancient_weapon",1)
+        else:  # Indirect attacks
+            # Chakrams
+            if all:
+                {_de} is a item display
+                scoreboard tags of {_de} contains "chakram_entity"
+            then:
+                addPlaceholder({_ce},"chakram_damage",damage)
+                if isSeared(item of {_de}) is true:
+                    addPlaceholder({_ce},"seared_damage",damage)
+            
+        set {_warBellMod::*} to attack damage attribute modifiers of {_ce} where [modifier id of input is "minotower:war_bell_bonus_5"]
+        if size of {_warBellMod::*} > 0:
+            addPlaceholder({_ce},"war_bell_full_charge_damage",damage)
+    if victim is a player:
+        if {_de} is a phantom:
+            addPlaceholder(victim,"phantom_moth_kisses",1)
+        
+        # Ancient Shield
+        if all:
+            victim is blocking
+            final damage is 0
+            score of victim for objective with id "shield.damage_blocked" + (damage * 40) >= 200 # The score stores damage blocked *10, and damage in skript is measured in hearts, so double that. I'm not sure why it needs to be double AGAIN again, but it does, so we will.
+        then:
+            addPlaceholder({_ce},"used_ancient_weapon",1)
+        
+        if all:
+            attacker is creaking
+            attacker has strength 3
+            disguisedAsMarbleSkeleton(victim) is true
+        then:
+            addPlaceholder(victim,"marble_pillar_devotions",1)
+
+local function isSeared(item: item):: boolean:
+    if namespacedkey of trim pattern of armor trim of {_item} is "minotower:seared":
+        return true
+    return false
+
+local function disguisedAsMarbleSkeleton(p: player):: boolean:
+    set {_leatherTrim} to armor trim using quartz_material with flow_pattern
+    set {_legTrim} to armor trim using netherite_material with silence_pattern
+    if all:
+        helmet of {_p} is skeleton skull
+        chestplate of {_p} is leather chestplate
+        leggings of {_p} is chainmail leggings
+        boots of {_p} is leather boots
+        dyed color of chestplate of {_p} is rgb(79,79,79) # #4F4F4F
+        dyed color of boots of {_p} is rgb(79,79,79) # #4F4F4F
+        armor trim of chestplate of {_p} is {_leatherTrim}
+        armor trim of leggings of {_p} is {_legTrim}
+        armor trim of boots of {_p} is {_leatherTrim}
+        byte tag "minecraft:custom_data;bone_club" of nbt of {_p}'s tool is 1
+        byte tag "minecraft:custom_data;devotion_quartz" of nbt of {_p}'s offhand tool is 1
+    then:
+        return true
+    else:
+        return false
+
+local function wearingMinersHelmet(p: player):: boolean:
+    set {_helm} to helmet of {_p}
+    if all:
+        {_helm} is set
+        {_helm} is a copper helmet
+        byte tag "minecraft:custom_data;miners_helmet.miners_helmet" of nbt of {_helm} is 1
+    then:
+        return true
+    else:
+        return false

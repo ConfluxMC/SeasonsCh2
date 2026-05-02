@@ -4,15 +4,17 @@
     "minotower:virulent",
     "minotower:vindictive",
     "minotower:virtuous",
+    "minotower:rigor",
     "minotower:cleansing",
-    "minotower:concentration"
+    "minotower:concentration",
+    "minotower:wardenblight"
   ],
   "supported_items": "minecraft:goat_horn",
   "primary_items": "minecraft:goat_horn",
   "weight": 1,
   "max_level": 1,
   "min_cost": {
-    "base": 24,
+    "base": 13,
     "per_level_above_first": 0
   },
   "max_cost": {

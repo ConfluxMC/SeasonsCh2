@@ -1,0 +1,11 @@
+# Sometimes server schedules aren't perfectly accurate, so ensure accuracy wih this
+every 1 second:
+    set {_timeStr} to placeholder "battlepass_time_to_daily_reset"
+    if {_timeStr} is "30m 0s":
+        send "&eDaily Quests will refresh in 30 minutes." to all players
+    else if {_timeStr} is "10m 0s":
+        send "&eDaily Quests will refresh in 10 minutes." to all players
+    else if {_timeStr} is "1m 0s":
+        send "&eDaily Quests will refresh in 1 minute." to all players
+    if "2s", "1s", and "0s" contains {_timeStr}:
+        make console execute command "seasons-reset-placeholders"

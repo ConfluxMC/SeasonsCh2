@@ -1,0 +1,23 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:magma_cream",
+					"functions": [
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "minotower:searing_sculk",
+								"minecraft:provides_trim_material": "minotower:sculk",
+								"minecraft:item_name": "Searing Sculk"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

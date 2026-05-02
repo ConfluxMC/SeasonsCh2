@@ -208,7 +208,8 @@
 						{
 							"function": "minecraft:set_name",
 							"entity": "this",
-							"name": "Ancient City Explorer Map"
+							"name": "Ancient City Explorer Map",
+							"target": "item_name"
 						}
 					]
 				}

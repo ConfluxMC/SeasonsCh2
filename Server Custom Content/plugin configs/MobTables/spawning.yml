@@ -69,7 +69,7 @@ pools:
           - PIG
           - COW
           - CHICKEN
-          - DONKEY
+          - DONKEY 
           - LLAMA
     entries:
       - type: PIG
@@ -665,6 +665,39 @@ pools:
       - type: biome
         biome: CAVERNOUS:MARBLE_CAVES
         invert: true
+      - type: biome
+        biome: CAVERNOUS:MYST/DREADMIRE_
+        invert: true
+      - type: biome
+        biome: CAVERNOUS:MYST/DREADMIRE
+        invert: true
+      - type: biome
+        biome: CAVERNOUS:MYST/NOXWOODS
+        invert: true
+      - type: biome
+        biome: CAVERNOUS:MYST/VILEGORGE
+        invert: true
+      - type: biome
+        biome: DEEPER_DARK:DEEPER_DARK
+        invert: true
+      - type: biome
+        biome: DEEPER_DARK:DEEPER_DARK_CAVERN
+        invert: true
+      - type: biome
+        biome: DEEPER_DARK:DEEP_OASIS
+        invert: true
+      - type: biome
+        biome: DEEPER_DARK:VOLCANIC_CAVERNS
+        invert: true
+      - type: biome
+        biome: DEEPER_DARK:AMETHYST_MINES
+        invert: true
+      - type: biome
+        biome: DEEPER_DARK:ANCIENT_DARK
+        invert: true
+      - type: biome
+        biome: DEEPER_DARK:OBSIDIAN_BARRIER
+        invert: true
       - type: block
         filter:
           - WATER
@@ -677,3 +710,33 @@ pools:
     entries:
       - type: GLOW_SQUID
         chance: 0.6
+# DEEPER DARK
+  - rolls: 2
+    conditions:
+      - type: biome
+        biome: DEEPER_DARK:DEEP_OASIS
+      - type: entity_limit
+        range: 30
+        limit: 8
+        filter:
+          - ZOMBIFIED_PIGLIN
+    entries:
+      - type: ZOMBIFIED_PIGLIN
+        chance: 0.6
+  - rolls: 1
+    conditions:
+      - type: biome
+        biome: DEEPER_DARK:DEEP_OASIS
+      - type: block
+        filter:
+          - SCULK
+          - DARK_OAK_LEAVES
+        invert: true
+      - type: entity_limit
+        range: 100
+        limit: 1
+        filter:
+          - PIGLIN_BRUTE
+    entries:
+      - type: PIGLIN_BRUTE
+        chance: 0.5

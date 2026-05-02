@@ -10,7 +10,7 @@
             "scores": {
               "minotower.war_bell": {
                 "min": 1,
-                "max": 20
+                "max": 15
               },
               "minotower.war_bell_hit": 0
             }

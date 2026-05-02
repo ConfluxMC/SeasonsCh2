@@ -1,0 +1,15 @@
+{
+  "name": "minotower:bell_crafter",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "minotower:bell_crafter",
+        "processors": []
+      }
+    }
+  ]
+}

@@ -2,38 +2,110 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 6,
+      "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:tag",
-          "name": "minecraft:decorated_pot_sherds",
-          "expand": true,
-          "weight": 15
-        },
-        {
           "type": "minecraft:item",
-          "name": "minecraft:gold_ingot",
-          "weight": 10
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:moss_block",
-          "weight": 10
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:brush",
-          "weight": 15,
+          "name": "diamond",
           "functions": [
             {
-              "function": "minecraft:set_damage",
-              "damage": {
+              "function": "minecraft:set_count",
+              "count": {
                 "type": "minecraft:uniform",
-                "min": 0,
-                "max": 32
+                "min": 3,
+                "max": 6
               }
             }
           ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_ingot",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 8,
+                "max": 12
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:echo_shard",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 6,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glowstone_dust",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 6,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_nugget",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 3
+      },
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:misc_treasure"
         }
       ]
     }

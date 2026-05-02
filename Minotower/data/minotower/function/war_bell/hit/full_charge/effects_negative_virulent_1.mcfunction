@@ -5,4 +5,6 @@ effect give @s minecraft:blindness 4 0
 effect give @s minecraft:wither 4 1
 effect give @s minecraft:glowing 8 0
 
+damage @s 1 magic by @n[tag=war_bell.virulent_current]
+
 #say virulent 1

@@ -1,15 +1,4 @@
 {
-  "type": "minecraft:chest",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:tag",
-          "name": "minecraft:saplings",
-          "expand": true
-        }
-      ]
-    }
-  ]
+  "type": "minecraft:entity",
+  "pools": []
 }

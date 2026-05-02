@@ -1,0 +1,25 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:searing_cream/beetroot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:searing_cream/honey"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:searing_cream/moss"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:searing_cream/sculk"
+        }
+      ]
+    }
+  ]
+}

@@ -24,7 +24,8 @@
 						},
 						{
 							"function": "minecraft:set_name",
-							"name": "Sandstone Temple Explorer Map"
+							"name": "Sandstone Temple Explorer Map",
+							"target": "item_name"
 						}
 					]
 				}

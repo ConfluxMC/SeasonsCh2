@@ -1,0 +1,36 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond",
+          "weight": 25
+        },
+        {
+          "type": "minecraft:tag",
+          "name": "minotower:loot/music_discs",
+          "expand": true,
+          "weight": 35
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 35,
+          "functions": [
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "#minotower:war_bell"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "cavernous:secrets/items/ancient_tablet",
+          "weight": 2
+        }
+      ]
+    }
+  ]
+}

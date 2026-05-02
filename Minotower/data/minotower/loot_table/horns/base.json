@@ -1,0 +1,43 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:torchflower",
+          "functions": [
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": {
+                "text": "Minotaur Horns"
+              },
+              "target": "item_name"
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:equippable": {
+                  "slot": "head",
+                  "allowed_entities": "#minotower:piglin",
+                  "damage_on_hurt": false
+                },
+                "minecraft:max_stack_size": 1,
+                "minecraft:custom_data": {
+                  "minotaur_horns": true
+                },
+                "minecraft:enchantment_glint_override": false
+              }
+            },
+            {
+              "function": "minecraft:enchant_randomly",
+              "options": "minecraft:binding_curse",
+              "only_compatible": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

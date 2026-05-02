@@ -1,0 +1,16 @@
+command /hollow-earth-server-init:
+    permission: server.admin
+    trigger:
+        make sender execute command "setworldspawn -326 224 -574 0 0"
+        make sender execute command "worldborder center -326 -574"
+        make sender execute command "worldborder warning distance 0"
+        make sender execute command "gamerule allow_entering_nether_using_portals false"
+        make sender execute command "gamerule players_sleeping_percentage 101"
+        make sender execute command "gamerule spawn_phantoms false"
+        
+        load chunk at spawn of "world" # Prevents first player from suffocation beneath world
+
+#on first join:
+    #send location of player to "gnago" parsed as player
+    #if location of player is not within 16 blocks of spawn of "world":
+    #    teleport player to spawn of "world"

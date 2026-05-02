@@ -32,10 +32,81 @@
                   ]
                 },
                 "minecraft:enchantable": {
-                  "value": 1
+                  "value": 5
                 },
                 "!minecraft:repairable": {},
-                "minecraft:repair_cost": 50
+                "minecraft:repair_cost": 50,
+                "minecraft:lore": [
+                  "",
+                  {
+                    "text": "Build charge by striking a target when the",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "bell rings again. Each level of charge will",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "grant you additional power. Depletes after",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "8 seconds or after failing a timed strike.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  "",
+                  {
+                    "text": "When fully charged:",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "On every 5th consecutive well-timed strike",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  [
+                    {
+                      "text": "the war bell unleashes ",
+                      "color": "gray",
+                      "italic": false
+                    },
+                    {
+                      "text": "War Bell Blast",
+                      "color": "gold"
+                    },
+                    {
+                      "text": ",",
+                      "color": "gray",
+                      "italic": false
+                    }
+                  ],
+                  {
+                    "text": "affecting nearby allies and foes.",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  "",
+                  {
+                    "text": "Anything wearing a matching chestplate",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "and one other matching piece of armor",
+                    "color": "gray",
+                    "italic": false
+                  },
+                  {
+                    "text": "is considered your ally.",
+                    "color": "gray",
+                    "italic": false
+                  }
+                ]
               }
             },
             {

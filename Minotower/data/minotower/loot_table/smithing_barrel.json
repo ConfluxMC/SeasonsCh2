@@ -2,17 +2,153 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 15,
+      "rolls": 6,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:mud",
-          "weight": 9
+          "name": "minecraft:blaze_rod",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 8
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:muddy_mangrove_roots",
-          "weight": 1
+          "name": "minecraft:blaze_powder",
+          "weight": 25,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:magma_cream",
+          "weight": 25,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": {
+            "pools": [
+              {
+                "rolls": 1,
+                "entries": [
+                  {
+                    "type": "minecraft:loot_table",
+                    "value": "minotower:searing_cream/moss",
+                    "weight": 80
+                  },
+                  {
+                    "type": "minecraft:loot_table",
+                    "value": "minotower:searing_cream/beetroot",
+                    "weight": 12
+                  },
+                  {
+                    "type": "minecraft:loot_table",
+                    "value": "minotower:searing_cream/honey",
+                    "weight": 7
+                  },
+                  {
+                    "type": "minecraft:loot_table",
+                    "value": "minotower:searing_cream/sculk",
+                    "weight": 1
+                  }
+                ]
+              }
+            ]
+          },
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:random_trimmed_weapons",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": {
+            "pools": [
+              {
+                "rolls": 1,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:moss_block",
+                    "weight": 50
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:beetroot",
+                    "weight": 32
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:honeycomb",
+                    "weight": 25
+                  },
+                  {
+                    "type": "minecraft:item",
+                    "name": "sculk",
+                    "weight": 3
+                  }
+                ]
+              }
+            ]
+          },
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_ingot",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:echo_shard",
+          "weight": 3
         }
       ]
     }

@@ -1,0 +1,39 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:splash_potion",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:potion_contents": {
+                  "custom_color": 7471155,
+                  "custom_name": "rascal_defense",
+                  "custom_effects": [
+                    {
+                      "id": "minecraft:blindness",
+                      "duration": 120
+                    },
+                    {
+                      "id": "minecraft:slowness",
+                      "duration": 120
+                    },
+                    {
+                      "id": "minecraft:poison",
+                      "duration": 40
+                    }
+                  ]
+                },
+                "minecraft:rarity": "uncommon"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

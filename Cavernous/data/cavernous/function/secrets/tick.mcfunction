@@ -41,7 +41,7 @@ execute as @a[scores={curse.cooldown_active=1,curse.cooldown_timer=7200..}] run 
     execute as @a[scores={ancient_staff.activating=1}] unless predicate cavernous:ancient_staff_activate run scoreboard players set @s ancient_staff.activating 0
 
         #@ Sounds shockingly like a "no" sound
-    execute as @a[predicate=cavernous:ancient_staff_activate,scores={ancient_staff.cooldown_timer=..99}] at @s unless score @s ancient_staff.activating matches 1 run playsound minecraft:block.note_block.didgeridoo master @s ~ ~ ~ 1 0.1
+    execute as @a[predicate=cavernous:ancient_staff_activate,scores={ancient_staff.cooldown_timer=..99}] at @s unless score @s ancient_staff.activating matches 1 run playsound minecraft:block.note_block.didgeridoo player @s ~ ~ ~ 1 0.1
 
     execute as @a unless score @s ancient_staff.cooldown_timer matches 0.. run scoreboard players set @s ancient_staff.cooldown_timer 100
     execute as @a run scoreboard players add @s ancient_staff.cooldown_timer 5

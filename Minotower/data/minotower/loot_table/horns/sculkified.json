@@ -1,0 +1,21 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:horns/base",
+          "functions": [
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "horn_type": "sculkified"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

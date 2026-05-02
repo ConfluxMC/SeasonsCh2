@@ -9,7 +9,8 @@
 	},
 	"minecraft:gameplay/respawn_anchor_works": false,
 	"minecraft:gameplay/can_start_raid": false,
-	"minecraft:gameplay/sky_light_level": 4.0
+	"minecraft:gameplay/sky_light_level": 4.0,
+	"minecraft:gameplay/piglins_zombify": false
 	},
 	"has_ceiling": true,
 	"has_skylight": false,

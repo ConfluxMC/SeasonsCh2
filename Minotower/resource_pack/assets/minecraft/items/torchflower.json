@@ -1,0 +1,72 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "minecraft:has_component",
+    "component": "minecraft:custom_data",
+    "on_true": {
+      "type": "minecraft:select",
+      "property": "minecraft:component",
+      "component": "minecraft:custom_data",
+      "cases": [
+        {
+          "when": {
+            "minotaur_horns": true,
+            "horn_type": "default"
+          },
+          "model": {
+            "type": "minecraft:model",
+            "model": "minotower:item/horns/default"
+          }
+        },
+        {
+          "when": {
+            "minotaur_horns": true,
+            "horn_type": "bell_crafter"
+          },
+          "model": {
+            "type": "minecraft:model",
+            "model": "minotower:item/horns/bell_crafter"
+          }
+        },
+        {
+          "when": {
+            "minotaur_horns": true,
+            "horn_type": "construct"
+          },
+          "model": {
+            "type": "minecraft:model",
+            "model": "minotower:item/horns/construct"
+          }
+        },
+        {
+          "when": {
+            "minotaur_horns": true,
+            "horn_type": "sculkified"
+          },
+          "model": {
+            "type": "minecraft:model",
+            "model": "minotower:item/horns/sculkified"
+          }
+        },
+        {
+          "when": {
+            "minotaur_horns": true,
+            "horn_type": "player"
+          },
+          "model": {
+            "type": "minecraft:model",
+            "model": "minotower:item/horns/player"
+          }
+        }
+      ],
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/torchflower"
+      }
+    },
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/torchflower"
+    }
+  }
+}

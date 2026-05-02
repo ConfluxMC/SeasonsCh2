@@ -1,0 +1,22 @@
+{
+  "description": "Rigor",
+  "exclusive_set": [
+    "minotower:revitalizing"
+  ],
+  "supported_items": "minecraft:goat_horn",
+  "primary_items": "minecraft:goat_horn",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {
+    "base": 5,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 24,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 8,
+  "slots": [
+    "offhand"
+  ]
+}

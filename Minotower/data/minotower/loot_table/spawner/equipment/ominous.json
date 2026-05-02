@@ -2,28 +2,10 @@
   "type": "minecraft:equipment",
   "pools": [
     {
-      "bonus_rolls": 0,
-      "conditions": [
-        {
-          "chance": 0.5,
-          "condition": "minecraft:random_chance"
-        }
-      ],
       "entries": [
         {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "components": {
-                "minecraft:trim": {
-                  "material": "minecraft:netherite",
-                  "pattern": "minecraft:host"
-                }
-              },
-              "function": "minecraft:set_components"
-            }
-          ],
-          "name": "minecraft:golden_helmet"
+          "type": "minecraft:loot_table",
+          "value": "minotower:horns/construct"
         }
       ],
       "rolls": 1
@@ -32,7 +14,7 @@
       "bonus_rolls": 0,
       "conditions": [
         {
-          "chance": 0.5,
+          "chance": 0.65,
           "condition": "minecraft:random_chance"
         }
       ],
@@ -40,6 +22,16 @@
         {
           "type": "minecraft:item",
           "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 16,
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.5
+                }
+              ]
+            },
             {
               "components": {
                 "minecraft:trim": {
@@ -50,7 +42,7 @@
               "function": "minecraft:set_components"
             }
           ],
-          "name": "minecraft:golden_chestplate"
+          "name": "minecraft:copper_chestplate"
         }
       ],
       "rolls": 1
@@ -59,7 +51,7 @@
       "bonus_rolls": 0,
       "conditions": [
         {
-          "chance": 0.5,
+          "chance": 0.4,
           "condition": "minecraft:random_chance"
         }
       ],
@@ -67,6 +59,16 @@
         {
           "type": "minecraft:item",
           "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 16,
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.3
+                }
+              ]
+            },
             {
               "components": {
                 "minecraft:trim": {
@@ -77,7 +79,7 @@
               "function": "minecraft:set_components"
             }
           ],
-          "name": "minecraft:golden_leggings"
+          "name": "minecraft:copper_leggings"
         }
       ],
       "rolls": 1
@@ -86,7 +88,7 @@
       "bonus_rolls": 0,
       "conditions": [
         {
-          "chance": 0.5,
+          "chance": 0.4,
           "condition": "minecraft:random_chance"
         }
       ],
@@ -94,6 +96,16 @@
         {
           "type": "minecraft:item",
           "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 16,
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.5
+                }
+              ]
+            },
             {
               "components": {
                 "minecraft:trim": {
@@ -104,7 +116,7 @@
               "function": "minecraft:set_components"
             }
           ],
-          "name": "minecraft:golden_boots"
+          "name": "minecraft:copper_boots"
         }
       ],
       "rolls": 1
@@ -114,12 +126,39 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:golden_axe",
-          "weight": 85
+          "name": "minecraft:copper_axe",
+          "weight": 85,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": 16,
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.65
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:trim": {
+                  "material": "minotower:moss",
+                  "pattern": "minotower:seared"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.85
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:golden_spear",
+          "name": "minecraft:copper_spear",
           "weight": 15,
           "functions": [
             {
@@ -127,11 +166,10 @@
               "enchantments": {
                 "minecraft:lunge": 2
               },
-              "add": false,
               "conditions": [
                 {
                   "condition": "minecraft:random_chance",
-                  "chance": 0.25
+                  "chance": 0.5
                 }
               ]
             }
