@@ -1,0 +1,12 @@
+{
+  "rascal:rascal": "Scallywag",
+  "rascal:subtitles.entity.rascal.revealed": "Scallywag appears",
+  "rascal:subtitles.entity.rascal.hide": "Scallywag vanishes",
+  "rascal:subtitles.entity.rascal.laugh": "Scallywag giggles",
+  "rascal:subtitles.entity.rascal.ambient": "Scallywag grunts",
+  "rascal:subtitles.entity.rascal.hurt": "Scallywag hurt",
+  "rascal:subtitles.entity.rascal.throw": "Scallywag throws a potion",
+  "rascal:subtitles.entity.rascal.bite": "Scallywag bites",
+  "rascal:item.rascapple": "Scallywapple",
+  "item.minecraft.splash_potion.effect.rascal_defense": "Scallywag's grenade o' curses"
+}

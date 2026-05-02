@@ -47,6 +47,16 @@
             "type": "minecraft:model",
             "model": "minotower:item/horns/sculkified"
           }
+        },
+        {
+          "when": {
+            "minotaur_horns": true,
+            "horn_type": "player"
+          },
+          "model": {
+            "type": "minecraft:model",
+            "model": "minotower:item/horns/player"
+          }
         }
       ],
       "fallback": {

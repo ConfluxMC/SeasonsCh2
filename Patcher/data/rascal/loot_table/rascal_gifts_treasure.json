@@ -191,54 +191,29 @@
                       }
                     }
                   ]
+                },
+                {
+                  "type": "minecraft:loot_table",
+                  "value": "rascal:rascapple",
+                  "functions": [
+                    {
+                      "function": "minecraft:set_count",
+                      "count": {
+                        "type": "minecraft:uniform",
+                        "min": 0,
+                        "max": 2
+                      }
+                    }
+                  ]
                 }
               ]
             }
           ]
         },
         {
-          "type": "minecraft:item",
-          "name": "minecraft:splash_potion",
-          "weight": 8,
-          "functions": [
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:potion_contents": {
-                  "custom_color": 7471155,
-                  "custom_effects": [
-                    {
-                      "id": "minecraft:blindness",
-                      "duration": 240,
-                      "show_particles": false,
-                      "show_icon": false
-                    },
-                    {
-                      "id": "minecraft:slowness",
-                      "duration": 240,
-                      "show_particles": false,
-                      "show_icon": false
-                    },
-                    {
-                      "id": "minecraft:poison",
-                      "duration": 80,
-                      "show_particles": false,
-                      "show_icon": false
-                    }
-                  ]
-                },
-                "minecraft:rarity": "uncommon"
-              }
-            },
-            {
-              "function": "minecraft:set_name",
-              "name": {
-                "text": "Rascal's Defense Potion",
-                "italic": false
-              },
-              "target": "custom_name"
-            }
-          ]
+          "type": "minecraft:loot_table",
+          "value": "rascal:defense_potion_long",
+          "weight": 8
         },
         {
           "type": "minecraft:item",

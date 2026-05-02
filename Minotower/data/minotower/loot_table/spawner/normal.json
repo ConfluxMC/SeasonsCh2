@@ -204,34 +204,6 @@
           ]
         },
         {
-          "type": "minecraft:loot_table",
-          "value": "chakram:chakram",
-          "weight": 10,
-          "conditions": [
-            {
-              "condition": "minecraft:location_check",
-              "predicate": {
-                "biomes": "minecraft:deep_dark"
-              }
-            }
-          ],
-          "functions": [
-            {
-              "function": "minecraft:enchant_randomly",
-              "options": "chakram:snare"
-            },
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:trim": {
-                  "material": "minotower:honey",
-                  "pattern": "minotower:seared"
-                }
-              }
-            }
-          ]
-        },
-        {
           "type": "minecraft:item",
           "name": "minecraft:dark_oak_log",
           "weight": 8,
@@ -280,16 +252,6 @@
             {
               "function": "minecraft:enchant_randomly",
               "options": "#minotower:war_bell"
-            },
-            {
-              "function": "minecraft:enchant_randomly",
-              "options": "chakram:snare",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.1
-                }
-              ]
             }
           ]
         }

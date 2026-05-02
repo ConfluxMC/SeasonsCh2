@@ -1,5 +1,5 @@
 {
-  "parent": "deeper_dark:converter",
+  "parent": "minecraft:story/form_obsidian",
   "criteria": {
     "crying_obsidian": {
       "conditions": {

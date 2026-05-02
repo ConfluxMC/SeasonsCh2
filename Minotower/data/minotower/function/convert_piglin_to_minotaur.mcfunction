@@ -19,6 +19,9 @@ execute as @s[type=zombified_piglin] if items entity @s weapon.mainhand * run lo
 execute as @s[type=zombified_piglin] run loot replace entity @s weapon.offhand loot minotower:sculkified_minotaur_offhand
 execute as @s[type=zombified_piglin] run loot replace entity @s armor.feet loot minotower:sculkified_minotaur_boots
 
+# Set drop chance of horns to 0
+data modify entity @s drop_chances set value {head:0.0f}
+
 execute as @s[type=piglin] if predicate minotower:bell_crafter_chance run return run function minotower:convert_to_bell_crafter
 
 # Set horns

@@ -4,26 +4,13 @@
       "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "minecraft:torchflower",
+          "type": "minecraft:loot_table",
+          "value": "minotower:horns/base",
           "functions": [
             {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:equippable": {
-                  "slot": "head",
-                  "allowed_entities": [
-                    "minecraft:piglin",
-                    "minecraft:piglin_brute",
-                    "minecraft:zombified_piglin",
-                    "minecraft:player"
-                  ],
-                  "damage_on_hurt": false
-                },
-                "minecraft:custom_data": {
-                  "minotaur_horns": true,
-                  "horn_type": "default"
-                }
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "horn_type": "default"
               }
             }
           ]

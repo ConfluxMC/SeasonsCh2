@@ -54,7 +54,7 @@
           "value": {
             "pools": [
               {
-                "rolls": 0,
+                "rolls": 1,
                 "entries": [
                   {
                     "type": "minecraft:loot_table",
@@ -101,13 +101,13 @@
                   },
                   {
                     "type": "minecraft:item",
-                    "name": "minecraft:honeycomb",
-                    "weight": 25
+                    "name": "minecraft:beetroot",
+                    "weight": 32
                   },
                   {
                     "type": "minecraft:item",
-                    "name": "minecraft:beetroot",
-                    "weight": 32
+                    "name": "minecraft:honeycomb",
+                    "weight": 25
                   },
                   {
                     "type": "minecraft:item",
