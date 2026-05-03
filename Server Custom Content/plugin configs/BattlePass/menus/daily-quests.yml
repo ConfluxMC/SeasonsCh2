@@ -1,0 +1,41 @@
+menu-title: 'Quests'
+menu-rows: 3
+
+quest-slots:
+  slots: '26,1...7'
+
+menu:
+  '18':
+    item:
+      material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ2OWUwNmU1ZGFkZmQ4NGU1ZjNkMWMyMTA2M2YyNTUzYjJmYTk0NWVlMWQ0ZDcxNTJmZGM1NDI1YmMxMmE5In19fQ
+      name: '&eBack To Battlepass Portal'
+    actions:
+      - '[menu](page = 1) {portal}' # If the page is 1, take them to the portal page
+      - '[menu](page ! 1) {previous-page}' # If their page is not 1, take them to the previous page
+      - '[sound] {ITEM_BOOK_PAGE_TURN:1:1}'
+  '22':
+    item:
+      material: clock
+      name: '&eHow long until new quests?'
+      lore:
+        - '&7New daily quests in &6%daily_time_left%...'
+        - ''
+        - '&7Complete &e%battlepass_next_tier_points_required_free%&7 more %seasonsstats_quests_string%'
+        - '&7to advance to the next tier.'
+        - ''
+        - '&7Click to open rewards menu'
+    actions:
+      - "[menu] {rewards}"
+      - '[sound] {BLOCK_CHEST_OPEN:1:1}'
+ # '23':
+ #   item:
+ #     material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTliZjMyOTJlMTI2YTEwNWI1NGViYTcxM2FhMWIxNTJkNTQxYTFkODkzODgyOWM1NjM2NGQxNzhlZDIyYmYifX19
+ #     name: '&eNext Page'
+ #     lore:
+ #       - ''
+ #       - '&7&o(( Click to go to the next page ))'
+ #   actions:
+ #     - '[menu] {next-page}' # Take the user to the next page
+ #     - '[sound] {ITEM_BOOK_PAGE_TURN:1:1}'
+
+# You can also use %page% placeholder to show the current page number

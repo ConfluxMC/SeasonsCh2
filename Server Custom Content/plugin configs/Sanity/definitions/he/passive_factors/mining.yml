@@ -1,0 +1,73 @@
+factors:
+  events:
+    mine_diamonds:
+      type: mine
+      limit: 80
+      change: 9
+      cycles: 9
+      block:
+        blocks:
+          - "#diamond_ores"
+      condition_group:
+        all:
+          using_silk_touch:
+            type: numeric_conditional
+            invert: true
+            numeric_range: 1..
+            numeric_factor:
+              type: inventory
+              inventory:
+              slot_category: MAINHAND
+              item:
+                enchantments:
+                  - silk_touch: 1..
+          using_pickaxe_for_diamonds:
+            type: numeric_conditional
+            numeric_range: 1..
+            numeric_factor:
+              type: inventory
+              inventory:
+                slot_category: mainhand
+                item:
+                  items:
+                    - iron_pickaxe
+                    - diamond_pickaxe
+                    - netherite_pickaxe
+    mine_other_ore:
+      type: mine
+      limit: 70
+      change: 4
+      cycles: 8
+      block:
+        blocks:
+          - "#coal_ores"
+          - "#emerald_ores"
+          - "#gold_ores"
+          - "#lapis_ores"
+          - "#iron_ores"
+          - "#copper_ores"
+          - "#redstone_ores"
+          - "nether_quartz_ore"
+      condition_group:
+        all:
+          using_silk_touch:
+            type: numeric_conditional
+            invert: true
+            numeric_range: 1..
+            numeric_factor:
+              type: inventory
+              inventory:
+              slot_category: MAINHAND
+              item:
+                enchantments:
+                  - silk_touch: 1..
+          using_pickaxe_for_diamonds:
+            type: numeric_conditional
+            numeric_range: 1..
+            numeric_factor:
+              type: inventory
+              inventory:
+                slot_category: mainhand
+                item:
+                  items:
+                    - "#pickaxes"

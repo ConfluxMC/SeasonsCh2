@@ -1,0 +1,61 @@
+factors:
+  events:
+    drink_milk_to_remove_fake_sanity_bar:
+      type: consume
+      change: 0
+      item:
+        items:
+          - milk_bucket
+    kill_witch_to_trigger_fake_bar:
+      type: kill
+      change: 0
+      damage:
+        victim:
+          entities:
+            - witch
+manifestations:
+  fake_bar_on_witch_kill:
+    conditions:
+      chance: 0.001
+      thresholds:
+        - ..-10
+    type: sequence
+    first:
+      type: fake_sanity_bar
+      #enable_fake: Whether to show the fake bar now, or just set it up for later. Omit to neither enable nor disable
+      bossbar: # Exact same format as what you see in config.yml {bossbar.fake}
+        sanity:
+          title: "%1$.2f I need milk %1$.2f"
+          color: RED
+          style: SEGMENTED_6
+        insanity:
+          title: "The witch  %.2f  haunts you"
+          color: PURPLE
+          style: SOLID
+        #visibilitycondition_group: # If omitted this will default to the condition_group of the real sanity bar
+        sanity_range: -100..70 # What sanity values the fake bar can show
+        change_range: -15..15 # By how much the fake sanity bar's value can change per cycle.
+    then:
+      type: next_event
+      event_factor: :kill_witch_to_trigger_fake_bar
+      manifest:
+        type: sequence
+        first:
+          type: fake_sanity_bar
+          enable_fake: true # Enable the fake bar, hiding the real one
+          # Omitting {bossbar} here will leave it unchanged, letting us use the fake bar we set up earlier.
+        then: # IMPORTANT: Always make sure to give your players a way to remove the fake sanity bar. This is usually accomplished through a next_event (such as here), disabling it after a delayed sequence, or having another manifestation to remove it.
+          type: sequence
+          first:
+            type: message
+            titles:
+              - "<sprite:map_decorations:swamp_hut> <gradient:dark_purple:#85796C:#85796C:black:green>WITCH'S CURSE <reset><sprite:map_decorations:swamp_hut>"
+            subtitles:
+              - "<light_purple>What's happening?"
+          then:
+            type: next_event
+            event_factor: :drink_milk_to_remove_fake_sanity_bar
+            manifest:
+              type: fake_sanity_bar
+              enable_fake: false # Show the real bar again
+              bossbar: # Including {bossbar} here but leaving it empty will return the fake bar the default defined in config.yml

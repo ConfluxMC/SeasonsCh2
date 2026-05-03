@@ -1,0 +1,24 @@
+on consume of poisonous potato:
+    if all:
+        player's targeted entity is not an item frame
+        player's targeted entity is not a glow item frame
+    then:
+        if boolean tag "minecraft:custom_data;slime_chunk_detector" of nbt of event-item is true:
+            cancel event
+            if player's chunk is a slime chunk:
+                if {seasons.%player%.DisabledSlimeChunkDetectorMessages} is not set:
+                    send "&7[&aSlime Chunk Detector&7]&a SLIME CHUNK FOUND" to player
+                play sound "minecraft:block.note_block.bit" with pitch 1.8 to player
+                wait 2 ticks
+                play sound "minecraft:block.note_block.bit" with pitch 1.4 to player
+                wait 2 ticks
+                play sound "minecraft:block.note_block.bit" with pitch 2 to player
+            else:
+                if {seasons.%player%.DisabledSlimeChunkDetectorMessages} is not set:
+                    send "&7[&aSlime Chunk Detector&7]&c NOT A SLIME CHUNK" to player
+                play sound "minecraft:block.note_block.bit" with pitch 0.6 to player
+                wait 4 ticks
+                play sound "minecraft:block.note_block.bit" with pitch 0 to player
+
+# Give command
+# give @p poisonous_potato[!entity_data,item_name="Slime Chunk Detector",rarity=common,lore=[[{italic:false,color:green,text:"On Use: "},{italic:false,color:gray,text:"Detects if current"}],{italic:false,color:gray,text:"chunk is a slime chunk"}],item_model="minecraft:slime_spawn_egg",custom_data={slime_chunk_detector:true},use_cooldown={seconds:1,cooldown_group:"conflux_seasons:slime_chunk_detector"},consumable={consume_seconds:0.5,has_consume_particles:false,animation:brush,sound:item.brush.brushing.generic},!food,max_stack_size=1]

@@ -1,0 +1,2 @@
+on player teleport:
+    set pose of event-entity to swimming_pose

@@ -6,8 +6,10 @@ quests:
     name: Daily Login
     required-progress: 1
     points: 1
+    difficulty: easy
     complete-commands:
     - sols-give 5 %player%
+    - sols-add-to-stats 5 %player%
     - daily-logins-add %player%
     item:
       material: iron_door
@@ -15,13 +17,20 @@ quests:
       lore:
       - ''
       - '&a%percentage_progress% %progress_bar%'
+      - ''
+      - '&7Daily Logins: &a%seasonsstats_logins%'
+      - ''
+      - '&7Rewards:'
+      - '&7 - &d5 &5Sols'
   '2': # Quest id
     type: placeholderapi_integer_seasonsquests_sols_shop_purchases
     name: Daily Purchase
     required-progress: 3
     points: 1
+    difficulty: easy
     complete-commands:
     - sols-give 5 %player%
+    - sols-add-to-stats 5 %player%
     item:
       material: emerald
       item-model: conflux_seasons:solstice_shard
@@ -30,6 +39,9 @@ quests:
       - '&7Buy %required_progress% of anything from the Sols Shop'
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
+      - ''
+      - '&7Rewards:'
+      - '&7 - &d5 &5Sols'
   '3': # Quest id
     type: placeholderapi_integer_seasonsquests_distance_to_worldborder_percent
     name: Scouting Ahead
@@ -41,6 +53,7 @@ quests:
         and:
         - '%seasonsquests_distance_to_worldborder% < 3'
     points: 1
+    difficulty: adventure
     item:
       material: compass
       name: '&eScouting Beyond'
@@ -53,6 +66,7 @@ quests:
     name: Hide & Seek
     required-progress: 1
     points: 1
+    difficulty: adventure
     item:
       material: chest_minecart
       name: '&eHide & Seek'
@@ -65,6 +79,7 @@ quests:
     name: Who Needs a Pickaxe?
     required-progress: 5
     points: 1
+    difficulty: adventure
     item:
       material: mangrove_propagule
       item-model: minecraft:silverfish_spawn_egg
@@ -78,6 +93,7 @@ quests:
     name: Flying Blade
     required-progress: 100
     points: 1
+    difficulty: combat
     item:
       material: iron_sword
       item-model: chakram:chakram
@@ -92,27 +108,22 @@ quests:
     name: Miner
     required-progress: 100
     points: 1
+    difficulty: adventure
     item:
       material: cobblestone
       name: '&eMiner'
       lore:
       - '&7Mine %required_progress% stone, deepslate, tuff,'
-      - '&7 or diorite blocks'
+      - '&7or diorite blocks'
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
   '8': # Quest id
-    type: right-click
-    variable:
-      root: none
-      holding:
-        item: spyglass
-      conditions:
-        or: []
-        and:
-        - '%seasonsquests_wearing_miners_helmet% == true'
+    type: placeholderapi_integer_seasonsquests_miners_helmet_spotlights
+    variable: true
     name: Spotlight
     required-progress: 1
     points: 1
+    difficulty: easy
     item:
       material: copper_helmet
       item-model: miners_helmet:miners_helmet
@@ -127,6 +138,7 @@ quests:
     name: Decorated Warrior
     required-progress: 100
     points: 1
+    difficulty: combat
     item:
       material: b64:rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABnQAAj09dAALRGF0YVZlcnNpb250AAJpZHQABWNvdW50dAAKY29tcG9uZW50c3QADnNjaGVtYV92ZXJzaW9udXEAfgAGAAAABnQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAABI/dAAXbWluZWNyYWZ0Om5ldGhlcml0ZV9heGVzcQB+ABAAAAABc3IAF2phdmEudXRpbC5MaW5rZWRIYXNoTWFwNMBOXBBswPsCAAFaAAthY2Nlc3NPcmRlcnhyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAx3CAAAABAAAAABdAAObWluZWNyYWZ0OnRyaW10ADd7bWF0ZXJpYWw6Im1pbm90b3dlcjpob25leSIscGF0dGVybjoibWlub3Rvd2VyOnNlYXJlZCJ9eABxAH4AFA==
       item-flags:
@@ -138,12 +150,13 @@ quests:
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
   '10':
     type: placeholderapi_integer_seasonsquests_custom_arrows_shot
-    name: Remote Placement
+    name: 'Fletcher''s Special'
     required-progress: 5
     points: 1
+    difficulty: adventure
     item:
       material: b64:rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABnQAAj09dAALRGF0YVZlcnNpb250AAJpZHQABWNvdW50dAAKY29tcG9uZW50c3QADnNjaGVtYV92ZXJzaW9udXEAfgAGAAAABnQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAABI/dAAWbWluZWNyYWZ0OnRpcHBlZF9hcnJvd3NxAH4AEAAAAAFzcgAXamF2YS51dGlsLkxpbmtlZEhhc2hNYXA0wE5cEGzA+wIAAVoAC2FjY2Vzc09yZGVyeHIAEWphdmEudXRpbC5IYXNoTWFwBQfawcMWYNEDAAJGAApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcIAAAAEAAAAAR0ABltaW5lY3JhZnQ6cG90aW9uX2NvbnRlbnRzdAAXe2N1c3RvbV9jb2xvcjoxNjc2MzE5MH10ABltaW5lY3JhZnQ6dG9vbHRpcF9kaXNwbGF5dAAxe2hpZGRlbl9jb21wb25lbnRzOlsibWluZWNyYWZ0OnBvdGlvbl9jb250ZW50cyJdfXQAFW1pbmVjcmFmdDpjdXN0b21fbmFtZXQAHntpdGFsaWM6MGIsdGV4dDoiVG9yY2ggQXJyb3cifXQAFW1pbmVjcmFmdDpjdXN0b21fZGF0YXQAE3t0YWc6InRvcmNoX2Fycm93In14AHEAfgAU
-      name: '&eRemote Placement'
+      name: '&eFletcher''s Special'
       lore:
       - '&7Fire %required_progress% chain arrows or torch arrows'
       - ''
@@ -152,7 +165,14 @@ quests:
     type: placeholderapi_integer_sanity_sanity
     name: Sane
     required-progress: 80
+    variable:
+      root: none
+      conditions:
+        or: []
+        and:
+        - '%sanity_sanity% >= 80'
     points: 1
+    difficulty: adventure
     item:
       material: brain_coral_block
       name: '&eSane'
@@ -162,7 +182,14 @@ quests:
     type: placeholderapi_integer_seasonsquests_negative_sanity
     name: Insane
     required-progress: 50
+    variable:
+      root: none
+      conditions:
+        or: []
+        and:
+        - '%sanity_sanity% <= -50'
     points: 1
+    difficulty: adventure
     item:
       material: dead_brain_coral_block
       name: '&eInsane'
@@ -171,8 +198,9 @@ quests:
   '13': # Quest id
     type: placeholderapi_integer_seasonsquests_sanity_manifestations
     name: Paranoia
-    required-progress: 10
-    points: 1
+    required-progress: 25
+    points: 3
+    difficulty: hard
     item:
       material: ender_eye
       name: '&eParanoia'
@@ -180,11 +208,14 @@ quests:
       - '&7Experience %required_progress% sanity manifestations'
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
+      - ''
+      - '&6&lx3 &eTier Progress'
   '14': # Quest id
     type: fish
     name: Fish!
     required-progress: 10
     points: 1
+    difficulty: adventure
     item:
       material: fishing_rod
       name: '&eFish!'
@@ -197,6 +228,7 @@ quests:
     name: Aid From Above
     required-progress: 3
     points: 1
+    difficulty: adventure
     item:
       material: ghast_tear
       name: '&eAid From Above'
@@ -209,6 +241,7 @@ quests:
     name: What a Deal!
     required-progress: 3
     points: 1
+    difficulty: easy
     item:
       material: emerald
       name: '&eWhat a Deal!'
@@ -221,6 +254,7 @@ quests:
     name: Towering Profits
     required-progress: 3
     points: 1
+    difficulty: easy
     item:
       material: gold_ingot
       name: '&eTowering Profits'
@@ -233,6 +267,7 @@ quests:
     name: Bell Ringer
     required-progress: 10
     points: 1
+    difficulty: adventure
     item:
       material: bell
       item-model: minotower:bell/breeze
@@ -246,6 +281,7 @@ quests:
     name: Bell Paladin
     required-progress: 100
     points: 1
+    difficulty: combat
     item:
       material: bell
       item-model: minotower:bell/minotauri_5
@@ -260,6 +296,7 @@ quests:
     name: Well Read
     required-progress: 1
     points: 1
+    difficulty: adventure
     item:
       material: chiseled_bookshelf
       name: '&eWell Read'
@@ -272,6 +309,7 @@ quests:
     name: Prepare For Takeoff
     required-progress: 1
     points: 1
+    difficulty: adventure
     item:
       material: flint_and_steel
       name: '&ePrepare For Takeoff'
@@ -284,6 +322,7 @@ quests:
     name: Bear Commander
     required-progress: 3
     points: 1
+    difficulty: adventure
     item:
       material: salmon
       name: '&eBear Commander'
@@ -300,6 +339,7 @@ quests:
     name: Respecting the Remnants
     required-progress: 3
     points: 1
+    difficulty: easy
     item:
       material: brush
       name: '&eRespecting the Remnants'
@@ -311,7 +351,8 @@ quests:
     type: placeholderapi_integer_seasonsquests_sculk_converter_sacrifices
     name: Sacrifice at the Altar
     required-progress: 2
-    points: 1
+    points: 3
+    difficulty: hard
     item:
       material: sculk_catalyst
       name: '&eSacrifice at the Altar'
@@ -320,6 +361,8 @@ quests:
       - '&7a Sculk Converter'
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
+      - ''
+      - '&6&lx3 &eTier Progress'
   '25': # Quest id
     type: move
     variable:
@@ -330,7 +373,8 @@ quests:
         - '%seasonsquests_in_deeper_dark% == true'
     name: Deeper Dark Explorer
     required-progress: 800
-    points: 1
+    points: 3
+    difficulty: hard
     item:
       material: sculk
       name: '&eDeeper Dark Explorer'
@@ -338,12 +382,15 @@ quests:
       - '&7Explore the Deeper Dark'
       - ''
       - '&a%percentage_progress% %progress_bar%'
+      - ''
+      - '&6&lx3 &eTier Progress'
   '26':
     type: kill-mob
     variable: glow_squid
     name: Tentacle Farmer
     required-progress: 10
     points: 1
+    difficulty: combat
     item:
       material: blaze_rod
       name: '&eTentacle Farmer'
@@ -357,6 +404,7 @@ quests:
     name: Theseus Wannabe
     required-progress: 15
     points: 1
+    difficulty: combat
     item:
       material: b64:rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABnQAAj09dAALRGF0YVZlcnNpb250AAJpZHQABWNvdW50dAAKY29tcG9uZW50c3QADnNjaGVtYV92ZXJzaW9udXEAfgAGAAAABnQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAABI/dAAUbWluZWNyYWZ0OmdvbGRlbl9heGVzcQB+ABAAAAABc3IAF2phdmEudXRpbC5MaW5rZWRIYXNoTWFwNMBOXBBswPsCAAFaAAthY2Nlc3NPcmRlcnhyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAx3CAAAABAAAAABdAAObWluZWNyYWZ0OnRyaW10ADp7bWF0ZXJpYWw6Im1pbm90b3dlcjpiZWV0cm9vdCIscGF0dGVybjoibWlub3Rvd2VyOnNlYXJlZCJ9eABxAH4AFA== # Maybe replace with horns after that's made
       name: '&eTheseus Wannabe'
@@ -366,16 +414,18 @@ quests:
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
   '28':
-    type: kill-mob
-    variable: spider OR cave_spider
+    type: placeholderapi_integer_seasonsquests_spider_kills
     name: Arachnophobic
     required-progress: 25
     points: 1
+    difficulty: combat
     item:
       material: spider_eye
       name: '&eArachnophobic'
       lore:
-      - '&7Kill %required_progress% Spiders'
+      - '&7Kill %required_progress% spiders'
+      - ''
+      - '&7(&a+1&7 if webslinger)'
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
   '29':
@@ -383,6 +433,7 @@ quests:
     name: Defuser
     required-progress: 15
     points: 1
+    difficulty: combat
     item:
       material: creeper_head
       name: '&eDefuser'
@@ -396,6 +447,7 @@ quests:
     name: Deboned
     required-progress: 30
     points: 1
+    difficulty: combat
     item:
       material: skeleton_skull
       name: '&eDeboned'
@@ -411,7 +463,8 @@ quests:
     type: placeholderapi_integer_seasonsquests_priest_kills
     name: Thwarted
     required-progress: 1
-    points: 1
+    points: 3
+    difficulty: hard
     item:
       material: b64:rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABnQAAj09dAALRGF0YVZlcnNpb250AAJpZHQABWNvdW50dAAKY29tcG9uZW50c3QADnNjaGVtYV92ZXJzaW9udXEAfgAGAAAABnQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAABI/dAAVbWluZWNyYWZ0OnBsYXllcl9oZWFkc3EAfgAQAAAAAXNyABdqYXZhLnV0aWwuTGlua2VkSGFzaE1hcDTATlwQbMD7AgABWgALYWNjZXNzT3JkZXJ4cgARamF2YS51dGlsLkhhc2hNYXAFB9rBwxZg0QMAAkYACmxvYWRGYWN0b3JJAAl0aHJlc2hvbGR4cD9AAAAAAAAMdwgAAAAQAAAAAnQAEW1pbmVjcmFmdDpwcm9maWxldADde3Byb3BlcnRpZXM6W3tuYW1lOiJ0ZXh0dXJlcyIsdmFsdWU6ImV5SjBaWGgwZFhKbGN5STZleUpUUzBsT0lqcDdJblZ5YkNJNkltaDBkSEE2THk5MFpYaDBkWEpsY3k1dGFXNWxZM0poWm5RdWJtVjBMM1JsZUhSMWNtVXZObVZtTjJVek1UWTVZekUwTVRBMVlURmxPRGN4WXpkbVpqWXlPRGhpTW1ZM01qVmpZamcyTjJRMllXSTRaVGRtWXpBM01EZzVNV1U0WXpjME9UQmlaaUo5ZlgwPSJ9XX10ABNtaW5lY3JhZnQ6aXRlbV9uYW1ldAAdIkhpZ2ggUHJpZXN0IFZlcmlkaWFuJ3MgSGVhZCJ4AHEAfgAU
       name: '&eThwarted'
@@ -419,11 +472,14 @@ quests:
       - '&7Kill %seasonsquests_priest_quest_description%'
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
+      - ''
+      - '&6&lx3 &eTier Progress'
   '32':
     type: placeholderapi_integer_seasonsquests_zombie_kills
     name: Rotten To The Core
     required-progress: 30
     points: 1
+    difficulty: combat
     item:
       material: zombie_head
       name: '&eRotten To The Core'
@@ -442,6 +498,7 @@ quests:
     name: Clubbin'
     required-progress: 20
     points: 1
+    difficulty: combat
     item:
       material: bone
       name: '&eClubbin'''
@@ -457,6 +514,7 @@ quests:
     required-progress: 1
     name: Cosplay
     points: 1
+    difficulty: adventure
     item:
       material: LEATHER_CHESTPLATE
       item-flags:
@@ -473,6 +531,7 @@ quests:
     required-progress: 5
     name: Temporary Flight
     points: 1
+    difficulty: adventure
     item:
       material: 'head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzIxZDA5MzBiZDYxZmVhNGNiOTAyN2IwMGU5NGUxM2Q2MjAyOWM1MjRlYTBiMzI2MGM3NDc0NTdiYTFiY2ZhMSJ9fX0='
       name: '&eTemporary Flight'
@@ -487,6 +546,7 @@ quests:
     required-progress: 1
     name: Ancient Fashion
     points: 1
+    difficulty: adventure
     item:
       material: LEATHER_CHESTPLATE
       item-flags:
@@ -500,9 +560,10 @@ quests:
       - '&a%percentage_progress% %progress_bar%'
   '37':
     type: placeholderapi_integer_seasonsquests_used_ancient_weapon
-    required-progress: 5
+    required-progress: 10
     name: Blood Magician
     points: 1
+    difficulty: combat
     item:
       material: 'b64:rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABnQAAj09dAALRGF0YVZlcnNpb250AAJpZHQABWNvdW50dAAKY29tcG9uZW50c3QADnNjaGVtYV92ZXJzaW9udXEAfgAGAAAABnQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAABI/dAAQbWluZWNyYWZ0OnNoaWVsZHNxAH4AEAAAAAFzcgAXamF2YS51dGlsLkxpbmtlZEhhc2hNYXA0wE5cEGzA+wIAAVoAC2FjY2Vzc09yZGVyeHIAEWphdmEudXRpbC5IYXNoTWFwBQfawcMWYNEDAAJGAApsb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAADHcIAAAAEAAAAAJ0ABltaW5lY3JhZnQ6YmFubmVyX3BhdHRlcm5zdADfW3tjb2xvcjoicmVkIixwYXR0ZXJuOiJtaW5lY3JhZnQ6c21hbGxfc3RyaXBlcyJ9LHtjb2xvcjoicmVkIixwYXR0ZXJuOiJtaW5lY3JhZnQ6Z3JhZGllbnQifSx7Y29sb3I6IndoaXRlIixwYXR0ZXJuOiJtaW5lY3JhZnQ6Y2lyY2xlIn0se2NvbG9yOiJ5ZWxsb3ciLHBhdHRlcm46Im1pbmVjcmFmdDpmbG93ZXIifSx7Y29sb3I6InllbGxvdyIscGF0dGVybjoibWluZWNyYWZ0OmJvcmRlciJ9XXQAFG1pbmVjcmFmdDpiYXNlX2NvbG9ydAAHImJyb3duIngAcQB+ABQ='
       item-flags:
@@ -518,6 +579,7 @@ quests:
     required-progress: 1
     name: Fear of Sculk
     points: 1
+    difficulty: adventure
     item:
       material: moss_carpet
       name: '&eFear of Sculk'
@@ -530,7 +592,8 @@ quests:
     variable: happy_ghast
     required-progress: 1
     name: '"I Can Show You The World"'
-    points: 1
+    points: 3
+    difficulty: hard
     item:
       material: lime_harness
       name: '&e"I Can Show You The World"'
@@ -538,11 +601,29 @@ quests:
       - '&7Ride a happy ghast'
       - ''
       - '&a%percentage_progress% %progress_bar%'
-  '40': # Quest id
+      - ''
+      - '&6&lx3 &eTier Progress'
+  '40':
+    type: ride-mob
+    variable: 'zombie_horse OR camel_husk OR skeleton_horse'
+    required-progress: 1
+    name: 'Corpse Rider'
+    points: 1
+    difficulty: adventure
+    item:
+      material: saddle
+      name: '&eCorpse Rider'
+      lore:
+      - '&7Ride a tamed zombie horse,'
+      - '&7skeleton horse, or camel husk'
+      - ''
+      - '&a%percentage_progress% %progress_bar%'
+  '41': # Quest id
     type: placeholderapi_integer_seasonsquests_rascals_found
     name: Hide & Seek, Again
     required-progress: 5
-    points: 1
+    points: 3
+    difficulty: hard
     item:
       material: chest_minecart
       item-model: minotower:bell/rascal
@@ -551,11 +632,14 @@ quests:
       - '&7Win %required_progress% games of Hide & Seek'
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
-  '41':
+      - ''
+      - '&6&lx3 &eTier Progress'
+  '42':
     type: placeholderapi_integer_seasonsquests_marble_pillar_devotions
     required-progress: 1
     name: Marble Devotee
-    points: 1
+    points: 3
+    difficulty: hard
     item:
       material: quartz
       name: '&eMarble Devotee'
@@ -564,11 +648,14 @@ quests:
       - '&7the Marble Pillars'
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
-  '42':
+      - ''
+      - '&6&lx3 &eTier Progress'
+  '43':
     type: placeholderapi_integer_seasonsquests_specific_animal_fed
     required-progress: 10
     name: Exotic Animal Feeder
     points: 1
+    difficulty: adventure
     item:
       material: seagrass
       name: '&eExotic Animal Feeder'
@@ -577,11 +664,12 @@ quests:
       - '&7cave bears, bats, or hoglins'
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
-  '43':
+  '44':
     type: placeholderapi_integer_seasonsquests_biomes_experienced
     required-progress: 4
     name: Worldly Experience
-    points: 1
+    points: 3
+    difficulty: hard
     item:
       material: head:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZmM2MjExMGQ4MTg4NDQxZDIxNzk0NDM0ZjY3ZDEyYTAyMWI3NDAyYzhkYWE0MmQ0ZmVhMzIzZTdlMTllMGJiNyJ9fX0=
       name: '&eWorldly Experience'
@@ -590,11 +678,14 @@ quests:
       - '&7different cave biomes'
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
-  '44':
+      - ''
+      - '&6&lx3 &eTier Progress'
+  '45':
     type: placeholderapi_integer_seasonsquests_spring_cleaning
-    required-progress: 10
+    required-progress: 5
     name: Spring Cleaning
     points: 1
+    difficulty: easy
     item:
       material: b64:rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABnQAAj09dAALRGF0YVZlcnNpb250AAJpZHQABWNvdW50dAAKY29tcG9uZW50c3QADnNjaGVtYV92ZXJzaW9udXEAfgAGAAAABnQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAABI/dAAUbWluZWNyYWZ0Omlyb25fc3dvcmRzcQB+ABAAAAABc3IAF2phdmEudXRpbC5MaW5rZWRIYXNoTWFwNMBOXBBswPsCAAFaAAthY2Nlc3NPcmRlcnhyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAx3CAAAABAAAAAGdAAUbWluZWNyYWZ0Om1heF9kYW1hZ2V0AAQxNTAwdAAUbWluZWNyYWZ0OmNvbnN1bWFibGV0AB57Y29uc3VtZV9zZWNvbmRzOjIuMTQ3NDgzNkU5Zn10ABBtaW5lY3JhZnQ6cmFyaXR5dAAGImVwaWMidAAVbWluZWNyYWZ0OmN1c3RvbV9kYXRhdABEe2NoYWtyYW1fY2hha3JhbToxYixzbWl0aGVkOntpZ25vcmU6e2NyYWZ0aW5nOjFiLGZ1bmN0aW9uYWxpdHk6MWJ9fX10ABNtaW5lY3JhZnQ6aXRlbV9uYW1ldAAwe2ZhbGxiYWNrOiJDaGFrcmFtIix0cmFuc2xhdGU6ImNoYWtyYW06Y2hha3JhbSJ9dAAObWluZWNyYWZ0OnRyaW10ADZ7bWF0ZXJpYWw6Im1pbm90b3dlcjptb3NzIixwYXR0ZXJuOiJtaW5vdG93ZXI6c2VhcmVkIn14AHEAfgAU
       item-flags:
@@ -602,6 +693,20 @@ quests:
       name: '&eSpring Cleaning'
       lore:
       - '&7Remove %required_progress% cobwebs'
-      - '&7and sculk sensors'
+      - '&7or sculk sensors'
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
+  '46':
+    type: placeholderapi_integer_seasonsquests_researed_weapons
+    name: Time For a New Style
+    required-progress: 2
+    points: 1
+    difficulty: adventure
+    item:
+      material: cauldron
+      name: '&eTime For a New Style'
+      lore:
+      - '&7Clean a seared weapon'
+      - '&7then re-sear it'
+      - ''
+      - '&a%percentage_progress% %progress_bar%'

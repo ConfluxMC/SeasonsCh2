@@ -1,0 +1,28 @@
+placeholderapi placeholder with the prefix "seasonsstats":
+    if identifier is "logins":
+        set result to getDailyLoginsOf(player)
+    else if identifier is "sols_balance":
+        set result to solsBalance(player)
+    else if identifier is "sols_earned":
+        set result to {sols_shop.players.sols.earned::%player%} + 0
+    else if identifier starts with "sols_earned_":
+        set {_plr} to getPlayerFromPositionString(identifier, "sols_earned_")
+        set result to {sols_shop.players.sols.earned::%{_plr}%} + 0
+    else if identifier is "worldborder_expanded_by":
+        set result to {worldborder.expandBy} * {worldborder.expansions::%player%}
+    else if identifier starts with "worldborder_expanded_by_":
+        set {_plr} to getPlayerFromPositionString(identifier, "worldborder_expanded_by_")
+        set result to {worldborder.expandBy} * {worldborder.expansions::%{_plr}%}
+    else if identifier starts with "quests_string":
+        set {_remaining} to placeholder "battlepass_next_tier_points_required_free" from player
+        if {_remaining} is "1":
+            set result to "quest"
+        else:
+            set result to "quests"
+
+local function getPlayerFromPosition(pos: string):: offlineplayer:
+    return placeholder "battlepass_top_quests_name_%{_pos}%" parsed as offlineplayer
+local function getPlayerFromPositionString(papiStr: string, noPosStr: string):: offlineplayer:
+    replace {_noPosStr} in {_papiStr} with ""
+    return getPlayerFromPosition({_papiStr})
+    

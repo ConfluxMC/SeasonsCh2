@@ -1,0 +1,24 @@
+manifestations:
+  footsteps_nearby:
+    conditions:
+      chance: 0.005
+      thresholds:
+        - "..-20"
+    #  exclude:
+    #    - quiet
+    type: sequence
+    first:
+      type: sound
+      sounds:
+        - "~step" # Can use "~" followed by STEP, PLACE, BREAK, or HIT to use the respective sound of the block the player is standing on.
+      volume: 0.1
+      repetitions: 5
+      repetition_delay: 10..15
+    delay: 70
+    then:
+      type: sound
+      sounds:
+        - "~step"
+      volume: 0.2..0.35
+      repetitions: 9..12 # This indicates how many times the sounds will repeat (will randomly choose from {sounds} each time
+      repetition_delay: 5..6 # This indicates the delay in ticks between each sound repetition

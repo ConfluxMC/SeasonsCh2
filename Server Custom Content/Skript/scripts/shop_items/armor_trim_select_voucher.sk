@@ -1,0 +1,34 @@
+options:
+    inventoryName: "Select 1"
+
+on right click with poisonous potato: # Make a menu to select any unobtainable armor trim from here
+    if boolean tag "minecraft:custom_data;armor_trim_select_voucher" of nbt of event-item is true:
+        set {_selectMenu} to new chest inventory with 1 row with name {@inventoryName}
+        add sentry armor trim smithing template, vex armor trim smithing template, tide armor trim smithing template, coast armor trim smithing template, spire armor trim smithing template, and wild armor trim smithing template to {_selectMenu}
+        add 3 diamonds to slot 8 of {_selectMenu}
+        open {_selectMenu} to player
+        play sound "block.barrel.open" to player
+        set {sols_shop.armor_trim_voucher_item::%player%} to 1 of event-item
+        remove 1 of event-item from player
+
+on inventory click:
+    if all:
+        type of event-inventory is chest inventory
+        name of event-inventory is {@inventoryName}
+    then:
+        cancel event
+        if event-item is set:
+            give player event-item
+            delete {sols_shop.armor_trim_voucher_item::%player%}
+            play sound "block.smithing_table.use" to player
+            close player's inventory view
+
+on inventory close:
+    if all:
+        type of event-inventory is chest inventory
+        name of event-inventory is {@inventoryName}
+        {sols_shop.armor_trim_voucher_item::%player%} is set
+    then:
+        give {sols_shop.armor_trim_voucher_item::%player%} to player
+        delete {sols_shop.armor_trim_voucher_item::%player%}
+        play sound "block.barrel.close" to player

@@ -1,0 +1,9 @@
+on damage of armor stand by player:
+    if all:
+        offhand item of attacker is goat horn
+        boolean tag "minecraft:custom_data;minotauri_war_bell" of nbt of offhand item of attacker is true
+        score of attacker for objective with id "minotower.war_bell" is between 1 and 15
+        score of attacker for objective with id "minotower.war_bell_hit" is 0
+    then:
+        set {_adv} to "minotower:war_bell/hit_success" parsed as advancement
+        award criteria "war_bell" of advancement progress of {_adv} for attacker

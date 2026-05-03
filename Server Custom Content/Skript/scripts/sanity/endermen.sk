@@ -1,0 +1,15 @@
+on flow:
+    if event-block is dragon egg:
+        set {_p} to nearest player to event-block
+        set {_newLoc} to location 1 metre above location of future event-block
+        teleport {_p} to {_newLoc}
+        chance of 60%:
+            cancel event
+            set event-block to air
+            play sound "minecraft:entity.ender_eye.death" at {_newLoc}
+        
+        play sound "minecraft:entity.player.teleport" with volume 0.5 at {_newLoc}
+
+on vehicle enter:
+    if event-entity is enderman:
+        cancel event

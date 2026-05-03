@@ -1,0 +1,120 @@
+manifestations:
+  spawn_egg:
+    conditions:
+      chance: "0.125"
+      thresholds:
+        - -45..-10
+    type: spawn
+    lifespan: 20..70
+    spawn_mode: random_front
+    entity:
+      distance: 6..24
+      tags:
+        - sanity_manifestation
+        - fake_dragon_egg
+      anchor: eyes
+      pitch:
+        - 0
+      yaw:
+        - 0
+        - 90
+        - 180
+        - 270
+      block:
+        blocks:
+          - air
+      entities:
+        - block_display
+      inventory:
+        slot_category: CONTENTS
+        item:
+          items:
+            - minecraft:dragon_egg
+          amount: 1
+      item_count: 1
+  spawn:
+    conditions:
+      chance: "0.02"
+      thresholds:
+        - -75..-35
+    type: spawn
+    lifespan: 10..50
+    spawn_mode: random_front
+    entity:
+      distance: 3
+      tags:
+        - sanity_manifestation
+      block:
+        blocks:
+          - air
+      entities:
+        - enderman
+      properties:
+        - Gravity: false
+     #   - VisualFire: true
+        - Invuln: true
+        - Silent: true
+      inventory:
+        slot_category: HANDS
+        item:
+          items:
+            - dragon_egg
+      item_count: 1
+  spawn_aggro:
+    conditions:
+      chance: "0.02"
+      thresholds:
+        - ..-65
+      exclude:
+        - reduced_frights
+    type: spawn
+    lifespan: 100
+    spawn_mode: random
+    target: true
+    entity:
+      distance: 8..20
+      tags:
+        - sanity_manifestation
+      block:
+        blocks:
+          - air
+      entities:
+        - enderman
+     # properties:
+     #   - Invuln: true
+      inventory:
+        slot_category: HANDS
+        item:
+          items:
+            - dragon_egg
+            - air
+      item_count: 1
+  spawn_aggro_more:
+    conditions:
+      chance: "0.06"
+      thresholds:
+        - ..-85
+      exclude:
+        - reduced_frights
+    type: spawn
+    lifespan: 200
+    spawn_mode: random
+    target: true
+    entity:
+      distance: 8..14
+      tags:
+        - sanity_manifestation
+      block:
+        blocks:
+          - air
+      entities:
+        - enderman
+     # properties:
+     #   - Invuln: true
+      inventory:
+        slot_category: HANDS
+        item:
+          items:
+            - dragon_egg
+            - air
+      item_count: 1

@@ -1,0 +1,2 @@
+on spawn of endermite:
+    cancel event

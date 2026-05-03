@@ -1,0 +1,237 @@
+factors:
+  scheduled:
+    # Being near players
+    near_players:
+      type: near_entity
+      max: 50
+      gain: 0.0775
+      scale_result: true
+      positive_range: 1..
+      entity:
+        distance: ..12
+        entities:
+          - player
+    # Insane players
+    near_insane_players: # NEEDS TO BE TESTED
+      type: near_entity
+      min: -10
+      loss: 0.0815 # Outweigh the gain from near_players (and consider the fact that near_insane_players needs at least 2)
+      scale_result: true
+      negative_range: "]1.." # Around more than 1 insane player
+      entity:
+        distance: ..16
+        entities:
+          - player
+        condition_group:
+          all:
+            is_insane:
+              type: numeric_conditional
+              numeric_range: ..-10
+              numeric_factor:
+                type: numeric_special
+                value: sanity
+  events:
+    share_raw_food:
+      type: drop
+      limit: 25
+      change: 0.08
+      cycles: 2
+      item:
+        entities:
+          - item
+        inventory:
+          slot_category: contents
+          item:
+            items:
+              - apple
+              - melon_slice
+              - sweet_berries
+              - glow_berries
+              - carrot
+              - potato
+              - beetroot
+              - beef
+              - porkchop
+              - mutton
+              - chicken
+              - rabbit
+              - cod
+              - salmon
+      condition_group:
+        all:
+          near_hungry_player:
+            type: numeric_conditional
+            numeric_range: 1..
+            numeric_factor:
+              type: near_entity
+              entity:
+                entities:
+                  - player
+                distance: "1..12"
+                condition_group:
+                  type: numeric_conditional
+                  numeric_range: ..16 # If other player is missing 2 bars or more
+                  numeric_factor:
+                    type: numeric_special
+                    value: hunger
+
+    share_prepared_food:
+      type: drop
+      limit: 60
+      change: 2.4
+      cycles: 3
+      item:
+        entities:
+          - item
+        inventory:
+          slot_category: contents
+          item:
+            items:
+              - golden_apple
+              - enchanted_golden_apple
+              - golden_carrot
+              - baked_potato
+              - cooked_beef
+              - cooked_porkchop
+              - cooked_mutton
+              - cooked_chicken
+              - cooked_rabbit
+              - cooked_cod
+              - cooked_salmon
+              - bread
+              - cookie
+              - cake
+              - pumpkin_pie
+              - mushroom_stew
+              - beetroot_soup
+              - rabbit_stew
+              - honey_bottle
+              - suspicious_stew
+            potion: # Make sure the shared suspicious stew is a good effect
+              effects:
+                - saturation
+                - night_vision
+                - fire_resistance
+                - regeneration
+                - jump_boost
+      condition_group:
+        all:
+          near_hungry_player:
+            type: numeric_conditional
+            numeric_range: 1..
+            numeric_factor:
+              type: near_entity
+              entity:
+                entities:
+                  - player
+                distance: "]1..12"
+                condition_group:
+                  type: numeric_conditional
+                  numeric_range: ..16 # If other player is missing 2 bars or more
+                  numeric_factor:
+                    type: numeric_special
+                    value: hunger
+
+    share_torches:
+      type: drop
+      limit: 40
+      change: 1.2
+      cycles: 2
+      item:
+        entities:
+          - item
+        inventory:
+          slot_category: contents
+          item:
+            items:
+              - "#lanterns"
+              - torch
+              - copper_torch
+              - soul_torch
+              - end_rod
+      condition_group:
+        all:
+          near_torchless_player:
+            type: numeric_conditional
+            numeric_range: 1..
+            numeric_factor:
+              type: near_entity
+              entity:
+                entities:
+                  - player
+                distance: "]1..12"
+                condition_group:
+                  type: numeric_conditional
+                  numeric_range: ..8 # If other player hs fewer than 8 torches
+                  numeric_factor:
+                    type: inventory
+                    inventory:
+                      slot_category: inventory
+                      count_item_amounts: true
+                      item:
+                        items:
+                          - "#lanterns"
+                          - torch
+                          - copper_torch
+                          - soul_torch
+                          - end_rod
+manifestations:
+  mysterious_messages:
+    conditions:
+      chance: "0.00015"
+      thresholds:
+        - ..-25
+      exclude:
+        - no_fake_messages
+      condition_group:
+        all:
+          multiple_players_online:
+            type: numeric_conditional
+            numeric_range: 2..
+            numeric_factor:
+              type: numeric_special
+              value: PLAYERS_ONLINE
+    type: message
+    chats:
+      - "<yellow><lang_or:multiplayer.player.left:'%s left the game':'<selector:@r[distance=1..]>'>"
+  fake_player_message:
+    conditions:
+      chance: "0.00015"
+      thresholds:
+        - ..-15
+      exclude:
+        - no_fake_messages
+      condition_group:
+        all:
+          multiple_players_online:
+            type: numeric_conditional
+            numeric_range: 2..
+            numeric_factor:
+              type: numeric_special
+              value: PLAYERS_ONLINE
+    type: message
+    chats:
+      - "<<selector:@r[distance=1..]>> is that you <selector:@s>?"
+      - "<<selector:@r[distance=1..]>> where are you <selector:@s>?"
+      - "<<selector:@r[distance=1..]>> Look behind you <selector:@s>"
+  force_send_message:
+    conditions:
+      chance: "0.0005"
+      thresholds:
+        - ..-85
+      exclude:
+        - no_fake_messages
+    type: message
+    who_can_see:
+      all:
+        also_insane:
+            type: numeric_conditional
+            numeric_range: ..-10
+            numeric_factor:
+              type: numeric_special
+              value: SANITY
+    always_show_to_player: true
+    chats:
+      - "<<selector:@s>> wqegsrtgh"
+      - "<<selector:@s>> can someone help"
+      - "<<selector:@s>> what?"

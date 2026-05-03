@@ -1,0 +1,87 @@
+factors:
+  scheduled:
+    potion_water_positive:
+      type: condition_group
+      limit: 80
+      change: 0.05
+      all:
+        in_water:
+          type: conditional_special
+          value: UNDERWATER
+        can_breathe:
+          type: self
+          entity:
+            potion:
+              effects:
+                - water_breathing
+                - conduit_power
+    affected_by_conduit:
+      type: self
+      limit: 85
+      change: 0.03
+      entity:
+        potion:
+          effects:
+            - conduit_power
+    glowing:
+      type: self
+      limit: -20
+      change: -0.0075
+      entity:
+        potion:
+          effects:
+            - glowing
+    movement_hindered:
+      type: self
+      limit: -40
+      change: -0.01
+      entity:
+        potion:
+          effects:
+            - slowness
+            - levitation
+    cant_see:
+      type: condition_group
+      limit: -60
+      change: -0.0175
+      all:
+        blind:
+          type: self
+          entity:
+            potion:
+              effects:
+                - blindness
+                - darkness
+        no_clearsight:
+          type: numeric_conditional
+          invert: true
+          numeric_range: 1..
+          numeric_factor:
+            type: inventory
+            inventory:
+              slot_category: head
+              item:
+                items:
+                  - "#enchantable/head_armor"
+                enchantments:
+                  - "deeper_dark:clearsight"
+  events:
+    boosted_jump:
+      type: jump
+      limit: 100
+      change: 0.0075
+      condition_group:
+        all:
+          has_jump_boost:
+            type: self
+            entity:
+              potion:
+                effects:
+                  - jump_boost
+          not_volcanic_caverns: # Exclude volcanic caverns
+            type: self
+            invert: true
+            entity:
+              block:
+                biomes:
+                  - "deeper_dark:volcanic_caverns"

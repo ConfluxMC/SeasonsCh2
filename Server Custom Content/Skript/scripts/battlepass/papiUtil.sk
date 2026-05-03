@@ -108,6 +108,13 @@ command /seasons-reset-placeholders-of <offlineplayer>:
     trigger:
         resetPlaceholders(arg-1)
         send "Reset quests for &e%arg-1%" to sender
+command /seasons-reset-placeholders-and-refresh-daily-quests:
+    permission: server.admin
+    trigger:
+        make sender execute command "bpa refresh daily quests"
+        loop {seasonsquests.players::*}:
+            resetPlaceholders(loop-value)
+            send "Reset quests for &e%loop-value%" to console
 
 local function distanceToWorldborder(p: player, asPercent: boolean):: number:
     set {_wb} to worldborder of {_p}'s world
@@ -159,7 +166,8 @@ on player trade:
     addPlaceholder(player,"trades",1)
     
 on piglin barter:
-    addPlaceholder(player,"barters",1)
+    #loop all players within 5 blocks of event-location:
+    addPlaceholder(nearest player relative to event-location,"barters",1)
 
 on right click with flint and steel on creeper:
     addPlaceholder(player,"creepers_ignited",1)
