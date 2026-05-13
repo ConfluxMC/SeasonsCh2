@@ -166,20 +166,9 @@
 			"rolls": 1,
 			"entries": [
 				{
-					"type": "minecraft:item",
-					"name": "minecraft:tipped_arrow",
+					"type": "minecraft:loot_table",
+					"value": "cavernous:items/torch_arrow",
 					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"potion_contents": {"custom_color": 5855577},
-								"custom_name": {
-									"text": "Explosive Arrow",
-									"italic": false
-								},
-								"tooltip_display": {"hidden_components":["potion_contents"]}
-							}
-						},
 						{
 							"function": "minecraft:set_count",
 							"count": {

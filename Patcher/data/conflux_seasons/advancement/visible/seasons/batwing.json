@@ -1,0 +1,24 @@
+{
+  "parent": "conflux_seasons:visible/seasons/root",
+  "criteria": {
+    "batwing": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Batwing"
+    },
+    "description": {
+      "text": "Feed then leash a bat"
+    },
+    "icon": {
+      "id": "minecraft:bat_spawn_egg"
+    }
+  },
+  "requirements": [
+    [
+      "batwing"
+    ]
+  ]
+}

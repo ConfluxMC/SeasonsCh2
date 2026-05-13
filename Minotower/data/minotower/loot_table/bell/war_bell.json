@@ -35,7 +35,6 @@
                   "value": 5
                 },
                 "!minecraft:repairable": {},
-                "minecraft:repair_cost": 50,
                 "minecraft:lore": [
                   "",
                   {
