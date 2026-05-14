@@ -3,7 +3,7 @@
   "terms": [
     {
       "condition": "minecraft:location_check",
-      "offsetY": 2,
+      "offsetY": 0,
       "predicate": {
         "block": {
           "blocks": "minecraft:snow_block"
@@ -12,7 +12,7 @@
     },
     {
       "condition": "minecraft:location_check",
-      "offsetY": 2,
+      "offsetY": 0,
       "predicate": {
         "block": {
           "blocks": "minecraft:snow",

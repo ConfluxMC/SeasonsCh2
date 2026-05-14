@@ -387,7 +387,7 @@
         {
           "type": "minecraft:loot_table",
           "value": "chakram:random_enchanted_chakram",
-          "weight": 15
+          "weight": 15,
           "functions": [
             {
               "function": "minecraft:set_components",

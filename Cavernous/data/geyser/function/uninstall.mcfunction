@@ -15,7 +15,7 @@ scoreboard objectives remove is_flying
 scoreboard objectives remove geyser.effect_timer
 
 
-clear @a magma_cube_spawn_egg[entity_data={id:"armor_stand",Invisible:1b,Marker:1b,DisabledSlots:4144959,NoGravity:1b,Rotation:[0b,0b],Tags:["geyser"],equipment:{head:{id:player_head,components:{profile:{properties:[{value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzIxZDA5MzBiZDYxZmVhNGNiOTAyN2IwMGU5NGUxM2Q2MjAyOWM1MjRlYTBiMzI2MGM3NDc0NTdiYTFiY2ZhMSJ9fX0=",name:textures}]}}}},drop_chances:{head:0b}},item_name=[{"text":"Geyser Block","italic":false}],item_model="minecraft:player_head",profile={properties: [{name: "textures", value: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzIxZDA5MzBiZDYxZmVhNGNiOTAyN2IwMGU5NGUxM2Q2MjAyOWM1MjRlYTBiMzI2MGM3NDc0NTdiYTFiY2ZhMSJ9fX0="}]}] 1
+clear @a magma_cube_spawn_egg[entity_data={id:block_display,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],scale:[0.7f,0.5f,0.7f],translation:[-0.25f,-0.95f,-0.25f]},block_state:{Name:magma_block}}] 1
 
 scoreboard players set .global geyser.uninstalled 1
 scoreboard players set .global geyser.has_uninstalled 1
