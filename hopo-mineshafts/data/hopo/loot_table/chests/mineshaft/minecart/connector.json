@@ -23,37 +23,6 @@
 		  },
 		  {
 			"type": "minecraft:item",
-			"weight": 6,
-			"name": "minecraft:barrel",
-			"functions": [
-			  {
-				"function": "minecraft:set_components",
-				"components": {
-				  "minecraft:tooltip_display": {
-					"hide_tooltip": false,
-					"hidden_components": [
-					  "minecraft:container_loot"
-					]
-				  }
-				}
-			  },
-			  {
-				"function": "minecraft:set_loot_table",
-				"type": "minecraft:chest",
-				"name": "hopo:chests/mineshaft/abandoned_miners_stuff"
-			  },
-			  {
-				"function": "minecraft:set_count",
-				"count": {
-				  "min": 1,
-				  "max": 4
-				},
-				"add": false
-			  }
-			]
-		  },
-		  {
-			"type": "minecraft:item",
 			"weight": 5,
 			"name": "minecraft:redstone",
 			"functions": [

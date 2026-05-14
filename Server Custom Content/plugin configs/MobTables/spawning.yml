@@ -7,7 +7,7 @@ pools:
       - type: biome
         biome: CAVERNOUS:ARID_CAVES
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 4
         filter:
           - ARMADILLO
@@ -22,7 +22,7 @@ pools:
         filter:
           - WATER
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 3
         filter:
           - TURTLE
@@ -35,7 +35,7 @@ pools:
       - type: biome
         biome: CAVERNOUS:DESERT_CAVES
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 4
         filter:
           - ARMADILLO
@@ -50,7 +50,7 @@ pools:
         filter:
           - WATER
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 3
         filter:
           - TURTLE
@@ -63,7 +63,7 @@ pools:
       - type: biome
         biome: CAVERNOUS:PAINTED_CAVES
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 20
         filter:
           - PIG
@@ -87,7 +87,7 @@ pools:
       - type: biome
         biome: CAVERNOUS:PAINTED_CAVES
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 4
         filter:
           - POLAR_BEAR
@@ -127,7 +127,7 @@ pools:
         filter:
           - WATER
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 3
         filter:
           - TURTLE
@@ -142,7 +142,7 @@ pools:
         filter:
           - WATER
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 10
         filter:
           - SQUID
@@ -160,7 +160,7 @@ pools:
         filter:
           - WATER
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 4
         filter:
           - DOLPHIN
@@ -188,7 +188,7 @@ pools:
           y: 0
           z: 0
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 6
         filter:
           - SKELETON_HORSE
@@ -206,7 +206,7 @@ pools:
         filter:
           - WATER
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 10
         filter:
           - SQUID
@@ -219,7 +219,7 @@ pools:
       - type: biome
         biome: CAVERNOUS:SPLATTERED_CAVES
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 8
         filter:
           - POLAR_BEAR
@@ -239,7 +239,7 @@ pools:
           - MYCELIUM
           - PODZOL
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 16
         filter:
           - MOOSHROOM
@@ -266,7 +266,7 @@ pools:
       - type: biome
         biome: CAVERNOUS:FUNGAL_CAVES
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 2
         filter:
           - POLAR_BEAR
@@ -284,7 +284,7 @@ pools:
           - MUD
           - MYCELIUM
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 8
         filter:
           - MOOSHROOM
@@ -304,7 +304,7 @@ pools:
           - MUD
           - MYCELIUM
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 7
         filter:
           - RABBIT
@@ -324,7 +324,7 @@ pools:
           - MUD
           - MYCELIUM
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 3
         filter:
           - SHEEP
@@ -344,7 +344,7 @@ pools:
           - MUD
           - MYCELIUM
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 4
         filter:
           - POLAR_BEAR
@@ -362,7 +362,7 @@ pools:
           - MUD
           - MUDDY_MANGROVE_ROOTS
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 6
         filter:
           - FROG
@@ -382,7 +382,7 @@ pools:
           - MUD
           - MUDDY_MANGROVE_ROOTS
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 4
         filter:
           - ZOMBIE_HORSE
@@ -393,9 +393,21 @@ pools:
     conditions:
       - type: biome
         biome: CAVERNOUS:MARSHY_CAVES
+      - type: block
+        filter:
+          - DARK_OAK_LEAVES
+          - OAK_LEAVES
+          - MANGROVE_LEAVES
+          - BIRCH_LEAVES
+          - JUNGLE_LEAVES
+          - AZALEA_LEAVES
+          - ACACIA_LEAVES
+          - SPRUCE_LEAVES
+          - MANGROVE_ROOTS
+        invert: true
       - type: entity_limit
-        range: 100
-        limit: 12
+        range: 160
+        limit: 10
         filter:
           - DROWNED
     entries:
@@ -406,7 +418,7 @@ pools:
       - type: biome
         biome: CAVERNOUS:MARSHY_CAVES
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 6
         filter:
           - ZOMBIE_NAUTILUS
@@ -428,7 +440,7 @@ pools:
           - MUD
           - COARSE_DIRT
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 12
         filter:
           - PANDA
@@ -498,7 +510,7 @@ pools:
           - MOSS_BLOCK
           - BAMBOO
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 3
         filter:
           - PARROT
@@ -529,8 +541,8 @@ pools:
       - type: biome
         biome: CAVERNOUS:LUSH_DRIPSTONE_CAVES
       - type: entity_limit
-        range: 100
-        limit: 24
+        range: 160
+        limit: 18
         filter:
           - PARROT
     entries:
@@ -551,7 +563,7 @@ pools:
           - BLUE_ICE
           - CALCITE
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 16
         filter:
           - GOAT
@@ -575,7 +587,7 @@ pools:
         filter:
           - SNOW_BLOCK
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 8
         filter:
           - SNOW_GOLEM
@@ -590,7 +602,7 @@ pools:
         filter:
           - WATER
       - type: entity_limit
-        range: 150
+        range: 180
         limit: 3
         filter:
           - DOLPHIN
@@ -602,8 +614,20 @@ pools:
     conditions:
       - type: biome
         biome: CAVERNOUS:CALDERA_CAVES
+      - type: block
+        filter:
+          - DARK_OAK_LEAVES
+          - OAK_LEAVES
+          - MANGROVE_LEAVES
+          - BIRCH_LEAVES
+          - JUNGLE_LEAVES
+          - AZALEA_LEAVES
+          - ACACIA_LEAVES
+          - SPRUCE_LEAVES
+          - MANGROVE_ROOTS
+        invert: true
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 12
         filter:
           - DROWNED
@@ -618,7 +642,7 @@ pools:
       - type: biome
         biome: CAVERNOUS:CALDERA_CAVES
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 6
         filter:
           - NAUTILUS
@@ -636,7 +660,7 @@ pools:
         filter:
           - WATER
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 4
         filter:
           - DOLPHIN
@@ -652,7 +676,7 @@ pools:
         filter:
           - LAVA
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 2
         filter:
           - STRIDER
@@ -702,7 +726,7 @@ pools:
         filter:
           - WATER
       - type: entity_limit
-        range: 100
+        range: 160
         limit: 10
         filter:
           - GLOW_SQUID
@@ -733,7 +757,7 @@ pools:
           - DARK_OAK_LEAVES
         invert: true
       - type: entity_limit
-        range: 100
+        range: 80
         limit: 1
         filter:
           - PIGLIN_BRUTE
