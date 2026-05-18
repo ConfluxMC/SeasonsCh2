@@ -1,7 +1,7 @@
 #Stood On
-    execute positioned ~ ~ ~ unless entity @e[tag=!geyser,distance=...65,type=!#geyser:can_place_block_on,predicate=geyser:not_sneaking,type=!bat] run scoreboard players set @s geyser.time_stood_on 0
-    execute positioned ~ ~ ~ if entity @e[tag=!geyser,distance=...65,type=!#geyser:can_place_block_on,predicate=geyser:not_sneaking,type=!bat] run scoreboard players add @s geyser.time_stood_on 1
-    execute positioned ~ ~ ~ if entity @e[tag=!geyser,distance=...65,scores={is_flying=1..},type=player] run scoreboard players set @s geyser.time_stood_on 20
+    execute positioned ~ ~ ~ unless entity @e[type=!#geyser:cannot_be_geysered,tag=!geyser,distance=...65,predicate=geyser:not_sneaking] run scoreboard players set @s geyser.time_stood_on 0
+    execute positioned ~ ~ ~ if entity @e[type=!#geyser:cannot_be_geysered,tag=!geyser,distance=...65,predicate=geyser:not_sneaking] run scoreboard players add @s geyser.time_stood_on 1
+    execute positioned ~ ~ ~ if entity @e[type=player,tag=!geyser,distance=...65,scores={is_flying=1..}] run scoreboard players set @s geyser.time_stood_on 20
     scoreboard players set @a is_flying 0
 
     execute if score @s geyser.time_stood_on matches 1.. if predicate geyser:chance/50 run playsound minecraft:entity.magma_cube.jump block @a ~ ~1.5 ~ 0.35 0.5

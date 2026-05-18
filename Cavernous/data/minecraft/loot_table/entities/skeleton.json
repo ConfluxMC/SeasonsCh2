@@ -33,7 +33,7 @@
 							"condition": "minecraft:entity_properties",
 							"entity": "this",
 							"predicate": {
-								"nbt": "{Tags:[\"not_miner\",\"not_guard\",\"not_ghost\"]}"
+								"nbt": "{Tags:[\"not_miner\",\"not_veil_guard\",\"not_ghost\"]}"
 							}
 						}
 					]

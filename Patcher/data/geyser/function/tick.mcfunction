@@ -20,9 +20,6 @@ execute as @a if score @s geyser.msg matches 1 unless score .global geyser.msg.a
 
     # As Geysers
         execute as @e[type=block_display,tag=geyser] at @s run function geyser:tick_geyser
-    
-    # Geysered Entities
-        execute as @e[type=!#geyser:cannot_be_geysered,tag=geysered] run function geyser:geysered
 
 ###WORLDGEN
 execute at @a[predicate=cavernous:in_geyser_biome] if score .global geyser.enabled matches 1 run fill ~25 ~3 ~25 ~-25 ~-8 ~-25 minecraft:repeating_command_block[conditional=false,facing=west]{Command:"function geyser:spawn_geyser",CustomName:'{"text":"@"}',SuccessCount:0,TrackOutput:1b,UpdateLastExecution:1b,auto:1b,conditionMet:1b,powered:0b} replace structure_void
