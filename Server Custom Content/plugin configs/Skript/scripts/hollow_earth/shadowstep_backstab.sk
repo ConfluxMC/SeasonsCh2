@@ -1,0 +1,43 @@
+on damage:
+    set {_ce} to causing entity of event-damagesource
+    #send "A: %yaw of {_ce}% V: %yaw of victim% Diff: %difference between yaw of {_ce} and yaw of victim%" to {_ce}
+    if all:
+        {_ce} is a player
+        {_ce} is invisible
+        size of (sneaking speed attribute modifiers of {_ce} where [modifier id of input is "chakram:shadowstepping"]) > 0
+        score of {_ce} for objective with id "chakram_shadowstep_timer_sneak_speed" >= 1
+    then:
+        set {_de} to direct entity of event-damagesource
+        if all:
+            {_ce} is {_de}
+            {_ce}'s tool is iron sword
+            horizontal facing of {_ce} is horizontal facing of victim
+            enchantments of {_ce}'s tool contains "chakram:shadowstep" parsed as enchantment
+        then:
+            set {_score} to score of {_ce} for objective with id "chakram_shadowstep_timer_sneak_speed"
+            #send "Potential Damage %damage * (1+(3 * {_score}/80))% Sneak Damage: %damage * (1+(3 * 6 * {_score}/80))%" to {_ce}
+            
+            set {_mult} to 3
+            if {_ce} is sneaking:
+                add 3 to {_mult}
+                if victim is not a player:
+                    add 3 to {_mult}
+            set {_mult} to 1+max({_mult} * {_score}/80,1.5)
+            #send "Backstab Damage: %damage% * %{_mult}% = %damage * {_mult}%" to {_ce}
+            send actionbar "&9x&3%{_mult}%" to {_ce}
+            set damage to damage * {_mult}
+            set {_effectLoc} to location 0.5 metres behind location 0.2 metres above victim's head
+            make 10 crit particle at {_effectLoc} with offset vector(0.2,0.2,0.2) with extra 0.5
+            make 3 electric_spark particle at {_effectLoc} with offset vector(0.2,0.2,0.2) with extra 0.5
+            play sound "minecraft:entity.arrow.hit_player" in player category at {_effectLoc} for {_ce}
+            play sound "chakram:damage" in player category at {_effectLoc}
+            play sound "chakram:damage" in player category at pitch 1.25 at {_effectLoc}
+            play sound "chakram:damage" in player category at volume 0.5 at pitch 2 at {_effectLoc}
+            
+            award criteria "backstab" of advancement progress of ("chakram:visible/backstab" parsed as advancement) for {_ce} 
+            
+        # Remove shadowstep effects, regardless of bakcstab or not
+        set score of {_ce} for objective with id "chakram_shadowstep_timer_sneak_speed" to 1
+        remove 4 seconds from duration of {_ce}'s invisibility effect
+        apply potion effect of glowing to {_ce} for 1 second:
+            hide the particles

@@ -16,6 +16,7 @@ on right click on polar bear:
     else if all:
         held item of player is air
         target of event-entity is not player
+        passengers of event-entity is empty
     then:
         make player swing hand
         make player ride event-entity
@@ -25,12 +26,19 @@ local function feedBear(p: player, bear: livingentity):
         max health of {_bear} > health of {_bear}
         {_bear} is not dead
     then:
+        set {_rand} to random integer between 3 and 7
         if target of {_bear} is {_p}:
-            set {_rand} to random integer between 3 and 7
-            make {_rand} angry_villager particle at block above {_bear} with offset vector(0.5,0.5,0.5) with extra 3
-            play sound "minecraft:entity.polar_bear.warning" in neutral category at {_bear}
+            if all:
+                first element of passengers of {_bear} is a player
+                chance of 40%
+            then:
+                set target of {_bear} to {_none}
+                make {_rand} heart particle at block above {_bear} with offset vector(0.5,0.5,0.5) with extra 3
+                play sound "minecraft:entity.cat.eat" in neutral category at {_bear}
+            else:
+                make {_rand} angry_villager particle at block above {_bear} with offset vector(0.5,0.5,0.5) with extra 3
+                play sound "minecraft:entity.polar_bear.warning" in neutral category at {_bear}
         else:
-            set {_rand} to random integer between 3 and 7
             make {_rand} heart particle at block above {_bear} with offset vector(0.5,0.5,0.5) with extra 3
             play sound "minecraft:entity.cat.eat" in neutral category at {_bear}
         heal {_bear} by 3
@@ -72,7 +80,7 @@ every 1 second:
                 if {_partner} is set:
                     if distance between {_bear} and {_partner} <= 2:
                         spawn polar bear at {_bear}:
-                            set age of polar bear to -12000
+                            set age of polar bear to -24000
                         set {_rand} to random integer between 5 and 11
                         make {_rand} heart particle at block above last spawned polar bear with offset vector(0.8,0.8,0.8) with extra 3
                         spawn 1 experience orb at {_bear}:
@@ -128,7 +136,7 @@ on spawn of polar bear:
     if age of polar bear >= 0:
         chance of 25%:
             spawn polar bear at event-entity:
-                set age of polar bear to -12000
+                set age of polar bear to -24000
             chance of 15%:
                 spawn polar bear at event-entity:
-                    set age of polar bear to -12000
+                    set age of polar bear to -24000

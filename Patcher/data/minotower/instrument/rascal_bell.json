@@ -3,6 +3,6 @@
     "sound_id": "minotower:item.rascal_bell"
   },
   "range": 32,
-  "use_duration": 10,
+  "use_duration": 120,
   "description": "Reveal Rascal"
 }

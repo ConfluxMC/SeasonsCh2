@@ -1,5 +1,6 @@
 {
   "values": [
-    "minecraft:spider"
+    "minecraft:spider",
+    "minecraft:cave_spider"
   ]
 }

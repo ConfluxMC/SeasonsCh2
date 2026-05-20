@@ -1,0 +1,79 @@
+factors:
+  scheduled:
+    holding_devotion_crystal_outside_of_marble_caves:
+      type: condition_group
+      change: -0.95
+      limit: -50
+      all:
+        holding_crystal:
+          type: player
+          entity:
+            item_count: 1..
+            inventory:
+              slot_category: HANDS
+              item:
+                items:
+                  - quartz
+                components:
+                  - "custom_data={devotion_quartz:1b}"
+        not_in_marble_caves:
+          type: player
+          invert: true
+          entity:
+            block:
+              biomes:
+                - "cavernous:marble_caves"
+    disguised_in_marble_caves: # Possibly try to use selector predicate here?
+      change: 0.0525
+      limit: 40
+      type: self
+      entity:
+        selector: "[predicate=cavernous:marble_skeleton/disguised]"
+        block:
+          biomes:
+            - "cavernous:marble_caves"
+    devoted_looking_at_creaking:
+      change: -4.8525
+      type: self
+      entity:
+        selector: "[predicate=cavernous:marble_skeleton/holding_devotion_quartz]"
+        condition_group:
+          all:
+            look_at_creaking:
+              type: look_at_entity
+              entity:
+                distance: ..16
+                entities:
+                  - creaking
+    # mega lose sanity when trapped looking at creaking
+  events:
+    devoted_death:
+      change: 150
+      limit: 100
+      type: death
+      damage:
+        victim:
+          selector: "[predicate=cavernous:marble_skeleton/holding_devotion_quartz]"
+          block:
+            biomes:
+              - "cavernous:marble_caves"
+        source:
+          entity:
+            entities:
+              - creaking
+manifestations:
+  devoted_death:
+    conditions:
+      exclude:
+        - hardcore
+    type: next_event
+    event_factor: :devoted_death
+    manifest:
+      type: delayed
+      delay: 20 # Give time for the death event to grant its sanity
+      then:
+        type: sanity_modifier
+        cycles: 60
+        positive: 0
+        negative: 0
+

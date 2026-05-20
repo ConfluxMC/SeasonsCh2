@@ -1,0 +1,70 @@
+menu-title: 'Battlepass Portal'
+menu-rows: 2
+
+menu:
+  '2': # The slot the item is in
+    item:
+      material: chest_minecart # The material of the item. TIP: Use /bpa material item or /bpa material block.
+      item-model: 'conflux_seasons:battlepass/reward_claimed'
+      name: '&eRewards' # The name of the item in the GUI.
+      lore:
+        - ''
+        - '&eStatistics'
+        - '&f&l * &7Tier &f%tier%'
+        - '&f&l * &7Tier Progress &f%points%&8/&f%required_points%'
+    actions:
+      - '[menu] {rewards}'
+      - '[sound] {BLOCK_CHEST_OPEN:1:1}'
+  '4':
+    item:
+      material: golden_helmet
+      name: '&eLeaderboard'
+      lore:
+        - '&7Click to open leaderboard menu'
+        - ''
+        - '&eMy stats'
+        - '&7Completed Quests: &a%battlepass_top_quests_value_me%'
+        - '&7Sols Earned: &d%seasonsstats_sols_earned%'
+        - '&7Worldborder Expanded By: &3%seasonsstats_worldborder_expanded_by% blocks'
+        - ''
+        - '&7My place: &6#%battlepass_top_quests_place_me%'
+    actions:
+      - '[menu] {leaderboard}'
+      - '[sound] {BLOCK_BEACON_POWER_SELECT:1:2}'
+  '6':
+    item:
+      material: enchanted_book
+      item-model: 'conflux_seasons:battlepass/questbook'
+      name: '&eQuests'
+      lore:
+        - '&e%battlepass_completed_quests_daily% &7of &e8 &7daily quests completed'
+    actions:
+      - '[menu] {daily-quests}'
+      - '[sound] {ITEM_ARMOR_EQUIP_CHAIN:1:1}'
+  '12':
+    item:
+      material: emerald
+      item-model: 'conflux_seasons:solstice_shard'
+      name: '&dThe Sols Shop'
+      lore:
+        - '&7Buy stuff with your &dSolstice Shards&7!'
+        - ''
+        - '&7Check your balance anytime with /sols'
+        - '&7Current balance: &d%seasonsstats_sols_balance%'
+    actions:
+      - '[command] {shop}'
+      - '[sound] {ENTITY_PLAYER_LEVELUP:1:2}'
+  '14':
+    item:
+      material: nether_star
+      name: '&eConflux Seasons Menu'
+      lore:
+        - '&7Back to the main menu'
+    actions:
+      - '[command] {seasons-dialog-menu}'
+      - '[sound] {UI_BUTTON_CLICK:0.5:1}'
+  filler: # Fills all empty slots with the following item
+    slots: fill # This will fill all empty slots. You can also do 'startslot...endslot', e.g '2...8' to fill slots 2 to 8.
+    item:
+      material: stained_glass_pane
+      name: ' '

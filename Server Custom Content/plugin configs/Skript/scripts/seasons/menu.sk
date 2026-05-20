@@ -1,0 +1,10 @@
+command /seasons-dialog-menu:
+    aliases: /menu, /m
+    trigger:
+        execute console command "dialog show %player% conflux_seasons:main"
+        # open dialog with id "conflux_seasons:main" to player
+
+command /quests:
+    aliases: /q
+    trigger:
+        make player execute command "battlepass open daily-quests"

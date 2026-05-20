@@ -1,0 +1,48 @@
+command /wiki [<string>]:
+    trigger:
+        if arg-1 is set:
+            set {_term} to arg-1
+            set {_safeTerm} to arg-1
+            replace all " " in {_safeTerm} with "+"
+            set {_cmp} to minimessage from "<gray>Search for "
+            set {_link} to "<blue><u><click:open_url:'https://confluxseasons.miraheze.org/w/index.php?search=Hollow+Earth/%{_safeTerm}%&title=Special:Search'>%{_term}%</click>"
+            add {_link} to {_cmp}
+            add minimessage from "<reset><gray> on the wiki." to {_cmp}
+            if all:
+                sender is a player
+                {seasons.wiki.saved_terms::%player%::*} does not contain {_term}
+            then:
+                add minimessage from " <green><hover:show_text:'Add ""<blue>%{_term}%<reset>"" to your autofill options for <gray>/wiki<reset>.%nl%Can be removed with <gray>/wiki-remove-search-term [term]<reset>.'><click:run_command:/wiki-save-search-term %{_term}%>[Save Search Term]</click></hover>" to {_cmp}
+        else:
+            set {_cmp} to minimessage from "<blue><u><click:open_url:'https://confluxseasons.miraheze.org/wiki/Hollow_Earth'>Hollow Earth wiki page</click>"
+        send component {_cmp} to sender
+
+command /wiki-save-search-term <string>:
+    executable by: players
+    trigger:
+        if all:
+            arg-1 is set
+            {seasons.wiki.saved_terms::%player%::*} does not contain arg-1
+        then:
+            add arg-1 to {seasons.wiki.saved_terms::%player%::*}
+            send "&aAdded &9%arg-1%&a to saved search terms." to player
+
+command /wiki-remove-search-term <string>:
+    executable by: players
+    trigger:
+        if {seasons.wiki.saved_terms::%player%::*} contains arg-1:
+            remove arg-1 from {seasons.wiki.saved_terms::%player%::*}
+            send "&aRemoved &9%arg-1%&a from saved search terms." to player
+command /wiki-clear-search-terms [<string>]:
+    executable by: players
+    trigger:
+        if arg-1 is "confirm":
+            remove arg-1 from {seasons.wiki.saved_terms::%player%::*}
+            send "&aRemoved all saved search terms." to player
+        else:
+            send "&cAre you sure? Send &7/wiki-clear-search-terms &fconfirm &cto confirm." to player
+
+on tab complete of "/wiki":
+    set tab completions of position 1 to {seasons.wiki.saved_terms::%player%::*}
+on tab complete of "/wiki-remove-search-term":
+    set tab completions of position 1 to {seasons.wiki.saved_terms::%player%::*}

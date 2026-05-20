@@ -1,0 +1,23 @@
+on consume of poisonous potato:
+    if boolean tag "minecraft:custom_data;tp_scroll" of nbt of event-item is true:
+        chance of 75%:
+            make 64 of portal 0.2 above player with offset vector(0.5, 0.5, 0.5) with extra 0.3
+            play sound "minecraft:entity.player.teleport" at player
+            teleport player to spawn of "world"
+            make 64 of portal 0.2 above player with offset vector(0.5, 0.5, 0.5) with extra 0.3
+            play sound "minecraft:entity.player.teleport" at player
+        else:
+            make 30 of dust_color_transition using dustTransition(rgb(0,0,0), rgb(0,0.4,0.5), 3) 1 above player with offset vector(0.5, 0.5, 0.5)
+            play sound "chakram:shadowstep.hide" at player
+            teleport player to spawn of "world"
+            make 30 of dust_color_transition using dustTransition(rgb(0,0.4,0.5), rgb(0,0,0), 2) 1 above player with offset vector(0.5, 0.5, 0.5)
+            play sound "chakram:shadowstep.revealed" at player
+        if player's tool is event-item:
+            remove 1 of event-item from player's tool
+        else if player's offhand tool is event-item:
+            remove 1 of event-item from player's offhand tool
+        else:
+            remove 1 of event-item from player
+
+# Give command
+# give @p poisonous_potato[item_name="Teleport Scroll",rarity=common,item_model="minecraft:globe_banner_pattern",lore=[{italic:false,color:blue,text:"Teleports you to spawn"},{italic:false,color:red,text:"Gets consumed on use"}],custom_data={tp_scroll:true},consumable={consume_seconds:0.8,has_consume_particles:false,animation:crossbow,sound:entity.breeze.inhale},!food]

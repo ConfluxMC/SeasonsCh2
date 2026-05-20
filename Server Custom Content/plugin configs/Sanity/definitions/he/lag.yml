@@ -1,0 +1,104 @@
+factors:
+  events:
+    mine_any_diamonds: # for diamond_is_unbreakable manifestation
+      type: mine
+      change: 0
+      block:
+        blocks:
+          - "#diamond_ores"
+          - "diamond_block"
+    open_door:
+      type: click
+      change: 0
+      click: right
+      block:
+        blocks:
+          - "#minecraft:wooden_doors"
+          - "minecraft:copper_door"
+          - "minecraft:exposed_copper_door"
+          - "minecraft:weathered_copper_door"
+          - "minecraft:oxidized_copper_door"
+          - "minecraft:waxed_copper_door"
+          - "minecraft:waxed_exposed_copper_door"
+          - "minecraft:waxed_weathered_copper_door"
+          - "minecraft:waxed_oxidized_copper_door"
+          - "#minecraft:wooden_trapdoors"
+          - "minecraft:copper_trapdoor"
+          - "minecraft:exposed_copper_trapdoor"
+          - "minecraft:weathered_copper_trapdoor"
+          - "minecraft:oxidized_copper_trapdoor"
+          - "minecraft:waxed_copper_trapdoor"
+          - "minecraft:waxed_exposed_copper_trapdoor"
+          - "minecraft:waxed_weathered_copper_trapdoor"
+          - "minecraft:waxed_oxidized_copper_trapdoor"
+      condition_group:
+        all:
+          digttda_triggered:
+            type: upcoming_manifestations
+            manifestations:
+              - :didnt_i_go_through_this_door_already
+              - :didnt_i_go_through_this_door_already.next_event.then
+manifestations:
+  diamond_is_unbreakable:
+    conditions:
+      chance: "0.0002"
+      thresholds:
+        - ..-60
+      exclude:
+        - no_fake_lag
+    type: next_event
+    event_factor: :mine_any_diamonds
+    cancel_event: true
+    add_triggers: 1
+    max_triggers: 3
+    expire_after: 6000 # 5 mins
+    manifest:
+      type: dummy
+  didnt_i_go_through_this_door_already:
+    conditions:
+      chance: "0.0005"
+      thresholds:
+        - ..-60
+      exclude:
+        - no_fake_lag
+    type: next_event
+    event_factor: :open_door
+    manifest:
+      type: sequence
+      first:
+        type: save_state
+      delay: 10
+      then:
+        type: next_event
+        event_factor: :open_door
+        expire_after: 120 # 6 seconds
+        manifest:
+          type: save_state_restore
+  fake_lag:
+    conditions:
+      chance: "0.0001"
+      thresholds:
+        - ..-80
+      exclude:
+        - no_fake_lag
+    type: sequence
+    first:
+      type: save_state # This type will save the current state of the player for use by the 'saveStateRestore' type at another time. All true|false below default to true.
+      sanity: true # true|false. Whether to save the player's sanity
+      health: true # true|false. Whether to save the player's health
+      hunger: true # true|false. Whether to save the player's hunger
+      saturation: true # true|false. Whether to save the player's saturation
+      air: true # true|false. Whether to save the player's remaining air
+      experience: true # true|false. Whether to save the player's total experience
+      fire: true # true|false. Whether to save the player's fire ticks
+      freeze: true # true|false. Whether to save the player's freeze ticks
+      potion_effects: true # true|false. Whether to save the player's active potion effects
+      location: true # true|false. Whether to save the player's location and teleport them back to it upon restore
+      vehicle: true # true|false. Whether to save the player's vehicle and remount it if within {companionEntitiesDistance} blocks
+      leashed: true # true|false. Whether to save the player's leashed entities and releash them to the player if they are within {companionEntitiesDistance} blocks upon restore
+      companion_entities_distance: 16 # Number. How far a vehicle or leashed entity can be to be considered for saving and remounting/releashing upon restore. Defaults to 16
+    delay: 10..130
+    then:
+      type: save_state_restore # Restores the player's saved state. Outputs a warning if there is no save state to restore and if {suppressNoSavedStateWarnings} is true in config.yml
+      clear: true # Whether to delete the player's saved state after restoring. Defaults to true
+      restore: true # Whether to restore the player to their saved state. Can be set to false if you only want to clear the saved state and not restore. Defaults to true

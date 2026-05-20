@@ -1,0 +1,52 @@
+name: 'Free'
+default-points-required: 5
+dont-give-premium-free-rewards: false # This will mean that premium users will not receive free rewards
+
+items:
+  doesnt-have-pass-item: # This is ONLY shown/used if you have dont-give-premium-free-rewards: true. This is used to make it so premium users can only have premium rewards.
+    material: 'minecart:0'
+    name: '&eTier %tier%'
+    lore:
+      - ''
+      - '&cYou can only claim premium rewards'
+  locked-tier-item:
+    material: 'furnace_minecart:0'
+    item-model: 'conflux_seasons:battlepass/reward_locked_gray'
+    name: '&eTier %tier%'
+    lore:
+      - ''
+      - '&7Rewards:'
+      - '%lore_addon%'
+      - ''
+      - '&7Status: &cLocked'
+  unlocked-tier-item:
+    material: 'chest_minecart:0'
+    item-model: 'conflux_seasons:battlepass/reward_unclaimed'
+    name: '&aTier %tier%'
+    lore:
+      - ''
+      - '&7Rewards:'
+      - '%lore_addon%'
+      - ''
+      - '&7Status: &aUnlocked'
+  claimed-tier-item:
+    material: 'minecart:0'
+    item-model: 'conflux_seasons:battlepass/reward_claimed'
+    name: '&aTier %tier%'
+    lore:
+      - ''
+      - '&7Rewards:'
+      - '%lore_addon%'
+      - ''
+      - '&7Status: &aClaimed'
+
+tier-up-actions:
+  - '[message] {&7You reached tier &e%tier%}'
+  - '[console-command] {worldborder-expand-from-tier-complete %player%}'
+  - '[console-command] {sols-give 10 %player%}'
+  - '[console-command] {sols-add-to-stats 10 %player%}'
+
+tiers:
+  '100':
+    rewards: ['1']
+    required-points: 50

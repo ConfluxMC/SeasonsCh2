@@ -1,0 +1,172 @@
+manifestations:
+  spawn:
+    conditions:
+      chance: 0.05
+      thresholds:
+        - -65..10
+      condition_group:
+        all:
+          within_valid_structures:
+            type: self
+            entity:
+              block:
+                structures:
+                  - "cavernous:stone_village"
+                  - "cavernous:lush_village"
+                  - "minotower:minotower"
+                  - "hopo:mineshaft/acacia_mineshaft"
+                  - "hopo:mineshaft/bamboo_mineshaft"
+                  - "hopo:mineshaft/birch_mineshaft"
+                  - "hopo:mineshaft/cherry_mineshaft"
+                  - "hopo:mineshaft/dark_oak_mineshaft"
+                  - "hopo:mineshaft/deepslate_mineshaft"
+                  - "hopo:mineshaft/jungle_mineshaft"
+                  - "hopo:mineshaft/mangrove_mineshaft"
+                  - "hopo:mineshaft/mud_mineshaft"
+                  - "hopo:mineshaft/pale_mineshaft"
+                  - "hopo:mineshaft/oak_mineshaft"
+                  - "hopo:mineshaft/spruce_mineshaft"
+                  - "hopo:mineshaft/stone_mineshaft"
+    type: spawn
+    lifespan: 100..300
+    spawn_mode: random_above
+    entity:
+      distance: 1..6
+      entities:
+        - phantom
+      tags:
+        - sanity_phantom
+      attributes:
+        - scale: 0.35
+        - attack_damage: 0
+      block:
+        blocks:
+          - air
+    on_despawn:
+      type: particle
+      particles:
+        - happy_villager
+        - ash
+      count: 3..10
+      delta_x: 0.2
+      delta_y: 0.2
+      delta_z: 0.2
+      extra: 0.2
+  phantom_kiss:
+    type: next_event
+    event_factor: :kissed
+    manifest:
+      type: random
+      options:
+        weaken:
+          type: sequence
+          first:
+            type: potion
+            potion:
+              effects:
+                - weakness
+              duration: 100
+              icon: true
+              particles: true
+          delay: 100
+          then:
+            conditions:
+              exclude:
+                - hardcore
+            type: potion
+            potion:
+              effects:
+                - regeneration
+              duration: 100
+              icon: true
+              particles: true
+        vision:
+          type: sequence
+          first:
+            type: potion
+            potion:
+              effects:
+                - mining_fatigue
+              duration: 200
+              icon: true
+              particles: true
+          then:
+            conditions:
+              exclude:
+                - hardcore
+            type: potion
+            potion:
+              effects:
+                - night_vision
+              duration: 200
+              icon: true
+              particles: true
+        jumpy:
+          type: sequence
+          first:
+            type: potion
+            potion:
+              effects:
+                - slow_falling
+              duration: 200
+              icon: true
+              particles: true
+          then:
+            conditions:
+              exclude:
+                - hardcore
+            type: potion
+            potion:
+              effects:
+                - jump_boost
+              duration: 200
+              icon: true
+              particles: true
+  phantom_attacked_consequence:
+    type: next_event
+    event_factor: :attack
+    manifest:
+      conditions:
+        chance: 0.75
+      type: sequence
+      first:
+        type: potion
+        potion:
+          effects:
+            - blindness
+          duration: 20..60
+          icon: true
+          particles: true
+      then:
+        type: potion
+        potion:
+          effects:
+            - poison
+          duration: 20..80
+          icon: true
+          particles: true
+factors:
+  events:
+    kissed:
+      type: damaged
+      positive_range: 0
+      gain: 4
+      cycles: 2
+      damage:
+        source:
+          entity:
+            entities:
+              - phantom
+            tags:
+              - sanity_phantom
+    attack:
+      type: attack
+      negative_range: 1..
+      loss: 6
+      cycles: 2
+      damage:
+        victim:
+          entities:
+            - phantom
+          tags:
+            - sanity_phantom

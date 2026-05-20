@@ -1,0 +1,47 @@
+factors:
+  events:
+    eat_vitamin: # Bring up to 5 sanity
+      type: consume
+      limit: 5
+      change: 100
+      cycles: 10
+      item:
+        items:
+          - poisonous_potato
+        components:
+          - "custom_data={vitamin_d:1b}"
+    eat_vitamin_guarantee_gain: # Apply +10 sanity regardless of current status
+      type: consume
+      change: 10
+      cycles: 5
+      item:
+        items:
+          - poisonous_potato
+        components:
+          - "custom_data={vitamin_d:1b}"
+    eat_torchflower_seeds:
+      type: consume
+      change: 1.5
+      item:
+        items:
+          - torchflower_seeds
+manifestations:
+  ate_vitamins:
+    conditions:
+      exclude:
+        - hardcore
+    type: next_event
+    event_factor: :eat_vitamin_guarantee_gain
+    manifest:
+      type: multiplier # Multiplies the sanity gain/loss of the player
+      cycles: 600 # How many cycles to apply this multiplier for (thus time will depend on {ticksPerCycle}). With 10 ticks per cycle, 600 is 5 mins
+      negative: 0.33 # Lose sanity at only 1/3 the rate
+      positive: 1.1 # Gain sanity 10% faster
+  ate_torchflower_seed:
+    type: next_event
+    event_factor: :eat_torchflower_seeds
+    manifest:
+      type: multiplier # Multiplies the sanity gain/loss of the player
+      cycles: 200 # How many cycles to apply this multiplier for (thus time will depend on {ticksPerCycle}). With 20 ticks per cycle, 300 is 5 mins
+      negative: 0.80 # Lose sanity at only 4/5 the rate
+      positive: 1.025 # Gain sanity 2.5% faster

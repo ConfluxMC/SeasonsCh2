@@ -1,0 +1,167 @@
+options:
+    balanceEnd: 299
+    balanceStart: 99
+
+on load:
+    set {worldborder.expandBy} to 2 # Should always be even in order to keep the border aligned with blocks
+
+command /worldborder-expand-from-tier-complete <offlineplayer>:
+    permission: server.admin
+    trigger:
+        set {_wb} to world border of world "world"
+        if {worldborder.size} is not set:
+            set {worldborder.size} to worldborder size of {_wb}
+        if {worldborder.size} < {@balanceStart}:
+            set {worldborder.size} to {@balanceStart}
+        add 1 to {worldborder.expansions::%arg-1%}
+        add {worldborder.expandBy} to {worldborder.size}
+        set {_expandingBy} to {worldborder.size} - worldborder size of {_wb} # Should typically be {worldborder.expandBy}, but in case this is executed while the border is already expanding, it should keep the size correct.
+        expand {_wb} by {_expandingBy} over 1 second
+
+function getTotalBorderExpansions():: integer:
+    set {_total} to 0
+    loop {worldborder.expansions::*}:
+        add loop-value to {_total}
+    return {_total}
+
+command /worldborder-resize:
+    permission: server.admin
+    trigger:
+        set {_newSize} to {worldborder.expandBy} * getTotalBorderExpansions()
+        set {_wb} to world border of world "world"
+        set {_oldSize} to worldborder size of {_wb}
+        set worldborder size of {_wb} to {_newSize}
+        send "Border resized from %{_oldSize}% to %worldborder size of {_wb}%." to sender
+
+command /worldborder-set-size <integer> [<string>]:
+    permission: server.admin
+    trigger:
+        if arg-2 is "confirm":
+            set {_oldSize} to {worldborder.size}
+            set {worldborder.size} to arg-1
+            set worldborder size of world border of world "world" to {worldborder.size}
+            send "Border resized from %{_oldSize}% to %{worldborder.size}%." to sender
+        else:
+            send "&cAre you sure? Send &7/worldborder-set-size %arg-1% confirm&c to confirm."
+
+command /worldborder-reset [<string>]:
+    permission: server.admin
+    trigger:
+        if arg-1 is "confirm":
+            delete {worldborder.expansions::*}
+            set {_oldSize} to {worldborder.size}
+            set {worldborder.size} to {@balanceStart}
+            set worldborder size of world border of world "world" to {worldborder.size}
+            send "Border resized from %{_oldSize}% to %{worldborder.size}%." to sender
+        else:
+            send "&cAre you sure? Send &7/worldborder-reset confirm&c to confirm."
+
+command /worldborder-report [<string>]:
+    permission: server.admin
+    trigger:
+        set {_report} to minimessage from "<dark_aqua>Worldborder expanded by:"
+        loop {worldborder.expansions::*}:
+            add minimessage from "%nl%<aqua>%loop-index parsed as offlineplayer%: <dark_aqua>×<green>%loop-value%" to {_report}
+        send component {_report} to sender
+
+on tab complete of "/worldborder-report":
+    set tab completions for position 1 to indexes of {sols_shop.items.index::*}
+
+################### Early Chapter mob balancing ###################
+
+on spawn of zombie, husk, drowned, skeleton, stray, parched, bogged, spider, cave spider, witch, or creeper:
+    set {_wbSize} to worldborder size of worldborder of world "world"
+    if any:
+        event-spawnreason is natural
+        event-spawnreason is custom
+    then:
+        set {_validSpawnReason} to true
+        
+    if all:
+        {_wbSize} < {@balanceEnd}
+        world of event-entity is "world"
+        {_validSpawnReason} is true
+    then:
+        applyBalanceAttribute(event-entity, {_wbSize})
+        add uuid of event-entity to {worldborder.balancedmobs::*}
+
+local function applyBalanceAttribute(e: livingentity, size: number):
+    set {_wb} to worldborder of world "world"
+    if {_size} is not set:
+        set {_size} to worldborder size of {_wb}
+    if {_size} >= {@balanceEnd}:
+        remove attack damage attribute modifier with key "conflux_seasons:worldborder_balance.damage" from {_e}
+        remove max health attribute modifier with key "conflux_seasons:worldborder_balance.health" from {_e}
+    else:
+        set {_bal} to getBalanceModifier({_size})
+        
+        set {_healthRatio} to health of {_e} / max health modified attribute of {_e}
+        apply attribute modifier to {_e}:
+            attribute: max health
+            id: "conflux_seasons:worldborder_balance.health"
+            amount: {_bal}
+            operation: multiply_scalar_1
+        set health of {_e} to {_healthRatio} * max health modified attribute of {_e}
+            
+        apply attribute modifier to {_e}:
+            attribute: attack damage
+            id: "conflux_seasons:worldborder_balance.damage"
+            amount: {_bal}
+            operation: multiply_scalar_1
+        if attack damage modified attribute of {_e} is 0:
+            set {_base} to attack damage attribute of {_e}
+            set {_subtract} to {_base} - 0.5
+            apply attribute modifier to {_e}: # Replace attack damage attribute with at least 0.5
+                attribute: attack damage
+                id: "conflux_seasons:worldborder_balance.damage"
+                amount: 0 - {_subtract}
+                operation: add_number
+
+
+local function getBalanceModifier(size: number):: number:
+    # Subtract from 0 to get negative
+    # Subtract from 1 to get inverse fraction
+    # size increase / max size increase
+    return 0 - (1 - (({_size} - {@balanceStart}) / ({@balanceEnd} - {@balanceStart})))
+    
+command /balanced-mobs-rebalance [<integer>]:
+    permission: server.admin
+    trigger:
+        set {_size} to arg-1
+        if {_size} is not set:
+            set {_size} to worldborder size of {_wb}
+        loop {worldborder.balancedmobs::*}:
+            set {_e} to entity from loop-value
+            if any:
+                {_e} is not set
+                {_e} is dead
+            then:
+                remove loop-value from {worldborder.balancedmobs::*}
+            else:
+                applyBalanceAttribute(loop-value, {_size})
+
+command /balanced-mobs-count:
+    permission: server.admin
+    trigger:
+        loop {worldborder.balancedmobs::*}:
+            set {_e} to entity from loop-value
+            if any:
+                {_e} is not set
+                {_e} is dead
+            then:
+                remove loop-value from {worldborder.balancedmobs::*}
+        send size of {worldborder.balancedmobs::*} to sender
+
+command /test-wb-balance <integer>:
+    permission: server.admin
+    trigger:
+        send "Size: %arg-1% AttrMod: %getBalanceModifier(arg-1)%" to sender
+command /test-wb-balance-spawn <integer>:
+    permission: server.admin
+    trigger:
+        summon zombie at player
+        set {_zom} to last spawned zombie
+        send "BEFORE HP: %max health of {_zom}% Dmg: %attack damage modified attribute of {_zom}%" to player
+        applyBalanceAttribute({_zom}, arg-1)
+        send "AFTER HP: %max health of {_zom}% Dmg: %attack damage modified attribute of {_zom}%" to player
+        add uuid of {_zom} to {worldborder.balancedmobs::*}

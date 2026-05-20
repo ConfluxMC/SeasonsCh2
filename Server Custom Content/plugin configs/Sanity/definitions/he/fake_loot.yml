@@ -1,0 +1,37 @@
+manifestations:
+  chest:
+    conditions:
+      chance: "0.00125"
+      thresholds:
+        - ..-65
+    type: spawn
+    lifespan: 100
+    spawn_mode: random_front
+    snap_to_block: true
+    entity:
+      distance: 3
+      tags:
+        - sanity_manifestation
+        - fake_chest
+      anchor: eyes
+      pitch:
+        - 0
+      yaw:
+        - 0
+        - 90
+        - 180
+        - 270
+      block:
+        blocks:
+          - air
+      entities:
+        - block_display
+      properties:
+        - grounded: true
+      inventory:
+        slot_category: CONTENTS
+        item:
+          items:
+            - chest
+          amount: 1
+      item_count: 1

@@ -15,23 +15,14 @@ execute as @a if score @s geyser.msg matches 1 unless score .global geyser.msg.a
     execute if score .global geyser.event_selector matches 4.. run scoreboard players set .global geyser.event_selector 1
 
 ###GEYSER
+    # Update armor stand geysers to block displays
+        execute as @e[type=armor_stand,tag=geyser] at @s run function geyser:replace_armor_stand
 
-    # As Geyser
-        execute as @e[type=armor_stand,tag=geyser,tag=placed] at @s run function geyser:geyser_run
-
-    # Placing
-        execute as @e[type=armor_stand,tag=geyser,tag=!placed] run function geyser:place_check
-        # Places naturally generated geysers
-        execute as @e[type=armor_stand,tag=geyser,tag=!placed,tag=generated] run function geyser:place_geyser
-
-    # Breaking
-        execute as @e[type=armor_stand,tag=geyser,tag=placed] at @s unless block ~ ~1 ~ basalt run tag @s add broken
-        execute at @e[type=armor_stand,tag=geyser,tag=placed] unless block ~ ~1 ~ basalt run function geyser:break_geyser
-
+    # As Geysers
+        execute as @e[type=block_display,tag=geyser] at @s run function geyser:tick_geyser
+    
     # Geysered Entities
-        execute as @e[tag=geysered] run function geyser:geysered
+        execute as @e[type=!#geyser:cannot_be_geysered,tag=geysered] run function geyser:geysered
 
 ###WORLDGEN
-execute at @a[predicate=cavernous:in_geyser_biome] if score .global geyser.enabled matches 1 run fill ~25 ~3 ~25 ~-25 ~-8 ~-25 minecraft:repeating_command_block[conditional=false,facing=west]{Command:"function geyser:spawn_geyser",CustomName:'{"text":"@"}',LastExecution:68318L,LastOutput:'{"extra":[{"color":"red","extra":[{"translate":"arguments.function.unknown","with":["geyser:spawn_geyser"]}],"text":""}],"text":"[21:39:41] "}',SuccessCount:0,TrackOutput:1b,UpdateLastExecution:1b,auto:1b,conditionMet:1b,powered:0b} replace structure_void
-
-
+execute at @a[predicate=cavernous:in_geyser_biome] if score .global geyser.enabled matches 1 run fill ~25 ~3 ~25 ~-25 ~-8 ~-25 minecraft:repeating_command_block[conditional=false,facing=west]{Command:"function geyser:spawn_geyser",CustomName:'{"text":"@"}',SuccessCount:0,TrackOutput:1b,UpdateLastExecution:1b,auto:1b,conditionMet:1b,powered:0b} replace structure_void

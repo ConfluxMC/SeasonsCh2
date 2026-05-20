@@ -65,28 +65,6 @@
 		  },
 		  {
 			"type": "minecraft:item",
-			"name": "minecraft:barrel",
-			"functions": [
-			  {
-				"function": "minecraft:set_components",
-				"components": {
-				  "minecraft:tooltip_display": {
-					"hide_tooltip": false,
-					"hidden_components": [
-					  "minecraft:container_loot"
-					]
-				  }
-				}
-			  },
-			  {
-				"function": "minecraft:set_loot_table",
-				"type": "minecraft:chest",
-				"name": "hopo:chests/mineshaft/abandoned_miners_stuff"
-			  }
-			]
-		  },
-		  {
-			"type": "minecraft:item",
 			"name": "minecraft:decorated_pot"
 		  },
 		  {

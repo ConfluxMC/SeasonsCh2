@@ -1,0 +1,335 @@
+enabled: true
+ticks_per_cycle: 10 # How often, in ticks, sanity will update scheduled-factors, apply event-factor graduality, and remove recent attackers. Defaults to 20 (1 second)
+gamemodes: # Sanity will only affect players in the gamemodes listed here. Will apply to all gamemodes if omitted.
+  - survival
+  - adventure
+  - creative
+#worlds: # List of worlds in which to enable Sanity. Will apply to all worlds if omitted.
+#  - "minecraft:overworld"
+#  - "minecraft:the_nether"
+#  - "minecraft:the_end"
+bossbar: # BossBar configuration. Titles use string format https://www.w3schools.com/java/ref_string_format.asp.
+  # Options for Color and Style can be found here https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarStyle.html https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarColor.html.
+  # Options are currently set to their defaults, except for {visibility_condition_group}
+  real: # These are the options for the bossbar that will have the player's real sanity information
+    sanity:
+      title: "Sanity: %.2f%s"
+      color: PINK
+      style: SEGMENTED_20
+    insanity:
+      title: "Insanity: %.2f%s"
+      color: PURPLE
+      style: SEGMENTED_20
+    difference: # How to display how much sanity changed
+      positive: " (+%.2f)"
+      negative: " (-%.2f)" # Note that the "-" will not be present on the number here unless we add it ourselves.
+      none: ""
+    visibility_condition_group: # condition_group that will determine when the sanity bar is visible. Omit to have the bar always visible
+      any:
+        always:
+          type: preference_flags
+          invert: true
+          preferences:
+            - IMMERSIVE_SANITY_BAR
+        sleeping:
+          type: conditional_special
+          value: SLEEPING
+        holding_clock:
+          type: numeric_conditional
+          numeric_range: 1..
+          numeric_factor:
+            type: inventory
+            inventory:
+              slot_category: HANDS
+              item:
+                items:
+                  - clock
+        looking_into_water:
+          type: group
+          all:
+            above_water:
+              type: conditional_special
+              invert: true
+              value: UNDERWATER
+            looking_at_water_source:
+              type: look_at_block
+              distance: ..3
+              fluid_collision_mode: SOURCE_ONLY
+              faces:
+                - UP
+              block:
+                blocks:
+                  - water
+              
+  fake: # These are the default options for a fake sanity bar that can be shown to players if they trigger a 'FakeSanityBar' manifestation. The fake bar can be configured directly in the manifestation as well, but this will be used as the fallback.
+    sanity:
+      title: "%.2f sanity:"
+      color: BLUE
+      style: SOLID
+    insanity:
+      title: "in: %.2f sanity"
+      color: RED
+      style: SOLID
+    difference:
+      positive: " *%.2f"
+      negative: " ~%.2f"
+      none: "-?+"
+    #visibility_condition_group: # If omitted this will default to the condition_group of the real sanity bar
+    sanity_range: -100..0 # What sanity values the fake bar can show
+    change_range: -5..5 # By how much the fake sanity bar's value can change per cycle.
+ignore_cancelled_events: true # true|false. Whether events cancelled by other plugins will be ignored by event-factors. Defaults to true.
+broadcast_triggered_event_factors: true # true|false. Whether triggered event factors will broadcast an event for other plugins (such as Skript) to intercept. Defaults to true.
+broadcast_triggered_manifestations: true # true|false. Whether triggered manifestations will broadcast an event for other plugins (such as Skript) to intercept. Defaults to true
+suppress_no_saved_state_warnings: false # true|false. Whether to suppress console warnings when trying to restore a player's saved state without first creating one. Defaults to true
+safe_reciprocal_Attacking: # This determines the behaviour of how attack event-factors ignore attacks that are reciprocal.
+  enabled: true
+  opportunity_ticks: 240 # How long, in ticks, a player has to attack back before it is no longer considered reciprocal. Defaults to 240 (12 seconds)
+  forgive_after_death: true # true|false. Whether attacked players forget attackers who have since died. Defaults to true
+  initiator_can_reciprocate: false # true|false. Allows the original attacker to retaliate without penalty if the victim retaliates. Defaults to false
+  group_reciprocation: false # true|false. Whether all players around the victim can attack the attacker without consequence just like the victim. This excludes players who have already recently attacked the attacker. Defaults to false
+  group_reciprocation_radius: 8 # The radius in blocks that group_reciprocation applies to. Defaults to 8
+
+#######################
+##### INFORMATION #####
+#######################
+
+# Range is a data type that denotes a range of numbers. It is used often in this configuration. It follows a similar format as Minecraft ranges (e.g. the type used in commands).
+# RANGE NOTATION [#..#] or #..# for inclusive, ]#..#[ for exclusive. Omitting one of the sides will indicate to continue for infinity. e.g.
+# ..5 = Any number less than or equal to 5. Exact same as ..5]
+# 5.. = Any number greater than or equal to 5. Exact same as "[5.."
+# "]5.." = Any number greater than (but excluding) 5.
+# "[5..10[" = Any number between 5 (inclusive) and 10 (exclusive).
+# Just having a number also works if you want to only accept that number
+# NOTE: if using a bracket at the start of the range, you must envelop the range is quotations. e.g. "]0.5..10"
+
+##### FACTORS #####
+# Factors are what decide how sanity changes. There are two main factor categories: Scheduled Factors and Event Factors.
+
+# Scheduled Factors evaluate environmental information once every X ticks, where X is the value of ticks_per_cycle defined earlier in the config.
+
+# Event Factors get evaluated whenever an event is triggered (e.g. a player takes damage). All event-factors have the following properties
+#     cycles: NUMBER denotes how many cycles it will take to apply the full amount of sanity change. So every cycle, ({loss} or {gain} or {change})/{cycles} sanity will be applied to the player until {cycles} cycles have passed.
+#     ignore_cancelled: true|false. All event-factors will have this option that decides whether cancelled events should still trigger the factor. Defaults to the {ignore_cancelled_events} config value.
+#     condition_group: # All event-factors will have a condition_group option that tests against the affected player(s). The syntax is identical to a 'condition_groups' conditional factor entry. If this fails, the player's sanity will be unaffected.
+
+# Both Scheduled and Event factors come in 2 types: Conditional and Numeric
+# CONDITIONAL factors return true or false. Conditional factors always have the following attributes that tell the factor how to handle that result.
+#     limit: NUMBER Don't apply this factor is sanity is above this number (and {change} >= 0), or if sanity is below this number (and change < 0). Defaults to 100 if change >= 0, -100 if change < 0
+#     change: NUMBER How much sanity to gain/lose if the condition is met. Defaults to 1
+#     invert: true|false Invert the returned condition. Defaults to false
+#       # (e.g. invert blocking to apply this whenever the player is NOT blocking)
+
+# NUMERIC factors "return" a number based on the specific factor. Numeric factors always have the following attributes that tell the factor how to handle the returned number.
+#     max: NUMBER If the player's sanity is higher than this, don't consider this factor. Defaults to 100
+#     min: NUMBER If the player's sanity is lower than this, don't consider this factor. Defaults to -100
+#     gain: NUMBER How much sanity to gain when factor is in {positive_range} range. Defaults to 1
+#     loss: NUMBER How much sanity to lose when factor is in {negative_range} range. Defaults to 1
+#     positive_range: RANGE Players will gain {gain} sanity when the factor is higher than this. Omit to never gain sanity from this factor
+#     negative_range: RANGE Players will lose {loss} sanity when the factor is lower than this. Omit to never lose sanity from this factor
+#     multiplier: NUMBER How much to multiply the factor by for consideration by {positive_range} and {negative_range}. Use -1 to invert the "positivity" of the factor. Defaults to 1
+#       # e.g. REST counts ticks since rest, so higher should count towards negative sanity.
+#     scale_result: true|false If true, sanity gained/lost will depend on where within the range of {positive_range} and {negative_range}. Defaults to false
+#       # Within {positive_range}, Sanity gained is the result of ({gain} * (factor - lower limit of {positive_range}) / (upper limit of {positive_range} - lower limit of {positive_range}))
+#       # Within {negative_range}, Sanity lost is the result of ({loss} * (upper limit of {negative_range} - factor) / upper limit of {negative_range} - lower limit of {negative_range})
+#       # Essentially, the deeper into the positive/negative ranges the factor is, the closer to {gain}/{loss} the sanity change will be.
+#       # Because calculations are based on range maximums and minimums, you should explicitly set the "logical limits"
+#       #   e.g. for LIGHT, set the limits to 0..3 and 10..15 instead of ..3 and 10.. since the light level of a block can only be between 0 and 15.
+#       #   if either end of the range goes on for infinity, the raw value of the factor result will be used (e.g. result will be multiplier * original result)
+
+
+# PREDICATES are sub-factors that some factors have. The types include Block, Item, Inventory, Entity, Potion Effect, and Damage
+
+# ENTITY PREDICATE
+# entity:
+#   entities: List of entity types. https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
+#     - WOLF
+#     - VILLAGER
+#     - PLAYER
+#   distance: RANGE. Predicate fails if not within this many blocks. Defaults to ..10.
+#   only_targeting. true|false. Only consider entities that are targeting the player. Only applies to mobs and players.
+#   tags: List of strings. Entities must have all of these tags in order to count. Defaults to none.
+#   match_any_tag: true|false. Defaults to false
+#     # If true, select entities that have any of the listed scoreboard tags
+#     # If false, only select entities that have all the listed scoreboard tags
+#   attributes: Map of attributes and ranges. Entities must have all of these attributes within the specified ranges in order to count. Defaults to none
+#     # Attribute list: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/attribute/Attribute.html
+#   match_any_attribute: true|false. Defaults to false
+#     # If true, select entities that have any of the listed attributes
+#     # If false, only select entities that have all the listed attributes
+#   block: # Block Predicate
+#   anchor: Choose from one of the following. Defaults to FEET. This determines which block in relation to the player gets evaluated.
+#     # EYES (block at your head)
+#     # FEET (block at your legs)
+#     # EYES_AND_FEET (both of the previous must meet the conditions)
+#     # STANDING_ON (block below feet)
+#     # ABOVE_HEAD (block above eyes)
+#   potion: Potion Effect Predicate # Note that this will be ignored / always pass against non-living entities (entities that cannot have potion effects)
+#   inventory: Inventory Predicate
+#   item_count: RANGE. Number of matching items from inventory for this factor to be valid
+#   scores:
+#     - test_objective: ..5 # Name of the scoreboard object and the range it must be within
+#     - test_objective2: 6..20 # Note that if the objective does not exist, it will be ignored/succeed
+#   match_any_score_range: true|false. false if ALL scores ranges must be met. true if ANY scores ranges can be met. Defaults to false.
+#   properties: List of Property: value combinations
+#     - property: value
+#     # Property options (With accepted synonyms in (). By default all property options can be interpreted with the _'s replaced by - or nothing. The case also does not matter.):
+#     #  IS_IMMUNE_TO_ZOMBIFICATION("IsImmuneToZombification") - For Piglins and Hoglins
+#     #      Expected values: true|false
+#     #  SIZE("Size") - For Slimes and Magma Cubes
+#     #      Expected values: 1..4
+#     #  VARIANT("Variant","Variety","Type","Pattern","Style","Gene","MainGene") - For Axolotls, Foxes, Horses (Pattern), Llamas, Mooshrooms, Parrots, Rabbits, Wolves, Cats, Frogs, Pigs, Cows, Chickens, Zombie Nautiluses, Villagers, Zombie Villagers, Salmon, Pandas (Main Gene), and Tropical Fish
+#     #      Expected values: For Axolotls: BLUE, CYAN, GOLD, LUCY, WILD
+#     #                       For Foxes: RED, SNOW
+#     #                       For Horses: BLACK_DOTS, NONE, WHITE, WHITE_DOTS, WHITEFIELD
+#     #                       For Llamas: BROWN, CREAMY, GRAY, WHITE
+#     #                       For Mooshrooms: BROWN, RED
+#     #                       For Parrots: BLUE CYAN, GRAY, GREEN, RED
+#     #                       For Rabbits: BLACK, BLACK_AND_WHITE, BROWN, GOLD, SALT_AND_PEPPER, THE_KILLER_BUNNY, WHITE
+#     #                       For Wolves: ASHEN, BLACK, CHESTNUT, PALE, RUSTY, SNOWY, SPOTTED, STRIPED, WOODS
+#     #                       For Cats: ALL_BLACK, BLACK, BRITISH_SHORTHAIR, CALICO, JELLIE, PERSIAN, RAGDOLL, RED, SIAMESE, TABBY, WHITE
+#     #                       For Frogs, Cows, Pigs, Chickens: COLD, TEMPERATE, WARM
+#     #                       For Zombie Nautiluses: TEMPERATE, WARM
+#     #                       For Salmon: LARGE, MEDIUM, SMALL
+#     #                       For Villagers and Zombie Villagers: DESERT, JUNGLE, PLAINS, SAVANNA, SNOW, SWAMP, TAIGA
+#     #                       For Pandas: AGGRESSIVE, BROWN, LAZY, NORMAL, PLAYFUL, WEAK, WORRIED
+#     #                       For Tropical Fish: BETTY, BLOCKFISH, BRINELY, CLAYFISH, DASHER, FLOPPER, GLITTER, KOB, SNOOPER, SPOTTY, STRIPEY, SUNSTREAK
+#     #  COLOR("Color","Colour","Oxidization","Shivering","VillagerLevel") - For Sheep, Shulkers, Horses (Color), Copper Golems (Oxidization), Wolves (Collar), Cats (Collar), Striders (Shivering), Villagers (Profession level), and Tropical Fish
+#     #      Expected values: For Sheep, Shulkers, Wolves, Cats, and Tropical Fish: https://jd.papermc.io/paper/1.21.11/org/bukkit/DyeColor.html
+#     #                       For Horses: BLACK, BROWN, CHESTNUT, CREAMY, DARK_BROWN, GRAY, WHITE
+#     #                       For Copper Golems: UNAFFECTED, EXPOSED, WEATHERED, OXIDIZED
+#     #                       For Striders: Shivering or true|false
+#     #                       For Villagers: 1,Novice,Grey,Gray,Stone, 2,Apprentice,Brown,Beige,Iron, 3,Journeyman,Yellow,Lemon,Gold, 4,Expert,Green,Lime,Emerald, 5,Master,Blue,Cyan,Diamond
+#     #  SECONDARY_COLOR("SecondaryColor","SecondaryColor","PatternColor","PatternColour") - For Tropical Fish
+#     #      Expected values: https://jd.papermc.io/paper/1.21.11/org/bukkit/DyeColor.html
+#     #  SOUND("Sound","SoundVariant","Screaming") - For Wolves and Goats (Screaming)
+#     #      Expected values: Wolves: ANGRY, BIG, CLASSIC, CUTE, GRUMPY, PUGLIN, SAD
+#     #                       Goats: Screaming or true|false
+#     #  TAME("Tame","Tamed","Trusting","Trusted","Safe") - For any tameable mob, Ocelots, Foxes, Dolphins, Allays, and Iron Golems (Tame if created by player)
+#     #      Expected values: true|false
+#     #  BABY("Baby","Young") - For any mob that can be a baby
+#     #      Expected values: true|false
+#     #  PROFESSION("Profession","Job","Occupation") - For Villagers and Zombie Villagers
+#     #      Expected values: https://jd.papermc.io/paper/1.21.11/org/bukkit/entity/Villager.Profession.html
+#     #  HIDDEN_GENE("HiddenGene","RecessiveGene","SecondaryGene") - For Pandas
+#     #      Expected values: AGGRESSIVE, BROWN, LAZY, NORMAL, PLAYFUL, WEAK, WORRIED
+#     #  SHEARED("Sheared","Naked","Derp","NoPoppy") - For Sheep, Bogged (Mushroom), Snow Golems (Pumpkin), and Copper Golems (Poppy)
+#     #      Expected values: true|false
+#     #  HONEYED("HasNectar","Nectar","Pollinating","Waxed") - For Bees and Copper Golems (waxed)
+#     #      Expected values: true|false
+#     # CAN_PICKUP_LOOT("Can_Pick_Up_Loot")
+#     # GLOWING("Glowing")
+#     # VISUAL_FIRE("Visual_Fire","Has_Visual_Fire")
+#     # INVULNERABLE("Invulnerable","Invuln","Invincible")
+#     # LEFT_HANDED("Left_Handed","Lefty")
+#     # AI("AI","Has_AI")
+#     # GRAVITY("Gravity","Grav")
+#     # PERSISTENT("Persistent")
+#     # SILENT("Silent")
+#   selector: an entity selector without the @X, as the selector will always be evaluated as the entity as @s (e.g. [predicate=my_pack:cool_predicate]). Optional. Format: https://minecraft.wiki/w/Target_selectors. This should only be used if no other property can achieve your purposes, especially on factors that will get called frequently (such as jump event or scheduled-factors). Optimization tips: https://minecraftcommands.github.io/wiki/optimising#optimize-selectors, https://minecraft.wiki/w/Tutorial:Optimizing_a_data_pack
+#   vehicle: Entity Predicate for the entity's vehicle.
+#   passenger: Entity Predicate. Passes if ANY of the entity's passengers pass.
+#   conditional_group: Conditional Group Factor. Only applies to the entity if the entity is a player
+
+# BLOCK PREDICATE
+#   block:
+#     blocks: List of possible block types or tags. Vanilla: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html https://minecraft.wiki/w/Block_tag_(Java_Edition)
+#       - FURNACE
+#       - CRAFTING_TABLE
+#       - campfires
+#       - "minecraft:buttons"
+#       - "datapack_namespace:custom_block_tag"
+#     block_states: List of block states https://minecraft.wiki/w/Block_states
+#       # If the target block has this block state, it must match. Multiple valid options can be provided per state.
+#       - "lit=true"
+#       - "facing=north"
+#       - "facing=south"
+#     biomes: List of biomes https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/Biome.html
+#       - "minecraft:badlands"
+#       - beach
+#       - "custom_namespace:custom_biome"
+#     structures: List of structures https://jd.papermc.io/paper/1.21.11/org/bukkit/generator/structure/StructureType.html. Note: Structure tags do NOT work here.
+#       - "minecraft:buried_treasure"
+#       - desert_pyramid
+#       - "custom_namespace:custom_structure"
+#     worlds: List of worlds
+#       - "minecraft:overworld"
+#       - the_nether
+#       - "custom_namespace:custom_dimension"
+#     x: RANGE. Acceptable range for the x coordinate of the block. Optional.
+#     y: RANGE. Acceptable range for the y coordinate of the block. Optional.
+#     z: RANGE. Acceptable range for the z coordinate of the block. Optional.
+#     power: RANGE. Acceptable range of the redstone power level of the block. Optional.
+#     inventory: Inventory Predicate. Use {slot_category} Inventory, Storage, or Specific Slot only. Ignored if this block is not a container
+#     item_count: How many items should pass {inventory}. Defaults to 0..
+
+# ITEM STACK PREDICATE
+#   item:
+#     items: List of item types or tags the evaluated items could be. Vanilla tags: https://minecraft.wiki/w/Item_tag_(Java_Edition)
+#       - shears
+#       - "minecraft:bee_nest"
+#       - "#boats"
+#       - "#minecraft:swords"
+#       - "custom_namespace:custom_item_tag"
+#     enchantments: Enchantments with a valid level range
+#       sharpness: 1.. # Sharpness levels I +
+#       efficiency: 2..
+#     match_all_enchantments: true|false. Defaults to false
+#     components: List of item components that the item could have. https://minecraft.wiki/w/Data_component_format#List_of_components
+#       # To pass, the targeted item stack must pass at least one of these options. When components are in the same entry, the item must have ALL the specified components in that string for the entry to pass.
+#       - "[attribute_modifiers=[{type: \"minecraft:scale\", slot: \"hand\", id:\"example:grow\", amount:4, operation: \"add_multiplied_base\"}]]"
+#       - "consumable={consume_seconds:3.0,animation:\"eat\",sound:\"entity.generic.eat\",has_consume_particles:true,on_consume_effects:[{type:\"minecraft:clear_all_effects\"}]}"
+#       - "custom_data=" # Nothing after '=' indicates to only check if this item component exists on the item at all. You can also leave out the '=' entirely.
+#       - "jukebox_playable=!" # '=!' means that this item is invalid if the component exists at all. NOT to be confused with !jukebox_playable, which removes the component.
+#       # If you are unsure how to format an item component string, you can use the command "/sanity debug getItemComponentString" to get the component string for your currently held item.
+#     amount: The item amount of the item stack must be within this range. Defaults to ..1
+#     cooldown: Range. If the item has a cooldown, the number of ticks left must fall within this range. Defaults to 0..
+#     potion: Potion Predicate. Ignored if this item does not have associated potion effects
+#     match_all_potion_effects: true|false Whether ALL associated potion effects should pass {potion}. Defaults to false
+#     pages_contain: List of strings for contents of a book. Ignored if the item is not a book.
+#     contained_in_all_pages: true|false Whether at least one of {pagesContain} must be present on EVERY page. Defaults to false
+#     bundle_items: Item Stack Predicate. Ignored if item is not a bundle. Tests against the contents of the bundle
+#     bundle_item_count: Range. How many items in the bundle must pass {bundle_items}. Defaults to 0..
+#     block: Block Predicate. If this item is a block, evaluate it.
+
+# INVENTORY PREDICATE
+#   inventory:
+#     slot_category: Choose from one of the following. Defaults to INVENTORY
+#       # INVENTORY: Passes if any items in the inventory meet all conditions
+#       # STORAGE: Passes if any items in the inventory, excluding equipment slots such as armor and offhand, meet all conditions
+#       # HOTBAR: Passes if any items in the hotbar meet all conditions
+#       # EQUIPMENT: Passes if any items in armor slots, or hands meet all conditions. For manifestations, the mainhand is not included in this category
+#       # HEAD
+#       # CHEST
+#       # LEGS
+#       # FEET
+#       # BODY: Passes if any items in armor slots meet all conditions
+#       # SADDLE: Passes if any items in a saddle-able mob or a happy ghast's saddle/harness meets all conditions
+#       # HANDS: Passes if any items in the mainhand or offhand meet all conditions
+#       # MAINHAND: Passes if the item in the mainhand meets all conditions
+#       # OFFHAND: Passes if the item in the offhand meets all conditions
+#       # SPECIFIC_SLOTS: Passes if the items in the slot numbers specified by specific_slots meets all conditions
+#       # CONTENTS: Specifically for item frames, item entities, item displays, fireworks, arrows, and tridents
+#     specific_slots: List of Ranges. If using SPECIFIC_SLOTS this specifies the inventory slot numbers to target. Ignored otherwise. Use https://mcutils.com/inventory-slots to help figure out specific slot numbers
+#     item: Item Stack Predicate
+#     count_item_amounts: true|false. Defaults to true
+#       # If true, the number range provided will be the number of total items in the targeted slots.
+#       # If false, the number range provided will only be the number of slots that meet the criteria, regardless of the amount in the slot.
+#       # Note that air always has the amount of 0. So if you're looking for empty slots/air, make sure to set this to false.
+
+# POTION EFFECT PREDICATE
+#   effects: List of valid potion effects (https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html). Required
+#     # Players must have this potion effect type for this factor to apply
+#   amplifier: RANGE The matching potion effect must be included in this range. Omit if it doesn't matter
+#   duration: RANGE The matching potion effect must be included in this range. Omit if it doesn't matter
+#   ambient: true|false Whether the matching potion effect should or should not be ambient. Omit if it doesn't matter
+#   particles: true|false Whether the matching potion effect should have particles showing. Omit if it doesn't matter
+#   icon: true|false Whether the matching potion effect should have the icon showing. Omit if it doesn't matter
+
+# DAMAGE EVENT PREDICATE
+#   use_final_damage: true|false. If false, use the damage before reductions are applied (e.g. resistance/armor). If true, use damage after resistances are applied. Defaults to true. Ignored if not used in a numeric factor
+#   victim: Entity Predicate. Evaluated against the entity that got damaged.
+#   types: List of valid damage types. Can include custom damageTypes from datapacks using "custom_namespace:custom_damage_type". Vanilla types: https://jd.papermc.io/paper/1.21.11/org/bukkit/damage/DamageType.html. If omitted, all damage types are valid
+#   source:
+#     entity: Entity Predicate. The entity that caused the damage. Ignored if damage was not caused by an entity.
+#     direct: true|false. If true, {entity} predicate is evaluated against the direct damaging entity (e.g. a projectile or melee attacker). If false, evaluated against the ultimately responsible entity (e.g. skeleton who shot an arrow). Defaults to false
+#     block: Block Predicate. The block that caused the damage (e.g. cactus, magma block). Ignored if damage was not caused by a block or if evaluating a kill event.

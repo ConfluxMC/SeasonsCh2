@@ -1,0 +1,114 @@
+manifestations:
+  any_manifestation:
+    type: group
+    types:
+      - sound
+      - tp
+      - respawn
+      - close_menu
+      - fire
+      - freeze
+      - air_bubbles
+      - potion_effect
+      - drop
+      - swap
+      - entities_stare
+      - stare_at
+      - attribute
+      - velocity
+      - swing
+      - damage
+      - message
+      - fake_sanity_bar
+      - save_state_restore
+      - sanity_multiplier
+      - dummy
+    manifest:
+      type: advancement
+      advancements:
+        sanity:manifestation: []
+  sound:
+    type: group
+    types:
+      - sound
+    manifest:
+      type: advancement
+      advancements:
+        sanity:auditory_hallucination: []
+  save_state_restore:
+    type: group
+    types:
+      - save_state_restore
+    manifest:
+      type: advancement
+      advancements:
+        sanity:deja_vu: []
+  freeze:
+    type: group
+    types:
+      - freeze
+    manifest:
+      type: advancement
+      advancements:
+        sanity:freeze: []
+  stared:
+    type: group
+    types:
+      - entities_stare
+    manifest:
+      type: advancement
+      advancements:
+        sanity:stare: []
+  fire:
+    type: group
+    types:
+      - fire
+    manifest:
+      type: advancement
+      advancements:
+        sanity:self_immolation: []
+  fakeBar:
+    type: group
+    types:
+      - fake_bar
+    manifest:
+      type: advancement
+      advancements:
+        sanity:fake_bar: []
+  drop:
+    type: group
+    types:
+      - drop
+    manifest:
+      type: advancement
+      advancements:
+        sanity:drop_items: []
+  messages:
+    type: group
+    names:
+      - he/social:force_send_message
+    manifest:
+      type: advancement
+      advancements:
+        sanity:send_message: []
+  high_sanity:
+    conditions:
+      thresholds:
+        - 95..
+    type: advancement
+    advancements:
+      sanity:high_sanity: []
+  low_sanity:
+    conditions:
+      thresholds:
+        - ..-95
+    type: advancement
+    advancements:
+      sanity:low_sanity: []
+  phantom_kiss_advancement:
+    type: next_event
+    event_factor: he/phantoms:kissed
+    manifest:
+      type: advancement
+      advancements:
+        sanity:phantom: []

@@ -6,12 +6,23 @@
       "conditions": {
         "entity": {
           "type": "minecraft:skeleton",
+          "nbt": {
+            "Silent": true,
+            "Tags": [
+              "ghost"
+            ]
+          },
           "equipment": {
             "chest": {
               "items": "minecraft:chainmail_chestplate"
             }
           },
-          "effects": {}
+          "effects": {
+            "minecraft:invisibility": {
+              "duration": -1,
+              "visible": false
+            }
+          }
         }
       }
     }

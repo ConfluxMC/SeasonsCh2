@@ -1,0 +1,10 @@
+manifestations:
+  close_your_menus:
+    conditions:
+      chance: 0.005
+      thresholds:
+        - ..-85
+      exclude:
+        - safe_gui
+    type: close_menu
+    only_inventories: false

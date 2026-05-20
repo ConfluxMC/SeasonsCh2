@@ -38,7 +38,6 @@
               "destination": "minecraft:ancient_city",
               "decoration": "minecraft:banner_cyan",
               "zoom": 1,
-              "search_radius": 50,
               "skip_existing_chunks": false
             }
           ]

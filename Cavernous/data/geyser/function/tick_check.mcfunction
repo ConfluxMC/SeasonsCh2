@@ -6,4 +6,4 @@ execute if score .global geyser.uninstalled matches 0 run scoreboard players set
 
 execute at @a[predicate=cavernous:in_geyser_biome] if score .global geyser.uninstalled matches 1 run fill ~25 ~3 ~25 ~-25 ~-8 ~-25 basalt replace structure_void
 
-execute if score .global geyser.uninstalled matches 1 run kill @e[type=armor_stand,tag=geyser]
+execute if score .global geyser.uninstalled matches 1 run kill @e[type=block_display,tag=geyser]

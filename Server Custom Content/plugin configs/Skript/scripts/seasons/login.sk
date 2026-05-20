@@ -1,0 +1,93 @@
+command /hub:
+    aliases: /h
+    executable by: players
+    trigger:
+        set {isGoingToHub.%player%} to true
+        transfer player to server "confluxmc.cc"
+
+command /spawn:
+    executable by: players
+    trigger:
+        teleport player to spawn of "world"
+
+on quit:
+    if {isGoingToHub.%event-player%} is set:
+        set quit message to "&e%event-player% went to the hub"
+        delete {isGoingToHub.%event-player%}
+
+on first join:
+    send "&eWelcome to &bSeasons&e! Use &7/menu&e to get started!" to player
+
+command /daily-logins-add <offline player>:
+    executable by: console
+    trigger:
+        set {_today} to now formatted as "yyyyMMdd" # Most servers *should* be set to UTC regardless of actual, so if we transfer again this hopefully should not be a problem.
+        set {_added} to "%arg-1%,"
+        if {logins::%{_today}%} is set:
+            add ",%uuid of arg-1%" to {logins::%{_today}%}
+        else:
+            set {logins::%{_today}%} to "%uuid of arg-1%"
+
+
+command /daily-logins-clear [<string>]:
+    permission: server.admin
+    trigger:
+        if arg-1 is "confirm":
+            delete {logins::*}
+            send "Daily logins have been deleted." to sender
+        else:
+            send "Are you sure you want to &cpermanently&r delete daily logins? Send &7/daily-logins-clear confirm&r to confirm." to sender
+
+command /daily-logins-on [<string>]:
+    permission: server.admin
+    trigger:
+        if arg-1 is not set:
+            set {_report} to "&5Daily Logins"
+            loop {logins::*}:
+                add "%nl%&b%loginKeyToDate(loop-index)% " to {_report}
+                loop loop-value split at ",":
+                    add "%loop-value-2 parsed as offline player% " to {_report}
+            send {_report} to sender
+        else:
+            set {_date} to loginKeyToDate(arg-1)
+            if {_date} is set:
+                set {_report} to "&5Daily Logins on &b%{_date}%"
+                loop {logins::%arg-1%} split at ",":
+                    add "%nl%%loop-value parsed as offline player% " to {_report}
+                send {_report} to sender
+            else:
+                send "&cInvalid key" to sender
+on tab complete of "/daily-logins-on":
+	set tab completions for position 1 to indexes of {logins::*}
+    
+command /daily-logins-of <offline player>:
+    permission: server.admin
+    trigger:
+        set {_report} to "&5Daily Logins of &b%arg-1%"
+        set {_count} to 0
+        loop {logins::*}:
+            if loop-value contains "%uuid of arg-1%":
+                add "%nl%&b%loginKeyToDate(loop-index)%" to {_report}
+                add 1 to {_count}
+        if {_count} is 1:
+            set {_times} to "day"
+        else:
+            set {_times} to "different days"
+        add "%nl%&b%arg-1% &5has logged in on &a%{_count}% &5%{_times}%." to {_report}
+        send {_report} to sender
+on tab complete of "/daily-logins-of":
+    set tab completions for position 1 to offline players
+
+function getDailyLoginsOf(p: offlineplayer):: integer:
+    set {_count} to 0
+    loop {logins::*}:
+        if loop-value contains "%uuid of {_p}%":
+            add 1 to {_count}
+    return {_count}
+
+function loginKeyToDate(key: string):: date:
+    if {logins::%{_key}%} is set:
+        set {_year} to substring of {_key} from index 1 to index 4
+        set {_month} to substring of {_key} from index 5 to index 6
+        set {_day} to substring of {_key} from index 7 to index 8
+        return date({_year} parsed as number, {_month} parsed as number, {_day} parsed as number)

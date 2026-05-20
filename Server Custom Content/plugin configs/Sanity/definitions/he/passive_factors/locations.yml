@@ -1,0 +1,146 @@
+factors:
+  scheduled:
+    caught_in_a_web:
+      type: condition_group
+      change: -0.02
+      limit: -40
+      any:
+        eyes:
+          type: player
+          entity:
+            anchor: EYES
+            block:
+              blocks:
+                - cobweb
+    in_deeper_dark:
+      type: condition_group
+      change: -0.05125
+      limit: -80
+      all:
+        scary_dd:
+          type: player
+          entity:
+            block:
+              worlds:
+                - "deeper_dark:deeper_dark"
+        safe_dd:
+          type: condition_group
+          invert: true
+          any:
+            in_oasis:
+              type: player
+              entity:
+                block:
+                  biomes:
+                    - "deeper_dark:deep_oasis"
+            at_portal_platform:
+              type: player
+              entity:
+                block:
+                  structures:
+                    - "deeper_dark:portal_platform"
+                    - "deeper_dark:portal_platform_cavern"
+    in_deep_oasis:
+      type: player
+      change: 0.04
+      limit: 40
+      entity:
+        block:
+          biomes:
+            - "deeper_dark:deep_oasis"
+    near_sniffer_in_deep_oasis:
+      type: condition_group
+      change: 0.215
+      limit: 50
+      all:
+        in_deep_oasis:
+          type: player
+          entity:
+            block:
+              biomes:
+                - "deeper_dark:deep_oasis"
+        near_sniffer:
+          type: numeric_conditional
+          numeric_range: 1..
+          numeric_factor:
+            type: near_entities
+            entity:
+              distance: ..8
+              entities:
+                - sniffer
+    riding_warm_strider_in_deeper_dark:
+      type: self
+      change: 0.125
+      limit: 50
+      entity:
+        vehicle:
+          entities:
+            - strider
+          properties:
+            - shivering: false
+          block:
+            worlds:
+              - "deeper_dark:deeper_dark"
+    in_deep_dark:
+      type: player
+      change: -0.0135
+      limit: -40
+      entity:
+        block:
+          biomes:
+            - "minecraft:deep_dark"
+    in_undergrowth:
+      type: player
+      change: -0.0135
+      limit: -40
+      entity:
+        block:
+          biomes:
+            - "cavernous:the_undergrowth"
+    in_myst:
+      change: -0.0425
+      limit: -80
+      type: player
+      entity:
+        block:
+          worlds:
+            - "cavernous:the_myst"
+    in_citadel:
+      type: player
+      change: -0.095
+      limit: -60
+      entity:
+        block:
+          structures:
+            - "cavernous:the_citadel"
+            - "cavernous:the_monolith"
+    in_priest_arena:
+      type: player
+      change: -0.125
+      limit: -100
+      entity:
+        block:
+          structures:
+            - "cavernous:final_arena"
+    in_draining_room:
+      type: near_entities
+      loss: 0.05
+      min: -65
+      negative_range: 2..
+      entity:
+        distance: ..8
+        entities:
+          - marker
+        tags:
+          - draining
+    near_remnant_interaction:
+      type: near_entities
+      loss: 1
+      min: -80
+      negative_range: 1..
+      entity:
+        distance: ..4
+        entities:
+          - interaction
+        tags:
+          - remnant

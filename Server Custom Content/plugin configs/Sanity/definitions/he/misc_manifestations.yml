@@ -1,0 +1,126 @@
+manifestations:
+  well_rested_reward:
+    conditions:
+      chance: 1
+      thresholds:
+        - 70.. # Reward for staying somewhat sane
+      condition_group:
+        all:
+          is_rested:
+            type: numeric_conditional
+            numeric_range: 720..1440 # Sleep every 24 minutes to maintain this reward (but on a 12-minute cooldown)
+            numeric_factor:
+              type: numeric_special
+              value: rest
+              multiplier: 0.05 # Transform ticks into seconds for easier reading
+      exclude:
+        - hardcore
+    type: next_event # This type of manifestation won't immediately have any effects. Instead, when conditions above are met it will remember and wait for the specified event_factor to be triggered. When that happens, then the manifest within the manifest will manifest.
+    event_factor: he/passive_factors/well_being:zzz
+    attempts: 1 # How many times the event-factor can trigger without satisfying the condition_group below before forgetting about this manifestation. Defaults to 1
+    condition_group: # condition group to evaluate when the event-factor gets triggered. Optional
+      all:
+        is_rested:
+          type: numeric_conditional
+          numeric_range: ..1440 # Make sure player is still well rested when returning to sleep
+          numeric_factor:
+            type: numeric_special
+            value: rest
+            multiplier: 0.05 # Transform ticks into seconds for easier reading
+    manifest:
+      type: sequence
+      first:
+        type: potion
+        potion:
+          effects:
+            - haste
+            - regeneration
+            - health_boost
+          duration: 14400
+          icon: true
+          particles: false
+      then:
+        type: advancement
+        advancements:
+          sanity:good_manifestation: []
+  chill:
+    conditions:
+      chance: 0.005
+      thresholds:
+        - ..-60
+    type: freeze
+    ticks: 60..140[
+    add: true
+  drop_items_from_hotbar:
+    conditions:
+      chance: "0.0003"
+      thresholds:
+        - ..-80
+    type: drop_item
+    amount_of_stacks_to_drop: 1
+    amount_to_drop_per_stack: 99 # Range. Amount of items in the stack to drop. Drops the whole stack if above maximum. Defaults to 99
+    inventory: # Inventory Predicate. Selects which items can be thrown
+      slot_category: HOTBAR
+      item:
+        amount: 1.. # Amount greater than 0 will exclude air from being selected
+  unwilling_arsonist:
+    conditions:
+      chance: "0.00025"
+      thresholds:
+        - ..-92
+      exclude:
+        - reduced_frights
+    type: fire # Sets the player on fire
+    ticks: 20..80 # How many ticks the player will be on fire. Defaults to 10..80
+    add: true # Whether to add to the player's existing fire ticks. Defaults to true
+    use_flint: true # If true and if one of the player's hands are free: The player will get a damaged flint and steel, and set themselves on fire. Also setting the block they are at on fire if possible. Defaults to false
+  struggling_for_air:
+    conditions:
+      chance: "0.0005"
+      thresholds:
+        - ..-50
+    type: air # Set the player's remaining air
+    ticks: 60..120 # How many ticks of air the player will have left
+  being_pushed_around:
+    conditions:
+      chance: "0.0001"
+      thresholds:
+        - ..-70
+    type: velocity # Adds random value within {x} {y} and {z} to the player's velocity vector
+    x: -0.2..0.2 # Defaults to 0
+    y: -0.2..0.2 # Defaults to 0
+    z: -0.2..0.2 # Defaults to 0
+  swing_hand:
+    conditions:
+      chance: 0.005
+      thresholds:
+        - ..0
+    type: swing
+    offhand: false
+  im_being_watched_by_animals:
+    conditions:
+      chance: "0.0005"
+      thresholds:
+        - ..-90
+    type: entities_stare
+    duration: 200 # How long entities will keep staring. Maximum is 600 ticks (30 seconds). Defaults to 50..100 (2.5..5 seconds)
+    entity: # Distance can be specified but the maximum is 64
+      entities:
+        - chicken
+        - mooshroom
+        - cow
+        - pig
+        - fox
+        - wolf
+        - cat
+        - parrot
+        - frog
+        - axolotl
+        - bee
+        - polar_bear
+        - panda
+        - drowned
+        - zombie_horse
+        - skeleton_horse
+        - llama
+        - armadillo

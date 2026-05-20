@@ -7,7 +7,8 @@
         "element_type": "minecraft:single_pool_element",
         "projection": "rigid",
         "location": "deeper_dark:portal_platform_oasis",
-        "processors": []
+        "processors": [],
+        "override_liquid_settings": "ignore_waterlogging"
       }
     }
   ]

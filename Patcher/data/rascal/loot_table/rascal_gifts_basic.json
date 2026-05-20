@@ -6,6 +6,50 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "minecraft:raw_iron",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              },
+              "add": true
+            },
+            {
+              "function": "minecraft:furnace_smelt",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cocoa_beans",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:mangrove_log",
           "weight": 15,
           "functions": [
@@ -45,7 +89,8 @@
                 "type": "minecraft:uniform",
                 "min": 3,
                 "max": 12
-              }
+              },
+              "add": true
             },
             {
               "function": "minecraft:furnace_smelt",
@@ -125,7 +170,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:blaze_rod",
-          "weight": 7,
+          "weight": 6,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -140,7 +185,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:skeleton_skull",
-          "weight": 3
+          "weight": 2
         },
         {
           "type": "minecraft:item",

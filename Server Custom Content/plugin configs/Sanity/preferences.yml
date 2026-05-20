@@ -1,0 +1,10 @@
+preference_flags:
+#  - NO_FLASHING: Disables or significantly reduces flashing visuals
+#  - QUIET: Excludes loud manifestations.
+#  - ARACHNOPHOBIA: Disables manifestations that may trigger arachnophobia.
+  - REDUCED_FRIGHTS: Reduces the scare factor of some manifestations.
+  - SAFE_GUI: Prevents sanity from opening or closing menus.
+  - NO_FAKE_LAG: Disable all manifestations that simulate lag.
+  - NO_FAKE_MESSAGES: Disable fake messages from being sent and seen.
+  - HARDCORE: Disable all positive manifestations.
+  - IMMERSIVE_SANITY_BAR: If enabled, the sanity bar will only appear when holding a clock, sleeping, or looking into water.

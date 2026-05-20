@@ -235,24 +235,9 @@
 			},
 			"entries": [
 				{
-					"type": "minecraft:item",
-					"name": "minecraft:tipped_arrow",
+					"type": "minecraft:loot_table",
+					"value": "cavernous:items/chain_arrow",
 					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"potion_contents": {"custom_color": 4080476},
-								"custom_name": {
-									"text": "Chain Arrow",
-									"italic": false
-								},
-								"lore": [
-									"Shoot to create a climbable chain",
-									"rope."
-								],
-								"tooltip_display": {"hidden_components":["potion_contents"]}
-							}
-						},
 						{
 							"function": "minecraft:set_count",
 							"count": {
@@ -263,20 +248,9 @@
 					]
 				},
 				{
-					"type": "minecraft:item",
-					"name": "minecraft:tipped_arrow",
+					"type": "minecraft:loot_table",
+					"value": "cavernous:items/torch_arrow",
 					"functions": [
-						{
-							"function": "minecraft:set_components",
-							"components": {
-								"potion_contents": {"custom_color": 16763190},
-								"custom_name": {
-									"text": "Torch Arrow",
-									"italic": false
-								},
-								"tooltip_display": {"hidden_components":["potion_contents"]}
-							}
-						},
 						{
 							"function": "minecraft:set_count",
 							"count": {

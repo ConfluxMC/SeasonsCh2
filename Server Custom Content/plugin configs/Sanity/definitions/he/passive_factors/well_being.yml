@@ -1,0 +1,484 @@
+factors:
+  scheduled:
+    # Light
+    light_levels:
+      type: numeric_special
+      value: LIGHT
+      max: 60
+      min: -15
+      gain: 0.8
+      loss: 0.05
+      scale_result: true
+      positive_range: "]6..15"
+      negative_range: "0..4["
+
+    # Health
+    health_points:
+      type: numeric_special
+      value: HEALTH
+      max: 80
+      min: -50
+      gain: 0.0325
+      loss: 0.425
+      scale_result: true
+      positive_range: "13..20"
+      negative_range: "0..10"
+
+    # Hunger
+    hunger:
+      type: numeric_Special
+      value: HUNGER
+      max: 80
+      min: -50
+      gain: 0.0275
+      loss: 0.08
+      scale_result: true
+      positive_range: "]16..20" # Positive if full hunger or only missing up to 1.5 bars
+      negative_range: 0..10 # at or below 5 bars
+    
+    # Sleeping
+    rest1:
+      type: numeric_special
+      value: REST
+      max: 100
+      min: -5
+      gain: 0.075
+      loss: 0.005
+      positive_range: -7200.. # If slept less than 6 minutes ago, gain sanity
+      negative_range: ..-21600 # If awake for more than 18 minutes, start to lose sanity
+      multiplier: -1
+    rest2:
+      type: numeric_special
+      value: REST
+      min: -20
+      loss: 0.02
+      negative_range: ..-38400 # If awake for longer than 32 minutes, lose sanity on top of rest1's sanity lost
+      multiplier: -1
+    rest3:
+      type: numeric_special
+      value: REST
+      min: -40
+      loss: 0.125
+      negative_range: ..-72000 # If awake for more than an hour, really start to lose sanity
+      multiplier: -1
+    in_bed:
+      type: self
+      change: 0.125
+      limit: 20
+      entity:
+        block:
+          blocks:
+            - "#beds"
+    # Campfire
+    look_at_campfire:
+      type: look_at_block
+      limit: 90
+      change: 0.65
+      block:
+        blocks:
+          - "#minecraft:campfires"
+        block_states:
+          - "lit=true"
+    
+    # Near Lava
+    look_at_lava:
+      type: look_at_block
+      limit: -60
+      change: -0.4
+      distance: ..4
+      block:
+        blocks:
+          - lava
+    
+    # Drowning
+    running_out_of_air:
+      type: numeric_special
+      value: AIR
+      min: -80
+      loss: 1
+      scale_result: true
+      negative_range: "0..4" # Fewer than 4 seconds of air left
+      multiplier: 0.05
+    out_of_air:
+      type: numeric_special
+      value: AIR
+      min: -80
+      loss: 1.05
+      negative_range: "..1"
+    
+    # Fire / Freezing
+    on_fire:
+      type: numeric_special
+      value: fire
+      min: -100
+      loss: 0.7
+      negative_range: 1..
+    freezing:
+      type: numeric_special
+      value: freeze
+      min: -80
+      loss: 0.075
+      negative_range: "]1.."
+      scale_result: true
+      multiplier: 0.05
+
+    # Falling
+    long_fall:
+      type: condition_group
+      limit: -80
+      change: -1
+      all:
+        long_fall:
+          type: numeric_conditional
+          numeric_range: 10..
+          numeric_factor:
+            type: numeric_special
+            value: fall_distance
+        no_slow_fall:
+          type: self
+          invert: true
+          entity:
+            potion:
+              effects:
+                - slow_falling
+        no_safe_fall:
+          type: self
+          invert: true
+          entity:
+            attributes:
+              - safe_fall_distance: 10..
+      
+    # Fishing
+    fishing:
+      type: cond_special
+      value: fishing
+      limit: 87.5
+      change: 0.175
+      
+    # Animals
+    near_mid_cute_mobs:
+      type: near_entities
+      max: 80
+      gain: 0.025
+      positive_range: 1..
+      scale_result: true
+      entity:
+        distance: ..8
+        entities:
+          - cow
+          - chicken
+          - sheep
+          - pig
+          - horse
+          - skeleton_horse
+          - zombie_horse
+          - camel
+          - mule
+          - donkey
+          - goat
+          - polar_bear
+          - glow_squid
+          - tropical_fish
+          - ocelot
+          - fox
+          - armadillo
+          - bee
+          - iron_golem
+          - copper_golem
+    near_cute_mobs:
+      type: near_entities
+      max: 100
+      gain: 0.05
+      positive_range: 1..
+      scale_result: true
+      entity:
+        distance: ..8
+        entities:
+          - strider
+          - sniffer
+          - silverfish
+          - wolf
+          - cat
+          - parrot
+          - axolotl
+          - frog
+          - panda
+          - rabbit
+          - mooshroom
+          - snow_golem
+          - happy_ghast
+          - allay
+    near_rascal: # Rascals will have a flat rate, regardless of number
+      type: near_entities
+      max: 60
+      gain: 0.75
+      positive_range: 1..
+      entity:
+        distance: ..16
+        entities:
+          - ocelot
+        tags:
+          - rascal_ocelot
+    near_hostile_mobs:
+      type: near_entities
+      max: -30
+      loss: 0.05
+      negative_range: 3..
+      scale_result: true
+      entity:
+        distance: ..8
+        entities:
+          - skeleton
+          - wither_skeleton
+          - stray
+          - parched
+          - bogged
+          - zombie
+          - zombie_villager
+          - husk
+          - drowned
+          - spider
+          - cave_spider
+          - witch
+          - breeze
+          - pillager
+          - vindicator
+          - evoker
+          - vex
+          - creaking
+          - hoglin
+          - zombified_piglin
+          - zoglin
+          - guardian
+    near_very_hostile_mobs:
+      type: near_entities
+      max: -30
+      loss: 0.05
+      negative_range: 1..
+      scale_result: true
+      entity:
+        distance: ..32
+        entities:
+          - wither
+          - warden
+          - ravager
+    in_firefly_bush:
+      type: self
+      max: 60
+      gain: 0.02
+      entity:
+        block:
+          blocks:
+            - firefly_bush
+
+    wearing_ancient_mask:
+      type: self
+      change: -0.4
+      entity:
+        selector: "[predicate=!cavernous:ancient_armor/set,predicate=cavernous:ancient_armor/mask]"
+    wearing_ancient_robe:
+      type: self
+      change: -0.4
+      entity:
+        selector: "[predicate=!cavernous:ancient_armor/set,predicate=cavernous:ancient_armor/robe]"
+    wearing_ancient_leggings:
+      type: self
+      change: -0.4
+      entity:
+        selector: "[predicate=!cavernous:ancient_armor/set,predicate=cavernous:ancient_armor/leggings]"
+    wearing_ancient_boots:
+      type: self
+      change: -0.4
+      entity:
+        selector: "[predicate=!cavernous:ancient_armor/set,predicate=cavernous:ancient_armor/boots]"
+    # Not including ancient blade since damage taken from that will be contributing to sanity decrease anyway
+    holding_ancient_repeater:
+      type: self
+      change: -0.2
+      entity:
+        selector: "[predicate=!cavernous:ancient_armor/set,predicate=cavernous:holding_ancient_repeater]"
+    holding_ancient_shield:
+      type: self
+      change: -0.2
+      entity:
+        selector: "[predicate=!cavernous:ancient_armor/set,predicate=cavernous:holding_ancient_shield]"
+
+  events:
+    get_advancement:
+      type: advancement
+      limit: 60
+      change: 15
+      cycles: 50
+      any_children: true
+      advancements:
+        - "minecraft:root"
+        - "deeper_dark:root"
+        - "conflux_seasons:visible/seasons/root"
+        - "cavernous:root"
+        - "cavernous:expansion/secrets/root"
+    # Going to sleep
+    zzz:
+      type: sleep # Triggered when a player sleeps enough to pass the night
+      limit: 100
+      change: 10
+      cycles: 5
+    # Fishing
+    catch_fish:
+      type: fish
+      limit: 100
+      change: 2.4
+      cycles: 6
+      state: CAUGHT_FISH
+    bite_in_open_water:
+      type: fish
+      limit: 80
+      change: 0.00325
+      state: BITE
+      condition_group:
+        all:
+          open:
+            type: conditional_special
+            value: FISHING_OPEN_WATER
+    fail_fishing:
+      type: fish
+      limit: -20
+      change: -0.8
+      state: FAILED_ATTEMPT
+    
+    # Damage
+    ouch:
+      type: damage
+      negative_range: 2..
+      min: -80
+      loss: 0.5
+      scale_result: true
+    
+    # Fidgeting with redstone
+    clicky:
+      type: click
+      click: right
+      limit: 72.5
+      change: 0.135
+      block:
+        blocks:
+          - "#buttons"
+          - lever
+          - "#redstone_ores"
+          - repeater
+          - comparator
+          - note_block
+          - daylight_detector
+    
+    # Failing to fire/load a bow
+    bow_fail:
+      type: click
+      click: any
+      limit: -15
+      change: -0.6
+      item:
+        items:
+          - bow
+          - crossbow
+      ignore_cancelled: false
+      group:
+        all:
+          no_arrows:
+            type: numeric_conditional
+            invert: true
+            numeric_range: 1..
+            numeric_factor:
+              type: inventory
+              inventory:
+                slot_category: inventory
+                item:
+                  items:
+                    - "#arrows"
+    equipment_breaking:
+      type: durability
+      break_damage: -2121
+      negative_range: -2121
+      min: -70
+      loss: 12
+      cycles: 18
+    using_high_durability_tool:
+      type: mine
+      limit: 40
+      change: 0.125
+      condition_group:
+        all:
+          high_durability:
+            type: self
+            entity:
+              item_count: 1
+              inventory:
+                slot_category: mainhand
+                item:
+                  use_damage_percentage: true
+                  damage: ..0.35
+    # Near Death
+    near_player_death:
+      type: nearby_death
+      loss: 15
+      negative_range: ..20
+      cycles: 40
+      damage:
+        victim:
+          entities:
+            - player
+    
+    # Killing
+    kill_player:
+      type: kill
+      change: -30
+      cycles: 40
+      damage:
+        victim:
+          entities:
+            - player
+    kill_friendly_mob:
+      type: kill
+      change: -10
+      cycles: 10
+      damage:
+        victim:
+          entities:
+            - cow
+            - chicken
+            - sheep
+            - pig
+            - horse
+            - skeleton_horse
+            - zombie_horse
+            - camel
+            - mule
+            - donkey
+            - goat
+            - polar_bear
+            - glow_squid
+            - tropical_fish
+            - ocelot
+            - fox
+            - armadillo
+            - bee
+            - iron_golem
+            - copper_golem
+            - strider
+            - sniffer
+            - silverfish
+            - wolf
+            - cat
+            - parrot
+            - axolotl
+            - frog
+            - panda
+            - rabbit
+            - mooshroom
+            - snow_golem
+            - happy_ghast
+            - allay
+      
+#    bucket_clutch:
+#      type: place
+#      limit: 100
+#      change: 1
+#      cycles: 12

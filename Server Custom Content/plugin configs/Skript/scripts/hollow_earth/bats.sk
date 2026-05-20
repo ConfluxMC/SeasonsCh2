@@ -1,5 +1,5 @@
 options:
-    acceptableBatSnacks: tropical fish, cod, salmon, magma cream, slime ball, glow berries, sweet berries, honeycomb, nether wart, glow lichen, sculk vein, spider eye, fermented spider eye, melon slice, beetroot, golden carrot, sugar, rabbit, rotten flesh, and bone meal
+    acceptableBatSnacks: tropical fish, cod, salmon, slime ball, glow berries, sweet berries, honeycomb, nether wart, glow lichen, sculk vein, spider eye, fermented spider eye, melon slice, beetroot, golden carrot, sugar, rabbit, rotten flesh, and bone meal
     effectTime: 6 seconds
 
 on right click on bat:
