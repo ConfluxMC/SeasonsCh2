@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:adventure/spyglass_at_bear",
+  "parent": "minecraft:adventure/spyglass_at_ghast",
   "criteria": {
     "spyglass_at_ghast": {
       "conditions": {
@@ -15,8 +15,11 @@
                 "type": "minecraft:player",
                 "looking_at": {
                   "type": [
-                    "minecraft:happy_ghast"
-                  ]
+                    "minecraft:ghast"
+                  ],
+                  "location": {
+                    "structures": "deeper_dark:laboratory"
+                  }
                 }
               }
             }
@@ -28,20 +31,19 @@
   },
   "display": {
     "description": {
-      "translate": "advancements.adventure.spyglass_at_ghast.description"
+      "translate": "Look at The Defender through a Spyglass"
     },
     "icon": {
       "count": 1,
       "id": "minecraft:spyglass"
     },
     "title": {
-      "translate": "advancements.adventure.spyglass_at_ghast.title"
+      "translate": "Is It a Cobbled Deepslate Block?"
     }
   },
   "requirements": [
     [
       "spyglass_at_ghast"
     ]
-  ],
-  "sends_telemetry_event": true
+  ]
 }
