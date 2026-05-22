@@ -1,0 +1,8 @@
+on rightclick on sand with seagrass:
+    set {_turtle} to nearest turtle in radius 6 of player
+    if all:
+        {_turtle} is set
+        boolean tag "has_egg" of nbt of {_turtle} is true
+    then:
+        set {_home::*} to x coordinate of event-block,y coordinate of event-block, and z coordinate of event-block
+        set int list tag "home_pos" of nbt of {_turtle} to {_home::*}

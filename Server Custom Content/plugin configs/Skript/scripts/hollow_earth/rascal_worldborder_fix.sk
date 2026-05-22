@@ -1,0 +1,6 @@
+on spawn of ocelot:
+    if all:
+        scoreboard tags of event-entity contains "rascal_ocelot"
+        event-location is not within worldborder
+    then:
+        cancel event

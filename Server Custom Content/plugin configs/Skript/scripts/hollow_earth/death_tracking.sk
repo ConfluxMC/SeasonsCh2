@@ -1,0 +1,3 @@
+on death of player:
+    if event is not cancelled:
+        add 1 to {deathMessageTracking::%victim%::%death message%}

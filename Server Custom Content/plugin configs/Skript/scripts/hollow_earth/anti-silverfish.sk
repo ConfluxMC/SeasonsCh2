@@ -1,0 +1,9 @@
+on silverfish exit:
+    set {_fives} to "FiveEyesStreams" parsed as player
+    #set {_fives} to "gnago" parsed as player
+    if all:
+        {_fives} is set
+        distance between {_fives} and event-entity <= 16
+    then:
+        cancel event
+        #send "No fishies" to all players

@@ -1,0 +1,36 @@
+command /entity-count:
+    permission: server.admin
+    trigger:
+        send "Entities: %size of all entities in player's world%" to player
+
+command /living-entity-count:
+    permission: server.admin
+    trigger:
+        send "Living Entities: %size of all living entities in player's world%" to player
+
+command /drowned-count:
+    permission: server.admin
+    trigger:
+        send "Entities: %size of all entities in player's world where [input is a drowned]%" to player
+
+command /parrot-count:
+    permission: server.admin
+    trigger:
+        send "Entities: %size of all parrots in player's world%" to player
+
+
+command /entity-count-details:
+    permission: server.admin
+    trigger:
+        if sender is a player:
+            set {_world} to player's world
+        else:
+            set {_world} to world "world"
+        loop all entities in {_world}:
+            add 1 to {_entities::%type of loop-value%}
+            add 1 to {_total}
+        loop {_entities::*}:
+            send "%loop-index%: %loop-value%" to sender
+        send "Total: %{_total}%" to sender
+        send "Loaded Chunks: %size of all loaded chunks in {_world}%" to sender
+        

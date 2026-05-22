@@ -20,7 +20,18 @@ pools:
         biome: CAVERNOUS:ARID_CAVES
       - type: block
         filter:
+          - SAND
+      - type: block
+        filter:
           - WATER
+        offset1:
+          x: -8
+          y: -4
+          z: -8
+        offset2:
+          x: 8
+          y: -1
+          z: 8
       - type: entity_limit
         range: 160
         limit: 3
@@ -48,7 +59,18 @@ pools:
         biome: CAVERNOUS:DESERT_CAVES
       - type: block
         filter:
+          - SAND
+      - type: block
+        filter:
           - WATER
+        offset1:
+          x: -8
+          y: -4
+          z: -8
+        offset2:
+          x: 8
+          y: -1
+          z: 8
       - type: entity_limit
         range: 160
         limit: 3
@@ -119,21 +141,6 @@ pools:
         attributes:
           - values:
               Variant: BLACK
-  - rolls: 2
-    conditions:
-      - type: biome
-        biome: CAVERNOUS:PAINTED_CAVES
-      - type: block
-        filter:
-          - WATER
-      - type: entity_limit
-        range: 160
-        limit: 3
-        filter:
-          - TURTLE
-    entries:
-      - type: TURTLE
-        chance: 0.1
   - rolls: 3
     conditions:
       - type: biome
@@ -508,7 +515,6 @@ pools:
           - ACACIA_LEAVES
           - AZALEA_LEAVES
           - MOSS_BLOCK
-          - BAMBOO
       - type: entity_limit
         range: 160
         limit: 3

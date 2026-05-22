@@ -12,10 +12,41 @@ on right click on bat:
             add 0.01 to event-entity's scale attribute
         make event-entity persistent
         addPlaceholder(player, "specific_animal_fed", 1)
+        
+        markBatAsFed(event-entity)
+        
         apply regeneration to player for {@effectTime}
         set {_effect} to the player's active night vision effect
-        apply infinite night vision to player
-        wait {@effectTime}
-        remove night vision from player
-        subtract {@effectTime} from {_effect}
-        apply {_effect} to player
+        if {_effect} is not infinite:
+            apply infinite night vision to player
+            wait {@effectTime}
+            remove night vision from player
+            subtract {@effectTime} from {_effect}
+            apply {_effect} to player
+    if all:
+        player's tool is lead
+        size of passengers of player < 1
+        scoreboard tags of event-entity contains "recently_fed_bat"
+    then:
+        set {_adv} to "conflux_seasons:visible/seasons/batwing" parsed as advancement
+        set {_prog} to advancement progress of {_adv} for player
+        award criteria "batwing" of {_prog}
+        addPlaceholder(player,"bats_leashed",1)
+        
+        make event-entity ride player
+        apply potion effect of slow falling to player for 12 seconds:
+            hide the particles
+        wait 12 seconds
+        make event-entity dismount vehicle
+
+local function markBatAsFed(bat: livingentity):
+    add "recently_fed_bat" to scoreboard tags of {_bat}
+    wait 12 seconds
+    remove "recently_fed_bat" from scoreboard tags of {_bat}
+
+on damage of bat:
+    if all:
+        damage cause is suffocate
+        scoreboard tags of victim contains "recently_fed_bat"
+    then:
+        cancel event

@@ -138,8 +138,8 @@ command /sols-shop-init [<string>] [<boolean=true>]:
             make sender execute command "data modify storage conflux_seasons:shop items set value [{}]"
             make sender execute command "function conflux_seasons:shop/rebuild"
             
+            delete {sols_shop.items.index::*}
             if arg-2 is true:
-                delete {sols_shop.items.index::*}
                 delete {sols_shop.items.cost::*}
                 delete {sols_shop.items.name::*}
                 loop {sols_shop.players::*}:
@@ -215,6 +215,21 @@ on tab complete of "/sols-shop-set-icon":
     set tab completions for position 1 to indexes of {sols_shop.items.index::*}
     set tab completions for position 2 to "atlas_name", "blocks", "items", "celestials", "decorated_pot", "gui", "map_decorations", "paintings", and "particles"
     set tab completions for position 3 to "sprite_name", "block/", "item/", "entity/decorated_pot/", and "mob_effect/"
+
+#                            key      cost
+command /sols-shop-set-cost <string> <number>:
+    permission: server.admin
+    trigger:
+        if arg-1 is set:
+            set {_index} to {sols_shop.items.index::%arg-1%}
+            set {sols_shop.items.cost::%arg-1%} to arg-2
+            make player execute command "data modify storage conflux_seasons:shop items[%{_index}%].cost set value %arg-2%"
+            make player execute command "function conflux_seasons:shop/rebuild"
+        else:
+            send "Must specify the key!" to player
+
+on tab complete of "/sols-shop-set-cost":
+    set tab completions for position 1 to indexes of {sols_shop.items.index::*}
 
 command /sols-shop-remove <string>:
     permission: server.admin
@@ -311,8 +326,9 @@ local function solsSprite(amt: integer, s: sender, format: string = "00"):: text
         return {_cmp}
 
 local function itemString(key: string, s: sender):: text component:
-    set {_cmp} to solsSprite({sols_shop.items.cost::%{_key}%},{_s})
-    add minimessage from "{@itemClr}%{sols_shop.items.name::%{_key}%}% {@keyClr}(%{_key}%)" to {_cmp}
+    set {_cmp} to minimessage from ""
+    add solsSprite({sols_shop.items.cost::%{_key}%},{_s}) to {_cmp}
+    add minimessage from " {@itemClr}%{sols_shop.items.name::%{_key}%}% {@keyClr}(%{_key}%)" to {_cmp}
     return {_cmp}
 
 command /sols-shop-records-player [<string>] [<string>]:
@@ -404,15 +420,16 @@ command /sols-shop-records-item [<string>]:
             set {_report} to minimessage from "{@defClr}Item Purchase Records"
             set {_solsTotal} to 0
             loop indexes of {sols_shop.items.index::*}:
-                set {_plrPurchased} to 0
+                set {_plrPurchasedTotal} to 0
                 set {_key} to loop-value
                 loop {sols_shop.players::*}:
                     set {_plr} to loop-value-2
                     if {sols_shop.players::%{_plr}%::%{_key}%} is set:
                         set {_plrPurchased} to {sols_shop.players::%{_plr}%::%{_key}%}
                         add {_plrPurchased} to {_total}
+                        add {_plrPurchased} to {_plrPurchasedTotal}
                         add ({_plrPurchased} * {sols_shop.items.cost::%{_key}%}) to {_solsTotal}
-                add minimessage from "%nl%{@numClr}%formatNumber({_plrPurchased} ,"000")%%{@multStr}%" to {_report}
+                add minimessage from "%nl%{@numClr}%formatNumber({_plrPurchasedTotal},"000")%%{@multStr}%" to {_report}
                 add itemString({_key},sender) to {_report}
             if {_total} is 1:
                 set {_purchaseStr} to "purchase"

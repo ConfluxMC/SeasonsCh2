@@ -260,6 +260,7 @@ quests:
       name: '&eTowering Profits'
       lore:
       - '&7Barter with a minotaur %required_progress% times'
+      - '&7or dust %required_progress% suspicious blocks'
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
   '18': # Quest id
@@ -333,20 +334,34 @@ quests:
       - '&7Cave bears respond to fish,'
       - '&7honeycomb, and sweet berries'
       - ''
-      - '&7Progress &e%total_progress%&7/&e%required_progress%'
-  '23': # Quest id
-    type: placeholderapi_integer_seasonsquests_suspicious_blocks_dusted
-    name: Respecting the Remnants
-    required-progress: 3
+      - '&7Progress &e%total_progress%&7/&e%required_progress%'  
+  '23':
+    type: placeholderapi_integer_seasonsquests_bats_leashed
+    name: Batwing
+    required-progress: 1
     points: 1
-    difficulty: easy
+    difficulty: adventure
     item:
-      material: brush
-      name: '&eRespecting the Remnants'
+      material: lead
+      name: '&eBatwing'
       lore:
-      - '&7Dust %required_progress% suspicious blocks'
+      - '&7Feed a bat then'
+      - '&7leash it'
       - ''
-      - '&7Progress &e%total_progress%&7/&e%required_progress%'
+      - '&a%percentage_progress% %progress_bar%'
+#  '23': # Quest id
+#    type: placeholderapi_integer_seasonsquests_suspicious_blocks_dusted
+#    name: Respecting the Remnants
+#    required-progress: 3
+#    points: 1
+#    difficulty: easy
+#    item:
+#      material: brush
+#      name: '&eRespecting the Remnants'
+#      lore:
+#      - '&7Dust %required_progress% suspicious blocks'
+#      - ''
+#      - '&7Progress &e%total_progress%&7/&e%required_progress%'
   '24': # Quest id
     type: placeholderapi_integer_seasonsquests_sculk_converter_sacrifices
     name: Sacrifice at the Altar
@@ -365,12 +380,12 @@ quests:
       - '&6&lx3 &eTier Progress'
   '25': # Quest id
     type: move
-    variable:
-      root: none
-      conditions:
-        or: []
-        and:
-        - '%seasonsquests_in_deeper_dark% == true'
+ #   variable:
+ #     root: none
+ #     conditions:
+ #       or: []
+ #       and:
+ #       - '%seasonsquests_in_deeper_dark% == true'
     name: Deeper Dark Explorer
     required-progress: 800
     points: 3
@@ -380,7 +395,7 @@ quests:
       name: '&eDeeper Dark Explorer'
       lore:
       - '&7Explore the Deeper Dark'
-      - ''
+      - '&8Temporarily completable from any dimension'
       - '&a%percentage_progress% %progress_bar%'
       - ''
       - '&6&lx3 &eTier Progress'
@@ -402,11 +417,13 @@ quests:
     type: kill-mob
     variable: piglin_brute OR zombified_piglin
     name: Theseus Wannabe
-    required-progress: 15
+    required-progress: 5
     points: 1
     difficulty: combat
     item:
       material: b64:rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABnQAAj09dAALRGF0YVZlcnNpb250AAJpZHQABWNvdW50dAAKY29tcG9uZW50c3QADnNjaGVtYV92ZXJzaW9udXEAfgAGAAAABnQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAABI/dAAUbWluZWNyYWZ0OmdvbGRlbl9heGVzcQB+ABAAAAABc3IAF2phdmEudXRpbC5MaW5rZWRIYXNoTWFwNMBOXBBswPsCAAFaAAthY2Nlc3NPcmRlcnhyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAx3CAAAABAAAAABdAAObWluZWNyYWZ0OnRyaW10ADp7bWF0ZXJpYWw6Im1pbm90b3dlcjpiZWV0cm9vdCIscGF0dGVybjoibWlub3Rvd2VyOnNlYXJlZCJ9eABxAH4AFA== # Maybe replace with horns after that's made
+      item-flags:
+      - HIDE_ARMOR_TRIM
       name: '&eTheseus Wannabe'
       lore:
       - '&7Kill %required_progress% Minotauri constructs'
@@ -416,7 +433,7 @@ quests:
   '28':
     type: placeholderapi_integer_seasonsquests_spider_kills
     name: Arachnophobic
-    required-progress: 25
+    required-progress: 20
     points: 1
     difficulty: combat
     item:
@@ -445,7 +462,7 @@ quests:
   '30':
     type: placeholderapi_integer_seasonsquests_skeleton_kills
     name: Deboned
-    required-progress: 30
+    required-progress: 20
     points: 1
     difficulty: combat
     item:
@@ -454,7 +471,7 @@ quests:
       lore:
       - '&7Kill %required_progress% skeletons, strays, parched'
       - '&7bogged (&ax3&7 if in The Myst), wither skeletons (&ax3&7),'
-      - '&7skeleton horses, marble skeletons (&ax2&7),'
+      - '&7the wither (&ax15&7), skeleton horses, marble skeletons (&ax2&7),'
       - '&7veil guards (&ax2&7), ghosts (&ax3&7),'
       - '&7and %seasonsquests_priest_quest_description% (&ax15&7)'
       - ''
@@ -469,7 +486,8 @@ quests:
       material: b64:rO0ABXNyABpvcmcuYnVra2l0LnV0aWwuaW8uV3JhcHBlcvJQR+zxEm8FAgABTAADbWFwdAAPTGphdmEvdXRpbC9NYXA7eHBzcgA1Y29tLmdvb2dsZS5jb21tb24uY29sbGVjdC5JbW11dGFibGVNYXAkU2VyaWFsaXplZEZvcm0AAAAAAAAAAAIAAkwABGtleXN0ABJMamF2YS9sYW5nL09iamVjdDtMAAZ2YWx1ZXNxAH4ABHhwdXIAE1tMamF2YS5sYW5nLk9iamVjdDuQzlifEHMpbAIAAHhwAAAABnQAAj09dAALRGF0YVZlcnNpb250AAJpZHQABWNvdW50dAAKY29tcG9uZW50c3QADnNjaGVtYV92ZXJzaW9udXEAfgAGAAAABnQAHm9yZy5idWtraXQuaW52ZW50b3J5Lkl0ZW1TdGFja3NyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmFsdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAABI/dAAVbWluZWNyYWZ0OnBsYXllcl9oZWFkc3EAfgAQAAAAAXNyABdqYXZhLnV0aWwuTGlua2VkSGFzaE1hcDTATlwQbMD7AgABWgALYWNjZXNzT3JkZXJ4cgARamF2YS51dGlsLkhhc2hNYXAFB9rBwxZg0QMAAkYACmxvYWRGYWN0b3JJAAl0aHJlc2hvbGR4cD9AAAAAAAAMdwgAAAAQAAAAAnQAEW1pbmVjcmFmdDpwcm9maWxldADde3Byb3BlcnRpZXM6W3tuYW1lOiJ0ZXh0dXJlcyIsdmFsdWU6ImV5SjBaWGgwZFhKbGN5STZleUpUUzBsT0lqcDdJblZ5YkNJNkltaDBkSEE2THk5MFpYaDBkWEpsY3k1dGFXNWxZM0poWm5RdWJtVjBMM1JsZUhSMWNtVXZObVZtTjJVek1UWTVZekUwTVRBMVlURmxPRGN4WXpkbVpqWXlPRGhpTW1ZM01qVmpZamcyTjJRMllXSTRaVGRtWXpBM01EZzVNV1U0WXpjME9UQmlaaUo5ZlgwPSJ9XX10ABNtaW5lY3JhZnQ6aXRlbV9uYW1ldAAdIkhpZ2ggUHJpZXN0IFZlcmlkaWFuJ3MgSGVhZCJ4AHEAfgAU
       name: '&eThwarted'
       lore:
-      - '&7Kill %seasonsquests_priest_quest_description%'
+      - '&7Kill %seasonsquests_priest_quest_description% or'
+      - '&7%seasonsquests_defender_quest_description%'
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
       - ''
@@ -477,7 +495,7 @@ quests:
   '32':
     type: placeholderapi_integer_seasonsquests_zombie_kills
     name: Rotten To The Core
-    required-progress: 30
+    required-progress: 20
     points: 1
     difficulty: combat
     item:
@@ -560,7 +578,7 @@ quests:
       - '&a%percentage_progress% %progress_bar%'
   '37':
     type: placeholderapi_integer_seasonsquests_used_ancient_weapon
-    required-progress: 10
+    required-progress: 5
     name: Blood Magician
     points: 1
     difficulty: combat
@@ -648,6 +666,7 @@ quests:
       - '&7the Marble Pillars'
       - ''
       - '&7Progress &e%total_progress%&7/&e%required_progress%'
+      - '&8Temporarily counts any kills with the bone club'
       - ''
       - '&6&lx3 &eTier Progress'
   '43':
@@ -708,5 +727,20 @@ quests:
       lore:
       - '&7Clean a seared weapon'
       - '&7then re-sear it'
+      - ''
+      - '&a%percentage_progress% %progress_bar%'
+  '47':
+    type: placeholderapi_integer_seasonsquests_milk_non_cow
+    name: Liquid Diet
+    required-progress: 1
+    points: 1
+    difficulty: easy
+    item:
+      material: mushroom_stew
+      name: '&eLiquid Diet'
+      lore:
+      - '&7Milk a goat or'
+      - '&7get mushroom stew'
+      - '&7from a mooshroom'
       - ''
       - '&a%percentage_progress% %progress_bar%'

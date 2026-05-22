@@ -34,10 +34,37 @@ on damage:
             play sound "chakram:damage" in player category at pitch 1.25 at {_effectLoc}
             play sound "chakram:damage" in player category at volume 0.5 at pitch 2 at {_effectLoc}
             
-            award criteria "backstab" of advancement progress of ("chakram:visible/backstab" parsed as advancement) for {_ce} 
+            remove 25 from damage value of attacker's tool
+            if enchantments of {_ce}'s tool contains "chakram:harvesting" parsed as enchantment:
+                add {_mult} to food level of attacker
+                award criteria "backstab" of advancement progress of ("chakram:visible/backstab_hunger" parsed as advancement) for {_ce}
+            award criteria "backstab" of advancement progress of ("chakram:visible/backstab" parsed as advancement) for {_ce}
+            addPlaceholder({_ce},"used_ancient_weapon",1)
             
         # Remove shadowstep effects, regardless of bakcstab or not
         set score of {_ce} for objective with id "chakram_shadowstep_timer_sneak_speed" to 1
         remove 4 seconds from duration of {_ce}'s invisibility effect
         apply potion effect of glowing to {_ce} for 1 second:
             hide the particles
+
+
+on player teleport:
+    set {_chakram} to nearest item display around event-location
+    if all:
+        event-teleport cause is command
+        scoreboard tags of {_chakram} contains "chakram_entity"
+        distance between {_chakram} and event-location is 0
+    then:
+        set pose of event-entity to swimming_pose
+        loop all living entities within radius 64 of event-location:
+            if target of loop-value is player:
+                reset target of loop-value
+
+on target:
+    if all:
+        target is a player
+        target is invisible
+        size of (sneaking speed attribute modifiers of target where [modifier id of input is "chakram:shadowstepping"]) > 0
+        score of target for objective with id "chakram_shadowstep_timer_sneak_speed" >= 1
+    then:
+        cancel event
