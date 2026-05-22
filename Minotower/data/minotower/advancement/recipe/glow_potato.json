@@ -1,0 +1,37 @@
+{
+  "criteria": {
+    "items": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:blaze_powder",
+              "minecraft:glow_ink_sac",
+              "minecraft:baked_potato",
+              "minecraft:glow_lichen",
+              "minecraft:glow_berries"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minotower:glow_potato"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "items",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minotower:glow_potato"
+    ]
+  }
+}

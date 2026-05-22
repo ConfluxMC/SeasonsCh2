@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " L ",
+    "GPG",
+    "BBB"
+  ],
+  "key": {
+    "B": "minecraft:baked_potato",
+    "G": "minecraft:glow_berries",
+    "P": [
+      "minecraft:glow_ink_sac",
+      "minecraft:blaze_powder"
+    ],
+    "L": "minecraft:glow_lichen"
+  },
+  "result": {
+    "components": {
+      "minecraft:item_model": "minotower:glow_potato",
+      "minecraft:food": {
+        "nutrition": 7,
+        "saturation": 12.2
+      },
+      "minecraft:consumable": {
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:glowing",
+                "duration": 70
+              }
+            ],
+            "probability": 0.4
+          }
+        ]
+      },
+      "minecraft:item_name": "Glow Potato",
+      "minecraft:custom_data": {
+        "glow_potato": true
+      }
+    },
+    "count": 3,
+    "id": "minecraft:poisonous_potato"
+  }
+}

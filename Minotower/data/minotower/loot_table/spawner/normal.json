@@ -2,19 +2,43 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 1,
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+      },
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "value": "minotower:torchflower_seeds_edible",
-          "weight": 15,
+          "value": "minotower:glow_potato",
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3,
-                "max": 13
+                "min": 1,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:beetroot_torchflower_soup",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:torchflower_seeds_edible",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 5,
+                "max": 16
               }
             }
           ]
@@ -22,19 +46,34 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:beetroot_soup",
-          "weight": 15
+          "weight": 10
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:golden_carrot",
-          "weight": 20,
+          "weight": 25,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 15
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:apple",
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
                 "min": 2,
-                "max": 4
+                "max": 8
               }
             }
           ]
@@ -61,19 +100,90 @@
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:apple",
-          "weight": 9,
+          "name": "minecraft:dried_kelp_block",
+          "weight": 2,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 2,
-                "max": 5
+                "min": 1,
+                "max": 4
               }
             }
           ]
         },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:fire_resistance"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:long_fire_resistance"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:strength"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:long_strength"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:strong_healing"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:strong_regeneration"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
         {
           "type": "minecraft:loot_table",
           "value": "minotower:bell/template_minotauri",
@@ -82,7 +192,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:copper_axe",
-          "weight": 5,
+          "weight": 9,
           "functions": [
             {
               "function": "minecraft:set_components",
@@ -113,7 +223,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:copper_sword",
-          "weight": 5,
+          "weight": 9,
           "functions": [
             {
               "function": "minecraft:set_components",
@@ -144,7 +254,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_axe",
-          "weight": 2,
+          "weight": 6,
           "functions": [
             {
               "function": "minecraft:set_components",
@@ -175,7 +285,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:iron_sword",
-          "weight": 2,
+          "weight": 6,
           "functions": [
             {
               "function": "minecraft:set_components",
@@ -206,52 +316,275 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:dark_oak_log",
-          "weight": 8,
+          "weight": 6,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
                 "min": 2,
-                "max": 5
+                "max": 8
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "name": "minecraft:potion",
-          "weight": 5,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:fire_resistance"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:potion",
-          "weight": 3,
-          "functions": [
-            {
-              "function": "minecraft:set_potion",
-              "id": "minecraft:long_fire_resistance"
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:book",
-          "weight": 3,
+          "weight": 6,
           "functions": [
             {
               "function": "minecraft:enchant_randomly",
-              "options": "minecraft:swift_sneak"
+              "options": "minecraft:swift_sneak",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
+                }
+              ]
             },
             {
               "function": "minecraft:enchant_randomly",
               "options": "#minotower:war_bell"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:experience_bottle",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:yellow_bundle",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:bundle_contents": [
+                  {
+                    "id": "minecraft:gold_ingot",
+                    "count": 10
+                  }
+                ],
+                "minecraft:custom_name": "Gold Bundle"
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tipped_arrow",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:strong_healing"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 7,
+                "max": 18
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tipped_arrow",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_potion",
+              "id": "minecraft:weakness"
+            },
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 14
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:spectral_arrow",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 14
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:arrow",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 8,
+                "max": 22
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_ingot",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 3,
+                "max": 7
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:copper_ingot",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:glowstone_dust",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 4,
+                "max": 22
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gray_banner",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:banner_patterns"
+                  ]
+                },
+                "minecraft:rarity": "uncommon"
+              }
+            },
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Minotower Souvenir"
+              },
+              "target": "item_name"
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "I Survived The Minotower",
+                  "color": "gold"
+                }
+              ],
+              "mode": "append"
+            },
+            {
+              "function": "minecraft:set_banner_pattern",
+              "patterns": [
+                {
+                  "pattern": "gradient_up",
+                  "color": "orange"
+                },
+                {
+                  "pattern": "curly_border",
+                  "color": "gray"
+                },
+                {
+                  "pattern": "gradient",
+                  "color": "gray"
+                },
+                {
+                  "pattern": "rhombus",
+                  "color": "green"
+                },
+                {
+                  "pattern": "bricks",
+                  "color": "yellow"
+                },
+                {
+                  "pattern": "bricks",
+                  "color": "black"
+                },
+                {
+                  "pattern": "flower",
+                  "color": "pink"
+                },
+                {
+                  "pattern": "circle",
+                  "color": "green"
+                },
+                {
+                  "pattern": "circle",
+                  "color": "yellow"
+                }
+              ],
+              "append": true
             }
           ]
         }

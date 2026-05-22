@@ -2,7 +2,11 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 1,
+      "rolls": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 3
+      },
       "entries": [
         {
           "type": "minecraft:item",
@@ -13,8 +17,8 @@
               "function": "minecraft:set_count",
               "count": {
                 "type": "minecraft:uniform",
-                "min": 1,
-                "max": 3
+                "min": 2,
+                "max": 6
               }
             }
           ]
@@ -94,7 +98,13 @@
           "functions": [
             {
               "function": "minecraft:enchant_randomly",
-              "options": "minecraft:vanishing_curse"
+              "options": "minecraft:vanishing_curse",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.3
+                }
+              ]
             },
             {
               "function": "minecraft:enchant_with_levels",
@@ -120,7 +130,13 @@
           "functions": [
             {
               "function": "minecraft:enchant_randomly",
-              "options": "minecraft:vanishing_curse"
+              "options": "minecraft:vanishing_curse",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.3
+                }
+              ]
             },
             {
               "function": "minecraft:enchant_with_levels",
@@ -155,7 +171,13 @@
           "functions": [
             {
               "function": "minecraft:enchant_randomly",
-              "options": "minecraft:vanishing_curse"
+              "options": "minecraft:vanishing_curse",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.3
+                }
+              ]
             },
             {
               "function": "minecraft:enchant_with_levels",
@@ -199,7 +221,13 @@
             },
             {
               "function": "minecraft:enchant_randomly",
-              "options": "minecraft:vanishing_curse"
+              "options": "minecraft:vanishing_curse",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.3
+                }
+              ]
             },
             {
               "function": "minecraft:enchant_with_levels",
@@ -234,7 +262,13 @@
             },
             {
               "function": "minecraft:enchant_randomly",
-              "options": "minecraft:vanishing_curse"
+              "options": "minecraft:vanishing_curse",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.3
+                }
+              ]
             },
             {
               "function": "minecraft:enchant_with_levels",
@@ -279,7 +313,13 @@
             },
             {
               "function": "minecraft:enchant_randomly",
-              "options": "minecraft:vanishing_curse"
+              "options": "minecraft:vanishing_curse",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.3
+                }
+              ]
             },
             {
               "function": "minecraft:enchant_with_levels",
@@ -324,7 +364,13 @@
             },
             {
               "function": "minecraft:enchant_randomly",
-              "options": "minecraft:vanishing_curse"
+              "options": "minecraft:vanishing_curse",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.3
+                }
+              ]
             },
             {
               "function": "minecraft:enchant_with_levels",
@@ -350,7 +396,81 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "value": "minotower:bell/template_minotauri"
+          "value": "minotower:bell/template_minotauri",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gray_banner",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:tooltip_display": {
+                  "hidden_components": [
+                    "minecraft:banner_patterns"
+                  ]
+                },
+                "minecraft:rarity": "rare"
+              }
+            },
+            {
+              "function": "minecraft:set_name",
+              "name": {
+                "text": "Minotower Souvenir"
+              },
+              "target": "item_name"
+            },
+            {
+              "function": "minecraft:set_lore",
+              "lore": [
+                {
+                  "text": "I Survived The Minotower",
+                  "color": "dark_aqua"
+                }
+              ],
+              "mode": "append"
+            },
+            {
+              "function": "minecraft:set_banner_pattern",
+              "patterns": [
+                {
+                  "pattern": "gradient_up",
+                  "color": "light_blue"
+                },
+                {
+                  "pattern": "cross",
+                  "color": "cyan"
+                },
+                {
+                  "pattern": "flow",
+                  "color": "orange"
+                },
+                {
+                  "pattern": "curly_border",
+                  "color": "black"
+                },
+                {
+                  "pattern": "small_stripes",
+                  "color": "black"
+                },
+                {
+                  "pattern": "bricks",
+                  "color": "yellow"
+                },
+                {
+                  "pattern": "bricks",
+                  "color": "black"
+                },
+                {
+                  "pattern": "gradient",
+                  "color": "black"
+                }
+              ],
+              "append": true
+            }
+          ]
         }
       ]
     }
