@@ -16,10 +16,10 @@ execute as @a if score @s geyser.msg matches 1 unless score .global geyser.msg.a
 
 ###GEYSER
     # Update armor stand geysers to block displays
-        execute as @e[type=armor_stand,tag=geyser] at @s run function geyser:replace_armor_stand
+        execute as @e[type=armor_stand,tag=geyser] at @s if entity @n[type=player,distance=..32] run function geyser:replace_armor_stand
 
     # As Geysers
         execute as @e[type=block_display,tag=geyser] at @s run function geyser:tick_geyser
 
 ###WORLDGEN
-execute at @a[predicate=cavernous:in_geyser_biome] if score .global geyser.enabled matches 1 run fill ~25 ~3 ~25 ~-25 ~-8 ~-25 minecraft:repeating_command_block[conditional=false,facing=west]{Command:"function geyser:spawn_geyser",CustomName:'{"text":"@"}',SuccessCount:0,TrackOutput:1b,UpdateLastExecution:1b,auto:1b,conditionMet:1b,powered:0b} replace structure_void
+execute at @a[predicate=cavernous:in_geyser_biome] if score .global geyser.enabled matches 1 run fill ~25 ~3 ~25 ~-25 ~-8 ~-25 command_block[conditional=false,facing=west]{Command:"function geyser:spawn_geyser",auto:1b,conditionMet:1b,powered:0b} replace structure_void

@@ -1,0 +1,3 @@
+on elytra boost:
+    if held item of player is phantom membrane:
+        cancel event

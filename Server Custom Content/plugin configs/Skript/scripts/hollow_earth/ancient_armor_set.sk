@@ -1,0 +1,22 @@
+on damage of player:
+    if all:
+        string tag "minecraft:custom_data;tag" of nbt of victim's helmet is "ancient_armor"
+        string tag "minecraft:custom_data;tag" of nbt of victim's chestplate is "ancient_armor"
+        string tag "minecraft:custom_data;tag" of nbt of victim's leggings is "ancient_armor"
+        string tag "minecraft:custom_data;tag" of nbt of victim's boots is "ancient_armor"
+    then:
+        set {_dmg} to final damage
+        if {_dmg} < 2:
+            set damage to 0
+        else:
+            set {_ignoreChance} to max(0.5,min(1, (32-{_dmg})/32)) * 100
+            #send {_ignoreChance} to victim
+            chance of {_ignoreChance}%:
+                chance of 30%:
+                    play sound "minecraft:item.trident.return" at pitch 0 at victim
+                    play sound "minecraft:entity.glow_squid.ambient" at pitch 0 at victim
+                draw 5 of dust using dustOption(rgb(113,14,14), 2) behind eyes of victim with offset vector(0.7,0.7,0.7) with extra 0.2
+                if damage >= 20:
+                    award criteria "ignore" of advancement progress of ("cavernous:expansion/secrets/crafting/ignore_damage" parsed as advancement) for {_ce}
+                    addPlaceholder({_ce},"used_ancient_weapon",1)
+                set damage to 0

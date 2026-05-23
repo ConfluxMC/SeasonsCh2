@@ -3,7 +3,7 @@ options:
     balanceStart: 99
 
 on load:
-    set {worldborder.expandBy} to 2 # Should always be even in order to keep the border aligned with blocks
+    set {worldborder.expandBy} to 4 # Should always be even in order to keep the border aligned with blocks
 
 command /worldborder-expand-from-tier-complete <offlineplayer>:
     permission: server.admin
@@ -27,7 +27,7 @@ function getTotalBorderExpansions():: integer:
 command /worldborder-resize:
     permission: server.admin
     trigger:
-        set {_newSize} to {worldborder.expandBy} * getTotalBorderExpansions()
+        set {_newSize} to {@balanceStart} + ({worldborder.expandBy} * getTotalBorderExpansions())
         set {_wb} to world border of world "world"
         set {_oldSize} to worldborder size of {_wb}
         set worldborder size of {_wb} to {_newSize}
@@ -60,14 +60,22 @@ command /worldborder-report [<string>]:
     permission: server.admin
     trigger:
         set {_report} to minimessage from "<dark_aqua>Worldborder expanded by:"
+        set {_total} to 0
         loop {worldborder.expansions::*}:
-            add minimessage from "%nl%<aqua>%loop-index parsed as offlineplayer%: <dark_aqua>×<green>%loop-value%" to {_report}
+            add minimessage from "%nl%<aqua>%loop-index parsed as offlineplayer%: <dark_aqua>×<green>%loop-value% <dark_gray>(×%{worldborder.expandBy}% = %loop-value*{worldborder.expandBy}%)" to {_report}
+            add loop-value to {_total}
+        add minimessage from "%nl%<aqua>Total: <dark_aqua>×<green>%{_total}% <dark_gray>(×%{worldborder.expandBy}% = %{_total}*{worldborder.expandBy}%)" to {_report}
         send component {_report} to sender
 
 on tab complete of "/worldborder-report":
     set tab completions for position 1 to indexes of {sols_shop.items.index::*}
 
 ################### Early Chapter mob balancing ###################
+
+on join:
+    if {worldborder.size} < {@balanceEnd}:
+        wait 5 ticks
+        send "&7For balance reasons, all mobs have been nerfed while the worldborder is less than 300 blocks wide. The worldborder size is currently &b%{worldborder.size}%&7 (Mobs are currently at &b%({worldborder.size}-{@balanceStart})/({@balanceEnd}-{@balanceStart})%%% &7strength and health)" to player
 
 on spawn of zombie, husk, drowned, skeleton, stray, parched, bogged, spider, cave spider, witch, or creeper:
     set {_wbSize} to worldborder size of worldborder of world "world"

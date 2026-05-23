@@ -15,7 +15,6 @@
                 "type": "minecraft:player",
                 "looking_at": {
                   "type": [
-                    "minecraft:ghast",
                     "minecraft:happy_ghast"
                   ]
                 }

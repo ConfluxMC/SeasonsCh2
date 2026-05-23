@@ -1,0 +1,85 @@
+options:
+    inventoryName: "Teleport to friend"
+
+on right click with poisonous potato: # Make a menu to select any unobtainable armor trim from here
+    if boolean tag "minecraft:custom_data;tp_to_friend" of nbt of event-item is true:
+        if world of player is "world":
+            set {_plrCount} to size of all players
+            set {_selectMenu} to new chest inventory with ceil({_plrCount}/9) rows with name {@inventoryName}
+            loop all players where [name of input is not name of player]:
+                set {_skull} to skull of loop-value
+                set name of {_skull} to "&aTeleport to: &b%name of loop-value%"
+                add {_skull} to {_selectMenu}
+            open {_selectMenu} to player
+            play sound "block.beacon.power_select" with pitch 2 to player
+            set {sols_shop.tp_to_friend::%player%} to 1 of event-item
+            remove 1 of event-item from player
+        else:
+            send "&cCannot use that here." to player
+
+on inventory close:
+    if all:
+        type of event-inventory is chest inventory
+        name of event-inventory is {@inventoryName}
+        {sols_shop.tp_to_friend::%player%} is set
+        {tpa.request::player::*} does not contain player
+    then:
+        give {sols_shop.tp_to_friend::%player%} to player
+        delete {sols_shop.tp_to_friend::%player%}
+
+on inventory click:
+    if all:
+        type of event-inventory is chest inventory
+        name of event-inventory is {@inventoryName}
+    then:
+        cancel event
+        if all:
+            event-item is set
+            event-item is a player head
+        then:
+            set {_p} to skull owner of event-item
+            if player's world is "world":
+                if {_p} is online:
+                    set {_u} to uuid of {_p}
+                    if {_p}'s world is "world":
+                        if {_p} is not player:
+                            if {tpa.request::player::%{_u}%} is set:
+                                send "&cThis player already has a active teleportation request, please wait!" to player
+                                stop
+                            
+                            send "&2%player% &ahas requested to teleport to you! &7&o(/tpaccept to accept, automatically expires in 30 seconds)" to {_p}
+                            send "&aYou have requested to teleport to &2%{_p}%&a! &7&o(This will automatically expire in 30 seconds)" to player
+                            set {tpa.request::player::%{_u}%} to player
+                            close player's inventory view
+                            wait 30 seconds
+                            if {tpa.request::player::%{_u}%} is set:
+                                delete {tpa.request::player::%{_u}%}
+                                send "&cYour teleportation request to %{_p}% &chas expired!" to player
+                                send "&cYour teleportation request from %player% &chas expired!" to {_p}
+                                
+                                if {sols_shop.tp_to_friend::%player%} is set:
+                                    give or drop {sols_shop.tp_to_friend::%player%} to player
+                                    delete {sols_shop.tp_to_friend::%player%}
+                        else:
+                            send "&cYou can't tpa to yourself!" to player
+                else:
+                    send "&cThe specified player is currently offline!" to player
+            
+
+
+command /tpaccept:
+    trigger:
+        if player's world is "world":
+            set {_u} to uuid of player
+            if {tpa.request::player::%{_u}%} is set:
+                set {_p} to {tpa.request::player::%{_u}%}
+                if {_p} is online:
+                    teleport {_p} to location of player
+                    send "&aYour teleportation request to %player% &ahas been accepted!" to {_p}
+                    send "&aYou have accepted the teleportation request from %{_p}%" to player
+                    delete {sols_shop.tp_to_friend::%player%}
+                    delete {tpa.request::player::%{_u}%}
+                else:
+                    send "&cThis player is no longer online!"
+            else:
+                send "&cYou have no teleportation requests to accept!" to player

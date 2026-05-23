@@ -1,0 +1,15 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:wheat"
+    },
+    "title": "Conniving",
+    "description": "Restore hunger with a backtab"
+  },
+  "parent": "chakram:visible/backstab",
+  "criteria": {
+    "backstab": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

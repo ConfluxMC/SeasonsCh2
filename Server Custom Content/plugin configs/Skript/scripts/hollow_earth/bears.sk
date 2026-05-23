@@ -16,7 +16,7 @@ on right click on polar bear:
     else if all:
         held item of player is air
         target of event-entity is not player
-        passengers of event-entity is empty
+        size of passengers of event-entity < 1
     then:
         make player swing hand
         make player ride event-entity

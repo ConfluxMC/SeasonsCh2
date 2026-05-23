@@ -18,7 +18,14 @@ placeholderapi placeholder with the prefix "seasonsquests":
         if {_prog} is done:
             set result to "High Priest Veridian"
         else:
-            set result to "???"
+            set result to "???? ????? ????????"
+    else if identifier is "defender_quest_description":
+        set {_adv} to "deeper_dark:boss" parsed as advancement
+        set {_prog} to advancement progress of {_adv} for player
+        if {_prog} is done:
+            set result to "The Defender"
+        else:
+            set result to "??? ????????"
     else if identifier is "wearing_marble_skeleton_disguise":
         set result to disguisedAsMarbleSkeleton(player)
     else if identifier is "wearing_ancient_armor":
@@ -79,6 +86,7 @@ local function resetPlaceholders(p: offlineplayer):
     setPlaceholder({_p},"minotauri_books_read",0)
     setPlaceholder({_p},"creepers_ignited",0)
     setPlaceholder({_p},"bears_commanded",0)
+    setPlaceholder({_p},"bats_leashed",0)
     setPlaceholder({_p},"suspicious_blocks_dusted",0)
     setPlaceholder({_p},"sculk_converter_sacrifices",0)
     setPlaceholder({_p},"spider_kills",0)
@@ -86,6 +94,7 @@ local function resetPlaceholders(p: offlineplayer):
     setPlaceholder({_p},"skeleton_kills",0)
     setPlaceholder({_p},"zombie_kills",0)
     setPlaceholder({_p},"priest_kills",0)
+    setPlaceholder({_p},"defender_kills",0)
     setPlaceholder({_p},"bone_club_kills",0)
     setPlaceholder({_p},"geysers_launched_from",0)
     setPlaceholder({_p},"used_ancient_weapon",0)
@@ -93,6 +102,8 @@ local function resetPlaceholders(p: offlineplayer):
     setPlaceholder({_p},"specific_animal_fed",0)
     setPlaceholder({_p},"unseared_weapons",0)
     setPlaceholder({_p},"seared_weapons",0)
+    setPlaceholder({_p},"phantom_moth_kisses",0)
+    setPlaceholder({_p},"milk_non_cow",0)
     delete {seasonsquests.biomes_visited::%{_p}%::*}
     set score of {_p} for objective with id "chakram_harvest_quest_count" to 0
     #setPlaceholder({_p},"",0)
@@ -146,7 +157,7 @@ on player teleport:
     set {_yDiff} to (y coordinate of past event-location) - (y coordinate of event-location)
     if all:
         event-teleportcause is command
-        {_yDiff} is -1000
+        {_yDiff} < -950
     then:
         set {_expectedGeyserLoc} to block 2 below past event-location
         set {_geyser} to nearest armor stand in radius 0.5 at {_expectedGeyserLoc} excluding (armor stands where [scoreboard tags of input does not contain "geyser"])
@@ -191,6 +202,11 @@ on right click with spyglass:
 
 on right click on dolphin with pufferfish, cod, salmon, or tropical fish:
     addPlaceholder(player, "specific_animal_fed", 1)
+
+on right click on mooshroom with bowl:
+    addPlaceholder(player, "milk_non_cow", 1)
+on right click on goat with bucket:
+    addPlaceholder(player, "milk_non_cow", 1)
 
 on love mode enter:
     if any:
@@ -307,6 +323,8 @@ on death:
                 addPlaceholder({_ce},"skeleton_kills",3)
             else:
                 addPlaceholder({_ce},"skeleton_kills",1)
+        else if victim is a wither:
+            addPlaceholder({_ce},"skeleton_kills",15)
         ### Zombies
         else if victim is a zombie:
             if victim is a baby:
@@ -343,6 +361,14 @@ on death:
             addPlaceholder(loop-value,"priest_kills",1)
             addPlaceholder({_ce},"skeleton_kills",10)
     
+    ### Deeper Dark Boss
+    if all:
+        victim is a ghast
+        scoreboard tags of victim contains "deeper_dark.boss_hitbox"
+    then:
+        loop players within radius 50 of victim:
+            addPlaceholder(loop-value,"defender_kills",1)
+    
     
     # Direct attacks only
     if attacker is player:
@@ -354,6 +380,7 @@ on death:
                 addPlaceholder({_ce},"bone_club_kills",2)
             else:
                 addPlaceholder({_ce},"bone_club_kills",1)
+                addPlaceholder({_ce},"marble_pillar_devotions",1) # TODO REMOVE WHEN WE CAN ACCESS MARBLE CAVES
 
 on damage:
     set {_ce} to causing entity of event-damagesource
@@ -431,6 +458,36 @@ local function disguisedAsMarbleSkeleton(p: player):: boolean:
         return true
     else:
         return false
+
+command /diguised-as-marble-skeleton-test:
+    trigger:
+        set {_p} to player
+        set {_leatherTrim} to armor trim using quartz_material with flow_pattern
+        set {_legTrim} to armor trim using netherite_material with silence_pattern
+        set {_output} to "Disguise:"
+        if helmet of {_p} is skeleton skull:
+            add " Skull" to { _output}
+        if chestplate of {_p} is leather chestplate:
+            add " Chestplate-" to { _output}
+            if dyed color of chestplate of {_p} is rgb(79,79,79): # #4F4F4F
+                add "D" to {_output}
+            if armor trim of chestplate of {_p} is {_leatherTrim}:
+                add "T" to {_output}
+        if leggings of {_p} is chainmail leggings:
+            add " Leggings-" to { _output}
+            if armor trim of leggings of {_p} is {_legTrim}:
+                add "T" to {_output}
+        if boots of {_p} is leather boots:
+            add " Boots-" to { _output}
+            if dyed color of boots of {_p} is rgb(79,79,79): # #4F4F4F
+                add "D" to {_output}
+            if armor trim of boots of {_p} is {_leatherTrim}:
+                add "T" to {_output}
+        if byte tag "minecraft:custom_data;bone_club" of nbt of {_p}'s tool is 1:
+            add " Bone Club" to {_output}
+        if byte tag "minecraft:custom_data;devotion_quartz" of nbt of {_p}'s offhand tool is 1:
+            add " Quartz" to {_output}
+        send {_output} to player
 
 local function wearingMinersHelmet(p: player):: boolean:
     set {_helm} to helmet of {_p}

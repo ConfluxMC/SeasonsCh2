@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "cavernous:myst/high_priest_trophy"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "cavernous:secrets/items/ancient_tablet",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 96
+        }
+      ]
+    }
+  ]
+}

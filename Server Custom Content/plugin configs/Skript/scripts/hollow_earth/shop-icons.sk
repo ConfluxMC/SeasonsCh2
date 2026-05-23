@@ -1,0 +1,15 @@
+command /sols-shop-auto-set-icons:
+    permission: server.admin
+    trigger:
+        make sender execute command "sols-shop-set-icon amethyst_bell_template items minotower:item/bell/template/amethyst"
+        make sender execute command "sols-shop-set-icon armor_trim_select_voucher items item/armor_stand"
+        make sender execute command "sols-shop-set-icon campfire items item/campfire"
+        make sender execute command "sols-shop-set-icon dragons_breath items item/dragon_breath"
+        make sender execute command "sols-shop-set-icon hype_rise items item/feather"
+        make sender execute command "sols-shop-set-icon iron_pickaxe items item/iron_pickaxe"
+        make sender execute command "sols-shop-set-icon pris_crystals items item/prismarine_crystals"
+        make sender execute command "sols-shop-set-icon pris_shards items item/prismarine_shard"
+        make sender execute command "sols-shop-set-icon slime_chunk_detector items item/slime_spawn_egg"
+        make sender execute command "sols-shop-set-icon tp_scroll items item/globe_banner_pattern"
+        make sender execute command "sols-shop-set-icon vitamin_d items item/honey_bottle"
+        make sender execute command "sols-shop-set-icon warped_stems blocks block/warped_stem"

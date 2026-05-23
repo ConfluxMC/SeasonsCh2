@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:beetroot_soup",
+    "minecraft:torchflower_seeds",
+    "minecraft:torchflower_seeds",
+    "minecraft:torchflower_seeds",
+    "minecraft:torchflower_seeds",
+    "minecraft:torchflower_seeds",
+    "minecraft:torchflower_seeds"
+  ],
+  "result": {
+    "components": {
+      "minecraft:custom_data": {
+        "beetroot_torchflower_soup": true
+      },
+      "minecraft:item_model": "minotower:beetroot_torchflower_soup",
+      "minecraft:food": {
+        "nutrition": 6,
+        "saturation": 7.6
+      },
+      "minecraft:consumable": {
+        "on_consume_effects": [
+          {
+            "type": "minecraft:apply_effects",
+            "effects": [
+              {
+                "id": "minecraft:night_vision",
+                "duration": 960
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:item_name": "Beetroot and Torchflower Soup"
+    },
+    "count": 1,
+    "id": "minecraft:beetroot_soup"
+  }
+}

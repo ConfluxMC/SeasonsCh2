@@ -26,6 +26,6 @@
 		"minecraft:hanging_roots",
 		"minecraft:sculk_vein",
         
-        "minecraft:repeating_command_block"
+        "minecraft:command_block"
     ]
 }

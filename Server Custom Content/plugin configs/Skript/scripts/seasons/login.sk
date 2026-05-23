@@ -6,6 +6,7 @@ command /hub:
         transfer player to server "confluxmc.cc"
 
 command /spawn:
+    permission: server.admin
     executable by: players
     trigger:
         teleport player to spawn of "world"
@@ -17,6 +18,27 @@ on quit:
 
 on first join:
     send "&eWelcome to &bSeasons&e! Use &7/menu&e to get started!" to player
+
+#on join:
+#    if {gotFirstJoinBonus::%player%} is not set:
+#        joinBonus(player)
+
+#command /join-bonus-manual:
+#    trigger:
+#        joinBonus(player)
+
+#local function joinBonus(p: player):
+#    if {gotFirstJoinBonus::%{_p}%} is not set:
+#        set {gotFirstJoinBonus::%{_p}%} to true
+#        loop 5 times:
+#            make console execute command "worldborder-expand-from-tier-complete %{_p}%"
+#        make console execute command "sols-give 25 %{_p}%"
+#        make console execute command "sols-add-to-stats 25 %{_p}%"
+
+every 15 minutes:
+    loop all players:
+        make console execute command "sols-give 1 %loop-value%"
+        make console execute command "sols-add-to-stats 1 %loop-value%"
 
 command /daily-logins-add <offline player>:
     executable by: console

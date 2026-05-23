@@ -1,8 +1,9 @@
 tag @s add converted_minotower_prisoner
 
 # If sculkified minotaur or construct, equip horns here. Assume all other properties are already taken care of
-execute as @s[type=zombified_piglin] run loot replace entity @s armor.head loot minotower:horns/sculkified
-execute as @s[type=piglin_brute] run loot replace entity @s armor.head loot minotower:horns/construct
+loot replace entity @s[type=zombified_piglin] armor.head loot minotower:horns/sculkified
+loot replace entity @s[type=piglin_brute] armor.head loot minotower:horns/construct
+data modify entity @s[type=#minotower:piglin] drop_chances set value {head:0.0f}
 
 
 # Make sure prisoners do not have any weapons

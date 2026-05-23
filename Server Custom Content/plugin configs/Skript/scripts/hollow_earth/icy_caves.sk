@@ -1,0 +1,7 @@
+on spawn of snow golem:
+    if spawn reason is not built snowman:
+        shear event-entity
+
+on fade of ice:
+    if biome at event-location is "cavernous:icy_caves" parsed as biome:
+        cancel event
