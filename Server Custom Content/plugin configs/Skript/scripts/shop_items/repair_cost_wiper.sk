@@ -1,0 +1,15 @@
+on inventory click:
+    if all:
+        name of player is "gnago"
+        boolean tag "minecraft:custom_data;repair_cost_wiper" of nbt of cursor slot of player is true
+    then:
+        set {_wiper} to cursor slot of player
+        if repair cost component of event-item is not 0:
+            set repair cost component of event-item to 0
+            remove 1 of {_wiper} from player
+            cancel event
+            #set cursor slot of player to air
+        #send repair cost component of event-item to player
+        #send cursor slot of player to player
+
+# give @p poisonous_potato[item_model="minecraft:nether_star",item_name="Repair Cost Wiper",lore=[{text:"Click a tool with this item",italic:false,color:aqua},{text:"in your inventory to",italic:false,color:aqua},{text:"wipe its anvil repair cost",italic:false,color:aqua}],rarity=epic,!consumable,!food,custom_data={repair_cost_wiper:true},max_stack_size=1]

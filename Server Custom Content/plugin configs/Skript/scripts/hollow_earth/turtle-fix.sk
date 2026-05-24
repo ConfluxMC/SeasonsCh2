@@ -6,3 +6,41 @@ on rightclick on sand with seagrass:
     then:
         set {_home::*} to x coordinate of event-block,y coordinate of event-block, and z coordinate of event-block
         set int list tag "home_pos" of nbt of {_turtle} to {_home::*}
+
+on block trample:
+    if all:
+        type of event-block is turtle eggs
+        event-entity is sneaking
+        boots of event-entity is set
+        boolean tag "minecraft:custom_data;turtle_boots" of nbt of boots of event-entity is true
+    then:
+        cancel event
+
+every 8 seconds:
+    loop all players:
+        set {_p} to loop-value
+        set {_loc} to block at {_p}
+        if all:
+            {_p} is sneaking
+            boots of {_p} is set
+            boolean tag "minecraft:custom_data;turtle_boots" of nbt of boots of {_p} is true
+            block at {_p} is turtle eggs
+        then:
+            set {_block} to block at {_p}
+            set {_hatch} to blockdata tag "hatch" of {_block}
+            if {_hatch} < 2:
+                chance of 15%:
+                    set blockdata tag "hatch" of {_block} to {_hatch} + 1
+                make ({_hatch}+1)*2 happy_villager at {_block} with offset vector(0.15,0.1,0.15)
+            else:
+                chance of 15%:
+                    play sound "minecraft:entity.turtle.egg_hatch" at {_block}
+                    set {_eggs} to blockdata tag "eggs" of {_block}
+                    loop {_eggs} times:
+                        spawn turtle at {_block}:
+                            set age of the turtle to -24000
+                    set block at {_block} to air
+                    
+                    set {_adv} to "conflux_seasons:visible/seasons/brooding_turtle" parsed as advancement
+                    set {_prog} to advancement progress of {_adv} for {_p}
+                    award criteria "hatch" of {_prog}

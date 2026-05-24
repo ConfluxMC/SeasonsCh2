@@ -27,7 +27,10 @@ command /entity-count-details:
         else:
             set {_world} to world "world"
         loop all entities in {_world}:
-            add 1 to {_entities::%type of loop-value%}
+            if scoreboard tags of loop-value contains "geyser":
+                add 1 to {_entities::geyser}
+            else:
+                add 1 to {_entities::%type of loop-value%}
             add 1 to {_total}
         loop {_entities::*}:
             send "%loop-index%: %loop-value%" to sender

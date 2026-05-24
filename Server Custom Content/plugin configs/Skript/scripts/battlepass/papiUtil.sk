@@ -247,6 +247,7 @@ on item damage:
         gravel and sand contains type of targeted block of player
     then:
         addPlaceholder(player,"suspicious_blocks_dusted",1)
+        addPlaceholder(player,"barters",1)
 
 on block break:
     if any:
@@ -411,10 +412,11 @@ on damage:
                 addPlaceholder({_ce},"chakram_damage",damage)
                 if isSeared(item of {_de}) is true:
                     addPlaceholder({_ce},"seared_damage",damage)
-            
-        set {_warBellMod::*} to attack damage attribute modifiers of {_ce} where [modifier id of input is "minotower:war_bell_bonus_5"]
-        if size of {_warBellMod::*} > 0:
-            addPlaceholder({_ce},"war_bell_full_charge_damage",damage)
+           
+        if damage type is not thorns:
+            set {_warBellMod::*} to attack damage attribute modifiers of {_ce} where [modifier id of input is "minotower:war_bell_bonus_5"]
+            if size of {_warBellMod::*} > 0:
+                addPlaceholder({_ce},"war_bell_full_charge_damage",damage)
     if victim is a player:
         if {_de} is a phantom:
             addPlaceholder(victim,"phantom_moth_kisses",1)
