@@ -1,0 +1,24 @@
+{
+  "parent": "conflux_seasons:visible/seasons/root",
+  "criteria": {
+    "hatch": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "title": {
+      "text": "Brooding Turtle"
+    },
+    "description": {
+      "text": "Speed up the hatching process of turtle eggs"
+    },
+    "icon": {
+      "id": "minecraft:turtle_egg"
+    }
+  },
+  "requirements": [
+    [
+      "hatch"
+    ]
+  ]
+}

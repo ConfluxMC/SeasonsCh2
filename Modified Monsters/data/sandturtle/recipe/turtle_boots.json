@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": "minecraft:turtle_scute"
+  },
+  "pattern": [
+    "X X",
+    "X X"
+  ],
+  "result": {
+    "components": {
+      "minecraft:equippable": {
+        "slot": "feet",
+        "equip_sound": "minecraft:item.armor.equip_turtle",
+        "asset_id": "minecraft:turtle_scute",
+        "equip_on_interact": true
+      },
+      "minecraft:custom_data": {
+        "turtle_boots": true
+      },
+      "minecraft:repairable": {
+        "items": "minecraft:turtle_scute"
+      },
+      "minecraft:item_model": "minecraft:turtle_boots",
+      "minecraft:item_name": "Turtle Boots",
+      "minecraft:max_damage": 275
+    },
+    "count": 1,
+    "id": "minecraft:chainmail_boots"
+  }
+}
