@@ -22,7 +22,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:beetroot_soup",
-          "weight": 35
+          "weight": 25
         },
         {
           "type": "minecraft:item",
@@ -50,6 +50,26 @@
                 "type": "minecraft:uniform",
                 "min": 1,
                 "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:beetroot_torchflower_soup",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:glow_potato",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 2
               }
             }
           ]

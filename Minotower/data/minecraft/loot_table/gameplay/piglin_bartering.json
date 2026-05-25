@@ -5,6 +5,36 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "name": "minecraft:blaze_rod",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:glow_potato",
+          "weight": 13,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
           "functions": [
             {
               "function": "minecraft:enchant_randomly",
@@ -47,7 +77,7 @@
             }
           ],
           "name": "minecraft:iron_nugget",
-          "weight": 6
+          "weight": 5
         },
         {
           "type": "minecraft:item",
@@ -55,14 +85,14 @@
             {
               "count": {
                 "type": "minecraft:uniform",
-                "max": 4,
+                "max": 8,
                 "min": 2
               },
               "function": "minecraft:set_count"
             }
           ],
           "name": "minecraft:ender_pearl",
-          "weight": 4
+          "weight": 7
         },
         {
           "type": "minecraft:loot_table",
@@ -88,7 +118,7 @@
             }
           ],
           "name": "minecraft:glowstone_dust",
-          "weight": 14
+          "weight": 13
         },
         {
           "type": "minecraft:item",
@@ -123,12 +153,12 @@
             }
           ],
           "name": "minecraft:crying_obsidian",
-          "weight": 15
+          "weight": 14
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:fire_charge",
-          "weight": 4
+          "weight": 3
         },
         {
           "type": "minecraft:item",
@@ -148,7 +178,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:writable_book",
-          "weight": 2
+          "weight": 1
         },
         {
           "type": "minecraft:item",
@@ -163,7 +193,7 @@
             }
           ],
           "name": "minecraft:leather",
-          "weight": 15
+          "weight": 8
         },
         {
           "type": "minecraft:item",
@@ -193,7 +223,7 @@
             }
           ],
           "name": "minecraft:moss_block",
-          "weight": 15
+          "weight": 12
         },
         {
           "type": "minecraft:item",
@@ -208,7 +238,7 @@
             }
           ],
           "name": "minecraft:dark_oak_log",
-          "weight": 15
+          "weight": 10
         },
         {
           "type": "minecraft:item",
@@ -240,7 +270,7 @@
             }
           ],
           "name": "minecraft:amethyst_shard",
-          "weight": 12
+          "weight": 10
         },
         {
           "type": "minecraft:item",
@@ -261,7 +291,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:armadillo_scute",
-          "weight": 6,
+          "weight": 4,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -276,7 +306,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:turtle_scute",
-          "weight": 6,
+          "weight": 4,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -296,7 +326,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:lodestone",
-          "weight": 8
+          "weight": 7
         },
         {
           "type": "minecraft:item",

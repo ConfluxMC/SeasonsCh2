@@ -22,7 +22,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:sweet_berries",
-          "weight": 6,
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -59,7 +59,7 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 2
+                "max": 3
               }
             }
           ]
@@ -142,7 +142,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:bowl",
-          "weight": 7,
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -217,7 +217,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:mushroom_stew",
-          "weight": 3,
+          "weight": 2,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -262,11 +262,26 @@
         {
           "type": "minecraft:loot_table",
           "value": "minotower:beetroot_torchflower_soup",
-          "weight": 4,
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": 2
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:glow_potato",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 6
+              }
             }
           ]
         }

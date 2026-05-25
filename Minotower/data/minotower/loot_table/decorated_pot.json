@@ -12,7 +12,7 @@
         {
           "type": "minecraft:loot_table",
           "value": "minotower:torchflower_seeds_edible",
-          "weight": 20
+          "weight": 15
         },
         {
           "type": "minecraft:item",
@@ -92,7 +92,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:beetroot_seeds",
-          "weight": 5,
+          "weight": 3,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -133,6 +133,26 @@
               }
             }
           ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:glow_potato",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minotower:beetroot_torchflower_soup",
+          "weight": 4
         }
       ]
     }
