@@ -1,0 +1,63 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "Q": "minecraft:quartz",
+    "N": "minecraft:netherite_ingot",
+    "R": [
+      "minecraft:resin_brick",
+      "minecraft:resin_clump"
+    ],
+    "S": [
+      "minecraft:stick",
+      "minecraft:bone"
+    ]
+  },
+  "pattern": [
+    " QN",
+    " RQ",
+    "S  "
+  ],
+  "result": {
+    "components": {
+      "item_name": "Devotion Crystal",
+      "rarity": "uncommon",
+      "item_model": "cavernous:devotion_quartz",
+      "attribute_modifiers": [
+        {
+          "type": "attack_speed",
+          "amount": 0.8,
+          "slot": "offhand",
+          "operation": "add_multiplied_base",
+          "id": "cavernous:devotion_quartz_attack_speed"
+        },
+        {
+          "type": "follow_range",
+          "amount": 1,
+          "slot": "offhand",
+          "operation": "add_multiplied_total",
+          "id": "cavernous:devotion_quartz_follow_range"
+        },
+        {
+          "type": "attack_damage",
+          "amount": -0.8,
+          "slot": "offhand",
+          "operation": "add_multiplied_total",
+          "id": "cavernous:devotion_quartz_weakness"
+        },
+        {
+          "type": "max_health",
+          "id": "cavernous:devotion_quartz_health",
+          "amount": -0.5,
+          "operation": "add_multiplied_base",
+          "slot": "offhand"
+        }
+      ],
+      "custom_data": {
+        "devotion_quartz": 1
+      }
+    },
+    "count": 1,
+    "id": "minecraft:quartz"
+  }
+}

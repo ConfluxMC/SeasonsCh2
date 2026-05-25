@@ -13,5 +13,5 @@ execute if predicate minotower:war_bell/full_charge unless items entity @s weapo
 
 # If not fully charged
 function minotower:war_bell/hit/feedback
-item modify entity @s weapon.offhand minotower:war_bell/charge
-item modify entity @s weapon.offhand minotower:war_bell/apply_attributes
+execute if predicate minotower:war_bell/holding_offhand run item modify entity @s weapon.offhand minotower:war_bell/charge
+execute if predicate minotower:war_bell/holding_offhand run item modify entity @s weapon.offhand minotower:war_bell/apply_attributes

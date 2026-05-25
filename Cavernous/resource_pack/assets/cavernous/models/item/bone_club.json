@@ -1,6 +1,33 @@
 {
-  "parent": "minecraft:item/handheld",
-  "textures": {
-    "layer0": "cavernous:item/bone_club"
-  }
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "cavernous:item/bone_club"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -90, 55],
+			"translation": [0, 5.5, 0.75],
+			"scale": [1.25, 1.25, 1.25]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-169, 90, -55],
+			"translation": [0, -9.25, 2],
+			"scale": [1.25, 1.25, 1.25]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 50],
+			"translation": [1.13, 3.75, 1.25]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 90, 85],
+			"translation": [3.5, -2, 6]
+		},
+		"head": {
+			"rotation": [90, 0, -137],
+			"translation": [0.25, 7, -3.75],
+			"scale": [1.75, 1.75, 1.75]
+		}
+	}
 }

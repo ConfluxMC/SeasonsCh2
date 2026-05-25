@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": "minecraft:mangrove_propagule",
+  "result": {
+    "id": "minecraft:poisonous_potato",
+    "components": {
+      "minecraft:item_model": "woodfish:grilled_propagule",
+      "minecraft:item_name": "Grilled Propagule",
+      "minecraft:consumable": {
+        "consume_seconds": 0.8
+      },
+      "minecraft:food": {
+        "nutrition": 1,
+        "saturation": 6.4
+      },
+      "minecraft:custom_data": {
+        "grilled_propgagule": true
+      }
+    }
+  }
+}
