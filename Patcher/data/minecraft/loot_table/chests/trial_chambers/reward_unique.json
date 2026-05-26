@@ -7,7 +7,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:golden_apple",
-          "weight": 3
+          "weight": 4
         },
         {
           "type": "minecraft:item",
@@ -25,9 +25,12 @@
           "weight": 2
         },
         {
+          "type": "minecraft:item",
+          "name": "minecraft:trident"
+        },
+        {
           "type": "minecraft:loot_table",
-          "value": "minotower:bell/template_breeze",
-          "weight": 3
+          "value": "minotower:bell/template_breeze"
         }
       ],
       "rolls": 1

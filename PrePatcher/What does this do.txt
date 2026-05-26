@@ -1,0 +1,1 @@
+This datapack currently only removes trident enchantments from the random loot tag

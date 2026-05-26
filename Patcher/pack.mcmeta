@@ -24,7 +24,7 @@
       },
       {
         "namespace": "minecraft",
-        "path": "^advancement\\/adventure\\/(adventuring_time|play_jukebox_in_meadows|spyglass_at_dragon|throw_trident|very_very_frightening|lightning_rod_with_villager_no_fire|trade_at_world_height)\\.json"
+        "path": "^advancement\\/adventure\\/(adventuring_time|play_jukebox_in_meadows|spyglass_at_dragon|very_very_frightening|lightning_rod_with_villager_no_fire|trade_at_world_height)\\.json"
       }
     ]
   }

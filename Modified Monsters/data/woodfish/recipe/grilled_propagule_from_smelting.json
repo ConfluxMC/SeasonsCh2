@@ -14,7 +14,7 @@
       },
       "minecraft:food": {
         "nutrition": 1,
-        "saturation": 6.4
+        "saturation": 7.2
       },
       "minecraft:custom_data": {
         "grilled_propgagule": true
