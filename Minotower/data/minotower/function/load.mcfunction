@@ -11,4 +11,7 @@ scoreboard objectives add minotower.war_bell_armor_feet_id dummy
 
 scoreboard objectives add minotower.bell_active_countdown dummy
 
+scoreboard objectives add minotower.war_bell_rigor_tick_threshold dummy
+scoreboard players set .global minotower.war_bell_rigor_tick_threshold 14
+
 schedule function minotower:loop_5s 5s

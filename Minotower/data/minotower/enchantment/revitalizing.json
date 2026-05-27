@@ -7,7 +7,8 @@
     "minotower:rigor",
     "minotower:cleansing",
     "minotower:concentration",
-    "minotower:wardenblight"
+    "minotower:wardenblight",
+    "minecraft:quick_charge"
   ],
   "supported_items": "minecraft:goat_horn",
   "primary_items": "minecraft:goat_horn",

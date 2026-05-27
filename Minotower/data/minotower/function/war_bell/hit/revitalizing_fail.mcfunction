@@ -1,0 +1,2 @@
+function minotower:war_bell/degrade
+function minotower:war_bell/degrade

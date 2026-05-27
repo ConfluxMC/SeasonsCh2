@@ -37,7 +37,14 @@
           "entity": "this",
           "scores": {
             "minotower.war_bell": {
-              "max": 14
+              "max": {
+                "type": "minecraft:score",
+                "target": {
+                  "type": "minecraft:fixed",
+                  "name": ".global"
+                },
+                "score": "minotower.war_bell_rigor_tick_threshold"
+              }
             },
             "minotower.war_bell_hit": 0
           }

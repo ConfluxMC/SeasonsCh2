@@ -20,5 +20,95 @@
         }
       }
     ]
+  },
+  {
+    "function": "minecraft:set_damage",
+    "damage": 0.1,
+    "add": true,
+    "conditions": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "equipment": {
+            "offhand": {
+              "components": {
+                "minecraft:custom_data": {
+                  "minotauri_war_bell": true
+                }
+              },
+              "predicates": {
+                "minecraft:enchantments": [
+                  {
+                    "enchantments": "minecraft:quick_charge",
+                    "levels": 1
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "function": "minecraft:set_damage",
+    "damage": 0.2,
+    "add": true,
+    "conditions": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "equipment": {
+            "offhand": {
+              "components": {
+                "minecraft:custom_data": {
+                  "minotauri_war_bell": true
+                }
+              },
+              "predicates": {
+                "minecraft:enchantments": [
+                  {
+                    "enchantments": "minecraft:quick_charge",
+                    "levels": 2
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "function": "minecraft:set_damage",
+    "damage": 0.3,
+    "add": true,
+    "conditions": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "equipment": {
+            "offhand": {
+              "components": {
+                "minecraft:custom_data": {
+                  "minotauri_war_bell": true
+                }
+              },
+              "predicates": {
+                "minecraft:enchantments": [
+                  {
+                    "enchantments": "minecraft:quick_charge",
+                    "levels": 3
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
   }
 ]
