@@ -4,7 +4,7 @@
 #display
 execute unless entity @e[type=marker,tag=deeper_dark.shockwave_trail,distance=0...5] run summon minecraft:marker ~ ~.5 ~ {Tags:["deeper_dark.shockwave_trail","deeper_dark.shockwave_part"]}
 execute as @n[type=marker,tag=deeper_dark.shockwave_trail,distance=3.1..5] at @s run function deeper_dark:shockwave/ai/trail
-execute as @n[type=marker,tag=deeper_dark.shockwave_trail] at @s unless entity @e[type=pig,tag=deeper_dark.shockwave,distance=0..3.1] run tag @s add deeper_dark.silent_despawn
+#execute as @n[type=marker,tag=deeper_dark.shockwave_trail] at @s unless entity @e[type=pig,tag=deeper_dark.shockwave,distance=0..3.1] run tag @s add deeper_dark.silent_despawn
 effect clear @s minecraft:glowing
 
 
@@ -66,7 +66,7 @@ if block ~.25 ~ ~.25 #deeper_dark:shockwave_ignore facing entity @n[type=pig,tag
 if block ~-.25 ~ ~-.25 #deeper_dark:shockwave_ignore \
 if block ~.25 ~ ~-.25 #deeper_dark:shockwave_ignore \
 if block ~-.25 ~ ~.25 #deeper_dark:shockwave_ignore \
-if block ~.25 ~ ~.25 #deeper_dark:shockwave_ignore at @s run function deeper_dark/shockwave/target
+if block ~.25 ~ ~.25 #deeper_dark:shockwave_ignore at @s run function deeper_dark:shockwave/target
 
 #lawnmower easter egg
 fill ^-2 ^-1 ^-2 ^2 ^-1 ^-2 minecraft:air replace minecraft:short_grass

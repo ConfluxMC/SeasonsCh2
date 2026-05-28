@@ -8,3 +8,4 @@ execute as @e[type=pig,tag=deeper_dark.shockwave] at @s run function deeper_dark
 
 
 execute as @e[type=marker,tag=deeper_dark.shockwave_light] at @s unless entity @e[type=pig,tag=deeper_dark.shockwave,distance=0..2] run function deeper_dark:shockwave/ai/kill_light
+execute as @e[type=marker,tag=deeper_dark.shockwave_trail] at @s unless entity @e[type=pig,tag=deeper_dark.shockwave,distance=0..3.1] run tag @s add deeper_dark.silent_despawn
