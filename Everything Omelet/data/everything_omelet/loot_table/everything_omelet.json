@@ -1,0 +1,19 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:poisonous_potato",
+          "functions": [
+            {
+              "function": "minecraft:reference",
+              "name": "everything_omelet:reset_omelet"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

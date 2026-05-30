@@ -10,11 +10,11 @@
         {
           "type": "minecraft:loot_table",
           "value": "deeper_dark:items/locator_laboratory",
-          "weight": 1
+          "weight": 2
         },
         {
           "type": "minecraft:empty",
-          "weight": 99
+          "weight": 98
         }
       ],
       "functions": [],

@@ -1,0 +1,96 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:dragon_egg",
+    "minecraft:turtle_egg",
+    "minecraft:brown_egg",
+    "minecraft:blue_egg",
+    "minecraft:egg",
+    "minecraft:sniffer_egg",
+    "minecraft:frogspawn",
+    [
+      "minecraft:redstone",
+      "minecraft:glowstone_dust",
+      "minecraft:torchflower_seeds",
+      "minecraft:blaze_powder",
+      "minecraft:glow_ink_sac",
+      "minecraft:ink_sac",
+      "minecraft:wheat",
+      "minecraft:slime_ball",
+      "minecraft:magma_cream",
+      "minecraft:gold_nugget",
+      "minecraft:cocoa_beans",
+      "minecraft:spider_eye",
+      "minecraft:fermented_spider_eye",
+      "minecraft:dried_kelp",
+      "minecraft:fire_charge",
+      "minecraft:ghast_tear",
+      "minecraft:sculk_vein",
+      "minecraft:glow_lichen",
+      "minecraft:glow_berries",
+      "minecraft:sweet_berries",
+      "minecraft:nether_wart",
+      "minecraft:hanging_roots",
+      "minecraft:sugar",
+      "minecraft:wildflowers",
+      "minecraft:pink_petals",
+      "minecraft:firefly_bush",
+      "minecraft:pale_hanging_moss",
+      "minecraft:honeycomb",
+      "minecraft:sea_pickle",
+      "minecraft:wind_charge",
+      "minecraft:ender_pearl",
+      "minecraft:ender_eye",
+      "minecraft:gunpowder",
+      "minecraft:flint",
+      "minecraft:pumpkin_seeds",
+      "minecraft:phantom_membrane",
+      "minecraft:experience_bottle",
+      "minecraft:resin_clump",
+      "minecraft:brown_mushroom",
+      "minecraft:red_mushroom",
+      "minecraft:crimson_fungus",
+      "minecraft:warped_fungus",
+      "minecraft:melon_slice",
+      "minecraft:potato"
+    ]
+  ],
+  "result": {
+    "id": "minecraft:poisonous_potato",
+    "components": {
+      "minecraft:food": {
+        "nutrition": 6,
+        "saturation": 6,
+        "can_always_eat": true
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:damage": 0,
+      "minecraft:consumable": {
+        "consume_seconds": 2.4
+      },
+      "minecraft:use_cooldown": {
+        "seconds": 72,
+        "cooldown_group": "everything_omelet:everything_omelet"
+      },
+      "minecraft:rarity": "epic",
+      "minecraft:item_name": {
+        "translate": "item.everything_omelet",
+        "fallback": "Everything Omelet"
+      },
+      "minecraft:item_model": "everything_omelet:everything_omelet",
+      "minecraft:custom_data": {
+        "everything_omelet": true
+      },
+      "minecraft:use_remainder": {
+        "id": "minecraft:poisonous_potato",
+        "components": {
+          "minecraft:custom_data": {
+            "everything_omelet_replacer": true
+          },
+          "!minecraft:consumable": {}
+        }
+      }
+    },
+    "count": 1
+  }
+}

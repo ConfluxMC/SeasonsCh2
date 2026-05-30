@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:husbandry/plant_seed",
+  "criteria": {
+    "omelet": {
+      "conditions": {
+        "recipe_id": "everything_omelet:everything_omelet"
+      },
+      "trigger": "minecraft:recipe_crafted"
+    }
+  },
+  "display": {
+    "description": "Create an everything omelet",
+    "frame": "challenge",
+    "icon": {
+      "components": {
+        "minecraft:item_model": "everything_omelet:everything_omelet"
+      },
+      "id": "minecraft:poisonous_potato"
+    },
+    "title": "Very Flavourful!"
+  },
+  "requirements": [
+    [
+      "omelet"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  }
+}

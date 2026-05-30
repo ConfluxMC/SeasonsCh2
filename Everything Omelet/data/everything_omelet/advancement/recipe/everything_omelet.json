@@ -1,0 +1,116 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_blue_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:blue_egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_brown_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:brown_egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_turtle_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:turtle_egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sniffer_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:sniffer_egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_frog_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:frogspawn"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_dragon_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:dragon_egg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "everything_omelet:everything_omelet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_egg"
+    ],
+    [
+      "has_the_recipe",
+      "has_blue_egg"
+    ],
+    [
+      "has_the_recipe",
+      "has_brown_egg"
+    ],
+    [
+      "has_the_recipe",
+      "has_turtle_egg"
+    ],
+    [
+      "has_the_recipe",
+      "has_sniffer_egg"
+    ],
+    [
+      "has_the_recipe",
+      "has_frog_egg"
+    ],
+    [
+      "has_the_recipe",
+      "has_dragon_egg"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "everything_omelet:everything_omelet"
+    ]
+  }
+}
