@@ -1,5 +1,5 @@
 {
-  "parent": "conflux_seasons:visible/seasons/root",
+  "parent": "conflux_seasons:visible/seasons/conduit",
   "criteria": {
     "hatch": {
       "trigger": "minecraft:impossible"

@@ -55,7 +55,12 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:frogspawn"
+            "items": [
+              "minecraft:frogspawn",
+              "minecraft:ochre_froglight",
+              "minecraft:pearlescent_froglight",
+              "minecraft:verdant_froglight"
+            ]
           }
         ]
       },

@@ -1,0 +1,62 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:heart_of_the_sea",
+      "components": {
+        "minecraft:item_model": "minecraft:turtle_chestplate"
+      }
+    },
+    "title": "One With The Sea",
+    "description": "Harness the power of the conduit without a conduit.",
+    "frame": "challenge"
+  },
+  "parent": "conflux_seasons:visible/seasons/brooding_turtle",
+  "criteria": {
+    "effect": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "head": {
+              "items": "minecraft:turtle_helmet"
+            },
+            "chest": {
+              "components": {
+                "minecraft:custom_data": {
+                  "turtle_chestplate": true
+                }
+              }
+            },
+            "legs": {
+              "components": {
+                "minecraft:custom_data": {
+                  "turtle_leggings": true
+                }
+              }
+            },
+            "feet": {
+              "components": {
+                "minecraft:custom_data": {
+                  "turtle_boots": true
+                }
+              }
+            }
+          },
+          "slots": {
+            "weapon.*": {
+              "items": "minecraft:trident"
+            }
+          }
+        },
+        "effects": {
+          "minecraft:conduit_power": {
+            "duration": {
+              "min": 10
+            },
+            "ambient": false
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "criteria": {
+    "omelet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:poisonous_potato",
+            "components": {
+              "minecraft:custom_data": {
+                "everything_omelet_replacer": true
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "omelet"
+    ]
+  ],
+  "rewards": {
+    "function": "everything_omelet:replace_omelet"
+  }
+}
