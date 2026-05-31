@@ -1,0 +1,143 @@
+{
+  "anvil_cost": 8,
+  "description": {
+    "translate": "enchantment.minecraft.channeling"
+  },
+  "effects": {
+    "minecraft:hit_block": [
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:summon_entity",
+              "entity": "minecraft:lightning_bolt"
+            },
+            {
+              "type": "minecraft:play_sound",
+              "pitch": 1,
+              "sound": "minecraft:item.trident.thunder",
+              "volume": 5
+            }
+          ]
+        },
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:trident"
+              }
+            },
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "#minecraft:lightning_rods"
+                },
+                "fluid": {
+                  "fluids": "#minecraft:water"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "minecraft:post_attack": [
+      {
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:summon_entity",
+              "entity": "minecraft:lightning_bolt"
+            },
+            {
+              "type": "minecraft:play_sound",
+              "pitch": 1,
+              "sound": "minecraft:item.trident.thunder",
+              "volume": 5
+            }
+          ]
+        },
+        "enchanted": "attacker",
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:any_of",
+              "terms": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "flags": {
+                      "is_in_water": true
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "attacker",
+                  "predicate": {
+                    "equipment": {
+                      "head": {
+                        "items": "minecraft:turtle_helmet"
+                      },
+                      "chest": {
+                        "components": {
+                          "minecraft:custom_data": {
+                            "turtle_chestplate": true
+                          }
+                        }
+                      },
+                      "legs": {
+                        "components": {
+                          "minecraft:custom_data": {
+                            "turtle_leggings": true
+                          }
+                        }
+                      },
+                      "feet": {
+                        "components": {
+                          "minecraft:custom_data": {
+                            "turtle_boots": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "direct_attacker",
+              "predicate": {
+                "type": "minecraft:trident"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 50,
+    "per_level_above_first": 0
+  },
+  "max_level": 1,
+  "min_cost": {
+    "base": 25,
+    "per_level_above_first": 0
+  },
+  "slots": [
+    "mainhand"
+  ],
+  "supported_items": "#minecraft:enchantable/trident",
+  "weight": 1
+}

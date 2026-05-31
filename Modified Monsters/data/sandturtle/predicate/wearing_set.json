@@ -1,0 +1,32 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "equipment": {
+      "head": {
+        "items": "minecraft:turtle_helmet"
+      },
+      "chest": {
+        "components": {
+          "minecraft:custom_data": {
+            "turtle_chestplate": true
+          }
+        }
+      },
+      "legs": {
+        "components": {
+          "minecraft:custom_data": {
+            "turtle_leggings": true
+          }
+        }
+      },
+      "feet": {
+        "components": {
+          "minecraft:custom_data": {
+            "turtle_boots": true
+          }
+        }
+      }
+    }
+  }
+}

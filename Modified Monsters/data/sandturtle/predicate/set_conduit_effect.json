@@ -1,0 +1,29 @@
+{
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "type_specific": {
+          "type": "minecraft:player",
+          "advancements": {
+            "sandturtle:experienced_conduit": true
+          }
+        },
+        "flags": {
+          "is_in_water": true
+        },
+        "slots": {
+          "weapon.*": {
+            "items": "minecraft:trident"
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "sandturtle:wearing_set"
+    }
+  ]
+}

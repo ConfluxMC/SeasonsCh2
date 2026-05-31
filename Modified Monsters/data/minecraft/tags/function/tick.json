@@ -2,6 +2,7 @@
   "values": [
     "cn:tick",
     "webslingers:tick",
-    "woodfish:tick"
+    "woodfish:tick",
+    "sandturtle:tick"
   ]
 }

@@ -1,0 +1,79 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": "minecraft:turtle_scute",
+    "H": "minecraft:heart_of_the_sea",
+    "N": "minecraft:nautilus_shell"
+  },
+  "pattern": [
+    "N N",
+    "SHS",
+    "SSS"
+  ],
+  "result": {
+    "components": {
+      "minecraft:equippable": {
+        "slot": "chest",
+        "equip_sound": "minecraft:item.armor.equip_turtle",
+        "asset_id": "minecraft:turtle_scute",
+        "equip_on_interact": true
+      },
+      "minecraft:custom_data": {
+        "turtle_chestplate": true
+      },
+      "minecraft:repairable": {
+        "items": [
+          "minecraft:turtle_scute",
+          "minecraft:nautilus_shell"
+        ]
+      },
+      "minecraft:item_model": "minecraft:turtle_chestplate",
+      "minecraft:item_name": {
+        "translate": "item.turtle_chestplate",
+        "fallback": "Chest of the Sea"
+      },
+      "minecraft:max_damage": 385,
+      "minecraft:max_stack_size": 1,
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "id": "sandturtle:chest_armor",
+          "amount": 5,
+          "operation": "add_value",
+          "slot": "chest"
+        },
+        {
+          "type": "minecraft:scale",
+          "id": "sandturtle:chest_attack_water",
+          "amount": 0,
+          "operation": "add_value",
+          "slot": "chest",
+          "display": {
+            "type": "override",
+            "value": {
+              "text": "+50% Attack Damage In Water",
+              "color": "blue"
+            }
+          }
+        },
+        {
+          "type": "minecraft:scale",
+          "id": "sandturtle:chest_attack_land",
+          "amount": 0,
+          "operation": "add_value",
+          "slot": "chest",
+          "display": {
+            "type": "override",
+            "value": {
+              "text": "-20% Attack Damage On Land",
+              "color": "red"
+            }
+          }
+        }
+      ]
+    },
+    "count": 1,
+    "id": "minecraft:heart_of_the_sea"
+  }
+}

@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "X": "minecraft:turtle_scute"
+    "S": "minecraft:turtle_scute"
   },
   "pattern": [
-    "X X",
-    "X X"
+    "S S",
+    "S S"
   ],
   "result": {
     "components": {
@@ -23,8 +23,41 @@
         "items": "minecraft:turtle_scute"
       },
       "minecraft:item_model": "minecraft:turtle_boots",
-      "minecraft:item_name": "Turtle Boots",
-      "minecraft:max_damage": 275
+      "minecraft:item_name": {
+        "translate": "item.turtle_boots",
+        "fallback": "Turtle Boots"
+      },
+      "minecraft:max_damage": 275,
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "id": "sandturtle:boots_armor",
+          "amount": 2,
+          "operation": "add_value",
+          "slot": "feet"
+        },
+        {
+          "type": "minecraft:safe_fall_distance",
+          "id": "sandturtle:boots_safe_fall",
+          "amount": 1,
+          "operation": "add_multiplied_total",
+          "slot": "feet"
+        },
+        {
+          "type": "minecraft:scale",
+          "id": "sandturtle:boots_hatch_speed",
+          "amount": 0,
+          "operation": "add_value",
+          "slot": "feet",
+          "display": {
+            "type": "override",
+            "value": {
+              "text": "+15% Turtle Egg Hatching Speed",
+              "color": "blue"
+            }
+          }
+        }
+      ]
     },
     "count": 1,
     "id": "minecraft:chainmail_boots"

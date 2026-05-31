@@ -1,0 +1,28 @@
+{
+  "condition": "minecraft:all_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "location": {
+          "block": {
+            "blocks": [
+              "minecraft:kelp",
+              "minecraft:kelp_plant",
+              "minecraft:seagrass",
+              "minecraft:tall_seagrass"
+            ]
+          }
+        },
+        "flags": {
+          "is_in_water": true
+        }
+      }
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "sandturtle:wearing_leggings"
+    }
+  ]
+}

@@ -19,6 +19,8 @@
       "minecraft:slime_ball",
       "minecraft:magma_cream",
       "minecraft:gold_nugget",
+      "minecraft:iron_nugget",
+      "minecraft:copper_nugget",
       "minecraft:cocoa_beans",
       "minecraft:spider_eye",
       "minecraft:fermented_spider_eye",
@@ -52,7 +54,13 @@
       "minecraft:crimson_fungus",
       "minecraft:warped_fungus",
       "minecraft:melon_slice",
-      "minecraft:potato"
+      "minecraft:potato",
+      "minecraft:carrot",
+      "minecraft:beetroot",
+      "minecraft:apple",
+      "minecraft:cod",
+      "minecraft:salmon",
+      "minecraft:tropical_fish"
     ]
   ],
   "result": {

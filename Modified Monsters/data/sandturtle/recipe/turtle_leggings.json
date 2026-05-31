@@ -1,0 +1,96 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "equipment",
+	"key": {
+		"S": "minecraft:turtle_scute",
+		"K": "minecraft:kelp",
+		"N": "minecraft:nautilus_shell"
+	},
+	"pattern": [
+		"KNK",
+		"S S",
+		"K K"
+	],
+	"result": {
+		"components": {
+			"minecraft:equippable": {
+				"slot": "legs",
+				"equip_sound": "minecraft:item.armor.equip_turtle",
+				"asset_id": "minecraft:turtle_scute",
+				"equip_on_interact": true
+			},
+			"minecraft:custom_data": {
+				"turtle_leggings": true
+			},
+			"minecraft:repairable": {
+				"items": [
+					"minecraft:turtle_scute",
+					"minecraft:kelp",
+					"minecraft:nautilus_shell"
+				]
+			},
+			"minecraft:item_model": "minecraft:turtle_leggings",
+			"minecraft:item_name": {
+				"translate": "item.turtle_leggings",
+				"fallback": "Sea Legs"
+			},
+			"minecraft:max_damage": 315,
+			"minecraft:attribute_modifiers": [
+				{
+					"type": "minecraft:armor",
+					"id": "sandturtle:leggings_armor",
+					"amount": 3,
+					"operation": "add_value",
+					"slot": "legs"
+				},
+				{
+					"type": "minecraft:water_movement_efficiency",
+					"id": "sandturtle:leggings_water_speed",
+					"amount": 0.8,
+					"operation": "add_multiplied_base",
+					"slot": "legs"
+				},
+				{
+					"type": "minecraft:scale",
+					"id": "sandturtle:leggings_dolphins_grace",
+					"amount": 0,
+					"operation": "add_value",
+					"slot": "legs",
+					"display": {
+						"type": "override",
+						"value": [
+							{
+								"text": "Gain ",
+								"color": "blue"
+							},
+							{
+								"translate": "effect.minecraft.dolphins_grace",
+								"color": "aqua"
+							},
+							{
+								"text": " From Kelp",
+								"color": "blue"
+							}
+						]
+					}
+				},
+				{
+					"type": "minecraft:scale",
+					"id": "sandturtle:leggings_land_slow",
+					"amount": 0,
+					"operation": "add_value",
+					"slot": "legs",
+					"display": {
+						"type": "override",
+						"value": {
+							"text": "-60% Speed On Land",
+							"color": "red"
+						}
+					}
+				}
+			]
+		},
+		"count": 1,
+		"id": "minecraft:chainmail_leggings"
+	}
+}

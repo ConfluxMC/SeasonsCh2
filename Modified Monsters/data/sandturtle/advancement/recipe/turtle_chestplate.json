@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sandturtle:turtle_chestplate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_turtle_scute": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:turtle_scute",
+              "minecraft:heart_of_the_sea",
+              "minecraft:nautilus_shell"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_turtle_scute"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sandturtle:turtle_chestplate"
+    ]
+  }
+}
